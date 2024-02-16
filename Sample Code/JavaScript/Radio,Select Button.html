@@ -1,0 +1,115 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Validate List Box</title>
+<style type="text/css">
+.ex_table{font-family:Verdana, Geneva, sans-serif;font-size:12px;}
+.listbox{border:1px solid #36F;}
+.normal_lb_border{border: 1px solid #00F;}
+.err_lb_border{border:1px solid #F00;}
+.err_lb_bg{background-color:#FFC4C4;}
+.normal_p{color:#000000;}
+.error_p{color:#FF0000;}
+</style>
+<script type="text/javaScript">
+function select_course(){
+var course_info = document.getElementById('course_info');
+course_info.className='normal_p';
+}
+function select_class_day(){
+var class_day = document.getElementById('class_day');
+if(parseInt(class_day[class_day.selectedIndex].value)>0){
+class_day.className='listbox';
+}else{
+class_day.className='err_lb_border';
+}
+}
+function validate_dropdown4(){
+var error=0;
+var course_type = document.getElementsByName('course_type');
+var class_day = document.getElementById('class_day');
+var course_info = document.getElementById('course_info');
+var mycourse=0;
+for(var i=0;i<course_type.length;i++){
+if(course_type[i].checked){
+mycourse=i+1;
+break;
+}
+}
+if(mycourse==0){
+error++;
+course_info.className='error_p';
+}else{
+course_info.className='normal_p';
+}
+
+var selected_day = parseInt(class_day[class_day.selectedIndex].value);
+
+if(selected_day==0){
+class_day.className='err_lb_border';
+error++;
+}else{
+class_day.className='listbox';
+}
+if(selected_day!=0 && mycourse!=0){
+if(mycourse==2 && !(selected_day==6 || selected_day==7)){
+class_day.className='err_lb_border';
+error++;
+}else if(mycourse==1 && !(selected_day!=6 && selected_day!=7)){
+class_day.className='err_lb_border';
+error++;
+}
+}
+if(error>0){
+alert("Please select course details correctly");
+return false;
+}else{
+return true;
+}
+}
+</script>
+</head>
+<body>
+<form id="drop_down_validation_4" name="drop_down_validation_4" action="#" method="post" onSubmit="javaScript:return validate_dropdown4();">
+<table border="0" class="ex_table"><tbody>
+<tr>
+<td colspan="6" align="left">Course Registration Details</td></tr>
+<tr>
+<td align="right">Course Type</td>
+<td><p id="course_info">
+<label>
+<input type="radio" name="course_type" value="1" id="course_type_0" onClick="javaScript:select_course();">
+Week Days</label>
+<br>
+<label>
+<input type="radio" name="course_type" value="2" id="course_type_1" onClick="javaScript:select_course();">
+Weekends</label>
+<br>
+</p></td>
+<td colspan="2" rowspan="3">&nbsp;</td>
+</tr>
+<tr>
+<td align="right">Class Day</td>
+<td><select id="class_day" class="listbox" name="class_day" onChange="javaScript:select_class_day();">
+<option value="0" selected>Day</option>
+<option value="1">Monday</option>
+<option value="2">Tuesday</option>
+<option value="3">Wednesday</option>
+<option value="4">Thursday</option>
+<option value="5">Friday</option>
+<option value="6">Saturday</option>
+<option value="7">Sunday</option>
+</select></td>
+</tr>
+<tr>
+<td align="right">&nbsp;</td>
+<td><input type="submit" name="btn_submit2" id="btn_submit2" value="Submit"></td>
+</tr>
+<tr>
+<td colspan="4" align="right">&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</form>
+</body>
+</html>

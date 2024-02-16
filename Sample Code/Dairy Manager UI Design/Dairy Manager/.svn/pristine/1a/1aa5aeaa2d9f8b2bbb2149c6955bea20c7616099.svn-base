@@ -1,0 +1,83 @@
+<wicket:extend>
+	<div id="content">
+		<h1>Vendor Information</h1>
+				 <form method="post" wicket:id="addnewvendor">
+		           <div wicket:id="feedback"></div>
+                    <div class="addData">
+                       <ul>
+                         <li>
+						    <label>Vendor Code</label><font color="#FF0000">*</font><br />
+							<input type="text" name="vendorCode"  wicket:id="vendorCode" class="number_effect" maxlength="30">
+                          </li>
+                          <li>	
+							<label>Vendor Type</label><font color="#FF0000">*</font><br />
+							<select wicket:id="vendorType" class="dropdown_effect" maxlength="30"></select>
+                          </li>
+                          <li>	
+							<label>Vendor Name</label><font color="#FF0000">*</font><br />
+							<input type="text" name="vendorName"  wicket:id="vendorName" class="textfield_effect" maxlength="140">
+                          </li>
+                          <li>	
+							<label>Vendor Contact Person</label><font color="#FF0000">*</font><br />
+							<input type="text" name="vendorContactPerson"  wicket:id="contactPerson" class="textfield_effect"                            maxlength="150">
+                         </li>
+                          <li>	
+							<label>Vendor Contact No</label><font color="#FF0000">*</font><br />
+							<input type="text" name="contactNumber"  wicket:id="contactNumber" class="number_effect" maxlength="30">
+                         </li>
+                          <li>	
+							<label>Vendor Alternative No</label><br />
+							<input type="text" name="alternativeContactNumber"  wicket:id="alternativeContactNumber" class=                            "number_effect" maxlength="30">
+                         </li>
+                          <li>	
+							<label>Vendor E-Mail Id</label><br />
+							<input type="text" name="emailId"  wicket:id="emailId" class="textfield_effect" maxlength="150">
+                            
+                        </li>
+                        </ul>
+                        <h1 style="width:100%; clear:both; margin:10px 0 5px 10px; font-size:16px; font-weight:bold;">Vendor Address
+                        </h1>
+                        <ul>
+                          <li>	
+							
+							<label>Address Line1</label><font color="#FF0000">*</font><br />
+							<input type="text" name="addressLine1"  wicket:id="addressLine1" class="textfield_effect" maxlength="50"                            >
+                         </li>
+                          <li>	
+							<label>Address Line2</label><br />
+							<input type="text" name="addressLine2"  wicket:id="addressLine2" class="textfield_effect" maxlength="50"                            >
+                         </li>
+                          <li>	
+					        <label>Address Line3</label><br />
+							<input type="text" name="addressLine3"  wicket:id="addressLine3" class="textfield_effect" maxlength="50"                            >
+                        </li>
+                          <li>	
+							<label>City</label><font color="#FF0000">*</font><br />
+							<input type="text" name="city"  wicket:id="city" class="textfield_effect" maxlength="50">
+                        </li>
+                          <li>	
+					        <label>State</label><font color="#FF0000">*</font><br />
+							<input type="text" name="state"  wicket:id="state" class="textfield_effect" maxlength="50">
+                        </li>
+                          <li>	
+							<label>Country</label><font color="#FF0000">*</font><br />
+							<input type="text" name="country"  wicket:id="country" class="textfield_effect" maxlength="15">
+                        </li>
+                          <li>	
+							<label>Remarks</label><br />
+							<textarea name="remarks" wicket:id="remarks" class="bigtextarea_effect" maxlength="140"></textarea>	
+                       </li>
+                        <li>	
+							<label>Zip Code</label><font color="#FF0000">*</font><br />
+							<input type="text" name="zipCode"  wicket:id="zipCode" class="number_effect" maxlength="10"
+                            style="text-align:right;"/>
+                       </li>
+                    </ul>	
+				            <div style="clear:both;"></div>
+                            <div class="newButton">
+                            <INPUT type="submit" value="Submit" class="button" wicket:id="save"/>
+                            </div>  
+                    </div>
+          </form>
+	</div>
+</wicket:extend>

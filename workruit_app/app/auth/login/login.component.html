@@ -1,0 +1,46 @@
+<div class="main_container">
+    <div class="side_form bg-white py-5 px-5">
+        <div class="" tabindex="1">
+            <app-logo></app-logo>
+            <div class="d-flex h-100 justify-content-center align-items-center">
+                <div class="w-100">
+                    <h1 class="text-center title">{{authDataInfo.authInfo.loginTitle}}</h1>
+                    <h2 class="description text-center mt-2 description">{{authDataInfo.authInfo.loginSubTitle}}</h2>
+                    <div class="form mt-5">
+                        <div class="register-form">
+                            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                                <!-- username -->
+                                <div class="form-group form_spacing">
+                                    <input type="username" formControlName="username" class="form-control with-icon icon-mail form_control_height" placeholder="{{authDataInfo.placeHolders.loginUserName}}" [ngClass]="{ 'is-invalid': submitted && formGet['username'].errors }" formControlName="username">
+                                    <div *ngIf="submitted && formGet['username'].errors" class="invalid-feedback">
+                                        <div *ngIf="formGet['username'].errors['required']">{{authDataInfo.errorMessages.loginEmailError}}
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Password -->
+                                <div class="form-group form_spacing">
+                                    <input type="password" formControlName="password" class="form-control with-icon icon-password form_control_height" placeholder="{{authDataInfo.placeHolders.loginPassword}}" [ngClass]="{ 'is-invalid': submitted && formGet['password'].errors }" formControlName="password">
+                                    <div *ngIf="submitted && formGet['password'].errors" class="invalid-feedback">
+                                        <div *ngIf="formGet['password'].errors['required']">
+                                            {{authDataInfo.errorMessages.loginPasswordError}}</div>
+                                    </div>
+                                </div>
+                                <div class="form-group form_spacing">
+                                    <a class="fp_center d-block mt-3" [routerLink]="['/resetpwd']">{{authDataInfo.authInfo.reSetText}}</a>
+                                </div>
+                                <div class="form-group form_spacing mt-4">
+                                    <button id="btn-fbsignup" type="submit" class="btn btn-primary btn-lg btn_auth btn-block">{{authDataInfo.authInfo.loginText}}</button>
+                                    <!--<button id="btn-fbsignup" type="button" class="btn btn-primary btn-lg btn-block" validation-submit="loginForm" data-ng-click="validateLogin()">Sign in</button>-->
+                                </div>
+                                <small class="form-text text-muted text-center d-block mt-3 form-bottom w-100">{{authDataInfo.authInfo.loginSubText}}
+                  <a data-event="e_signup_header_web"
+                    [routerLink]="['/signup']">{{authDataInfo.authInfo.signUpText}}</a>.</small>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <app-right-content [type]="'login'"></app-right-content>
+</div>

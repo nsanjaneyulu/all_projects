@@ -1,0 +1,156 @@
+<ion-header>
+      <ion-navbar>
+         <ion-title *ngIf="!isOpenedSearchBar">
+            <ion-item no-lines class="header__styles padding__left__0px">
+               <ion-avatar item-start>
+                  <img src="{{imageEndPoint}}/{{getMallDetailsResp.img}}">
+               </ion-avatar>
+               <!-- <h2 class="ion__title">{{getMallDetailsResp.name}}</h2> -->
+               <h2 class="ion__title">{{getMallDetailsResp.name}} <span class="outletNameCss" *ngIf = "(allpermited !='Yes')"> ({{getOutletDetailsVal.name}})</span></h2>
+
+               <p class="pending__order padding__left">{{getMallDetailsResp.address.area}}, {{getMallDetailsResp.address.city}}</p>
+            </ion-item>
+         </ion-title>
+         <ion-searchbar class="searchelement" *ngIf="isOpenedSearchBar" [(ngModel)]="searchTerm" (ionInput)="setFilteredItems()" [showCancelButton]="true" #search (ionCancel)="cancelSearch()"></ion-searchbar>
+         <ion-buttons end>
+            <button [hidden]="isOpenedSearchBar" (click)="(isOpenedSearchBar = !isOpenedSearchBar) && autoFocusCursor()" ion-button icon-only>
+            <ion-icon class="ion__title" name="search"></ion-icon>
+            </button>
+         </ion-buttons>
+      </ion-navbar>
+   </ion-header>
+   <ion-content>
+      <ion-grid id="allOrders" class="padding__Styles" *ngIf="!showLoader">
+         <ion-card>
+            <ion-card-header class="card-header" (click)="toggleAccordionOne()">
+               1 Day Ago 
+               <ion-icon style="float:right;" name="arrow-down" *ngIf="!accordionExpandedOne"></ion-icon>
+               <ion-icon style="float:right;" name="arrow-up" *ngIf="accordionExpandedOne"></ion-icon>
+            </ion-card-header>
+            <ion-card-content #cc class="card-content"  [ngClass]="{'section-active':accordionExpandedOne, 'section': !accordionExpandedOne}">
+            <div class="bootem__level__space" *ngFor="let completeOrders of searchgetAllCompletedFullOrdersResp" (click)="goOrderDetails($event, completeOrders)">
+            <ion-item class="item_border">
+               <div class="displayFlex padding__post_orders">
+                  <div class="">
+                        <div><span class="order__Id">{{completeOrders.fullOrder5DigitId}}
+                           </span>
+                           <span *ngIf="(completeOrders.orderType == 'Delivery')" class=""><span class="status__Styles">Delivery</span>
+                              <img src="../../assets/imgs/delivery.png" class="tab__Count" style="display:inline-block;" />
+                           </span>
+                           <span *ngIf="(completeOrders.orderType == 'Pickup')" class="pickupStyles"><span class="status__Styles">Pickup</span>
+                              <img src="../../assets/imgs/pick.png" class="tab__Count" style="display:inline-block;" />
+                           </span>
+                        </div>
+                     
+                     <div>
+                        <span class="smallTitle"> {{completeOrders.createdDateStr | date: "dd-MMM-yyyy H:mm"}}</span>
+                        <span class="smallTitle"> | </span>
+                        <span class="smallTitle" style="font-weight:bold;">
+                        ₹
+                        </span>
+                        <span class="smallTitle">{{completeOrders.amountStr}}</span>
+                     </div>
+                  </div>
+                  <div class="text__align__right">
+                     <div *ngIf="completeOrders.status=='COMPLETED'" class="itemStatus__Completed completed__color">{{completeOrders.status}}</div>
+                     <div *ngIf="completeOrders.status=='REJECTED'" class="itemStatus__Completed rejected__color">{{completeOrders.status}}</div>
+                     <div *ngIf="completeOrders.status=='EXPIRED'" class="itemStatus__Completed expired__color">{{completeOrders.status}}</div>
+                  </div>
+               </div>
+            </ion-item>
+            </div>
+            </ion-card-content>
+         </ion-card>
+         <ion-card>
+            <ion-card-header class="card-header" (click)="toggleAccordionTwo()">
+               2 Days ago 
+               <ion-icon style="float:right;" name="arrow-down" *ngIf="!accordionExpandedTwo"></ion-icon>
+               <ion-icon style="float:right;" name="arrow-up" *ngIf="accordionExpandedTwo"></ion-icon>
+            </ion-card-header>
+            <ion-card-content #cc class="card-content"  [ngClass]="{'section-active':accordionExpandedTwo, 'section': !accordionExpandedTwo}">
+            <div class="bootem__level__space" *ngFor="let completeOrders of searchgetAllCompletedFullOrdersResp" (click)="goOrderDetails($event, completeOrders)">
+            <ion-item class="item_border">
+               <div class="displayFlex padding__post_orders">
+                  <div class="">
+                     <div>
+                        <span class="order__Id">{{completeOrders.fullOrder5DigitId}}</span>
+                        <span *ngIf ="(completeOrders.orderType == 'Delivery')" class="deliveryStyles">
+                           <img src="../../assets/imgs/delivery.png" class="image__length"/>
+                           <!-- Delivery
+                              <span class="deliveryStylesArrow">
+                              </span> -->
+                        </span>
+                        <span *ngIf ="(completeOrders.orderType == 'Pickup')" class="pickupStyles">
+                           <img src="../../assets/imgs/pick.png" class="image__length"/>
+                           <!-- Pickup
+                              <span class="pickupStylesArrow">
+                              </span> -->
+                        </span>
+                     </div>
+                     <div>
+                        <span class="smallTitle"> {{completeOrders.createdDateStr | date: "dd-MMM-yyyy H:mm"}}</span>
+                        <span class="smallTitle"> | </span>
+                        <span class="smallTitle" style="font-weight:bold;">
+                        ₹
+                        </span>
+                        <span class="smallTitle">{{completeOrders.amountStr}}</span>
+                     </div>
+                  </div>
+                  <div class="text__align__right">
+                     <div *ngIf="completeOrders.status=='COMPLETED'" class="itemStatus__Completed completed__color">{{completeOrders.status}}</div>
+                     <div *ngIf="completeOrders.status=='REJECTED'" class="itemStatus__Completed rejected__color">{{completeOrders.status}}</div>
+                     <div *ngIf="completeOrders.status=='EXPIRED'" class="itemStatus__Completed expired__color">{{completeOrders.status}}</div>
+                  </div>
+               </div>
+            </ion-item>
+            </div>
+            </ion-card-content>
+         </ion-card>
+         <ion-card>
+            <ion-card-header class="card-header" (click)="toggleAccordionThree()">
+               3 Days ago 
+               <ion-icon style="float:right;" name="arrow-down" *ngIf="!accordionExpandedThree"></ion-icon>
+               <ion-icon style="float:right;" name="arrow-up" *ngIf="accordionExpandedThree"></ion-icon>
+            </ion-card-header>
+            <ion-card-content #cc class="card-content"  [ngClass]="{'section-active':accordionExpandedThree, 'section': !accordionExpandedThree}">
+            <div class="bootem__level__space" *ngFor="let completeOrders of searchgetAllCompletedFullOrdersResp" (click)="goOrderDetails($event, completeOrders)">
+            <ion-item class="item_border">
+               <div class="displayFlex padding__post_orders">
+                  <div class="">
+                     <div>
+                        <span class="order__Id">{{completeOrders.fullOrder5DigitId}}</span>
+                        <span *ngIf ="(completeOrders.orderType == 'Delivery')" class="deliveryStyles">
+                           <img src="../../assets/imgs/delivery.png" class="image__length"/>
+                           <!-- Delivery
+                              <span class="deliveryStylesArrow">
+                              </span> -->
+                        </span>
+                        <span *ngIf ="(completeOrders.orderType == 'Pickup')" class="pickupStyles">
+                           <img src="../../assets/imgs/pick.png" class="image__length"/>
+                           <!-- Pickup
+                              <span class="pickupStylesArrow">
+                              </span> -->
+                        </span>
+                     </div>
+                     <div>
+                        <span class="smallTitle"> {{completeOrders.createdDateStr | date: "dd-MMM-yyyy H:mm"}}</span>
+                        <span class="smallTitle"> | </span>
+                        <span class="smallTitle" style="font-weight:bold;">
+                        ₹
+                        </span>
+                        <span class="smallTitle">{{completeOrders.amountStr}}</span>
+                     </div>
+                  </div>
+                  <div class="text__align__right">
+                     <div *ngIf="completeOrders.status=='COMPLETED'" class="itemStatus__Completed completed__color">{{completeOrders.status}}</div>
+                     <div *ngIf="completeOrders.status=='REJECTED'" class="itemStatus__Completed rejected__color">{{completeOrders.status}}</div>
+                     <div *ngIf="completeOrders.status=='EXPIRED'" class="itemStatus__Completed expired__color">{{completeOrders.status}}</div>
+                  </div>
+               </div>
+            </ion-item>
+            </div>
+            </ion-card-content>
+         </ion-card>
+      </ion-grid>
+      <page-globalloader *ngIf="showLoader"></page-globalloader>
+   </ion-content>

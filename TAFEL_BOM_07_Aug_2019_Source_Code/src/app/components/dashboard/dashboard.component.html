@@ -1,0 +1,196 @@
+<div class="bow_page_title">
+  <span>Order Status ({{orderStatus=="Rejected"?"Rejected":(orderStatus=="Completed"?"Completed":"Overdue")}})</span>
+  <span style="float: right">
+    <i (click)="refreshOrderDetails()" class="fa fa-refresh" style="cursor:pointer; font-size: 20px" aria-hidden="true"></i>
+  </span>
+</div>
+<div class="row bow_page_title_styles bow_margin_Styles_mall ">
+  <div class="col-lg-5 col col-xs-6 col-sm-6 col-md-6 col-12 row">
+    <label for="inputEmail3" class="col-sm-5 col-md-4 col-form-label">Select Mall</label>
+    <div class="col-sm-7 col-md-7">
+      <select [(ngModel)]="mallDetailsDropdown" class="form-control" (change)="mallNameChange(mallDetailsDropdown)">
+        <option *ngFor="let mall of mallDataResp" [value]="mall.mallId">
+          {{mall.mallName}}
+        </option>
+      </select>
+    </div>
+  </div>
+
+  <div class="col-lg-5 col col-xs-6 col-sm-6 col-md-6 col-12 row" *ngIf="allPermitted == 'No'">
+    <label for="inputEmail3" class="col-sm-6 col-md-4 col-form-label">Select Outlet</label>
+    <div class="col-sm-6 col-md-7">
+      <select [(ngModel)]="mallOutletId" class="form-control" (change)="outletNameChange(mallOutletId)">
+        <option *ngFor="let outlet of outletDetailsResp.jmoutlet" [value]="outlet.id">
+          {{outlet.name}}
+        </option>
+      </select>
+    </div>
+  </div>
+
+
+
+
+
+</div>
+
+<div class="stats row">
+  <div class="col-sm-6 col-md-6 col-lg-3 col-xl-3 col-12 stats__item">
+    <div class="bow_order_statistics bow_overdue_icon_bg bow_overdue_styles">
+      <div class="title mb-1">Overdue</div>
+      <div>
+        <div (click)="orderDetailsTable('Pending')" class="bow_mb"><span class="bow_text_decoration">Pending</span>
+          <span class="badge badge-dark ml-1" style="background: #88898b; border-radius:50%">{{getAllCountsResp.recieved}}</span></div>
+        <div (click)="orderDetailsTable('Accept')" class="bow_mb"><span class="bow_text_decoration">Accept</span> <span
+            class="badge badge-warning ml-1" style="border-radius:50%">{{getAllCountsResp.inprogress}}</span></div>
+        <div (click)="orderDetailsTable('Ready')" class="bow_mb"><span class="bow_text_decoration">Ready</span> <span
+            class="badge badge-success ml-1" style="border-radius:50%">{{getAllCountsResp.ready}}</span></div>
+      </div>
+      <div class="Count" (click)="orderDetailsTable('all')">{{getAllCountsResp.ready_Inp_Recv_Count}}</div>
+    </div>
+  </div>
+  <div class="col-sm-6 col-md-6 col-lg-3 col-xl-3 col-12 stats__item bow_cursor_pointer" (click)="orderDetailsTable('Rejected')">
+    <div class="bow_order_statistics bow_rejected_styles bow_rejected_icon_bg">
+      <div (click)="orderDetailsTable('Rejected')" class="title">Rejected</div>
+      <div><span class="bow_rupee_styles"><i class="fa fa-inr" aria-hidden="true"></i></span> {{getAllCountsResp.rejectedAmount}} </div>
+      <div class="Count" (click)="orderDetailsTable('Rejected')">{{getAllCountsResp.rejected}}</div>
+    </div>
+  </div>
+  <div class="col-sm-6 col-md-6 col-lg-3 col-xl-3 col-12 stats__item bow_live_order_margin_top bow_cursor_pointer" (click)="orderDetailsTable('Completed')">
+    <div class="bow_order_statistics bow_completed_styles bow_completed_icon_bg">
+      <div (click)="orderDetailsTable('Completed')" class="title">Completed</div>
+      <div class="bow_amount_text">Gross Amt: <span class="bow_rupee_styles"><i class="fa fa-inr" aria-hidden="true"></i></span> {{getAllCountsResp.completedAmount}}</div>
+      <div class="bow_amount_text">Refund Amt: <span class="bow_rupee_styles"><i class="fa fa-inr" aria-hidden="true"></i></span> {{getAllCountsResp.refundAmount}} </div>
+      <div class="Count" (click)="orderDetailsTable('Completed')">{{getAllCountsResp.completed}}</div>
+    </div>
+  </div>
+  <div class="col-sm-6 col-md-6 col-lg-3 col-xl-3 col-12 stats__item bow_live_order_margin_top bow_cursor_pointer" (click)="orderDetailsTable('Completed')">
+    <div class="bow_order_statistics bow_revenue_icon_bg bow_revenue_styles">
+      <div class="title">Revenue</div>
+      <div><span class="bow_rupee_styles"><i class="fa fa-inr" aria-hidden="true"></i></span> {{getAllCountsResp.revenueAmount}}</div>
+      <div class="Count" (click)="orderDetailsTable('Completed')">{{getAllCountsResp.completed}}</div>
+    </div>
+  </div>
+  
+    
+    
+  <div class="col-lg-6 mt-5 ml-5" *ngIf="showLoader">
+    <app-global-loader></app-global-loader>
+  </div>
+  
+  <div class="col-lg-9 col-xs-12 mt-3" *ngIf="orderDetailsTableShow && !showLoader">
+    <div class="table_styles table-responsive bg-white bow_padding_styles">
+      <table class="col-12 table table-striped table-borderless">
+        <thead class="thead-light">
+          <tr>
+            <th class="bow_table_head">ORDER ID</th>
+            <th class="bow_table_head">OUTLET NAME</th>
+            <th class="bow_table_head">ORDER VALUE</th>
+            <th class="bow_table_head">STATUS</th>
+            <th *ngIf="(orderStatus!='Completed')" class="bow_table_head">CONTACT NUMBER</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let orderDetails of orderDetailsResp|paginate: { itemsPerPage: pageSelect, currentPage: p }; let i=index;">
+            <td class="align-middle">{{orderDetails.fullOrder5DigitID}}</td>
+            <td class="align-middle">{{orderDetails.outletName}}</td>
+            <td class="align-middle">{{orderDetails.amount}}</td>
+            <td class="align-middle">
+              <div>{{orderDetails.status}}</div>
+              <div class="mt-1"><button type="button" (click)="orderDetailsFunction(orderDetails)" data-toggle="modal"
+                  data-target=".bd-example-modal-lg" class="btn btn-danger btn-sm rounded-pill bow_button_styles bow_button_styles_tables">View
+                  Details</button></div>
+            </td>
+            <div *ngIf="(orderStatus!='Completed')">
+              <td *ngIf="(orderDetails.status != 'Ready') " class="align-middle"> {{orderDetails.outletPhoneNumber}}</td>
+              <td *ngIf="(orderDetails.status == 'Ready')" class="align-middle"> {{orderDetails.userPhoneNumber}}</td>
+            </div>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  
+  
+  <div class="col-12 mt-5" *ngIf="!orderDetailsTableShow">
+    <span class="bow_display_flex_center" style="color:#5c0632; font-size: 20px;">No Data Found ({{orderStatus=="Rejected"?"Rejected":(orderStatus=="Completed"?"Completed":"Overdue")}})</span>
+  </div>
+</div>
+
+<!-- <div class="row col-12 mt-3" *ngIf="orderDetailsTableShow && !showLoader" >
+    <select [(ngModel)]="pageSelect" class="col-2 form-control" (change)="pageSelectNumber(pageSelect)">
+        <option [value]="5">5</option>
+        <option [value]="10">10</option>
+        <option [value]="15">15</option>
+        <option [value]="20">20</option>
+        <option [value]="25">25</option>
+      </select>
+    <pagination-controls class="col-10" (pageChange)="p = $event"></pagination-controls>
+    
+</div> -->
+<!-- Modal Popups -->
+<div *ngIf="orderDetailsModal" class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog"
+  aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-scrollable" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-white bg-danger bow_modal_header_bg">
+        <div class="modal-title font-weight-bold" id="exampleModalLabel">Order Details</div>
+        <span aria-hidden="true"><i data-dismiss="modal" aria-label="Close" class="fa fa-times" aria-hidden="true"></i></span>
+      </div>
+      <div class="modal-body ">
+        <form class="">
+          <div class="border">
+            <div class="form-row col-12 bow_margin_styles_table">
+
+              <div class="form-group col-sm-6 col-md-6 col-lg-4 col-xl-4 col-6">
+                <div class="bow_view_details_head">Order ID</div>
+                <div>{{viewDetails.fullOrder5DigitID}}</div>
+              </div>
+
+              <div class="form-group col-sm-6 col-md-6 col-lg-4 col-xl-4 col-6">
+                <div class="bow_view_details_head">Order Date</div>
+                <div class="bow_view_details_body">{{viewDetails.orderLet[0].modifiedDate | date: "dd-MMM-yyyy H:mm"}}</div>
+              </div>
+             
+              <div class="form-group col-sm-6 col-md-6 col-lg-4 col-xl-4 col-6">
+                <div class="bow_view_details_head">Order Value<span class="bow_exclTaxes">(Excl. Taxes)</span></div>
+                <div class="bow_view_details_body">{{viewDetails.amount}}</div>
+              </div>
+              <div class="form-group col-sm-6 col-md-6 col-lg-4 col-xl-4 col-6">
+                <div class="bow_view_details_head">Order Type</div>
+                <div class="bow_view_details_body">{{viewDetails.orderType}} <span *ngIf="viewDetails.orderType == 'Delivery'"><img
+                      src="../../assets/info.svg" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="{{dineraddress}}"
+                      style="cursor: pointer;" /></span></div>
+              </div>
+              <div class="form-group col-sm-6 col-md-6 col-lg-4 col-xl-4 col-6">
+                <div class="bow_view_details_head">Order Status</div>
+                <div class="bow_view_details_body">{{viewDetails.status}}</div>
+              </div>
+            </div>
+          </div>
+          <div class="bow_margin_styles_table">
+            <table class="col-12 table table-striped table-borderless">
+              <thead class="thead-light">
+                <tr>
+                  <th>Item Name</th>
+                  <th>Qty</th>
+                  <th>Status</th>
+                  <th class="text-right">Price<span style="font-weight:normal;">(Excl. Taxes)</span></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item of viewDetails.orderLet">
+                  <td class="align-middle">{{item.itemName}}</td>
+                  <td class="align-middle">{{item.quantity}}</td>
+                  <td class="align-middle">{{item.status}}</td>
+                  <td class="align-middle text-right">{{item.itemPrice * item.quantity}}</td>
+                </tr>
+
+              </tbody>
+            </table>
+          </div>
+        </form>
+
+      </div>
+    </div>
+  </div>
+</div>

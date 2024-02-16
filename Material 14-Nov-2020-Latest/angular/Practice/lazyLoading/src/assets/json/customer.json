@@ -1,0 +1,14 @@
+[
+    {
+        "id": "LLP-2",
+        "name": "Biscon",
+        "location": "Mexico",
+        "isActive": true
+    },
+    {
+        "id": "PVT-2",
+        "name": "HAL",
+        "location": "Bangalore",
+        "isActive": true
+    }
+]

@@ -1,0 +1,113 @@
+@import "../../_variables.scss";
+.overflowY-styles {
+  overflow-y: auto;
+}
+.border-top-styles {
+  border-top: 2px solid #fff;
+}
+.login_header {
+    font-size: 3.5em;
+    font-weight: 700 !important;
+  }
+.bow_login_container .bow_section_page .bow_login_form {
+    margin: 0px !important;
+    width: 100%;
+ 
+   
+}
+.btn_styles {
+    background: #5c0632;
+    border-color: #5c0632;
+}
+.bow_padding_3rem{
+    padding: 3rem;
+  }
+.container {
+    height: 100%;
+  
+    section {
+      display: flex;
+      flex: 1;
+    }
+  }
+.bow_login_container .bow_section_page .bow_login_form {
+    margin: 0px !important;
+    width: 100%;
+ 
+   
+}
+.wrapper {
+    height: 100%;
+    width: 100%;
+  }
+.bow_section {
+    background: #f0f0f7;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+.app {
+    display: flex;
+    height: 100vh;
+  }
+  .bow_section_page {
+    margin: 0 !important;
+    background: url(https://tafel-images.s3.ap-south-1.amazonaws.com/bom/assets/login-BG.jpg) no-repeat center/cover;
+   
+  }
+  .bow_login_container .bow_section_page .bow_login_form {
+    margin: 0px !important;
+    width: 100%;
+ 
+   
+}
+.bow_section_page {
+  padding: 1em;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+
+ 
+    flex: 1;
+    display: block;
+    width: 100%;
+
+}
+.bow_section_page {
+      padding: 0px;
+  
+    }
+.tafelpos-body {
+    background-image: url("/assets/images/login-BG.jpg");
+    background-color: #301100;
+    height: 100vh;
+   
+
+    .login-form-block {
+        background-color: $light-color;
+        padding: 45px;
+        margin: 70px 55px 90px 0;
+
+        label {
+            font-size: 1rem;
+        }
+
+        .btn {
+            width: 100%;
+        }
+        
+        .form-control {
+            border: 0;
+            border-bottom: 1px solid #494F56;
+        }
+    }
+
+    .copyright-block {
+        color: #ffffff;
+        position: absolute;
+        left: 70px;
+        bottom: 20px;
+        width: calc(100% - 140px);
+    }
+}

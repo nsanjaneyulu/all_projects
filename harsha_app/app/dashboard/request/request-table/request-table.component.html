@@ -1,0 +1,110 @@
+<div class="row">
+  <div class="col-12">
+    <ngb-tabset>
+      <ngb-tab title="All Requests">
+        <ng-template ngbTabContent>
+          <div class="row my-3">
+            <div class="col-12 d-flex justify-content-between mb-3">
+              <h4 class="text-capitalize text-gold">{{pageTitle}}</h4>
+              <a class="theme_button" routerLink="/dashboard/request/new">
+                Add New
+              </a>
+            </div>
+            <div class="col-12">
+              <table class="table text-gold table-gold">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Subject</th>
+                    <th scope="col">Type</th>
+                    <th scope="col">Requested By</th>
+                    <th scope="col">Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let item of recentData; index as i">
+                    <td scope="row">{{i + 1}}</td>
+                    <td scope="row">{{item.request_subject}}</td>
+                    <td scope="row">{{item.request_type}}</td>
+                    <td scope="row">{{item.request_created_user_name}}</td>
+                    <td>
+                      <ul class="list-inline">
+                        <li class="list-inline-item"><a [routerLink]="['/dashboard/request/view', item.request_id]"
+                            class="text-gold">
+                            View</a></li>
+                        <li class="list-inline-item"><a [routerLink]="['/dashboard/request/edit', item.request_id]"
+                            class="text-gold">
+                            Edit</a></li>
+                        <li class="list-inline-item"><a [routerLink]="['/dashboard/request/edit', item.request_id]"
+                            class="text-gold">
+                            Delete</a></li>
+                      </ul>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </ng-template>
+      </ngb-tab>
+      <ngb-tab title="Pre Fromated">
+        <ng-template ngbTabContent>
+          <div class="row my-3">
+            <div class="col-12 d-flex justify-content-between mb-3">
+              <div class="col-10">
+                <h4 class="text-capitalize text-gold">Preformatted Requests</h4>
+              </div>
+              <div class="col-2">
+                <div class="dropdown cst_dropdown w-100">
+                  <button class="btn dropdown-toggle theme_button w-100" type="button" id="dropdownMenuButton"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Add New
+                  </button>
+                  <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" routerLink="/dashboard/request/preformated/employmentLetter">Employee
+                      Letter</a>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee
+          squid.
+          <p>Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko
+            farm-to-table
+            craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad
+            vinyl
+            cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS
+            salvia
+            yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit, sustainable
+            jean
+            shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester stumptown, tumblr butcher
+            vero
+            sint qui sapiente accusamus tattooed echo park.</p>
+        </ng-template>
+      </ngb-tab>
+      <ngb-tab title="Incoming / Outgoing">
+        <ng-template ngbTabContent>
+          <div class="row my-3">
+            <div class="col-12 d-flex justify-content-between mb-3">
+              <h4 class="text-capitalize text-gold">Incoming / Outgoing Requests</h4>
+              <a class="theme_button" routerLink="/dashboard/request/new">
+                Add New
+              </a>
+            </div>
+          </div>
+
+          <p>Sed commodo, leo at suscipit dictum, quam est porttitor sapien, eget sodales nibh elit id diam. Nulla
+            facilisi. Donec egestas ligula vitae odio interdum aliquet. Duis lectus turpis, luctus eget tincidunt eu,
+            congue et odio. Duis pharetra et nisl at faucibus. Quisque luctus pulvinar arcu, et molestie lectus ultrices
+            et. Sed diam urna, egestas ut ipsum vel, volutpat volutpat neque. Praesent fringilla tortor arcu. Vivamus
+            faucibus nisl enim, nec tristique ipsum euismod facilisis. Morbi ut bibendum est, eu tincidunt odio. Orci
+            varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Mauris aliquet odio ac
+            lorem
+            aliquet ultricies in eget neque. Phasellus nec tortor vel tellus pulvinar feugiat.</p>
+        </ng-template>
+      </ngb-tab>
+    </ngb-tabset>
+  </div>
+</div>

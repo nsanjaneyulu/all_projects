@@ -1,0 +1,44 @@
+<!DOCTYPE html">
+<html">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Resp Slider</title>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="respslider.js" type="text/javascript"></script>
+<style>
+	.rslides 
+	{
+		position: relative;
+		list-style: none;
+		overflow: hidden;
+		width: 100%;
+		padding: 0;
+		margin: 0;
+	}
+	.rslides li 
+	{
+		width: 100%;
+	}
+	.rslides img 
+	{
+		width: 100%;
+	}
+</style>
+</head>
+<body>
+<ul class="rslides">
+  <li><img src="http://placehold.it/1170x310/86BAE6" alt=""></li>
+  <li><img src="http://placehold.it/1170x310/C62F68" alt=""></li>
+  <li><img src="http://placehold.it/1170x310/17921A" alt=""></li>
+</ul>
+<script>
+  $(document).ready(function() {
+    $(".rslides").responsiveSlides({
+	  auto: true,             // Boolean: Animate automatically, true or false
+	  speed: 300,            // Integer: Speed of the transition, in milliseconds
+	  timeout: 1000,          // Integer: Time between slide transitions, in milliseconds
+	});
+  });
+</script>
+</body>
+</html>

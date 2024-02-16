@@ -1,0 +1,131 @@
+<div class="row">
+  <div class="col-8 d-flex justify-content-between m-auto mb-3">
+    <h4 class="text-capitalize text-gold">{{pageTitle}}</h4>
+    <a class="text-gold" routerLink="/dashboard/request/list">
+      Back to list
+    </a>
+  </div>
+</div>
+<div class="row">
+  <div class="col-8 m-auto">
+    <form class="mt-4 pt-5" [formGroup]="requestForm" (ngSubmit)="createRequestForm(requestForm.value)">
+      <div class="row" *ngIf="!request_id">
+        <div class="form-group col-12">
+          <label for="Request_company" class="text-gray"> Country</label>
+          <div class="dropdown w-100 cst_dropdown">
+            <button class="btn dropdown-toggle theme_button w-100 text-left" type="button" id="dropdownMenuButton"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              {{request.request_country_name}}
+            </button>
+            <div class="dropdown-menu w-100 text-left">
+              <a class="dropdown-item"
+                (click)="dropDownSelect(item.country_name,item.country_id,'request_country_id','request_country_name')"
+                *ngFor="let item of serviceMasterData.countriesInfo; let i=index">
+                <span>{{item.country_name}}</span></a>
+            </div>
+          </div>
+        </div>
+        <div class="form-group col-12" *ngIf="request.request_country_id">
+          <div class="dropdown w-100 cst_dropdown">
+            <button class="btn dropdown-toggle theme_button w-100 text-left" type="button" id="dropdownMenuButton"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              {{request.request_company_name}}
+            </button>
+            <div class="dropdown-menu w-100 text-left">
+              <a class="dropdown-item"
+                (click)="dropDownSelect(item.company_name,item.company_id,'request_company_id','request_company_name')"
+                *ngFor="let item of companiesInfo; let i=index"> <span>{{item.company_name}} -
+                  {{item.company_status}}</span></a>
+            </div>
+          </div>
+        </div>
+        <div class="form-group col-12">
+          <label for="Request_type" class="text-gray"> Type</label>
+          <!-- <select class="custom-select custom-select-lg cst_form_control" formControlName="request_type">
+            <option [selected]="true" value="correspondance"> correspondance</option>
+            <option value="onetime"> onetime</option>
+          </select> -->
+          <div class="dropdown w-100 cst_dropdown">
+            <button class="btn dropdown-toggle theme_button w-100 text-left" type="button" id="dropdownMenuButton"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              {{request.request_type_name}}
+            </button>
+            <div class="dropdown-menu w-100 text-left">
+              <a class="dropdown-item"
+                (click)="dropDownSelect(item.title,item.title,'request_type','request_type_name')"
+                *ngFor="let item of masterData.requestForm.types; let i=index"> <span>{{item.title}}</span></a>
+            </div>
+          </div>
+        </div>
+        <div class="form-group col-12">
+          <label for="Request_subject" class="text-gray"> Subject</label>
+          <input type="text" class="form-control cst_form_control" id="Request_subject" aria-describedby="emailHelp"
+            name="request_subject" formControlName="request_subject" placeholder="Subject">
+        </div>
+      </div>
+      <!--  <div class="form-group col-12">
+          <label for="request_purpose" class="text-gray"> Purpose</label>
+          <input type="text" class="form-control cst_form_control" id="Request_purpose" aria-describedby="emailHelp"
+            required formControlName="request_purpose" placeholder="Purpose">
+        </div>
+      </div> -->
+      <!-- <div class="row">
+        <div class="form-group col-12">
+          <label for="request_body_heading" class="text-gray"> Body Heading</label>
+          <input type="text" class="form-control cst_form_control" id="Request_body_heading"
+            aria-describedby="emailHelp" placeholder=" body heading" required formControlName="request_body_heading">
+        </div>
+      </div> -->
+      <div class="row" *ngIf="request_id">
+        <div class="col-12">
+          <label for="Request_type" class="text-gray"> Company <span>:
+              {{request.company_name}}</span></label>
+        </div>
+        <div class="col-12">
+          <label for="Request_type" class="text-gray"> Type <span>:
+              {{request.request_type}}</span></label>
+        </div>
+        <div class="col-12">
+          <label for="Request_type" class="text-gray"> Subject <span>:
+              {{request.request_subject}}</span></label>
+        </div>
+      </div>
+      <div class="row align-items-center">
+        <div class="col mb-3">
+          <label for="request_body_heading" class="text-gray">Body Content</label>
+          <ckeditor formControlName="request_body_content" name="myckeditor" required [config]="ckEditorConfig"
+            debounce="500">
+          </ckeditor>
+          <!-- <div [froalaEditor]='options'>Hello, Froala!</div> -->
+        </div>
+      </div>
+      <!-- <div class="row">
+        <div class="form-group col-12">
+          <label for="Request_conclusion_statement" class="text-gray"> Conclusion Statement</label>
+          <input type="text" class="form-control cst_form_control" id="Request_conclusion_statement"
+            aria-describedby="emailHelp" placeholder=" conclusion statement" required
+            formControlName="request_conclusion_statement">
+        </div>
+      </div> -->
+      <!-- <div class="row">
+        <div class="form-group col-12">
+          <label for="Request_file" class="text-gray">Click here to upload file
+            <input type="file" class="form-control cst_form_control d-none" id="Request_file"
+              aria-describedby="emailHelp" placeholder="file" required formControlName="request_file">
+          </label>
+        </div>
+      </div> -->
+      <div class="d-flex justify-content-between align-items-center mb-3" *ngIf="!request_id">
+        <button type="submit" class="btn  theme_button">Create</button>
+      </div>
+      <div class="d-flex justify-content-between align-items-center mb-3" *ngIf="request_id">
+        <button type="submit" class="btn  theme_button">Update</button>
+      </div>
+      <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
+    </form>
+    <!-- <form [formGroup]="uploadFileForm" (ngSubmit)="uploadPdf(uploadFileForm.value)">
+      <input type="file" (change)="uploadPdf($event.target.files)">
+      <button type="submit">Uploadimage</button>
+    </form> -->
+  </div>
+</div>

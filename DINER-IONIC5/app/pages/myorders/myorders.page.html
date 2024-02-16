@@ -1,0 +1,77 @@
+<ion-header class="header_styles">
+
+    <ion-row>
+        <ion-icon style="margin-top: 5%;" (click)="goToProfile()" ios="ios-arrow-round-back" md="md-arrow-round-back">
+        </ion-icon>
+        <ion-col><span class="">My Orders</span>
+        </ion-col>
+    </ion-row>
+</ion-header>
+
+<ion-content>
+    <ion-segment [(ngModel)]="orderType" *ngIf="showOrderHistoryPage">
+        <ion-segment-button [value]="i" *ngFor="let history of pageArray;let i=index" (click)="segmentChanged(history)" checked>
+            <ion-label>{{history}}</ion-label>
+        </ion-segment-button>
+    </ion-segment>
+    <div *ngIf="showOrderHistoryPage">
+        <ion-list *ngIf="orderFilterData.length>0">
+            <ion-grid>
+                <ion-row class="rowborder" *ngFor="let orderData of orderFilterData" (click)="postOrderSummary(orderData)">
+                    <ion-col size="3">
+                        <div class="imageBorder">
+                            <img src="{{imageEndPoint}}{{orderData.mall.img}}">
+                        </div>
+
+                    </ion-col>
+                    <ion-col>
+                        <div class="mallCss">{{orderData.mall.name}}</div>
+                        <div class="mallTypeCss">{{orderData.mall.typeOfDining}}</div>
+                        <div class="mallOrderID">OrderId:<span class="mallOrderNo">{{orderData.fullOrder5DigitId}}</span></div>
+                        <div class="mallDate">{{orderData.dateValue}}</div>
+                        <div class="mallStatus" *ngIf="orderData.status == 'RECEIVED' || orderData.status == 'INPROGRESS' || orderData.status == 'READY' || orderData.status == 'COMPLETED'">{{orderData.status}}<span class="orderPrice">&#8377; {{(orderData.amount+orderData.cgst+orderData.sgst).toFixed(2)}}</span></div>
+                        <div class="mallStatusReject" *ngIf="orderData.status == 'REJECTED'">{{orderData.status}}<span class="orderPrice">&#8377; {{(orderData.amount+orderData.cgst+orderData.sgst).toFixed(2)}}</span>
+                        </div>
+                        <div class="mallStatusExpired" *ngIf="orderData.status == 'EXPIRED'">{{orderData.status}}<span class="orderPrice">&#8377; {{(orderData.amount+orderData.cgst+orderData.sgst).toFixed(2)}}</span>
+                        </div>
+
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+
+        </ion-list>
+        <div style="position: absolute; top: 50%; left: calc(50% - 20%);" *ngIf="orderFilterData.length==0">
+            No Order Found
+        </div>
+    </div>
+    <div *ngIf="!showOrderHistoryPage">
+        <div style="position: absolute; top: 50%; left: calc(50% - 40px);">
+            <svg class="lds-typing" width="80px" height="80px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" style="background: none;">
+                <circle cx="24.5" cy="48.4263" r="6" fill="#e15b64">
+                    <animate attributeName="cy" calcMode="spline" keySplines="0 0.5 0.5 1;0.5 0 1 0.5;0.5 0.5 0.5 0.5"
+                        repeatCount="indefinite" values="62.5;37.5;62.5;62.5" keyTimes="0;0.25;0.5;1" dur="1s"
+                        begin="-0.5s">
+                    </animate>
+                </circle>
+                <circle cx="41.5" cy="62.5" r="6" fill="#f47e60">
+                    <animate attributeName="cy" calcMode="spline" keySplines="0 0.5 0.5 1;0.5 0 1 0.5;0.5 0.5 0.5 0.5"
+                        repeatCount="indefinite" values="62.5;37.5;62.5;62.5" keyTimes="0;0.25;0.5;1" dur="1s"
+                        begin="-0.375s">
+                    </animate>
+                </circle>
+                <circle cx="58.5" cy="62.5" r="6" fill="#f8b26a">
+                    <animate attributeName="cy" calcMode="spline" keySplines="0 0.5 0.5 1;0.5 0 1 0.5;0.5 0.5 0.5 0.5"
+                        repeatCount="indefinite" values="62.5;37.5;62.5;62.5" keyTimes="0;0.25;0.5;1" dur="1s"
+                        begin="-0.25s">
+                    </animate>
+                </circle>
+                <circle cx="75.5" cy="62.5" r="6" fill="#abbd81">
+                    <animate attributeName="cy" calcMode="spline" keySplines="0 0.5 0.5 1;0.5 0 1 0.5;0.5 0.5 0.5 0.5"
+                        repeatCount="indefinite" values="62.5;37.5;62.5;62.5" keyTimes="0;0.25;0.5;1" dur="1s"
+                        begin="-0.125s">
+                    </animate>
+                </circle>
+            </svg>
+        </div>
+    </div>
+</ion-content>

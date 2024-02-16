@@ -1,0 +1,30 @@
+@import "../../_variables.scss";
+.bg-dark {
+    background-color: $base-color !important;
+}
+
+.navbar {
+    padding: 5px 1rem 0 1rem;
+}
+
+.navbar-nav {
+    a {
+        position: relative;
+        span {
+            display: block;
+            font-size: 14px;
+            &.nav-icon {
+                text-align: center;
+                i {
+                    font-size: 24px;
+                    &.overlop-icon {
+                        position: absolute;
+                        font-size: 13px;
+                        left: 45%;
+                        top: 11px;
+                    }
+                }
+            }
+        }
+    }
+}

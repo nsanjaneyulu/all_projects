@@ -1,0 +1,293 @@
+
+<div>
+    <div class="row">
+        <div class="col-lg-5 col-sm-2 col-xs-2 col-md-5">
+                <div class="search-styles">
+                        <input class="form-control" placeholder="Search Item" [(ngModel)]="searchCategoryItem" /><span class="text-white search_container_icon"><i class="fa fa-search" aria-hidden="true"></i></span>
+                    </div>
+            <perfect-scrollbar [config]="customScrollBarConfig" class="container"  >
+  
+                <div class="row"  >
+                        
+                        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 pt-2 card-group" *ngFor="let categoryItem of categoryItems | uniqueFilter: 'id'  | menuFilter: searchCategoryItem; let i=index" (click)="onSelectItem(categoryItem, i)" >
+                                <div class="item card" [class.selected]="categoryItem.isSelected === true">
+                                                  <div class="card-body" [ngClass]="{'nonVeg': categoryItem.veg==true, 'itemVeg':categoryItem.veg==false}"> 
+                                                     <div  *ngIf="categoryItem.Customizable" style="text-align: right;
+                                                     height: 3px; color:black;margin-bottom: 3px;">
+                                                        +
+                                                     </div>
+                                                    <div class="pl-1 itemName">{{categoryItem.name}}</div>
+                                                        <div class="pl-1 itemName">{{categoryItem.spicy}}</div>
+                                                        <div class="pl-1 itemPrice">{{categoryItem.price | currency:'&#8377;'}}</div>
+                                              </div>
+                                </div>
+                            </div>
+                    
+                </div>
+        </perfect-scrollbar>
+        </div>
+        <div class="col-lg-7 col-sm-10 col-xs-10 col-md-7">
+            <div class="orderType ordertype-styles " >
+
+                <div>
+                        <span class="pr-2">Order Type: </span>
+                    <span >
+                            <input type="radio" name="orderType" value="POS-Dinein" [(ngModel)]="orderType" (click)="selectOrderType('POS-Dinein')"> &nbsp;Dine In
+                    </span>&nbsp;&nbsp;
+                    <span>
+                            <input type="radio" name="orderType" value="POS-TakeAway" [(ngModel)]="orderType" (click)="selectOrderType('POS-TakeAway')"> &nbsp;Take Away
+                    </span>
+                    <span class="btn-inline-block">
+                            <button type="button" class="btn btn-danger btn-styles btn-sm" (click)="onClearOrder()" [disabled]="!orderItemService.itemsSelected.length">Clear Order</button>
+                    </span> 
+                </div>
+             </div>
+             <div class="catrPage">
+                <table class="table mt-2 table-sm">
+                    <thead class="thead-light" style="display: none;">
+                       <tr >
+                          <th style="width: 150px;">Name</th>
+                          <th >Quantity</th>
+                          <th >Price</th>
+                          <th >Amount</th>
+                          <th >Delete</th>
+                       </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="border-style: hidden;">
+                           <td colspan="5" style="border-style: hidden;">
+                              <table style="width: 100%; border-style: hidden;">
+                                 <thead style="background: #b5b7b8">
+                                       <tr>
+                                             <th style="width: 150px;">Item Name</th>
+                                             <th style="width: 100px;">Quantity</th>
+                                             <th style="text-align: right;width: 105px;">Price</th>
+                                             <th style="text-align: right;width: 105px;">Amount</th>
+                                             <th style="text-align: center;">Delete</th>
+                                       </tr> 
+                                 </thead>
+                                
+                              </table>
+
+                           </td>
+                              
+                           </tr>
+                          <tr *ngIf="!orderItemService.itemsSelected.length">
+                                  <td colspan="5" class="text-center no-items-found"><i class="fa fa-cart-arrow-down pr-2" aria-hidden="true"></i>No Items Found</td>
+                                  
+                               </tr>
+                               <tr  *ngFor="let selectedItem of orderItemService.itemsSelected; let i = index" style="border-style: hidden;">
+                                 <td  *ngIf="selectedItem.Customizable" colspan="5" style="border-style: hidden;">
+                                    <table  style="width:100% ;border-style: hidden;">
+                                       <tr *ngFor="let customOptions of selectedItem.customization" style="width: 100%;">
+                                          <td  style="width: 150px;">
+                                             <div style="display: flex;">
+                                                <div>
+                                                      {{selectedItem.name}}
+
+                                                </div>
+                                             
+                                             <div *ngFor="let cItems of customOptions.selectedItems ">
+                                                   <span *ngIf="cItems.type=='radio'">({{cItems.customization[0].name}}) </span>
+
+                                             </div>
+                                          </div>
+                                          <div style="color:#5C0632; font-size: 10px; " >
+                                             Customized Items
+                                          </div>
+                                             <div *ngFor="let cItems of customOptions.selectedItems ">
+                                                   <div style="text-decoration: underline; font-weight: bold; font-size: 10px;">
+                                                      {{cItems.groupName}}
+                                                   </div>
+                                                   <div style="margin-left: 2%; font-size: 10px;">
+                                                      <div *ngFor="let item of cItems.customization">
+                                                         {{item.name}}({{item.price}})
+                                                      </div>
+                                                   </div>
+                                             </div>
+                                          </td>
+                                          <td  style="width: 100px;">
+                                                <span class="super_number menu from-menu">
+                                                      <span class="ui left attached button dec" (click)="decCustomizationCount(i, selectedItem,customOptions)"> - </span>
+                                                      <input type="text" value="{{ customOptions.quantity }}" readonly="">
+                                                      <span class="ui right attached button inc" (click)="incCustomizationCount(i,selectedItem,customOptions)"> + </span>
+                                                   </span>
+                                             </td>
+                                             <td style="text-align: right;width: 105px;" >
+                                                   {{customOptions.price}}
+                                                </td>
+                                                <td style="text-align: right;width: 105px;" >
+                                                      {{customOptions.price *  customOptions.quantity }}
+                                                   </td>
+                                                   <td style="text-align: center;" (click)="deleteCustomizedItem(selectedItem, i,customOptions)">
+                                                         <i class="fa fa-trash" aria-hidden="true"></i>
+                                                      </td>
+                                                     
+                                       </tr>
+                                    </table>
+                                 </td>
+                                 <td *ngIf="!selectedItem.Customizable" colspan="5" style="border-style: hidden;">
+                                       <table style="width:100%;border-style: hidden;" >
+                                        <tr>
+                                              <td  style="width: 150px;">{{selectedItem.name}}</td>
+                                              <td  style="width: 100px;">
+                                                  <span class="super_number menu from-menu">
+                                                        <span class="ui left attached button dec" (click)="decCount(i, selectedItem)"> - </span>
+                                                        <input type="text" value="{{ selectedItem.itemCount }}" readonly="">
+                                                        <span class="ui right attached button inc" (click)="incCount(i,selectedItem)"> + </span>
+                                                     </span>
+                                               
+                                              </td>
+                                              <td style="text-align: right;width: 105px;">{{selectedItem.price}}</td>
+                                              <td style="text-align: right;width: 105px;">{{selectedItem.price *  selectedItem.itemCount }}</td>
+                                              <td  style="text-align: center;" (click)="deleteItem(selectedItem, i)"><i class="fa fa-trash" aria-hidden="true"></i></td>
+                                           
+                                        </tr>
+                                       </table>
+          
+                                    </td>
+                               </tr>
+                    </tbody>
+                 </table>
+                 <div *ngIf="orderItemService.itemsSelected.length">
+                        <div class="border-top p-2">
+                             <div class="input-group input-group-sm mb-3">
+                                     <div class="input-group-prepend">
+                                        <span class="input-group-text" id="phoneNumber">Mobile</span>
+                                     </div>
+                                     <input type="text"   [(ngModel)]="phoneNumber"  placeholder="Enter Mobile Number" style="    width: 70%;">
+                                  </div>
+                                  <div class="input-group input-group-sm mb-3">
+                                     <div class="input-group-prepend">
+                                        <span class="input-group-text" id="email">Email</span>
+                                     </div>
+                                     <input type="text"    [(ngModel)]="emailId" placeholder="Enter Email" style="    width: 70%;">
+                                  </div>
+                                  
+                        </div>
+                        <div class="border-top p-2">
+                          
+                           <div class="d-table text-right" >
+                              <div class="d-table-row">
+                                 <div class="d-table-cell p-2 font-weight-bold itemTotal">Item Total: </div>
+                                 <div class="d-table-cell p-2 itemTotal">{{ billDetails.totalAmount | currency:'&#8377;'}}</div>
+                              </div>
+                              <div class="d-table-row">
+                                    <div class="d-table-cell p-2 font-weight-bold itemTotal">Supplier Discount</div>
+                                    <div class="d-table-cell p-2 itemTotal">{{ billDetails.supplierDiscount | currency:'&#8377;'}}</div>
+                                 </div>
+                              <div class="d-table-row">
+                                 <div class="d-table-cell p-2 font-weight-bold itemTotal">Taxes: </div>
+                                 <div class="d-table-cell p-2 itemTotal">{{ billDetails.taxAmount | currency:'&#8377;'}}</div>
+                              </div>
+                             
+                              <div class="d-table-row">
+                                 <div class="d-table-cell p-2 font-weight-bold itemTotal">Discount</div>
+                                 <div class="d-table-cell p-2 itemTotal">{{ billDetails.discountAmount | currency:'&#8377;'}}</div>
+                              </div>
+                              <div class="d-table-row">
+                                 <div class="d-table-cell p-2 border-top font-weight-bold itemTotal">To Pay Amount</div>
+                                 <div class="d-table-cell p-2 border-top itemTotal">{{ billDetails.allTotalAmount | currency:'&#8377;'}}</div>
+                              </div>
+                           </div>
+                          
+                        </div>
+                        <div class="border-top p-2">
+                          
+                           <div class="pt-2 payment-mode">
+                              <div class="row mx-0">
+                                     <!-- <div class="col-sm-4" *ngIf ="isOnline == true">
+                                             <button type="button" class="btn_styles btn-danger btn btn-sm btn-block" [class.selected]="paymentMode === 'cash'" (click)="selectPaymentMode('cash')">Cash Converted</button>
+                                          </div> -->
+                                          <div class="col-sm-4" >
+                                                <button type="button" class="btn_styles btn-danger btn btn-sm btn-block" [class.selected]="paymentMode === 'cash'" (click)="selectPaymentMode('cash')">Cash</button>
+                                             </div>
+                                          <div class="col-sm-4" *ngIf ="isOnline == false">
+                                                <button value="Create" class="btn_styles btn-danger btn btn-sm btn-block" (click)="createFullOrder()" [disabled]="paymentMode!='cash'" >Create</button>
+                                             </div>
+                                          <div class="col-sm-4">
+                                             <button type="button" class="btn_styles btn-danger btn btn-sm btn-block" [class.selected]="paymentMode === 'cc'" *ngIf ="isOnline == true" (click)="selectPaymentMode('card')">Credit/ Debit Card</button>
+                                          </div>
+                                           <div class="col-sm-4">
+                                             <button type="button" class="btn_styles btn-danger btn btn-sm btn-block" [class.selected]="paymentMode === 'upi'" *ngIf ="isOnline == true" (click)="selectPaymentMode('upi')">UPI</button>
+                                          </div>
+                                          <!-- <div class="col-sm-4" *ngIf ="isOnline == true">
+                                                <button value="Create" class="btn_styles btn-danger btn btn-sm btn-block" (click)="createFullOrder()" [disabled]="!isPaymentModeSelected">Create</button>
+                                             </div> -->
+                                         
+                              </div>
+                              <div style="margin-top: 5%; margin-left: 5%; font-size: 17px;" *ngIf ="isOnline == true && (paymentType=='card' || paymentType=='upi')">
+                                    <input type="checkbox" name="cashConverted" value="isCashConverted" [(ngModel)]="isCashConverted" (click)="changeMode(isCashConverted)"> <span style="margin-left: 2%;">Cash Converted</span>
+                              </div>
+                            
+                              <!-- <div *ngIf="isCardPayment && isOnline " class="pt-3">
+                                     <div class="input-group input-group-sm mb-3">
+                                             <div class="input-group-prepend">
+                                                <span class="input-group-text" id="cardType">Card Type</span>
+                                             </div>
+                                             <select  (click)="validateCardSelection()" [(ngModel)]="cardType" style="    width: 70%;">
+                                                <option value="">Select Card</option>
+                                                <option value="visa">Visa</option>
+                                                <option value="mastercard">MasterCard</option>
+                                                <option value="mastero">Mastero</option>
+                                                <option value="amex">Amex</option>
+                                             </select>
+                                          </div>
+                                          <div class="input-group input-group-sm mb-3">
+                                             <div class="input-group-prepend">
+                                                <span class="input-group-text" id="bank">Bank</span>
+                                             </div>
+                                             <select  (click)="validateCardSelection()" [(ngModel)]="bankType" style="    width: 70%;">
+                                                <option value="">Select Bank</option>
+                                                <option value="icic">ICIC</option>
+                                                <option value="hdfc">HDFC</option>
+                                                <option value="sbi">SBI</option>
+                                                <option value="kotak">KOTAK</option>
+                                             </select>
+                                          </div>
+                                
+                                 <div class="input-group input-group-sm mb-3">
+                                    <div class="input-group-prepend">
+                                       <span class="input-group-text">Transaction Ref. No</span>
+                                    </div>
+                                    <input  (keyup)="validateCardSelection()"  [(ngModel)]="ReferenceNumber" placeholder="Enter Transaction Ref. No" style="    width: 70%;">
+                                 </div>
+                              </div> -->
+                              <div class="row mt-2 mx-0" *ngIf ="isOnline == true">
+                                     <div class="col-sm-4">
+                                     </div>
+                                     <div class="col-sm-4">
+                                        <button value="Create" class="btn_styles btn-danger btn btn-sm btn-block" (click)="createFullOrder()" [disabled]="!isPaymentModeSelected">Create</button>
+                                     </div>
+                                     <!-- <div class="col-sm-4">
+                                        <button  value="Print" class="btn_styles btn-danger btn btn-sm btn-block" [disabled]="!orderForm.valid || !isPaymentModeSelected" >Print</button>
+                                     </div> -->
+                                  </div>
+                           </div>
+                        </div>
+                     </div>
+             </div>
+             
+        </div>
+    </div>
+</div>
+        <!-- <perfect-scrollbar [config]="customScrollBarConfig" class="container">
+  
+            <div class="row" >
+                    
+                    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 pt-2 card-group" *ngFor="let categoryItem of categoryItems | uniqueFilter: 'id'  | menuFilter: searchCategoryItem; let i=index" (click)="onSelectItem(categoryItem, i)">
+                            <div class="item card" [class.selected]="categoryItem.isSelected === true">
+                                   
+                                            
+                                              <div class="card-body" [ngClass]="{'nonVeg': categoryItem.veg==true, 'itemVeg':categoryItem.veg==false}">
+                                                <div class="pl-1 itemName">{{categoryItem.name}}</div>
+                                                    <div class="pl-1 itemName">{{categoryItem.spicy}}</div>
+                                                    <div class="pl-1 itemPrice">{{categoryItem.price | currency:'&#8377;'}}</div>
+                                          </div>
+                            </div>
+                        </div>
+                
+            </div>
+      
+    </perfect-scrollbar> -->
+   

@@ -1,0 +1,91 @@
+<div class="w-80 ml-auto mr-auto">
+  <div class="text-gold user_info mt-3 ml-3 d-flex justify-content-between align-items-center">
+    <a class="d-flex menu-user-body justify-content-start align-items-center text-gold text-decoration-none"
+      [routerLink]="['/dashboard/user/view',userData.user_id]">
+      <span class="menu_profile_image"> <img style="width: 50px;border-radius: 50%;"
+          [src]="userData.user_image!= null ? userData.user_image : cstImageUrl" /> </span>
+      <div>
+        <p class="m-0 title">{{userData.user_first_name}} {{userData.user_last_name}}</p>
+      </div>
+    </a>
+    <ul class="list-inline m-0 mr-4 menu_quick_actions">
+      <li class="list-inline-item cst_dropdown aside_dropdown"><a class="cursor_pointer" id="dropdownMenuButton"
+          data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <img
+            src="https://res.cloudinary.com/dl9ns0hby/image/upload/v1562358748/plusmax-tracker/icons/icons8-bell-96.png"
+            class="menu_icon_image alert_nitofy">
+        </a>
+        <div class="dropdown-menu dropdown-menu-right aside_dropdown_menu pt-0 pb-0" aria-labelledby="dropdownMenuButton">
+          <div class="d-flex font-14 justify-content-between bg_dark py-1 px-2">
+            <span href="#">Notifications</span>
+            <ul class="list-inline d-flex">
+              <li class="list-inline-item m-0 mr-2"> <a>Make all as read</a></li>
+              <li class="list-inline-item m-0"> <a>Settings</a></li>
+            </ul>
+          </div>
+          <a class="dropdown-item px-2" href="#">
+            <div class="media">
+              <img [src]="cstImageUrl" class="mr-3" alt="..." width="50px" height="50px">
+              <div class="media-body">
+                <h5 class="mt-0 font-14">Media heading</h5>
+                <small class="text-truncate d-inline-block" style="width: 150px;">Cras sit amet nibh libero, in gravida
+                  nulla. Nulla vel metus scelerisque ante sollicitudin. Cras
+                  purus
+                  odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate
+                  fringilla. Donec lacinia congue felis in faucibus.</small>
+              </div>
+            </div>
+          </a>
+          <a class="dropdown-item px-2" href="#">
+              <div class="media">
+                <img [src]="cstImageUrl" class="mr-3" alt="..." width="50px" height="50px">
+                <div class="media-body">
+                  <h5 class="mt-0 font-14">Media heading</h5>
+                  <small class="text-truncate d-inline-block" style="width: 150px;">Cras sit amet nibh libero, in gravida
+                    nulla. Nulla vel metus scelerisque ante sollicitudin. Cras
+                    purus
+                    odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate
+                    fringilla. Donec lacinia congue felis in faucibus.</small>
+                </div>
+              </div>
+            </a>
+            <a class="dropdown-item px-2" href="#">
+                <div class="media">
+                  <img [src]="cstImageUrl" class="mr-3" alt="..." width="50px" height="50px">
+                  <div class="media-body">
+                    <h5 class="mt-0 font-14">Media heading</h5>
+                    <small class="text-truncate d-inline-block" style="width: 150px;">Cras sit amet nibh libero, in gravida
+                      nulla. Nulla vel metus scelerisque ante sollicitudin. Cras
+                      purus
+                      odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate
+                      fringilla. Donec lacinia congue felis in faucibus.</small>
+                  </div>
+                </div>
+              </a>
+          <div class="d-flex font-14 justify-content-center bg_dark py-1 px-2 mb-0 mt-1">
+            <span href="#">See All</span>
+          </div>
+        </div>
+      </li>
+      <li class="list-inline-item"><img
+          src="https://res.cloudinary.com/dl9ns0hby/image/upload/v1562358679/plusmax-tracker/icons/icons8-chat-message-filled-50.png"
+          class="menu_icon_image"></li>
+      <li class="list-inline-item cursor_pointer"><a (click)="logOut()"><img
+            src="https://res.cloudinary.com/dl9ns0hby/image/upload/v1562358922/plusmax-tracker/icons/icons8-shutdown-96.png"
+            class="menu_icon_image"></a></li>
+    </ul>
+  </div>
+</div>
+<ul class="list-unstyled grid_menu text-center mb-0">
+  <li class=" text-center list-inline-item" *ngFor="let item of masterData.adminMenu">
+    <a [routerLink]="item.routerLink">
+      <div class="menu_item">
+        <span class="menu_icon" [ngClass]="(item.icon)"></span>
+        <h4 class="menu_title">{{item.title}}</h4>
+      </div>
+    </a>
+  </li>
+</ul>
+<!-- <div id="notifications-view" class="aside-notification-view" *ngIf="viewNotifications">
+  <app-notifications></app-notifications>
+</div> -->

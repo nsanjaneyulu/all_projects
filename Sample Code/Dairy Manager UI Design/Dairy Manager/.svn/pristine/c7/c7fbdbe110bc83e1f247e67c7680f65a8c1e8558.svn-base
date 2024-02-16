@@ -1,0 +1,52 @@
+<wicket:extend>
+	<div id="content">		
+	    <form method="post" wicket:id="dailyproduction">
+		<h1>Daily Milk Production by Live Stock Wise: <input type="text" wicket:id="effectiveDate"/></h1>		
+		<div wicket:id="feedback"></div>
+			<div class="list list-MilkProduction" style="height:auto; overflow:hidden;">
+				<div>
+					<h2>RFID</h2>
+					<h2>Live Stock Code</h2>
+					<h2>Breed Type</h2>
+					<h2>Milking Status</h2>
+					<h2>Lactation Number</h2>
+					<h2>Lactation Start Date</h2>
+					<h2>Morning Yield</h2>
+					<h2>Morning Fat %</h2>
+					<h2>Morning SNF</h2>
+					<h2>Morning CLR</h2>
+					<h2>Evening Yield</h2>
+					<h2>Evening Fat %</h2>
+					<h2>Evening SNF</h2>
+					<h2 class="last">Evening CLR</h2>
+				</div>				
+				<div wicket:id="rows" style="clear:both;">
+				  <div class="list-Rows">
+					<h3 style="word-wrap:break-word;height:auto;"><span wicket:id="rfid"/></h3>
+					<h3 style="word-wrap:break-word;"><span wicket:id="code"/></h3>
+					<h3 style="word-wrap:break-word;"><span wicket:id="breedTypeByBreedTypeId" /></h3>
+					<h3 style="word-wrap:break-word;"><span wicket:id="milkingStatus"/></h3>
+					<h3 style="word-wrap:break-word;"><span wicket:id="lactationNumber" /></h3>
+					<h3 style="word-wrap:break-word;"><span wicket:id="lactationDays" /></h3>
+				    <span wicket:id="prods">
+						<h3><input type="text" wicket:id="yield" class="textfield_effect" maxlength="8"
+                         style="text-align:right;"/></h3>
+						<h3><input type="text" wicket:id="fatPercentile" class="textfield_effect" maxlength="8"
+                        style="text-align:right;"/>
+                        </h3>
+						<h3><input type="text" wicket:id="snf" class="textfield_effect" maxlength="8"
+                        style="text-align:right;"/></h3>
+						<h3 class="last"><input type="text" wicket:id="clr" class="textfield_effect" maxlength="8"
+                        style="text-align:right;"/></h3>
+					</span>
+				</div>
+                </div>
+				<div style="clear:both;"></div>
+				<div style="clear:both;"><span wicket:id="navigator" style="line-height: 51px;">[dataview navigator]</span></div>				
+                <div class="newButton">
+				<INPUT type="submit" value="Save" class="button" wicket:id="save"/>				  
+                </div>
+			</div>
+		</form>
+</div>
+</wicket:extend>

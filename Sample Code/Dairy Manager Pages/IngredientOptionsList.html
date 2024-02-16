@@ -1,0 +1,41 @@
+<wicket:extend>
+	<div id="content">
+    <div class="bread-crumb">
+            	<h1>Provisions Management / Ingredient Options List</h1>
+            </div><br />
+
+					<form wicket:id="ingredientOptionsForm">
+						<div wicket:id="feedback"></div>
+						<div wicket:id="rowPanel">
+							<table id="dataTable" class="healthDetails">
+								<tr>
+									<th></th>
+									<th>Formula Name</th>
+									<span wicket:id="columns"><th><span wicket:id="ingredient"></span></th></span>
+								</tr>
+								<span wicket:id=list>
+									<tr>
+										<td><input type="checkbox" name="ingredientfeedcheck"
+											id="ingredientfeedcheck"  wicket:id="ingredientfeedcheck"/>
+										</td>
+										<td><input name=label type="text"	id="label" wicket:id="label" class="textfield_effect"></td>
+										<span wicket:id="listeditor">										
+										<td><input name=value type="text" id="value" wicket:id="value" 
+                                        class="textfield_effect" maxlength="8" style="text-align:right; width:40px;"/></td>
+										</span>
+									</tr>
+								 </span>
+								
+									
+								
+							</table>
+                            <input type="button" value="Add Row" wicket:id="addRow" class="button" />
+								<input type="button" value="Delete Row" wicket:id="removeRow" 
+                                    class="button" />
+									<input type="button" value="Update" wicket:id="update" class="button" />
+						</div>
+					</form>
+
+
+	</div>
+</wicket:extend>

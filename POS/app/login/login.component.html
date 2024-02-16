@@ -1,0 +1,64 @@
+<div class="app">
+
+   
+  
+        <div class="bow_section">
+    <section class="bow_section_page page page__dashboard bow_margin_Styles_section overflowY-styles">
+    <div class="wrapper bow_section_page_login_bg">
+        <div class="container d-flex flex-column">
+          <!-- <header class="text-white">
+            <div class="login_header">TAFEL</div>
+          </header> -->
+          <section class="d-flex align-items-center bow_align_items_end">
+            <div class="text-white w-50 bow_title_hide_1">
+              <h3 class="bow__subtitle"><span class="border-top-styles">Long Queues?</span></h3>
+              <h1 class="bow__title display-3 font-weight-bold">Get Your TAFEL Ditch the Queue</h1>
+            </div> 
+            <form class="bg-white bow_padding_3rem ml-auto text-black bow_login_form" [formGroup]="loginForm" (ngSubmit)="login()">
+              <p class="text-center w-100 mx-auto">
+                <img src="../../assets/images/tafelLogo.svg">
+              </p>
+                <p class="text-center w-100 mx-auto bow_login_form_title bow_login_form_title_mobile">
+                  Welcome back! Please login to your account.
+                </p>
+                
+                <div class="mt-4">
+               
+                  <div class="mb-3">
+                      <mat-form-field appearance="legacy" class="w-100">
+                          <mat-label>Username</mat-label>
+                          <input type="text" matInput [(ngModel)]="userId" formControlName="userId" placeholder="Username">
+                          <mat-icon matSuffix><i class="fa fa-user" aria-hidden="true"></i></mat-icon>
+                       
+                        </mat-form-field>
+                  
+                  </div>
+                </div>
+                <div class="mt-4">
+                 
+                  <div class="mb-3">
+                      <mat-form-field appearance="legacy" class="w-100">
+                          <mat-label>Password</mat-label>
+                          <input [type]="show ? 'text' : 'password'" matInput formControlName="password" [(ngModel)]="password" placeholder="Password">
+                          <mat-icon matSuffix (click)="showPassword()"><i class="fa fa-eye-slash" aria-hidden="true"></i></mat-icon>
+                        
+                        </mat-form-field>
+                  
+                  </div>
+                </div>
+                
+               
+               
+                <button type="submit" class="btn_styles btn-danger btn btn-sm bow_button_styles" [disabled]="!loginForm.valid">Login <i class="fa fa-arrow-right ml-2" aria-hidden="true"></i></button>
+              </form> 
+           
+          </section>
+          <footer class="text-white border-top bow_footer_Styles pb-4">
+            <div>© 2019-TAFEL. All rights reserved.</div>
+          </footer>
+        </div>
+        </div>
+        </section>
+        </div>
+    </div>
+      

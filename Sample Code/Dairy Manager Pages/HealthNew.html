@@ -1,0 +1,160 @@
+<wicket:extend>
+	<div id="content">
+		<h1>Live Stock Health Details</h1>
+        <h1 style="width:100%; color:#660000; clear:both; margin:10px 0 15px 0px; font-size:14px; font-weight:bold;">Live Stock Code : <span wicket:id="code"/></h1>
+        <h1 style="width:100%; clear:both; margin:10px 0 15px 0px; font-size:16px; font-weight:bold;">Vaccination Details</h1>
+    
+		<form wicket:id="wrapper">
+		<div wicket:id="feedback"></div>
+      
+			
+	 
+					<form wicket:id="vaccineHealthForm">
+						<div wicket:id="feedback"></div>
+						<div wicket:id="rowPanel">
+                        
+                        <!--vinay--->
+                        <table>
+                                <thead>
+                                        <tr>
+                                            <th></th>
+                                            <th>Type<font color="#FF0000">*</font></th>
+                                            <th>Last Vaccination Date</th>
+                                            <th>Given Date<font color="#FF0000">*</font></th>
+                                            <th>Next Vaccination Date</th>
+                                            <th>Medicine(s) Name</th>
+                                            <th>Batch No</th>
+                                            <th>Mfg Date</th>
+                                            <th>Exp Date</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <span wicket:id="rows">
+                                        <tr>
+                                            <td><input type="checkbox" name="check" id="check"
+										wicket:id="vaccinehealthcheck" /></td>
+                                            <td><select wicket:id="vaccinetype" class="dropdown_effect" maxlength="30">											
+									</select></td>
+                                            <td nowrap="nowrap"><input type="text" id="last_vaccination_date"
+										 wicket:id="last_vaccination_date" class="date_effect"></td>
+                                            <td nowrap="nowrap"><input type="text" id="given_date"
+										 wicket:id="given_date" class="date_effect"></td>
+                                            <td nowrap="nowrap"><input type="text" id="next_vaccination_date"
+										 wicket:id="next_vaccination_date" class="date_effect"></td>
+                                            <td><input type="text"  wicket:id="man_name" class="smalltextfield_effect" maxlength="100"/></td>
+                                         <td nowrap="nowrap"><input name="batchNo" type="text" id="batchNumber"  wicket:id="batchNumber" 
+                                    class="date_effect" maxlength="15"/></td>
+									<td nowrap="nowrap"><input name="idnumber" type="text" id="man_date"  wicket:id="man_date" 
+                                    class="date_effect"/></td>
+									<td nowrap="nowrap"><input name="idnumber" type="text"
+										id="expiry_date"  wicket:id="expiry_date" class="date_effect"/> </td>   
+                                            
+                                        </tr>
+                                        </span>
+                               
+                                
+                                </tbody>
+						</table>
+                                 
+                                    <INPUT type="button"
+										value="Add Row" class="button" wicket:id="vaccination_add" />
+                                       
+									<INPUT type="button" value="Delete Row"
+										class="button" wicket:id="vaccination_remove" />
+                        <!--vinay code-->
+                        
+							
+					  </div>
+					</form>
+			
+		
+				 <h1 style="width:100%; clear:both; margin:10px 0 15px 0px; font-size:16px; font-weight:bold;">Disease Details</h1>
+		  
+			
+					<form wicket:id="deceaseForm">
+						<div wicket:id="feedback"></div>
+						<div wicket:id="rowPanel">
+							<table id="dataTable1">
+				  <tr>
+									<th></th>
+				    <th>Type<font color="#FF0000">*</font></th>
+				    <th>Symptoms</th>
+				    <th>Start Date</th>
+				    <th>End Date</th>
+				    <th>Medicines attempted<font color="#FF0000">*</font></th>
+				    <th>Treatment Given By<font color="#FF0000">*</font></th>
+				    <th>Remarks</th>
+							  </tr>
+								<span wicket:id="rows">
+								<tr>
+									<td><input type="checkbox" name="check" id="check"
+										wicket:id="deceasecheck" /></td>
+									<td><select wicket:id="deceasetype" class="dropdown_effect" maxlength="150"></select></td>
+									<td><textarea wicket:id="symptoms" class="smalltextarea_effect" maxlength="150"></textarea></td>
+									<td nowrap="nowrap"><input type="text" id="startdate"
+										 wicket:id="startdate" class="date_effect"> </td>
+									<td nowrap="nowrap"><input type="text" id="enddate"
+										 wicket:id="enddate" class="date_effect"> </td>
+									<td><textarea wicket:id="medicine" class="smalltextarea_effect" maxlength="150"></textarea></td>
+									<td><input type="text" id="treatmentgiven" 
+										wicket:id="treatmentgiven" class="textfield_effect" maxlength="150" /></td>
+									<td><textarea wicket:id="remarks" class="smalltextarea_effect" maxlength="150"></textarea></td>
+								</tr>
+								</span>
+								
+							</table>
+                            
+                                  <INPUT type="button"
+										value="Add Row" wicket:id="decease_add" class="button" />				
+									<INPUT type="button" value="Delete Row"
+										wicket:id="decease_remove" class="button" />
+                                  
+					  </div>
+					</form>
+		
+		
+				 <h1 style="width:100%; clear:both; margin:10px 0 15px 0px; font-size:16px; font-weight:bold;">De-Worming Details</h1>
+			
+					<form wicket:id="deWormForm">
+						<div wicket:id="feedback"></div>
+						<div wicket:id="rowPanel">				
+					<table id="dataTable2">
+						<tr>
+							<th></th>
+							<th>Type<font color="#FF0000">*</font></th>
+							<th>Last De-Worming Date</th>
+							<th>Given Date<font color="#FF0000">*</font></th>
+							<th>Next De-Worming Date</th>
+							<th>Medicine(s) Name</th>
+							<th>Batch No</th>
+							<th>Mfg Date</th>
+							<th>Exp Date</th>
+						</tr>
+						<span wicket:id="rows">
+						<tr>
+							<td><input type="checkbox" name="check" wicket:id="wormcheck"/></td>
+							<td><select wicket:id="wormType" class="dropdown_effect" maxlength="30"></select></td>
+							<td nowrap="nowrap"><input type="text" id="demo11"  wicket:id="lastDate" class="date_effect"></td>
+							<td nowrap="nowrap"><input type="text" id="demo12"  wicket:id="givenDate" class="date_effect"></td>
+							<td nowrap="nowrap"><input type="text" id="demo13"  wicket:id="nextDate" class="date_effect"></td>
+							<td nowrap="nowrap"><input type="text"  wicket:id="manName" class="smalltextfield_effect"
+                             maxlength="100"/></td>
+                             <td><input name="batchNumber" type="text" id="batchNumber"  wicket:id="batchNumber" 
+                             class="date_effect" maxlength="100"/></td>	
+							<td nowrap="nowrap"><input name="idnumber" type="text" id="demo14"  wicket:id="manDate" class="date_effect"/></td>							
+							<td nowrap="nowrap"><input name="idnumber" type="text" id="demo15"  wicket:id="expDate" class="date_effect"/></td>
+						</tr>
+						</span>
+						
+					</table>
+                    <input type="button"
+								value="Add Row" wicket:id="worm_add" class="button" /><INPUT type="button" value="Delete Row" wicket:id="worm_remove" class="button" />
+					</div></form>
+	
+<input type="button" name="back"
+						value="Back" class="button" wicket:id="back"/> <input type="button" name="save" value="Save" class="button" wicket:id="save"/><input type="button" name="next"
+						value="Next" class="button"  wicket:id="next"/>
+</form>
+      
+	</div>	
+</wicket:extend>

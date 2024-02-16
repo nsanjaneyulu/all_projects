@@ -1,0 +1,216 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="styles.css" />
+<title>Employee Details</title>
+<script type="text/javascript">
+function valid_form()
+{
+	var chk1=0;
+	for(j=0;j<document.form1.heg.length;j++)
+	{
+		if(document.form1.heg[j].checked)
+		//alert(document.form1.heg[j].value);
+		chk1=document.form1.heg[j].value;
+	}
+	
+	var chk=0;
+	for(c=0;c<document.form1.dep.length;c++)
+	{	
+		if(document.form1.dep[c].checked)
+		chk++;
+	}
+	
+	if(document.form1.name.value=="")
+	{
+		//alert(" Emp Name Required");
+		document.form1.name.style.borderColor="red";
+		document.form1.name.style.color="red";
+		document.form1.name.focus();
+		return false;
+	}
+	if(document.form1.barea.value=="")
+	{
+		alert(" Emp Birth Area Required");
+		document.form1.barea.focus();
+		return false;
+	}
+	else if(document.form1.sal.value=="")
+	{
+		alert(" Sal Required");
+		document.form1.sal.focus();
+		return false;
+	}
+	else if(isNaN(document.form1.sal.value)==true)
+	{
+		alert(" Sal in digits");
+		document.form1.sal.focus();
+		return false;
+	}
+	else if(document.form1.phone.value=="")
+	{
+		alert(" phone no required");
+		document.form1.phone.focus();
+		return false;
+	}
+	else if(isNaN(document.form1.phone.value)==true)
+	{
+		alert(" phone no invalid");
+		document.form1.phone.focus();
+		return false;
+	}
+	else if(document.form1.phone.value.length!=10)
+	{
+		alert(" phone no invalid");
+		document.form1.phone.focus();
+		return false;
+	}
+	else if(chk==0)
+	{
+		//alert("select depatment");
+		document.getElementById("deps").innerHTML=" Select Depatment";
+		return false;
+	}
+	else if(chk1==0)
+	{
+		alert("select height");
+		return false;
+	}
+	else if(document.form1.city.value=="")
+	{
+		alert(" City Required");
+		document.form1.city.focus();
+		return false;
+	}
+	else if(document.form1.empno.value=="")
+	{
+		alert(" empno no required");
+		document.form1.empno.focus();
+		return false;
+	}
+	else if(isNaN(document.form1.empno.value)==true)
+	{
+		alert(" empno no invalid");
+		document.form1.empno.focus();
+		return false;
+	}
+	else
+	return true;
+}
+</script>
+<style type="text/css">
+<!--
+.style1 {color: #FF0000}
+-->
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+<!--header-->
+<div class="header">
+<img src="img/icon.png" />
+<div class="logo">
+	Employee History
+    <h6>Welcome to Employee Details</h6>
+</div>
+</div>
+<!--header ends-->
+<!--menu icons-->
+<div class="menu-icons">
+<ul>
+	<li><a href="#"><img src="img/save.png" /><div>Save</div></a></li>
+    <li><a href="#"><img src="img/save.png" /><div>Delete</div></a></li>
+    <li><a href="#"><img src="img/save.png" /><div>List</div></a></li>
+    <li><a href="#"><img src="img/save.png" /><div>History</div></a></li>
+    <li><a href="#"><img src="img/save.png" /><div>Home</div></a></li>
+</ul>
+</div>
+<div class="clearfix"></div>
+<!--menu icons ends-->
+<!-- menu bar-->
+	<div class="menu">
+    	<ul>
+        	<li><a href="#">Employee Mang</a></li>
+            <li><a href="#">Tansporattion Mang</a></li>
+          <li><a href="#">Financial Mang</a></li>
+            <li><a href="#">Stocks Mang</a></li>
+            <li><a href="#">Admin Mang</a></li>
+        </ul>
+    </div>
+<!--menu bard ends-->
+<!--content-->
+<div class="content">
+	<div class="gridHeader">
+    	<h1>Employee Management</h1>
+    </div>
+    <div class="gridContent">
+    	<form action="#" method="post" name="form1" id="form1" onsubmit="return valid_form();">
+        <ul>
+            <h5>Character Validation:</h5>
+        	<li><div>Emp Name:</div><input name="name" type="text" id="name" /></li>
+            <li><div>Emp Birth Area:  (Restriction)</div><input name="barea" type="text" id="barea" /></li>
+            <hr />
+            <h5>Number Validation:</h5>
+            <li><div>Emp No:</div><input name="empno" type="text" id="empno" /></li>
+            <li><div>Sal:</div><input name="sal" type="text" id="sal" /></li>
+            <li><div>Pnone No: (Restriction)</div><input name="phone" type="text" id="phone" maxlength="10" /></li>
+            <hr />
+            <h5>Check Box Validation:</h5>
+            <li><div>Sex:</div>
+            Male:<input name="" type="checkbox" />
+            Fe Male:<input name="" type="checkbox" />
+            Other's:<input name="" type="checkbox" /></li><br />
+            <li><div>Emp Dept:</div>
+            Programer:<input name="dep" type="checkbox" id="dep" value="prog" />
+            Designer:<input name="dep" type="checkbox" id="dep" value="desg" />
+            Admin:<input name="dep" type="checkbox" id="dep" value="admin" />
+            <span class="style1" id="deps"></span></li>
+            <hr />
+            <h5>Radio Validation:</h5>
+            <li><div>Height:</div>
+            Below 4:<input name="heg" type="radio" value="4" />
+            Between 4-7:<input name="heg" type="radio" value="4-7" />
+            Above 7:<input name="heg" type="radio" value="a7" />
+            </li><br />
+            <li><div>Weight:</div>
+            Below 50:<input name="" type="radio" />
+            Between 50-70:<input name="" type="radio" />
+            Above 70:<input name="" type="radio" /></li>
+            <hr />
+            <h5>Date Validation:</h5>
+            <li><div>Hire Date:</div><input name="" type="text" /></li> 
+            <hr />            
+            <h2>Address</h2>
+            <h5>Character Validation:</h5>
+            <li><div>Line1:</div><input name="" type="text" /></li>
+            <li><div>Line2:</div><input name="" type="text" /></li>
+            <li><div>Line3:</div><input name="" type="text" /></li>
+            <hr />
+            <h5>Select Validation:</h5>
+            <li><div>City:</div>
+            <select name="city" id="city">
+              <option selected="selected" value="">Select</option>
+              <option value="Guntur">Guntur</option><option value="Ongole">Ongole</option><option value="Nellore">Nellore</option>
+            </select></li>
+            <li><div>State:</div>
+            <select name="state" id="state">
+              <option>AP</option><option>Karnataka</option><option>Tamilanadu</option></select></li>
+            <li><div>Country:</div>
+            <select name="country" id="country">
+              <option>India</option><option>USA</option><option>UK</option></select></li>
+            <hr />
+            <h5>Textarea Validation:</h5>
+            <li><div>Country Layout:</div><textarea></textarea></li>
+            <li><div>Country Remorks:</div><textarea></textarea></li>
+            <li><div>Zip Code:</div><textarea></textarea></li>
+        </ul>
+        <div><input type="submit" value="Submit"/></div>
+      </form>       
+    </div>  
+</div>
+<!--content ends-->
+</div>
+</body>
+</html>

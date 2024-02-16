@@ -1,0 +1,135 @@
+<wicket:extend>	
+<div id="content">
+	<h2>Search Information:</h2>
+	<table>
+	<tr>
+		<td>Live Stock Information:</td>
+	</tr>
+	<tr>
+	<td>
+	    <form method="post" wicket:id="liveStockSearch">	
+	    <div wicket:id="feedback"></div>
+		<table>
+		<tr>
+				<td><label>Live Stock Code</label></td>
+				<td><input name="lsLiveStockCode" type="text" size="15" wicket:id="lsLiveStockCode"/></td>
+				<td ><label>RFID</label></td>
+				<td><input name="lsRFID" type="text" wicket:id="lsRFID"/></td>
+			</tr>
+			<tr>
+				<td><label>Breed</label></td>
+				<td><select wicket:id="lsBreedType"></select></td>
+			    <td><label>Milking Status</label></td>
+				<td ><select wicket:id="milkingStatus"></select></td>	
+			 </tr>
+			 <tr> 
+			    <td><label>Origin</label></td>
+				<td >
+					<select wicket:id="origin"></select>
+				</td>
+				<td><label>Live Stock State</label></td>
+				<td ><select wicket:id="lsLiveStockStateType"></select></td>
+			</tr>
+			<tr>
+					<td colspan="4" align="center"><input type="submit" name="lsSearch" value="Search"  wicket:id="lsSearch" class="button"/></td>						
+			</tr>
+			</table>
+			</form>
+			</td>
+			</tr>
+			<tr>
+		<td>Health Information:</td>
+	</tr>
+	<tr>
+	<td>
+	    <form method="post" wicket:id="healthsearch">	
+	    <div wicket:id="feedback"></div>
+		<table >
+		<tr>
+				<td><label>Live Stock Code</label></td>
+				<td><input name="hsLiveStockCode" type="text" size="15" wicket:id="hsLiveStockCode"/></td>
+				<td ><label>RFID</label></td>
+				<td><input name="hsRFID" type="text" wicket:id="hsRFID"/></td>
+			</tr>
+			<tr>
+				<td><label>Breed</label></td>
+				<td colspan="3"><select wicket:id="hsBreedType"></select></td>	
+			 </tr>
+			 <tr> 
+			    <td><label>Vaccination Type</label></td>
+				<td >
+					<select wicket:id="vaccineType"></select>
+				</td>
+				<td><label>DeceaseType</label></td>
+				<td ><select wicket:id="deceaseType"></select></td>
+			</tr>
+			<tr>
+					<td colspan="4" align="center"><input type="submit" name="hsSearch" value="Search"  wicket:id="hsSearch" class="button"/></td>						
+			</tr>
+			</table>
+			</form>
+			</td>
+			</tr>
+			<tr>
+		<td>Milk Production Information:</td>
+	</tr>
+	<tr>
+	<td>
+	    <form method="post" wicket:id="milkproductionsearch">	
+	    <div wicket:id="feedback"></div>
+		<table >
+		<tr>
+		       <td><label>From Date</label></td>
+				<td><input type="text" id="demo1" size="10" wicket:id="fromDate">
+				<a href="javascript:NewCal('demo1','ddmmyyyy')"><img src="images/cal.gif" alt="Pick a date"></a></td>
+				<td><label>To Date</label></td>
+				<td><input type="text" id="demo2" size="10" wicket:id="toDate">
+				<a href="javascript:NewCal('demo2','ddmmyyyy')"><img src="images/cal.gif" alt="Pick a date"></a></td>
+		</tr>
+		<tr>
+				<td><label>Live Stock Code</label></td>
+				<td><input name="mpLiveStockCode" type="text" size="15" wicket:id="mpLiveStockCode"/></td>
+				<td ><label>RFID</label></td>
+				<td><input name="mpRFID" type="text" wicket:id="mpRFID"/></td>
+			</tr>
+			<tr>
+				<td><label>Breed</label></td>
+				<td><select wicket:id="mpBreedType"></select></td>
+				<td><label>Live Stock State</label></td>
+				<td><select wicket:id="mpLiveStockStateType"></select></td>	
+			 </tr>
+			 <tr>
+					<td colspan="4" align="center"><input type="submit" name="mpSearch" value="Search"  wicket:id="mpSearch" class="button"/></td>						
+			</tr>		
+		</table>
+		</form>
+		</td>
+		</tr>
+		<tr>
+		<td>Re Production Information:</td>
+	</tr>
+	<tr>
+	<td>
+	    <form method="post" wicket:id="reProductionSearch">	
+	    <div wicket:id="feedback"></div>
+		<table>
+		<tr>
+				<td><label>Live Stock Code</label></td>
+				<td><input name="rpLiveStockCode" type="text" size="15" wicket:id="rpLiveStockCode"/></td>
+				<td ><label>RFID</label></td>
+				<td><input name="rpRFID" type="text" wicket:id="rpRFID"/></td>
+			</tr>
+			<tr>
+				<td><label>Breed</label></td>
+				<td colspan="3"><select wicket:id="rpBreedType"></select></td>
+			 </tr>
+			  <tr>
+					<td colspan="4" align="center"><input type="submit" name="rpSearch" value="Search"  wicket:id="rpSearch" class="button"/></td>						
+			</tr>
+			</table>
+			</form>
+			</td>
+			</tr>	
+		</table>
+</div>
+</wicket:extend>

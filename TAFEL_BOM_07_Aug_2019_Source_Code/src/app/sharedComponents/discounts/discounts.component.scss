@@ -1,0 +1,67 @@
+tr:nth-child(even) {background-color: #f2f2f2 !important;}
+input:focus{
+    outline:none !important;
+}
+.inputCss{
+    font-size: 12px;
+    border-radius: 0px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(169, 169, 169);
+    height: 17px;
+}
+.bow_page_title1 {
+    background: #5c0632;
+    padding: 12px;
+    border-radius: 5px;
+}
+.add_btn{
+    background-color: #5c0632;
+    color:white;
+}
+.modal-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 100%;
+    color: white;
+    background-color: #5c0632;
+   
+    
+}
+.modal-header .close {
+    margin-left: 4px;
+    color: white;
+    margin: -1rem -1rem -1rem auto;
+   
+}
+.modal-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 66% !important;
+    pointer-events: auto;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid rgba(0,0,0,.2);
+    border-radius: .3rem;
+    outline: 0;
+}
+.modal-footer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0rem !important;
+    border-top: 1px solid #dee2e6;
+    border-bottom-right-radius: .3rem;
+    border-bottom-left-radius: .3rem;
+   
+}
+@media only screen 
+and (max-device-width : 830px) 
+and (orientation : portrait) { 
+    .formobiles {
+        margin-left:60px;             
+     
+    }
+ }

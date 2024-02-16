@@ -1,0 +1,8 @@
+page-add-item {
+	.range-md.range-has-pin {
+        padding-top: 0px !important
+   }
+   ion-list + ion-list {
+       margin-top: 0;
+     }
+}

@@ -1,0 +1,217 @@
+<ion-header *ngIf="!noItemsAvailable" class="header_styles">
+    <ion-row>
+        <ion-icon style="margin-top: 5%;" (click)="goToBack()" ios="ios-arrow-round-back" md="md-arrow-round-back">
+        </ion-icon>
+        <ion-col><span class="">Payment</span></ion-col>
+    </ion-row>
+</ion-header>
+<ion-content>
+    <div *ngIf="!isSubmitting">
+        <div>
+            <div class="payment_mode_bg_styles">
+                <span class="payment_mode_styles">Wallets</span>
+            </div>
+            <ion-item class="profile-button" [ngClass]="{'payment-selected': paymentMode === 'Paytm'}" (click)="selectPaymentOption('Paytm')" no-lines>
+                <ion-avatar item-start>
+                    <img src="assets/icon/paytm_image.jpg" width="30px" height="30px" />
+                </ion-avatar>
+                <span class="label">Paytm Wallet</span>
+                <ion-icon *ngIf="paymentMode === 'Paytm'" class="tick-icon" item-end name="ios-checkmark-circle-outline">
+                </ion-icon>
+            </ion-item>
+        </div>
+        <div>
+            <div class="payment_mode_bg_styles">
+                <span class="payment_mode_styles">Credit Card / Debit Card</span>
+            </div>
+            <ion-item class="profile-button" [ngClass]="{'payment-selected': paymentMode === 'CARDS1'}" (click)="selectPaymentOption('CARDS1')" no-lines>
+                <div class="display: flex;">
+                    <div style="display: inline-block;vertical-align: top;">
+                        <ion-icon name="add" style="width: 18px; height:18px;"></ion-icon>
+                    </div>
+                    <div style="display: inline-block; padding-left: 0.5rem;">
+                        <span class="add_new_card">
+                            Add New Card
+                        </span><br />
+                        <!-- <span class="Save_and_Pay_via_Cards">
+                            Save and Pay via Cards
+                        </span> -->
+                    </div>
+                </div>
+
+                <ion-icon *ngIf="paymentMode === 'CARDS1'" class="tick-icon" item-end name="ios-checkmark-circle-outline">
+                </ion-icon>
+            </ion-item>
+        </div>
+        <div *ngIf="paymentMode === 'CARDS1'">
+            <div class="card-container" style="margin-top:5px;"></div>
+            <div>
+                <ion-label stacked>Holder's Name</ion-label>
+                <div>
+                    <input type="text" class="inputStyles" placeholder="Holder's Name" [(ngModel)]="cardName" maxlength="30" />
+                </div>
+
+            </div>
+            <div>
+                <ion-label stacked>Card Number</ion-label>
+                <div>
+                    <input type="text" class="inputStyles" placeholder="1234 1234 1234 1234" id="number" [(ngModel)]="cardNumber" (input)="cardNumberValidate($event)" maxlength="19" />
+                </div>
+
+            </div>
+            <div>
+                <ion-label stacked>Exp.Date</ion-label>
+                <div>
+                    <input maxlength='5' class="inputStyles" id="expiry" [(ngModel)]="cardExpDate" placeholder="MM/YY" type="text" (input)="expDateValidate($event);">
+                </div>
+
+            </div>
+            <div>
+                <ion-label stacked>CVV</ion-label>
+                <div>
+                    <input type="password" class="inputStyles" id="cvc" placeholder="cvv" [(ngModel)]="cvv" (input)="cvvValidate($event)" maxlength="3" />
+                </div>
+
+            </div>
+            <!-- <ion-item>
+                <input type="text" [(ngModel)]="cardName" placeholder="Enter Holder Name" maxlength="30" />
+            </ion-item>
+            <ion-item>
+                <input type="text" id="number" placeholder="1234-5678-9123-4567" [(ngModel)]="cardNumber" (input)="cardNumberValidate($event)" maxlength="19" />
+            </ion-item>
+            <ion-item>
+                <ion-label position="floating">Exp.Date</ion-label>
+                <input type="text" [(ngModel)]="cardExpDate" placeholder="MM/YY" type="text" (input)="expDateValidate($event);" />
+            </ion-item>
+            <ion-item>
+                <ion-label position="floating">CVV</ion-label>
+                <input type="password" id="cvc" placeholder="cvv" [(ngModel)]="cvv" (input)="cvvValidate($event)" maxlength="3" />
+            </ion-item> -->
+            <!-- <form card container=".card-container" formatting="false" debug="true">
+                 <div style="margin-bottom:10px;">
+                     <div class="field-container">
+                         <input #cardNumberFeild class="field-input" id="number" name="number" type="text" card-number [brmasker]="{mask:'0000 0000 0000 0000', len:19}" value=" " [(ngModel)]="cardNumber">
+                         <label class="field-placeholder" for="number">Card Number</label>
+                     </div>
+                     <div class="CardError" *ngIf="error.numberError">Please provide a valid card number.
+                     </div>
+                 </div>
+                 <div style="margin-bottom:10px;">
+                     <div class="field-container">
+                         <input class="field-input" id="first-name" name="first-name" type="text" card-name [(ngModel)]="cardName" value="">
+                         <label class="field-placeholder" for="first-name">Card Name</label>
+                     </div>
+                 </div>
+                 <div style="display:flex; justify-content:space-between;">
+                     <div>
+                         <div class="field-container">
+                             <input class="field-input" id="expiry" name="expiry" type="text" [brmasker]="{mask:'00/00', len:5}" card-expiry [(ngModel)]="cardExpiry" value="">
+                             <label class="field-placeholder" for="expiry">MM/YY</label>
+                         </div>
+                     </div>
+                     <div style="margin-bottom:20px; margin-left: 10px;">
+                         <div class="field-container">
+                             <input class="field-input disc" id="cvc" name="cvc" type="text" [brmasker]="{mask:'000', len:3}" card-cvc [(ngModel)]="CVV" value="">
+                             <label class="field-placeholder" for="cvc">Card CVV</label>
+                         </div>
+                     </div>
+                 </div>
+                 </form> -->
+            <!-- <input type ="checkbox"   [(ngModel)]="dosaveCard">   Save card  -->
+            <!-- <ion-item>
+                 <ion-label>Save Card</ion-label>
+                 <ion-checkbox [(ngModel)]="dosaveCard"></ion-checkbox>
+                 </ion-item> -->
+        </div>
+
+        <div>
+            <div class="payment_mode_bg_styles">
+                <span class="payment_mode_styles">Net Banking</span>
+            </div>
+            <div class="profile-button" [ngClass]="{'payment-selected': paymentMode === 'NET_BANKING'}" (click)="selectPaymentOption('NET_BANKING')" no-lines>
+                <ion-item>
+                    <ion-label>Please Select Bank</ion-label>
+                    <ion-select [(ngModel)]="netBanking">
+                        <ion-select-option *ngFor="let bank of banks" [value]="bank">{{bank}}</ion-select-option>
+                    </ion-select>
+                </ion-item>
+            </div>
+        </div>
+        <div>
+            <div class="payment_mode_bg_styles">
+                <span class="payment_mode_styles">UPI</span>
+            </div>
+            <div class="profile-button" [ngClass]="{'payment-selected': paymentMode === 'UPI'}" (click)="selectPaymentOption('UPI')" no-lines>
+                <ion-item>
+                    <ion-label>Please Select</ion-label>
+                    <ion-select [(ngModel)]="upiPayment">
+                        <ion-select-option *ngFor="let upi of upis" [value]="upi.packageName">{{upi.name}}</ion-select-option>
+                    </ion-select>
+                </ion-item>
+            </div>
+        </div>
+        <div>
+            <div class="payment_mode_bg_styles">
+                <span class="payment_mode_styles">Cash</span>
+            </div>
+            <div *ngIf="evnvariable=='SINDEV'">
+                <ion-item class="profile-button" [ngClass]="{'payment-selected': paymentMode === 'CASH'}" (click)="selectPaymentOption('CASH')" no-lines>
+
+                    <span class="label">
+                        <ion-icon name="cash" style="width: 18px; height:18px;"></ion-icon> Cash
+                    </span>
+                    <ion-icon *ngIf="paymentMode === 'CASH'" class="tick-icon" item-end name="ios-checkmark-circle-outline">
+                    </ion-icon>
+                </ion-item>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="isSubmitting">
+        <div style="position: absolute; top: 50%; left: calc(50% - 40px);">
+            <svg class="lds-typing" width="80px" height="80px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" style="background: none;">
+                <circle cx="24.5" cy="48.4263" r="6" fill="#e15b64">
+                    <animate attributeName="cy" calcMode="spline" keySplines="0 0.5 0.5 1;0.5 0 1 0.5;0.5 0.5 0.5 0.5"
+                        repeatCount="indefinite" values="62.5;37.5;62.5;62.5" keyTimes="0;0.25;0.5;1" dur="1s"
+                        begin="-0.5s">
+                    </animate>
+                </circle>
+                <circle cx="41.5" cy="62.5" r="6" fill="#f47e60">
+                    <animate attributeName="cy" calcMode="spline" keySplines="0 0.5 0.5 1;0.5 0 1 0.5;0.5 0.5 0.5 0.5"
+                        repeatCount="indefinite" values="62.5;37.5;62.5;62.5" keyTimes="0;0.25;0.5;1" dur="1s"
+                        begin="-0.375s">
+                    </animate>
+                </circle>
+                <circle cx="58.5" cy="62.5" r="6" fill="#f8b26a">
+                    <animate attributeName="cy" calcMode="spline" keySplines="0 0.5 0.5 1;0.5 0 1 0.5;0.5 0.5 0.5 0.5"
+                        repeatCount="indefinite" values="62.5;37.5;62.5;62.5" keyTimes="0;0.25;0.5;1" dur="1s"
+                        begin="-0.25s">
+                    </animate>
+                </circle>
+                <circle cx="75.5" cy="62.5" r="6" fill="#abbd81">
+                    <animate attributeName="cy" calcMode="spline" keySplines="0 0.5 0.5 1;0.5 0 1 0.5;0.5 0.5 0.5 0.5"
+                        repeatCount="indefinite" values="62.5;37.5;62.5;62.5" keyTimes="0;0.25;0.5;1" dur="1s"
+                        begin="-0.125s">
+                    </animate>
+                </circle>
+            </svg>
+        </div>
+    </div>
+</ion-content>
+<ion-footer *ngIf="!isSubmitting">
+    <ion-toolbar>
+        <ion-grid class="footer_styles_bg">
+            <ion-row>
+                <ion-col>
+                    <div class="total-amount" (click)="goToBack()">
+                        <span class="proceed-title">Review</span>
+                    </div>
+                </ion-col>
+                <ion-col class="rightAlign" style="text-align: right;">
+                    <div class="total-amount" (click)="submitPaymentDetails()">
+                        <span class="proceed-title">Submit Order</span>
+                    </div>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </ion-toolbar>
+</ion-footer>

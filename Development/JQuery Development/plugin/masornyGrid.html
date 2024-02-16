@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    	<meta charset="utf-8">
+        <title>JS Bin</title>
+        <style>
+			* 
+			{
+				margin: 0;
+				padding: 0;
+			}
+			
+			#grid 
+			{
+				width: 80%;
+				background-color: violet;
+				margin: 0 auto;
+			}
+			
+			#grid .item 
+			{
+				width: 24%;
+				margin: .5%;
+				float: left;
+				padding: 5px;
+				-webkit-box-sizing: border-box;
+				-moz-box-sizing: border-box;
+				box-sizing: border-box;
+				background-color: #fff;
+				border: 1px solid #eee;
+				position: relative;
+				cursor: pointer;
+				overflow: hidden;
+			}
+			
+			#grid .item img 
+			{
+				width: 100%;
+			}
+			
+			#grid .item p 
+			{
+				display: block;
+				width: 100%;
+				background-color: #000;
+				color: #fff;
+				position: absolute;
+				opacity: 0;
+				left: -100%;
+				padding: 5px;
+				-webkit-box-sizing: border-box;
+				-moz-box-sizing: border-box;
+				box-sizing: border-box;
+				-webkit-transition: all .3s;
+				-o-transition: all .3s;
+				transition: all .3s;
+			}
+			
+			#grid .item:hover p 
+			{
+				opacity: 1;
+				bottom: 0px;
+				left: 0;
+			}
+			
+			.clr 
+			{
+				clear: both;
+			}
+		</style>
+		<script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script>
+			$('document').ready(function()
+			{
+				$('#grid').masonry();
+			});
+		</script>
+    </head>
+    <body>
+        <div id="grid">
+            <div class="item">
+                <div class="content">
+                    <img src="http://placehold.it/250x310" alt="">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde</p>
+                </div>
+            </div>
+            <div class="item">
+                <div class="content">
+                    <img src="http://placehold.it/750x350" alt="">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde</p>
+                </div>
+            </div>
+            <div class="item">
+                <div class="content">
+                    <img src="http://placehold.it/450x410" alt="">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde</p>
+                </div>
+            </div>
+            <div class="item">
+                <div class="content">
+                    <img src="http://placehold.it/450x310" alt="">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde</p>
+                </div>
+            </div>
+            <div class="item">
+                <div class="content">
+                    <img src="http://placehold.it/450x310" alt="">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde</p>
+                </div>
+            </div>
+            <div class="item">
+                <div class="content">
+                    <img src="http://placehold.it/450x310" alt="">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde</p>
+                </div>
+            </div>
+            <div class="item">
+                <div class="content">
+                    <img src="http://placehold.it/450x110" alt="">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde</p>
+                </div>
+            </div>
+            <div class="item">
+                <div class="content">
+                    <img src="http://placehold.it/450x310" alt="">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde</p>
+                </div>
+            </div>
+            <div class="item">
+                <div class="content">
+                    <img src="http://placehold.it/450x80" alt="">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde</p>
+                </div>
+            </div>
+            <div class="item">
+                <div class="content">
+                    <img src="http://placehold.it/450x310" alt="">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde</p>
+                </div>
+            </div>
+            <div class="item">
+                <div class="content">
+                    <img src="http://placehold.it/450x310" alt="">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde</p>
+                </div>
+            </div>
+            <div class="item">
+                <div class="content">
+                    <img src="http://placehold.it/450x80" alt="">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde</p>
+                </div>
+            </div>
+            <div class="item">
+                <div class="content">
+                    <img src="http://placehold.it/450x310" alt="">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde</p>
+                </div>
+            </div>
+            <div class="item">
+                <div class="content">
+                    <img src="http://placehold.it/450x310" alt="">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde</p>
+                </div>
+            </div>
+            <div class="item">
+                <div class="content">
+                    <img src="http://placehold.it/450x80" alt="">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde</p>
+                </div>
+            </div>
+            <div class="item">
+                <div class="content">
+                    <img src="http://placehold.it/450x310" alt="">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde</p>
+                </div>
+            </div>
+            <div class="item">
+                <div class="content">
+                    <img src="http://placehold.it/450x310" alt="">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde</p>
+                </div>
+            </div>
+            <div class="item">
+                <div class="content">
+                    <img src="http://placehold.it/450x80" alt="">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde</p>
+                </div>
+            </div>
+            <div class="item">
+                <div class="content">
+                    <img src="http://placehold.it/450x310" alt="">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde</p>
+                </div>
+            </div>
+        	<div class="clr"></div>    
+        </div>
+    <script src="http://masonry.desandro.com/masonry.pkgd.min.js"></script>
+	</body>
+</html>

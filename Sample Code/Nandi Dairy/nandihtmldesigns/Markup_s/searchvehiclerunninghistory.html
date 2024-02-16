@@ -1,0 +1,264 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Dashboard</title>
+<link rel="stylesheet" type="text/css" href="css/styles.css" />
+<link rel="stylesheet" type="text/css" href="css/topmenu.css" />
+<link rel="stylesheet" type="text/css" href="css/grid.css" />
+</head>
+<body>
+<div class="main-container">
+
+	<!--header starts-->
+    <div class="navbar-fixed-top">
+    <header>
+        <div class="header">
+       <img src="img/cow.png" />
+        <div class="title">Dashboard</div>
+        <div class="note">Welcome to Nandi Dairy</div>
+
+        </div>
+    </header>
+
+    <!--topmenu-->
+    <div id="top">
+	<nav id="topmenu">
+    	<ul>
+
+            <li><a href="#">Procurement<span class="arrow"></span></a>
+            	<ul class="sublist">
+                    <li><a href="#">Sub link</a></li>
+                    <li><a href="#">Sub link</a></li>
+                    <li><a href="#">Sub link<span class="arrow-right"></span></a></li>
+            	</ul>
+       		</li>
+  <li><a href="#">Transportation<span class="arrow"></span></a>
+            	<ul class="sublist">
+                    <li><a href="#">Sub link</a></li>
+                    <li><a href="#">Sub link</a></li>
+                    <li><a href="#">Sub link<span class="arrow-right"></span></a></li>
+            	</ul>
+   		  </li>
+  <li><a href="#">Financial Reports<span class="arrow"></span></a>
+            	<ul class="sublist">
+                    <li><a href="#">Sub link</a></li>
+                    <li><a href="#">Sub link</a></li>
+                    <li><a href="#">Sub link<span class="arrow-right"></span></a></li>
+            	</ul>
+   		  </li>
+  <li><a href="#">Stocks<span class="arrow"></span></a>
+            	<ul class="sublist">
+                    <li><a href="#">Sub link</a></li>
+                    <li><a href="#">Sub link</a></li>
+                    <li><a href="#">Sub link<span class="arrow-right"></span></a></li>
+            	</ul>
+   		  </li>
+  <li><a href="#">Inventory<span class="arrow"></span></a>
+            	<ul class="sublist">
+                    <li><a href="#">Milk Procurement</a></li>
+                    <li><a href="#">Sub link</a></li>
+                    <li><a href="#">Sub link<span class="arrow-right"></span></a></li>
+            	</ul>
+   		  </li>
+  <li><a href="#">Processing<span class="arrow"></span></a>
+            	<ul class="sublist">
+                    <li><a href="#">Sub link</a></li>
+                    <li><a href="#">Sub link</a></li>
+                    <li><a href="#">Sub link<span class="arrow-right"></span></a></li>
+            	</ul>
+   		  </li>
+  <li><a href="#">Milk Procerument<span class="arrow"></span></a>
+            	<ul class="sublist">
+                    <li><a href="#">Sub link</a></li>
+                    <li><a href="#">Sub link</a></li>
+                    <li><a href="#">Sub link<span class="arrow-right"></span></a></li>
+            	</ul>
+   		  </li>
+       </ul>
+    </nav>
+</div>
+
+    <!--topmenu ends-->
+
+    <!--toolbar-->
+    	<div class="toolbar">
+
+            <ul>
+            	<li>
+                	<a href="#"><img src="img/save.jpg" />Save</a>
+
+                </li>
+                <li>
+                	<a href="#"><img src="img/add.jpg" />Add</a>
+                </li>
+                <li>
+                	<a href="#"><img src="img/edit.jpg" />Edit</a>
+                </li>
+                <li>
+                	<a href="#"><img src="img/export.jpg" />Export</a>
+                </li>
+                <li>
+                	<a href="#"><img src="img/print.jpg" />Print</a>
+                </li>
+                <li>
+                	<a href="#"><img src="img/delete.jpg" />Delete</a>
+                </li>
+            </ul>
+        </div>
+    <!--toolbar ends-->
+    </div>
+    <!--header ends-->
+
+    <div class="clearfix"></div>
+    <!--container fluid-->
+    <div class="container-fluid">
+    	<div class="bread-crumb">
+        	<h1>
+            	Vehicle Running History
+            </h1>
+        </div>
+
+
+    <!-- grid starts-->
+    	<div class="gridTwoWide">
+         <form action="" method="get">
+        	<ul>
+            	<li>
+                	<div class="gridTwoWideText">Plant:</div>
+                    <div><select>
+                <option>Select</option>
+             </select></div>
+                </li>
+                 <li>
+                	<div class="gridTwoWideText">Transport Organization:</div>
+                    <div><select>
+                <option>Select</option>
+             </select></div>
+                </li>
+                <li>
+                	<div class="gridTwoWideText">Vehicle:</div>
+                    <div><select>
+                <option>Select</option>
+             </select></div>
+                </li>
+                 <li>
+                	<div class="gridTwoWideText">Default Route:</div>
+                    <div><select>
+                <option>Select</option>
+             </select></div>
+                </li>
+                <li>
+				                	<div class="gridTwoWideText">Driver:</div>
+				                    <div><select>
+				                <option>Select</option>
+				             </select></div>
+                </li>
+                <li>
+                	<div class="gridTwoWideText">Start Date:</div>
+                    <div><input name="" type="text" /></div>
+                </li>
+                 <li>
+                	<div class="gridTwoWideText">End Date:</div>
+                    <div><input name="" type="text" /></div>
+                </li>
+          </ul>
+          <div class="clearfix"></div>
+          <div class="span1"></div>
+          <input name="" type="button" value="search"/>
+        </form>
+
+        <!--search grid-->
+        <div class="containerDiv searchgrid">
+
+      <div class="rowDivHeader">
+     <div>Plant</div>
+     <div>Transport Organization</div>
+     <div>Vehicle</div>
+     <div>Default Route</div>
+     <div>Driver</div>
+     <div>Date </div>
+     <div>Shift</div>
+     <div>Departure Time</div>
+     <div>Start Reading</div>
+     <div>Arrival Time</div>
+     <div>End Reading</div>
+     <div>Distance Travelled</div>
+     <div>Remarks</div>
+</div>
+<div class="rowDiv">
+     <div>Nandyala</div>
+     <div>Nandi Transport</div>
+     <div><a href="#">AP 23A 2546</a></div>
+     <div>Nandyala</div>
+     <div> Ram Narayana</div>
+     <div>01-03-1013</div>
+     <div>Morning</div>
+     <div>6:30AM</div>
+     <div>25.77.45.89</div>
+     <div>5:30AM</div>
+     <div>25.77.105.89</div>
+     <div>295KM</div>
+     <div>-NA-</div>
+</div>
+ <div class="rowDiv">
+     <div>Palamaneru</div>
+     <div>Private Transport</div>
+     <div><a href="#">AP 32A 1576</a></div>
+     <div>Gutty</div>
+     <div>Jogaiah</div>
+     <div>01-03-1013</div>
+     <div>Evening</div>
+     <div>6:30PM</div>
+     <div>25.77.45.89</div>
+     <div>5:30PM</div>
+     <div>25.77.86.89</div>
+     <div>245KM</div>
+     <div>-NA-</div>
+</div>
+<div class="rowDiv">
+     <div>Nandyala</div>
+     <div>Nandi Transport</div>
+     <div><a href="#">AP 42A 9846</a></div>
+     <div>Nandyala</div>
+     <div>Javed</div>
+     <div>02-03-1013</div>
+     <div>Morning</div>
+     <div>7:30AM</div>
+     <div>25.77.10.89</div>
+     <div>5:30AM</div>
+     <div>25.77.95.89</div>
+     <div>275KM</div>
+     <div>-NA-</div>
+</div>
+<div class="rowDiv">
+    <div>Palamaneru</div>
+     <div>Private Transport</div>
+     <div><a href="#">AP 39A 1986</a></div>
+     <div>Palamaneru</div>
+     <div>Satya Narayana</div>
+     <div>02-03-1013</div>
+     <div>Evening</div>
+     <div>8:30PM</div>
+     <div>25.77.02.89</div>
+     <div>5:30PM</div>
+     <div>25.77.99.89</div>
+     <div>235KM</div>
+     <div>-NA-</div>
+</div>
+
+
+</div>
+        <!--search grid ends-->
+
+        </div>
+
+
+    <!--grid ends here-->
+
+    </div>
+    <!--container fluid ends-->
+
+</div>
+</body>
+</html>

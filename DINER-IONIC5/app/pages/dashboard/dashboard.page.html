@@ -1,0 +1,232 @@
+<ion-header>
+    <ion-grid *ngIf="showDashBoard">
+        <div class="display_flex_header ">
+            <div (click)="changeLocation()">
+                <span><img class="dashboard_header_icon_location" width="20%" style="vertical-align: middle" src="../../../assets/icon/locationMarker.svg"></span>
+                <span class="dashboard_header_location service_station_name dashboard_padding_left" style="color: #515968">{{selectedServiceStation.name}}</span>
+                <span class="dashboard_header_change service_station_name dashboard_padding_left" style="color: #5c0931">Change</span>
+            </div>
+            <div style="padding-right: 1rem;">
+                <span><img class="dashboard_header_icon" style="vertical-align: middle" src="../../../assets/icon/headphones.svg"></span>
+                <span class="service_station_name dashboard_padding_left" style="color: #515968">040-25555555</span>
+            </div>
+        </div>
+    </ion-grid>
+</ion-header>
+<ion-content>
+    <div class="bgContent">
+        <div class="discover-near-you discover_near_you_bg" *ngIf="showDashBoard">
+            <div class="dashboard_page_title">
+                <span><img class="dashboard_header_icon_discover" style="vertical-align: middle; width: 1.5rem;" src="../../../assets/icon/fruit.svg"></span>
+                <span class=""><span style="vertical-align: middle; margin-left: 0.5rem;">Discover Near You</span></span>
+            </div>
+            <div *ngIf="cafetrias" class="discover-near-you-item">
+                <div (click)="openModalForMallSelection('CAFETERIAS')">
+                    <div class="discover-near-you-item-overlay">
+                        <div class="title-count-container">
+                            <div class="discover-near-you-item-title">
+                                <div class="display_flex_header ">
+                                    <div>
+                                        <span class="discover_near_you_cafteria">Cafeteria</span>
+                                    </div>
+                                    <div style="margin-right: 1rem;">
+                                        <span class="discover_near_you_cafteria_count">{{cafetrias.length}} near you</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <img class="imageRadius" src="../../../assets/imgs/box-image@1.png" />
+                    </div>
+                </div>
+            </div>
+            <div *ngIf="cinemas" class="discover-near-you-item discover-near-you-item-margin-left">
+                <div (click)="openModalForMallSelection('CINEMAS')">
+                    <div class="discover-near-you-item-overlay opacity__styles">
+                        <div class="title-count-container">
+                            <div class="discover-near-you-item-title">
+                                <div class="display_flex_header ">
+                                    <div>
+                                        <span class="discover_near_you_cafteria">Cinemas</span>
+                                    </div>
+                                    <div style="margin-right: 1rem;">
+                                        <span class="discover_near_you_cafteria_count">{{cinemas.length}} near you</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <img class="imageRadius" src="../../../assets/imgs/box-image@2.png" />
+                    </div>
+                </div>
+            </div>
+            <div *ngIf="showHidediv">
+                <div *ngIf="foodCourts" style="margin-top: 0.3rem" class="discover-near-you-item">
+                    <div (click)="openModalForMallSelection('FOOD_COURT')">
+                        <div class="discover-near-you-item-overlay">
+                            <div class="title-count-container">
+                                <div class="discover-near-you-item-title">
+                                    <div class="display_flex_header ">
+                                        <div>
+                                            <span class="discover_near_you_cafteria">Food Courts</span>
+                                        </div>
+                                        <div style="margin-right: 1rem;">
+                                            <span class="discover_near_you_cafteria_count">{{foodCourts.length}} near you</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <img class="imageRadius" src="https://s3.ap-south-1.amazonaws.com/tafel-images/tales/box-image@3.png" />
+                        </div>
+                    </div>
+                </div>
+                <div *ngIf="foodCourts" style="margin-top: 0.3rem" class="discover-near-you-item margin__left">
+                    <div>
+                        <div class="discover-near-you-item-overlay">
+                            <div class="title-count-container">
+                                <div class="discover-near-you-item-title">
+                                    <div class="display_flex_header ">
+                                        <div>
+                                            <span class="discover_near_you_cafteria">DINE-IN'S</span>
+                                        </div>
+                                        <div style="margin-right: 1rem;">
+                                            <span class="discover_near_you_cafteria_count">0 near you</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <img class="imageRadius" src="https://s3.ap-south-1.amazonaws.com/tafel-images/tales/box-image@4.png" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="popular_brands_bg" *ngIf="showHidediv && showDashBoard">
+            <div *ngIf="outletsListByTafelRating.length>0">
+                <div class="dashboard_page_title">
+                    <span><img class="dashboard_header_icon_discover" style="vertical-align: middle; width: 1.5rem;" src="../../../assets/icon/fast-food.svg"></span>
+                    <span class=""><span style="vertical-align: middle; margin-left: 0.5rem;">Popular Brands</span></span>
+                </div>
+                <div id="popular_bgands">
+                    <ion-grid style="padding:0rem;">
+                        <ion-row nowrap>
+                            <ion-col style="text-align: center;" *ngFor="let outlet of outletsListByTafelRating" class="recommendation-item-container" (click)="openItemsPageForRecommendedItem(outlet)">
+
+                                <div class="popular_brand_styles" style="text-align: center">
+                                    <div style="background: #f6f6f6;">
+                                        <img src="{{imageEndPoint}}{{outlet.img}}" class="popular_brand_image" />
+                                    </div>
+                                    <div class="popular_brand_title">
+                                        {{outlet.name}}
+                                    </div>
+                                </div>
+                            </ion-col>
+                        </ion-row>
+                    </ion-grid>
+                </div>
+            </div>
+        </div>
+        <div class="new_on_tafel_bg" *ngIf="showDashBoard && getofferDetailsItems">
+            <div class="dashboard_page_title" style="margin: 0rem 0rem;">
+                <span><img class="dashboard_header_icon_discover" style="vertical-align: middle; width: 1.5rem;" src="../../../assets/icon/cooking.svg"></span>
+                <span class=""><span style="vertical-align: middle; margin-left: 0.5rem;">New On TAFEL</span></span>
+            </div>
+            <ion-slides pager="true" [options]="slideOpts" *ngIf="getofferDetailsItems && getofferDetailsItems.length && getofferDetailsItems.length>1">
+                <ion-slide *ngFor="let getItems of getofferDetailsItems" (click)="goesOffersItems(getItems)">
+                    <div style="position:relative;">
+                        <!-- <div class="outletTile">
+                   <span style="padding:10px;">{{getItems.text}}</span>
+                   </div> -->
+                        <img src="{{imageEndPoint}}{{getItems.img}}" class="thumb-img" />
+                    </div>
+                </ion-slide>
+            </ion-slides>
+            <div style="height:190px; margin-bottom: 1rem;" *ngIf="getofferDetailsItems && getofferDetailsItems.length && getofferDetailsItems.length==1">
+                <div *ngFor="let getItems of getofferDetailsItems" (click)="goesOffersItems(getItems)">
+                    <div style="position:relative;" class="imageSize">
+                        <div class="outletTile">
+                            <span style="padding:1rem;">{{getItems.text}}</span>
+                        </div>
+                        <img src="{{imageEndPoint}}{{getItems.img}}" class="thumb-img" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="recomended_for_you_bg" *ngIf="recommendedItems&& showDashBoard">
+            <div class="dashboard_page_title">
+                <span><img class="dashboard_header_icon_discover" style="vertical-align: middle; width: 1.5rem;" src="../../../assets/icon/fast-food.svg"></span>
+                <span class=""><span style="vertical-align: middle; margin-left: 0.5rem;">Recommendations For You</span></span>
+            </div>
+            <div id="myWorkContent">
+                <ion-grid style="padding:0rem;">
+                    <ion-row nowrap>
+                        <ion-col *ngFor="let item of recommendedItems" class="recommendation-item-container" (click)="openItemsPageForRecommendedItem(item)">
+                            <div class="rating-badge"><span class="rating-badge-text">{{item.tafelRating}}</span></div>
+                            <div class="recommendation-item" style="text-align: center">
+                                <img src="{{imageEndPoint}}{{item.img}}" class="recomended_for_you_image" />
+                                <div class="recommendation-item-title recomended_for_you_item_name">
+                                    {{item.name}}
+                                </div>
+                                <!-- <div class="recommendation-item-address">{{item.outletName}}</div> -->
+                                <div class="recommendation-item-subtitle recomended_for_you_mall_name">{{item.mallName}}</div>
+                            </div>
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+            </div>
+        </div>
+
+
+        <div *ngIf="!showDashBoard">
+            <div style="position: absolute; top: 50%; left: calc(50% - 40px);">
+                <svg class="lds-typing" width="80px" height="80px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" style="background: none;">
+             <circle cx="24.5" cy="48.4263" r="6" fill="#e15b64">
+                <animate attributeName="cy" calcMode="spline" keySplines="0 0.5 0.5 1;0.5 0 1 0.5;0.5 0.5 0.5 0.5"
+                   repeatCount="indefinite" values="62.5;37.5;62.5;62.5" keyTimes="0;0.25;0.5;1" dur="1s" begin="-0.5s"></animate>
+             </circle>
+             <circle cx="41.5" cy="62.5" r="6" fill="#f47e60">
+                <animate attributeName="cy" calcMode="spline" keySplines="0 0.5 0.5 1;0.5 0 1 0.5;0.5 0.5 0.5 0.5"
+                   repeatCount="indefinite" values="62.5;37.5;62.5;62.5" keyTimes="0;0.25;0.5;1" dur="1s" begin="-0.375s"></animate>
+             </circle>
+             <circle cx="58.5" cy="62.5" r="6" fill="#f8b26a">
+                <animate attributeName="cy" calcMode="spline" keySplines="0 0.5 0.5 1;0.5 0 1 0.5;0.5 0.5 0.5 0.5"
+                   repeatCount="indefinite" values="62.5;37.5;62.5;62.5" keyTimes="0;0.25;0.5;1" dur="1s" begin="-0.25s"></animate>
+             </circle>
+             <circle cx="75.5" cy="62.5" r="6" fill="#abbd81">
+                <animate attributeName="cy" calcMode="spline" keySplines="0 0.5 0.5 1;0.5 0 1 0.5;0.5 0.5 0.5 0.5"
+                   repeatCount="indefinite" values="62.5;37.5;62.5;62.5" keyTimes="0;0.25;0.5;1" dur="1s" begin="-0.125s"></animate>
+             </circle>
+          </svg>
+            </div>
+        </div>
+    </div>
+</ion-content>
+<ion-footer>
+    <ion-toolbar style="height: 3rem !important">
+        <ion-tabs>
+            <ion-tab-bar slot="bottom">
+                <ion-tab-button class="ionButton">
+                    <!-- <ion-icon ios="ios-home" md="md-home"></ion-icon> -->
+                    <img class="tabImage" src="../../../assets/icon/tafelicon/home.svg" />
+                    <ion-label class="labelFont">Home</ion-label>
+                    <!-- <ion-badge class="badgeNumber">6</ion-badge> -->
+                </ion-tab-button>
+                <!-- (click)="goToCartPage()" -->
+                <ion-tab-button class="ionButtonNon" (click)="routerChange('cart')">
+                    <!-- <ion-icon ios="ios-cart" md="md-cart"></ion-icon> -->
+                    <img class="tabImage" src="../../../assets/icon/tafelicon/shopping-bag.svg" />
+                    <ion-label class="labelFont">Cart</ion-label>
+                    <ion-badge class="badgeNumber" *ngIf="itemsCountDetails>0">{{itemsCountDetails}}</ion-badge>
+                </ion-tab-button>
+                <ion-tab-button class="ionButtonNon" (click)="routerChange('tipspay')">
+                    <!-- <ion-icon name="map"></ion-icon> -->
+                    <img class="tabImage" src="../../../assets/icon/tafelicon/wallet.svg" />
+                    <ion-label class="labelFont">Tips Pay</ion-label>
+                </ion-tab-button>
+                <ion-tab-button class="ionButtonNon" (click)="routerChange('profile')">
+                    <!-- <ion-icon name="information-circle"></ion-icon> -->
+                    <img class="tabImage" src="../../../assets/icon/tafelicon/user.svg" />
+                    <ion-label class="labelFont">Profile</ion-label>
+                </ion-tab-button>
+            </ion-tab-bar>
+        </ion-tabs>
+    </ion-toolbar>
+</ion-footer>

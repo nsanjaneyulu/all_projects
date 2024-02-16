@@ -1,0 +1,50 @@
+<wicket:extend>
+	<div id="content">
+    <div class="bread-crumb">
+            	<h1>Stock Management / Stock Search</h1>
+            </div>
+		<form method="post" wicket:id="stockSearch">
+			<div wicket:id="feedback"></div>
+			<div class="addData">
+				<ul>
+					<li><label>Stock Type:</label><br /> 
+                    <select wicket:id="stockType" class="dropdown_effect"></select></li>
+					<li><label>Operation:</label><br /> 
+                    <select wicket:id="operation" class="dropdown_effect"></select></li>
+					<li><label>Start Date:</label><br />
+                     <input type="text" id="startDate" name="startDate" wicket:id="startDate" class="date_effect"/></li>
+					<li><label>End Date:</label><br /> <input type="text" id="endDate" name="endDate" wicket:id="endDate"
+                    class="date_effect"></li>
+				</ul>
+				<div style="clear: both;"></div>
+				<div class="newButton">
+					<input type="submit" name="Search" value="Search" class="button" wicket:id="search" />
+				</div>
+			</div>
+		</form>
+		<div wicket:id="datawrapper">
+			<div>
+				<span wicket:id="navigator">[dataview navigator]</span>
+			</div>
+            
+            	<div class="containerDiv">
+                       <div class="rowDivHeader">
+                       		<div wicket:id="orderbycode">Stock Code</div>
+                            <div>Stock Name</div>
+                            <div>Stock Category</div>
+                            <div>Operation</div>
+                            <div class="last">Quantity</div>
+                       </div>
+                    
+                       <div class="rowDiv" wicket:id="rows">
+                       		<div><span wicket:id="stockCode" /></div>
+                            <div><span wicket:id="stockName" /></div>
+                            <div><span wicket:id="stockCategory" /></div>
+                            <div><span wicket:id="au_operation" /></div>
+                            <div class="last"><span wicket:id="au_quanity" /></div>
+                       </div>
+                    </div>
+			
+		</div>
+	</div>
+</wicket:extend>

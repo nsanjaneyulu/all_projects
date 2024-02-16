@@ -1,0 +1,143 @@
+<wicket:extend>		
+ <script type="text/javascript">
+// From: http://www.webdeveloper.com/forum/showthread.php?t=218226
+
+function ToggleList(IDS) {
+  var CState = document.getElementById(IDS);
+  if (CState.style.display != "block") { CState.style.display = "block"; }
+                                  else { CState.style.display = "none"; }
+}
+function HideRange(sect,elTag,IDS) {
+  var ContentObj = document.getElementById(sect);
+  var AllContentDivs = ContentObj.getElementsByTagName(elTag);
+  for (i=0; i<AllContentDivs.length; i++) {
+    if (IDS != AllContentDivs[i].id) { AllContentDivs[i].style.display="none"; }
+  }
+}
+
+</script>
+<style type="text/css">
+  .divInfo { display:none; }
+.style19 {font-family: Verdana, Arial, Helvetica, sans-serif; font-size: medium; font-style: italic; }
+.style20 {color: #FF0099; font-size: large;}
+.style21 {
+	font-size: small;
+	font-weight: bold;
+}
+.style23 {color: #FF0099; font-size: small; font-weight: bold; }
+</style>
+	<div id="container">
+		<div id="top">
+			<h1>
+            	<span wicket:id="dairyFarmName"/>
+			</h1>
+			<div class="search">
+				<!-- for search -->
+			</div>
+            <div id="topNav">
+			<ul id="navlist">
+				<li id="active"><a wicket:id="topnav_home" href="HomePage.html" id="current">Home</a></li>
+				<li><a wicket:id="topnav_contact" href="ContactUs.html">Contact us</a></li>
+				<li><a wicket:id="topnav_signout" href="ContactUs.html">Sign out</a></li>
+				<li><a wicket:id="landing_page" href="ContactUs.html">Summary</a></li>
+			</ul>
+		</div>
+		</div>
+		<div class="contentbgcolor">
+			<div id="leftNav">
+				<h2>Menu</h2>
+				<ul id="leftNavmenu">
+					<li><a href="#" onClick="ToggleList('a')">Live Stock Management</a>
+					</li>
+					<div id="a" class="divInfo">
+					<li style="padding-left: 10%;"><a href="#" wicket:id="livestock_new">Add
+							Live Stock</a>
+					</li>
+					<li style="padding-left: 10%;"><a href="#" wicket:id="livestock_edit">Edit
+							/ Update Live Stock</a></li>
+					<li style="padding-left: 10%;"><a href="#" wicket:id="livestock_list">List Live Stocks</a></li>				
+					<li style="padding-left: 10%;"><a href="#" wicket:id="promotion_history">Promotion History</a></li>
+					<li style="padding-left: 10%;"><a href="#" wicket:id="discarded_history">Discarded History</a></li>
+					</div>
+					<li><a href="#" onClick="ToggleList('b')">Milk Yield Management</a></li>
+					<div id="b" class="divInfo">
+					<li style="padding-left: 10%;"><a href="#" wicket:id="milkproduction_new">Daily Milk - Farm</a></li>
+					<li style="padding-left: 10%;"><a href="#" wicket:id="milkproduction_daily">Daily Milk -Live Stock</a></li>
+					<li style="padding-left: 10%;"><a href="#" wicket:id="milkproduction_list">Milk Production Report</a></li>
+					</div>
+					
+					<li><a href="#" onClick="ToggleList('c')">Feeding Management</a></li>
+					<div id="c" class="divInfo">
+					<li style="padding-left: 10%;"><a href="#" wicket:id="suggest_feeding">Suggested Feed</a></li>
+					<li style="padding-left: 10%;"><a href="#" wicket:id="feeding_history">Feed History</a></li>
+					</div>
+					
+					<!-- <li><a href="#" onClick="ToggleList('d')">Search Management</a></li>
+					<div id="d" class="divInfo">
+					<li style="padding-left: 10%;"><a href="#" wicket:id="search_Criteriya">Search Criteriya</a></li>
+					</div> -->
+					
+					<li><a href="#" onClick="ToggleList('e')">Provisions Management</a></li>
+					<div id="e" class="divInfo">
+					<li style="padding-left: 10%;"><a href="#"  wicket:id="ingre_list">List/Edit Ingredients</a></li>
+					<li style="padding-left: 10%;"><a href="#" wicket:id="ingre_options">Ingredient Options</a></li>
+					<li style="padding-left: 10%;"><a href="#" wicket:id="formula_cost">Formula Cost</a></li>
+					</div>
+	
+					<li><a href="#" onClick="ToggleList('f')">Stock Management</a></li>
+					<div id="f" class="divInfo">
+					<li style="padding-left: 10%;"><a href="#" wicket:id="stock_new">Add Stock Type</a></li>
+					<li style="padding-left: 10%;"><a href="#" wicket:id="stock_list">List/Edit Stock Type</a></li>
+					<li style="padding-left: 10%;"><a href="#" wicket:id="stock_add">Add/Consume Stock</a></li>
+					<li style="padding-left: 10%;"><a href="#" wicket:id="stock_audit_search">Search Audit</a></li>
+					</div>
+					
+					
+					<li><a href="#" onClick="ToggleList('g')">Financial Management</a></li>	
+					<div id="g" class="divInfo">			
+					<li style="padding-left: 10%;"><a href="#" wicket:id="revenue_new">Add Revenue</a></li>
+					<li style="padding-left: 10%;"><a href="#" wicket:id="revenue_list">Revenue Report</a></li>
+					<li style="padding-left: 10%;"><a href="#" wicket:id="search_revenue">Search Revenues</a></li>
+					<li style="padding-left: 10%;"><a href="#" wicket:id="expense_new">Add Expense</a></li>
+					<li style="padding-left: 10%;"><a href="#" wicket:id="expenses_list">Expense Report</a></li>
+					<li style="padding-left: 10%;"><a href="#" wicket:id="search_exp">Search Expense</a></li>
+					
+					</div>
+					
+					<li><a href="#" onClick="ToggleList('h')">Employee Management</a></li>
+					<div id="h" class="divInfo">
+					<li style="padding-left: 10%;"><a href="#" wicket:id="employee_new">Add Employee</a></li>
+					<li style="padding-left: 10%;"><a href="#" wicket:id="employee_list">List/Edit Employee</a></li>
+					</div>
+					
+					<li><a href="#" onClick="ToggleList('i')">Assets Management</a>		</li>
+					<div id="i" class="divInfo">
+					<li style="padding-left: 10%;"><a href="#" wicket:id="asset_new">Add Asset</a>	</li>
+					<li style="padding-left: 10%;"><a href="#" wicket:id="asset_list">List/Edit Asset</a>	</li>
+					</div>
+					
+					<li><a href="#" onClick="ToggleList('j')">Vendor Management</a></li>
+					<div id="j" class="divInfo">
+					<li style="padding-left: 10%;"><a href="#" wicket:id="vendor_new">Add Vendor</a></li>
+					<li style="padding-left: 10%;"><a href="#" wicket:id="vendor_list">List/Edit Vendor</a></li>
+					</div>
+					
+					<li><a href="#" onClick="ToggleList('k')">Admin</a>
+					</li>
+					<div id="k" class="divInfo">				
+					<li style="padding-left: 10%;"><a href="ConfigureDropdown.html" wicket:id="config_drpdn">Configure
+							Dropdown</a>
+					</li>
+					<!-- <li style="padding-left: 10%;"><a href="ReportPage.html" wicket:id="report_page">View Reports</a>
+					</li> -->
+					<li style="padding-left: 10%;"><a href="#" wicket:id="interval_config">Interval Configuration</a>
+					</li>
+					<li style="padding-left: 10%;"><a href="#" wicket:id="farm_config">Farm Configuration</a>
+					</li>					
+					</div>
+				</ul>
+			</div>
+		
+		<wicket:child/></div>	
+	</div>
+</wicket:extend>

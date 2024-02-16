@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Sep 22, 2012 6:00:44 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dblue.farm.DeVermitizationType" table="de_vermitization_type" >
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="deVermitizationType" type="string">
+            <column name="de_vermitization_type" length="30" not-null="true" />
+        </property>
+        <property name="description" type="string">
+            <column name="description" length="150" />
+        </property>
+        <many-to-one class="com.dblue.farm.Farm" fetch="select" name="farm">
+ 			<column name="farm_id" not-null="true"/>
+		</many-to-one>
+        <property name="intervalPeriod" type="java.lang.Integer">
+            <column name="interval_period" />
+        </property>
+        <set name="devermitizations" table="devermitization" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="de_vermitization_type_id" not-null="true" />
+            </key>
+            <one-to-many class="com.dblue.farm.Devermitization" />
+        </set>
+    </class>
+</hibernate-mapping>

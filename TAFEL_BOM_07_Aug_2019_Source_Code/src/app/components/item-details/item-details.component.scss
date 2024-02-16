@@ -1,0 +1,59 @@
+.bow_input_styles {
+    border: none;
+    border-bottom: 1px solid #eee;
+    border-radius: 0;
+  }
+  .bow_inv_lable_styles {
+    font-size: 13px;
+      font-weight: normal !important;
+      
+      
+      color: #5e5f65 !important;
+  } 
+  .bow_inv_sub_lable_styles {
+    font-size: 11px !important;
+      font-weight: normal !important;
+      
+      
+      color: #5e5f65 !important;
+  } 
+  ::ng-deep .mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
+    border-color: #007bff !important;
+  }
+  ::ng-deep .mat-radio-button.mat-accent .mat-radio-inner-circle, .mat-radio-button.mat-accent .mat-radio-ripple .mat-ripple-element:not(.mat-radio-persistent-ripple), .mat-radio-button.mat-accent.mat-radio-checked .mat-radio-persistent-ripple, .mat-radio-button.mat-accent:active .mat-radio-persistent-ripple {
+    background-color: #007bff !important;
+  }
+  ::ng-deep .mat-slide-toggle.mat-checked .mat-slide-toggle-bar {
+    background-color: #07c20c !important;
+  }
+  ::ng-deep .mat-slide-toggle.mat-checked .mat-slide-toggle-thumb {
+    background-color: #08950d !important;
+  }
+  .form-control:focus {
+    box-shadow: none !important;
+}
+.bow_radio_checkbox_styles::before {
+    
+    top: 0.10rem;
+    left: -1.5rem;
+   
+    width: 17px;
+    height: 17px;
+   
+} 
+.bow_radio_checkbox_styles::after {
+   
+    top: 0.10rem;
+    left: -1.5rem;
+   
+    width: 17px;
+    height: 17px;
+}
+.bow_label_styles{
+   
+    font-size: 12px;
+     font-weight: normal !important;
+     
+     
+     color: #5e5f65 !important;
+   }

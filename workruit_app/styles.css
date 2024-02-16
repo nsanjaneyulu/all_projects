@@ -1,0 +1,901 @@
+/* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+
+@import url("font-family.css");
+body {
+	font-family: 'Source Sans Pro', sans-serif;
+	background: #f6f7fb;
+}
+/* after login header start */
+
+.sidebar {
+	position: fixed;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 420px;
+	background: #fff;
+	z-index: 100;
+	cursor: default;
+}
+
+.content_align {
+	padding-left: 420px;
+	padding-bottom: 50px;
+}
+
+.main_container {
+	background: rgba(51, 122, 183, .33);
+	overflow: hidden;
+}
+
+.form_control_bottom_space {
+	margin-bottom: 30px;
+}
+
+.form_control_height {
+	display: block;
+	width: 100%;
+	padding: 0.75rem;
+	font-weight: 300;
+	line-height: 1.5;
+	color: rgba(0, 0, 0, .4);
+	font-size: 16px;
+	border: 1px solid rgba(0, 0, 0, .2);
+	border-radius: 4px;
+	height: auto;
+}
+
+.title {
+	font-size: 24px;
+	color: #000;
+	font-weight: 400;
+}
+
+.description {
+	font-size: 15px;
+	font-weight: 300;
+	color: rgba(0, 0, 0, .4);
+}
+
+.btn_login {
+	padding: 0.7rem 1rem;
+	font-size: 16px;
+	line-height: 1.5;
+	border-radius: 0.3rem;
+	color: #fff;
+	background-color: #337ab7;
+	border-color: #337ab7;
+}
+
+
+
+/* Dashboard Css */
+
+
+.dropdown .nav-link {
+	position: relative;
+	display: block;
+	padding: 0 40px 0 0;
+}
+
+.dropdown-menu {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	z-index: 1000;
+	display: none;
+	float: left;
+	min-width: 160px;
+	padding: 5px 0;
+	margin: 2px 0 0;
+	font-size: 14px;
+	text-align: left;
+	list-style: none;
+	background-color: #fff;
+	-webkit-background-clip: padding-box;
+	background-clip: padding-box;
+	border: 1px solid #ccc;
+	border: 1px solid rgba(0, 0, 0, .15);
+	border-radius: 4px;
+	-webkit-box-shadow: 0 6px 12px rgb(0 0 0 / 18%);
+	box-shadow: 0 6px 12px rgb(0 0 0 / 18%);
+	position: absolute;
+	will-change: transform;
+	top: 0px;
+	left: 0px;
+	transform: translate3d(0px, 40px, 0px);
+}
+
+
+.dropdown>a {
+	background: url(https://devapp.workruit.com/images/icons/dropdown.svg) no-repeat center right;
+	background-size: 40px 40px;
+	padding: 0 40px 0 0;
+}
+
+
+.dropdown-item {
+	display: block;
+	padding: 0.25rem 1.5rem;
+	font-weight: 400;
+	color: #000;
+	text-align: inherit;
+	font-size: 16px;
+	overflow-wrap: break-word;
+	width: 250px;
+	white-space: normal;
+}
+
+.dropdown-item span {
+	color: rgba(0, 0, 0, 0.25);
+}
+
+.dropdown-item-span {
+	color: #000000 !important;
+}
+
+.dropdown-item:hover,
+.dropdown-item-span:hover {
+	color: #337ab7 !important;
+	text-decoration: none;
+	cursor: pointer;
+	background-color: #fff !important;
+}
+
+.nav-link {
+	font-size: 16px;
+	color: rgba(0, 0, 0, .5);
+}
+
+.dropdown-toggle::after {
+	display: none;
+}
+
+
+/* after login header end */
+
+
+/* tabs start */
+
+.nav {
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+	padding-left: 0;
+	margin-bottom: 0;
+	list-style: none;
+}
+
+.nav-fill .nav-item {
+	-ms-flex: 1 1 auto;
+	flex: 1 1 auto;
+	text-align: center;
+}
+
+.nav-pills>li {
+	float: left;
+}
+
+.nav-pills .nav-item:first-child:not(:last-child) a {
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+}
+
+.nav-pills .nav-link.active {
+	box-shadow: 0 2px 10px 0 rgb(0 0 0 / 10%);
+	border: solid 1px #ffffff;
+	color: #000000;
+	background: #fff;
+}
+
+.nav-pills .nav-link {
+	border-radius: 4px;
+	font-size: 16px;
+	border: solid 1px rgba(0, 0, 0, 0.1);
+}
+
+.nav>li>a {
+	position: relative;
+	padding: 0.5rem 1rem;
+}
+
+.nav-pills .nav-item:not(:first-child):not(:last-child) a {
+	border-radius: 0;
+}
+
+
+
+.nav-pills .nav-item:first-child:not(:last-child) a {
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+}
+
+.nav-pills .nav-link.active {
+	box-shadow: 0 2px 10px 0 rgb(0 0 0 / 10%);
+	border: solid 1px #ffffff;
+	color: #000000;
+	background: #fff;
+}
+
+
+/* tabs end */
+
+
+/* logo start */
+
+.p_relative {
+	position: relative;
+}
+
+.logo_height {
+	height: 70px;
+}
+
+.back {
+	background: url(https://devapp.workruit.com/assets/images/auth/back.svg) no-repeat;
+	background-size: 36px 36px;
+	height: 36px;
+	width: 36px;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+
+/* logo end */
+
+
+/* before login background */
+
+.app h3 {
+	font-size: 24px;
+	color: #fff;
+	font-weight: 700;
+}
+
+.app p {
+	font-size: 16px;
+	line-height: 1.5;
+	color: #fff;
+}
+
+.getapp {
+	min-width: 235px;
+	max-width: 235px;
+	border-radius: 5px;
+	background: #fff;
+	font-size: 16px;
+	color: rgba(0, 0, 0, .5);
+}
+
+
+
+.auth .app p {
+	font-size: 16px;
+	line-height: 1.5;
+	color: #fff;
+}
+
+
+
+.content_block {
+	padding-left: 420px;
+}
+
+
+/* before login background end */
+
+.main_container {
+	background: rgba(51, 122, 183, .33);
+	overflow: hidden;
+	height: 100vh;
+}
+
+.form_control_bottom_space {
+	margin-bottom: 30px;
+}
+
+.with-icon.icon-user {
+	background: url(../src//assets//images/auth/profile.svg) no-repeat center left;
+}
+
+.with-icon.icon-user.is-invalid,
+.with-icon.icon-role.is-invalid,
+.with-icon.icon-phone.is-invalid,
+.with-icon.icon-mail.is-invalid,
+.with-icon.icon-password.is-invalid,
+.with-icon.icon-company.is-invalid {
+	filter: brightness(0.5) sepia(1) hue-rotate(-70deg) saturate(5);
+	fill: #f00;
+	border-color: #dc3545 !important;
+}
+
+.with-icon.icon-phone {
+	background: url(../src//assets/images/auth/phone.svg) no-repeat center left;
+}
+
+.with-icon.icon-mail {
+	background: url(../src//assets/images//auth/email.svg) no-repeat center left;
+}
+
+.with-icon.icon-password {
+	background: url(../src//assets/images//auth/lock.svg) no-repeat center left;
+}
+
+.with-icon.icon-company {
+	background: url(../src//assets/images/auth/company.svg) no-repeat center left;
+}
+
+.with-icon.icon-web {
+	background: url(../src//assets/images/auth/web.svg) no-repeat center left;
+}
+
+.with-icon.icon-role {
+	background: none !important;
+}
+
+.invalid-feedback {
+	display: block;
+	margin-top: 0.25rem;
+	font-size: 16px;
+	color: #f44e4b;
+}
+
+.form-control.with-icon {
+	padding-left: 50px;
+}
+
+.form_control_height {
+	display: block;
+	width: 100%;
+	padding: 0.75rem;
+	font-weight: 300;
+	line-height: 1.5;
+	color: rgba(0, 0, 0, 0.4);
+	font-size: 16px;
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	border-radius: 4px;
+	height: auto;
+}
+
+.title {
+	font-size: 24px;
+	color: #000;
+	font-weight: 400;
+}
+
+.description {
+	font-size: 15px;
+	font-weight: 300;
+	color: rgba(0, 0, 0, .4);
+}
+
+.btn_login {
+	padding: 0.7rem 1rem;
+	font-size: 16px;
+	line-height: 1.5;
+	border-radius: 0.3rem;
+	color: #fff;
+	background-color: #337ab7;
+	border-color: #337ab7;
+}
+
+.side_form {
+	float: left;
+	height: 100%;
+	width: 420px;
+	position: absolute;
+	overflow: auto;
+	/* position: fixed;
+    left: 0;
+    top: 0;
+    width: 420px;
+    z-index: 100;
+    cursor: default; */
+}
+
+.form_spacing {
+	margin-bottom: 30px;
+}
+
+.fp_center {
+	text-align: right;
+}
+
+.btn_auth {
+	color: #fff;
+	background-color: #337ab7;
+	border-color: #337ab7;
+	display: block;
+	width: 100%;
+	padding: 0.7rem 1rem;
+	font-size: 16px;
+	line-height: 1.5;
+	border-radius: 0.3rem;
+	font-weight: 400;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	border: 1px solid transparent;
+	transition: background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+	cursor: pointer;
+}
+
+.btn_auth_flex {
+	display: block !important;
+}
+
+
+
+.form-text {
+	font-size: 16px;
+	color: #9d9d9d;
+}
+
+
+
+.content {
+	padding-top: 85px;
+	padding-bottom: 20px;
+}
+
+.table tbody tr {
+	background: #fff;
+}
+
+.table {
+	width: 100%;
+	max-width: 100%;
+	margin-bottom: 1rem;
+	background-color: transparent;
+}
+
+.table thead th {
+	vertical-align: bottom;
+	font-size: 14px;
+	color: rgba(0, 0, 0, 0.4);
+	text-transform: uppercase;
+	font-weight: 400;
+}
+
+.table th {
+	border: 0px;
+}
+
+.table td {
+	font-size: 16px;
+	color: #000;
+	max-height: 75px;
+	height: 75px;
+}
+
+.table>thead>tr>th,
+.table>tbody>tr>td {
+	padding: 13px 35px 13px 35px;
+	line-height: 1.42857143;
+	vertical-align: middle;
+	border-top: 0px solid #ddd;
+	border-bottom: 0px solid #ddd;
+}
+
+.table>:not(:first-child) {
+	border-top: 0px solid currentColor;
+}
+
+.item {
+	background: #fff;
+}
+
+.item .bordered {
+	border-right: solid 1px rgba(0, 0, 0, 0.1);
+}
+
+.m-0 {
+	margin: 0 !important;
+}
+
+.item-title {
+	font-size: 16px;
+	font-weight: 700;
+	color: #000000;
+}
+
+span.tag {
+	padding: 2px 8px;
+	background: #e5e5e5;
+	-moz-border-radius-bottomright: 4px;
+	-webkit-border-bottom-right-radius: 4px;
+	border-bottom-right-radius: 4px;
+	-moz-border-radius-topright: 4px;
+	-webkit-border-top-right-radius: 4px;
+	border-top-right-radius: 4px;
+	font-size: 12px;
+	text-transform: uppercase;
+	color: rgba(9, 9, 9, 0.5);
+	height: 20px;
+	line-height: 20px;
+	position: relative;
+	margin-right: 10px;
+	font-weight: 400;
+}
+
+span.tag:before {
+	content: "";
+	float: left;
+	position: absolute;
+	top: 0;
+	left: -8px;
+	width: 0;
+	height: 0;
+	border-color: transparent #e5e5e5 transparent transparent;
+	border-style: solid;
+	border-width: 10px 8px 9px 0;
+}
+
+.item-description {
+	font-size: 16px;
+	color: rgba(0, 0, 0, 0.5);
+}
+
+.element-info {
+	font-size: 16px;
+	font-weight: 400;
+	color: rgba(0, 0, 0, 0.5);
+}
+
+.item-info p {
+	font-size: 16px;
+	font-weight: 400;
+	color: #000;
+	word-break: break-word;
+}
+
+.item-info p.muted {
+	color: rgba(0, 0, 0, 0.5);
+}
+
+.item-info p {
+	font-size: 16px;
+	font-weight: 400;
+	/* color: #000; */
+	word-break: break-word;
+}
+
+
+.like {
+	border-bottom: solid 1px rgba(0, 0, 0, 0.1) !important;
+}
+
+.like,
+.pass,
+.send {
+	border: none;
+	background: transparent;
+	cursor: pointer;
+	text-transform: uppercase;
+}
+
+.like span {
+	background: url(https://devapp.workruit.com/images/icons/like.svg) no-repeat center left;
+	padding-left: 25px;
+}
+
+.saves span {
+	background: url(https://devapp.workruit.com/images/icons/bookmark-color.svg) no-repeat center left;
+	padding-left: 25px;
+}
+
+.pass span {
+	background: url(https://devapp.workruit.com/images/icons/pass.svg) no-repeat center left;
+	padding-left: 25px;
+}
+
+.item-meta span {
+	margin-right: 30px;
+	font-size: 16px;
+	color: rgba(0, 0, 0, 0.5);
+	font-weight: 400;
+}
+
+.meta-location {
+	background: url(https://devapp.workruit.com/images/icons/location.svg) no-repeat center left;
+	background-size: 30px 30px;
+	padding-left: 28px;
+}
+
+.meta-exp {
+	background: url(https://devapp.workruit.com/images/icons/exp.svg) no-repeat center left;
+	padding-left: 35px;
+}
+
+.item-meta span:last-child {
+	margin-right: 0px;
+}
+
+.meta-price {
+	background: url(https://devapp.workruit.com/images/icons/salary.svg) no-repeat center left;
+	padding-left: 17px;
+}
+
+.filter,
+.item {
+	background: #fff;
+}
+
+.send {
+	color: #337ab7;
+}
+
+.like,
+.pass,
+.send {
+	border: none;
+	background: transparent;
+	cursor: pointer;
+	text-transform: uppercase;
+	transition: background 0.3s, color 0.15s ease-in-out;
+}
+
+.send span {
+	background: url(https://devapp.workruit.com/images/icons/send-message.svg) no-repeat center left;
+	padding-left: 25px;
+}
+
+.send:hover {
+	background-color: #337ab7;
+	color: #fff;
+}
+
+a:hover {
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.empty h1 {
+	font-size: 24px;
+	color: #2f2f2f;
+	font-weight: 700;
+}
+
+.empty h2 {
+	font-size: 16px;
+	color: #2f2f2f;
+	font-weight: 400;
+}
+
+.ng-autocomplete {
+	width: 100% !important;
+}
+
+.form-group span.badge {
+	color: #2f2f2f;
+	background-color: #E0E0E0;
+}
+
+span.badge {
+	font-family: 'Source Sans Pro', sans-serif !important;
+	font-weight: 300;
+	font-size: 1rem;
+	padding: 10px;
+	margin: 3px;
+}
+
+.autocomplete-container {
+	box-shadow: none !important;
+	position: relative;
+	overflow: visible;
+	height: 50px !important;
+	display: block;
+	width: 100%;
+	padding: 0.75rem 0rem;
+	font-weight: 300;
+	line-height: 1.5;
+	color: rgba(0, 0, 0, .4);
+	font-size: 16px;
+	border: 1px solid rgba(0, 0, 0, .2);
+	border-radius: 4px;
+}
+
+.input-container {
+	margin-top: -8px;
+}
+
+.btn_table {
+	border: solid 1px #337ab7;
+	font-size: 12px;
+	color: #337ab7;
+	font-weight: 400;
+	padding: 5px 10px;
+	border-radius: 4px;
+	text-transform: uppercase;
+}
+
+.btn_table:hover {
+	background: #337ab7;
+	color: #fff;
+	text-decoration: none;
+}
+
+.postJob_btn {
+	color: #fff;
+	background-color: #337ab7;
+	border-color: #337ab7;
+	padding: 0.7rem 1rem;
+	font-size: 16px;
+	line-height: 1.5;
+	border-radius: 0.3rem;
+	display: inline-block;
+	font-weight: 400;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	user-select: none;
+	border: 1px solid transparent;
+	transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+	cursor: pointer;
+}
+.user a img {
+	width: 40px;
+	height: 40px;
+}
+.nav>li {
+	position: relative;
+	display: block;
+}
+header {
+	height: 68px;
+	max-height: 68px;
+	background: #fff;
+	box-shadow: 0 2px 10px 0 #f1f1f3;
+	padding: 15px 0;
+	position: fixed;
+	top: 0;
+	z-index: 1050;
+}
+.nav>li.message {
+	cursor: pointer;
+}
+header .message {
+	text-indent: -9999px;
+	background: url(https://devapp.workruit.com/images/icons/message-not-active.svg) no-repeat 0 85%;
+	background-size: 30px 30px;
+	padding: 0 10px;
+	height: 40px;
+	max-height: 40px;
+}
+header .logo img {
+	width: auto;
+	height: 30px;
+	margin-top: 5px;
+}
+.nav>li>a>img {
+	max-width: none;
+}
+/* Need to change tags start */
+img {
+	vertical-align: middle;
+	border-style: none;
+}
+p {
+	margin-top: 0;
+	margin-bottom: 1rem;
+}
+h1 {
+	margin-top: 0;
+	margin-bottom: 0.5rem;
+	line-height: 1.5;
+}
+h2 {
+	font-family: inherit;
+	margin-bottom: 0.5rem;
+	line-height: 1.5;
+}
+h3 {
+	margin-top: 0;
+	margin-bottom: 0.5rem;
+	line-height: 1.5;
+}
+.w-100 {
+	width: 100%;
+}
+.h-100 {
+	height: 100%;
+}
+.d-block {
+	display: block !important;
+}
+/* Need to change tags end */
+.btn_change_password {
+    background: #fff;
+    border: solid 1px rgba(0, 0, 0, 0.2);
+    padding: 0.7rem 1rem;
+    font-size: 16px;
+    line-height: 1.5;
+    border-radius: 0.3rem;
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    user-select: none;
+    transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    cursor: pointer;
+    color: #333;
+}
+.btn_change_password:hover {
+    color: #333;
+    background-color: #e6e6e6;
+    border-color: #adadad;
+}
+.ml_5px {
+    margin-left: 5px;
+}
+.clogo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    box-shadow: 0 0 2px #ccc;
+    padding: 0px !important;
+    overflow: hidden;
+    margin-top: 5px;
+}
+.change_btn {
+    font-size: 10px;
+    height: 25px;
+    line-height: 12px;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    background: #fff;
+    border: solid 1px rgba(0, 0, 0, 0.2);
+    display: block;
+    width: 100%;
+    user-select: none;
+    padding: 0.375rem 0.75rem;
+    border-radius: 0.25rem;
+    transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    cursor: pointer;
+    color: #333;
+}
+.change_btn:hover {
+    background-color: #f44e4b;
+    color: #fff;
+    border-color: #f44e4b;
+}
+.ng2-tag-input {
+    border: 1px solid #ccc !important;
+	font-family: Source Sans Pro !important;
+    font-size: 1.0rem !important;
+	box-shadow: 0 0px !important;
+    border-radius: 5px;
+	font-weight: 300;
+	padding-left: 10px;
+	display: block;
+    padding: 0.25rem 0.25rem !important;
+    vertical-align: middle;
+}
+tag {
+	background: #337ab7 !important;
+    color: #ffffff !important;
+	cursor: default !important;
+    height: 32px !important;
+    line-height: 32px !important;
+	font-size: 1rem !important;
+    margin: 6px 8px 5px 0 !important;
+	border-radius: 3px !important;
+}
+delete-icon path{
+    fill: #fff !important
+}
+.activity_user_img {
+    width: 50px;
+    border-radius: 50%;
+    height: 50px;
+}

@@ -1,0 +1,43 @@
+<!-- <div class="mt-2 int-connect-disconnect-bg">
+        <div class="row">
+           <div class="col-12 p-2 ml-3">
+              <span class="topTitle"><span class="pl-2"><img class="int-connect-disconnect" *ngIf="message === 'Internet connected'" src="../../assets//images/wifi.svg"><img class="int-connect-disconnect" *ngIf="message === 'No internet connected'" src="../../assets//images/noInternet.svg"></span><span class="pl-1">{{ message }}</span></span>
+           </div>
+        </div>
+     </div> -->
+<div class="mt-2 col-12" >
+      <!-- <div class="mt-2 int-connect-disconnect-bg">
+            <div class="">
+               <div class="p-2 ml-3">
+                  <span [ngClass]="message === 'Internet connected'?'topTitle':'topTitle1'"><span class=""><img class="int-connect-disconnect" *ngIf="message === 'Internet connected'" src="../../assets//images/wifi.svg"><img class="int-connect-disconnect" *ngIf="message === 'Internet Connected | Data Sinking'" src="../../assets//images/wifi.svg"><img class="int-connect-disconnect" *ngIf="message === 'No internet connected'" src="../../assets//images/noInternet.svg"></span><span class="pl-1">{{ message }}</span></span>
+               </div>
+            </div>
+         </div> -->
+    
+         <div style="background: #40485c; height: 50px;display: flex; justify-content: space-between;" class="row pos-top-title-bg ml-0 mr-0 text-white">
+      <div>
+<nav mat-tab-nav-bar style="background: #40485c; " class="">
+    <a mat-tab-link class="text-white"
+    *ngFor="let link of navLinks"
+    [routerLink]="link.link" [disableRipple]='true'
+    routerLinkActive #rla="routerLinkActive"
+    [active]="rla.isActive">
+        {{ link.label }}
+    </a>
+</nav>
+      </div>
+<div class="displayflexcenter">
+<div class="search-styles">
+   <input class="form-control text-white" type="text" placeholder="Enter Invoice No" /><span class="text-white search_container_icon"><i class="fa fa-search"
+         aria-hidden="true"></i></span>
+        
+</div>
+<div class="pl-2">
+   <span class="pr-3"><span class="pos-top-title pr-2 rotate"  >Refresh</span><span><img
+      style="width: 30px; height: 30px;" class="refresh" src="../../assets/images/refresh.svg" /></span></span>
+</div>
+</div>
+</div>
+</div>
+<router-outlet></router-outlet>
+

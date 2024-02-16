@@ -1,0 +1,47 @@
+<wicket:extend>
+	<div id="content">
+		<h1>Stock Search</h1>
+		<form method="post" wicket:id="stockSearch">
+			<div wicket:id="feedback"></div>
+			<div class="addData">
+				<ul>
+					<li><label>Stock Type:</label><br /> 
+                    <select wicket:id="stockType" class="dropdown_effect"></select></li>
+					<li><label>Operation:</label><br /> 
+                    <select wicket:id="operation" class="dropdown_effect"></select></li>
+					<li><label>Start Date:</label><br />
+                     <input type="text" id="startDate" name="startDate" wicket:id="startDate" class="date_effect"/></li>
+					<li><label>End Date:</label><br /> <input type="text" id="endDate" name="endDate" wicket:id="endDate"
+                    class="date_effect"></li>
+				</ul>
+				<div style="clear: both;"></div>
+				<div class="newButton">
+					<input type="submit" name="Search" value="Search" class="button" wicket:id="search" />
+				</div>
+			</div>
+		</form>
+		<div wicket:id="datawrapper">
+			<div>
+				<span wicket:id="navigator">[dataview navigator]</span>
+			</div>
+			<div class="list list-Header">
+				<div>
+					<h2 wicket:id="orderbycode">Stock Code</h2>
+					<h2>Stock Name</h2>
+					<h2>Stock Category</h2>
+					<h2>Operation</h2>
+					<h2 class="last">Quantity</h2>
+				</div>
+				<div wicket:id="rows" style="clear: both;">
+					<div class="list-Rows">
+						<h3><span wicket:id="stockCode" /></h3>
+						<h3><span wicket:id="stockName" /></h3>
+						<h3><span wicket:id="stockCategory" /></h3>
+						<h3><span wicket:id="au_operation" /></h3>
+						<h3 class="last"><span wicket:id="au_quanity" /></h3>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</wicket:extend>

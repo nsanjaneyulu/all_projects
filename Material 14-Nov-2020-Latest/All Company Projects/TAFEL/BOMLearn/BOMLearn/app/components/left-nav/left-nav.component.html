@@ -1,0 +1,16 @@
+<aside class="">
+    <ul class="">
+       <li *ngFor="let menu of navigation">
+          <div *ngIf="menu.showMenuItem">
+             <span class="" [routerLink]="[menu.link]">{{menu.title}}</span>
+          </div>
+          <ul class="" *ngIf="menu.children && !!menu.children.length && menu.showChild">
+            <li *ngFor="let subMenu of menu.children">
+              <div *ngIf="subMenu.showMenuItem" routerLinkActive="active"  title="{{subMenu.link}}" [routerLink]="[subMenu.link]" class="">
+                <span class="">{{subMenu.title}}</span>
+              </div>
+            </li>
+          </ul>
+       </li>
+    </ul>
+ </aside>

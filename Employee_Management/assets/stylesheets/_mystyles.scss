@@ -1,0 +1,68 @@
+@import "_bootstrap";
+/* Site Styling */
+
+body {
+    /* background: #666; */
+}
+h1 {
+    text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0, 0, 0, .1), 0 0 5px rgba(0, 0, 0, .1), 0 1px 3px rgba(0, 0, 0, .3), 0 3px 5px rgba(0, 0, 0, .2), 0 5px 10px rgba(0, 0, 0, .25), 0 10px 10px rgba(0, 0, 0, .2), 0 20px 20px rgba(0, 0, 0, .15);
+}
+// Header Section
+#main-header {
+    padding: 0.5em 0;
+    background: #ddd;
+    border-bottom: 1px solid #777;
+    margin-bottom: 2em;
+}
+// User Menu
+aside {
+    .side--nav {
+        background-color: #e7e7e7;
+    }
+    .menu--user {
+        margin: 0;
+        padding: 0;
+    }
+    .menu--user a {
+        color: #2B2B2B;
+    }
+    .menu--user {
+        li:first-child {
+            background-color: rgba(115, 115, 115, 0.35);
+        }
+    }
+    ul.menu--user li {
+        padding: 7px 1em;
+        border-bottom: 1px dotted #333333;
+    }
+    ul.menu--user li:hover {
+        background-color: #DDDDDD;
+    }
+    .menu--user li {
+        margin: 0;
+        padding: 0 1em;
+        line-height: 2em;
+    }
+}
+// User Panel
+.users-panel {
+    .table--users {
+        button {
+            margin-right: 15px;
+        }
+    }
+}
+// Footer Section
+#main-footer {
+    background: #555;
+    color: #fff;
+    padding: 2em 0;
+    a {
+        color: #fff;
+    }
+}
+// Helper Class
+.btn-outline {
+    background: transparent;
+    color: inherit;
+}

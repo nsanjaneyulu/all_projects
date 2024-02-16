@@ -1,0 +1,177 @@
+<ion-header>
+		<ion-navbar hide-tabs>
+			<div class="displayFlex" style="align-items:center;">
+				<div >
+		   <span class="order__Id">{{submenu.name}}</span>
+		   </div>
+		   
+		   <div>
+		   <!-- <button *ngIf="submenu.name!='Recommended'" class="aceptStyle" icon-start ion-button outline small color="secondary" (click)=addItem()>
+			<ion-icon name="add"></ion-icon>
+			Add Item
+		 </button> -->
+		 </div>
+		 </div>
+		</ion-navbar>
+	 </ion-header>
+	 <ion-content>
+		<div *ngIf="!showLoader">
+		  
+		 
+			  
+			
+		   </div>
+		   <div *ngIf="!showLoader">
+				<div>
+						<ion-item style="background:#f8f8f8;border-bottom: 3px solid #c2c0c0;">
+						   <ion-label class="order__Details">Submenu Open</ion-label>
+						   <ion-toggle [(ngModel)]="availability" ></ion-toggle>
+						</ion-item>
+						<div  *ngIf="availability">
+						   <ion-row>
+							  <ion-col col-2>
+								 <ion-item>
+								  <ion-label>{{subMenuLogicType}}</ion-label>
+								  </ion-item>
+							  </ion-col>
+							  <ion-col col-5>
+								 <ion-item>
+									<ion-label>Start Time</ion-label>
+								  </ion-item>
+							  </ion-col>
+							  <ion-col col-5>
+								 <ion-item>
+									<ion-label>End Time</ion-label>
+								  </ion-item>
+							  </ion-col>
+						   </ion-row>
+						   <ion-row>
+							  <ion-col col-2>
+								 <ion-item>
+									<input type="radio" name="openClose" value="1" [checked]="outletOpen" (click)="checkOpen()"> Open<br>
+								  </ion-item>
+							  </ion-col>
+							  <ion-col col-5>
+								 <ion-item>
+									<ion-select [(ngModel)]="openStartTime" multiple="false" [disabled]="!open">
+									   <ion-option *ngFor="let time  of times" value="{{time}}">{{time}}</ion-option>
+									   </ion-select>
+								  </ion-item>
+							  </ion-col>
+							  <ion-col col-5>
+								 <ion-item>
+									<ion-select [(ngModel)]="openEndTime" multiple="false"  [disabled]="!open">
+									   <ion-option *ngFor="let time  of times" value="{{time}}">{{time}}</ion-option>
+									   </ion-select>
+								  </ion-item>
+							  </ion-col>
+						   </ion-row>
+						   <ion-row>
+							  <ion-col col-2>
+								 <ion-item>
+									<input type="radio" name="openClose" value="2" [checked]="outletClose" (click)="checkClose()"> Close<br>
+								  </ion-item>
+							  </ion-col>
+							  <ion-col col-5>
+								 <ion-item>
+									<ion-select [(ngModel)]="closeStartTime" multiple="false"  [disabled]="!close" >
+									   <ion-option *ngFor="let time  of times" value="{{time}}">{{time}}</ion-option>
+									   </ion-select>
+								  </ion-item>
+							  </ion-col>
+							  <ion-col col-5>
+								 <ion-item>
+									<ion-select [(ngModel)]="closeEndTime" multiple="false"  [disabled]="!close">
+									   <ion-option *ngFor="let time  of times" value="{{time}}">{{time}}</ion-option>
+									   </ion-select>
+								  </ion-item>
+							  </ion-col>
+						   </ion-row>
+						</div>
+						<div >
+						   <ion-item  >
+							  <ion-label>Weeks</ion-label>
+							  <ion-select [(ngModel)]="weeks" multiple="true">
+							  <ion-option>Sun</ion-option>
+							  <ion-option>Mon</ion-option>
+							  <ion-option>Tue</ion-option>
+							  <ion-option>Wed</ion-option>
+							  <ion-option>Thu</ion-option>
+							  <ion-option>Fri</ion-option>
+							  <ion-option>Sat</ion-option>
+							  </ion-select>
+						   </ion-item>
+						   <!-- <ion-item>
+							  <ion-label>Start Time </ion-label>
+							  <ion-datetime displayFormat="HH:mm" [(ngModel)]="startTime" (ionChange)="getOutletStartTime()"></ion-datetime>
+						   </ion-item>
+						   <ion-item>
+							  <ion-label>End Time </ion-label>
+							  <ion-datetime displayFormat="HH:mm" [(ngModel)]="endTime" (ionChange)="getOutletEndTime()"></ion-datetime>
+						   </ion-item> -->
+						   <ion-item no-lines>
+								 <div class="displayFlex">
+									<span  style="color: #999;"> Supplier Discount</span>
+									<span class="" style="color:#e46d47; font-weight:bold;padding-right: 10px;">{{submenuDiscount}}</span>
+								 </div>
+						   </ion-item>
+						   
+							   <ion-item>
+								   
+								 <!-- <ion-range min="0" max="50" pin="true" [(ngModel)]="outletDiscount" color="secondary">
+								   <ion-icon range-left small name="eye"></ion-icon>
+								   <ion-icon range-right name="eye"></ion-icon>
+								   
+								 </ion-range> -->
+								 <ion-input type="number"   [(ngModel)]="submenuDiscount"  min="1" max="90" (ionChange)="validateInputValue(submenuDiscount)"></ion-input>
+			   
+							   </ion-item>
+							   <ion-item no-lines>
+									<div class="displayFlex">
+									   <span  style="color: #999;">Preparation Time</span>
+									   <span class="" style="color:#e46d47; font-weight:bold;padding-right: 10px;">{{preparationTime}}</span>
+									</div>
+							  </ion-item>
+							  
+								  <ion-item>
+									  
+									<!-- <ion-range min="5" max="90" pin="true" [(ngModel)]="preparationTime" color="secondary">
+									  <ion-icon range-left small name="eye"></ion-icon>
+									  <ion-icon range-right name="eye"></ion-icon>
+									  
+									</ion-range> -->
+									<ion-input type="number"   [(ngModel)]="preparationTime"  min="1" max="90" (ionChange)="validatePreperationTime(preparationTime)"></ion-input>
+			   
+								  </ion-item>
+							  
+						   <!-- <ion-item>
+							  <ion-label>Outlet Discount(%)</ion-label>
+							  <ion-input type="number" class="text__align__right" (keypress)="decimalAllow($event)" [(ngModel)]="outletDiscount"></ion-input>     
+						   </ion-item> -->
+						   <ion-item>
+							  <span style="float:right;"><button class="aceptStyle" icon-start ion-button outline small color="secondary" disabled={{buttonDisabled}} (click) ="updateSubMenuDetails()">
+								 <ion-icon name="bookmark"></ion-icon>
+								 Update...
+							   </button></span>   
+						   </ion-item>
+					   </div>
+			   
+					 </div>
+			<ion-item class="background__color">
+				<ion-label class="order__Details">Dishes</ion-label>
+				
+			 </ion-item>
+		
+		  
+		   <div *ngFor="let item of items">
+			  <ion-item (click)=getItemModal(item)>
+				 
+				 <span class="item__Details">{{item.name}}</span>
+				 <p><span>₹ {{(item.price).toFixed(2)}}</span><span class="text__float__right">Availablity-{{item.availability.startHour?item.availability.startHour:item.availability.closeStartHour}}-{{item.availability.endHour?item.availability.endHour:item.availability.closeEndHour}}(<span *ngFor="let weekDay of item.availability.weeks;let i=index">{{(item.availability.weeks.length-1)==i?weekDay:(weekDay+',')}}</span>)</span></p>
+				
+			  </ion-item>
+			</div>
+		</div>
+		<page-globalloader *ngIf="showLoader"></page-globalloader>
+	 </ion-content>
+	 

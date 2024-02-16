@@ -1,0 +1,50 @@
+<ion-header class="header_styles">
+    <ion-row>
+        <ion-icon style="margin-top: 5%;" (click)="goToBack()" ios="ios-arrow-round-back" md="md-arrow-round-back">
+        </ion-icon>
+        <ion-col><span class="">Edit Profile</span></ion-col>
+    </ion-row>
+</ion-header>
+
+<ion-content>
+    <div class="bgContent">
+        <ion-list class="mrginForProfile">
+            <ion-item>
+                <ion-icon name="person" class="colorValue"></ion-icon>
+                <ion-input class="inputDetails" type="text" [(ngModel)]="userDetailsData.firstName" placeholder="Name"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-icon name="mail" class="colorValue"></ion-icon>
+                <ion-input class="inputDetails" type="email" [(ngModel)]="userDetailsData.email" placeholder="Email"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-icon name="call" class="colorValue"></ion-icon>
+                <ion-input class="inputDetails" type="email" [(ngModel)]="userDetailsData.phoneNumber" placeholder="PhoneNumber" disabled></ion-input>
+            </ion-item>
+            <!-- <ion-item>
+                
+            </ion-item> -->
+        </ion-list>
+        <div>
+            <ion-grid>
+                <ion-row>
+                    <ion-col size="2">
+
+                    </ion-col>
+                    <ion-col size="8">
+                        <ion-button color="#5c0931" (click)="saveUserDetails(userDetailsData)" class="buttonColor" expand="block">Save</ion-button>
+                    </ion-col>
+                    <!-- <ion-col size="4">
+                        <ion-button color="#5c0931" class="buttonColor" expand="block">Default</ion-button>
+                    </ion-col> -->
+                    <ion-col size="2">
+
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+
+
+        </div>
+    </div>
+
+</ion-content>

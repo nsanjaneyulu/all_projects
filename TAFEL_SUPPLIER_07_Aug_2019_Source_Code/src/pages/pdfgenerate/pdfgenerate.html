@@ -1,0 +1,74 @@
+<ion-header>
+    <ion-navbar>
+       
+       <ion-title>
+          <div class="ion__title" style="">
+              <span class="text-align:center;">Cyber Towers</span>
+            </div>
+       </ion-title>
+    </ion-navbar>
+ </ion-header>
+ <ion-content>
+    <ion-list>
+        
+        <div>
+            <ion-item class="background__color">
+               <!-- <ion-avatar item-start> <img src="{{imageEndPoint}}/{{fullOrderObject.outlet.image}}"> </ion-avatar> -->
+               <div class="order__Details"> Invoice Details </div>
+            </ion-item>
+         </div>
+         <ion-item class="r">
+            <!-- <ion-avatar item-start> <img src="{{imageEndPoint}}/{{fullOrderObject.outlet.image}}"> </ion-avatar> -->
+            <div class="order__Details">Order Id# {{fullorder.fullOrder5DigitId}} </div>
+         </ion-item>
+        <ion-item >
+          <div class="displayFlex">
+            <span>Amount</span>
+            <span>{{fullorder.amount.toFixed(2)}}</span>
+          </div>
+        </ion-item>
+        <ion-item >
+            <div class="displayFlex">
+              <span>CGST</span>
+              <span>{{fullorder.cgst.toFixed(2)}}</span>
+            </div>
+          </ion-item>
+          <ion-item>
+              <div class="displayFlex">
+                <span>SGST</span>
+                <span>{{fullorder.sgst.toFixed(2)}}</span>
+              </div>
+            </ion-item>
+            <ion-item >
+                <div class="displayFlex">
+                  <span>Convenience Charge</span>
+                  <span>{{fullorder.convenience.toFixed(2)}}</span>
+                </div>
+              </ion-item>
+              <ion-item >
+                  <div class="displayFlex">
+                    <span>Packaging Charge</span>
+                    <span>{{fullorder.packagingCharge.toFixed(2)}}</span>
+                  </div>
+                </ion-item>
+                <ion-item >
+                    <div class="displayFlex">
+                      <span>Total Amount</span>
+                      <span>{{fullorder.totalAmount.toFixed(2)}}</span>
+                    </div>
+                  </ion-item>
+      </ion-list>
+ </ion-content>
+ <ion-footer class="footer__styles" *ngIf ="!(fullorder.status === 'COMPLETED')">
+    <ion-grid>
+          <ion-row style="text-align:center;">
+            <ion-col col-12 ><span class="print__callDiner">
+                <ion-icon name="print"></ion-icon>
+                Print
+               </span></ion-col>
+            
+          </ion-row>
+          
+         </ion-grid>
+    
+  </ion-footer>

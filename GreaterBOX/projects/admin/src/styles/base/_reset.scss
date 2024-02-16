@@ -1,0 +1,17 @@
+html,
+body {
+  font-size: 12px !important;
+  max-width: 1600px;
+  position: relative;
+  margin: 0 auto !important;
+}
+@media screen and (min-width: 1024px) and (max-width: 1400px) {
+  body {
+    font-size: 1em;
+  }
+}
+@media screen and (min-width: 1441px) {
+  body {
+    font-size: 1.167em;
+  }
+}

@@ -1,0 +1,78 @@
+page-reports {
+    .toolbar-background-md {
+		background: #fff;
+   }
+   .legend__pending {
+       background: #fc9e4f;
+       width:50px;
+       height:8px;
+       display: inline-block;
+   }
+   .legend__completed {
+    background: #11BA91;
+    width:50px;
+    height:8px;
+    display: inline-block;
+}
+.legend__rejected {
+    background: #ec6767;
+    width:50px;
+    height:8px;
+    display: inline-block;
+}
+   .legend__lable__styles {
+    color: #34495e;
+    font-weight: bold;
+    padding-left:10px;
+    font-size:12px;
+    display: inline-block;
+}
+    .profile_item_text{
+        width: 95%;
+        margin-left: 2.5%;
+        margin-top: 7px;
+        background-color: #f1f1f1;
+        font-size: 14px;
+        //padding:5px;
+        border-radius: 20px;
+        border:none;
+
+        .item-inner{
+            border-bottom: 0px !important;
+            box-shadow: none !important;
+        }
+        
+        .input-group{
+            padding: 0px;
+        }
+        
+        .input-group input{
+            
+            border-bottom: 0px;
+            background-color: #f1f1f1;
+            font-size: 14.5px;
+        }
+        .input-group span {
+           display: none;
+        }
+
+        .label-md{
+            margin:0px;
+        }
+    }
+    .profile_item_text.input-has-focus{
+        background-color: #e7eff1;
+    }
+
+    .error{
+        margin-left: 75px;
+        font-size: 13px;
+        margin-top: 5px;
+        color: #a21b1b;
+    }
+
+    .toast-style{
+        padding-left: 20px;
+    }
+
+}

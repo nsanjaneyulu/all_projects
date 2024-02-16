@@ -1,0 +1,32 @@
+<div class="card border-primary">
+    <div class="card-header text-white bg-dark">
+        User Management
+    </div>
+    <div class="card-body">
+      <h5 class="card-title text-primary">List One Table</h5>
+      <div class="table-responsive">
+          <table class="table table-bordered table-striped">
+            <thead>
+            <tr>
+              <th>#</th>
+              <th>email</th>
+              <th>Name</th>
+              <th>Street</th>
+              <th>Geo</th>
+
+            </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let student of students">
+                <td>{{ student.id }}</td>
+                <td>{{ student.email }}</td>
+                <td>{{ student.name}}</td>
+                <td>{{ student.address.street }}</td>
+                <td>{{ student.address.geo.lng }}</td>
+
+              </tr>
+            </tbody>
+          </table>
+        </div>
+    </div>
+  </div>

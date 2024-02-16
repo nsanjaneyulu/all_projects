@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Welcome to Company Name</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link href="styles/style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+	<div id="content-1">
+    <div id="leftNav">
+    </div>
+    <div wicket:id="feedback"></div>      
+		<div id="loginform">
+         <fieldset style="border:0;">
+            <legend>Login</legend>
+			<form method="post" action="HomePage.html" wicket:id="loginform">
+            <table width="100%">
+				<tr>
+					<td>User Name:</td>
+                    <td><input type="text" wicket:id="username" class="smalltextfield_effect"/></td>
+				</tr>
+				<tr>
+					<td>Password:</td>
+                    <td><input type="password" wicket:id="password" class="smalltextfield_effect"/></td>
+				</tr>
+              </table>
+                <br/>
+                <table width="382">
+				<tr>
+				  <td class="loginsubmit"><input type="submit" value="Login" class="button" wicket:id="submit" /></td>
+				</tr>
+            </table>			
+		 </form>
+        </fieldset>
+        </div>
+       </div>
+</body>
+</html>

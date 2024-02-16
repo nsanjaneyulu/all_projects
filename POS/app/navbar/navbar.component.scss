@@ -1,0 +1,78 @@
+@import "../../_variables.scss";
+.border-left-styles {
+    border-left:1px solid #f0f0f7;
+}
+.image__styles {
+    width: 160px;
+    height: 40px;
+}
+.bg-dark {
+    background-color: $base-color !important;
+}
+
+.icon_styles {
+    width: 40px;
+    height: 40px;
+}
+.navbar {
+    padding: 0rem !important;
+}
+.nav-link.active {
+    color: #fff !important;
+    background-color: #91034b;
+}
+
+.navbar-nav {
+    a {
+        position: relative;
+        color: #fff;
+        span {
+            display: block;
+            font-size: 17px;
+            font-weight: 500;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: 1.1;
+            letter-spacing: normal;
+            text-align: left;
+            &.nav-icon {
+                text-align: center;
+                i {
+                   
+                    &.overlop-icon {
+                        position: absolute;
+                        font-size: 13px;
+                        left: 45%;
+                        top: 11px;
+                    }
+                }
+            }
+        }
+    }
+}
+@media only screen and (min-device-width: 767.98px) and (max-device-width: 991.98px) and (orientation:landscape) {
+    .icon_styles {
+        width: 20px;
+        height: 20px;
+    }
+    .image__styles {
+        width: 80px;
+        height: 20px;
+    }
+    .navbar-nav {
+        a {
+            position: relative;
+            color: #fff;
+            span {
+                display: block;
+                font-size: 13px;
+                font-weight: 400;
+                font-stretch: normal;
+                font-style: normal;
+                line-height: 0.8;
+                letter-spacing: normal;
+                text-align: left;
+            }
+        }
+    }
+  }

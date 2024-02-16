@@ -1,0 +1,251 @@
+<div class="container" style="margin-top: 100px;">
+<div class="row col-12 bow_page_title_styles bow_margin_Styles_mall ">
+   <div class="col-lg-5 col col-xs-6 col-sm-6 col-md-6 col-12 row">
+     
+      <div class="col-sm-7 col-md-7">
+         
+         <span>Mall Name: </span><span class="mall__Styles"> {{mallName}}</span>
+        
+      </div>
+   </div>
+   <div class="col-lg-5 col col-xs-6 col-sm-6 col-md-6 col-12 row">
+     
+      <div class="col-sm-6 col-md-7">
+         <span>Outlet Name: </span><span class="mall__Styles">{{outletName}}</span>
+      </div>
+   </div>
+</div>
+<div class="mt-2 " style="background: #fff" *ngIf="!showLoader">
+   <div class="pt-2 mb-3 col-12 bow_display_Flex" style="background: #fff; padding-right: 45px;">
+      <span style="color: #5c0632;font-size: 18px;font-weight: bold;">Outlet Settings</span>
+      <mat-slide-toggle [(ngModel)]="outletAvailability" id="availabilityOutletOpen">Outlet Open</mat-slide-toggle>
+   </div>
+   <div class="row col-12">
+      <div class="col-2">
+         <mat-radio-button id="outletWiseOpen" name="outletWiseOpen" [checked]="outletWiseOpen" (click)="outletCheckOpen()"><span class="bow_inv_lable_styles">Open Hrs</span></mat-radio-button>
+      </div>
+      <div class="col-3">
+         <div class="form-group row">
+            <label for="outletOpenStartTime" class="col-sm-4 col-form-label bow_inv_sub_lable_styles">Start Time:</label>
+            <div class="col-sm-5">
+               <select class="form-control form-control-sm " [(ngModel)]="outletOpenStartTime" [disabled]="!outletOpen">
+               <option *ngFor="let outletOpenStartTime  of outletOpenStartTimeData" value="{{outletOpenStartTime}}">{{outletOpenStartTime}}</option>
+               </select>
+            </div>
+         </div>
+      </div>
+      <div class="col-3">
+         <div class="form-group row">
+            <label for="outletOpenEndTime" class="col-sm-4 col-form-label bow_inv_sub_lable_styles">End Time</label>
+            <div class="col-sm-5">
+               <select class="form-control form-control-sm " [(ngModel)]="outletOpenEndTime" [disabled]="!outletOpen">
+               <option *ngFor="let outletOpenEndTime of outletOpenEndTimeData" value="{{outletOpenEndTime}}">{{outletOpenEndTime}}</option>
+               </select>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="row col-12">
+      <div class="col-2">
+         <mat-radio-button id="outletWiseClose" name="outletWiseClose" [checked]="outletWiseClose" (click)="outletCheckClose()"><span class="bow_inv_lable_styles">Close Hrs</span></mat-radio-button>
+      </div>
+      <div class="col-3">
+         <div class="form-group row">
+            <label for="outletCloseStartTime" class="col-sm-4 col-form-label bow_inv_sub_lable_styles">Start Time:</label>
+            <div class="col-sm-5">
+               <select class="form-control form-control-sm " [(ngModel)]="outletCloseStartTime" [disabled]="!outletClose">
+               <option *ngFor="let outletCloseStartTime of outletCloseStartTimeData" value="{{outletCloseStartTime}}">{{outletCloseStartTime}}</option>
+               </select>
+            </div>
+         </div>
+      </div>
+      <div class="col-3">
+         <div class="form-group row">
+            <label for="outletCloseEndTime" class="col-sm-4 col-form-label bow_inv_sub_lable_styles">End Time:</label>
+            <div class="col-sm-5">
+               <select class="form-control form-control-sm " [(ngModel)]="outletCloseEndTime" [disabled]="!outletClose">
+               <option *ngFor="let outletCloseEndTime of outletCloseEndTimeData" value="{{outletCloseEndTime}}">{{outletCloseEndTime}}</option>
+               </select>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="row col-12">
+      <div class="col-2">
+         <span class="bow_inv_lable_styles">Week Selection:</span>
+      </div>
+      <div class="col-10">
+         <div>
+            <div class="custom-control custom-checkbox custom-control-inline"
+               *ngFor="let weeksSelect of weeksSelection; let i = index">
+               <input id="{{weeksSelect.id}}" type="checkbox" value="{{weeksSelect.value}}" class="custom-control-input"
+               id="{{weeksSelect.value}}" [checked]="weeksSelect.checked" (click)="outletWeeksFunction(weeksSelect,i)">
+               <label class="custom-control-label bow_label_styles bow_radio_checkbox_styles"
+                  for="{{weeksSelect.value}}">{{weeksSelect.name}}</label>
+            </div>
+         </div>
+      </div>
+      <div class="col-2 mt-2">
+         <span class="bow_inv_lable_styles">Supplier Discount:</span>
+      </div>
+      <div class="col-2 mt-2 mb-2">
+         <input type="text" class="form-control form-control-sm bow_input_styles" (change) = "validateOutletDiscount(outletDiscount)" [(ngModel)]="outletDiscount" min="1" max="90"
+         placeholder="Enter Supplier Discount">
+      </div>
+      <div class="col-8">
+         <button type="submit" class="btn-danger btn bow_button_styles btn-sm" (click)="updateOutletDiscount()"
+            style="float:right;">Update</button>
+      </div>
+   </div>
+</div>
+<div class="row col-12 bow_page_title_styles bow_margin_Styles_mall py-3" style="background: #fff" *ngIf="!showLoader">
+   <div class="mt-3 mb-3 col-12" style="background: #fff">
+      <span style="color: #5c0632;font-size: 18px;font-weight: bold;">Sub Menu</span>
+   </div>
+   <mat-accordion class="col-12">
+      <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false"
+      *ngFor="let stock of stockSubMenus">
+      <mat-expansion-panel-header *ngIf ="stock.itemIds.length >0 && stock.name!='Recommended'">
+         <mat-panel-title (click)="getStockSubMenusItems(stock, outletId)" class="accordion_outlet_title">
+            {{stock.name}}
+         </mat-panel-title>
+         <mat-panel-description>
+         </mat-panel-description>
+      </mat-expansion-panel-header>
+      <mat-accordion >
+         <mat-expansion-panel>
+            <mat-expansion-panel-header class="py-2 accordion_outlet_title bow_dishes_panel_header" (click)="subMenuAvailabilityCheck(stock)">
+               <div>Sub Menu Settings </div>
+            </mat-expansion-panel-header>
+            <mat-list role="list" class="bow_mat_list_styles" >
+               <div class="mt-2" *ngIf="!subMenuLoader" style="border-top: 1px solid #eee;">
+                  <div class="pt-2 mb-3 row col-12 ">
+                     <div class="col-12" >
+                        <div style="float: right;">
+                           <mat-slide-toggle [(ngModel)]="subMenuAvailability" id="subMenuAvailability">Sub Menu Availablity</mat-slide-toggle>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="row col-12">
+                     <div class="col-2">
+                        <mat-radio-button id="subMenuOutletOpen" name="subMenuOutletOpen" [checked]="subMenuOutletOpen" (click)="subMenuCheckOpen()"><span class="bow_inv_lable_styles">Open Hrs</span></mat-radio-button>
+                     </div>
+                     <div class="col-3">
+                        <div class="form-group row">
+                           <label for="subMenuOpenStartTime" class="col-sm-5 col-form-label bow_inv_sub_lable_styles">Start Time:</label>
+                           <div class="col-sm-6">
+                              <select class="form-control form-control-sm " [(ngModel)]="subMenuOpenStartTime" [disabled]="!open">
+                              <option *ngFor="let subMenuOpenStartTime  of subMenuOpenStartTimeData" value="{{subMenuOpenStartTime}}">{{subMenuOpenStartTime}}</option>
+                              </select>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-3">
+                        <div class="form-group row">
+                           <label for="subMenuOpenCloseTime" class="col-sm-5 col-form-label bow_inv_sub_lable_styles">End Time:</label>
+                           <div class="col-sm-6">
+                              <select class="form-control form-control-sm " [(ngModel)]="subMenuOpenCloseTime" [disabled]="!open">
+                              <option *ngFor="let subMenuOpenCloseTime of subMenutOpenEndTimeData" value="{{subMenuOpenCloseTime}}">{{subMenuOpenCloseTime}}</option>
+                              </select>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="row col-12">
+                     <div class="col-2">
+                        <mat-radio-button id="subMenuOutletClose" (click)="subMenuCheckClose()" name="subMenuOutletClose" [checked]="subMenuOutletClose"><span class="bow_inv_lable_styles">Close Hrs</span></mat-radio-button>
+                     </div>
+                     <div class="col-3">
+                        <div class="form-group row">
+                           <label for="subMenuCloseStartTime" class="col-sm-5 col-form-label bow_inv_sub_lable_styles">Start Time:</label>
+                           <div class="col-sm-6">
+                              <select class="form-control form-control-sm " [(ngModel)]="subMenuCloseStartTime" [disabled]="!close">
+                              <option *ngFor="let subMenuCloseStartTime of subMenuCloseStartTimeData" value="{{subMenuCloseStartTime}}">{{subMenuCloseStartTime}}</option>
+                              </select>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-3">
+                        <div class="form-group row">
+                           <label for="subMenuCloseCloseTime" class="col-sm-5 col-form-label bow_inv_sub_lable_styles">End Time:</label>
+                           <div class="col-sm-6">
+                              <select class="form-control form-control-sm " [(ngModel)]="subMenuCloseCloseTime" [disabled]="!close">
+                              <option *ngFor="let subMenuCloseCloseTime of subMenuCloseEndTimeData" value="{{subMenuCloseCloseTime}}">{{subMenuCloseCloseTime}}</option>
+                              </select>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="row col-12">
+                     <div class="col-2">
+                        <span class="bow_inv_lable_styles">Week Selection:</span>
+                     </div>
+                     <div class="col-10">
+                        <div>
+                           <div class="custom-control custom-checkbox custom-control-inline"
+                              *ngFor="let subMenuWeeks of subMenuWeeksSelection; let j = index">
+                              <input id="{{subMenuWeeks.id}}" type="checkbox" value="{{subMenuWeeks.value}}"
+                              class="custom-control-input" id="{{subMenuWeeks.value}}" [checked]="subMenuWeeks.checked"
+                              (click)="subMenuWeeksFunction(subMenuWeeks,j)">
+                              <label class="custom-control-label bow_label_styles bow_radio_checkbox_styles"
+                                 for="{{subMenuWeeks.value}}">{{subMenuWeeks.name}}</label>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-2 mt-3">
+                        <span class="bow_inv_lable_styles">Preparation Time:</span>
+                     </div>
+                     <div class="col-2 mt-3">
+                        <input type="text" class="form-control form-control-sm bow_input_styles" (change) = "validateSubMenuDiscount(subMenuPreparationTime)" [(ngModel)]="subMenuPreparationTime" min="1" max="90"
+                        placeholder="Enter Preparation Time">
+                     </div>
+                     <div class="col-8"></div>
+                     <div class="col-2 mt-3">
+                        <span class="bow_inv_lable_styles">Supplier Discount:</span>
+                     </div>
+                     <div class="col-2 mt-3">
+                        <input type="text" class="form-control form-control-sm bow_input_styles" (change) = "validateSubMenuDiscount(submenuDiscount)" [(ngModel)]="submenuDiscount" min="1" max="90"
+                        placeholder="Enter Supplier Discount">
+                     </div>
+                     <div class="col-8">
+                        <button type="submit" class="btn-danger btn bow_button_styles btn-sm" (click)="updateSubMenuDetails()"
+                           style="float:right;">Update</button>
+                     </div>
+                  </div>
+               </div>
+            </mat-list>
+         
+         </mat-expansion-panel>
+         <mat-expansion-panel >
+            <mat-expansion-panel-header class="bow_dishes_panel_header py-2">
+               <div>
+                  <span class="accordion_outlet_title">Dishes</span>
+               </div>
+            </mat-expansion-panel-header>
+            <div>
+               <div class="col-12" *ngIf="!orderDetailsTableShow">
+                  <span class="" style="color:#5c0632; font-size: 20px;display: flex;justify-content: center;">No Data
+                  Found</span>
+               </div>
+               <mat-list-item role="listitem" *ngFor="let item of items">
+                  <div class="col-12 p-2 bow_display_Flex" style="border-top: 1px solid #eee;" *ngIf="orderDetailsTableShow && !showLoader">
+                     <div class="item__Details bow_item_name_hover" (click)="itemDetailsFunction(item)"><span
+                        class="bow_item_name"><span class="mr-2"><i class="fa fa-pencil" aria-hidden="true"></i></span>
+                        {{item.name}}</span> <span class="bow_item_price">
+                        ₹{{(item.price).toFixed(2)}}</span>
+                     </div>
+                     <div class="text__float__right bow_item_name">
+                        Availablity - {{item.availability.startHour?item.availability.startHour:item.availability.closeStartHour}}
+                        - {{item.availability.endHour?item.availability.endHour:item.availability.closeEndHour}} (<span
+                           *ngFor="let weekDay of item.availability.weeks;let i=index">{{(item.availability.weeks.length-1)==i?weekDay:(weekDay+',')}}</span>)
+                     </div>
+                  </div>
+               </mat-list-item>
+            </div>
+         </mat-expansion-panel>
+      </mat-accordion>
+     
+      </mat-expansion-panel>
+   </mat-accordion>
+</div>
+</div>

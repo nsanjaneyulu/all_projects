@@ -1,0 +1,228 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Welcome to Company Name</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link href="style.css" rel="stylesheet" type="text/css" />
+ <script type="text/javascript">
+// From: http://www.webdeveloper.com/forum/showthread.php?t=218226
+
+function ToggleList(IDS) {
+ // not required unless using 'HideRange()' below
+  var CState = document.getElementById(IDS);
+  if (CState.style.display != "block") { CState.style.display = "block"; }
+                                  else { CState.style.display = "none"; }
+}
+function HideRange(sect,elTag,IDS) {
+  var ContentObj = document.getElementById(sect);
+  var AllContentDivs = ContentObj.getElementsByTagName(elTag);
+  for (i=0; i<AllContentDivs.length; i++) {
+    if (IDS != AllContentDivs[i].id) { AllContentDivs[i].style.display="none"; }
+  }
+}
+
+</script>
+
+<style type="text/css">
+  .divInfo { display:none; }
+.style6 {
+	font-size: small;
+	font-weight: bold;
+	font-style: italic;
+}
+.style7 {font-size: small}
+.style8 {
+	display: none;
+	font-size: small;
+	font-weight: bold;
+	font-style: italic;
+}
+.style9 {font-style: italic; font-size: medium;}
+</style>
+<style type="text/css">
+
+</style>
+</head>
+<body>
+<div id="container">
+  <div id="top">
+    <h1><font color="#330066">Welcome to Company Name</font></h1>
+    <div class="search">
+      <!-- for search -->
+    </div>
+  </div>
+  <div id="navcontainer">
+    <ul id="navlist">
+      <li id="active"><a href="HomePage.html" id="current">Home</a></li>
+      <li><a href="ContactUs.html">Contact us</a></li>
+     </ul>
+  </div>
+  <div id="leftnav">
+    <h2>Menu</h2>
+   <ul id="leftnavmenu">
+        <li><a href="#" onClick="ToggleList('a')">Live Stock Management</a></li>
+   <div id="a" class="divInfo">
+        <li style="padding-left:10%;"><a href="LiveStockNew.html">Add Live Stock</a></li>
+		<li style="padding-left:10%;"><a href="EditUpdateSearch.html">Edit / Update Live Stock</a></li>
+        <li style="padding-left:10%;"><a href="PromotedSearch.html">Promoted LiveStock Hostory</a></li>
+   </div>
+       <li><a href="#" onClick="ToggleList('b')">Milk Yeild Management</a></li>
+   <div id="b" class="divInfo">
+        <li style="padding-left:10%;"><a href="AddDailyMilkProduction.html">Add Daily Milk Production</a></li>
+        <li style="padding-left:10%;"><a href="MilkProductionEdit.html">Add / Edit Daily Milk Production</a></li>
+    </div>
+         <li><a href="#" onClick="ToggleList('c')">Feeding Management</a></li>
+    <div id="c" class="divInfo">
+      <li style="padding-left:10%;"><a href="AddDailyFeeding.html">Add Daily Feeding</a></li>
+        <li style="padding-left:10%;"><a href="AddNewFeeding.html">Add Feeding Type</a></li>
+        <li style="padding-left:10%;"><a href="Feeding.html">Edit / Update Feeding Type</a></li>
+        <li style="padding-left:10%;"><a href="SuggestedFeeding.html">Suggested Feeding</a></li>
+    </div>
+       <li><a href="#" onClick="ToggleList('d')">Search Management</a></li>
+     <div id="d" class="divInfo">
+		<li style="padding-left:10%;"><a href="SearchCriteria.html">Search Criteria</a></li>
+     </div>
+        <li><a href="#" onClick="ToggleList('e')">Provisions Management</a></li>
+     <div id="e" class="divInfo">
+		<li style="padding-left:10%;"><a href="MonthlyProvisionNew.html">Add Monthly Provisions</a></li> 
+        <li style="padding-left:10%;"><a href="MonthlyProvisionEdit.html">Edit / Update Monthly Provisions</a></li> 
+         <li style="padding-left:10%;"><a href="SuggestedProvisions.html">Suggested Provisions</a></li>
+     </div>
+         <li><a href="#" onClick="ToggleList('f')">Stock Management</a></li>
+      <div id="f" class="divInfo">
+		<li style="padding-left:10%;"><a href="StockAddNew.html">Add New Stock</a></li> 
+        <li style="padding-left:10%;"><a href="Stocks.html">Edit / Update Stock</a></li> 
+      </div>
+         <li><a href="#" onClick="ToggleList('g')">Financial Management</a></li>
+		 <li style="padding-left:10%;"><a href="Revenue.html">Revenue / Sales</a></li> 
+         <li style="padding-left:10%;"><a href="Expenses.html">Expenses</a></li> 
+         <li style="padding-left:10%;"><a href="ProfitLoss.html">Profit / Loss</a></li> 
+         <li><a href="#" onClick="ToggleList('h')">Employee Management</a></li>
+      <div id="h" class="divInfo">
+		  <li style="padding-left:10%;"><a href="AddEmpNew.html">Add New Employee</a></li> 
+          <li style="padding-left:10%;"><a href="AddEditEmp.html">Edit / Update Employee</a></li> 
+      </div>
+          <li><a href="#" onClick="ToggleList('i')">Assets Management</a></li>
+      <div id="i" class="divInfo">
+		   <li style="padding-left:10%;"><a href="AssetsNew.html">Add New Assets</a></li> 
+           <li style="padding-left:10%;"><a href="Assets.html">Edit / Update Assets</a></li>
+      </div>
+           <li><a href="#" onClick="ToggleList('j')">Vendor Management</a></li>
+      <div id="j" class="divInfo">
+		    <li style="padding-left:10%;"><a href="VendorNew.html">Add New Vendor</a></li> 
+            <li style="padding-left:10%;"><a href="Vendor.html">Edit / Update Vendor</a></li>
+      </div>
+            <li><a href="#" onClick="ToggleList('k')">Admin</a></li>
+       <div id="k" class="divInfo">
+           <li style="padding-left:10%;"><a href="ParameterSetup.html">Parameter Setup</a></li>
+		   <li style="padding-left:10%;"><a href="ConfigureDropdown.html">Configure Dropdown</a></li> 
+      </div>
+	</ul>
+</div>
+  <div id="content">
+    <h2>Profit or Loss Information</h2>
+<table>
+      <tr>
+        <th>Live Stock Code</th>
+        <th>RFID</th>
+        <th>Breed</th>
+        <th>Live Stock State</th>
+        <th>Expendicture(per Year)</th>
+        <th>Income (per Year)</th>
+         <th>Profit / Loss </th>
+  </tr>
+      <tr>
+        <td><a href="#">JERCAL001</a></td>
+         <td>RFA001A</td>
+        <td>Jersey</td>
+        <td>Calf</td>
+        <td>1,25,000</td>
+        <td>2,25,000</td>  
+        <td>1,00,000</td> 
+  </tr>
+      <tr>
+       <td><a href="#">HFHER002</a></td>
+       <td>RFB002B</td>
+       <td>Holstein Fresian</td>
+       <td>Heifer</td>
+       <td>1,63,000</td>
+       <td>1,60,000</td>
+       <td>-3,000</td> 
+  </tr>
+      <tr>
+        <td><a href="#">AEYKF003</a></td>
+        <td>RFB003A</td>
+        <td>Ayreshire</td>
+        <td>Herd</td>
+        <td>1,75,000</td>
+        <td>2,25,000</td>  
+        <td>50,000</td> 
+  </tr>
+      <tr>
+        <td><a href="#">JERCAL001</a></td>
+        <td>RFB004A</td>
+        <td>Jersey</td>
+        <td>Calf</td>
+      <td>1,22,000</td>
+        <td>1,25,000</td>  
+        <td>3,000</td> 
+  </tr>
+      <tr>
+        <td><a href="#">HFHER002</a></td>
+        <td>RFB005A</td>
+        <td>Holstein Fresian</td>
+        <td>Heifer</td>
+       <td>1,65,000</td>
+        <td>2,25,000</td>  
+        <td>60,000</td> 
+  </tr>
+      <tr>
+        <td><a href="#">AEYKF003</a></td>
+        <td>RFB006A</td>
+        <td>Ayreshire</td>
+        <td>Herd</td>
+        <td>1,42,000</td>
+        <td>1,40,000</td>  
+        <td>-2,000</td> 
+  </tr>
+      <tr>
+        <td><a href="#">JERCAL001</a></td>
+        <td>RFB007A</td>
+        <td>Jersey</td>
+        <td>Calf</td>
+         <td>1,55,000</td>
+        <td>2,25,000</td>  
+        <td>70,000</td> 
+  </tr>
+      <tr>
+        <td><a href="#">REYKF003</a></td>
+        <td>RFB008A</td>
+        <td>Red Breeds & Illawarras</td>
+        <td>Heifer</td>
+        <td>2,25,000</td>
+        <td>2,25,000</td>  
+        <td>0</td>  
+  </tr>
+      <tr>
+        <td><a href="#">HFHER002</a></td>
+        <td>RFB009A</td>
+        <td>Holstein Fresian</td>
+        <td>Herd</td>
+       <td>1,89,000</td>
+        <td>2,25,000</td>  
+        <td>34,000</td> 
+    </tr>
+    <tr>
+    <td colspan="4" align="right">Total </td>
+        <td >14,13,,000</td>
+
+        <td >19,60,000</td>
+		        <td >7,97,000</td>
+        </tr>
+    </table>
+
+    </br>	  </br>	  </br>	  </br>	  </br>	  </br>	  </br>	  </br>	  </br>	  </br>	  </br>	  </br>	  </br>	  </br>	  </br>	  </br>	  </br></br>	  </br>	  </br>	  </br>	  </br>	  </br>	  </br>	  </br></br>	  </br>	  </br>	  </br>	  </br>	  </br>	  </br>	  </br></br>	  </br>  </br>	  </br>	  </br>	  </br>	  </br>	  </br>	  </br></br>	  </br>
+</div>
+</div>
+</body>
+</html>

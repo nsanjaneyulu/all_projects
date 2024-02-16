@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Crousal Slider</title>
+<style>
+#lightSlider img 
+{
+	width:100%;
+}
+</style>
+<link type="text/css" rel="stylesheet" href="css/lightSlider.css" />
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="js/jquery.lightSlider.js"></script>
+</head>
+
+<body>
+	<ul id="lightSlider">
+        <li>
+            <img src="http://placehold.it/1170x310/6FA5C1" />
+        </li>
+        <li>
+            <img src="http://placehold.it/1170x310/4B4ED8" />
+        </li>
+        <li>
+            <img src="http://placehold.it/1170x310/4BD86C" />
+        </li>
+        <li>
+            <img src="http://placehold.it/1170x310/F18127" />
+        </li>
+        <li>
+            <img src="http://placehold.it/1170x310/E324E1" />
+        </li>
+        <li>
+            <img src="http://placehold.it/1170x310/3D7355" />
+        </li>
+        <li>
+            <img src="http://placehold.it/1170x310/F18127" />
+        </li>
+        <li>
+            <img src="http://placehold.it/1170x310/4BD86C" />
+        </li>
+        <li>
+            <img src="http://placehold.it/1170x310/4B4ED8" />
+        </li>
+        <li>
+            <img src="http://placehold.it/1170x310/6FA5C1" />
+        </li>
+	</ul>
+    <script type="text/javascript">
+    $(document).ready(function() {
+    $('#lightSlider').lightSlider({
+		auto:true,
+        loop:true,
+        adaptiveHeight:true,
+        item:1,
+        slideMargin:0,
+		controls:false
+    });
+});
+	</script>
+</body>
+</html>

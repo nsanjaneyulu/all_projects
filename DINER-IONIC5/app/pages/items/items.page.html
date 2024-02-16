@@ -1,0 +1,159 @@
+<ion-header class="header_styles_items_page" style="background: #fff;">
+
+    <ion-row>
+
+        <ion-icon class="" style="margin-top: 2%" (click)="goToBack()" ios="ios-arrow-round-back" md="md-arrow-round-back"></ion-icon>
+
+        <ion-col>
+            <span class="">{{mallName}}</span>
+            <div class="addressDiv">{{address}}</div>
+        </ion-col>
+    </ion-row>
+
+</ion-header>
+<ion-content>
+    <div *ngIf="outlets2" style="margin-top: 0.2rem;">
+        <div class="outlet-list">
+            <div class="scrollable-segments">
+                <ion-segment scrollable [(ngModel)]="indexValue" color="burgundy" id="outlet-segment">
+                    <ion-segment-button style="text-align: center;" class="buttonCss" [value]="i" *ngFor="let outlet of outlets2; let i =index" (click)="selectOutlet(outlet)" checked>
+                        <div>
+                            <img class="outlet-image" src={{imageEndPoint+outlet.links[1].href}} />
+                            <div class="outlet-name">{{outlet.name}}</div>
+                        </div>
+                    </ion-segment-button>
+
+
+                </ion-segment>
+            </div>
+        </div>
+        <div>
+            <div *ngIf="!selectedOutlet.availability.available" class="outlet-closed">Whoops! <span> We are
+                    closed!</span>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="showItemPage">
+        <ion-list *ngFor="let submenu of outletItemSubmenuInformation; let i=index;" class="accordion-list" lines="none" detail="false" no-padding>
+            <ion-item tappable (click)="toggleSection(i)" [ngClass]="{'section-active':submenu.open,'section':!submenu.open}" style="border-bottom:2px solid #eee;">
+                <ion-icon slot="end" name="arrow-dropdown" *ngIf="!submenu.open"></ion-icon>
+                <ion-icon slot="end" name="arrow-dropup" *ngIf="submenu.open"></ion-icon>
+                <ion-label style="font-weight: 500; font-size:0.9rem;">{{submenu.name}}</ion-label>
+            </ion-item>
+            <div *ngIf="submenu.name=='Recommended'">
+                <div *ngIf="submenu.items && submenu.open">
+                    <div *ngFor="let item of submenu.items; let i=index;" class="items_div">
+                        <img class="item-img" src={{imageEndPoint+item.img}}>
+                        <div class="itemName">
+                            <img *ngIf="item.veg==true" class="veg_nong_veg_styles" src="../../../assets/icon/veg2.png"><img *ngIf="item.veg==false" class="veg_nong_veg_styles" src="../../../assets/icon/non-veg.png"> {{item.name}}
+                        </div>
+                        <div class="item_price_btn" style="width: 100%; position: absolute; bottom: 0.9rem; padding: 0rem 0.3rem;">
+                            <div style="display: flex;justify-content: space-between;">
+                                <span class="item_price_styles">
+                                    <span class="item-price-StikeOff" *ngIf="item.discountedPrice != item.price">
+                                        &#8377;
+                                        {{item.price}}</span>
+                                <span class="item-price"> &#8377; {{item.discountedPrice}}</span>
+                                </span>
+                                <span *ngIf="selectedOutlet.availability.available" class="item_qty_inc_dec_main_div item_qty_inc_dec_main_div_1">
+                                    <span *ngIf="item.givenQuantity==0" class="item_qty_inc_dec_1  "
+                                        (click)="addItem(item)">ADD</span>
+                                <span *ngIf="item.givenQuantity!=0" class="item_qty_inc_dec_inc_1 " (click)="incrementItem(item)">+</span>
+                                <span *ngIf="item.givenQuantity!=0" class="item_qty_inc_dec_dec_1" (click)="decrementItem(item)"></span>
+                                <span *ngIf="item.givenQuantity!=0" class="item_qty_inc_dec_qty_1 _18lJJ">{{item.givenQuantity}}</span>
+                                </span>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div *ngIf="submenu.name!='Recommended'">
+                <div *ngIf="submenu.items.length >0">
+                    <div *ngIf="submenu.items && submenu.open">
+                        <div *ngFor="let item of submenu.items; let i=indexes;">
+                            <div style="padding: 0.5rem 0.9rem">
+                                <div class="itemName_fullName"><img *ngIf="item.veg==true" class="veg_nong_veg_styles_3" src="../../../assets/icon/veg2.png"><img *ngIf="item.veg==false" class="veg_nong_veg_styles_3" src="../../../assets/icon/non-veg.png"> {{item.name}}
+                                </div>
+                                <div class="item_price_btn" style="width: 100%">
+                                    <div style="display: flex;justify-content: space-between;">
+                                        <span class="item_price_styles">
+                                            <span class="item-price-StikeOff"
+                                                *ngIf="item.discountedPrice != item.price">
+                                                &#8377;
+                                                {{item.price}}</span>
+                                        <span class="item-price"> &#8377; {{item.discountedPrice}}</span>
+                                        </span>
+                                        <span *ngIf="selectedOutlet.availability.available" class="item_qty_inc_dec_main_div item_qty_inc_dec_main_div_1">
+                                            <span *ngIf="item.givenQuantity==0" class="item_qty_inc_dec_1  "
+                                                (click)="addItem(item)">ADD</span>
+                                        <span *ngIf="item.givenQuantity!=0" class="item_qty_inc_dec_inc_1 " (click)="incrementItem(item)">+</span>
+                                        <span *ngIf="item.givenQuantity!=0" class="item_qty_inc_dec_dec_1" (click)="decrementItem(item)"></span>
+                                        <span *ngIf="item.givenQuantity!=0" class="item_qty_inc_dec_qty_1 _18lJJ">{{item.givenQuantity}}</span>
+                                        </span>
+
+
+
+
+
+
+                                    </div>
+                                </div>
+
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </ion-list>
+    </div>
+    <div *ngIf="!showItemPage">
+        <div style="position: absolute; top: 50%; left: calc(50% - 40px);">
+            <svg class="lds-typing" width="80px" height="80px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" style="background: none;">
+                <circle cx="24.5" cy="48.4263" r="6" fill="#e15b64">
+                    <animate attributeName="cy" calcMode="spline" keySplines="0 0.5 0.5 1;0.5 0 1 0.5;0.5 0.5 0.5 0.5"
+                        repeatCount="indefinite" values="62.5;37.5;62.5;62.5" keyTimes="0;0.25;0.5;1" dur="1s"
+                        begin="-0.5s">
+                    </animate>
+                </circle>
+                <circle cx="41.5" cy="62.5" r="6" fill="#f47e60">
+                    <animate attributeName="cy" calcMode="spline" keySplines="0 0.5 0.5 1;0.5 0 1 0.5;0.5 0.5 0.5 0.5"
+                        repeatCount="indefinite" values="62.5;37.5;62.5;62.5" keyTimes="0;0.25;0.5;1" dur="1s"
+                        begin="-0.375s">
+                    </animate>
+                </circle>
+                <circle cx="58.5" cy="62.5" r="6" fill="#f8b26a">
+                    <animate attributeName="cy" calcMode="spline" keySplines="0 0.5 0.5 1;0.5 0 1 0.5;0.5 0.5 0.5 0.5"
+                        repeatCount="indefinite" values="62.5;37.5;62.5;62.5" keyTimes="0;0.25;0.5;1" dur="1s"
+                        begin="-0.25s">
+                    </animate>
+                </circle>
+                <circle cx="75.5" cy="62.5" r="6" fill="#abbd81">
+                    <animate attributeName="cy" calcMode="spline" keySplines="0 0.5 0.5 1;0.5 0 1 0.5;0.5 0.5 0.5 0.5"
+                        repeatCount="indefinite" values="62.5;37.5;62.5;62.5" keyTimes="0;0.25;0.5;1" dur="1s"
+                        begin="-0.125s">
+                    </animate>
+                </circle>
+            </svg>
+        </div>
+    </div>
+</ion-content>
+<ion-footer *ngIf="orderValue>0 && showItemPage" class="">
+    <ion-toolbar>
+        <ion-grid class="footer_styles_bg">
+            <ion-row>
+                <ion-col>
+                    <span>{{itemCountDetails}}<span *ngIf="itemCountDetails==1"> Item</span> <span *ngIf="itemCountDetails>1">
+                            Items</span></span> |
+                    <span class="item-price"> &#8377; {{orderValue}}</span>
+                    <!-- <div>(Excl. taxes)</div> -->
+                </ion-col>
+                <ion-col class="rightAlign" (click)="viewCart()">
+                    <ion-icon name="cart"></ion-icon> View Cart
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </ion-toolbar>
+</ion-footer>

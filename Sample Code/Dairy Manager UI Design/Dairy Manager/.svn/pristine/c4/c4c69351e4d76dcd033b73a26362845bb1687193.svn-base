@@ -1,0 +1,20 @@
+<wicket:extend>
+	<div id="content">
+    <div class="bread-crumb">
+            	<h1>Provisions Management / Formula Cost</h1>
+            </div><br />
+
+	<div class="containerDiv">
+                <div class="rowDivHeader">
+					<div>Formula Name</div>	
+                    <div>Formula Cost (in Rs.)</div>			
+				</div>
+				<div wicket:id="rows" style="clear:both;" class="rowDiv">
+					
+                        <div><span wicket:id="formulaName"/></div>
+                    	<div><span wicket:id="formulaCost"/></div>				
+					
+				</div>
+			</div>    
+	</div>
+</wicket:extend>

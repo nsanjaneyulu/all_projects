@@ -1,0 +1,72 @@
+.payment-selected {
+    background-color: #d7ecd7;
+    border-radius: 0px;
+}
+
+.view-cart {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 50px;
+    background-color: #11BA91;
+    color: #ffffff;
+    box-shadow: 0 -2px 4px 0 rgba(0, 0, 0, 0.1);
+    z-index: 99;
+}
+
+.proceed-container {
+    display: flex;
+    flex-direction: column;
+    float: right;
+    // margin-right: 16px;
+    margin-top: 12px;
+    .proceed-icon {}
+}
+
+.payment_mode_styles {
+    font-size: 17px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #000000;
+}
+
+.payment_mode_bg_styles {
+    background-color: #f6f6f6;
+    padding: 0.6rem;
+}
+
+.add_new_card {
+    font-size: 15px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 0.08px;
+    text-align: left;
+    color: #5c0931;
+}
+
+.Save_and_Pay_via_Cards {
+    font-size: 13px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #515968;
+}
+
+.inputStyles {
+    width: 100%;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    border-bottom: 1px solid rgb(197, 197, 197);
+    padding: 5px 15px;
+}

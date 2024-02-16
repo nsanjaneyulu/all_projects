@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<style type="text/css">
+	body
+	{
+		font-size:14px;
+		font-family:Georgia, "Times New Roman", Times, serif;
+	}
+	#montage-wrap
+	{
+		width:829px;
+		height:288px;
+	}
+	.montage-block
+	{
+		width:200px;
+		height:200px;
+		float:left;
+		display:block;
+		overflow:hidden;
+		position:relative;
+		margin:0 4px 0 0;
+		background:#fff;
+		border:1px solid #090;
+	}
+	#block1
+	{
+		width:200px;
+		height:200px;
+		position:absolute;
+		display:block;
+		background:#CC0000;
+		transition:top .3s;
+		-webkit-transition:top .3s;
+	}
+	.montage-block:hover #block1
+	{
+		top:-250px;
+		transition:all .3s;
+		-webkit-transition: all .3s;
+	}
+	#thumb-content
+	{
+		padding:70px 15px 0 15px;
+		color:#777;
+	}
+	#thumb-content h1
+	{
+		margin:0 0 5px 0;
+		color:#666;
+		font-size:14px;
+	}
+</style>
+</head>
+
+<body>
+<div id="montage-wrap">
+	<div class="montage-block">
+    	<span id="block1">
+        	<img src="http://placehold.it/200x200" />
+        </span>
+        <div class="thumb-content">
+        	<h1>Sample Title</h1>
+            <p>
+            	This ia sample title
+            </p>
+        </div>
+    </div>
+    
+    <div class="montage-block">
+    	<span id="block1">
+        
+        </span>
+        <div class="thumb-content">
+        	<h1>Sample Title</h1>
+            <p>
+            	This ia sample title
+            </p>
+        </div>
+    </div>
+    
+    <div class="montage-block">
+    	<span id="block1">
+        
+        </span>
+        <div class="thumb-content">
+        	<h1>Sample Title</h1>
+            <p>
+            	This ia sample title
+            </p>
+        </div>
+    </div>
+    
+    <div class="montage-block">
+    	<span id="block1">
+        
+        </span>
+        <div class="thumb-content">
+        	<h1>Sample Title</h1>
+            <p>
+            	This ia sample title
+            </p>
+        </div>
+    </div>
+</div>
+</body>
+</html>

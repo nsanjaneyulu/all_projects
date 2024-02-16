@@ -1,0 +1,226 @@
+<div class="bow_page_title mb-2">
+  <span>Live Orders</span>
+  <span style="float: right;"><i (click)="doRefresh()" class="fa fa-refresh" style="cursor:pointer;font-size: 20px" aria-hidden="true"></i></span>
+</div>
+<div class="row bow_page_title_styles mb-2 mt-1">
+
+    <div class="col-lg-5 col col-xs-6 col-sm-6 col-md-6 col-12 row">
+        <label for="inputEmail3" class="col-sm-5 col-md-4 col-form-label">Select Mall</label>
+        <div class="col-sm-7 col-md-7">
+            <select [(ngModel)]="mallDetailsDropdown" class="form-control" (change) ="mallNameChange(mallDetailsDropdown)">
+                <option *ngFor="let mall of mallDataResp" [value]="mall.mallId">
+                 {{mall.mallName}}
+                </option>
+              </select>
+        </div>
+      </div>
+    
+      <div class="col-lg-5 col col-xs-6 col-sm-6 col-md-6 col-12 row" *ngIf="allPermitted == 'No'">
+        <label for="inputEmail3" class="col-sm-6 col-md-4 col-form-label">Select Outlet</label>
+        <div class="col-sm-7 col-md-7">
+            <select [(ngModel)]="mallOutletId" class="form-control" (change) ="outletNameChange(mallOutletId)">
+                <option *ngFor="let outlet of outletDetailsResp" [value]="outlet.id">
+                 {{outlet.name}}
+                </option>
+              </select>
+        </div>
+      </div>
+
+
+   
+ 
+ 
+   
+  
+</div>
+<div class="stats row" id="liveOrders_bow">
+  <div class="col-sm-6 col-md-6 col-lg-3 col-xl-3 col-6 stats__item" >
+    <div class="bow_live_Order bow_pending_icon_bg bow_pending_styles bow_pending_bg"  (click)="isActive('pending'); segmentChange('Pending',0)" [ngClass]="{'active': pending}">
+      <div class="title">Pending</div>
+      <div class="Count">{{getAllCountsResp.recieved}}</div>
+    </div>
+  </div>
+  <div class="col-sm-6 col-md-6 col-lg-3 col-xl-3 col-6 stats__item" >
+    <div class="bow_live_Order bow_accept_icon_bg bow_pending_styles bow_accept_bg" (click)="isActive('accept'); segmentChange('Accepted',0)" [ngClass]="{'active': accept}">
+      <div class="title">Accept</div>
+      <div class="Count">{{getAllCountsResp.inprogress}}</div>
+    </div>
+  </div>
+  <div class="col-sm-6 col-md-6 col-lg-3 col-xl-3 col-6 stats__item bow_live_order_margin_top" >
+    <div class="bow_live_Order bow_ready_icon_bg bow_pending_styles bow_ready_bg" (click)="isActive('ready'); segmentChange('Ready',0)" [ngClass]="{'active': ready}">
+      <div class="title">Ready</div>
+      <div class="Count">{{getAllCountsResp.ready}}</div>
+    </div>
+  </div>
+  <div class="col-sm-6 col-md-6 col-lg-3 col-xl-3 col-6 stats__item bow_live_order_margin_top" >
+    <div class="bow_live_Order bow_hover_icon_bg bow_pending_styles bow_handover_bg" (click)="isActive('handover');segmentChange('handedOver',0)" [ngClass]="{'active': handover}">
+      <div class="title">Hand Over</div>
+      <div class="Count">{{handedoverCount}}</div>
+    </div>
+  </div>
+</div>
+<div class="col-lg-6 mt-5 ml-5" *ngIf="showLoader">
+    <app-global-loader ></app-global-loader>
+  </div>
+<div class=" " *ngIf="!showLoader">
+  <div class="bow_order_styles mt-4"  *ngFor="let fullorder of searchFullorders; let i=index">
+    <div class="bow_order_details_styles">
+    <div (click)="goOrderDetails($event, fullorder,i)">
+      <div>
+        <span class="bow_order_id">{{fullorder.fullOrder5DigitId}}</span>
+        <span class="bow_order_type ml-2"> 
+            <span *ngIf="(fullorder.orderType == 'Delivery')" class=""><span class="status__Styles mr-1">Delivery</span>
+            <img src="../../../assets/delivery-scooter.svg" class="tab__Count" />
+         </span>
+         <span *ngIf="(fullorder.orderType == 'Pickup')" class="pickupStyles"><span class="status__Styles mr-1">Pickup</span>
+            <img src="../../../assets/pickUp.svg" class="tab__Count" />
+         </span>
+         <span *ngIf="(fullorder.specialInstructions != null)" class="pickupStyles">
+        
+         </span>
+        </span>
+      </div>
+     
+      <div>
+        <span class="bow_date_time">{{fullorder.createdDateStr | date: "dd-MMM-yyyy H:mm"}} |<span class="ml-1">{{fullorder.amountStr}}</span></span>
+      </div>
+      <div>
+        <span class="bow_date_time" *ngFor="let itemDec of fullorder.itemFullName">{{itemDec}}</span>
+      </div>
+      <div *ngIf="(fullorder.status === 'REJECTED'||fullorder.status=='COMPLETED'||fullorder.status === 'EXPIRED')">
+          <div *ngIf="fullorder.status=='COMPLETED'" class="itemStatus__Completed completed__color">
+             {{fullorder.status}}
+          </div>
+          <div *ngIf="fullorder.status=='REJECTED'" class="itemStatus__Completed rejected__color">
+             {{fullorder.status}}
+          </div>
+          <div *ngIf="fullorder.status=='EXPIRED'" class="itemStatus__Completed expired__color">
+             {{fullorder.status}}
+          </div>
+       </div>
+      <div class="padding__Styles" *ngIf="fullorder.typeOfDinning=='CINEMAS'">
+        
+          
+          <div style="white-space: normal;" class="bow_date_time" *ngIf="(fullorder.orderType == 'Delivery')">
+             <b>Name: </b>{{fullorder.deliveryAddress}} | <b>Screen: </b>{{fullorder.deliveryAddress1}} | <b>Row: </b>{{fullorder.deliveryAddress2}} | <b>Seat: </b>{{fullorder.deliveryAddress3}}
+          </div>
+         
+       </div>
+       <div class="padding__Styles" *ngIf="fullorder.typeOfDinning=='RESTAURANT'">
+       
+          <div style="white-space: normal;" class="bow_date_time" *ngIf="(fullorder.orderType == 'Delivery')">
+             <b>Name: </b>{{fullorder.deliveryAddress}} | <b>Company: </b>{{fullorder.deliveryAddress1}} | <b>Quadrant: </b>{{fullorder.deliveryAddress2}} | <b>Floor: </b>{{fullorder.deliveryAddress3}}
+          </div>
+         
+           
+       </div>
+       <div class="padding__Styles" *ngIf="fullorder.typeOfDinning=='FOODCOURT'">
+       
+        <div style="white-space: normal;" class="bow_date_time" *ngIf="(fullorder.orderType == 'Delivery')">
+           <b>Name: </b>{{fullorder.deliveryAddress}} | <b>Table Number: </b>{{fullorder.deliveryAddress1}}
+        </div>
+       
+         
+     </div>
+    </div>
+    <div>
+      <div class="float__left">
+         <div *ngIf="(fullorder.status === 'RECEIVED')">
+            <button *ngIf="fullorder.showAcceptDecline" class="btn btn__accept btn-success access_btn" (click)="acceptFullOrder(fullorder)">
+               Accept
+              
+            </button>
+            <button *ngIf="fullorder.showAcceptDecline" class="btn btn__reject btn-danger bow_margin_left_2rem bow_margin_top_5px" (click)="rejectFullOrder(fullorder)">
+               Decline
+              
+            </button>
+         </div>
+         <div *ngIf="(fullorder.status === 'INPROGRESS')">
+            <button class="btn btn__ready btn-danger" (click)="readyFullOrder(fullorder)">
+               Ready
+              
+            </button>
+         </div>
+         <div *ngIf="(fullorder.status === 'READY')">
+            <button class="btn btn__hover btn-success" (click)="handOverFullOrder(fullorder)">
+               H.Over
+              
+            </button>
+         </div>
+      </div>
+   </div>
+    <!-- <div *ngIf="(fullorder.status === 'READY')||(fullorder.status === 'RECEIVED')||(fullorder.status === 'INPROGRESS')">
+        <i class="fa fa-phone" aria-hidden="true"></i><span class="bow_diner_details ml-1">{{fullorder.phoneNumber}}</span>
+    </div> -->
+    </div>
+    <div class="mt-3 border-top" *ngIf="i==k">
+        <div class="table_styles table-responsive mt-2">
+          <table class="col-12 table table-striped table-borderless">
+            <thead class="thead-light">
+              <tr>
+                <th>ITEM NAME</th>
+                <th *ngIf="segmentName=='Pending'">QUANTITY</th>               
+                <th>PRICE</th>
+                <th *ngIf="segmentName=='Pending'">Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let order of outletOrdersDetails;let lst = last;">
+                <td class="align-middle">
+                  <div><img *ngIf="!(order.itemType)" src="../../../assets/non-veg.png" class="margin__top mr-1" width="14" height="14" /><img *ngIf="(order.itemType)" src="../../../assets/veg.png" class="margin__top mr-1" width="14" height="14" />{{order.itemName}}</div>
+                  <div>
+                      <span *ngIf="(order.status == 'RECEIVED')">Accepted:<b>0</b> </span> <span *ngIf="(order.status != 'RECEIVED')">Accepted:<b>{{order.NonrejecetdItems.length}}</b> </span>  <span *ngIf="(order.status != 'RECEIVED')">|  Rejected : <b>{{order.rejecetdItems.length}}</b></span>
+                   </div>
+                  
+                </td>
+               
+                <td class="align-middle" *ngIf="segmentName=='Pending'">
+                    <div *ngIf="(order.status != 'COMPLETED')">
+                        <span *ngIf="(order.status == 'RECEIVED')">
+                            <div class="bow_inc_dec bow_inc_dec_block" style="float: left">
+                    
+                                <div class="bow_inc_position" (click)="quantityIncreament(order)">+</div>
+                                <div class="bow_dec_position" (click)="quantityDecrement(order)"></div>
+                                <div class="bow_inc_dec_qty">{{order.rejectedCount}}</div>
+                               
+                               </div>
+                        </span>
+                     </div>
+                </td>
+               
+                <td class="align-middle">{{(order.itemPrice*order.NonrejecetdItems.length).toFixed(2)}}</td>
+                <td *ngIf="segmentName=='Pending'" class="align-middle">
+                    <div class="text__float__right">
+                        <span *ngIf="(order.status == 'RECEIVED')">
+                           <button class="btn__Item__Close" (click)="deleteItemLevel(fullorder,order)">
+                              <i class="fa fa-times" aria-hidden="true"></i>
+                           </button>
+                        </span>
+                     </div>
+              </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    
+  </div>
+  
+  
+</div>
+
+<div *ngIf = "otpModel" class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog"
+  aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-scrollable" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-white bg-danger bow_modal_header_bg">
+        <div class="modal-title font-weight-bold" id="exampleModalLabel">Order Details</div>
+        <span aria-hidden="true"><i data-dismiss="modal" aria-label="Close" class="fa fa-times"
+            aria-hidden="true"></i></span>
+      </div>
+      <div class="modal-body ">
+       
+      </div>
+    </div>
+  </div>
+</div>

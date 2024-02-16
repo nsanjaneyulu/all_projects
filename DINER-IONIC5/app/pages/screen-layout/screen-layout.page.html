@@ -1,0 +1,104 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title class="titleMargin" (click)="resetAndGoBack()">Cancel</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-item lines=full>
+        <div class="seatSelection " style=" overflow-x: auto;">
+            <div>
+                Choose Your Screen
+            </div>
+            <div class="seatsChart">
+                <div class="seatRow">
+                    <div id="1_1" class="seatNumber" *ngFor=" let screen of  noOfScreens " (click)="chooseScreen_New(screen.description)" [class.open]="selectedScreen==screen.description">{{screen.description}}</div>
+                </div>
+            </div>
+        </div>
+    </ion-item>
+    <ion-item lines=full *ngIf="rowOneLength>0">
+        <div class="seatSelection " style=" overflow-x: auto;">
+            <div>
+                Choose Your Row
+            </div>
+            <div class="seatsChart">
+                <div class="seatRow" *ngIf="specialRows.length>0">
+                    <div id="1_1" class="seatNumber" *ngFor="let row of  specialRows" (click)="chooseRow_New(row.description)" [class.open]="selectedRow==row.description">
+                        {{row.description}}</div>
+                </div>
+                <div class="seatRow" *ngIf="rowOneLength>0">
+                    <div id="1_1" class="seatNumber" *ngFor="let row of  noOfRows.row1" (click)="chooseRow_New(row.description)" [class.open]="selectedRow==row.description">
+                        {{row.description}}</div>
+                </div>
+                <div class="seatRow" *ngIf="rowTwoLength>0">
+                    <div id="1_1" class="seatNumber" *ngFor="let row of  noOfRows.row2" (click)="chooseRow_New(row.description)" [class.open]="selectedRow==row.description">
+                        {{row.description}}</div>
+                </div>
+                <div class="seatRow" *ngIf="rowThreeLength>0">
+                    <div id="1_1" class="seatNumber" *ngFor="let row of  noOfRows.row3" (click)="chooseRow_New(row.description)" [class.open]="selectedRow==row.description">
+                        {{row.description}}</div>
+                </div>
+                <div class="seatRow" *ngIf="rowFourLength>0">
+                    <div id="1_1" class="seatNumber" *ngFor="let row of  noOfRows.row4" (click)="chooseRow_New(row.description)" [class.open]="selectedRow==row.description">
+                        {{row.description}}</div>
+                </div>
+                <div class="seatRow" *ngIf="rowFiveLength>0">
+                    <div id="1_1" class="seatNumber" *ngFor="let row of  noOfRows.row5" (click)="chooseRow_New(row.description)" [class.open]="selectedRow==row.description">
+                        {{row.description}}</div>
+                </div>
+                <div class="seatRow" *ngIf="rowSixLength>0">
+                    <div id="1_1" class="seatNumber" *ngFor="let row of  noOfRows.row6" (click)="chooseRow_New(row.description)" [class.open]="selectedRow==row.description">
+                        {{row.description}}</div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </ion-item>
+    <ion-item lines=full *ngIf="rowOneSeats>0">
+        <div class="seatSelection " style="overflow-x: auto;     margin-left: -5px;">
+            <div>
+                Choose Your Seat
+            </div>
+            <div class="seatsChart">
+                <div class="seatRow" *ngIf="rowOneSeats>0">
+
+                    <div id="1_1" class="seatNumber1" *ngFor=" let seat of  noOfSeats.row1 " [class.seatNumber2]="selectedSeat==seat.description" (click)="chooseSeat_New(seat.description)">
+                        {{seat.description > 9 ? '':0}}{{seat.description}}
+                    </div>
+                </div>
+                <div class="seatRow" *ngIf="rowTwoSeats>0">
+
+                    <div id="1_1" class="seatNumber1" *ngFor=" let seat of  noOfSeats.row2 " [class.seatNumber2]="selectedSeat==seat.description" (click)="chooseSeat_New(seat.description)">{{seat.description > 9 ? '':0}}{{seat.description}}</div>
+                </div>
+                <div class="seatRow" *ngIf="rowThreeSeats>0">
+
+                    <div id="1_1" class="seatNumber1" *ngFor=" let seat of  noOfSeats.row3" [class.seatNumber2]="selectedSeat==seat.description" (click)="chooseSeat_New(seat.description)">{{seat.description > 9 ? '':0}}{{seat.description}}</div>
+                </div>
+                <div class="seatRow" *ngIf="rowFourSeats>0">
+
+                    <div id="1_1" class="seatNumber1" *ngFor=" let seat of  noOfSeats.row4 " [class.seatNumber2]="selectedSeat==seat.description" (click)="chooseSeat_New(seat.description)">{{seat.description > 9 ? '':0}}{{seat.description}}</div>
+                </div>
+                <div class="seatRow" *ngIf="rowFiveseats>0">
+
+                    <div id="1_1" class="seatNumber1" *ngFor=" let seat of  noOfSeats.row5" [class.seatNumber2]="selectedSeat==seat.description" (click)="chooseSeat_New(seat.description)">{{seat.description > 9 ? '':0}}{{seat.description}}</div>
+                </div>
+                <div class="seatRow" *ngIf="rowsixSeats>0">
+
+                    <div id="1_1" class="seatNumber1" *ngFor=" let seat of  noOfSeats.row6 " [class.seatNumber2]="selectedSeat==seat.description" (click)="chooseSeat_New(seat.description)">{{seat.description}}</div>
+                </div>
+                <div class="seatRow" *ngIf="rowSevenseats>0">
+
+                    <div id="1_1" class="seatNumber1" *ngFor=" let seat of  noOfSeats.row7 " [class.seatNumber2]="selectedSeat==seat.description" (click)="chooseSeat_New(seat.description)">{{seat.description}}</div>
+                </div>
+                <div class="seatRow" *ngIf="rowEightSeats>0">
+
+                    <div id="1_1" class="seatNumber1" *ngFor=" let seat of  noOfSeats.row8 " [class.seatNumber2]="selectedSeat==seat.description" (click)="selectSeatOrRow(seat.description)">{{seat.description}}</div>
+                </div>
+
+            </div>
+        </div>
+    </ion-item>
+</ion-content>

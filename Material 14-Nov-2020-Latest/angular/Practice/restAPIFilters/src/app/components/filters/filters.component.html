@@ -1,0 +1,53 @@
+<div class="row ml-1">
+    <div class="col-12 filterAlign">
+        <div [formControl]="favoriteSeason" name="ses">
+        <div class="form-check form-check-inline" *ngFor="let season of seasons">
+            <label class="form-check-label">
+            <input class="form-check-input" type="radio" name="catchPhrase" value="{{season}}" /> {{season}}
+            </label>
+         </div>
+        </div>
+        {{favoriteSeason.value}}
+      
+        <div class="text-center">
+            <h6 class="underline">Launch Year</h6>
+        </div>
+        <div class="row">
+            <div class="buttonSpace my-3 col-6" *ngFor="let i of arrayThree(15, 2006)">
+                <button type="button" class="btn btn-success btn-sm px-3" (click) = "filterDetails(i)">
+                    <span>{{i}} </span>
+                </button>
+            </div>
+        </div>
+        <div class="text-center">
+            <h6 class="underline">Successful Launch</h6>
+        </div>
+        <div class="row">
+            <div class="buttonSpace my-3 col-6">
+                <button type="button" class="btn btn-success btn-sm px-3" (click) = "filterDetails(true)">
+                    True
+                </button>
+            </div>
+            <div class="buttonSpace my-3 col-6">
+                <button type="button" class="btn btn-success btn-sm px-3">
+                    False
+                </button>
+            </div>
+        </div>
+        <div class="text-center">
+            <h6 class="underline">Successful Landing</h6>
+        </div>
+        <div class="row">
+            <div class="buttonSpace my-3 col-6">
+                <button type="button" class="btn btn-success btn-sm px-3">
+                    True
+                </button>
+            </div>
+            <div class="buttonSpace my-3 col-6">
+                <button type="button" class="btn btn-success btn-sm px-3">
+                    False
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

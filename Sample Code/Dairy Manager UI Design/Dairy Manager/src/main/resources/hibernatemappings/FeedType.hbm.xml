@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 15 Jul, 2012 7:41:56 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dblue.farm.FeedType" table="feed_type" >
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="feedType" type="string">
+            <column name="feed_type" length="30" not-null="true" unique="true" />
+        </property>
+        <property name="description" type="string">
+            <column name="description" length="150" />
+        </property>
+        <many-to-one class="com.dblue.farm.Farm" fetch="select" name="farm">
+ 			<column name="farm_id" not-null="true"/>
+		</many-to-one>        
+        <set name="feedingHistories" table="feeding_history" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="feed_type_id" not-null="true" />
+            </key>
+            <one-to-many class="com.dblue.farm.FeedingHistory" />
+        </set>
+        <set name="feedingConfigs" table="feeding_config" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="feed_type" not-null="true" />
+            </key>
+            <one-to-many class="com.dblue.farm.FeedingConfig" />
+        </set>
+    </class>
+</hibernate-mapping>

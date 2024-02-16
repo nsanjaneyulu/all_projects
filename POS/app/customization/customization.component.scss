@@ -1,0 +1,25 @@
+.bow_display_Flex {
+    display: flex;
+    justify-content: space-between;
+  }
+  .item-border-bottom {
+    border-bottom: 1px solid #eee;
+  }
+  .btn-outline-danger {
+    color: #5c0632;
+    border-color: #5c0632;
+}
+.add-button {
+    width: 75px;
+    border: 1px solid #11BA91;
+    border-radius: 2px;
+    height: 25px;
+    margin-top: 2px;
+}
+.quantity-value{
+    background-color: #11BA91;
+    /* padding: 1px; */
+    color:white;
+    padding-left: 5px;
+    padding-right: 5px;
+}

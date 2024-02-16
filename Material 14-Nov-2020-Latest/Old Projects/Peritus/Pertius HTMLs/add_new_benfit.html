@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <!--   <title>PERITUS</title>-->
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/peritus_stylesheet.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style>
+        label {
+            display: inline-block;
+            font-weight: 700;
+            margin-bottom: 5px;
+            max-width: 100%;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 p-gray-bg">
+                <div class="col-xs-3 col-sm-3 col-md-3"><img src="img/peritusLogo.jpg" style="width:184px;"> </div>
+                <div class="col-xs-9 col-sm-9 col-md-9">
+                    <ul class="nav navbar-nav navbar-right p-right-adm">
+                        <li>
+                            <div class="round round-sm blue"> <span class="glyphicon glyphicon-user"></span> </div>Admin Name</li>
+                        <li><a href="#">Logout</a> </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="col-md-8 col-md-offset-2" style="margin-top:5%;">
+                    <div class="col-xs-12 col-sm-12 col-md-12 p-bottom-border">
+                        <div class="col-xs-12 col-sm-9 col-md-9">
+                            <h4>Add New Benfit</h4> </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-12 p-padding-none" style="margin:15px 0px;">
+                        <div class="panel panel-green margin-bottom-40 p-panel-main">
+                            <div class="panel-heading">
+                                <h3 class="panel-title"><i class="fa fa-tasks"></i> Benfit Details</h3> </div>
+                            <div class="panel-body p-panel-bg">
+                                <div class="col-xs-12 col-sm-6 col-md-6">
+                                    <form role="form" class="form-horizontal">
+                                        <div class="form-group">
+                                            <label class="col-xs-12 col-sm-2 col-md-2 control-label" for="inputEmail1">Name</label>
+                                            <div class="col-xs-12 col-sm-10 col-md-10">
+                                                <input type="email" id="inputEmail1" class="form-control p-form-control-1"> </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-xs-12 col-sm-2 col-md-2 control-label" for="inputEmail1">Company</label>
+                                            <div class="col-xs-12 col-sm-10 col-md-10">
+                                                <input type="email" id="inputEmail1" class="form-control p-form-control-1"> </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-2 control-label" for="inputPassword1">Logo</label>
+                                            <div class="col-xs-12 col-sm-7 col-md-7">
+                                                <input type="password"  id="inputPassword1" class="form-control p-form-control-1" style="float:left;"> </div>
+                                            <button type="button" class="btn btn-primary"><span aria-hidden="true" class="glyphicon glyphicon-download-alt"></span>Upload</button>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="col-xs-12 col-sm-6 col-md-6">
+                                    <form role="form" class="form-horizontal">
+                                        <div class="form-group">
+                                            <label class="col-lg-2 control-label" for="" style="padding:0px;">Description</label>
+                                            <div class="col-lg-10">
+                                                <textarea class="form-control p-form-control-1" rows="7"></textarea>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12  p-padding-none">
+                            <div class="col-sm-8  p-padding-none">
+                                <div class="panel panel-green margin-bottom-40 p-panel-main" style="float:left; margin-top:30px; width:100%;">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title"><i class="fa fa-tasks"></i>Type of Benfit</h3> </div>
+                                    <div class="panel-body p-panel-bg col-xs-12 col-sm-12">
+                                        <div class="col-xs-12 col-sm-12 col-md-12">
+                                            <form role="form" class="form-horizontal">
+                                                <div class="radio col-xs-12 col-sm-3">
+                                                    <label>
+                                                        <input type="radio"> Bussiness </label>
+                                                </div>
+                                                <div class="radio col-xs-12 col-sm-3">
+                                                    <label>
+                                                        <input type="radio"> Consumer </label>
+                                                </div>
+                                                <div class="radio col-xs-12 col-sm-6">
+                                                    <label>
+                                                        <input type="radio"> Bussiness and Consumer </label>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-6"></div>
+                        </div>
+                        <div class="panel panel-green margin-bottom-40 p-panel-main">
+                            <div class="panel-heading">
+                                <h3 class="panel-title"><i class="fa fa-tasks"></i>Address</h3> </div>
+                            <div class="panel-body p-panel-bg">
+                                <div class="col-xs-12 col-sm-6 col-md-6">
+                                    <form role="form" class="form-horizontal">
+                                        <div class="form-group">
+                                            <label class="col-xs-12 col-sm-2 col-md-2 control-label" for="inputEmail1">Street</label>
+                                            <div class="col-xs-12 col-sm-10 col-md-10">
+                                                <input type="email" id="inputEmail1" class="form-control p-form-control-1"> </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-xs-12 col-sm-2 col-md-2 control-label" for="inputEmail1">State</label>
+                                            <div class="col-xs-12 col-sm-10 col-md-10">
+                                                <input type="email" id="inputEmail1" class="form-control p-form-control-1"> </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-xs-12 col-sm-2 col-md-2 control-label" for="inputEmail1">Country</label>
+                                            <div class="col-xs-12 col-sm-10 col-md-10">
+                                                <input type="email" id="inputEmail1" class="form-control p-form-control-1"> </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="col-xs-12 col-sm-6 col-md-6">
+                                    <form role="form" class="form-horizontal">
+                                        <div class="form-group">
+                                            <label class="col-xs-12 col-sm-4 col-md-4 control-label" for="inputEmail1">City</label>
+                                            <div class="col-xs-12 col-sm-8 col-md-8">
+                                                <input type="email" id="inputEmail1" class="form-control p-form-control-1"> </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-xs-12 col-sm-4 col-md-4 control-label" for="inputEmail1">Zip Code</label>
+                                            <div class="col-xs-12 col-sm-8 col-md-8">
+                                                <input type="email" id="inputEmail1" class="form-control p-form-control-1"> </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-green margin-bottom-40 p-panel-main">
+                            <div class="panel-heading">
+                                <h3 class="panel-title"><i class="fa fa-tasks"></i>Contact Information</h3> </div>
+                            <div class="panel-body p-panel-bg">
+                                <div class="col-xs-12 col-sm-6 col-md-6">
+                                    <form role="form" class="form-horizontal">
+                                        <div class="form-group">
+                                            <label class="col-xs-12 col-sm-2 col-md-2 control-label" for="inputEmail1">Name</label>
+                                            <div class="col-xs-12 col-sm-10 col-md-10">
+                                                <input type="email" id="inputEmail1" class="form-control p-form-control-1"> </div>
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                            <label class="col-xs-12 col-sm-2 col-md-2 control-label" for="inputEmail1">Phone</label>
+                                            <div class="col-xs-12 col-sm-10 col-md-10">
+                                                <input type="email" id="inputEmail1" class="form-control p-form-control-1"> </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="col-xs-12 col-sm-6 col-md-6">
+                                    <form role="form" class="form-horizontal">
+                                        <div class="form-group">
+                                            <label class="col-xs-12 col-sm-4 col-md-4 control-label" for="inputEmail1">Title</label>
+                                            <div class="col-xs-12 col-sm-8 col-md-8">
+                                                <input type="email" id="inputEmail1" class="form-control p-form-control-1"> </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-xs-12 col-sm-4 col-md-4 control-label" for="inputEmail1">Email</label>
+                                            <div class="col-xs-12 col-sm-8 col-md-8">
+                                                <input type="email" id="inputEmail1" class="form-control p-form-control-1"> </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-green margin-bottom-40 p-panel-main">
+                            <div class="panel-heading">
+                                <h3 class="panel-title"><i class="fa fa-tasks"></i>Contact Us</h3> </div>
+                            <div class="panel-body p-panel-bg">
+                                <div class="col-xs-12 col-sm-6 col-md-4">
+                                    <form role="form" class="form-horizontal">
+                                        <div class="col-xs-12 col-sm-2 col-md-2">
+                                            <div class="form-group ">
+                                                <label>
+                                                    <input type="checkbox"> </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-10 col-md-10">
+                                            <div class="form-group lableAlign">
+                                                <label class="control-label" for="inputEmail1">Initiate Phone Call</label>
+                                            </div>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                        <div class="col-xs-12 col-sm-2 col-md-2">
+                                            <div class="form-group">
+                                                <label>
+                                                    <input type="checkbox"> </label>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-xs-12 col-sm-10 col-md-10">
+                                            <div class="form-group lableAlign">
+                                                <label class="control-label" for="inputEmail1">Dedicated Purchasing Page</label>
+                                            </div>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                        <div class="col-xs-12 col-sm-2 col-md-2">
+                                            <div class="form-group">
+                                                <label>
+                                                    <input type="checkbox"> </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-10 col-md-10">
+                                            <div class="form-group lableAlign">
+                                                <label class="control-label" for="inputEmail1">I'm Interested Call Me Back</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-10 col-md-10 pleasecheck text-center">
+                                            <div class="form-group ">
+                                                <p class="control-label" for="inputEmail1">Please Check the Boxes For Mandatory Questions</p>
+                                            </div>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                        <div class="col-xs-12 col-sm-2 col-md-2">
+                                            <div class="form-group">
+                                                <label>
+                                                    <input type="checkbox"> </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-10 col-md-10">
+                                            <div class="form-group">
+                                                <label class="control-label" for="inputEmail1">URL Redirect</label>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="col-xs-12 col-sm-6 col-md-8">
+                                    <form role="form" class="form-horizontal">
+                                        <div class=" col-xs-12 col-sm-4 col-md-4">
+                                            <div class="form-group">
+                                                <div class="">
+                                                    <input type="email" placeholder="Enter Contact Number" id="inputEmail1" class="form-control p-form-control-1 "> </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-4 col-md-4">
+                                            <div class="form-group">
+                                                <input type="email" placeholder="Enter Promo Code" id="inputEmail1" class="form-control p-form-control-1"> </div>
+                                        </div>
+                                        <div class=" col-xs-12 col-sm-4 col-md-4">
+                                            <div class="form-group">
+                                                <input type="email" placeholder="Access Label" id="inputEmail1" class="form-control p-form-control-1"> </div>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                        <div class=" col-xs-12 col-sm-8 col-md-8">
+                                            <div class="form-group">
+                                                <input type="email" placeholder="Enter URL" id="inputEmail1" class="form-control p-form-control-1 "> </div>
+                                        </div>
+                                        <div class=" col-xs-12 col-sm-4 col-md-4">
+                                            <div class="form-group">
+                                                <input type="email" placeholder="Access Label" id="inputEmail1" class="form-control p-form-control-1"> </div>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                        <div class=" col-xs-12 col-sm-4 col-md-1">
+                                            <div class="form-group">
+                                                <input type="checkbox"> </div>
+                                        </div>
+                                        <div class=" col-xs-12 col-sm-4 col-md-11">
+                                            <div class="form-group">
+                                                <input type="email" placeholder="Enter question 1" id="inputEmail1" class="form-control p-form-control-1"> </div>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                        <div class=" col-xs-12 col-sm-4 col-md-1">
+                                            <div class="form-group">
+                                                <input type="checkbox"> </div>
+                                        </div>
+                                        <div class=" col-xs-12 col-sm-4 col-md-11">
+                                            <div class="form-group">
+                                                <input type="email" placeholder="Enter question 2" id="inputEmail1" class="form-control p-form-control-1"> </div>
+                                        </div>
+                                        <div class=" col-xs-12 col-sm-4 col-md-1">
+                                            <div class="form-group">
+                                                <input type="checkbox"> </div>
+                                        </div>
+                                        <div class=" col-xs-12 col-sm-4 col-md-11">
+                                            <div class="form-group">
+                                                <input type="email" placeholder="Enter question 3" id="inputEmail1" class="form-control p-form-control-1"> </div>
+                                        </div>
+                                        <div class=" col-xs-12 col-sm-4 col-md-1">
+                                            <div class="form-group">
+                                                <input type="checkbox"> </div>
+                                        </div>
+                                        <div class=" col-xs-12 col-sm-4 col-md-11">
+                                            <div class="form-group">
+                                                <input type="email" placeholder="Enter question 4" id="inputEmail1" class="form-control p-form-control-1"> </div>
+                                        </div>
+                                        <div class=" col-xs-12 col-sm-4 col-md-1">
+                                            <div class="form-group">
+                                                <input type="checkbox"> </div>
+                                        </div>
+                                        <div class=" col-xs-12 col-sm-4 col-md-11">
+                                            <div class="form-group">
+                                                <input type="email" placeholder="Enter question 5" id="inputEmail1" class="form-control p-form-control-1"> </div>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                        <div class=" col-xs-12 col-sm-8 col-md-12">
+                                            <div class="form-group">
+                                                <input type="email" placeholder="Access Label" id="inputEmail1" class="form-control p-form-control-1 "> </div>
+                                        </div>
+                                        <div class=" col-xs-12 col-sm-4 col-md-8">
+                                            <div class="form-group">
+                                                <input type="email" placeholder="Enter URL" id="inputEmail1" class="form-control p-form-control-1"> </div>
+                                        </div>
+                                        <div class=" col-xs-12 col-sm-12 col-md-4">
+                                            <div class="form-group">
+                                                <input type="email" placeholder="Access Label" id="inputEmail1" class="form-control p-form-control-1"> </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12  p-padding-none">
+                            <div class="col-sm-12  p-padding-none">
+                                <div class="panel panel-green margin-bottom-40 p-panel-main" style="float:left; margin-top:30px; width:100%;">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title"><i class="fa fa-tasks"></i>Standard Options</h3> </div>
+                                    <div class="panel-body p-panel-bg col-xs-12 col-sm-12">
+                                        <div class="col-xs-12 col-sm-12 col-md-12">
+                                            <form role="form" class="form-horizontal">
+                                                <div class="checkbox col-xs-12 col-sm-3">
+                                                    <label>
+                                                        <input type="checkbox"> Street </label>
+                                                </div>
+                                                <div class="checkbox col-xs-12 col-sm-3">
+                                                    <label>
+                                                        <input type="checkbox"> City </label>
+                                                </div>
+                                                <div class="checkbox col-xs-12 col-sm-3">
+                                                    <label>
+                                                        <input type="checkbox"> State </label>
+                                                </div>
+                                                <div class="checkbox col-xs-12 col-sm-3">
+                                                    <label>
+                                                        <input type="checkbox"> Zip </label>
+                                                </div>
+                                                <div class="checkbox col-xs-12 col-sm-3">
+                                                    <label>
+                                                        <input type="checkbox"> Country </label>
+                                                </div>
+                                                <div class="checkbox col-xs-12 col-sm-3">
+                                                    <label>
+                                                        <input type="checkbox"> Company Name </label>
+                                                </div>
+                                                <div class="checkbox col-xs-12 col-sm-3">
+                                                    <label>
+                                                        <input type="checkbox"> Number of employees </label>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-6"></div>
+                        </div>
+                        <div class="col-sm-12  p-padding-none">
+                            <div class="col-sm-12  p-padding-none">
+                                <div class="panel panel-green margin-bottom-40 p-panel-main" style="float:left; margin-top:30px; width:100%;">
+                                    <div class="panel-body p-panel-bg col-xs-12 col-sm-12">
+                                        <div class="col-xs-12 col-sm-12 col-md-12">
+                                            <form role="form" class="form-horizontal">
+                                                <div class="checkbox col-xs-12 col-sm-4">
+                                                    <label>
+                                                        <input type="checkbox"> Initial Enrollment Email </label>
+                                                </div>
+                                                <div class="checkbox col-xs-12 col-sm-8">
+                                                    <textarea class="form-control p-form-control-1" placeholder="Enter Email IDs" rows="7"></textarea>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-6"></div>
+                        </div>
+                        <div class="col-sm-12  p-padding-none">
+                            <div class="col-sm-12  p-padding-none">
+                                <div class="panel panel-green margin-bottom-40 p-panel-main" style="float:left; margin-top:30px; width:100%;">
+                                    <div class="panel-body p-panel-bg col-xs-12 col-sm-12">
+                                        <div class="col-xs-12 col-sm-12 col-md-12">
+                                            <form role="form" class="form-horizontal">
+                                                <div class="checkbox col-xs-12 col-sm-4">
+                                                    <label>
+                                                        <input type="checkbox"> Enroll Now </label>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-6"></div>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-12 p-padding-none" style="margin:15px 0px;">
+                            <div class="col-xs-12 col-sm-6 col-md-4" style="float:left;">
+                                <button type="button" class="btn btn-primary btn-lg btn-block">Back</button>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-4">
+                                <button type="button" class="btn btn-primary btn-lg btn-block">Cancel</button>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-4" style="float:right;">
+                                <button type="button" class="btn btn-primary btn-lg btn-block">Save</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 p-gray-bg-top"> </div>
+        </div>
+    </div>
+    </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+</body>
+
+</html>

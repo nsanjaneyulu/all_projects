@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width">
+      <title>Click to Show Value Users</title>
+      <script src="https://code.jquery.com/jquery.min.js"></script>
+      <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+   </head>
+   <body>
+      <div class="container">
+         <div class="well">
+            <ul id="users">
+               <!--<li>User name here...</li>-->
+
+
+            </ul>
+         </div>
+         <div class="well">
+            <h3>Click to Show Value Users</h3>
+            <div id="selectedUser">
+
+            </div>
+
+            <div class="well">
+               <table class="table">
+                  <thead>
+                  <tr>
+                     <th>Id</th>
+                     <th>Email</th>
+                     <th>Username</th>
+                     <th>Name</th>
+                     <th>Phone</th>
+                     <th>Website</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr class="row_display_user">
+                     <td class="id"></td>
+                     <td class="email"></td>
+                     <td class="username"></td>
+                     <td class="name"></td>
+                     <td class="phone"></td>
+                     <td class="website"></td>
+                  </tr>
+                  </tbody>
+               </table>
+            </div>
+         </div>
+      </div>
+      <script>
+$(document).ready(function(){
+       function sum() { // (hidden arguments -> ( params ) variable availale here in every function method)
+    
+    // initialize a total variable with value 0
+    var total = 0;
+
+
+    // To Get acces for parameters we can use arguments variable
+    // Want to know how many parameters avaible we can call arguments.length
+    var totalParams = arguments.length;
+
+    var initParam = 0;  // arguments start with 0 index
+
+    for(initParam=0; initParam < totalParams; initParam++) {
+        total = total + arguments[initParam];
+    }
+console.log(total);
+    return total;
+    
+
+};
+sum(1,2,3,66); //1+2+3 => 6
+console.log(sum(1,"44"))
+});
+
+
+       
+      </script>
+   </body>
+</html>

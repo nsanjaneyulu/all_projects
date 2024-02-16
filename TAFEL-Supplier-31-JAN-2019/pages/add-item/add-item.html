@@ -1,0 +1,91 @@
+<ion-header>
+      <ion-navbar>
+         <ion-buttons left>
+            <button ion-button icon-only (click)="BackButtonClick()">
+               <ion-icon name="arrow-back"></ion-icon>
+            </button>
+         </ion-buttons>
+         <ion-title>
+            <div><span class="item__Details">Outlet Name:</span> <span style="color: #e46d47" class="item__Details">{{outletName}}</span></div>
+            <!-- <div><span class="item__Details">Menu Name:</span> <span style="color: #e46d47" class="item__Details">Naan</span></div> -->
+            <div><span class="item__Details">Sub Menu Name:</span> <span style="color: #e46d47" class="item__Details">{{submenuName}}</span></div>
+         </ion-title>
+      </ion-navbar>
+   </ion-header>
+   <ion-content>
+      <div *ngIf="!showLoader">
+      <ion-item class="background__color">
+         <ion-label class="order__Details">Item Details</ion-label>
+      </ion-item>
+      <ion-item>
+         <ion-label class="item__Details">Veg / Non Veg</ion-label>
+         <ion-toggle [(ngModel)]="veg"></ion-toggle>
+      </ion-item>
+      <ion-item>
+         <ion-label>Item Name</ion-label>
+         <ion-input type="text" value="" [(ngModel)]="name"></ion-input>
+      </ion-item>
+      <ion-item>
+         <ion-label>Description</ion-label>
+         <ion-input type="text" value="" [(ngModel)]="description"></ion-input>
+      </ion-item>
+      <ion-item>
+         <ion-label>Price</ion-label>
+         <ion-input type="text" value="" [(ngModel)]="price"></ion-input>
+      </ion-item>
+      <ion-item class="background__color">
+         <ion-label class="order__Details">Availability</ion-label>
+         <ion-toggle [(ngModel)]="available"></ion-toggle>
+      </ion-item>
+      <ion-item >
+         <ion-label>Weeks</ion-label>
+         <ion-select multiple="true" [(ngModel)]="week">
+         <ion-option>Sun</ion-option>
+         <ion-option>Mon</ion-option>
+         <ion-option>Tue</ion-option>
+         <ion-option>Wed</ion-option>
+         <ion-option>Thu</ion-option>
+         <ion-option>Fri</ion-option>
+         <ion-option>Sat</ion-option>
+         </ion-select>
+      </ion-item>
+      <ion-item>
+         <ion-label>Start Time </ion-label>
+         <ion-datetime displayFormat="HH:mm"[(ngModel)]="startHour"></ion-datetime>
+      </ion-item>
+      <ion-item>
+         <ion-label>End Time </ion-label>
+         <ion-datetime displayFormat="HH:mm" [(ngModel)]="endHour"></ion-datetime>
+      </ion-item>
+      <ion-item no-lines>
+            <div class="displayFlex">
+               <span  style="color: #999;">Discount(%)</span>
+               <span class="" style="color:#e46d47; font-weight:bold;padding-right: 10px;">{{discount}}</span>
+            </div>
+      </ion-item>
+      
+          <ion-item>
+              
+            <ion-range min="1" max="50" pin="true" [(ngModel)]="discount" color="secondary">
+              <ion-icon range-left small name="eye"></ion-icon>
+              <ion-icon range-right name="eye"></ion-icon>
+              
+            </ion-range>
+          </ion-item>
+     
+      </div>
+      <page-globalloader *ngIf="showLoader"></page-globalloader>
+   </ion-content>
+   <ion-footer class="footer__styles">
+      <ion-grid>
+         <ion-row>
+           
+            <ion-col col-12 (click)=addItem() style="text-align: center;">
+               <span class="print__callDiner">
+                  <ion-icon name="bookmark"></ion-icon>
+                  Add Item
+               </span>
+            </ion-col>
+         </ion-row>
+      </ion-grid>
+   </ion-footer>

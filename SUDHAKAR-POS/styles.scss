@@ -1,0 +1,94 @@
+@import '~@angular/material/theming';
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+@import "~@angular/material/prebuilt-themes/pink-bluegrey.css";
+@import "~@angular/material/prebuilt-themes/purple-green.css";
+@include mat-core();
+$Bow-primary: mat-palette($mat-indigo);
+$Bow-accent: mat-palette($mat-pink, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$Bow-warn: mat-palette($mat-red);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$Bow-theme: mat-light-theme($Bow-primary, $Bow-accent, $Bow-warn);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($Bow-theme);
+/* You can add global styles to this file, and also import other style files */
+@import "_variables.scss";
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #section-to-print, #section-to-print * {
+    visibility: visible;
+  }
+  #section-to-print {
+    position: fixed;
+    left: 0;
+    top: 0;
+  }
+}
+
+body, html, tafelposapp-root {
+    color: #494F56;
+}
+
+body, .btn-group-sm>.btn, .btn-sm {
+    font-size: 0.8rem !important;
+}
+
+.page-top-margin {
+    margin-top: $page-top-margin;
+}
+
+.min-h-100 {
+    min-height: 100%;
+}
+
+.no-gutter-right {
+    padding-right:0 !important;
+}
+
+.no-gutter-left {
+    padding-left:0 !important;
+}
+
+.btn-light {
+    cursor: pointer;
+}
+
+.tafelpos-body {
+    .form-control {
+        border-radius: 0;
+    }
+    
+    .border {
+        border-color: $medium-border !important;
+    }
+
+    .btn-secondary {
+        background-color: $secondory-base-color;
+        border-color: $secondory-base-color;
+        &:hover {
+            background-color: #ff0055;
+            border-color: #ff0055;
+        }
+    }
+
+    .bg-secondory {
+        background-color: $secondory-base-color;
+        color: #ffffff;
+    }
+}
+
+.fa-info-circle {
+    cursor: pointer;
+    color: #82c91e;
+}
+
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

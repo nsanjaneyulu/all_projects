@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 4 Aug, 2012 4:27:05 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dblue.farm.SuggestedFeeding" table="suggested_feeding" >
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="stateType" type="string">
+            <column name="state_type" length="30" not-null="true" />
+        </property>
+        <property name="feedType" type="string">
+            <column name="feed_type" length="30" not-null="true" />
+        </property>
+        <property name="feedQuantity" type="int">
+            <column name="feed_quantity" not-null="true" />
+        </property>
+        <property name="livestockTotal" type="java.lang.Integer">
+            <column name="livestock_total" />
+        </property>
+        <property name="schduledDate" type="timestamp">
+            <column name="schduled_date" length="19" not-null="true" />
+        </property>
+        <many-to-one class="com.dblue.farm.Farm" fetch="select" name="farm">
+ 			<column name="farm_id" not-null="true"/>
+		</many-to-one> 
+    </class>
+</hibernate-mapping>

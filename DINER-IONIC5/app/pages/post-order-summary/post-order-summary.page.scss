@@ -1,0 +1,164 @@
+.imageBorder {
+    width: 100%;
+}
+
+.marginDiv {
+    margin: 2%;
+}
+
+.vegClass {
+    width: 3%;
+}
+
+.itemName {
+    width: 50%;
+    display: inline-block;
+    font-size: 0.8rem;
+    margin-left: 1%;
+}
+
+.mallNameAddress {
+    font-size: 0.9rem;
+}
+
+.mallName {
+    font-weight: bold;
+}
+
+.colNameValue {
+    margin-top: 4%;
+}
+
+.mallNameValueName {
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.itemStatus {
+    font-size: 0.8rem;
+    width: 25%;
+    display: inline-block;
+    font-weight: bold;
+    color: #5c0931;
+}
+
+.itemPrice {
+    font-size: 0.8rem;
+    text-align: right;
+    display: inline-block;
+    width: 20%;
+}
+
+.itemQuantity {
+    font-size: 0.8rem;
+    margin-left: 5%;
+    margin-top: 1%;
+}
+
+.bgOutlet {
+    background-color: #F1F1F1;
+}
+
+.bgItemData {
+    border-bottom: 1px solid #F1F1F1;
+    padding-top: 1%;
+}
+
+.view_cart_label {
+    font-size: 0.9rem;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #000000;
+    padding: 0.4rem 0rem;
+}
+
+.billsummary_display {
+    display: flex;
+    justify-content: space-between;
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 150px;
+    background-color: #F6F6F6;
+    color: #000000;
+    text-align: left;
+    border-radius: 6px;
+    padding: 5px 6px;
+    position: absolute;
+    z-index: 1;
+    bottom: 150%;
+    left: 50%;
+    font-size: 0.6rem;
+    margin-left: -43px;
+}
+
+.chargesTaxes {
+    display: inline-block;
+    width: 100%;
+}
+
+.marginBottomValue {
+    margin-bottom: -3%;
+}
+
+.chargessTaxes {
+    float: right;
+    display: inline-block;
+}
+
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -25%;
+    border-width: 5px;
+    border-style: solid;
+    border-color: black transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+
+.taxesCharges {
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.order_summary_lable {
+    font-size: 0.8rem;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #515968;
+}
+
+.order_summary_lable_value {
+    font-size: 1rem;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #000000;
+}
+
+.order_summary_bg_styles {
+    background-color: #f6f6f6;
+    padding: 0.5rem;
+}

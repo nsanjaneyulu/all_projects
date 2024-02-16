@@ -1,0 +1,43 @@
+<div class="users-panel">
+    <div class="card card-default">
+      <div class="card-header">
+        <h5 class="card-title text-uppercase">List Desc</h5>
+      </div>
+      <div class="card-body">
+        <div class="card card-default">
+          <div class="card-header">
+            <h6 class="card-title">List</h6>
+          </div>
+          <div class="panel-body ">
+            <div class="table-responsive">
+              <table class="table">
+                <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Email</th>
+                  <th>Full Name</th>
+                  <th>Name</th>
+                  <th>First Name</th>
+                  <th>Contact Number</th>
+                  <th>Email</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let data of all" >
+                  <td>#</td>
+                  <td>{{ data.student['name'] || '-'}}</td>
+                  <td>{{ data.student['email'] || '-' }}</td>
+                  <td>{{ data.person['moretableaddcontactName'] || '-' }}</td>
+                  <td>{{ data.person['moretableaddemailcontact'] || '-' }}</td>
+                  <td>{{ data.contact['moretableaddfirstname'] || '-' }}</td>
+                  <td>{{ data.contact['moretableaddlastname'] || '-' }}</td>
+                  
+                </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

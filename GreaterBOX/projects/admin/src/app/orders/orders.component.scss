@@ -1,0 +1,178 @@
+@import "../../styles/abstracts/breakpoints.scss";
+@import "../../styles/abstracts/mixins.scss";
+
+.main_Content {
+  padding: 12em 5em 0em 15em;
+}
+table {
+  width: 100%;
+}
+
+tr {
+  width: 100%;
+  display: table;
+  table-layout: fixed;
+}
+
+th,
+td {
+  padding: 5px;
+  text-align: left;
+}
+.table .thead-light th {
+  font-weight: 500;
+  font-family: "Brandon Grotesque Regular";
+  font-size: 1.5em;
+  color: black;
+  padding: 0.6em 0.5em;
+}
+table {
+  tbody {
+    height: calc(100vh - 400px);
+    display: block;
+    width: 100%;
+    overflow-y: auto;
+  }
+  td {
+    border: 1px solid #dee2e6;
+    word-break: break-word;
+    padding: 0.6em 1em;
+  }
+}
+label {
+  color: black;
+  font-family: "Brandon Grotesque Regular";
+  font-size: 1.3em;
+}
+.form-control {
+  height: 3.5em;
+  border-radius: 0.5em;
+  padding: 0em 2em;
+  font-size: 1.2em;
+  font-family: "Brandon Grotesque Regular";
+}
+.csv_btn {
+  padding: 1em 0em 0em 0em;
+  align-items: center;
+  align-self: center;
+  button {
+    color: black;
+    font-family: "Brandon Grotesque Regular";
+    font-size: 1.5em;
+    background-color: #adbd2b;
+    border: #adbd2b;
+  }
+}
+.form-group {
+  padding: 0em 1em 0em 0em;
+}
+.long_th {
+  width: 17em;
+}
+.long_th--text {
+  width: 25em;
+}
+.signIn_Form {
+  margin-bottom: 20px;
+  display: flex;
+}
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  max-width: 1600px;
+  border-bottom: 1px solid #41742c;
+}
+._Header {
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  background-color: #ffffff;
+}
+._Header--Content {
+  padding: 0;
+  display: flex;
+  align-items: center;
+  align-self: center;
+  margin: 0 auto;
+}
+.navbar_FoodOrdering {
+  text-align: center;
+  .header_Heading {
+    color: #41742c;
+    font-family: "NSMFoodie";
+    font-size: 4em;
+    margin: 0;
+    padding: 0;
+  }
+  .header_SubHeading {
+    color: #41742c;
+    font-family: "NSMFoodie";
+    font-size: 2em;
+    margin: 0;
+    padding: 0;
+  }
+  .HowItWorks {
+    .HowItWorks_Button {
+      color: black;
+      background: #cdda00;
+      border: 0;
+      padding: 0.5em 2em;
+      font-size: 1.2em;
+      border-radius: 0.35em;
+      font-weight: 600;
+    }
+  }
+}
+.queries_Block {
+  color: black;
+  text-align: right;
+  font-family: "Brandon Grotesque Regular";
+  h2 {
+    margin: 0;
+    font-weight: 500;
+  }
+  h3 {
+    color: black !important;
+    margin: 0;
+    font-weight: 500;
+    a {
+      margin: 0;
+      color: black;
+    }
+  }
+}
+.vertical_Line {
+  height: 8em;
+  padding: 0;
+  border: 0.49px solid #5a5a5a;
+}
+.search_sec {
+  padding: 1em 0em 0em 1em;
+  align-items: center;
+  align-self: center;
+}
+.btn-success {
+  color: white;
+  font-family: "Brandon Grotesque Regular";
+  font-size: 1.5em;
+  background-color: #41742c !important;
+  border-color: #41742c !important;
+  &.disabled {
+    cursor: auto;
+  }
+}
+.table_Heading {
+  font-family: "NSMFoodie";
+  font-size: 2em;
+  margin-bottom: 1em;
+  color: #41742c;
+}
+.form-control:focus {
+  outline: unset;
+}
+.spinnerText_Color {
+  font-size: 20px;
+  color: white;
+}

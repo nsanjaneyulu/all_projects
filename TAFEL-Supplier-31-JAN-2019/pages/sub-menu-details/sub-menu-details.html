@@ -1,0 +1,41 @@
+<ion-header>
+		<ion-navbar hide-tabs>
+			<div class="displayFlex" style="align-items:center;">
+				<div >
+		   <span class="order__Id">{{submenu.name}}</span>
+		   </div>
+		   
+		   <div>
+		   <button class="aceptStyle" icon-start ion-button outline small color="secondary" (click)=addItem()>
+			<ion-icon name="add"></ion-icon>
+			Add Item
+		 </button>
+		 </div>
+		 </div>
+		</ion-navbar>
+	 </ion-header>
+	 <ion-content>
+		<div *ngIf="!showLoader">
+		  
+		 
+			  
+			
+		   </div>
+		   <div *ngIf="!showLoader">
+			<ion-item class="background__color">
+				<ion-label class="order__Details">Dishes</ion-label>
+				
+			 </ion-item>
+		
+		  
+		   <div *ngFor="let item of items">
+			  <ion-item (click)=getItemModal(item)>
+				 
+				 <span class="item__Details">{{item.name}}</span>
+				
+			  </ion-item>
+			</div>
+		</div>
+		<page-globalloader *ngIf="showLoader"></page-globalloader>
+	 </ion-content>
+	 

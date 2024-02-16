@@ -1,0 +1,82 @@
+
+<div class="card">
+  <div class="card-body">
+      <h5 class="card-title">Leave Request</h5>
+    <form [formGroup]="leaveRequest" (ngSubmit)="leaveRequestFunction()">
+      <div class="row">
+        <div class="form-group col-sm-3">
+          <label>User Name</label>
+          <input type="text" class="form-control" placeholder="Enter Username" formControlName="userName"
+            [(ngModel)]="userName" [ngClass]="{ 'is-invalid': submitted && f?.userName?.errors }">
+          <div *ngIf="submitted && f?.userName?.errors" class="invalid-feedback">
+            <div *ngIf="f?.userName?.errors?.required">User Name is required</div>
+          </div>
+        </div>
+       
+        <div class="form-group col-sm-3">
+          <label for="leaveType">Leave Type</label>
+          <select class="form-control" formControlName="leaveType" [(ngModel)]="leaveType">
+            <option selected>Causual Leave</option>
+            <option>Sick Leave</option>
+          </select>
+        </div>
+        <div class="form-group col-sm-3">
+          <label>From Date</label>
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <div class="input-group-text" (click)="d.toggle()">
+                  <i class="fa fa-calendar-o" aria-hidden="true"></i>
+              </div>
+            </div>
+            <input type="text" class="form-control" formControlName="fromDate" [(ngModel)]="fromDate" placeholder="From Date"
+              [ngClass]="{ 'is-invalid': submitted && f?.fromDate?.errors }" name="dp" ngbDatepicker #d="ngbDatepicker">
+            <div *ngIf="submitted && f?.fromDate?.errors" class="invalid-feedback">
+              <div *ngIf="f?.fromDate?.errors?.required">Joining Date is required</div>
+            </div>
+          </div>
+        </div>
+        <div class="form-group col-sm-3">
+          <label>To Date</label>
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <div class="input-group-text" (click)="d.toggle()">
+                  <i class="fa fa-calendar-o" aria-hidden="true"></i>
+              </div>
+            </div>
+            <input type="text" class="form-control" formControlName="toDate" [(ngModel)]="toDate" placeholder="To Date"
+              [ngClass]="{ 'is-invalid': submitted && f?.toDate?.errors }" name="dp" ngbDatepicker #d="ngbDatepicker">
+            <div *ngIf="submitted && f?.toDate?.errors" class="invalid-feedback">
+              <div *ngIf="f?.toDate?.errors?.required">Joining Date is required</div>
+            </div>
+          </div>
+        </div>
+        <div class="form-group col-sm-3">
+          <label>No Of Days</label>
+          <input type="text" class="form-control" placeholder="No Of Days" formControlName="noOfDays"
+            [(ngModel)]="noOfDays" [ngClass]="{ 'is-invalid': submitted && f?.noOfDays?.errors }">
+          <div *ngIf="submitted && f?.noOfDays?.errors" class="invalid-feedback">
+            <div *ngIf="f?.noOfDays?.errors?.required">No of days is required</div>
+          </div>
+        </div>
+        <div class="form-group col-sm-3">
+          <label>Reason</label>
+          <input type="text" class="form-control" placeholder="Leave Reason" formControlName="leaveReason"
+            [(ngModel)]="leaveReason" [ngClass]="{ 'is-invalid': submitted && f?.leaveReason?.errors }">
+          <div *ngIf="submitted && f?.leaveReason?.errors" class="invalid-feedback">
+            <div *ngIf="f?.leaveReason?.errors?.required">Leave Reason is required</div>
+          </div>
+        </div>
+         
+      
+      </div>
+      <div class="row">
+        <div class="col-sm-1">
+          <button type="submit" (click)="goLeaveRequest()" class="btn btn-primary" value="Sign up">Submit</button>
+        </div>
+      </div>
+    </form>
+    
+   
+  </div>
+</div>
+

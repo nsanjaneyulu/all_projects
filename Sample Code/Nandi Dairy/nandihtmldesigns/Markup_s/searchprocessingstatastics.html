@@ -1,0 +1,293 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Dashboard</title>
+<link rel="stylesheet" type="text/css" href="css/styles.css" />
+<link rel="stylesheet" type="text/css" href="css/topmenu.css" />
+<link rel="stylesheet" type="text/css" href="css/grid.css" />
+</head>
+<body>
+<div class="main-container">
+
+	<!--header starts-->
+    <div class="navbar-fixed-top">
+    <header>
+        <div class="header">
+       <img src="img/cow.png" />
+        <div class="title">Dashboard</div>
+        <div class="note">Welcome to Nandi Dairy</div>
+
+        </div>
+    </header>
+
+    <!--topmenu-->
+    <div id="top">
+	<nav id="topmenu">
+    	<ul>
+
+            <li><a href="#">Procurement<span class="arrow"></span></a>
+            	<ul class="sublist">
+                    <li><a href="#">Sub link</a></li>
+                    <li><a href="#">Sub link</a></li>
+                    <li><a href="#">Sub link<span class="arrow-right"></span></a></li>
+            	</ul>
+       		</li>
+  <li><a href="#">Transportation<span class="arrow"></span></a>
+            	<ul class="sublist">
+                    <li><a href="#">Sub link</a></li>
+                    <li><a href="#">Sub link</a></li>
+                    <li><a href="#">Sub link<span class="arrow-right"></span></a></li>
+            	</ul>
+   		  </li>
+  <li><a href="#">Financial Reports<span class="arrow"></span></a>
+            	<ul class="sublist">
+                    <li><a href="#">Sub link</a></li>
+                    <li><a href="#">Sub link</a></li>
+                    <li><a href="#">Sub link<span class="arrow-right"></span></a></li>
+            	</ul>
+   		  </li>
+  <li><a href="#">Stocks<span class="arrow"></span></a>
+            	<ul class="sublist">
+                    <li><a href="#">Sub link</a></li>
+                    <li><a href="#">Sub link</a></li>
+                    <li><a href="#">Sub link<span class="arrow-right"></span></a></li>
+            	</ul>
+   		  </li>
+  <li><a href="#">Inventory<span class="arrow"></span></a>
+            	<ul class="sublist">
+                    <li><a href="#">Milk Procurement</a></li>
+                    <li><a href="#">Sub link</a></li>
+                    <li><a href="#">Sub link<span class="arrow-right"></span></a></li>
+            	</ul>
+   		  </li>
+  <li><a href="#">Processing<span class="arrow"></span></a>
+            	<ul class="sublist">
+                    <li><a href="#">Sub link</a></li>
+                    <li><a href="#">Sub link</a></li>
+                    <li><a href="#">Sub link<span class="arrow-right"></span></a></li>
+            	</ul>
+   		  </li>
+  <li><a href="#">Milk Procerument<span class="arrow"></span></a>
+            	<ul class="sublist">
+                    <li><a href="#">Sub link</a></li>
+                    <li><a href="#">Sub link</a></li>
+                    <li><a href="#">Sub link<span class="arrow-right"></span></a></li>
+            	</ul>
+   		  </li>
+       </ul>
+    </nav>
+</div>
+
+    <!--topmenu ends-->
+
+    <!--toolbar-->
+    	<div class="toolbar">
+
+            <ul>
+            	<li>
+                	<a href="#"><img src="img/save.jpg" />Save</a>
+
+                </li>
+                <li>
+                	<a href="#"><img src="img/add.jpg" />Add</a>
+                </li>
+                <li>
+                	<a href="#"><img src="img/edit.jpg" />Edit</a>
+                </li>
+                <li>
+                	<a href="#"><img src="img/export.jpg" />Export</a>
+                </li>
+                <li>
+                	<a href="#"><img src="img/print.jpg" />Print</a>
+                </li>
+                <li>
+                	<a href="#"><img src="img/delete.jpg" />Delete</a>
+                </li>
+            </ul>
+        </div>
+    <!--toolbar ends-->
+    </div>
+    <!--header ends-->
+
+    <div class="clearfix"></div>
+    <!--container fluid-->
+    <div class="container-fluid">
+    	<div class="bread-crumb">
+        	<h1>
+            	Processing Statistics List
+            </h1>
+        </div>
+
+
+    <!-- grid starts-->
+    	<div class="gridTwoWide">
+         <form action="" method="get">
+        	<ul>
+                <li>
+                	<div class="gridTwoWideText">Plant:</div>
+                    <div><select>
+                <option>Select</option>
+             </select></div>
+                </li>
+                <li>
+                	<div class="gridTwoWideText">Start Date:</div>
+                    <div><input name="" type="text" /></div>
+                </li>
+                <li>
+                	<div class="gridTwoWideText">End Date:</div>
+                    <div><input name="" type="text" /></div>
+                </li>
+                <li>
+                	<div class="gridTwoWideText">Batch Number:</div>
+                    <div><input name="" type="text" /></div>
+                </li>
+
+          </ul>
+          <div class="clearfix"></div>
+          <div class="span1"></div>
+          <input name="" type="button" value="search"/>
+        </form>
+        <div class="clearfix"></div>
+        <div class="bread-crumb">
+        	<h1>
+            	Processing Statistics List
+            </h1>
+        </div>
+
+
+<table cellpadding="2" cellspacing="1" class="tableentire">
+  <tr class="tableheader">
+    <th colspan="1" rowspan="2">Batch Number</th>
+    <th colspan="1" rowspan="2">Processing Start Date & Time</th>
+    <th colspan="1" rowspan="2">Processing End Date & Time</th>
+    <th colspan="5" align="center">Processing Input</th>
+    <th colspan="19" align="center">Processing Output</th>
+  </tr>
+  <tr class="tableheader">
+    <th>Milk Type</th>
+    <th>Milk Quantity</th>
+    <th>Fat%</th>
+    <th>CLR</th>
+    <th>SNF</th>
+    <th>Output Type</th>
+    <th>Product</th>
+    <th>Quantity</th>
+    <th>UOM</th>
+    <th>Silo</th>
+    <th>Cell Type</th>
+    <th>Sample</th>
+    <th>UOM</th>
+    <th>Organoleptic Space Test</th>
+    <th>Temperature</th>
+    <th>Fat %</th>
+    <th>CLR</th>
+    <th>SNF</th>
+    <th>Acidity %</th>
+    <th>Heat Stability</th>
+    <th>COB</th>
+     <th>M.B.R.T</th>
+    <th>Phosphatase Test</th>
+    <th>Remarks</th>
+  </tr>
+  <tr class="tabledata">
+    <td><a href="#">NDA110</a></td>
+    <td>01-03-2013</td>
+    <td>02-03-2013</td>
+    <td>Cow Milk</td>
+    <td>12.89</td>
+    <td>9.7</td>
+    <td>2.4</td>
+    <td>3.5</td>
+    <td>Excel</td>
+    <td>Milk</td>
+    <td>13.45</td>
+    <td>Liters</td>
+    <td>1</td>
+    <td>Cell A</td>
+    <td>8.9</td>
+    <td>Liters</td>
+    <td>P</td>
+    <td>12.7</td>
+    <td>4.7</td>
+    <td>9.2</td>
+    <td>11.7</td>
+    <td>12.1</td>
+    <td>15.1</td>
+    <td>17.1</td>
+     <td><input name="" type="text" class="saleindentwidth"/></td>
+    <td><input name="" type="text" class="saleindentwidth"/></td>
+    <td>-NA-</td>
+  </tr>
+  <tr class="tabledata">
+    <td><a href="#">NDA120</a></td>
+    <td>02-03-2013</td>
+    <td>03-03-2013</td>
+    <td>Beffelo Milk</td>
+    <td>15.23</td>
+    <td>8.8</td>
+    <td>3.1</td>
+    <td>2.5</td>
+    <td>PDF</td>
+    <td>Ghee</td>
+    <td>15.76</td>
+    <td>KGS</td>
+    <td>2</td>
+    <td>Cell B</td>
+    <td>7.8</td>
+    <td>KGS</td>
+    <td>P</td>
+    <td>15.6</td>
+    <td>3.6</td>
+    <td>8.4</td>
+    <td>10.9</td>
+    <td>19.2</td>
+    <td>14.9</td>
+    <td>15.2</td>
+    <td><input name="" type="text" class="saleindentwidth"/></td>
+    <td><input name="" type="text" class="saleindentwidth"/></td>
+    <td>-NA-</td>
+  </tr>
+  <tr class="tabledata">
+    <td><a href="#">NDA130</a></td>
+    <td>03-03-2013</td>
+    <td>04-03-2013</td>
+    <td>Cow Milk</td>
+    <td>12.89</td>
+    <td>9.7</td>
+    <td>2.4</td>
+    <td>3.5</td>
+    <td>Excel</td>
+    <td>Curd</td>
+    <td>13.45</td>
+    <td>Liters</td>
+    <td>3</td>
+    <td>Cell C</td>
+    <td>8.9</td>
+    <td>Liters</td>
+    <td>P</td>
+    <td>12.7</td>
+    <td>4.7</td>
+    <td>9.2</td>
+    <td>11.7</td>
+    <td>12.1</td>
+    <td>15.1</td>
+    <td>17.1</td>
+   <td><input name="" type="text" class="saleindentwidth"/></td>
+    <td><input name="" type="text" class="saleindentwidth"/></td>
+    <td>-NA-</td>
+  </tr>
+  
+</table>        <!--search grid ends-->
+
+        </div>
+
+
+    <!--grid ends here-->
+
+    </div>
+    <!--container fluid ends-->
+
+</div>
+</body>
+</html>

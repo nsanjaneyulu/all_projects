@@ -1,0 +1,133 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Validate List Box</title>
+<style type="text/css">
+.ex_table{font-family:Verdana, Geneva, sans-serif;font-size:12px;}
+.normal_p{
+color:#000000;
+}
+.error_p{
+color:#F00;
+}
+</style>
+<script type="text/JavaScript">
+function select_radio_button(group_p){
+document.getElementById(group_p).className='normal_p';
+}
+
+function is_selected(rb_group,lbl_info){
+var radio_group =document.getElementsByName(rb_group);
+for(var x=0;x<radio_group.length;x++){
+if(radio_group[x].checked){
+document.getElementById(lbl_info).className='normal_p';
+return 0;
+}
+}
+document.getElementById(lbl_info).className='error_p';
+return 1;
+}
+
+function validate_radiobutton_group(){
+var error=0;
+
+error+=is_selected("rbg_programming_language","programming_language_info");
+error+=is_selected("rbg_programming_area","programming_area_info");
+error+=is_selected("rbg_gender","gender_info");
+error+=is_selected("rbg_age_group","age_group_info");
+
+if(error>0){
+alert("Please fill form details correctly");
+return false;
+}else{
+return true;
+}
+}
+</script>
+</head>
+<body>
+<form id="radio_button_group_validation_1" name="radio_button_group_validation_1" action="#" method="post" onSubmit="JavaScript:return validate_radiobutton_group();">
+<table border="0" class="ex_table"><tbody>
+<tr>
+<td colspan="6" align="left">Programmer Details</td></tr>
+<tr>
+<td align="right">Select a programming language</td>
+<td><p id="programming_language_info">
+<label><input type="radio" name="rbg_programming_language" onChange="JavaScript:select_radio_button('programming_language_info');" value="1" id="rbg_programming_language_0">PHP</label>
+<br>
+<label><input type="radio" name="rbg_programming_language" onChange="JavaScript:select_radio_button('programming_language_info');" value="2" id="rbg_programming_language_1">Java</label>
+<br>
+<label><input type="radio" name="rbg_programming_language" onChange="JavaScript:select_radio_button('programming_language_info');" value="3" id="rbg_programming_language_2">C#</label>
+<br>
+<label><input type="radio" name="rbg_programming_language" onChange="JavaScript:select_radio_button('programming_language_info');" value="4" id="rbg_programming_language_3">VB.Net</label>
+<br>
+<label><input type="radio" name="rbg_programming_language" onChange="JavaScript:select_radio_button('programming_language_info');" value="5" id="rbg_programming_language_4">Perl</label>
+<br>
+<label><input type="radio" name="rbg_programming_language" onChange="JavaScript:select_radio_button('programming_language_info');" value="6" id="rbg_programming_language_5">C++</label>
+<br>
+</p></td>
+<td colspan="2" rowspan="6">&nbsp;</td>
+</tr>
+<tr>
+<td align="right">Select programming are</td>
+<td><p id="programming_area_info">
+<label>
+<input type="radio" name="rbg_programming_area" onChange="JavaScript:select_radio_button('programming_area_info');" value="1" id="rbg_programming_area_0">
+Web Application</label>
+<br>
+<label>
+<input type="radio" name="rbg_programming_area" onChange="JavaScript:select_radio_button('programming_area_info');" value="2" id="rbg_programming_area_1">
+Desktop Application</label>
+<br>
+<label>
+<input type="radio" name="rbg_programming_area" onChange="JavaScript:select_radio_button('programming_area_info');" value="3" id="rbg_programming_area_2">
+Mobile Application</label>
+<br>
+</p></td>
+</tr>
+<tr>
+<td align="right">Your Gender</td>
+<td><p id="gender_info">
+<label>
+<input type="radio" onChange="JavaScript:select_radio_button('gender_info');" name="rbg_gender" value="1" id="rbg_gender_0">
+Male</label>
+<br>
+<label>
+<input type="radio" onChange="JavaScript:select_radio_button('gender_info');" name="rbg_gender" value="2" id="rbg_gender_1">
+Female</label>
+<br>
+</p></td>
+</tr>
+<tr>
+<td align="right">Age group</td>
+<td><p id="age_group_info">
+<label>
+<input type="radio" name="rbg_age_group" onChange="JavaScript:select_radio_button('age_group_info');" value="1" id="rbg_age_group_0">
+18-24</label>
+<br>
+<label>
+<input type="radio" name="rbg_age_group" onChange="JavaScript:select_radio_button('age_group_info');" value="2" id="rbg_age_group_1">
+25-30</label>
+<br>
+<label>
+<input type="radio" name="rbg_age_group" onChange="JavaScript:select_radio_button('age_group_info');" value="3" id="rbg_age_group_2">
+31-39</label>
+<br>
+<label>
+<input type="radio" name="rbg_age_group" onChange="JavaScript:select_radio_button('age_group_info');" value="4" id="rbg_age_group_3">
+40-50</label>
+<br>
+</p></td>
+</tr>
+<tr>
+<td align="right">&nbsp;</td>
+<td><input type="submit" name="btn_submit2" id="btn_submit2" value="Submit"></td>
+</tr>
+<tr>
+<td colspan="4" align="right">&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</form>
+</body>
+</html>

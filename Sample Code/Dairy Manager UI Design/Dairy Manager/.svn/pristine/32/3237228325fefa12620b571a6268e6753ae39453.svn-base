@@ -1,0 +1,10 @@
+<wicket:extend>
+	<div id="content">		
+		<div>
+<h1><font color="#330066">Welcome to <span wicket:id="farm">Company Name</span></font></h1>
+<div class="search">
+    </div>
+  </div>			
+	   
+    </div>
+</wicket:extend>

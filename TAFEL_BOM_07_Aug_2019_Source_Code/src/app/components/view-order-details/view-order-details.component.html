@@ -1,0 +1,55 @@
+
+        <form class="">
+          <div class="border">
+            <div class="form-row col-12 bow_margin_styles_table">
+
+              <div class="form-group col-sm-6 col-md-6 col-lg-4 col-xl-4 col-6">
+                <div class="bow_view_details_head">Order ID</div>
+                <div>{{viewDetails.fullOrder5DigitID}}</div>
+              </div>
+
+              <div class="form-group col-sm-6 col-md-6 col-lg-4 col-xl-4 col-6">
+                <div class="bow_view_details_head">Order Date</div>
+                <div class="bow_view_details_body">{{viewDetails.orderLet[0].modifiedDate | date: "dd-MMM-yyyy H:mm"}}</div>
+              </div>
+             
+              <div class="form-group col-sm-6 col-md-6 col-lg-4 col-xl-4 col-6">
+                <div class="bow_view_details_head">Order Value<span class="bow_exclTaxes">(Excl. Taxes)</span></div>
+                <div class="bow_view_details_body">{{viewDetails.amount}}</div>
+              </div>
+              <div class="form-group col-sm-6 col-md-6 col-lg-4 col-xl-4 col-6">
+                <div class="bow_view_details_head">Order Type</div>
+                <div class="bow_view_details_body">{{viewDetails.orderType}} <span *ngIf="viewDetails.orderType == 'Delivery'"><img
+                      src="../../assets/info.svg" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="{{dineraddress}}"
+                      style="cursor: pointer;" /></span></div>
+              </div>
+              <div class="form-group col-sm-6 col-md-6 col-lg-4 col-xl-4 col-6">
+                <div class="bow_view_details_head">Order Status</div>
+                <div class="bow_view_details_body">{{viewDetails.status}}</div>
+              </div>
+            </div>
+          </div>
+          <div class="bow_margin_styles_table">
+            <table class="col-12 table table-striped table-borderless">
+              <thead class="thead-light">
+                <tr>
+                  <th>Item Name</th>
+                  <th>Qty</th>
+                  <th>Status</th>
+                  <th class="text-right">Price<span style="font-weight:normal;">(Excl. Taxes)</span></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item of viewDetails.orderLet">
+                  <td class="align-middle">{{item.itemName}}</td>
+                  <td class="align-middle">{{item.quantity}}</td>
+                  <td class="align-middle">{{item.status}}</td>
+                  <td class="align-middle text-right">{{item.itemPrice * item.quantity}}</td>
+                </tr>
+
+              </tbody>
+            </table>
+          </div>
+        </form>
+
+      

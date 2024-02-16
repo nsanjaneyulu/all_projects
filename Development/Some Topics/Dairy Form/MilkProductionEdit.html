@@ -1,0 +1,408 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Welcome to Company Name</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+	<link href="style.css" rel="stylesheet" type="text/css" />
+	<script language="javascript" type="text/javascript" src="datetimepicker.js"></script>
+     <SCRIPT language="javascript">
+        function addRow(tableID) {
+ 
+            var table = document.getElementById(tableID);
+ 
+            var rowCount = table.rows.length-1;
+            var row = table.insertRow(rowCount);
+ 
+            var cell1 = row.insertCell(0);
+            var element1 = document.createElement("input");
+            element1.type = "checkbox";
+			element1.setAttribute("size","3");
+            cell1.appendChild(element1);
+			
+			var cell2 = row.insertCell(1);
+            var element2 = document.createElement("input");
+            element2.type = "text";
+			element2.setAttribute("size","5");
+			cell2.appendChild(element2);
+			
+            var cell3 = row.insertCell(2);
+            var element3 = document.createElement("input");
+            element3.type = "text";
+			element3.setAttribute("size","5");
+			element3.setAttribute("id","demo2");
+			element3.setAttribute("id","demo2", size="9");
+			cell3.appendChild(element3);
+
+			myA=document.createElement("A");
+			url = "javascript:NewCal('demo2','ddmmyyyy');";
+			myA.setAttribute("href",url);
+			//create the image node
+			url = "images/cal.gif";
+			myImg=document.createElement("IMG");
+			myImg.setAttribute("src",url);
+			myImg.setAttribute("width","16");
+			myImg.setAttribute("height","16");
+			myImg.setAttribute("border","0");
+			myImg.setAttribute("alt","Say Hi");
+			// Appends the image node to the anchor
+			myA.appendChild(myImg);
+
+			cell3.appendChild(myA);
+ 
+            var cell4 = row.insertCell(3);
+            var element4 = document.createElement("input");
+            element4.type = "text";
+			element4.setAttribute("size","5");
+			cell4.appendChild(element4);
+			
+			
+			var cell5 = row.insertCell(4);
+            var element5 = document.createElement("input");
+            element5.type = "text";
+			element5.setAttribute("size","5");
+			cell5.appendChild(element5);
+			
+			 var cell6 = row.insertCell(5);
+            var element6 = document.createElement("input");
+            element6.type = "text";
+			element6.setAttribute("size","5");
+			cell6.appendChild(element6);
+			
+			var cell7 = row.insertCell(6);
+            var element7 = document.createElement("input");
+            element7.type = "text";
+			element7.setAttribute("size","5");
+			cell7.appendChild(element7);
+			
+			var cell8 = row.insertCell(7);
+            var element8 = document.createElement("input");
+            element8.type = "text";
+			element8.setAttribute("size","5");
+			cell8.appendChild(element8);
+			
+			var cell9 = row.insertCell(8);
+            var element9 = document.createElement("input");
+            element9.type = "text";
+			element9.setAttribute("size","5");
+			cell9.appendChild(element9);
+			
+			var cell10 = row.insertCell(9);
+            var element10 = document.createElement("input");
+            element10.type = "text";
+			element10.setAttribute("size","5");
+			cell10.appendChild(element10);
+			
+			var cell11 = row.insertCell(10);
+            var element11 = document.createElement("input");
+            element11.type = "text";
+			element11.setAttribute("size","5");
+			cell11.appendChild(element11);
+			
+			var cell12 = row.insertCell(11);
+            var element12 = document.createElement("input");
+            element12.type = "text";
+			element12.setAttribute("size","5");
+			cell12.appendChild(element12);
+			
+			var cell13 = row.insertCell(12);
+            var element13 = document.createElement("input");
+            element13.type = "text";
+			element13.setAttribute("size","5");
+			cell13.appendChild(element13);
+			
+			
+        }
+ 
+        function deleteRow(tableID) {
+            try {
+            var table = document.getElementById(tableID);
+            var rowCount = table.rows.length;
+ 
+            for(var i=0; i<rowCount; i++) {
+                var row = table.rows[i];
+                var chkbox = row.cells[0].childNodes[0];
+                if(null != chkbox && true == chkbox.checked) {
+                    table.deleteRow(i);
+                    rowCount--;
+                    i--;
+                }
+ 
+            }
+            }catch(e) {
+                alert(e);
+            }
+        }
+ 
+    </SCRIPT>
+	 <script type="text/javascript">
+// From: http://www.webdeveloper.com/forum/showthread.php?t=218226
+
+function ToggleList(IDS) {
+ 
+  var CState = document.getElementById(IDS);
+  if (CState.style.display != "block") { CState.style.display = "block"; }
+                                  else { CState.style.display = "none"; }
+}
+function HideRange(sect,elTag,IDS) {
+  var ContentObj = document.getElementById(sect);
+  var AllContentDivs = ContentObj.getElementsByTagName(elTag);
+  for (i=0; i<AllContentDivs.length; i++) {
+    if (IDS != AllContentDivs[i].id) { AllContentDivs[i].style.display="none"; }
+  }
+}
+
+</script>
+    <style type="text/css">
+  .divInfo { display:none; }
+.style19 {font-family: Verdana, Arial, Helvetica, sans-serif; font-size: medium; font-style: italic; }
+.style20 {color: #FF0099; font-size: large;}
+.style21 {
+	font-size: small;
+	font-weight: bold;
+}
+.style23 {color: #FF0099; font-size: small; font-weight: bold; }
+</style>
+<style type="text/css">	
+    #container { 
+width : 1505px;
+margin : 0 auto;
+border : 10px solid #fff;
+line-height : 2em;
+background:#CCCCFF;
+color:#6600CC;
+height: auto;
+} </style>
+</head>
+<body>
+	<div id="container">
+		<div id="top">
+		<h1><font color="#330066">Welcome to Company Name</font></h1>
+		<div class="search">
+		<!-- for search -->
+		</div>
+	</div>
+	<div id="navcontainer">
+		<ul id="navlist">
+		<li id="active"><a href="HomePage.html" id="current">Home</a></li>
+		<li><a href="ContactUs.html">Contact us</a></li>
+		</ul>
+	</div>
+	<div id="leftnav">
+    <h2>Menu</h2>
+   <ul id="leftnavmenu">
+        <li><a href="#" onClick="ToggleList('a')">Live Stock Management</a></li>
+          <div id="a" class="divInfo">
+        <li style="padding-left:10%;"><a href="LiveStockNew.html">Add Live Stock</a></li>
+		<li style="padding-left:10%;"><a href="EditUpdateSearch.html">Edit / Update Live Stock</a></li>
+        <li style="padding-left:10%;"><a href="PromotedSearch.html">Promoted LiveStock Hostory</a></li>
+        </div>
+          <li><a href="#" onClick="ToggleList('b')">Milk Yeild Management</a></li>
+        <li style="padding-left:10%;"><a href="AddDailyMilkProduction.html">Add Daily Milk Production</a></li>
+        <li style="padding-left:10%;"><a href="MilkProductionEdit.html">Add / Edit Daily Milk Production</a></li>
+         <li><a href="#" onClick="ToggleList('c')">Feeding Management</a></li>
+    <div id="c" class="divInfo">
+        <li style="padding-left:10%;"><a href="AddDailyFeeding.html">Add Daily Feeding</a></li>
+        <li style="padding-left:10%;"><a href="AddNewFeeding.html">Add Feeding Type</a></li>
+        <li style="padding-left:10%;"><a href="Feeding.html">Edit / Update Feeding Type</a></li>
+        <li style="padding-left:10%;"><a href="SuggestedFeeding.html">Suggested Feeding</a></li>
+    </div>
+       <li><a href="#" onClick="ToggleList('d')">Search Management</a></li>
+     <div id="d" class="divInfo">
+		<li style="padding-left:10%;"><a href="SearchCriteria.html">Search Criteria</a></li>
+     </div>
+        <li><a href="#" onClick="ToggleList('e')">Provisions Management</a></li>
+     <div id="e" class="divInfo">
+		<li style="padding-left:10%;"><a href="MonthlyProvisionNew.html">Add Monthly Provisions</a></li> 
+        <li style="padding-left:10%;"><a href="MonthlyProvisionEdit.html">Edit / Update Monthly Provisions</a></li> 
+         <li style="padding-left:10%;"><a href="SuggestedProvisions.html">Suggested Provisions</a></li>
+     </div>
+         <li><a href="#" onClick="ToggleList('f')">Stock Management</a></li>
+      <div id="f" class="divInfo">
+		<li style="padding-left:10%;"><a href="StockAddNew.html">Add New Stock</a></li> 
+        <li style="padding-left:10%;"><a href="Stocks.html">Edit / Update Stock</a></li> 
+      </div>
+         <li><a href="#" onClick="ToggleList('g')">Financial Management</a></li>
+      <div id="g" class="divInfo">
+		 <li style="padding-left:10%;"><a href="Revenue.html">Revenue / Sales</a></li> 
+         <li style="padding-left:10%;"><a href="Expenses.html">Expenses</a></li> 
+         <li style="padding-left:10%;"><a href="ProfitLoss.html">Profit / Loss</a></li> 
+      </div>
+         <li><a href="#" onClick="ToggleList('h')">Employee Management</a></li>
+      <div id="h" class="divInfo">
+		  <li style="padding-left:10%;"><a href="AddEmpNew.html">Add New Employee</a></li> 
+          <li style="padding-left:10%;"><a href="AddEditEmp.html">Edit / Update Employee</a></li> 
+      </div>
+          <li><a href="#" onClick="ToggleList('i')">Assets Management</a></li>
+      <div id="i" class="divInfo">
+		   <li style="padding-left:10%;"><a href="AssetsNew.html">Add New Assets</a></li> 
+           <li style="padding-left:10%;"><a href="Assets.html">Edit / Update Assets</a></li>
+      </div>
+           <li><a href="#" onClick="ToggleList('j')">Vendor Management</a></li>
+      <div id="j" class="divInfo">
+		    <li style="padding-left:10%;"><a href="VendorNew.html">Add New Vendor</a></li> 
+            <li style="padding-left:10%;"><a href="Vendor.html">Edit / Update Vendor</a></li>
+      </div>
+            <li><a href="#" onClick="ToggleList('k')">Admin</a></li>
+       <div id="k" class="divInfo">
+           <li style="padding-left:10%;"><a href="ParameterSetup.html">Parameter Setup</a></li>
+		   <li style="padding-left:10%;"><a href="ConfigureDropdown.html">Configure Dropdown</a></li> 
+      </div>
+	</ul>
+</div>
+	<div id="content"> 
+		<h2>Milk Production Information:
+        <script language="javascript"> var currentTime = new Date()
+			var month = currentTime.getMonth() + 1
+			var day = currentTime.getDate()
+			var year = currentTime.getFullYear()
+			document.write(month + "/" + day + "/" + year)</script>
+		</h2>
+		<table id="dataTable">
+			<tr>
+            <th></th>
+				<th>RFID</th>
+                <th>Date</th>
+				<th>Live Stock Code</th>
+				<th>Breed</th>
+				<th>Milking Status</th>
+				<th>Lactation Day</th>
+				<th colspan=2>Morning Milk Yeild </th>   
+				<th colspan=2 >Evening Milk Yeild)</th>
+				<th colspan=2>Total Yeild (till Today)</th>
+			</tr>
+			<tr>
+            <th></th>
+				<th></th>
+				<th></th>
+				<th></th>
+				<th></th>
+				<th></th>
+				<th></th>   
+				<th>in Litres</th>
+				<th>in KGS</th>   
+				<th>in Litres</th>
+				<th>in KGS</th>   
+				<th>in Litres</th>
+                <th>in Kg's</th>
+			</tr>
+			<tr>
+             <td><input type="checkbox" name="check" id="check" /></td>
+				<td> RFA01A</td>
+                <td nowrap="nowrap">01-Jun-2012</td>
+				<td>JEKA001A</td>
+				<td>Jersey</td>
+				<td nowrap="nowrap">Non-Pregnant</td>
+				<td>154</td>
+				 <td><input name="idnumber" type="text" size="5" value="11"/></td>
+        <td><input name="idnumber" type="text" size="5" value="11"/></td>
+		<td><input name="idnumber" type="text" size="5" value="8"/></td>
+         <td><input name="idnumber" type="text" size="5" value="8"/></td>    
+				<td>1900</td>  
+				<td>1900</td>  
+			</tr>
+			<tr>
+             <td><input type="checkbox" name="check" id="check" /></td>
+				<td> RFB01A</td>
+                <td nowrap="nowrap">02-Jun-2012</td>
+				<td>JEKA001A</td>
+				<td>Holstein Fresian</td>
+			  <td nowrap="nowrap">Non-Pregnant</td>
+				<td>124</td>
+				<td><input name="idnumber" type="text" size="5" value="13"/></td>
+				<td><input name="idnumber" type="text" size="5" value="13"/></td>
+				<td><input name="idnumber" type="text" size="5" value="9"/></td>     
+				<td><input name="idnumber" type="text" size="5" value="9"/></td>         
+				<td>2200</td>  
+				<td>2200</td>  
+			</tr>
+			<tr>
+             <td><input type="checkbox" name="check" id="check" /></td>
+				<td> RFC01A</td>
+                <td nowrap="nowrap">03-Jun-2012</td>
+				<td>JEKA001A</td>
+				<td>Ayreshire</td>
+			  <td nowrap="nowrap">Non-Pregnant</td>
+				<td>132</td>
+				<td><input name="idnumber" type="text" size="5" value="10"/></td>
+				<td><input name="idnumber" type="text" size="5" value="10"/></td>
+				<td><input name="idnumber" type="text" size="5" value="7"/></td>     
+				<td><input name="idnumber" type="text" size="5" value="7"/></td>         
+				<td>1700</td>  
+			  <td>1700</td>  
+		  </tr>
+			<tr>
+             <td><input type="checkbox" name="check" id="check" /></td>
+				<td> RFD01A</td>
+                <td nowrap="nowrap">04-Jun-2012</td>
+				<td>JEKA001A</td>
+				<td nowrap="nowrap">Red Breeds &amp; Illawarras</td>
+			  <td nowrap="nowrap">Non-Pregnant</td>
+			  <td>172</td>
+				 <td><input name="idnumber" type="text" size="5" value="11"/></td>
+        <td><input name="idnumber" type="text" size="5" value="11"/></td>
+		<td><input name="idnumber" type="text" size="5" value="8"/></td>
+         <td><input name="idnumber" type="text" size="5" value="8"/></td>  
+			  <td>1900</td>  
+			  <td>1900</td>  
+		  </tr>
+			<tr>
+             <td><input type="checkbox" name="check" id="check" /></td>
+				<td> RFF01A</td>
+                <td nowrap="nowrap">05-Jun-2012</td>
+				<td>JEKA001A</td>
+			  <td>Jersey</td>
+				<td nowrap="nowrap">Non-Pregnant</td>
+				<td>154</td>
+				<td><input name="idnumber" type="text" size="5" value="13"/></td>
+				<td><input name="idnumber" type="text" size="5" value="13"/></td>
+				<td><input name="idnumber" type="text" size="5" value="9"/></td>     
+				<td><input name="idnumber" type="text" size="5" value="9"/></td>      
+				<td>2200</td>  
+			  <td>2200</td>  
+		  </tr>
+			<tr>
+             <td><input type="checkbox" name="check" id="check" /></td>
+				<td> RFA01A</td>
+                <td nowrap="nowrap">06-Jun-2012</td>
+				<td>JEKA001A</td>
+				<td>Holstein Fresia</td>
+			  <td nowrap="nowrap">Non-Pregnant</td>
+			  <td>124</td>
+				<td><input name="idnumber" type="text" size="5" value="10"/></td>
+				<td><input name="idnumber" type="text" size="5" value="10"/></td>
+				<td><input name="idnumber" type="text" size="5" value="7"/></td>     
+				<td><input name="idnumber" type="text" size="5" value="7"/></td>  
+				<td>1700</td>  
+			  <td>1700</td>  
+		  </tr>
+			<tr>
+             <td><input type="checkbox" name="check" id="check" /></td>
+				<td> RFB01A</td>
+                <td nowrap="nowrap">07-Jun-2012</td>
+				<td>JEKA001A</td>
+				<td>Ayreshire</td>
+			  <td nowrap="nowrap">Non-Pregnant</td>
+				<td>132</td>
+				 <td><input name="idnumber" type="text" size="5" value="11"/></td>
+        <td><input name="idnumber" type="text" size="5" value="11"/></td>
+		<td><input name="idnumber" type="text" size="5" value="8"/></td>
+         <td><input name="idnumber" type="text" size="5" value="8"/></td>  
+				<td>1900</td>  
+				<td>1900</td>  
+			</tr>
+			<tr>
+           
+					</tr>
+		</table>
+        <table>
+        <tr>
+         <td  align="right"><INPUT type="button" value="Add Row" onClick="addRow('dataTable')"  class="button"/></td>
+           <TD><INPUT type="button" value="Delete Row" onClick="deleteRow('dataTable')" class="button"/></TD>
+							<td align="center"><input type="submit" name="subnit" value="Update" class="button"/></td>
+                            </tr>
+                            </table>
+<br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> </br>	  </br>	  </br>	  </br>	  </br>	  </br>	  </br>	  </br></br>	  </br>	  </br>	  </br>	  </br>	  </br>	  </br>	  </br></br>	  </br>  </br>	  </br>	  </br>	  </br>	  </br>	  </br>	  </br></br>	  </br>
+	</div>
+    </div>
+</body>
+</html>

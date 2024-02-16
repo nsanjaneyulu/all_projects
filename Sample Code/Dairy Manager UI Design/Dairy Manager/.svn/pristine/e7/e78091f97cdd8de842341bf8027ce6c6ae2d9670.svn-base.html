@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!--
+
+Design by Free CSS Templates
+http://www.freecsstemplates.org
+Released for free under a Creative Commons Attribution 2.5 License
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.4-strict.dtd">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>Wicket demo</title>
+<link href="css/default.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="wrapper">
+<!-- start header -->
+	<div id="logo">
+		<h1 wicket:id="header"></h1>
+		<h2> &raquo;&nbsp;&nbsp;&nbsp;<span wicket:id="page.subheader" /></h2>
+	</div>
+	<div id="header">
+		<div id="menu">
+			<ul>
+				<li class="current_page_item"><a href="#">Homepage</a></li>
+				<li class="last"><a href="#">Contact</a></li>
+			</ul>
+		</div>
+	</div>
+<!-- end header -->
+</div>
+
+<!-- start page -->
+<wicket:child>
+<div id="page">
+	<!-- start content -->
+		<div id="content">
+			<div class="post">
+				<h1 class="title">Hello world!</h1>
+				<div class="entry">
+					<p>This is the first example page in this demo. It shows this page which is mainly static except for the header text above.</p>
+					<p>Curabitur tellus. Phasellus tellus turpis, iaculis in, faucibus lobortis, posuere in, lorem. Donec a ante. Donec neque purus, adipiscing id, eleifend a, cursus vel, odio. Vivamus varius justo sit amet leo. Morbi sed libero. Vestibulum blandit augue at mi. Praesent fermentum lectus eget diam. Nam cursus, orci sit amet porttitor iaculis, ipsum massa aliquet nulla, non elementum mi elit a mauris. </p>
+				</div>
+			</div>
+		</div>
+	<!-- end content -->
+	<!-- start sidebar -->
+	<div id="sidebar">
+		<ul>
+			<li>
+				<h2>Lorem Ipsum</h2>
+				<ul>
+					<li><a href="#">Fusce dui neque fringilla</a></li>
+					<li><a href="#">Eget tempor eget nonummy</a></li>
+					<li><a href="#">Magna lacus bibendum mauris</a></li>
+					<li><a href="#">Nec metus sed donec</a></li>
+					<li><a href="#">Magna lacus bibendum mauris</a></li>
+					<li><a href="#">Velit semper nisi molestie</a></li>
+					<li><a href="#">Eget tempor eget nonummy</a></li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+	<!-- end sidebar -->
+	<div style="clear: both;">&nbsp;</div>
+</div>
+</wicket:child>
+<!-- end page -->
+<!-- start footer -->
+<div id="footer">
+	<p id="legal">( c ) 2008. All Rights Reserved. Designed by <a href="http://www.freecsstemplates.org/">Free CSS Templates</a>.</p>
+</div>
+<!-- end footer -->
+</body>
+</html>

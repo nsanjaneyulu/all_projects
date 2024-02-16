@@ -1,0 +1,168 @@
+html {
+    font-family: sans-serif;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+body{
+    padding-top: 40px;
+    font-family: sans-serif;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+#portfolio_section .section, #portfolio_section .section a {
+    color: #ffffff !important;
+}
+.btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active, .open > .dropdown-toggle.btn, .btn-default:active, .btn-default.active, input[type="submit"]:hover, button:hover, a.comment-reply-link:hover {
+    color: #fff;
+    border-color: #009BFF;
+    background-color: #009BFF;
+    box-shadow: none;
+    letter-spacing: 1px;
+}
+.btn-default, input[type="submit"], button, a.comment-reply-link {
+    border: 2px solid #009BFF;
+    color: #ffffff !important;
+    letter-spacing: 0;
+    -webkit-transition: .2s ease-in-out;
+    transition: .2s ease-in-out;
+    background: none;
+    padding: 5px 18px;
+    border-radius: 4px;
+}
+img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+.headerTextColor a
+{
+    color: #ffffff !important;
+}
+
+/* Testmenol Slider CSS */
+/* Carousel */
+
+#quote-carousel {
+    padding: 0 10px 30px 10px;
+    margin-top: 30px;
+    /* Control buttons  */
+    /* Previous button  */
+    /* Next button  */
+    /* Changes the position of the indicators */
+    /* Changes the color of the indicators */
+}
+#quote-carousel .carousel-control {
+    background: none;
+    color: #CACACA;
+    font-size: 2.3em;
+    text-shadow: none;
+    margin-top: 30px;
+}
+#quote-carousel .carousel-control.left {
+    left: -60px;
+}
+#quote-carousel .carousel-control.right {
+    right: -60px;
+}
+#quote-carousel .carousel-indicators {
+    right: 50%;
+    top: auto;
+    bottom: 0px;
+    margin-right: -19px;
+}
+#quote-carousel .carousel-indicators li {
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+    cursor: pointer;
+    border: 4px solid #CCC;
+    border-radius: 50px;
+    opacity: 0.4;
+    overflow: hidden;
+    transition: all 0.4s;
+}
+#quote-carousel .carousel-indicators .active {
+    background: #333333;
+    width: 128px;
+    height: 128px;
+    border-radius: 100px;
+    border-color: #f33;
+    opacity: 1;
+    overflow: hidden;
+}
+.carousel-inner {
+    min-height: 300px;
+}
+.item blockquote {
+    border-left: none;
+    margin: 0;
+}
+.item blockquote p:before {
+    content: "\f10d";
+    font-family: 'Fontawesome';
+    float: left;
+    margin-right: 10px;
+}
+
+/* Scroll to Top */
+.back-to-top {
+    position: fixed;
+    right: 1%;
+    bottom: -7.5%;
+    height: 15px;
+    width: 40px;
+    padding: 3px 5px;
+    font-size: 10px;
+    font-weight: bold;
+    color: transparent;
+    opacity: 0.5;
+    z-index: 3;
+    visibility: hidden;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all 0.25s ease-in-out;
+    background-color: #858585;
+}
+.back-to-top:hover, .back-to-top:focus {
+    opacity: 1;
+    text-decoration: none;
+}
+.back-to-top:focus {
+    outline: thin dotted;
+}
+
+.back-to-top::before,
+.back-to-top::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 0;
+    height: 0;
+    border: 20px solid transparent;
+    border-top: 0;
+}
+
+.back-to-top::before {
+    top: -20px;
+    z-index: 4;
+    border-bottom: 20px solid #858585;
+}
+
+.back-to-top::after {
+    bottom: 0;
+    z-index: 5;
+    border-bottom: 20px solid #505050;
+}
+
+.back-to-top:hover,
+.back-to-top:focus {
+    height: 40px;
+    color: #212223;
+}
+
+.show-back-to-top {
+    display: block;
+    bottom: 1.25%;
+    visibility: visible;
+}

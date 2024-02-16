@@ -1,0 +1,41 @@
+<div class="users-panel">
+  <div class="card card-default">
+     <div class="card-header">
+        <h5 class="card-title text-uppercase">Add Desc</h5>
+     </div>
+     <div class="card-body">
+        <div class="card card-default">
+           <div class="card-header">
+              <h6 class="card-title">Add</h6>
+           </div>
+           <div class="panel-body ">
+              <form [formGroup]="contactAdd" (ngSubmit)="formSubmit(contactAdd.value)">
+              <div class="form-row col-md-12">
+                 <div class="form-group col-md-4">
+                    <label for="inputEmail4" class="col-form-label" >Landline Number</label>
+                    <input type="test" class="form-control" id="inputEmail4" placeholder="contactName" formControlName="contactName">
+                    <div class="alert alert-danger" *ngIf="!contactAdd.controls['contactName'].valid && contactAdd.controls['contactName'].touched">Email is required</div>
+                 </div>
+                 <div class="form-group col-md-4">
+                    <label for="inputPassword4" class="col-form-label" >Emai</label>
+                    <input type="text" class="form-control" id="inputPassword4" placeholder="email" formControlName="email">
+                    <div class="alert alert-danger" *ngIf="!contactAdd.controls['email'].valid && contactAdd.controls['email'].touched">Name is required</div>
+                 </div>
+                 <div class="form-group col-md-4">
+                    <label for="inputPassword4" class="col-form-label" >Contact Number</label>
+                    <input type="text" class="form-control" id="cnumber" placeholder="Contact Number" formControlName="cnumber">
+                    <div class="alert alert-danger" *ngIf="!contactAdd.controls['cnumber'].valid && contactAdd.controls['cnumber'].touched">Name is required</div>
+                 </div>
+                 <div class="form-group col-md-4">
+                    <label for="inputPassword4" class="col-form-label" >Address</label>
+                    <textarea class="form-control" id="address" placeholder="Address" formControlName="address"></textarea>
+                    <div class="alert alert-danger" *ngIf="!contactAdd.controls['address'].valid && contactAdd.controls['address'].touched">Name is required</div>
+                 </div>
+              </div>
+              <button type="submit" class="btn btn-primary" [disabled]="contactAdd.invalid">Sign in</button>
+              </form>
+           </div>
+        </div>
+     </div>
+  </div>
+</div>

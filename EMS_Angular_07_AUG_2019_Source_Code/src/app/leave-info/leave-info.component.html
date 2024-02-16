@@ -1,0 +1,45 @@
+<ul class="breadcrumb animated bounceInLeft delay-1s mt-2">
+  <li><a href="#" title="Home">Home</a></li>
+  <li><a href="#" title="Sales">User Update</a></li>
+  <li><a href="#" title="Orders">Employee Info</a></li>
+</ul>
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">Employee Info</h5>
+    <div class="row" *ngFor="let emsLeaveRequestServiceList of emsLeaveListGetData; let i=index">
+      <div class="form-group col-sm-3">
+        <label>User Name</label>
+        <div>{{emsLeaveRequestServiceList.userName}}</div>
+      </div>
+      <div class="form-group col-sm-3">
+        <label>Leave Type</label>
+        <div>{{emsLeaveRequestServiceList.leaveType}}</div>
+      </div>
+      <div class="form-group col-sm-3">
+        <label for="retypePassword">Leave Reason</label>
+        <div>{{emsLeaveRequestServiceList.leaveReason}}</div>
+      </div>
+      <div class="form-group col-sm-3">
+        <label for="fullName">No Of Days</label>
+        <div>{{emsLeaveRequestServiceList.noOfDays}}</div>
+      </div>
+      <div class="form-group col-sm-3">
+        <label for="sex">From Date</label>
+        <div>{{emsLeaveRequestServiceList.fromDate}}</div>
+      </div>
+      <div class="form-group col-sm-3">
+        <label for="sex">To Date</label>
+        <div>{{emsLeaveRequestServiceList.toDate}}</div>
+      </div>
+      <div class="form-group col-sm-3">
+        <label for="sex">To Date</label>
+        <div>{{emsLeaveRequestServiceList.leaveStatus}}</div>
+      </div>
+      
+    </div>
+    <div class="row">
+      <div class="col-sm-1">
+        <button type="submit" (click)="goLeaveRequestUpdate()" class="btn btn-primary" value="Sign up">Submit</button>
+      </div>
+    </div>
+  </div>

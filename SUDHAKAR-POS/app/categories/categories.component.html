@@ -1,0 +1,39 @@
+<div class="container-fluid tafelpos-body page-top-margin">
+    <div style="text-align: center; z-index: 1029; position: fixed; top: 67px; left: 0; width: 100%; padding: 9px 0; background-color: #ffe7f3; border-bottom: solid 1px #A9A9A9;">
+        <div [class.show-message]="message" class="status-message d-inline-block pl-2 pr-2 pt-1 pb-1 bg-success rounded ">{{ message }}</div>
+        <div class="float-right" style="margin-right: 15px;">
+            <button type="button" class="btn btn-secondary btn-sm" (click)="onClearOrder()" [disabled]="!selectedItems.length">Clear Order</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2 no-gutter-right">
+            <div class="border p-2 mt-2">
+                <div>
+                    <input class="form-control" placeholder="Search Category" [(ngModel)]="searchCategory" />
+                </div>
+                <perfect-scrollbar class="container">
+                    <div style="height: 100%">
+                        <ul class="category" *ngIf="categories.length" style="height: 410px;">
+                            <li *ngFor="let category of categories | menuFilter: searchCategory" (click)="onSelectCategory(category)" [class.selected]="category.id === selectedCategory.id">{{ category.name }}</li>
+                        </ul>
+                    </div>
+                </perfect-scrollbar>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="border p-2 mt-2">
+                <tafelposapp-category-items [category]="selectedCategory"></tafelposapp-category-items>
+            </div>
+        </div>
+        <div class="col-md-4 no-gutter-left">
+            <div class="border p-2 mt-2" style="height: 466px;">
+                <perfect-scrollbar class="container" [config]="customScrollBarConfig">
+                    <div style="height: 100%">
+                        <tafelposapp-order-item [orderItem]=""></tafelposapp-order-item>
+                    </div>
+                </perfect-scrollbar>
+            </div>
+                
+        </div>
+    </div>
+</div>

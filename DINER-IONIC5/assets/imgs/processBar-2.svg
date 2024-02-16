@@ -1,0 +1,82 @@
+<svg id="processBar_-2" data-name="processBar -2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1387" height="142" viewBox="0 0 1387 142">
+  <metadata><?xpacket begin="﻿" id="W5M0MpCehiHzreSzNTczkc9d"?>
+<x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.6-c140 79.160451, 2017/05/06-01:08:21        ">
+   <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+      <rdf:Description rdf:about=""/>
+   </rdf:RDF>
+</x:xmpmeta>
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                           
+<?xpacket end="w"?></metadata>
+<defs>
+    <style>
+      .cls-1 {
+        fill: #e8e8e9;
+      }
+
+      .cls-2, .cls-3, .cls-5 {
+        fill: #5c0931;
+      }
+
+      .cls-3, .cls-4 {
+        font-size: 45px;
+        font-family: "Avenir Next";
+        font-weight: 500;
+      }
+
+      .cls-4 {
+        fill: #515968;
+      }
+
+      .cls-5, .cls-6 {
+        stroke: #5c0931;
+        stroke-width: 2px;
+      }
+
+      .cls-6 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <g id="Indication">
+    <rect id="Gutter" class="cls-1" x="5" y="38" width="1348" height="4" rx="2" ry="2"/>
+    <rect id="GreenGutter" class="cls-2" x="60" y="38" width="875" height="4" rx="2" ry="2"/>
+  </g>
+  <g id="Knob_left" data-name="Knob left">
+    <circle id="Knob_base" data-name="Knob base" class="cls-2" cx="37" cy="39" r="37"/>
+    <text id="Received" class="cls-3" x="0.471" y="130.8">Received</text>
+    <text id="Inprogress" class="cls-3" x="388.479" y="130.8">Inprogress</text>
+    <text id="Ready" class="cls-4" x="886.47" y="130.8">Ready</text>
+    <text id="Handover" class="cls-4" x="1182.473" y="130.8">Handover</text>
+  </g>
+  <image id="checked" x="15" y="22" width="46" height="35" xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC4AAAAjCAQAAABBLvBiAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QAAKqNIzIAAAAJcEhZcwAACxIAAAsSAdLdfvwAAAAHdElNRQfjCBMKMhWj4kVwAAACAklEQVRIx7XVT0gUURzA8e8sZihEUOZF61CnLh3tEBhKriAaFLKHpDqK28VDbBrC7HMhFcGDiHrxUgZBHezPpSW2s0fpIATbQXdPrvgn2SDR52HZP/P2zZ+dWWcv8/uzHx6/eTPPkAS7hBKbrTSKTOE+FNBW6Qm22TJj54Cb0yRoxGDGfFNn3BS8KgXjZgKMes3cHGNKKV2v08o19B77dcE19D8GxREy4C+OjEn1ysvuOPHgM2eExapV94sUBN8t1fQxjwp0UFxHD4rvxSAIrqe/lEP/Mx9i1Zn2v/Ih3iqZUyJWuoxH2CVLZw20dVmnPBNralthLMXmQ8Ks+6TfVzcaEp7wrtS8x31+OdKP+eiNBkNeJcvFikyOe/y2pR/yiQuWjOSpntY90BZS3PRMwws7GkLs8lrJtZGk3SMdFUv2EwwBc8wr2Vskuabk+nQ0DnRxLKOsKPnb/OByRdxdO13EJcN8UCp3SHKpRH+jSanH3OjyAz3hOV+VWgefabahx5l1oyt3y38i/FSqXawxrKWn3Wn1w9VMiruu/7HQwqHRus/z9LLhQk96W3U1Dgf0sOnQP4Pplda9oTuESdvSY95p/fc8Qy/Z4LTdYZGmh5ySm6uVtj+JNnnAYUW8zMtaaadjboMw+RIdxcdh63SGrjPAX2DBHw0NjtUUN7jCHz8wwBllK8EwqK2IhAAAAABJRU5ErkJggg=="/>
+  <g id="Knob_right" data-name="Knob right">
+    <circle id="Knob_base-2" data-name="Knob base" class="cls-5" cx="500" cy="38" r="37"/>
+    <image id="Ellipse_7_copy_2" data-name="Ellipse 7 copy 2" x="478" y="34" width="44" height="11" xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAALCAQAAACuJKcEAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QAAKqNIzIAAAAJcEhZcwAACxIAAAsSAdLdfvwAAAAHdElNRQfjCBMKMhWj4kVwAAAAkklEQVQoz7WTsQHCMAwEnxQwRjxONnSYBNaxq1DizjRHQQHCIqp4V9KdVUlCiJlMoVPIzMh5kTFwIRYa7zSW4VtkOFwk7tg0kvkWGS4XZ8ZkMzgyXC6q0y5mcGS4/EDXUd956PRRRYbLJ900ZjNVZLh80sVpX00VGT4nmVXxt2LfcPkf9/h1NyuVTmX9eXn7xsCfUIMqWjY28sMAAAAASUVORK5CYII="/>
+  </g>
+  <g id="Knob_right_2" data-name="Knob right 2">
+    <circle id="Knob_base-3" data-name="Knob base" class="cls-6" cx="956" cy="39" r="32"/>
+  </g>
+  <g id="Knob_right_3" data-name="Knob right 3">
+    <circle id="Knob_base-4" data-name="Knob base" class="cls-6" cx="1354" cy="39" r="32"/>
+  </g>
+</svg>

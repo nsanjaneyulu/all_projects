@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Sep 19, 2012 11:21:17 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dblue.farm.Vaccination" table="vaccination" >
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="health" class="com.dblue.farm.Health" fetch="select">
+            <column name="health_id" />
+        </many-to-one>
+        <many-to-one class="com.dblue.farm.Farm" fetch="select" name="farm">
+ 			<column name="farm_id" not-null="true"/>
+		</many-to-one> 
+        <many-to-one name="vaccineType" class="com.dblue.farm.VaccineType" fetch="select">
+            <column name="vaccination_type_id" not-null="true" />
+        </many-to-one>
+        <property name="lastVaccinationDate" type="timestamp">
+            <column name="last_vaccination_date" length="19" />
+        </property>
+        <property name="nextVaccinationDate" type="timestamp">
+            <column name="next_vaccination_date" length="19" />
+        </property>
+        <property name="vaccinationDate" type="timestamp">
+            <column name="vaccination_date" length="19" />
+        </property>
+        <property name="manufacturedDate" type="timestamp">
+            <column name="manufactured_date" length="19" />
+        </property>
+        <property name="vaccineBrand" type="string">
+            <column name="vaccine_brand" length="150" />
+        </property>
+        <property name="manufacturerName" type="string">
+            <column name="manufacturer_name" length="100" />
+        </property>
+        <property name="vaccineExpiryDate" type="timestamp">
+            <column name="vaccine_expiry_date" length="19" />
+        </property>
+        <property name="dosage" type="big_decimal">
+            <column name="dosage" precision="10" />
+        </property>
+    </class>
+</hibernate-mapping>

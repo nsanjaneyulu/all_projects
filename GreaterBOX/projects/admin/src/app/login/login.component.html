@@ -1,0 +1,82 @@
+<main class="main_Content">
+  <section class="login_Content container">
+    <div class="signIn_Content" [ng2-loading]="show" [config]="loadingConfig">
+      <div class="signIn_left--Content">
+        <div class="signIn_Heading--Block">
+          <h3 class="text-center signIn_Heading">Sign in</h3>
+          <hr />
+        </div>
+        <form
+          [formGroup]="loginForm"
+          class="signIn_Form"
+          (ngSubmit)="onLoginSubmit()"
+        >
+          <div class="form-group">
+            <label for="signInInputEmail1" class="signIn_Lable"
+              >Email address</label
+            >
+            <input
+              type="email"
+              class="form-control signIn_Input"
+              id="signInInputEmail1"
+              aria-describedby="emailHelp"
+              placeholder="Enter email"
+              formControlName="email"
+              name="email"
+              [ngClass]="{ 'is-invalid': submitted && f.email.errors }"
+            />
+            <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+              <div *ngIf="f.email.errors.required">Email is required</div>
+              <div *ngIf="f.email.errors.email">
+                Email must be a valid email address
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="signInInputPassword1" class="signIn_Lable"
+              >Password</label
+            >
+            <input
+              type="password"
+              class="form-control signIn_Input"
+              id="signInInputPassword1"
+              placeholder="Password"
+              formControlName="password"
+              name="password"
+              [ngClass]="{ 'is-invalid': submitted && f.password.errors }"
+            />
+            <div
+              *ngIf="submitted && f.password.errors"
+              class="invalid-feedback"
+            >
+              <div *ngIf="f.password.errors.required">Password is required</div>
+              <div *ngIf="f.password.errors.minlength">
+                Password must be at least 6 characters
+              </div>
+            </div>
+          </div>
+          <!-- <div class="remeberMe_ForgotPassword--block">
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input" id="RememberMe" />
+              <label class="form-check-label rememberMe_Lable" for="RememberMe"
+                >Remember me</label
+              >
+            </div>
+            <p class="m-0">
+              Forgot Password?
+            </p>
+          </div> -->
+          <div>
+            <div class="text-center signIn_Button">
+              <button type="submit" class="btn">Log In</button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="signIn_Right--Content">
+        <img class="nsmImage" src="../../assets/new-seasons-logo.png" href=""/>
+        <img class="goodBoxImage" src="../../assets/greater_good_box_20.png" />
+      </div>
+    </div>
+  </section>
+</main>

@@ -1,0 +1,81 @@
+<form>
+   <div class="form-row">
+      <div class="col">
+         <span style="color:#5c0632">{{title}} Runner</span>
+      </div>
+   </div>
+   <div class="form-row mt-2">
+      <div class="col">
+         <label for="exampleInputEmail1">First Name</label>
+         <input id="fname" type="text" [(ngModel)]="suppliers.firstName" name="firstName" class="form-control" placeholder="First name" >
+      </div>
+      <div class="col">
+         <label for="exampleInputEmail1">Last Name</label>
+         <input type="text" [(ngModel)]="suppliers['lastName']" id ="lname" name="lname" class="form-control" placeholder="Last name">
+      </div>
+   </div>
+   <div class="form-row mt-2">
+      <div class="col">
+         <label for="exampleInputEmail1">Phone Number</label>
+         <input type="text" [(ngModel)]="suppliers['phoneNumber']" name="phoneNumber" id = "phone" class="form-control" placeholder="Phone Number">
+      </div>
+      <div class="col">
+         <label for="exampleInputEmail1">All Permited</label>
+         <select [(ngModel)]="suppliers['allpermited']" id="allpermited" name ="allpermited"  [ngModelOptions]="{standalone: true}" class ="form-control">
+         <option>Yes</option>
+         <option>No</option>
+         </select>
+      </div>
+   </div>
+   <div class="form-row mt-2">
+      <div class="col-6">
+         <label for="exampleInputEmail1">Location</label>
+         <select id="loc" [(ngModel)]="suppliers['ssId']" name="stationId" [ngModelOptions]="{standalone: true}" (change)="selectLocation(suppliers['ssId'],suppliers)" class ="form-control">
+         <option value="0" hidden>select</option>
+         <option *ngFor = "let station of getLocations" [value]="station['id']">{{station.name}}</option>
+         </select>   
+      </div>
+   </div>
+   <div class="form-row mt-2">
+      <div class="col">
+         <label for="exampleInputEmail1">Mall Select</label>
+         <select id="mall" [(ngModel)]="suppliers['mallId']" name ="mallId" class ="form-control" (change)="mallNameChange(suppliers['mallId'],suppliers)">
+         <option *ngFor="let mall of suppliers['mall']" [value]="mall['mallId']">{{mall.mallName}}</option>
+         </select>   
+      </div>
+      <div class="col" *ngIf="suppliers['allpermited']=='Yes'">
+         <label for="exampleInputEmail1">Outlet Select</label> <br />
+         <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" id="selectAll">
+            <label class="custom-control-label" for="selectAll" (click)="selectAllOutLets()" >Select All</label>
+         </div>
+         <div class="custom-control custom-checkbox custom-control-inline" *ngFor="let outlet of outletResp['jmoutlet']">
+            <input type="checkbox" [ngModelOptions]="{standalone: true}" [(ngModel)]="outlet.isChecked"  (click)="addOrRemoveOutlet(outlet)" [checked]="outlet.isChecked" class="custom-control-input" id="{{outlet.id}}">
+            <label class="custom-control-label" for="{{outlet.id}}">{{outlet.name}}</label>
+         </div>
+      </div>
+      <div class="col" *ngIf="suppliers['allpermited']=='No'">
+         <label for="exampleInputEmail1">Outlet Select</label> <br />
+         <select [(ngModel)]="suppliers['outletIds']" [ngModelOptions]="{standalone: true}" name="outlet">
+         <option value="0" hidden>select</option>
+         <option *ngFor="let outlet of outletResp['jmoutlet']" [value]="outlet['id']">{{outlet.name}}</option>
+         </select>
+      </div>
+   </div>
+   <div class="form-row mt-2">
+      <div class="col-6">
+         <label for="exampleInputEmail1">Password</label>
+         <input type="password"  [(ngModel)]="password" name="password" class="form-control" />  
+      </div>
+      <div class="col-6">
+         <label for="exampleInputEmail1">Confirm Password</label>
+         <input type="password" [(ngModel)]="confirmPassword" name="confirmPassword" class="form-control" />
+      </div>
+   </div>
+   <div class="form-row mt-2">
+      <div class="col-6">
+         <button type="submit" class="btn btn-primary" (click)="saveDetails()"  *ngIf="buttonName=='Create'" >{{buttonName}}</button>
+         <button type="submit" class="btn btn-primary" (click)="updateSupplier()" *ngIf="buttonName=='Update'" >{{buttonName}}</button>
+      </div>
+   </div>
+</form>

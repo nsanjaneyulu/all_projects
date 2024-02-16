@@ -1,0 +1,37 @@
+<wicket:extend>
+	<div id="content">
+    <div class="bread-crumb">
+            	<h1>Assets Management / Asset List</h1>
+            </div>
+	   <h2><div wicket:id="feedback"></div></h2> 
+            <div class="containerDiv"> 
+                      <div class="rowDivHeader">
+                            <div>Asset Code</div>
+                            <div>Asset Type</div>
+                            <div>Asset Name</div>	
+                            <div>Description</div>			
+                            <div>Date of Purchase</div>
+                            <div>Warranty End Date</div>
+                            <div>Quantity</div>				
+                            <div>Cost per Unit</div>
+                            <div>Total Cost</div>
+                            <div class="last">Remarks</div> 
+                       </div>    
+                       <div class="rowDiv"  wicket:id="rows" style="clear:both;">
+                                <div><a href="#" wicket:id="asset_edit"><span wicket:id="assetCode" /></a></div>
+                                <div><span wicket:id="assetType"/></div>
+                                <div><span wicket:id="assetName" /></div>	
+                                <div><span wicket:id="description" /></div>				
+                                <div><span wicket:id="purchaseDate" /></div>
+                                <div><span wicket:id="warrantyEndDate" /></div>
+                                <div><span wicket:id="quantitiy" /></div>					
+                                <div><span wicket:id="unitCost" /></div>
+                                <div><span wicket:id="totalCost" /></div>
+                                <div class="last"><span wicket:id="remarks" /></div>
+                       </div>  
+              </div>
+				
+        
+          
+	</div>
+</wicket:extend>

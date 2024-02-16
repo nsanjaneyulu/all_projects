@@ -1,0 +1,43 @@
+<wicket:extend>
+	<div id="content">
+    <div class="bread-crumb">
+            	<h1>Financial Management / Revenue List</h1>
+            </div>
+		<div wicket:id="yearselection">
+			<span wicket:id="yearrepeater"><a wicket:id="year"><span>[</span><span wicket:id="yerlabel" /><span>]</span><span>&nbsp;</span></a>
+			</span>
+		</div>
+		<div>&nbsp;</div>
+		<div wicket:id="monthSelection">
+			<span wicket:id="monthrepeater"><a wicket:id="month"><span>[</span><span wicket:id="monthlabel" /><span>]</span></a><span>&nbsp;</span>
+			</span>
+		</div>
+		<h2><div wicket:id="feedback"></div></h2> 
+		<div wicket:id="reportpanel">
+        		<div class="containerDiv">
+                   <div class="rowDivHeader">
+                   		<div>Receipt Number</div>
+                        <div>Receipt Type</div>
+                        <div>Vendor Code</div>
+                        <div>Sale Date</div>
+                        <div>Quantity</div>
+                        <div>Unit Price</div>
+                        <div>Amount (in Rs)</div>
+                        <div>Remarks</div>	
+                   </div>
+                
+                   <div class="rowDiv" wicket:id="rows">
+                   		<div><a href="#" wicket:id="revenue_edit"><span wicket:id="receiptNumber" /></a></div>
+	                    <div><span wicket:id="receiptType" /></div>
+	                    <div><span wicket:id="vendorCode" /></div>
+	                    <div><span wicket:id="saleDate" /></div>
+	                    <div><span wicket:id="quantity" /></div>
+	                    <div><span wicket:id="unitPrice" /></div>
+	                    <div><span wicket:id="amount" /></div>
+	                    <div class="last"><span wicket:id="remarks" /></div>
+                   </div>
+                </div>
+			
+		</div>
+	</div>
+</wicket:extend>

@@ -1,0 +1,30 @@
+<div class="row">
+  <div class="col-12 d-flex justify-content-between mb-3">
+    <h4 class="text-capitalize text-gold">{{pageTitle}}</h4>
+    <a class="theme_button" routerLink="/dashboard/user/new">
+      Add New
+    </a>
+  </div>
+  <div class="col-12">
+    <table class="table text-gold table-gold">
+      <thead>
+        <tr>
+          <th scope="col" *ngFor="let item of userTableHeadData; index as i">{{item}}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of recentData; index as i">
+          <td scope="row">{{i + 1}}</td>
+          <td scope="row">{{item.user_company_id}}</td>
+          <td scope="row">{{item.user_first_name}} {{item.user_last_name}}</td>
+          <td scope="row">{{item.user_email}}</td>
+          <td>
+            <a [routerLink]="['/dashboard/user/view', item.user_id]" class="text-gold">
+              View</a> |
+            <a [routerLink]="['/dashboard/user/edit', item.user_id]" class="text-gold">Edit</a> | Delete
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,36 @@
+<div class="users-panel">
+  <div class="card card-default">
+     <div class="card-header">
+        <h5 class="card-title text-uppercase">User Management</h5>
+     </div>
+     <div class="card-body">
+        <div class="card card-default">
+           <div class="card-header">
+              <h6 class="card-title">Person Add</h6>
+           </div>
+           <div class="panel-body ">
+              <form [formGroup]="personAdd" (ngSubmit)="formSubmit(personAdd.value)">
+              <div class="form-row col-md-12">
+                 <div class="form-group col-md-4">
+                    <label for="inputEmail4" class="col-form-label" >Name</label>
+                    <input type="test" class="form-control" id="inputEmail4" placeholder="personname" formControlName="personname">
+                    <div class="alert alert-danger" *ngIf="!personAdd.controls['personname'].valid && personAdd.controls['personname'].touched">Email is required</div>
+                 </div>
+                 <div class="form-group col-md-4">
+                    <label for="inputPassword4" class="col-form-label" >First Name</label>
+                    <input type="text" class="form-control" id="inputPassword4" placeholder="firstname" formControlName="firstname">
+                    <div class="alert alert-danger" *ngIf="!personAdd.controls['firstname'].valid && personAdd.controls['firstname'].touched">Name is required</div>
+                 </div>
+                 <div class="form-group col-md-4">
+                    <label for="inputPassword4" class="col-form-label" >Last Name</label>
+                    <input type="text" class="form-control" id="inputPassword5" placeholder="lastname" formControlName="lastname">
+                    <div class="alert alert-danger" *ngIf="!personAdd.controls['lastname'].valid && personAdd.controls['lastname'].touched">Name is required</div>
+                 </div>
+              </div>
+              <button type="submit" class="btn btn-primary" [disabled]="personAdd.invalid">Submit</button>
+              </form>
+           </div>
+        </div>
+     </div>
+  </div>
+</div>

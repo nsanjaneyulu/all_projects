@@ -1,0 +1,209 @@
+<div class="bow_page_title mb-2" >
+    <span>{{variableRecieved.pageTitle}}</span>
+    <span style="float: right;"><i (click)="doRefresh()" class="fa fa-refresh" style="cursor:pointer;" aria-hidden="true"></i></span>
+  </div>
+
+
+  <div  style="text-align: end; " >
+      <button type="button" class="btn  btn-md" (click)="editDetails(variableRecieved.new)" style="background-color: #5c0632;color:white" >{{variableRecieved.modelButtonName}}</button>
+  </div>
+  <br>
+  <div class="row" >
+  
+  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+      <span>Search By:</span> &nbsp; <span>
+        
+  
+    <select  [(ngModel)]="searchType" style="font-size: 12px;" name="status" (change)="selectSearchType()">
+      <option  value="" selected>Select Search Type</option>
+        <option *ngFor="let type of filterColumns" value="{{type.id}}">
+        {{type.name}}
+        </option>
+    </select> 
+  </span>&nbsp;
+    <span class="formobiles">
+        <input class="input" placeholder="{{search}}" type="text" style="font-size: 12px;" class="inputCss" name="discountTitle"  [(ngModel)]="searchValue" (ngModelChange)="searchBasedOnSelected(searchValue,searchType)">
+    </span>
+    <span style="margin-left: -1%;    color: gray;
+    font-size: 12px;"><i class="fa fa-search"></i></span>      <i class="fa fa-filter" aria-hidden="true" style="font-size:30px; color:gray; float: right;"  data-toggle="modal" data-target="#myModal" *ngIf="persons.length"></i>
+
+  </div>
+  
+  <!-- <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="text-align:end">
+  </div> -->
+  </div>
+  <br>
+  <div style="max-width: 180vh;; overflow-x:auto" >
+      <table datatable [dtOptions]="dtOptions"   [dtTrigger]="dtTrigger" class="row-border hover table-striped " style="width:100%;"  >
+          <thead style="background-color: aliceblue" >
+              <tr *ngFor=" let header of finalHeaders" >
+                <th style="font-size:13px; text-align: left">S.No</th>
+                <th style="font-size:13px; text-align: left" *ngIf="header[0]">{{header[0]}}</th>
+                <th style="font-size:13px; text-align: left" *ngIf="header[1]">{{header[1]}}</th>
+                <th style="font-size:13px; text-align: left" *ngIf="header[2]">{{header[2]}}</th>
+                <th style="font-size:13px; text-align: left" *ngIf="header[3]">{{header[3]}}</th>
+                <th  style=" font-size:13px; text-align: left" *ngIf="header[4]">{{header[4]}}</th>
+                <th  style=" font-size:13px; text-align: left" *ngIf="header[5]">{{header[5]}}</th>
+                <th style="font-size:13px; text-align: left" *ngIf="header[6]">{{header[6]}}</th>
+                <th style="font-size:13px; text-align: left" *ngIf="header[7]">{{header[7]}}</th>
+                <th style="font-size:13px; text-align: left" *ngIf="header[8]">{{header[8]}}</th>
+                <th style="font-size:13px; text-align: left" *ngIf="header[9]">{{header[9]}}</th>
+                <th  style=" font-size:13px; text-align: left" *ngIf="header[10]">{{header[10]}}</th>
+                <th  style=" font-size:13px; text-align: left" *ngIf="header[11]">{{header[11]}}</th>
+                <th style="font-size:13px; text-align: left" *ngIf="header[12]">{{header[12]}}</th>
+                <th  style=" font-size:13px; text-align: left" *ngIf="header[13]">{{header[13]}}</th>
+                <th  style=" font-size:13px; text-align: left" *ngIf="header[14]">{{header[14]}}</th>
+                <th style="font-size:13px; text-align: left" *ngIf="header[15]">{{header[15]}}</th>
+                <th  style=" font-size:13px; text-align: left" *ngIf="header[16]">{{header[16]}}</th>
+                <th  style=" font-size:13px; text-align: left" *ngIf="header[17]">{{header[17]}}</th>
+                <th style="font-size:13px; text-align: left" *ngIf="header[18]">{{header[18]}}</th>
+                <th  style=" font-size:13px; text-align: left" *ngIf="header[19]">{{header[19]}}</th>
+                <th  style=" font-size:13px; text-align: left" *ngIf="header[20]">{{header[20]}}</th>
+                <th style="font-size:13px; text-align: left" *ngIf="header[21]">{{header[21]}}</th>
+                <th style="font-size:13px; text-align: left">Actions</th>
+              </tr>
+          </thead>
+          <tbody  *ngIf="persons.length && !showLoader">
+              <tr *ngFor="let discount of persons; let i=index;">
+                <td   style="font-size:12px">{{ i+1 }}</td>
+                <td  *ngIf="discount.id!=undefined" style="font-size:12px">{{ discount.id }}</td>
+                <td  *ngIf="discount.discountName!=undefined" style="font-size:12px">{{ discount.discountName }}</td>
+                <td  *ngIf="discount.serviceStationName!=undefined" style="font-size:12px">{{ discount.serviceStationName }}</td>
+                <td  *ngIf="discount.mallName!=undefined" style="font-size:12px">{{ discount.mallName }}</td>
+                <td  *ngIf="discount.createdDate!=undefined && variableRecieved.pageTitle!='Discounts'" style="font-size:12px">{{ discount.createdDate | date: "dd-MMM-yyyy H:mm"}}</td>
+                <td  *ngIf="discount.discountTypeName!=undefined" style="font-size:12px">{{ discount.discountTypeName }}</td>
+                <td  *ngIf="discount.startDate!=undefined" style="font-size:12px">{{ discount.startDate | date: "dd-MMM-yyyy H:mm" }}</td>
+                <td  *ngIf="discount.startHour!=undefined" style="font-size:12px">{{ discount.startHour }}</td>
+                <td  *ngIf="discount.budgetAllocated!=undefined" style=" font-size:12px; ; text-align: center">{{ discount.budgetAllocated }}</td>
+                <td  *ngIf="discount.budgetConsumed!=undefined" style="font-size:12px; ; text-align: center">{{ discount.budgetConsumed }}</td>
+                <td  *ngIf="discount.status!=undefined" style="font-size:12px">{{ discount.status }}</td>
+                <td  *ngIf="discount.isAssigned!=undefined" style=" font-size:12px">{{ discount.isAssigned }}</td>
+                <!-- <td  *ngIf="discount.maxDiscountValue!=undefined" style="font-size:12px; ; text-align: right">{{ discount.maxDiscountValue }}</td>
+                <td  *ngIf="discount.discountValue!=undefined" style="font-size:12px; text-align: left">{{ discount.discountValue }}</td> -->
+                <td  *ngIf="discount.promoTypeName!=undefined"  style=" font-size:12px">{{ discount.promoTypeName }}</td>
+                <!-- <td  *ngIf="discount.promoCode!=undefined"  style=" font-size:12px">{{ discount.promoCode }}</td> -->
+                <td  *ngIf="discount.shouldAddToWallet!=undefined" style="font-size:12px">{{ discount.shouldAddToWallet }}</td>
+                <td  *ngIf="discount.endDate!=undefined" style="font-size:12px">{{ discount.endDate | date: "dd-MMM-yyyy H:mm" }}</td>
+                <td  *ngIf="discount.endHour!=undefined" style="font-size:12px">{{ discount.endHour }}</td>
+                <td  *ngIf="discount.usageLimitType!=undefined" style="font-size:12px">{{ discount.usageLimitType }}</td>
+                <td  *ngIf="discount.usageLimitValue!=undefined" style=" font-size:12px">{{ discount.usageLimitValue }}</td>
+
+                <td style="text-align: center" > 
+<span *ngIf="discount.status=='STOPPED' && variableRecieved.pageTitle!='Discounts' " style="    font-size: 12px;
+color: white;
+background-color: #5c0632;
+margin-right: 5px;     cursor: pointer;" (click)="start(discount)">
+  START
+</span>
+<span *ngIf="discount.status=='ACTIVE' && variableRecieved.pageTitle!='Discounts'" style="    font-size: 12px;
+color: white;
+background-color: #5c0632;
+margin-right: 5px;     cursor: pointer;" (click)="stop(discount)">
+ STOP
+</span>
+                    <i class="fa fa-pencil" style="font-size:16px;cursor: pointer;" (click)="editDetails(variableRecieved.update,discount)"  ></i> <i class="fa fa-remove" style="font-size:16px; color:red; margin-left:8px;cursor: pointer;"  data-toggle="modal" data-target="#myModal1" (click)="deleteDiscount(discount)" ></i>
+                </td>
+              </tr>
+                <tr style="text-align: center;color:#5c0632;font-weight: bold" *ngIf="!persons.length">
+                  No Record Found.!
+                </tr>
+              
+          </tbody>
+          
+          </table>
+          
+  </div>
+
+      <div class="container">
+       
+        <div class="modal fade" id="myModal" role="dialog">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header" style="background-color: #5c0632">
+                  <a style="float: left;margin-top: -7px;" >Remove/Add Column</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a style="float:right;margin-top: -7px;font-size: 20px" data-dismiss="modal" >&times;</a>
+              </div>
+              <div class="modal-body">
+                <div>
+                  <a style="color:#007bff;float: left;" (click)="selectAll()">Select All</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a style="color:#007bff;float:right;" (click)="reset()">Reset</a>
+                </div>
+                <br>
+                <div *ngFor="let header of headersList" style="font-size:12px">
+                  <input type="checkbox" [(ngModel)]="header.isChecked"  [value]="header.id" [checked]="header.isChecked" (change)="toggleVisibility(header,header.isChecked)"/> &nbsp;<span>{{header.name}}</span>
+                </div>
+              </div>
+              <div class="modal-footer">
+                  <div style="    width: 100%;
+                  padding: 10px;
+                  color: white;
+                  background-color: darkgrey; text-align: center;     cursor: pointer;">
+                      <a  data-dismiss="modal" (click)="Ok()" >OK</a>
+                    </div>
+                  </div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+      <div class="container">
+       
+          <div class="modal fade" id="myModal1" role="dialog">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header" style="background-color: #5c0632">
+                    <a style="float: left;margin-top: -7px;" >Alert</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a style="float:right;margin-top: -7px;font-size: 20px" data-dismiss="modal" >&times;</a>
+                </div>
+                <div class="modal-body">
+                  <div>
+                    {{message}} 
+                 </div>
+                 
+                </div>
+                <div class="modal-footer" style="    width: 100%;
+                padding: 10px;
+                color: white;
+                text-align: center;
+                background-color: lightgrey; ">
+                      <div  style="    width: 100%;">
+                          <a  data-dismiss="modal" style="  cursor: pointer;color: red">{{no}}</a>
+                          <a  data-dismiss="modal" (click)="Yes()" style="      cursor: pointer;margin-left: 3%; color: green">{{ok}}</a>
+                        </div>
+                    </div>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 mt-5 ml-5" *ngIf="showLoader">
+          <app-global-loader ></app-global-loader>
+        </div>
+        
+
+      <!-- <div class="container">
+       
+        <div class="modal fade" id="myModal1" role="dialog">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header" style="background-color: #5c0632">
+                  <a style="float: left;margin-top: -7px;" >Delete</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a style="float:right;margin-top: -7px;font-size: 20px" data-dismiss="modal" >&times;</a>
+              </div>
+              <div class="modal-body">
+                <div>
+                  Are You sure want to delete.!
+                </div>
+                <br>
+              
+              </div>
+              <div class="modal-footer">
+                  <div style="    width: 100%;
+                  padding: 10px;
+                  color: white;
+                  background-color: darkgrey; text-align: center;">
+                      <a  data-dismiss="modal" (click)="delete()">OK</a>
+                    </div>
+                  </div>
+            </div>
+            
+          </div>
+        </div>
+      </div> -->
+

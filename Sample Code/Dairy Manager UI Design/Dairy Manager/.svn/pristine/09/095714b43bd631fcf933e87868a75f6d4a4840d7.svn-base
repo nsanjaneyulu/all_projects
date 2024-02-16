@@ -1,0 +1,36 @@
+<wicket:extend>
+	<div id="content">
+		<div wicket:id="yearselection">
+			<span wicket:id="yearrepeater"><a wicket:id="year"><span
+					wicket:id="yerlabel" />
+            </a>
+            </span>
+		</div>
+		<div wicket:id="feedback"></div>
+		<h1>Milk Production List</h1>
+		<div wicket:id="reportpanel">
+		<div class="list list-Header">
+			<div>
+				<h2>Month</h2>
+				<h2>Yield</h2>
+				<h2>Fat Percentile</h2>
+				<h2>SNF</h2>
+				<h2>CLR</h2>
+				<h2>Rejection</h2>
+				<h2 class="last">Deduction</h2>
+             </div>
+            <div wicket:id="rows" style="clear:both;">
+             <div class="list-Rows">
+                <h3><a href="#" wicket:id="milkproduction_edit"><span wicket:id="month" /></a></h3>
+                <h3><span wicket:id="yield" /></h3>
+                <h3><span wicket:id="fatPercentile" /></h3>
+                <h3><span wicket:id="snf" /></h3>
+                <h3><span wicket:id="clr" /> </h3>
+                <h3><span wicket:id="rejection" /></h3>
+                <h3 class="last"><span wicket:id="deduction" /></h3>
+             </div>
+		    </div>
+          </div>
+		</div>
+	</div>
+</wicket:extend>

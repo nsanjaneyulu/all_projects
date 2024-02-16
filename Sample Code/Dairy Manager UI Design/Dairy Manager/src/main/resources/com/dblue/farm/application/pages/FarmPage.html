@@ -1,0 +1,179 @@
+<wicket:extend>
+ <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+
+<script type="text/javascript" src="js/ddaccordion1.js">
+
+/***********************************************
+* Accordion Content script- (c) Dynamic Drive DHTML code library (www.dynamicdrive.com)
+* Visit http://www.dynamicDrive.com for hundreds of DHTML scripts
+* This notice must stay intact for legal use
+***********************************************/
+
+</script>
+
+<script type="text/javascript">
+
+ddaccordion.init({
+	headerclass: "headerbar", //Shared CSS class name of headers group
+	contentclass: "submenu", //Shared CSS class name of contents group
+	revealtype: "mouseover", //Reveal content when user clicks or onmouseover the header? Valid value: "click", "clickgo", or "mouseover"
+	mouseoverdelay: 200, //if revealtype="mouseover", set delay in milliseconds before header expands onMouseover
+	collapseprev: true, //Collapse previous content (so only one open at any time)? true/false
+	defaultexpanded: [0], //index of content(s) open by default [index1, index2, etc] [] denotes no content
+	onemustopen: true, //Specify whether at least one header should be open always (so never all headers closed)
+	animatedefault: false, //Should contents open by default be animated into view?
+	persiststate: true, //persist state of opened contents within browser session?
+	toggleclass: ["", "selected"], //Two CSS classes to be applied to the header when it's collapsed and expanded, respectively ["class1", "class2"]
+	togglehtml: ["", "", ""], //Additional HTML added to the header when it's collapsed and expanded, respectively  ["position", "html1", "html2"] (see docs)
+	animatespeed: "normal", //speed of animation: integer in milliseconds (ie: 200), or keywords "fast", "normal", or "slow"
+	oninit:function(headers, expandedindices){ //custom code to run when headers have initalized
+		//do nothing
+	},
+	onopenclose:function(header, index, state, isuseractivated){ //custom code to run whenever a header is opened or closed
+		//do nothing
+	}
+})
+
+</script>
+	<div id="container">
+		<div id="top">
+			<h1>
+            	<span wicket:id="dairyFarmName"/>
+			</h1>
+			<div class="search">
+				<!-- for search -->
+			</div>
+            <div id="topNav">
+			<ul id="navlist">
+				<li id="active">
+                <div class="home"></div>
+                <div class="span1">
+                	<a wicket:id="topnav_home" href="HomePage.html" id="current">Home</a>
+                </div>
+                </li>
+                <li>
+                	<div class="summary"></div>
+                    <div class="span1">
+                		<a wicket:id="landing_page" href="ContactUs.html">Summary</a>
+                    </div>
+                </li>
+				<li>
+                	<div class="contact"></div>
+                	<div class="span1">
+                    	<a wicket:id="topnav_contact" href="ContactUs.html">Contact us</a>
+                    </div>
+                 </li>
+
+                <li>
+                	<div class="signout"></div>
+                    <div class="span1">
+                       	<a wicket:id="topnav_signout" href="ContactUs.html">Sign out</a>
+                    </div>
+                 </li>
+			</ul>
+		</div>
+		</div>
+        <div style="clear:both;"></div>
+
+      <hr />
+
+			<div class="urbangreymenu">
+
+<!--menu1-->
+<h3 class="headerbar"><a href="#">Live Stock Management</a></h3>
+<ul class="submenu">
+	<li><div class="leftmenuIcon"></div><a href="#" wicket:id="livestock_new">Add Live Stock</a></li>
+    <li><div class="leftmenuIcon"></div><a href="#" wicket:id="livestock_edit">Edit / Update Live Stock</a></li>
+    <li><div class="leftmenuIcon"></div><a href="#" wicket:id="livestock_list">List Live Stocks</a></li>
+    <li><div class="leftmenuIcon"></div><a href="#" wicket:id="promotion_history">Promotion History</a></li>
+    <li><div class="leftmenuIcon"></div><a href="#"  wicket:id="discarded_history">Discarded History</a></li>
+
+
+</ul>
+<!--menu1 ends-->
+<!--menu2-->
+<h3 class="headerbar"><a href="#">Milk Yield Management</a></h3>
+<ul class="submenu">
+	<li><div class="leftmenuIcon"></div><a href="#" wicket:id="milkproduction_new">Daily Milk - Farm</a></li>
+	<li><div class="leftmenuIcon"></div><a href="#" wicket:id="milkproduction_daily">Daily Milk -Live Stock</a></li>
+	<li><div class="leftmenuIcon"></div><a href="#" wicket:id="milkproduction_list">Milk Production Report</a></li>
+
+</ul>
+<!--menu2 ends-->
+<!--menu3-->
+<h3 class="headerbar"><a href="#">Feeding Management</a></h3>
+<ul class="submenu">
+	<li><div class="leftmenuIcon"></div><a href="#" wicket:id="suggest_feeding">Suggested Feed</a></li>
+	<li><div class="leftmenuIcon"></div><a href="#" wicket:id="feeding_history">Feed History</a></li>
+
+</ul>
+<!--menu3 ends-->
+<!--menu4-->
+<h3 class="headerbar"><a href="#">Provisions Management</a></h3>
+<ul class="submenu">
+	<li><div class="leftmenuIcon"></div><a href="#" wicket:id="ingre_list">List/Edit Ingredients</a></li>
+    <li><div class="leftmenuIcon"></div><a href="#" wicket:id="ingre_options">Ingredient Options</a></li>
+    <li><div class="leftmenuIcon"></div><a href="#" wicket:id="formula_cost">Formula Cost</a></li>
+
+</ul>
+<!--menu4 ends-->
+<!--menu5-->
+<h3 class="headerbar"><a href="#">Stock Management</a></h3>
+<ul class="submenu">
+	<li><div class="leftmenuIcon"></div><a href="#" wicket:id="stock_new">Add Stock Type</a></li>
+    <li><div class="leftmenuIcon"></div><a href="#" wicket:id="stock_list">List/Edit Stock Type</a></li>
+    <li><div class="leftmenuIcon"></div><a href="#" wicket:id="stock_add">Add/Consume Stock</a></li>
+    <li><div class="leftmenuIcon"></div><a href="#" wicket:id="stock_audit_search">Search Audit</a></li>
+
+</ul>
+<!--menu5 ends-->
+<!--menu6-->
+<h3 class="headerbar"><a href="#">Financial Management</a></h3>
+<ul class="submenu">
+	<li><div class="leftmenuIcon"></div><a href="#" wicket:id="revenue_new">Add Revenue</a></li>
+    <li><div class="leftmenuIcon"></div><a href="#" wicket:id="revenue_list">Revenue Report</a></li>
+    <li><div class="leftmenuIcon"></div><a href="#" wicket:id="search_revenue">Search Revenues</a></li>
+    <li><div class="leftmenuIcon"></div><a href="#" wicket:id="expense_new">Add Expense</a></li>
+    <li><div class="leftmenuIcon"></div><a href="#" wicket:id="expenses_list">Expense Report</a></li>
+    <li><div class="leftmenuIcon"></div><a href="#" wicket:id="search_exp">Search Expense</a></li>
+
+</ul>
+<!--menu6 ends-->
+<!--menu7-->
+<h3 class="headerbar"><a href="#">Employee Management</a></h3>
+<ul class="submenu">
+	<li><div class="leftmenuIcon"></div><a href="#" wicket:id="employee_new">Add Employee</a></li>
+    <li><div class="leftmenuIcon"></div><a href="#" wicket:id="employee_list">List/Edit Employee</a></li>
+
+</ul>
+<!--menu7 ends-->
+<!--menu8-->
+<h3 class="headerbar"><a href="#">Assets Management</a></h3>
+<ul class="submenu">
+	<li><div class="leftmenuIcon"></div><a href="#" wicket:id="asset_new">Add Asset</a></li>
+    <li><div class="leftmenuIcon"></div><a href="#" wicket:id="asset_list">List/Edit Asset</a></li>
+
+</ul>
+<!--menu8 ends-->
+<!--menu9-->
+<h3 class="headerbar"><a href="#">Vendor Management</a></h3>
+<ul class="submenu">
+	<li><div class="leftmenuIcon"></div><a href="#" wicket:id="vendor_new">Add Vendor</a></li>
+    <li><div class="leftmenuIcon"></div><a href="#" wicket:id="vendor_list">List/Edit Vendor</a></li>
+
+</ul>
+<!--menu9 ends-->
+<!--menu10-->
+<h3 class="headerbar"><a href="#">Admin</a></h3>
+<ul class="submenu">
+	<li><div class="leftmenuIcon"></div><a href="#" wicket:id="config_drpdn">Configure Dropdown</a></li>
+    <li><div class="leftmenuIcon"></div><a href="#" wicket:id="interval_config">Interval Configuration</a></li>
+    <li><div class="leftmenuIcon"></div><a href="#" wicket:id="farm_config">Farm Configuration</a></li>
+
+</ul>
+<!--menu10 ends-->
+</div>
+
+		<wicket:child/>
+	</div>
+</wicket:extend>

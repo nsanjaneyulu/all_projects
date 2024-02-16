@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Welcome to Company Name</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link href="styles/style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+	<div id="content-1">
+	 <!-- row -->
+   
+	 <div id="top">
+			<h1 class="loginheader">
+            	Dairy Manager
+			</h1>
+			<div class="search">
+				<!-- for search -->
+			</div>
+            
+		</div>
+        <div style="clear:both;"></div>
+        
+      <hr><div wicket:id="feedback" class="feedback"></div>
+     <div class="span12">
+	 	<!-- box-r -->
+	 	<div class="box-r"> 		
+		<div class="box-r-top">			
+			<span class="box-r-top-icon"></span><span class="box-r-top-title">
+				Login
+			</span>
+			
+		</div>					
+     	<div class="loginImage">
+        	<div style="clear:both;"></div>
+        </div>	
+        <form wicket:id="loginform">
+            <div class="form-box">       
+                <div class="control-group login">
+                	<label for="inputEmail" class="control-label">User Name</label>
+                <div class="controls login">
+                	<input type="text" wicket:id="username" class="mini span12" id="username"></div>
+                </div>       
+                <div class="control-group login">
+                	<label for="inputPassword" class="control-label">Password</label>
+                <div class="controls login">
+                	<input type="password" wicket:id="password" class="mini span12" id="userpassword"></div>
+                </div> 
+                <br />      
+                 <input type="submit" wicket:id="submit" class="GlobalButton large ash"  
+                  name="" value="Login">
+            </div>       
+        <div style="clear:both;"></div>
+        </form>
+     	<!-- end: box-r -->	
+	 </div>	 
+	 </div>
+	 <!-- row end -->
+</div>
+</body>
+</html>

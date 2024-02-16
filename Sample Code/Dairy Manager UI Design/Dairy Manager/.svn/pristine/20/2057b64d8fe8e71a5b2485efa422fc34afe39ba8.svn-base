@@ -1,0 +1,65 @@
+<wicket:extend>
+	<div id="content">
+		<h1>Revenue Search</h1>
+            <form method="post" wicket:id="revenuesesearch">
+                <div wicket:id="feedback"></div>
+                    <div class="addData">
+                        <ul>
+                            <li>
+                                <label>Receipt Number:</label><br />
+                                <input type="text" wicket:id="rcptnumber" class="number_effect" />
+                            </li>
+                            <li>
+                                <label>Receipt Type:</label><br />
+                                <select wicket:id="receiptType" class="dropdown_effect"></select>
+                            </li>
+                             <li>
+                                <label>Receipt Start Date:</label><br />
+                                <input type="text" wicket:id="saleDate" class="number_effect" />
+                            </li>
+                            <li>
+                                <label>Receipt End Date:</label><br />
+                                <input type="text" wicket:id="saleEndDate" class="number_effect" />
+                            </li>
+                            
+                            <li>
+                                <label>Vendor:</label><br />
+                                <select wicket:id="vendor" class="dropdown_effect"></select>
+                            </li>                            
+                        </ul>
+                        <div style="clear:both;"></div>
+                            <div  class="newButton"><input type="submit" name="Search" value="Search" class="button" 
+                            wicket:id="search" /></div>
+                    </div>
+            </form>
+            <div wicket:id="datawrapper">
+            <div>
+               <span wicket:id="navigator">[dataview navigator]</span>
+             </div>					
+                <div class="list list-Header">
+                    <div>						
+                        <h2 >Receipt Number</h2>
+                        <h2>Receipt Type</h2>                        
+                        <h2>Vendor Code</h2>
+						<h2>Sale Date</h2>
+						<h2>Quantity</h2>
+						<h2>Unit Price</h2>
+						<h2>Amount (in Rs)</h2>
+						<h2 class="last">Remarks</h2>
+                    </div>
+                <div wicket:id="rows" style="clear:both;">
+                    <div class="list-Rows">						
+                        <h3><a href="#" wicket:id="revenue_edit"><span wicket:id="rcptNumberlbl" /></a></h3>                                               
+                        <h3><span wicket:id="receiptType" /></h3>
+                        <h3><span wicket:id="vendorCode" /></h3>
+                    	<h3><span wicket:id="saleDate" /></h3>
+                    	<h3><span wicket:id="quantity" /></h3>
+                    	<h3><span wicket:id="unitPrice" /></h3>
+                    	<h3><span wicket:id="amount" /></h3>
+                    	<h3 class="last"><span wicket:id="remarks" /></h3>
+                    </div>
+                </div>
+                </div>
+            </div>					
+	</div>
+</wicket:extend>

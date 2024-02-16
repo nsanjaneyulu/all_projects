@@ -1,0 +1,107 @@
+<script>
+    function valid_form() {
+        var chk = 0;
+        for (c = 0; c < document.myForm.gender.length; c++) {
+            if (document.myForm.gender[c].checked)
+                chk++;
+        }
+        var chk1 = 0;
+        for (j = 0; j < document.myForm.purpose.length; j++) {
+            if (document.myForm.purpose[j].checked)
+            //alert(document.form1.heg[j].value);
+                chk1 = document.myForm.purpose[j].value;
+        }
+        var email = document.getElementById('txtEmail');
+        var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+        if (document.myForm.name.value == "") {
+            //alert(" Emp Name Required");
+            document.myForm.name.style.borderColor = "red";
+            document.myForm.name.style.color = "red";
+            document.myForm.name.focus();
+            return false;
+        } else if (!filter.test(email.value)) {
+            alert('Please provide a valid email address');
+            document.myForm.txtEmail.focus();
+            return false;
+        } else if (document.myForm.contactNumber.value == "") {
+            alert(" contact Number Required");
+            document.myForm.contactNumber.focus();
+            return false;
+        } else if (chk == 0) {
+            alert("select gender");
+
+            return false;
+        } else if (chk1 == 0) {
+            alert("select Purpose");
+            return false;
+        } else if (document.myForm.message.value == "") {
+            alert(" Message Required");
+            document.myForm.message.focus();
+            return false;
+        } else
+            return true;
+    }
+</script>
+<div class="col-md-12">
+    <img src="http://www.csasoft.com/wp-content/uploads/2015/09/ContactUs.png" alt="ServicesImage" class="img-thumbnail" />
+</div>
+<div class="clearfix"></div>
+<div class="col-md-8">
+    <p><img src="http://www.csasoft.com/wp-content/uploads/2015/09/contactsmall.png" alt="Image" class="img-thumbnail" />
+    </p>
+    <h4>Guntur Office</h4>
+    <ul class="fa-ul">
+        <li><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> Door No# 26-20-292, Second Floor, 10th Line,</li>
+        <li>Sivaram Nagar, Chuttugunta, Opp Bharth Petrol Bunk,</li>
+        <li>Guntur, Andhra Pradesh,INDIA - 522 004,</li>
+        <li><span class="glyphicon glyphicon-phone-alt" aria-hidden="true"></span>(0863)224 2929</li>
+        <li><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span>+91 965252 2929</li>
+        <li><span class="glyphicon glyphicon-cd" aria-hidden="true"></span> info@csasoft.com</li>
+        <li><span class="glyphicon glyphicon-credit-card" aria-hidden="true"></span> <a href="http://www.csasoft.com"> www.csasoft.com</a>
+        </li>
+    </ul>
+    <h4>Hyderabad Office</h4>
+    <ul class="fa-ul">
+        <li><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> Flat no:102, Jaya Pride, KPHB, Hyderabad</li>
+        <li><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span>+91 8801070012</li>
+        <li><span class="glyphicon glyphicon-cd" aria-hidden="true"></span> info@csasoft.com</li>
+        <li><span class="glyphicon glyphicon-credit-card" aria-hidden="true"></span> <a href="http://www.csasoft.com"> www.csasoft.com</a>
+        </li>
+    </ul>
+</div>
+<div class="col-md-4">
+    <form action="#" method="post" name="myForm" id="myForm" onsubmit="return valid_form();">
+        <div class="form-group">
+            <label>Name</label>
+            <input type="text" class="form-control" id="name" placeholder="Jane Doe">
+            <label>Email</label>
+            <input type="email" class="form-control" id="txtEmail" name="txtEmail" placeholder="Email">
+            <label>Contact Number</label>
+            <input type="number" class="form-control" id="contactNumber" placeholder="xxx xxxx xxx">
+            <label>Document</label>
+            <input type="file" id="document">
+            <label>Gender</label>
+            <br />
+            <label class="checkbox-inline">
+                <input type="checkbox" id="gender" name="gender" value="option1"> Male
+            </label>
+            <label class="checkbox-inline">
+                <input type="checkbox" id="gender" name="gender" value="option2"> Female
+            </label>
+            <span id="gender"></span>
+            <br />
+            <label>Purpose</label>
+            <br />
+            <label class="radio-inline">
+                <input type="radio" name="inlineRadioOptions" id="purpose" name="purpose" value="option1"> Enquiry
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="inlineRadioOptions" id="purpose" name="purpose" value="option2"> Reporting
+            </label>
+            <br />
+            <label>Message</label>
+            <textarea class="form-control" id="message" name="message" placeholder="Your Valuable Message"></textarea>
+        </div>
+        <input type="submit" class="btn btn-default" />
+    </form>
+</div>

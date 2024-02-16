@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+ <class name="com.dblue.farm.Lactation" table="lactation">
+  <id name="id" type="java.lang.Integer">
+   <column name="id"/>
+   <generator class="identity"/>
+  </id> 
+  <property generated="never" lazy="false" name="lactationNumber" type="java.lang.Integer">
+   <column name="lactation_number" />
+  </property>
+  <property generated="never" lazy="false" name="startDate" type="timestamp">
+   <column length="19" name="start_date" />
+  </property>
+  <property generated="never" lazy="false" name="endDate" type="timestamp">
+   <column length="19" name="end_date" />
+  </property>
+   <many-to-one class="com.dblue.farm.Livestock" fetch="select" name="livestock">
+   <column name="livestock_id" not-null="true"/>
+  </many-to-one>
+ </class>
+</hibernate-mapping>

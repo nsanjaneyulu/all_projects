@@ -1,0 +1,27 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:security="http://www.springframework.org/schema/security"	
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-3.0.xsd ">
+		
+	<bean id="licenseVerifier" class="com.esw.components.licensing.aspect.LicenseVerifier">
+		<property name="licenseProvider" ref="licenseProvider"></property>
+	</bean>
+
+	<bean id="licenseProvider"
+		class="com.esw.components.licensing.truelicense.LicenseProviderImpl">
+		<property name="subject" value="farm"/>		
+		<property name="keystoreStream" value="classpath:public.ks"/>
+		<property name="alias" value="farm"/>
+		<property name="storePass" value="farming20"/>
+		<property name="keyPass" value="farming20"/>
+		<property name="cypherPass" value="farming20"/>
+	</bean>
+	
+	<bean id="licensingService"
+		class="com.dblue.farm.application.services.LicensingServiceImpl">
+		<property name="licenseProvider" ref="licenseProvider"/>
+		<property name="licenseVerifier" ref="licenseVerifier"/>
+		<property name="objectLoader" ref="objectLoader"/>
+	</bean>
+
+</beans>

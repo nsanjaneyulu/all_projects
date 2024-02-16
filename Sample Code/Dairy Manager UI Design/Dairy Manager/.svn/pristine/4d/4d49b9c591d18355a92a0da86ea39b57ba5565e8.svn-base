@@ -1,0 +1,618 @@
+<wicket:extend>
+	<div id="content">
+		<h1>Configuration Information</h1>
+		<table width="70%" class="configdropdown">
+			<tr>
+				<td><font style="color:Navy; font-size:14px;"><b>Breed Configuration</b></font></td>
+			</tr>
+			<tr>
+				<td>
+					<form wicket:id="breedForm">
+						<div wicket:id="feedback"></div>
+						<div wicket:id="rowPanel">
+							<table id="dataTable" class="configureDropdown">
+								<tr>
+									<th></th>
+									<th>Breed</th>
+									<th>Description</th>
+								</tr>
+								<span wicket:id="rows">
+									<tr>
+										<td><input type="checkbox" name="breedcheck"
+											id="breedcheck" wicket:id="breedcheck"/>
+										</td>
+										<td nowrap="nowrap"><input name="breedtype" type="text" value=""
+											size="10" wicket:id="breedtype" class="textfield_effect" maxlength="30"/>
+                                            <font color="#FF0000">*</font>
+										</td>
+										<td><input name="breeddescription" type="text"
+											id="breeddesc" wicket:id="breeddesc" class="bigtextarea_effect" maxlength="150"/>
+										</td>
+									</tr> </span>
+								<tr>
+									<td><input type="button"
+										value="Add Row" wicket:id="breed_addRow" class="button"/>
+									</td>
+									<td><input type="button" value="Delete Row"
+										wicket:id="breed_removeRow" class="button"/>
+									</td>
+									<td><input type="button"
+										value="Update" wicket:id="breed_update" class="button" />
+									</td>
+								</tr>
+							</table>
+						</div>
+					</form>
+                 </td>
+			</tr>
+			<tr>
+				<td colspan="4"><br /></td>
+			</tr>
+			<tr>
+				<td><font style="color:Navy; font-size:14px;"><b>Live Stock Category Configuration</b></font></td>
+			</tr>
+			<tr>
+				<td>
+					<form wicket:id="stateForm">
+						<div wicket:id="feedback"></div>
+						<div wicket:id="rowPanel">
+							<table id="dataTable1" class="configureDropdown">
+								<tr>
+									<th></th>
+									<th>Live Stock state</th>
+									<th>Description</th>
+								</tr>
+								<span wicket:id="rows">
+									<tr>
+										<td><input type="checkbox" name="check" id="check"
+											wicket:id="statecheck" />
+										</td>
+										<td nowrap="nowrap"><input name="idnumber" type="text" value="Calf"
+											size="10" wicket:id="stateType" class="textfield_effect" maxlength="30"/>
+                                            <font color="#FF0000">*</font>
+										</td>
+										<td><input name="description" type="text"
+											wicket:id="statedesc" class="bigtextarea_effect" maxlength="150"/>
+										</td>
+									</tr>
+                                </span>
+								<tr>
+									<td><INPUT type="button"
+										value="Add Row" class="button" wicket:id="state_addRow" /></td>
+									<td><INPUT type="button" value="Delete Row"
+										class="button" wicket:id="state_removeRow" />
+									</td>
+									<td><INPUT type="button"
+										value="Update" class="button" wicket:id="state_update" />
+									</td>
+								</tr>
+							</table>
+						</div>
+					</form>
+                 </td>
+			</tr>
+			<tr>
+				<td colspan="4"><br /></td>
+			</tr>
+			<tr>
+				<td><font style="color:Navy; font-size:14px;"><b>Origin configuration</b></font></td>
+			</tr>
+			<tr>
+				<td>
+					<form wicket:id="originForm">
+						<div wicket:id="feedback"></div>
+						<div wicket:id="rowPanel">
+							<table id="dataTable2" class="configureDropdown">
+								<tr>
+									<th></th>
+									<th>Origin</th>
+									<th>Description</th>
+								</tr>
+								<span wicket:id="rows">
+								<tr>
+									<td><input type="checkbox" name="check" id="check" wicket:id="origincheck"/>
+									</td>
+									<td nowrap="nowrap"><input name="idnumber" type="text"
+										value="In-House Born" size="10" wicket:id="originType" class="textfield_effect" maxlength="30"/>                                        <font color="#FF0000">*</font>
+									</td>
+									<td><input name="description" type="text" wicket:id="origindesc" 
+                                    class="bigtextarea_effect" maxlength="150"/>
+									</td>
+								</tr>
+								</span>
+								<tr>
+									<td><INPUT type="button"
+										value="Add Row" wicket:id="origin_addRow" class="button" /></td>
+									<td><INPUT type="button" value="Delete Row"
+										wicket:id="origin_removeRow" class="button" />
+									</td>
+									<td><INPUT type="button"
+										value="Update" class="button" wicket:id="origin_update" />
+									</td>
+								</tr>
+							</table>
+						</div>
+					</form>
+                </td>
+			</tr>
+			<tr>
+				<td colspan="4"><br />
+				</td>
+			</tr>
+			<tr>
+				<td><font style="color:Navy; font-size:14px;"><b>Milking Status Configuration</b></font></td>
+			</tr>
+			<tr>
+				<td>
+					<form wicket:id="milkingstatusForm">
+						<div wicket:id="feedback"></div>
+						<div wicket:id="rowPanel">
+					<table id="dataTable3" class="configureDropdown">
+						<tr>
+							<th></th>
+							<th>Milking Status</th>
+							<th>Description</th>
+						</tr>
+						<span wicket:id="rows">
+						<tr>
+							<td><input type="checkbox" name="check" id="check"  wicket:id="milkcheck"/>
+							</td>
+							<td nowrap="nowrap"><input name="idnumber" type="text" value="Yes" size="10"  wicket:id="status" 
+                            class="textfield_effect" maxlength="30"/><font color="#FF0000">*</font>
+							</td>
+							<td><input name="description" type="text" wicket:id="description" class="bigtextarea_effect" 
+                            maxlength="150"/>
+							</td>
+						</tr>
+						</span>
+						<tr>
+							<td><INPUT type="button"
+								value="Add Row"  class="button" wicket:id="milking_addrow"/>
+							</td>
+							<td><INPUT type="button" value="Delete Row"
+								 class="button" wicket:id="milking_removerow"/>
+							</td>
+							<td><INPUT type="button"
+								value="Update" class="button" wicket:id="milking_updaterow" />
+							</td>
+						</tr>
+					</table>
+					</div>
+                 </form>
+			</td>
+			</tr>
+			<tr>
+				<td colspan="4"><br />
+				</td>
+			</tr>
+			<tr>
+				<td><font style="color:Navy; font-size:14px;"><b>Vaccination Type Configuration</b></font></td>
+			</tr>
+			<tr>
+				<td>
+					<form wicket:id="vaccinationForm">
+						<div wicket:id="feedback"></div>
+						<div wicket:id="rowPanel">
+					<table id="dataTable4" class="configureDropdown">
+						<tr>
+							<th></th>
+							<th>Vaccination Type</th>
+							<th>Description</th>
+						</tr>
+						<span wicket:id="rows">
+						<tr>
+							<td><input type="checkbox" name="check" id="check" wicket:id="vaccinecheck" />
+							</td>
+							<td nowrap="nowrap"><input name="vaccine" type="text" value="IBR" wicket:id="vaccine" 
+                            class="textfield_effect" maxlength="30"/><font color="#FF0000">*</font>
+							</td>
+							<td><input name="description" type="text" wicket:id="description" class="bigtextarea_effect" 
+                            maxlength="150"/>
+							</td>
+						</tr>
+						</span>
+						<tr>
+							<td><INPUT type="button"
+								value="Add Row"  class="button" wicket:id="vaccine_add" />
+							</td>
+							<td><INPUT type="button" value="Delete Row"
+								 class="button" wicket:id="vaccine_remove"/>
+							</td>
+							<td><INPUT type="button"
+								value="Update" class="button" wicket:id="vaccine_update"/>
+							</td>
+						</tr>
+					</table>
+					</div>
+                 </form>
+			  </td>
+			</tr>
+			<tr>
+				<td colspan="4"><br /></td>
+			</tr>
+			<tr>
+				<td><font style="color:Navy; font-size:14px;"><b>Disease Type Configuration</b></font></td>
+			</tr>
+			<tr>
+				<td>
+					<form wicket:id="deceaseForm">
+						<div wicket:id="feedback"></div>
+						<div wicket:id="rowPanel">
+					<table id="dataTable5" class="configureDropdown">
+						<tr>
+							<th></th>
+							<th>Disease Type</th>
+							<th>Description</th>
+						</tr>
+						<span wicket:id="rows">
+						<tr>
+							<td><input type="checkbox" name="check" id="check" wicket:id="deceasecheck"/>
+							</td>
+							<td nowrap="nowrap"><input name="idnumber" type="text" value="Dystocia"
+								size="10" wicket:id="decease" class="textfield_effect" maxlength="30"/><font color="#FF0000">*</font>
+							</td>
+							<td><input name="description" type="text" wicket:id="deceasedesc" class="bigtextarea_effect" 
+                            maxlength="150">
+							</td>
+						</tr>
+						</span>
+						<tr>
+							<td><INPUT type="button"
+								value="Add Row"  class="button"  wicket:id="decease_add"/>
+							</td>
+							<td><INPUT type="button" value="Delete Row"
+								 class="button" wicket:id="decease_remove"/>
+							</td>
+							<td><INPUT type="button"
+								value="Update" class="button" wicket:id="decease_update"/>
+							</td>
+						</tr>
+					</table>
+					</div></form>
+					</td>
+			</tr>
+			<tr>
+				<td colspan="4"><br /></td>
+			</tr>
+			<tr>
+				<td><font style="color:Navy; font-size:14px;"><b>De-Worming Type Configuration</b></font></td>
+			</tr>
+			<tr>
+				<td>
+					<form wicket:id="deVermitizationForm">
+						<div wicket:id="feedback"></div>
+						<div wicket:id="rowPanel">					
+					<table id="dataTable6" class="configureDropdown">
+						<tr>
+							<th></th>
+							<th>De-Worming Type</th>
+							<th>Description</th>
+						</tr>
+						<span wicket:id="rows">
+						<tr>
+							<td><input type="checkbox" name="check" id="check" wicket:id="deVermitizationtcheck"/>
+							</td>
+							<td nowrap="nowrap"><input name="idnumber" type="text" value="Fooder"
+								size="10" wicket:id="deVermitizationType" class="textfield_effect" maxlength="30"/>
+                                <font color="#FF0000">*</font>
+							</td>
+							<td><input name="description" type="text" wicket:id="description" class="bigtextarea_effect" 
+                            maxlength="150"/>
+							</td>
+						</tr>
+						</span>
+						<tr>
+							<td><INPUT type="button"
+								value="Add Row"  class="button" wicket:id="deVermitization_add"/>
+							</td>
+							<td><INPUT type="button" value="Delete Row"
+								 class="button" wicket:id="deVermitization_del"/>
+							</td>
+							<td><INPUT type="button"
+								value="Update" class="button" wicket:id="deVermitization_update"/>
+							</td>
+						</tr>
+					</table>
+					</div>
+                    </form>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="4"><br /></td>
+			</tr>
+			<tr>
+				<td><font style="color:Navy; font-size:14px;"><b>Feed Configuration</b></font></td>
+			</tr>
+			<tr>
+				<td>
+					<form wicket:id="feedForm">
+						<div wicket:id="feedback"></div>
+						<div wicket:id="rowPanel">					
+					<table id="dataTable7" class="configureDropdown">
+						<tr>
+							<th></th>
+							<th>Feed</th>
+							<th>Description</th>
+						</tr>
+						<span wicket:id="rows">
+						<tr>
+							<td><input type="checkbox" name="check" id="check" wicket:id="feedcheck"/>
+							</td>
+							<td nowrap="nowrap"><input name="idnumber" type="text" value="Fooder"
+								size="10" wicket:id="feed" class="textfield_effect" maxlength="30"/><font color="#FF0000">*</font>
+							</td>
+							<td><input name="description" type="text" wicket:id="desc" class="bigtextarea_effect" maxlength="150"/>
+							</td>
+						</tr>
+						</span>
+						<tr>
+							<td><INPUT type="button"
+								value="Add Row"  class="button" wicket:id="feed_add"/>
+							</td>
+							<td><INPUT type="button" value="Delete Row"
+								 class="button" wicket:id="feed_del"/>
+							</td>
+							<td><INPUT type="button"
+								value="Update" class="button" wicket:id="feed_update"/>
+							</td>
+						</tr>
+					</table>
+					</div>
+                    </form>
+				</td>
+			</tr>
+			
+			<tr>
+				<td><font style="color:Navy; font-size:14px;"><b>Revenue Type Configuration</b></font></td>
+			</tr>
+			<tr>
+				<td>
+					<form wicket:id="receiptForm">
+						<div wicket:id="feedback"></div>
+						<div wicket:id="rowPanel">					
+					<table id="dataTable8" class="configureDropdown">
+						<tr>
+							<th></th>
+							<th>Revenue Type</th>
+							<th>Description</th>
+						</tr>
+						<span wicket:id="rows">
+						<tr>
+							<td><input type="checkbox" name="check" id="check" wicket:id="receiptcheck"/>
+							</td>
+							<td nowrap="nowrap"><input name="idnumber" type="text" value=""
+								size="10" wicket:id="receipt" class="textfield_effect" maxlength="30"/><font color="#FF0000">*</font>
+							</td>
+							<td><input name="description" type="text" wicket:id="desc" class="bigtextarea_effect" maxlength="150"/>
+							</td>
+						</tr>
+						</span>
+						<tr>
+							<td><INPUT type="button"
+								value="Add Row"  class="button" wicket:id="receipt_add"/>
+							</td>
+							<td><INPUT type="button" value="Delete Row"
+								 class="button" wicket:id="receipt_del"/>
+							</td>
+							<td><INPUT type="button"
+								value="Update" class="button" wicket:id="receipt_update"/>
+							</td>
+						</tr>
+					</table>
+					</div>
+                    </form>
+				</td>
+			</tr>
+			
+			
+			<tr>
+				<td><font style="color:Navy; font-size:14px;"><b>Expense Type Configuration</b></font></td>
+			</tr>
+			<tr>
+				<td>
+					<form wicket:id="expenseForm">
+						<div wicket:id="feedback"></div>
+						<div wicket:id="rowPanel">					
+					<table id="dataTable9" class="configureDropdown">
+						<tr>
+							<th></th>
+							<th>Expense Type</th>
+							<th>Description</th>
+						</tr>
+						<span wicket:id="rows">
+						<tr>
+							<td><input type="checkbox" name="check" id="check" wicket:id="expensecheck"/>
+							</td>
+							<td nowrap="nowrap"><input name="idnumber" type="text" value=""
+								size="10" wicket:id="expense" class="textfield_effect" maxlength="30"/><font color="#FF0000">*</font>
+							</td>
+							<td><input name="description" type="text" wicket:id="desc" class="bigtextarea_effect" maxlength="150"/>
+							</td>
+						</tr>
+						</span>
+						<tr>
+							<td><INPUT type="button"
+								value="Add Row"  class="button" wicket:id="expense_add"/>
+							</td>
+							<td><INPUT type="button" value="Delete Row"
+								 class="button" wicket:id="expense_del"/>
+							</td>
+							<td><INPUT type="button"
+								value="Update" class="button" wicket:id="expense_update"/>
+							</td>
+						</tr>
+					</table>
+					</div>
+                    </form>
+				</td>
+			</tr>
+			<tr>
+				<td><font style="color:Navy; font-size:14px;"><b>Vendor Type Configuration</b></font></td>
+			</tr>
+			<tr>
+				<td>
+					<form wicket:id="vendorForm">
+						<div wicket:id="feedback"></div>
+						<div wicket:id="rowPanel">					
+					<table id="dataTable10" class="configureDropdown">
+						<tr>
+							<th></th>
+							<th>Vendor Type</th>
+							<th>Description</th>
+						</tr>
+						<span wicket:id="rows">
+						<tr>
+							<td><input type="checkbox" name="check" id="check" wicket:id="vendorcheck"/>
+							</td>
+							<td nowrap="nowrap"><input name="idnumber" type="text" value=""
+								size="10" wicket:id="vendor" class="textfield_effect" maxlength="30"/><font color="#FF0000">*</font>
+							</td>
+							<td><input name="description" type="text" wicket:id="desc" class="bigtextarea_effect" maxlength="150"/>
+							</td>
+						</tr>
+						</span>
+						<tr>
+							<td><INPUT type="button"
+								value="Add Row"  class="button" wicket:id="vendor_add"/>
+							</td>
+							<td><INPUT type="button" value="Delete Row"
+								 class="button" wicket:id="vendor_del"/>
+							</td>
+							<td><INPUT type="button"
+								value="Update" class="button" wicket:id="vendor_update"/>
+							</td>
+						</tr>
+					</table>
+					</div>
+                    </form>
+				</td>
+			</tr>
+			
+			<tr>
+				<td><font style="color:Navy; font-size:14px;"><b>Asset Type Configuration</b></font></td>
+			</tr>
+			<tr>
+				<td>
+					<form wicket:id="assetForm">
+						<div wicket:id="feedback"></div>
+						<div wicket:id="rowPanel">					
+					<table id="dataTable11" class="configureDropdown">
+						<tr>
+							<th></th>
+							<th>Asset Type</th>
+							<th>Description</th>
+						</tr>
+						<span wicket:id="rows">
+						<tr>
+							<td><input type="checkbox" name="check" id="check" wicket:id="assetcheck"/>
+							</td>
+							<td nowrap="nowrap"><input name="idnumber" type="text" value=""
+								size="10" wicket:id="asset" class="textfield_effect" maxlength="30"/><font color="#FF0000">*</font>
+							</td>
+							<td><input name="description" type="text" wicket:id="desc" class="bigtextarea_effect" maxlength="150"/>
+							</td>
+						</tr>
+						</span>
+						<tr>
+							<td><INPUT type="button"
+								value="Add Row"  class="button" wicket:id="asset_add"/>
+							</td>
+							<td><INPUT type="button" value="Delete Row"
+								 class="button" wicket:id="asset_del"/>
+							</td>
+							<td><INPUT type="button"
+								value="Update" class="button" wicket:id="asset_update"/>
+							</td>
+						</tr>
+					</table>
+					</div>
+                    </form>
+				</td>
+			</tr>
+			<tr>
+				<td><font style="color:Navy; font-size:14px;"><b>Stock Category Configuration</b></font></td>
+			</tr>
+			<tr>
+				<td>
+					<form wicket:id="stockCategoryForm">
+						<div wicket:id="feedback"></div>
+						<div wicket:id="rowPanel">					
+					<table id="dataTable12" class="configureDropdown">
+						<tr>
+							<th></th>
+							<th>Stock Category</th>
+							<th>Description</th>
+						</tr>
+						<span wicket:id="rows">
+						<tr>
+							<td><input type="checkbox" name="check" id="check" wicket:id="stockcategorycheck"/>
+							</td>
+							<td nowrap="nowrap"><input name="idnumber" type="text" value=""
+								size="10" wicket:id="stock" class="textfield_effect" maxlength="30"/><font color="#FF0000">*</font>
+							</td>
+							<td><input name="description" type="text" wicket:id="desc" class="bigtextarea_effect" maxlength="150"/>
+							</td>
+						</tr>
+						</span>
+						<tr>
+							<td><INPUT type="button"
+								value="Add Row"  class="button" wicket:id="stock_add"/>
+							</td>
+							<td><INPUT type="button" value="Delete Row"
+								 class="button" wicket:id="stock_del"/>
+							</td>
+							<td><INPUT type="button"
+								value="Update" class="button" wicket:id="stock_update"/>
+							</td>
+						</tr>
+					</table>
+					</div>
+                    </form>
+				</td>
+			</tr>
+			<tr>
+				<td><font style="color:Navy; font-size:14px;"><b>Ingredient Type Configuration</b></font></td>
+			</tr>
+			<tr>
+				<td>
+					<form wicket:id="ingredientForm">
+						<div wicket:id="feedback"></div>
+						<div wicket:id="rowPanel">					
+					<table id="dataTable10" class="configureDropdown">
+						<tr>
+							<th></th>
+							<th>Ingredient Type</th>
+							<th>Description</th>
+						</tr>
+						<span wicket:id="rows">
+						<tr>
+							<td><input type="checkbox" name="check" id="check" wicket:id="ingredientcheck"/>
+							</td>
+							<td nowrap="nowrap"><input name="idnumber" type="text" value=""
+								size="10" wicket:id="ingredientType" class="textfield_effect" maxlength="30"/>
+                                <font color="#FF0000">*</font>
+							</td>
+							<td><input name="description" type="text" wicket:id="description" class="bigtextarea_effect" 
+                            maxlength="150"/>
+							</td>
+						</tr>
+						</span>
+						<tr>
+							<td><INPUT type="button"
+								value="Add Row"  class="button" wicket:id="ingredient_add"/>
+							</td>
+							<td><INPUT type="button" value="Delete Row"
+								 class="button" wicket:id="ingredient_del"/>
+							</td>
+							<td><INPUT type="button"
+								value="Update" class="button" wicket:id="ingredient_update"/>
+							</td>
+						</tr>
+					</table>
+					</div>
+                    </form>
+				</td>
+			</tr>
+		</table>
+	</div>
+</wicket:extend>

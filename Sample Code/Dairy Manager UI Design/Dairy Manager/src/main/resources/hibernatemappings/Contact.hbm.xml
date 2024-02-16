@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 19 Jun, 2012 2:27:35 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dblue.farm.Contact" table="contact" >
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="name" type="string">
+            <column name="name" length="150" />
+        </property>
+        <property name="phoneNumber1" type="string">
+            <column name="phone_number1" length="30" />
+        </property>
+        <property name="phoneNumber2" type="string">
+            <column name="phone_number2" length="30" />
+        </property>
+        <property name="phoneNumber3" type="string">
+            <column name="phone_number3" length="30" />
+        </property>
+        <property name="emailId" type="string">
+            <column name="emailId" length="150" />
+        </property>
+        <many-to-one class="com.dblue.farm.Farm" fetch="select" name="farm">
+ 			<column name="farm_id" not-null="true"/>
+		</many-to-one> 
+        <set name="addresses" table="address" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="id_contact" />
+            </key>
+            <one-to-many class="com.dblue.farm.Address" />
+        </set>
+        <set name="persons" table="person" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="id_contact" />
+            </key>
+            <one-to-many class="com.dblue.farm.Person" />
+        </set>
+        <set name="farms" table="farm" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="contact_id" />
+            </key>
+            <one-to-many class="com.dblue.farm.Farm" />
+        </set>
+        <set name="vendors" table="vendor" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="vendor_contact_id" />
+            </key>
+            <one-to-many class="com.dblue.farm.Vendor" />
+        </set>
+    </class>
+</hibernate-mapping>

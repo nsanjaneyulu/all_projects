@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Sep 15, 2012 12:11:16 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dblue.farm.Person" table="person" >
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="images" class="com.dblue.farm.Images" fetch="select">
+            <column name="photo_id" />
+        </many-to-one>
+        <many-to-one name="contact" class="com.dblue.farm.Contact" fetch="select">
+            <column name="id_contact" />
+        </many-to-one>
+        <many-to-one name="farm" class="com.dblue.farm.Farm" fetch="select">
+            <column name="id_farm" />
+        </many-to-one>
+        <property name="employeeNumber" type="string">
+            <column name="employee_number" length="30" not-null="true" />
+        </property>
+        <property name="name" type="string">
+            <column name="name" length="150" not-null="true" />
+        </property>
+        <property name="deptNumber" type="string">
+            <column name="dept_number" length="30" />
+        </property>
+        <property name="deptName" type="string">
+            <column name="dept_name" length="30" />
+        </property>
+        <property name="salary" type="big_decimal">
+            <column name="salary" precision="10" not-null="true" />
+        </property>
+        <property name="hikeDetails" type="string">
+            <column name="hike_details" length="250" />
+        </property>
+        <property name="hireDate" type="timestamp">
+            <column name="hire_date" length="19" not-null="true" />
+        </property>
+        <property name="releiveDate" type="timestamp">
+            <column name="releive_date" length="19" />
+        </property>
+        <property name="academicQual" type="string">
+            <column name="academic_qual" length="250" />
+        </property>
+        <property name="yearPassing" type="java.lang.Integer">
+            <column name="year_passing" />
+        </property>
+        <property name="sex" type="char">
+            <column name="sex" length="1" not-null="true" />
+        </property>
+        <property name="dateOfBirth" type="timestamp">
+            <column name="date_of_birth" length="19" not-null="true" />
+        </property>
+        <property name="maritalStatus" type="char">
+            <column name="marital_status" length="1" not-null="true" />
+        </property>
+        <property name="jobType" type="char">
+            <column name="job_type" length="1" not-null="true" />
+        </property>
+        <property name="bloodGroup" type="string">
+            <column name="blood_group" length="3" not-null="true" />
+        </property>
+        <property name="spouseName" type="string">
+            <column name="spouse_name" length="150" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,29 @@
+<div>
+    <app-header></app-header>
+    <div class="content">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 mt-3 mb-3 ng-scope d-block">
+                    <div class="row" id="applicants">
+                        <div class="item col-md-12 mt-4 transition border-radius" *ngFor="let item of jobProfilesData; index as i">
+                            <div class="row">
+                                <div class="col-9 m-0 bordered">
+                                    <app-card-view [cardView]="item"></app-card-view>
+                                </div>
+                                <div class="col-sm-3 m-0">
+                                    
+                                    <div class="row h-50">
+                                        <button class="d-block w-100 h-100 send"> <span>Like</span></button>
+                                    </div>
+                                    <div class="row h-50">
+                                        <button class="d-block w-100 h-100 send">Pass</button>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

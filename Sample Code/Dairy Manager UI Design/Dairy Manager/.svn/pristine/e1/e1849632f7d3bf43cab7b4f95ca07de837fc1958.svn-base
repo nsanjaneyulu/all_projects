@@ -1,0 +1,47 @@
+<wicket:extend>
+    <div id="content">
+        <form method="post" wicket:id="dailyproductionfarm">
+            <h1>Daily Milk Production by Farm Wise: <input type="text" wicket:id="effectiveDate"/></h1> 
+            <h2><div wicket:id="feedback"></div></h2>
+            <style type="text/css">
+			.list-MilkProduction h2, .list-MilkProduction h3{width:120px; height:30px;}
+			
+			</style>
+            <div class="list list-MilkProduction">
+                  <div>
+                        <h2>Yield Slot Name</h2>
+                        <h2>Yield</h2>
+                        <h2>Fat Percentile</h2>
+                        <h2>SNF</h2>
+                        <h2>CLR</h2>
+                        <h2>Rejection</h2>
+                        <h2 class="last">Deduction</h2> 
+                   </div>                                                               
+                <div wicket:id="rows" style="clear:both;">
+                <div class="list-Rows">
+                            <h3><span wicket:id="yeildSlotName" /></h3>
+                            <div wicket:id="prods">
+                                <h3><input type="text" wicket:id="yield" class="textfield_effect" maxlength="8"
+                                style="text-align:right;"/></h3>
+                                <h3><input type="text" wicket:id="fatPercentile" 
+                                class="textfield_effect" maxlength="8" style="text-align:right;"/></h3>
+                                <h3><input type="text" wicket:id="snf" class="textfield_effect" maxlength="8"
+                                style="text-align:right;"/></h3>
+                                <h3><input type="text" wicket:id="clr" class="textfield_effect" maxlength="8"
+                                style="text-align:right;"/></h3>
+                                <h3><input type="text" wicket:id="rejection" 
+                                class="textfield_effect" maxlength="8" style="text-align:right;"/></h3>
+                                <h3 class="last"><input type="text" wicket:id="deduction" 
+                                class="textfield_effect" maxlength="8" style="text-align:right;"/></h3>
+                            </div>
+                 </div>
+                 </div>
+                        <div style="clear:both;"></div>
+                        <div class="newButton">
+                        <input type="submit" value="Submit" class="button" style="margin:10px 0 0 50px;" wicket:id="save"/>
+                      
+                        </div>  
+            </div>
+        </form>	
+    </div>
+</wicket:extend>

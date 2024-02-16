@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="./css//bootstrap.min.css">
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="./js//popper.js"></script>
+  <script src="./js//bootstrap.min.js"></script>
+  <title>Hello, world!</title>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Hello, world!</h1>
+    <p><input type="text" placeholder="Type something..." id="myInput"></p>
+    <div id="result"></div>
+    <a class="clickMe">Click Me</a>
+    <p id="demo"></p>
+    <button id="myBtn">Click Me</button>
+    <div id="userData">
+      <select class="form-control" id="status" >
+
+      </select>
+    </div>
+    <div class="table-responsive">
+      <table class="table" >
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>ID</th>
+          </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      // $(".clickMe").click(function (e) {
+      //   var apiURL = "https://lpfoauhrsl.execute-api.ap-southeast-1.amazonaws.com/dm";
+      //   var getUserID = "00ae9fbf-e7f8-469e-81da-3ce16cb4c126";
+      //   e.preventDefault();
+      //   console.log("clicked");
+      //   $.ajax({
+      //     type: 'GET',
+      //     url: apiURL + '/userid/' + getUserID + '/getMalls',
+      //     contentType: "application/json",
+      //     dataType: 'json',
+      //     success: function (result) {
+      //       console.log(result);
+      //       if (result) {
+      //         tableRow(result)
+      //       }
+      //       // for(var i =0;i < result.length;i++)
+      //       // {
+      //       //     var item = result[i].outletIds;
+      //       //     console.log("item", item);
+      //       //     for(var j =0;j < item.length;j++)
+      //       //     {
+      //       //         var names = item[j].name;
+      //       //         console.log("names", names);
+      //       //     }
+
+      //       // }
+      //     }
+      //   })
+      // });
+      // var tableRow = function (data) {
+      //   // console.log(":: tableRow", data)
+      //   var returnTableTemplate = data.map(item => {
+      //     console.log(":: tableRow", item);
+      //     // $('#userData select').append(`<option onChange ="clickMe('${item.mallName}')">${item.mallName}</option>`);
+      //     $('#userData select').append(`<option value="${item.mallId}" id="${item.mallId}">${item.mallName}</option>`);
+      //   });
+      // }
+    });
+    $("#status").change(function(){
+      var status = this.value;
+     console.log(status, "status");
+    });
+
+    // input val get start
+    // $("#myInput").on("input", function(){
+    //     // Print entered value in a div box
+    //     var getval = $("#result").text($('#myInput').val());
+    // });
+    // input val get end
+
+    // reverse string start
+    // function reverse(str){
+    //   return str.split("").reverse().join("");
+    // }
+    // console.log("reverse", reverse("Hello World1"));
+    // reverse string end
+
+    // JavaScript Getters and Setters start
+    // Create an object:
+    // var person = {
+    //   firstName: "John",
+    //   lastName : "Doe",
+    //   language : "NO",
+    //   set lang(value) {
+    //     this.language = value;
+    //   }
+    // };
+    // // Set a property using set:
+    // person.lang = "hello";
+    // // Display data from the object:
+    // document.getElementById("demo").innerHTML = person.language;
+    // var person = {
+    // firstName: "John",
+    // lastName : "Doe",
+    // language : "en",
+    // get lang() {
+    //     return this.language;
+    //   }
+    // };
+    // // Display data from the object using a getter:
+    // document.getElementById("demo").innerHTML = person.lang;
+     // JavaScript Getters and Setters end
+
+     // Event Listeners start 
+    // function greetWorld() {
+    //   alert("Hello World!");
+    // }
+    // // Selecting button element
+    // var btn = document.getElementById("myBtn");
+    // // Attaching event listener
+    // btn.addEventListener("click", greetWorld);
+    // // Removing event listener
+    // btn.removeEventListener("click", greetWorld);
+    // Event Listeners end
+
+    // Defining function to get unique values from an array
+    // function getUnique(array){
+    //     var uniqueArray = [];
+        
+    //     // Loop through array values
+    //     for(var value of array){
+    //         if(uniqueArray.indexOf(value) === -1){
+    //             uniqueArray.push(value);
+    //         }
+    //     }
+    //     return uniqueArray;
+    // }
+    
+    // var names = ["John", "Peter", "Clark", "Harry", "John", "Alice"];
+    // var uniqueNames = getUnique(names);
+    // console.log(uniqueNames); // Prints: ["John", "Peter", "Clark", "Harry", "Alice"]
+    // var reversed = [];
+    // uniqueNames.forEach(function(v) {
+    //     reversed.unshift(v);
+    //   });
+    // console.log("reversed",reversed);
+
+    //Sorting an array
+    // function dscSort(array) {
+    // for (var i = 1; i < array.length; i++) {
+    //     var tmp = array[i];
+    //     for (var j = i - 1; j >= 0 && (array[j] < tmp); j--) {
+    //         array[j + 1] = array[j];
+    //     }
+    //     array[j + 1] = tmp;
+    // }
+    //   return array;
+    // }
+    // numArr  = [9, 55 ,22, 66, 11, 89];
+    // console.log(dscSort(numArr));
+
+    //Revesrse object
+    // const obj = {
+    //   "20170006": {
+    //     "id": 5
+    //   },
+    //   "20170007": {
+    //     "id" : 3
+    //   },
+    //   "20170010": {
+    //   "id": 2
+    //   },
+    //   "20170009": {
+    //     "id": 4
+    //   }
+    // }
+    // const arrayReverseObj = (obj) => {
+    //   let newArray = []
+    //   Object.keys(obj).forEach(key => {
+    //       newArray.push( {
+    //         'key':key, 
+    //         'id':obj[key].id
+    //       })
+    //     })
+    //   console.log("newArray", newArray)
+    //   return newArray  
+    // }
+    // arrayReverseObj(obj)
+
+    // Remove Duplicate Objects
+    // books = [ 
+    //   { title: "C++", author: "Bjarne" }, 
+    //   { title: "Java", author: "James" }, 
+    //   { title: "Python", author: "Guido" }, 
+    //   { title: "Java", author: "James" }, 
+    // ];              
+    // jsonObject = books.map(JSON.stringify);            
+    // uniqueSet = new Set(jsonObject); 
+    // uniqueArray = Array.from(uniqueSet).map(JSON.parse); 
+    // console.log(uniqueArray);
+  </script>
+</body>
+
+</html>

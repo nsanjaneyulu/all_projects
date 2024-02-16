@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>User Management</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link href="css/ho__Dashboard__styles.css" rel="stylesheet" type="text/css" />
+    <link href="css/dataTables.bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <style>
+        .my_footer {
+            /* position: static !important; */
+            /* bottom: 0; */
+            /* width: 100%; */
+            /* height: 90px; */
+            background-color: #000;
+            padding: 20px;
+            color: #ffffff;
+            text-align: center;
+            border-top: 3px solid #f0ad4e;
+            /* margin-top: 20px; */
+        }
+        .main__header
+        {
+            background: #ffffff;
+            border-bottom: 5px solid #f0ad4e;
+        }
+        .main__header li a
+        {
+            color: #f0ad4e !important;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        .displayFlex
+        {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .navbar-brand
+        {
+            height:auto !important;
+        }
+        .displayCollapse
+        {
+            width:100%;
+        }
+        .card-primary {
+            background-color: #20a8d8;
+        }
+         .card-inverse {
+            color: #fff;
+        }
+        .breadcrumb, .card {
+            margin-bottom: 20px;
+        }
+        .card-primary {
+            border-color: #20a8d8;
+        }
+        .card {
+            position: relative;
+            display: block;
+            /*background-color: #fff;*/
+            border: 1px solid #cfd8dc;
+        }
+        .p-b-0, .p-y-0 {
+            padding-bottom: 0 !important;
+        }
+        .card-block {
+            padding: 1.25rem;
+        }
+        .btn-group, .btn-group-vertical {
+            position: relative;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .m-b-0, .m-y-0 {
+            margin-bottom: 0!important;
+        }
+        .card-info {
+            background-color: #63c2de;
+        }
+        .card-warning {
+            background-color: #f8cb00;
+        }
+        .card-danger {
+            background-color: #f86c6b;
+        }
+    </style>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.dataTables.min.js"></script>
+    <script src="js/dataTables.bootstrap.min.js"></script>
+    <script src="js/Chart.min.js"></script>
+</head>
+<body>
+<div class="" >
+    <nav class="navbar navbar-default main__header">
+        <div class="container displayFlex">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#"><img src="img/logo__01.png" class="img-responsive brand-image" /></a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse displayCollapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#"><span >Hostel Owner Logo </span></a> </li>
+                    <li><a href="#"><span >Welcome to John</span></a></li>
+                    <li><a href="#"><span class="glyphicon glyphicon-off" aria-hidden="true"></span></a></li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+    <div class="clearfix"></div>
+    <section>
+        <div style="margin: 100px 0px;">
+        <div class="col-sm-10 col-sm-offset-1" >
+            <div class="col-sm-12" style="margin-bottom: 20px;">
+            <form class="form-inline">
+                <div class="form-group">
+                    <label for="exampleInputName2">From Date</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search for...">
+                        <span class="input-group-btn">
+        <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span></button>
+      </span>
+                    </div><!-- /input-group -->
+
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail2">To Date</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search for...">
+                        <span class="input-group-btn">
+        <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span></button>
+      </span>
+                    </div><!-- /input-group -->
+                </div>
+                <button type="submit" class="btn btn-warning">Go</button>
+            </form>
+            </div>
+            <div class="col-sm-6 col-lg-3">
+
+                <div class="card card-inverse card-primary">
+                    <div class="card-block p-b-0">
+                        <div class="btn-group pull-right">
+                            <!--<button type="button" class="btn btn-transparent active dropdown-toggle p-a-0" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
+                                <!--<i class="icon-settings"></i>-->
+                            <!--</button>-->
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                            </div>
+                        </div>
+                        <h4 class="m-b-0">9.823</h4>
+                        <p>Members online</p>
+                    </div>
+                    <div class="chart-wrapper p-x-1" style="height:70px;"><iframe class="chartjs-hidden-iframe" style="width: 100%; display: block; border: 0px; height: 0px; margin: 0px; position: absolute; left: 0px; right: 0px; top: 0px; bottom: 0px;"></iframe>
+                        <canvas id="card-chart1" class="chart" height="70" width="216" style="display: block; width: 216px; height: 70px;"></canvas>
+                    </div>
+                </div>
+            </div>
+            <!--/col-->
+            <div class="col-sm-6 col-lg-3">
+                <div class="card card-inverse card-info">
+                    <div class="card-block p-b-0">
+                        <!--<button type="button" class="btn btn-transparent active p-a-0 pull-right">-->
+                            <!--<i class="icon-location-pin"></i>-->
+                        <!--</button>-->
+                        <h4 class="m-b-0">9.823</h4>
+                        <p>Members online</p>
+                    </div>
+                    <div class="chart-wrapper p-x-1" style="height:70px;"><iframe class="chartjs-hidden-iframe" style="width: 100%; display: block; border: 0px; height: 0px; margin: 0px; position: absolute; left: 0px; right: 0px; top: 0px; bottom: 0px;"></iframe>
+                        <canvas id="card-chart2" class="chart" height="70" width="216" style="display: block; width: 216px; height: 70px;"></canvas>
+                    </div>
+                </div>
+            </div>
+            <!--/col-->
+            <div class="col-sm-6 col-lg-3">
+                <div class="card card-inverse card-warning">
+                    <div class="card-block p-b-0">
+                        <div class="btn-group pull-right">
+                            <!--<button type="button" class="btn btn-transparent active dropdown-toggle p-a-0" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
+                                <!--<i class="icon-settings"></i>-->
+                            <!--</button>-->
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                            </div>
+                        </div>
+                        <h4 class="m-b-0">9.823</h4>
+                        <p>Members online</p>
+                    </div>
+                    <div class="chart-wrapper" style="height:70px;"><iframe class="chartjs-hidden-iframe" style="width: 100%; display: block; border: 0px; height: 0px; margin: 0px; position: absolute; left: 0px; right: 0px; top: 0px; bottom: 0px;"></iframe>
+                        <canvas id="card-chart3" class="chart" height="70" width="248" style="display: block; width: 248px; height: 70px;"></canvas>
+                    </div>
+                </div>
+            </div>
+            <!--/col-->
+            <div class="col-sm-6 col-lg-3">
+                <div class="card card-inverse card-danger">
+                    <div class="card-block p-b-0">
+                        <div class="btn-group pull-right">
+                            <!--<button type="button" class="btn btn-transparent active dropdown-toggle p-a-0" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
+                                <!--<i class="icon-settings"></i>-->
+                            <!--</button>-->
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                            </div>
+                        </div>
+                        <h4 class="m-b-0">9.823</h4>
+                        <p>Members online</p>
+                    </div>
+                    <div class="chart-wrapper p-x-1" style="height:70px;"><iframe class="chartjs-hidden-iframe" style="width: 100%; display: block; border: 0px; height: 0px; margin: 0px; position: absolute; left: 0px; right: 0px; top: 0px; bottom: 0px;"></iframe>
+                        <canvas id="card-chart4" class="chart" height="70" width="216" style="display: block; width: 216px; height: 70px;"></canvas>
+                    </div>
+                </div>
+            </div>
+            <!--/col-->
+        </div>
+        </div>
+    </section>
+    <div class="clearfix"></div>
+</div>
+<!-- EMd of Content -->
+<footer class="my_footer" style="margin-top: 100px;">
+    <div class="container-fluid">
+        <span class="copyright">Copyright © 2017 Hostel Pin, Inc. All rights reserved.</span>
+    </div>
+</footer>
+
+<!-- Modal Window -->
+
+
+
+<!-- Modal -->
+
+
+<!-- Modal Window Close -->
+<script type="text/javascript">
+    $(function(){
+
+        //convert Hex to RGBA
+        function convertHex(hex,opacity){
+            hex = hex.replace('#','');
+            r = parseInt(hex.substring(0,2), 16);
+            g = parseInt(hex.substring(2,4), 16);
+            b = parseInt(hex.substring(4,6), 16);
+
+            result = 'rgba('+r+','+g+','+b+','+opacity/100+')';
+            return result;
+        }
+
+        //Cards with Charts
+        var labels = ['January','February','March','April','May','June','July'];
+        var data = {
+            labels: labels,
+            datasets: [
+                {
+                    label: 'My First dataset',
+                    backgroundColor: $.brandPrimary,
+                    borderColor: 'rgba(255,255,255,.55)',
+                    data: [65, 59, 84, 84, 51, 55, 40]
+                },
+            ]
+        };
+        var options = {
+            maintainAspectRatio: false,
+            legend: {
+                display: false
+            },
+            scales: {
+                xAxes: [{
+                    gridLines: {
+                        color: 'transparent',
+                        zeroLineColor: 'transparent'
+                    },
+                    ticks: {
+                        fontSize: 2,
+                        fontColor: 'transparent',
+                    }
+
+                }],
+                yAxes: [{
+                    display: false,
+                    ticks: {
+                        display: false,
+                        min: Math.min.apply(Math, data.datasets[0].data) - 5,
+                        max: Math.max.apply(Math, data.datasets[0].data) + 5,
+                    }
+                }],
+            },
+            elements: {
+                line: {
+                    borderWidth: 1
+                },
+                point: {
+                    radius: 4,
+                    hitRadius: 10,
+                    hoverRadius: 4,
+                },
+            }
+        };
+        var ctx = $('#card-chart1');
+        var cardChart1 = new Chart(ctx, {
+            type: 'line',
+            data: data,
+            options: options
+        });
+
+        var data = {
+            labels: labels,
+            datasets: [
+                {
+                    label: 'My First dataset',
+                    backgroundColor: $.brandInfo,
+                    borderColor: 'rgba(255,255,255,.55)',
+                    data: [1, 18, 9, 17, 34, 22, 11]
+                },
+            ]
+        };
+        var options = {
+            maintainAspectRatio: false,
+            legend: {
+                display: false
+            },
+            scales: {
+                xAxes: [{
+                    gridLines: {
+                        color: 'transparent',
+                        zeroLineColor: 'transparent'
+                    },
+                    ticks: {
+                        fontSize: 2,
+                        fontColor: 'transparent',
+                    }
+
+                }],
+                yAxes: [{
+                    display: false,
+                    ticks: {
+                        display: false,
+                        min: Math.min.apply(Math, data.datasets[0].data) - 5,
+                        max: Math.max.apply(Math, data.datasets[0].data) + 5,
+                    }
+                }],
+            },
+            elements: {
+                line: {
+                    tension: 0.00001,
+                    borderWidth: 1
+                },
+                point: {
+                    radius: 4,
+                    hitRadius: 10,
+                    hoverRadius: 4,
+                },
+            }
+        };
+        var ctx = $('#card-chart2');
+        var cardChart2 = new Chart(ctx, {
+            type: 'line',
+            data: data,
+            options: options
+        });
+
+        var options = {
+            maintainAspectRatio: false,
+            legend: {
+                display: false
+            },
+            scales: {
+                xAxes: [{
+                    display: false
+                }],
+                yAxes: [{
+                    display: false
+                }],
+            },
+            elements: {
+                line: {
+                    borderWidth: 2
+                },
+                point: {
+                    radius: 0,
+                    hitRadius: 10,
+                    hoverRadius: 4,
+                },
+            }
+        };
+        var data = {
+            labels: labels,
+            datasets: [
+                {
+                    label: 'My First dataset',
+                    backgroundColor: 'rgba(255,255,255,.2)',
+                    borderColor: 'rgba(255,255,255,.55)',
+                    data: [78, 81, 80, 45, 34, 12, 40]
+                },
+            ]
+        };
+        var ctx = $('#card-chart3');
+        var cardChart3 = new Chart(ctx, {
+            type: 'line',
+            data: data,
+            options: options
+        });
+
+        //Random Numbers
+        function random(min,max) {
+            return Math.floor(Math.random()*(max-min+1)+min);
+        }
+
+        var elements = 16;
+        var labels = [];
+        var data = [];
+
+        for (var i = 2000; i <= 2000 + elements; i++) {
+            labels.push(i);
+            data.push(random(40,100));
+        }
+
+        var options = {
+            maintainAspectRatio: false,
+            legend: {
+                display: false
+            },
+            scales: {
+                xAxes: [{
+                    display: false,
+                    barPercentage: 0.6,
+                }],
+                yAxes: [{
+                    display: false,
+                }]
+            },
+
+        };
+        var data = {
+            labels: labels,
+            datasets: [
+                {
+                    backgroundColor: 'rgba(255,255,255,.3)',
+                    borderColor: 'transparent',
+                    data: data
+                },
+            ]
+        };
+        var ctx = $('#card-chart4');
+        var cardChart4 = new Chart(ctx, {
+            type: 'bar',
+            data: data,
+            options: options
+        });
+
+        //Main Chart
+        var elements = 27;
+        var data1 = [];
+        var data2 = [];
+        var data3 = [];
+
+        for (var i = 0; i <= elements; i++) {
+            data1.push(random(50,200));
+            data2.push(random(80,100));
+            data3.push(65);
+        }
+
+        var data = {
+            labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S', 'M', 'T', 'W', 'T', 'F', 'S', 'S', 'M', 'T', 'W', 'T', 'F', 'S', 'S', 'M', 'T', 'W', 'T', 'F', 'S', 'S'],
+            datasets: [
+                {
+                    label: 'My First dataset',
+                    backgroundColor: convertHex($.brandInfo,10),
+                    borderColor: $.brandInfo,
+                    pointHoverBackgroundColor: '#fff',
+                    borderWidth: 2,
+                    data: data1
+                },
+                {
+                    label: 'My Second dataset',
+                    backgroundColor: 'transparent',
+                    borderColor: $.brandSuccess,
+                    pointHoverBackgroundColor: '#fff',
+                    borderWidth: 2,
+                    data: data2
+                },
+                {
+                    label: 'My Third dataset',
+                    backgroundColor: 'transparent',
+                    borderColor: $.brandDanger,
+                    pointHoverBackgroundColor: '#fff',
+                    borderWidth: 1,
+                    borderDash: [8, 5],
+                    data: data3
+                }
+            ]
+        };
+
+        var options = {
+            responsive: true,
+            maintainAspectRatio: false,
+            legend: {
+                display: false
+            },
+            scales: {
+                xAxes: [{
+                    gridLines: {
+                        drawOnChartArea: false,
+                    }
+                }],
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true,
+                        maxTicksLimit: 5,
+                        stepSize: Math.ceil(250 / 5),
+                        max: 250
+                    }
+                }]
+            },
+            elements: {
+                point: {
+                    radius: 0,
+                    hitRadius: 10,
+                    hoverRadius: 4,
+                    hoverBorderWidth: 3,
+                }
+            },
+        };
+        var ctx = $('#main-chart');
+        var mainChart = new Chart(ctx, {
+            type: 'line',
+            data: data,
+            options: options
+        });
+
+
+        //Social Box Charts
+        var labels = ['January','February','March','April','May','June','July'];
+
+        var options = {
+            responsive: true,
+            maintainAspectRatio: false,
+            legend: {
+                display: false,
+            },
+            scales: {
+                xAxes: [{
+                    display:false,
+                }],
+                yAxes: [{
+                    display:false,
+                }]
+            },
+            elements: {
+                point: {
+                    radius: 0,
+                    hitRadius: 10,
+                    hoverRadius: 4,
+                    hoverBorderWidth: 3,
+                }
+            }
+        };
+
+        var data1 = {
+            labels: labels,
+            datasets: [{
+                backgroundColor: 'rgba(255,255,255,.1)',
+                borderColor: 'rgba(255,255,255,.55)',
+                pointHoverBackgroundColor: '#fff',
+                borderWidth: 2,
+                data: [65, 59, 84, 84, 51, 55, 40]
+            }]
+        };
+        var ctx = $('#social-box-chart-1');
+        var socialBoxChart1 = new Chart(ctx, {
+            type: 'line',
+            data: data1,
+            options: options
+        });
+
+        var data2 = {
+            labels: labels,
+            datasets: [
+                {
+                    backgroundColor: 'rgba(255,255,255,.1)',
+                    borderColor: 'rgba(255,255,255,.55)',
+                    pointHoverBackgroundColor: '#fff',
+                    borderWidth: 2,
+                    data: [1, 13, 9, 17, 34, 41, 38]
+                }
+            ]
+        };
+        var ctx = $('#social-box-chart-2').get(0).getContext('2d');
+        var socialBoxChart2 = new Chart(ctx, {
+            type: 'line',
+            data: data2,
+            options: options
+        });
+
+        var data3 = {
+            labels: labels,
+            datasets: [
+                {
+                    backgroundColor: 'rgba(255,255,255,.1)',
+                    borderColor: 'rgba(255,255,255,.55)',
+                    pointHoverBackgroundColor: '#fff',
+                    borderWidth: 2,
+                    data: [78, 81, 80, 45, 34, 12, 40]
+                }
+            ]
+        };
+        var ctx = $('#social-box-chart-3').get(0).getContext('2d');
+        var socialBoxChart3 = new Chart(ctx, {
+            type: 'line',
+            data: data3,
+            options: options
+        });
+
+        var data4 = {
+            labels: labels,
+            datasets: [
+                {
+                    backgroundColor: 'rgba(255,255,255,.1)',
+                    borderColor: 'rgba(255,255,255,.55)',
+                    pointHoverBackgroundColor: '#fff',
+                    borderWidth: 2,
+                    data: [35, 23, 56, 22, 97, 23, 64]
+                }
+            ]
+        };
+        var ctx = $('#social-box-chart-4').get(0).getContext('2d');
+        var socialBoxChart4 = new Chart(ctx, {
+            type: 'line',
+            data: data4,
+            options: options
+        });
+
+
+
+        //Sparkline Charts
+        var labels = ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'];
+
+        var options = {
+            legend: {
+                display: false,
+            },
+            scales: {
+                xAxes: [{
+                    display:false,
+                }],
+                yAxes: [{
+                    display:false,
+                }]
+            },
+            elements: {
+                point: {
+                    radius: 0,
+                    hitRadius: 10,
+                    hoverRadius: 4,
+                    hoverBorderWidth: 3,
+                }
+            },
+        };
+
+        var data1 = {
+            labels: labels,
+            datasets: [
+                {
+                    backgroundColor: 'transparent',
+                    borderColor: $.brandPrimary,
+                    borderWidth: 2,
+                    data: [35, 23, 56, 22, 97, 23, 64]
+                }
+            ]
+        };
+        var ctx = $('#sparkline-chart-1');
+        var sparklineChart1 = new Chart(ctx, {
+            type: 'line',
+            data: data1,
+            options: options
+        });
+
+        var data2 = {
+            labels: labels,
+            datasets: [
+                {
+                    backgroundColor: 'transparent',
+                    borderColor: $.brandDanger,
+                    borderWidth: 2,
+                    data: [78, 81, 80, 45, 34, 12, 40]
+                }
+            ]
+        };
+        var ctx = $('#sparkline-chart-2');
+        var sparklineChart2 = new Chart(ctx, {
+            type: 'line',
+            data: data2,
+            options: options
+        });
+
+        var data3 = {
+            labels: labels,
+            datasets: [
+                {
+                    backgroundColor: 'transparent',
+                    borderColor: $.brandWarning,
+                    borderWidth: 2,
+                    data: [35, 23, 56, 22, 97, 23, 64]
+                }
+            ]
+        };
+        var ctx = $('#sparkline-chart-3');
+        var sparklineChart3 = new Chart(ctx, {
+            type: 'line',
+            data: data3,
+            options: options
+        });
+
+        var data4 = {
+            labels: labels,
+            datasets: [
+                {
+                    backgroundColor: 'transparent',
+                    borderColor: $.brandSuccess,
+                    borderWidth: 2,
+                    data: [78, 81, 80, 45, 34, 12, 40]
+                }
+            ]
+        };
+        var ctx = $('#sparkline-chart-4');
+        var sparklineChart4 = new Chart(ctx, {
+            type: 'line',
+            data: data4,
+            options: options
+        });
+
+        var data5 = {
+            labels: labels,
+            datasets: [
+                {
+                    backgroundColor: 'transparent',
+                    borderColor: '#d1d4d7',
+                    borderWidth: 2,
+                    data: [35, 23, 56, 22, 97, 23, 64]
+                }
+            ]
+        };
+        var ctx = $('#sparkline-chart-5');
+        var sparklineChart5 = new Chart(ctx, {
+            type: 'line',
+            data: data5,
+            options: options
+        });
+
+        var data6 = {
+            labels: labels,
+            datasets: [
+                {
+                    backgroundColor: 'transparent',
+                    borderColor: $.brandInfo,
+                    borderWidth: 2,
+                    data: [78, 81, 80, 45, 34, 12, 40]
+                }
+            ]
+        };
+        var ctx = $('#sparkline-chart-6');
+        var sparklineChart6= new Chart(ctx, {
+            type: 'line',
+            data: data6,
+            options: options
+        });
+
+    });
+
+    $('#example').DataTable();
+    /* File upload script */
+    var pmfFileupload = {
+        /*
+         Pretty mother fuckin File Upload input
+         */
+        init: function() {
+            this.cacheDom();
+            this.events();
+        },
+        cacheDom: function() {
+            this.$filePlaceholder = $('.file-placeholder');
+            this.$filelabel = this.$filePlaceholder.find('label');
+            this.$fileUpload = this.$filePlaceholder.find('.fileUpload');
+            this.$fileBrowseTxt = this.$filePlaceholder.find('.file-browse-txt');
+        },
+        events: function() {
+            this.$fileUpload.on('change', this.getFileName.bind(this));
+        },
+        getFileName: function() {
+            this.newVal = this.$fileUpload.val();
+            if (this.newVal !== "") {
+                this.$fileBrowseTxt.text(this.newVal).addClass('hasValue');
+            } else {
+                this.$fileBrowseTxt.text("Please select a file to upload");
+            }
+        }
+    };
+
+    $(document).ready(function() {
+        pmfFileupload.init();
+    });
+
+</script>
+</body>
+</html>

@@ -1,0 +1,192 @@
+<app-header></app-header>
+<div class="content">
+   <div class="container">
+      <div class="row justify-content-center">
+         <div class="col-6">
+            <div class="card w-100">
+               <div class="card-body">
+                  <form [formGroup]="editPostJobForm" (ngSubmit)="onSubmit()">
+                     <div class="form-group form_spacing">
+                        <label>Title</label> <input type="text" [(ngModel)]="stateGet.title"
+                           formControlName="title" placeholder="Title"
+                           [ngClass]="{ 'is-invalid': submitted && formGet['title'].errors }"
+                           class="form-control form_control_height transition  ">
+                        <div *ngIf="submitted && formGet['title'].errors" class="invalid-feedback">
+                           <div *ngIf="formGet['title'].errors['required']">
+                              {{authDataInfo.errorMessages.signUpFirstNameError}}
+                           </div>
+                        </div>
+                     </div>
+                     <div class="form-group form_spacing">
+                        <label>Function</label>
+                        <select [(ngModel)]="stateGet.jobFunction" formControlName="jobFunction" placeholder="Title"
+                           [ngClass]="{ 'is-invalid': submitted && formGet['jobFunction'].errors }"
+                           class="form-control form_control_height transition  ">
+                           <option [value]="stateGet.jobFunction">{{stateGet.jobFunction}}</option>
+                        </select>
+                        <div *ngIf="submitted && formGet['jobFunction'].errors" class="invalid-feedback">
+                           <div *ngIf="formGet['jobFunction'].errors['required']">
+                              {{authDataInfo.errorMessages.signUpFirstNameError}}
+                           </div>
+                        </div>
+                     </div>
+                     <div class="form-group form_spacing">
+                        <label>Location</label>
+                        <div class="ng-autocomplete">
+                           <ng-autocomplete [(ngModel)]="stateGet.location" formControlName="location" [data]="countries" [searchKeyword]="keyword"
+                              placeholder="Company Location" (selected)='selectEvent($event)'
+                              (inputChanged)='onChangeSearch($event)' (inputFocused)='onFocused($event)'
+                              historyIdentifier="countries" [itemTemplate]="itemTemplate"
+                              [notFoundTemplate]="notFoundTemplate">
+                           </ng-autocomplete>
+
+                           <ng-template #itemTemplate let-item>
+                              <a [innerHTML]="item.title"></a>
+                           </ng-template>
+
+                           <ng-template #notFoundTemplate let-notFound>
+                              <div [innerHTML]="notFound"></div>
+                           </ng-template>
+                        </div>
+                     </div>
+                     <!-- Size -->
+                     <div class="form-group form_spacing">
+                        <label>Description</label>
+                        <textarea formControlName="description" placeholder="Title" [(ngModel)]="stateGet.description"
+                           [ngClass]="{ 'is-invalid': submitted && formGet['description'].errors }"
+                           class="form-control form_control_height transition  "></textarea>
+
+                        <div *ngIf="submitted && formGet['description'].errors" class="invalid-feedback">
+                           <div *ngIf="formGet['description'].errors['required']">
+                              {{authDataInfo.errorMessages.signUpFirstNameError}}
+                           </div>
+                        </div>
+                     </div>
+                     <div class="form-group form_spacing">
+                        <label>Skills </label>
+                        <br />
+                        <span *ngFor="let item of stateGet.skills; index as i" class=" badge">
+                           {{item}} <span class="skill-add"></span>
+                        </span>
+                        <div class="force-to-the-bottom">
+                         <tag-input >
+                           <tag-input-dropdown
+                           formControlName="skills"
+                              [(ngModel)]="stateGet.skills"
+                             [autocompleteItems]="items"
+                             [showDropdownIfEmpty]="true"
+                             [dynamicUpdate]="false"
+                             (selected)='onSelect($event)'>
+                           </tag-input-dropdown>
+                         </tag-input>
+                       </div>
+                       <small>Note: Select minimum 5 skills. </small>
+                     </div>
+                     <div class="form-group form_spacing">
+                        <label>Job Type</label>
+                        <select [(ngModel)]="stateGet.jobType.jobTypeTitle" formControlName="jobType" placeholder="Title"
+                           [ngClass]="{ 'is-invalid': submitted && formGet['jobType'].errors }"
+                           class="form-control form_control_height transition  ">
+                           <option [value]="stateGet.jobType.jobTypeTitle">
+                              {{stateGet.jobType.jobTypeTitle}}</option>
+                        </select>
+                        <div *ngIf="submitted && formGet['jobType'].errors" class="invalid-feedback">
+                           <div *ngIf="formGet['jobType'].errors['required']">
+                              {{authDataInfo.errorMessages.signUpFirstNameError}}
+                           </div>
+                        </div>
+                     </div>
+                     <div class="form-group form_spacing">
+                        <label>Contact Period</label>
+                        <select [(ngModel)]="stateGet.noticePeriod" formControlName="contractNotice" placeholder="Title"
+                        [ngClass]="{ 'is-invalid': submitted && formGet['contractNotice'].errors }"
+                        class="form-control form_control_height transition  ">
+                        <option *ngFor="let item of contractJoingInfo; index as i" [value]="item.joining_info_title">
+                           {{item.joining_info_title}}</option>
+                     </select>
+                        <div *ngIf="submitted && formGet['contractNotice'].errors" class="invalid-feedback">
+                           <div *ngIf="formGet['contractNotice'].errors['required']">
+                              {{authDataInfo.errorMessages.signUpFirstNameError}}
+                           </div>
+                        </div>
+                     </div>
+                     <div class="form-group form_spacing">
+                        <label>Salary (lakhs per annum)</label>
+                        <div class="row">
+                           <div class="col-sm-6">
+                              <select class="form-control form_control_height company " [(ngModel)]="stateGet.salaryMin"
+                                 formControlName="salaryMin"
+                                 [ngClass]="{ 'is-invalid': submitted && formGet['salaryMin'].errors }">
+                                 <option *ngFor="let item of min_salary; index as i" [value]="stateGet.salaryMin">
+                                    {{item}}</option>
+                              </select>
+                           </div>
+                           <div class="col-sm-6">
+                              <select class="form-control form_control_height company " [(ngModel)]="stateGet.salaryMax"
+                                 formControlName="salaryMax"
+                                 [ngClass]="{ 'is-invalid': submitted && formGet['salaryMax'].errors }">
+                                 <option *ngFor="let item of max_salary; index as i" [value]="stateGet.salaryMax">
+                                    {{item}}</option>
+                              </select>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="form-group form_spacing">
+                        <label>Experience (years)</label>
+                        <div class="row">
+                           <div class="col-sm-6">
+                              <select class="form-control form_control_height company "
+                                 [(ngModel)]="stateGet.experienceMin" formControlName="experienceMin"
+                                 [ngClass]="{ 'is-invalid': submitted && formGet['experienceMin'].errors }">
+                                 <option *ngFor="let item of min_experience; index as i"
+                                    [value]="stateGet.experienceMin">{{item}}</option>
+                              </select>
+                           </div>
+                           <div class="col-sm-6">
+                              <select class="form-control form_control_height company "
+                                 [(ngModel)]="stateGet.experienceMax" formControlName="experienceMax"
+                                 [ngClass]="{ 'is-invalid': submitted && formGet['experienceMax'].errors }">
+                                 <option *ngFor="let item of max_experience; index as i"
+                                    [value]="stateGet.experienceMax">{{item}}</option>
+                              </select>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="form-group form_spacing">
+                        <label>Preferred Qualification (Optional)</label>
+                        <select [(ngModel)]="stateGet.degree" formControlName="degree" placeholder="Title"
+                           [ngClass]="{ 'is-invalid': submitted && formGet['title'].errors }"
+                           class="form-control form_control_height transition  ">
+                           <option *ngFor="let item of degrees; index as i" value="{{item.degreeId}}">{{item.title}}
+                           </option>
+                        </select>
+                        <div *ngIf="submitted && formGet['jobFunction'].errors" class="invalid-feedback">
+                           <div *ngIf="formGet['jobFunction'].errors['required']">
+                              {{authDataInfo.errorMessages.signUpFirstNameError}}
+                           </div>
+                        </div>
+                     </div>
+                     <div class="form-group form_spacing">
+                        <label>Notice Period (Optional)</label>
+                        <select [(ngModel)]="stateGet.noticePeriod" formControlName="noticePeriod" placeholder="Title"
+                           [ngClass]="{ 'is-invalid': submitted && formGet['title'].errors }"
+                           class="form-control form_control_height transition  ">
+                           <option *ngFor="let item of joiningInfo; index as i" value="{{item.joining_info_title}}">
+                              {{item.joining_info_title}}</option>
+                        </select>
+                        <div *ngIf="submitted && formGet['jobFunction'].errors" class="invalid-feedback">
+                           <div *ngIf="formGet['jobFunction'].errors['required']">
+                              {{authDataInfo.errorMessages.signUpFirstNameError}}
+                           </div>
+                        </div>
+                     </div>
+
+                     <div class="form-group"> <button type="submit"
+                           class="btn btn-primary btn-lg btn-save">Save</button> </div>
+                  </form>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>

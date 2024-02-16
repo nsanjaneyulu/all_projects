@@ -1,0 +1,95 @@
+<div class="main_container">
+   <div class="side_form bg-white py-5 px-5">
+      <div class="" tabindex="1">
+         <app-logo></app-logo>
+          <div class="d-flex h-100 justify-content-center align-items-center">
+             <div class="w-100">
+                <h1 class="text-center title">{{authDataInfo.authInfo.signUpTitle}}</h1>
+                <h2 class="description text-center mt-2 description">{{authDataInfo.authInfo.signUpSubTitle}}</h2>
+                <div class="form mt-3">
+                   <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+                      <!-- First Name -->
+                      <div class="form-group form_spacing">
+                         <input type="text" formControlName="firstname" class="form-control with-icon form_control_height icon-user " placeholder="{{authDataInfo.placeHolders.signUpFirstName}}"
+                         [ngClass]="{ 'is-invalid': submitted && formGet['firstname'].errors }">
+                         <div *ngIf="submitted && formGet['firstname'].errors" class="invalid-feedback">
+                           <div *ngIf="formGet['firstname'].errors['required']">{{authDataInfo.errorMessages.signUpFirstNameError}}
+                           </div>
+                         </div>
+                      </div>
+                      <!-- Last Name -->
+                      <div class="form-group form_spacing">
+                         <input type="text" formControlName="lastname" class="form-control with-icon form_control_height icon-user " placeholder="{{authDataInfo.placeHolders.signUpLastName}}"
+                         [ngClass]="{ 'is-invalid': submitted && formGet['lastname'].errors }">
+                         <div *ngIf="submitted && formGet['lastname'].errors" class="invalid-feedback">
+                           <div *ngIf="formGet['lastname'].errors['required']">{{authDataInfo.errorMessages.signUpLastNameError}}
+                           </div>
+                         </div>
+                      </div>
+                      <!-- Email -->
+                      <div class="form-group form_spacing">
+                         <input type="email" formControlName="email" class="form-control with-icon form_control_height icon-mail" placeholder="{{authDataInfo.placeHolders.signUpWorkEmail}}"
+                         [ngClass]="{ 'is-invalid': submitted && formGet['email'].errors }">
+                         <div *ngIf="submitted && formGet['email'].errors" class="invalid-feedback">
+                           <div *ngIf="formGet['email'].errors['required']">{{authDataInfo.errorMessages.signUpWorkEmailError}}
+                           </div>
+                         </div>
+                      </div>
+                      <!-- Password -->
+                      <div class="form-group form_spacing">
+                         <input type="password" formControlName="password" class="form-control with-icon form_control_height icon-password" placeholder="{{authDataInfo.placeHolders.signUpPassword}}"
+                         [ngClass]="{ 'is-invalid': submitted && formGet['password'].errors }">
+                         <div *ngIf="submitted && formGet['password'].errors" class="invalid-feedback">
+                           <div *ngIf="formGet['password'].errors['required']">{{authDataInfo.errorMessages.signUpPasswordError}}
+                           </div>
+                         </div>
+                      </div>
+                      <!-- Phone -->
+                      <div class="form-group form_spacing">
+                         <input type="text" formControlName="telephone" class="form-control with-icon form_control_height icon-phone " placeholder="{{authDataInfo.placeHolders.signUpPhoneNumber}}"
+                         [ngClass]="{ 'is-invalid': submitted && formGet['telephone'].errors }">
+                         <div *ngIf="submitted && formGet['telephone'].errors" class="invalid-feedback">
+                           <div *ngIf="formGet['telephone'].errors['required']">{{authDataInfo.errorMessages.signUpPhoneNumberError}}
+                           </div>
+                         </div>
+                      </div>
+                      <!-- Company Name -->
+                      <div class="form-group form_spacing">
+                         <input type="text" class="form-control with-icon form_control_height icon-company" formControlName="recruiterCompanyName" placeholder="{{authDataInfo.placeHolders.signUpCompanyName}}"
+                         [ngClass]="{ 'is-invalid': submitted && formGet['recruiterCompanyName'].errors }">
+                         <div *ngIf="submitted && formGet['recruiterCompanyName'].errors" class="invalid-feedback">
+                           <div *ngIf="formGet['recruiterCompanyName'].errors['required']">{{authDataInfo.errorMessages.signUpCompanyNameError}}
+                           </div>
+                         </div>
+                      </div>
+                      <!-- Role -->
+                      <div class="form-group form_spacing">
+                         <select formControlName="jobRoleId" class="form-control form_control_height .with-icon icon-role" [ngClass]="{ 'is-invalid': submitted && formGet['jobRoleId'].errors }">
+                            <option value="">Your Role</option>
+                            <option value="1" >Human Resources
+                            </option>
+                            <option value="2" >Founder </option>
+                            <option value="3" >HR Consultants
+                            </option>
+                            <option value="4" >Hiring Manager
+                            </option>
+                         </select>
+                         <div *ngIf="submitted && formGet['jobRoleId'].errors" class="invalid-feedback">
+                           <div *ngIf="formGet['jobRoleId'].errors['required']">{{authDataInfo.errorMessages.signUpCompanyNameError}}
+                           </div>
+                         </div>
+                      </div>
+                      <div class="form-group form_spacing mt-4"> <button id="btn-fbsignup" type="submit"
+                        class="btn btn-primary btn-lg btn_auth btn-block">{{authDataInfo.authInfo.signUpText}}</button>
+                      </div>
+                      <div class="form-group form_spacing"> <small
+                         class="form-text text-muted text-center d-block mt-3 form-bottom w-100 signup-a">{{authDataInfo.authInfo.signUpSubText}} <a
+                         [routerLink]="['/login']" data-event="e_login_header_web">{{authDataInfo.authInfo.loginText}}</a>.</small> </div>
+                   </form>
+                </div>
+             </div>
+          </div>
+       </div>
+    </div>
+    <app-right-content [type] = "'signup'"></app-right-content>
+ </div>

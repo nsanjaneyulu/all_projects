@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h3>We are in Landing Page</h3>
+  <button ion-button tooltip="I'm a tooltip below a button" positionV="bottom" arrow>
+      Press me to see a tooltip
+    </button>
+  
+  <div padding>
+  <button ion-button secondary (click)="goToEventsPage()">Go To Events</button>
+  </div>
+  <div padding>
+  <button ion-button secondary (click)="goToAlertsPage()">Go To Alerts</button>
+  </div>
+  <div padding>
+    <button ion-button secondary (click)="goToListPage()">Go To List</button>
+    </div>
+    <div padding>
+        <button ion-button secondary (click)="goToSegmentPage()">Go To Segment</button>
+        </div>
+        <div padding>
+            <button ion-button secondary (click)="goToTabsPage()">Go To Tabs</button>
+            </div>
+            <div padding>
+              <button ion-button secondary (click)="goToGridPage()">Go To Grid</button>
+              </div>
+              <div padding>
+                  <button ion-button secondary (click)="goToModalPage()">Go To Modal</button>
+                  </div>
+                  <div padding>
+                      <button ion-button secondary (click)="goToSampleFormPage()">Go To Sample Form</button>
+                      </div>
+</ion-content>

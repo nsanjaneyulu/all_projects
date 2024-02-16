@@ -1,0 +1,7 @@
+{
+  "name": "sidemenuApp",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

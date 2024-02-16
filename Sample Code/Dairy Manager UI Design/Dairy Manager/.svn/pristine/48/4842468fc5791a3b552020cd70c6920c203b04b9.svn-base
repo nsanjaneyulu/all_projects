@@ -1,0 +1,347 @@
+<wicket:extend>
+        <div id="content">
+        	<div class="bread-crumb">
+            	<h1>Summary</h1>
+            </div>
+            <div class="summaryPage">
+            
+            
+            <!--summary box 1--->
+            <div class="summarybox">
+                
+                <div class="summaryLiveStocksBox">
+                  <div class="summaryHeader"><h1>Live Stock By State</h1></div>  
+                      <div class="containerDivSummary">
+                          
+                           <div class="rowDivHeaderSummary">
+                                <div>Live Stock Count</div>
+                                 <div wicket:id="totalCount_bystate"></div>
+                           </div>
+                        
+                           <div class="rowDivSummary"  wicket:id="ls_rows">
+                                <div wicket:id="state"></div> 
+                                <div wicket:id="count"></div>
+                           </div>
+                       </div>
+                </div>  
+            </div> 
+            <!--summary box 1--->
+            
+         <!--summary box 2--->      
+         <div class="summarybox">
+             
+             <div class="summaryLiveStocksBox">  
+             	<div class="summaryHeader"><h1>Live Stock By Sex</h1></div>
+                        <div class="containerDivSummary">
+                          
+                           <div class="rowDivHeaderSummary">
+                             <div>Live Stock Count</div>
+                             <div wicket:id="totalCount_bysex"></div>
+                           </div>
+                        
+                           <div class="rowDivSummary" wicket:id="lss_rows">
+                                <div wicket:id="sex"></div>
+                                <div wicket:id="count"></div>
+                           </div>
+                        </div>
+                
+                </div>
+            </div>
+            <!--summary box 2--->
+            
+            <!--summary box 3--->
+            <div class="summarybox">
+                
+                <div class="summaryLiveStocksBox"> 
+                  <div class="summaryHeader"><h1>Live Stock By Breed</h1></div>	          
+                  <div class="containerDivSummary">
+                             
+                               <div class="rowDivHeaderSummary">
+                               <div>Live Stock Count</div>
+                                <div wicket:id="totalCount_breedtype"></div>
+                               </div>
+                            
+                               <div class="rowDivSummary" wicket:id="bt_rows" >
+                                <div wicket:id="state"></div>
+                                <div wicket:id="count"></div>
+                               </div>
+                        </div>
+               </div> 
+           </div>
+           <!--summary box 3--->
+            
+          <!--summary box 4--->
+          <div class="summarybox">
+             
+              <div class="summaryLiveStocksBox"> 
+                <div class="summaryHeader"><h1>Vaccinnation Details</h1></div>	   
+                <div class="containerDivSummary">
+                        
+                       
+                           <div class="rowDivHeaderSummary">
+                                <div wicket:id="vaccine_orderbycode">Live Stock Code</div>
+                                            <div>Last Vaccination Date</div>
+                                            <div>Next Vaccination Date</div>
+                            
+                           </div>
+                        
+                           <div class="rowDivSummary" wicket:id="vaccination_due_rows">
+                                <div><a href="#" wicket:id="livestock_edit"><span wicket:id="lsLiveStockCode"></span></a></div>
+                                <div><span wicket:id="lastVaccinationDate"></span></div>
+                                <div><span wicket:id="nextVaccinationDate"></span></div>
+                           </div>
+                            <p wicket:id="vacci_navigator" class="health-Navigation">[dataview navigator]
+                                            </p>
+                    </div>
+                 
+                </div>
+               
+            </div>
+            <!--summary box 4--->
+            
+            <!--summary box 5--->
+            <div class="summarybox">
+                
+                 <div class="summaryLiveStocksBox"> 
+                     <div class="summaryHeader"><h1>De-Worming Details</h1></div>	
+                     <div class="containerDivSummary">
+                        
+                       
+                        <div class="rowDivHeaderSummary">
+                        <div wicket:id="deworm_orderbycode">Live Stock Code</div>
+                        <div>Last De-Worming Date</div>
+                        <div>Next De-Worming Date</div>
+                        </div>
+                        
+                        <div class="rowDivSummary" wicket:id="deworm_due_rows">
+                        <div><a href="#" wicket:id="livestock_edit"><span wicket:id="lsLiveStockCode" /></a></div>
+                        <div><span wicket:id="lastVermDate"></span></div>
+                        <div><span wicket:id="nextVermDate"></span></div>
+                        </div>
+                         <p wicket:id="deworm_navigator" class="health-Navigation">[dataview navigator]</p>
+                        </div>
+                        
+                 </div>
+             </div>
+
+			<!--summary box 5--->
+            
+            <!--summary box 6--->
+            <div class="summarybox">
+                   
+                    <div class="summaryLiveStocksBox">   
+                         <div class="summaryHeader"><h1>Drying Off  Herds</h1>  </div>       
+                        <div class="containerDivSummary">
+                        
+                            
+                            <div class="rowDivHeaderSummary">
+                            <div wicket:id="stop_milk_orderbycode">Live Stock Code</div>
+                            <div>Conceived Date</div>
+                            <div>Drying Off Herds <br />Date</div>
+                            
+                            </div>
+                            
+                            
+                            <div class="rowDivSummary" wicket:id="stopmilking_rows">
+                            <div><a href="#" wicket:id="livestock_edit"><span wicket:id="lsLiveStockCode" /></a></div>
+                            <div><span wicket:id="conceivedDate"></span></div>
+                            <div><span wicket:id="stopMilkingDate"></span></div>
+                            
+                            </div>
+                            <p wicket:id="stop_milking_navigator" class="health-Navigation">[dataview navigator]</p>
+                        </div>
+                    
+                    </div>
+                </div>
+			
+            <!--summary box 6--->
+            
+            <!--summary box 7--->
+             <div class="summarybox">
+             	 
+                <div class="summaryLiveStocksBox"> 
+                <div class="summaryHeader"><h1>Stop Feeding Calves</h1></div>  
+               <div class="containerDivSummary">
+                               
+                                
+                               <div class="rowDivHeaderSummary">
+                                            <div wicket:id="stop_feeding_orderbycode">Live Stock Code</div>
+                                                <div>Birth Date</div>
+                                                <div>Calf (s) Feeding Stop  Date</div>
+                                    
+                               </div>
+                            
+                               <div class="rowDivSummary" wicket:id="stopfeeding_rows">
+                               
+                                  <div><a href="#" wicket:id="livestock_edit"><span wicket:id="lsLiveStockCode" /></a></div>
+                                  <div><span wicket:id="birthDate"></span></div>
+                                  <div><span wicket:id="stopFeedingDate"></span></div>
+                                
+                               </div>
+                               <p wicket:id="stop_feeding_navigator" class="health-Navigation">[dataview navigator]</p>
+                        </div>
+            
+               </div>
+               </div>
+               <!--summary box 7--->
+               
+               <!--summary box 8--->
+                <div class="summarybox">
+                
+                    <div class="summaryLiveStocksBox"> 
+                       <div class="summaryHeader"><h1>Employee Summary</h1></div>
+                            <div class="containerDivSummary">
+                                      
+                                       <div class="rowDivHeaderSummary">
+                                            <div class="health-Data">No of Employees</div>
+                                            <div wicket:id="totalCount_person" class="health-Count"></div>
+                                       </div>
+                                    
+                                       <div class="rowDivSummary" wicket:id="person_rows" >
+                                              <div><div wicket:id="state" class="healthRows-Data"></div>
+                                              <span wicket:id="count" class="healthRows-Count"></span></div>
+                                       </div>
+                            </div>
+                    
+                    
+        
+        
+                    </div>
+              </div>
+            <!--summary box 8--->
+            
+            <!--summary box 9--->
+			<div class="summarybox">
+               
+                 <div class="summaryLiveStocksBox"> 
+                 <div class="summaryHeader">  <h1>Milk Yeilding: <span wicket:id="ytdYield"></span></h1></div>
+               
+                   
+                    <div class="containerDivSummary">
+                            
+                               <div class="rowDivHeaderSummary">
+                                    <div>Month</div>
+                                    <div>MilkYeilding</div>
+                                    <div>&nbsp;</div>
+                                    <div>&nbsp;</div>
+                               </div>
+                                <div class="rowDivHeaderSummary">
+                                    <div> <span>&nbsp;</span></div>
+                                    <div wicket:id="milk_header"><span wicket:id="milk_headr_id"></span></div>						
+                                    <div>Total</div>
+                               </div>
+                            
+                               <div class="rowDivSummary" wicket:id="milk_rows">
+                                      <div><span wicket:id="month"></span></div>
+                                      <div wicket:id="slotYield"><span wicket:id="slotYield"></span></div>
+                                      <div><span wicket:id="yield"></span></div>
+                               </div>
+                        </div>
+                
+                
+                    </div>
+                </div>
+                <!--summary box 9--->
+                
+                
+                <!--summary box 10--->
+    
+                 <div class="summarybox">
+                 	
+                     <div class="summaryLiveStocksBox"> 
+                      <div class="summaryHeader"> <h1>Expense Report</h1></div>
+                   <div class="containerDivSummary">
+                           
+                           <div class="rowDivHeaderSummary">
+                                <div class="netResult-Data">Expense YTD</div>
+                                <div wicket:id="expense_count"></div>
+                           </div>
+                        
+                           <div class="rowDivSummary" wicket:id="expense_rows" >
+                                <div wicket:id="state"></div>
+                                <div wicket:id="count"></div>
+                           </div>
+                        </div>
+            	</div>
+                </div>
+                <!--summary box 10--->
+      
+      			<!--summary box 11--->
+                <div class="summarybox">
+                	
+                    <div class="summaryLiveStocksBox"> 
+                    <div class="summaryHeader"><h1>Revenue Report</h1></div>
+              		<div class="containerDivSummary">
+                       
+                           <div class="rowDivHeaderSummary">
+                                <div class="netResult-Data">Revenue YTD</div>
+                                <div wicket:id="purcchase_count" class="netResult-Count"></div>
+                           </div>
+                        
+                           <div class="rowDivSummary" wicket:id="purchase_rows" >
+                                <div wicket:id="state" class="netResultRows-Data"></div>
+                                <div wicket:id="count" class="netResultRows-Count"></div>
+                           </div>
+                    </div>
+                    
+              
+           		 </div>
+            </div>  
+            <!--summary box 11--->
+      
+      
+        <!--summary box 12--->
+        <div class="summarybox">
+                   
+                
+                <div class="summaryLiveStocksBox">  
+                <div class="summaryHeader"> <h1>Net Profit / Loss</h1></div>    
+                    <div class="containerDivSummary">
+                        
+                           <div class="rowDivHeaderSummary">
+                                <div class="netResult-Data">Profit/Loss YTD</div>
+                                <div wicket:id="netprofit_loss_count" class="netResult-Count"></div>
+                           </div>
+                        
+                           <div class="rowDivSummary" wicket:id="net_profit_loss_rows">
+                                <div wicket:id="state"></div>
+                                <div wicket:id="count" class="netResultRows-Count"></div>
+                           </div>
+                    </div>
+                    
+                    
+             </div>   
+     </div> 
+     <!--summary box 12--->   
+            
+            
+            <!--summary box 13--->
+            <div class="summarybox2">
+            <div class="summaryHeader">  <h1>Feeding Summary</h1></div>
+                   
+                <div class="containterLS" style="border:1px solid #B1B1B1;">
+                                    <div class="containerDivSummary">
+                            
+                           <div class="rowDivHeaderSummary">
+                                  <div>Month</div>
+                                  <div>Feeding</div>
+                                  <!--<div><span>&nbsp;</span></div> -->
+                                  <div wicket:id="feed_header"><span wicket:id="feed_headr_id">&nbsp;</span></div>													
+                                        
+                           </div>
+                        
+                           <div class="rowDivSummary" wicket:id="feeding_rows">
+                            <div><span wicket:id="month"></span></div>
+                            <div wicket:id="feeding_columns"><span wicket:id="column"></span></div>
+                           </div>
+                        </div>
+                </div>
+            </div>
+            <!--summary box 13--->
+            
+            
+            
+
+       </div>
+    </div>
+</wicket:extend>

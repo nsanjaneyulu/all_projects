@@ -1,0 +1,21 @@
+<svg id="chart" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <path id="Path_635" data-name="Path 635" class="cls-1" d="M217.429,192.714a.714.714,0,1,1-.714-.714A.714.714,0,0,1,217.429,192.714Zm0,0" transform="translate(-196.714 -174.857)"/>
+  <path id="Path_636" data-name="Path 636" class="cls-1" d="M81.429,208.714a.714.714,0,1,1-.714-.714A.714.714,0,0,1,81.429,208.714Zm0,0" transform="translate(-72.857 -189.429)"/>
+  <path id="Path_637" data-name="Path 637" class="cls-1" d="M345.429,96.714a.714.714,0,1,1-.714-.714A.714.714,0,0,1,345.429,96.714Zm0,0" transform="translate(-313.286 -87.429)"/>
+  <path id="Path_638" data-name="Path 638" class="cls-1" d="M40,0H0V4.286H40ZM2.857,2.857H1.429V1.429H2.857Zm2.857,0H4.286V1.429H5.714Zm2.857,0H7.143V1.429H8.571Zm0,0"/>
+  <path id="Path_639" data-name="Path 639" class="cls-1" d="M273.429,136.714a.714.714,0,1,1-.714-.714A.714.714,0,0,1,273.429,136.714Zm0,0" transform="translate(-247.714 -123.857)"/>
+  <path id="Path_640" data-name="Path 640" class="cls-1" d="M72,304h4.286v10H72Zm0,0" transform="translate(-65.571 -276.857)"/>
+  <path id="Path_641" data-name="Path 641" class="cls-1" d="M153.429,144.714a.714.714,0,1,1-.714-.714A.714.714,0,0,1,153.429,144.714Zm0,0" transform="translate(-138.429 -131.143)"/>
+  <path id="Path_642" data-name="Path 642" class="cls-1" d="M0,98.286H40V64H0ZM7.857,75.429a2.11,2.11,0,0,1,1.029.275L12.3,72.661a2.148,2.148,0,1,1,4.019-.17l2.491,1.869a2.107,2.107,0,0,1,2.1-.146l2.153-2.153a2.132,2.132,0,0,1,3.34-2.518l2.91-1.619a2.132,2.132,0,0,1-.036-.352,2.166,2.166,0,1,1,.731,1.6l-2.91,1.619a2.127,2.127,0,0,1-3.025,2.281l-2.153,2.153a2.115,2.115,0,0,1,.214.918,2.143,2.143,0,1,1-4.179-.634l-2.491-1.866a2.1,2.1,0,0,1-2.214.086L9.841,76.771a2.117,2.117,0,0,1,.159.8,2.143,2.143,0,1,1-2.143-2.143Zm-5,20H5V84h5.714V78.286h7.143v4.286h4.286V79.714h5.714V74H35V95.429h2.143v1.429H2.857Zm0,0" transform="translate(0 -58.286)"/>
+  <path id="Path_643" data-name="Path 643" class="cls-1" d="M328,192h4.286v20H328Zm0,0" transform="translate(-298.714 -174.857)"/>
+  <path id="Path_644" data-name="Path 644" class="cls-1" d="M264,256h4.286v14.286H264Zm0,0" transform="translate(-240.429 -233.143)"/>
+  <path id="Path_645" data-name="Path 645" class="cls-1" d="M200,288h4.286v11.429H200Zm0,0" transform="translate(-182.143 -262.286)"/>
+  <path id="Path_646" data-name="Path 646" class="cls-1" d="M136,240h4.286v15.714H136Zm0,0" transform="translate(-123.857 -218.571)"/>
+</svg>

@@ -1,0 +1,29 @@
+<wicket:extend>
+	<div id="content">
+    <div class="bread-crumb">
+            	<h1>Live Stock Management / Live Stock Promotion List</h1>
+            </div>
+	<div wicket:id="yearselection">
+			<span wicket:id="yearrepeater"><a wicket:id="year"><span
+					wicket:id="yerlabel" />
+			</a>
+			</span>
+		</div>
+	<h2><div wicket:id="feedback"></div></h2>       
+        <div class="containerDiv" wicket:id="reportpanel">
+           <div class="rowDivHeader">
+           		<div>Live Stock Code</div>
+				<div>Old State</div>
+				<div>New State</div>	
+				<div>Promotion Date</div>	
+           </div>
+        
+           <div class="rowDiv" wicket:id="rows" >
+           		<div><span wicket:id="liveStockCode" /></div>
+				<div><span wicket:id="oldState" /></div>	
+				<div><span wicket:id="newState" /></div>				
+				<div><span wicket:id="promotionDate" /></div>
+           </div>
+		</div>
+	</div>
+</wicket:extend>

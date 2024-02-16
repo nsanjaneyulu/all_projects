@@ -1,0 +1,46 @@
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th *ngFor="let disCol of tableColumns let colIndex = index;">{{ disCol.header }}</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let disCol of tableData;">
+            <td *ngFor="let disColData of tableColumns;">
+                <span *ngIf="disColData.isLink">
+                        <span *ngIf="disColData.isLinkActions.title">
+                            <a class="btn_table" (click)="navigateWithState(disColData, disCol)">
+                                {{disColData.isLinkActions.title}}
+                            </a>
+                        </span>
+                       
+                        <span *ngIf="!disColData.isLinkActions.title">
+                            <a (click)="navigateWithState(disColData, disCol)">
+                                {{ disCol[disColData.headrekey] }}
+                            </a>
+                        </span>
+                </span>
+                <span
+                 *ngIf="!disColData.isLink">            
+                        {{ disCol[disColData.headrekey] }}
+                </span>
+                <span *ngIf="disColData.isImg">            
+                    <img class="activity_user_img" src="https://devapp.workruit.com/images/user_logo.png" />
+            </span>
+                <!-- <span *ngIf="!disColData.isLink; else link">
+                    {{ disCol[disColData.headrekey] }}
+                </span>
+                <span *ngIf="disColData.isLink;">
+                    <a [routerLink]="[disColData.isLinkActions.link]">
+                        {{disColData.isLinkActions.title}}
+                    </a>
+                </span> -->
+                <!-- <ng-template #link>
+                    <a (click)="navigateWithState(disCol)">
+                        {{ disCol[disColData.headrekey] }}
+                    </a>
+                </ng-template> -->
+            </td>
+        </tr>
+    </tbody>
+</table>

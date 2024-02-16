@@ -1,0 +1,101 @@
+<main class="main_Content">
+  <!-- <div *ngFor="let order of ordersThisWeek">
+    {{order.products}}
+  </div> -->
+  <h1 class="table_Heading">Orders Table</h1>
+  <form [formGroup]="searchForm" class="signIn_Form" (ngSubmit)="onSearch()">
+    <div class="form-group col-md-3">
+      <label for="startdateId">Start Date</label>
+
+      <input
+        id="startdateId"
+        class="form-control"
+        #datepickerYMD="bsDatepicker"
+        bsDatepicker
+        formControlName="startdate"
+        autocomplete="off"
+        [bsConfig]="bsDateConfig"
+      />
+    </div>
+    <div class="form-group col-md-3">
+      <label for="enddateId">End Date</label>
+      <input
+        id="enddateId"
+        class="form-control"
+        #datepickerYMD="bsDatepicker"
+        bsDatepicker
+        autocomplete="off"
+        formControlName="enddate"
+        [bsConfig]="bsDateConfig"
+      />
+    </div>
+    <div class="col-md-3 text-left search_sec">
+      <button
+        class="btn btn-success searchButton"
+        type="submit"
+        [disabled]="!searchForm?.valid"
+        [ngClass]="{ disabled: !searchForm?.valid }"
+      >
+        Search
+      </button>
+    </div>
+    <div class="col-md-3 text-right csv_btn">
+      <button
+        (click)="downloadCSV()"
+        class="btn btn-info"
+        data-toggle="tooltip"
+        data-placement="top"
+        title="Download's data in Grid"
+      >
+        Download CSV
+      </button>
+    </div>
+  </form>
+  <div class="table-responsive">
+    <table class="table table-fixed order_table">
+      <thead class="thead-light">
+        <tr>
+          <th>Order #</th>
+          <th>Firstname</th>
+          <th>Lastname</th>
+          <th>E-mail</th>
+          <th>Phone #</th>
+          <!-- <th>Promo code field</th> -->
+          <th>Quantity</th>
+          <th>Sales totals</th>
+
+          <!-- <th>Box Type</th> -->
+          <th>Pick-up Date</th>
+          <th class="long_th">
+            Pick-up location
+            <div></div>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of orderList; let i = index">
+          <td>{{ item.transactionId }}</td>
+          <td>{{ item.firstName }}</td>
+          <td>{{ item.lastName }}</td>
+          <td>{{ item.email }}</td>
+          <td>{{ item.phone }}</td>
+          <!-- <td>{{item.promoCode}}</td> -->
+          <td>{{ item.quantity }}</td>
+          <td>{{ item.amountPaid }}</td>
+          <!-- <td>{{item.boxType}}</td> -->
+          <td>{{ item.pickupDate | date: "yyyy-MM-dd" }}</td>
+          <td class="long_th--text">{{ item.pickupLocation }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <ngx-spinner
+    class="spinner_Color"
+    bdColor="rgba(51,51,51,0.8)"
+    size="medium"
+    color="#fff"
+    type="line-scale-party"
+  >
+    <p class="spinnerText_Color">Loading...</p>
+  </ngx-spinner>
+</main>

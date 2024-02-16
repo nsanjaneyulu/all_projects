@@ -1,0 +1,7 @@
+<div>parent works!</div>
+ <div> Enter a value:
+	<input type="text" [(ngModel)]="myTextVal"></div>
+ <div>   <button (click)="sendTextValue()">Pass Value to Subject Observable</button></div>
+ <div>   Value emitted from child using @Output: <strong>{{valueFromChild}}</strong></div>
+
+   <div>     <app-child [myInputVal]="myTextVal" (myOutputVal)="readOutputValueEmitted($event)"></app-child></div>

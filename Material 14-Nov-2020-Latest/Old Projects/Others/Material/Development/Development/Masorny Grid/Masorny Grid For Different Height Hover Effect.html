@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Masorny Grid Different Height HOVER Effect</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, maximum-scale=1.0, minimum-scale=1.0">
+<link rel="stylesheet" media="screen" href="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="http://masonry.desandro.com/masonry.pkgd.min.js"></script>
+<style>
+*
+{
+	padding:0;
+	margin:0;
+}
+.item
+{
+  width:auto;
+  height:auto;
+  border: 2px solid hsla(0, 0%, 0%, 0.5);
+  margin:5px;
+}
+#grid .item h4
+{
+  display: block;
+  width: 100%;
+  background-color: #000;
+  color: #fff;
+  position: absolute;
+  opacity: 0;
+  left: -100%;
+  padding: 5px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all .3s;
+  -o-transition: all .3s;
+  transition: all .3s;
+}
+
+#grid .item:hover h4 
+{
+  opacity: 1;
+  bottom: 0px;
+  left: 0;
+}
+
+.clr 
+{
+  clear: both;
+}
+</style>
+</head>
+<body>
+<div class="container-fluid">
+<div class="row">
+    <div id="grid">
+        <div class="item">
+            <img src="http://placehold.it/250x310/5DB5F0" alt="">
+            <h4>Caption-01</h4>
+        </div>
+        <div class="item">
+            <img src="http://placehold.it/450x310/44A3E4" alt="">
+            <h4>Caption-02</h4>
+        </div>
+        <div class="item">
+            <img src="http://placehold.it/250x110/4740D1" alt="">  
+            <h4>Caption-03</h4> 
+        </div>
+        <div class="item">
+            <img src="http://placehold.it/150x310/E437D6" alt="">
+            <h4>Caption-04</h4>
+        </div>
+        <div class="item">
+            <img src="http://placehold.it/250x310/8D42D4" alt="">
+            <h4>Caption-05</h4>
+        </div>
+        <div class="item">
+            <img src="http://placehold.it/250x310/38E3F2" alt="">
+            <h4>Caption-06</h4>
+        </div>
+        <div class="item">
+            <img src="http://placehold.it/150x150/133E6E" alt="">
+            <h4>Caption-07</h4>
+        </div>
+        <div class="item">
+            <img src="http://placehold.it/250x310/4CF594" alt="">
+            <h4>Caption-08</h4>
+        </div>
+        <div class="item">
+            <img src="http://placehold.it/180x210/EDE628" alt="">
+            <h4>Caption-09</h4>
+        </div>
+        <div class="item">
+            <img src="http://placehold.it/250x310/C5A3EA" alt="">
+            <h4>Caption-10</h4>
+        </div>
+        <div class="item">
+            <img src="http://placehold.it/50x70/B4EDC0" alt="">
+            <h4>Caption-11</h4>
+        </div>
+        <div class="item">
+            <img src="http://placehold.it/250x310/ED8A9F" alt="">
+            <h4>Caption-12</h4>
+        </div>
+        <div class="item">
+            <img src="http://placehold.it/250x310/F0E9A0" alt="">
+            <h4>Caption-13</h4>
+        </div>
+        <div class="item">
+            <img src="http://placehold.it/250x310/0F0F0F" alt="">
+            <h4>Caption-14</h4>
+        </div>
+        <div class="item">
+            <img src="http://placehold.it/270x310" alt="">
+            <h4>Caption-15</h4>
+        </div>
+    </div>
+</div>
+</div>
+    <script>
+	var $grid = $('#grid').masonry({
+		itemSelector: '.item',
+		"isFitWidth": true
+	});
+  </script>
+</body>
+</html>

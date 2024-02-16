@@ -1,0 +1,295 @@
+@import url('https://fonts.googleapis.com/css?family=Quattrocento+Sans');
+body,
+html {
+    font-family: 'Quattrocento Sans', sans-serif;
+}
+body {
+    background-image: url("../images/woodBg_005.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+/* Dashboard Style Start */
+
+.main_wrapper {
+    display: flex;
+    height: 100vh;
+    padding-top: 105px;
+}
+.main_sidebar {
+    min-width: 55px;
+    flex-shrink: 0;
+    height: 100%;
+    overflow: hidden;
+    overflow-y: auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    /*margin-top: 20px;*/
+}
+.main_content {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    background: #fff;
+}
+.inner_content {
+    flex: 1;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    width: 100%;
+    overflow: hidden;
+    overflow-y: auto;
+}
+.main_sidebar .navbar-sidenav {
+    flex: 1;
+    overflow: hidden;
+    overflow-y: auto;
+}
+.main_sidebar .navbar-sidenav > .nav-item {
+    width: 200px;
+}
+.main_sidebar.toggled .navbar-sidenav > .nav-item {
+    width: 55px !important;
+}
+.main_sidebar.toggled .nav-link-text {
+    display: none;
+}
+#sidenavToggler {
+    /*background: #000;*/
+    color: #fff;
+    cursor: pointer;
+    height: 56px;
+    line-height: 55px;
+}
+.main_sidebar.toggled #sidenavToggler {
+    transform: rotate(180deg)
+}
+.main_sidebar .navbar-sidenav > .nav-item a {
+    padding: 1em;
+    color: #fff;
+    display: block;
+}
+.main_sidebar .navbar-sidenav > .nav-item a:hover {
+    text-decoration: none;
+    color: #fff;
+}
+.main_sidebar .navbar-sidenav > .nav-item .sidenav-second-level {
+    list-style: none;
+    padding-left: 16px;
+}
+footer.sticky-footer {
+    width: 100%;
+    height: 56px;
+    background-color: #e9ecef;
+    line-height: 55px;
+}
+.small_Align span {
+    display: block;
+}
+#navbarSupportedContent .navbar-nav > .nav-item {
+    text-align: center;
+}
+#navbarSupportedContent .navbar-nav > .nav-item a {
+    color: #fff;
+}
+.main_sidebar .navbar-sidenav .nav-item a:active
+{
+    color: #f00 !important;
+}
+#navbarSupportedContent .navbar-nav > li:not(:last-child) {
+    padding-right: 20px;
+}
+#navbarSupportedContent .navbar-nav > .nav-item a:hover {
+    color: #fff;
+    text-decoration: none;
+}
+/* Dashboard Style End */
+
+.error {
+    color: #f00;
+}
+.fieldRequired {
+    color: #f00;
+}
+.card-login {
+    max-width: 25rem;
+}
+.card-register {
+    max-width: 40rem;
+}
+.mmsTitle {
+    max-width: 25rem;
+    color: #fff;
+    /*text-shadow: 4px 4px 2px rgb(181, 180, 180);*/
+    margin-top: 100px;
+    margin-bottom: 40px;
+}
+.bgAlign {
+    background-image: url("../images/woodBg_001.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+.card-body-icon {
+    position: absolute;
+    z-index: 0;
+    top: -5px;
+    right: 10px;
+    font-size: 66px;
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+}
+.tile-left {
+    float: left;
+}
+.tile-right {
+    float: right;
+    text-align: right;
+    line-height: 1.618;
+}
+
+.bg-one.bg-gradient {
+    color: #FFFFFF !important;
+    background: #07a7e3;
+    
+    background: -moz-linear-gradient(135deg, #f7bf16 0%, #32dac3 100%);
+    background: -webkit-linear-gradient(135deg, #f7bf16 0%, #32dac3 100%);
+    background: linear-gradient(135deg, #ff0202 0%, #6c331a 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=$qp-color-1, endColorstr=$qp-color-2,GradientType=1 );
+    -webkit-transition: opacity 0.2s ease-out;
+    -moz-transition: opacity 0.2s ease-out;
+    -o-transition: opacity 0.2s ease-out;
+    transition: opacity 0.2s ease-out;
+}
+.bg-two.bg-gradient {
+    color: #FFFFFF !important;
+    background: #4f5b60;
+    background: -moz-linear-gradient(135deg, #ff0202 0%, #32dac3 100%);
+    background: -webkit-linear-gradient(135deg, #ff0202 0%, #32dac3 100%);
+    background: linear-gradient(135deg, #f7bf15 0%, #854428 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=$qp-color-1, endColorstr=$qp-color-2,GradientType=1 );
+    -webkit-transition: opacity 0.2s ease-out;
+    -moz-transition: opacity 0.2s ease-out;
+    -o-transition: opacity 0.2s ease-out;
+    transition: opacity 0.2s ease-out;
+    -webkit-transition: width 0.3s ease-in-out;
+    -moz-transition: width 0.3s ease-in-out;
+    -o-transition: width 0.3s ease-in-out;
+    transition: width 0.3s ease-in-out;
+}
+.bg-three.bg-gradient {
+    color: #FFFFFF !important;
+    background: #4f5b60;
+    background: -moz-linear-gradient(135deg, #07a7e3 0%, #32dac3 100%);
+    background: -webkit-linear-gradient(135deg, #07a7e3 0%, #32dac3 100%);
+    background: linear-gradient(135deg, #07a7e3 0%, #32dac3 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=$qp-color-1, endColorstr=$qp-color-2,GradientType=1 );
+    -webkit-transition: opacity 0.2s ease-out;
+    -moz-transition: opacity 0.2s ease-out;
+    -o-transition: opacity 0.2s ease-out;
+    transition: opacity 0.2s ease-out;
+    -webkit-transition: width 0.3s ease-in-out;
+    -moz-transition: width 0.3s ease-in-out;
+    -o-transition: width 0.3s ease-in-out;
+    transition: width 0.3s ease-in-out;
+}
+.bg-four.bg-gradient {
+    color: #FFFFFF !important;
+    background: #4f5b60;
+    background: -moz-linear-gradient(135deg, #ff56f2  0%, #4d4e4e 100%);
+    background: -webkit-linear-gradient(135deg, #ff56f2  0%, #4d4e4e 100%);
+    background: linear-gradient(135deg, #7ada32 0%, #683a23 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=$qp-color-1, endColorstr=$qp-color-2,GradientType=1 );
+    -webkit-transition: opacity 0.2s ease-out;
+    -moz-transition: opacity 0.2s ease-out;
+    -o-transition: opacity 0.2s ease-out;
+    transition: opacity 0.2s ease-out;
+    -webkit-transition: width 0.3s ease-in-out;
+    -moz-transition: width 0.3s ease-in-out;
+    -o-transition: width 0.3s ease-in-out;
+    transition: width 0.3s ease-in-out;
+}
+.bg-five.bg-gradient {
+    color: #FFFFFF !important;
+    background: #07a7e3;
+    
+    background: -moz-linear-gradient(135deg, #f7bf16 0%, #32dac3 100%);
+    background: -webkit-linear-gradient(135deg, #f7bf16 0%, #32dac3 100%);
+    background: linear-gradient(135deg, #f716db 0%, #32dac3 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=$qp-color-1, endColorstr=$qp-color-2,GradientType=1 );
+    -webkit-transition: opacity 0.2s ease-out;
+    -moz-transition: opacity 0.2s ease-out;
+    -o-transition: opacity 0.2s ease-out;
+    transition: opacity 0.2s ease-out;
+}
+.bg-six.bg-gradient {
+    color: #FFFFFF !important;
+    background: #07a7e3;
+    
+    background: -moz-linear-gradient(135deg, #f7bf16 0%, #32dac3 100%);
+    background: -webkit-linear-gradient(135deg, #f7bf16 0%, #32dac3 100%);
+    background: linear-gradient(135deg, #f71654 0%, #32dac3 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=$qp-color-1, endColorstr=$qp-color-2,GradientType=1 );
+    -webkit-transition: opacity 0.2s ease-out;
+    -moz-transition: opacity 0.2s ease-out;
+    -o-transition: opacity 0.2s ease-out;
+    transition: opacity 0.2s ease-out;
+}
+.bg-seven.bg-gradient {
+    color: #FFFFFF !important;
+    background: #07a7e3;
+    
+    background: -moz-linear-gradient(135deg, #f7bf16 0%, #32dac3 100%);
+    background: -webkit-linear-gradient(135deg, #f7bf16 0%, #32dac3 100%);
+    background: linear-gradient(135deg, #f7a716 0%, #32dac3 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=$qp-color-1, endColorstr=$qp-color-2,GradientType=1 );
+    -webkit-transition: opacity 0.2s ease-out;
+    -moz-transition: opacity 0.2s ease-out;
+    -o-transition: opacity 0.2s ease-out;
+    transition: opacity 0.2s ease-out;
+}
+.bg-eight.bg-gradient {
+    color: #FFFFFF !important;
+    background: #07a7e3;
+    
+    background: -moz-linear-gradient(135deg, #f7bf16 0%, #32dac3 100%);
+    background: -webkit-linear-gradient(135deg, #f7bf16 0%, #32dac3 100%);
+    background: linear-gradient(135deg, #f74016ad 0%, #164e46 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=$qp-color-1, endColorstr=$qp-color-2,GradientType=1 );
+    -webkit-transition: opacity 0.2s ease-out;
+    -moz-transition: opacity 0.2s ease-out;
+    -o-transition: opacity 0.2s ease-out;
+    transition: opacity 0.2s ease-out;
+}
+.card:hover, .card:focus {
+    box-shadow: 0 9px 23px rgba(0, 0, 0, 0.18), 0 5px 5px rgba(0, 0, 0, 0.12) !important;
+}
+.tile-number-left
+{
+    font-size: 18px;
+    font-weight: bold;
+}
+.tile-description-left
+{
+    font-size: 16px;
+    text-align: center;
+}
+.tile-number-right
+{
+    font-size: 16px;
+
+}
+.tile-description-right
+{
+    font-size: 14px;
+    text-align: center;
+}
+.tile-title
+{
+    font-size: 22px;
+    text-transform:capitalize;
+}

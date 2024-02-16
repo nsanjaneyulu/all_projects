@@ -1,0 +1,16 @@
+<div>
+  <div class="col-12 mb-3" *ngIf="letterType">
+    <div class="row justify-content-between">
+      <div>
+        <a class="text-gold" routerLink="/dashboard/request/list">
+          Back to list
+        </a>
+      </div>
+      <div>
+        <button type="button" class="btn theme_button">Save</button>
+        <button type="button" class="btn theme_button">Download</button>
+      </div>
+    </div>
+  </div>
+  <app-employment-format *ngIf="letterType==='employmentLetter'"></app-employment-format>
+</div>

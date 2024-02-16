@@ -1,0 +1,95 @@
+page-supplier-profile {
+
+    .navigation-title {
+        height: 24px;	
+        width: 206px;	
+        font-size: 20px;	
+        letter-spacing: 0.24px;	
+        line-height: 24px;
+    }
+
+    .navigation-sub-title {	
+        height: 17px;	
+        width: 134px;	
+        font-weight: normal;
+        font-size: 14px;	
+        letter-spacing: 0.17px;	
+        line-height: 17px;
+    }
+
+    .logo-outlet {
+        height: 27px;	
+        width: 27px;
+    }
+
+    .accorions__left_padding {
+        padding-left: 20px;
+    }  
+    
+    .accorions__Styles {
+        color: #333333;
+        font-size: 16px;
+        font-weight: bold;
+        line-height: 19px;
+        text-align: right;
+    }
+    
+    .button-outline-md-danger {
+		border-color: #32db64;
+		color: #32db64;
+		box-shadow: inset 0 -1px 0 0 #32db64;
+    }
+    
+    .bootem__level__space {
+        border-bottom: 1px solid #DE000000;
+    }
+
+    .bootem__level__space:nth-child(odd) .outlet__level__Styles .item-md {
+     
+        background-color: #F1F7FF;
+        box-shadow: 0 2px 4px 0 rgba(0,0,0,0.06);
+    }
+
+    .accorions_body_Styles {
+        background: #fff !important;
+    }
+
+    .outlet__detail {
+        color: #333333;
+        font-size: 14px;
+        font-weight: normal;
+        letter-spacing: 0.19px;
+        line-height: 19px;
+    }
+
+    .item__Update__Styles {
+		color: rgba(0, 0, 0, 0.6);
+		font-size: 14px;
+		letter-spacing: 0.24px;
+		line-height: 16px;
+    }
+    
+    .item-md.item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner,
+	.item-md.item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner {
+		border-bottom-color: #eee;
+    }
+
+    .list-md .item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus):last-child, 
+    .list-md .item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus):last-child {
+        border-bottom-color: #eee;
+        -webkit-box-shadow: inset 0 0 0 0 #eee;
+        box-shadow: inset 0 0 0 0 #eee;
+    }
+
+    .list-md .item-input.item-input-has-focus:last-child, 
+    .list-md .item-input.item-input-has-focus:last-child {
+        border-bottom-color: #a9435e;
+        -webkit-box-shadow: inset 0 0 0 0 #a9435e;
+        box-shadow: inset 0 0 0 0 #a9435e;
+    }
+
+    .list-md .item-input:last-child {
+         border-bottom: 0px solid #dedede; 
+    }
+
+}

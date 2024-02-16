@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Sep 15, 2012 12:11:16 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dblue.farm.Devermitization" table="devermitization" >
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="health" class="com.dblue.farm.Health" fetch="select">
+            <column name="health_id" />
+        </many-to-one>
+        <many-to-one class="com.dblue.farm.Farm" fetch="select" name="farm">
+ 			<column name="farm_id" not-null="true"/>
+		</many-to-one> 
+        <many-to-one name="deVermitizationType" class="com.dblue.farm.DeVermitizationType" fetch="select">
+            <column name="de_vermitization_type_id" not-null="true" />
+        </many-to-one>
+        <property name="lastVermitizationDate" type="timestamp">
+            <column name="last_vermitization_date" length="19" />
+        </property>
+        <property name="nextVermitizationDate" type="timestamp">
+            <column name="next_vermitization_date" length="19" />
+        </property>
+        <property name="vermitizationDate" type="timestamp">
+            <column name="vermitization_date" length="19" />
+        </property>
+        <property name="manufacturedDate" type="timestamp">
+            <column name="manufactured_date" length="19" />
+        </property>
+        <property name="expiryDate" type="timestamp">
+            <column name="expiry_date" length="19" />
+        </property>
+        <property name="manufacturerName" type="string">
+            <column name="manufacturer_name" length="100" />
+        </property>
+        <property name="batchNumber" type="string">
+            <column name="batch_number" length="15" />
+        </property>
+    </class>
+</hibernate-mapping>

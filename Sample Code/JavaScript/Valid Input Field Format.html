@@ -1,0 +1,27 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd">
+<html> 
+  <head> 
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"> 
+    <meta http-equiv="Content-Script-Type" content="text/javascript"> 
+    <script type="text/javascript"> 
+      var re = /\(?\d{3}\)?([-\/\.])\d{3}\1\d{4}/; 
+      function testInfo(phoneInput){ 
+        var OK = re.exec(phoneInput.value); 
+        if (!OK) 
+          window.alert(RegExp.input + " isn't a phone number with area code!"); 
+        else
+          window.alert("Thanks, your phone number is " + OK); 
+      } 
+    </script> 
+  </head> 
+  <body> 
+    <p>Enter your phone number (with area code) and then click "Check".
+        <br>The expected format is like ###-###-####.</p>
+    <form action="#"> 
+      <input type="text" name="text" id="phone">
+      <input type="button" name="button" value="Check" onClick="testInfo(document.getElementById('phone'));" />
+    </form> 
+  </body> 
+</html>

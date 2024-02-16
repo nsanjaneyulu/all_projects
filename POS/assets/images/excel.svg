@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="21.93" height="29.86" viewBox="0 0 21.93 29.86">
+  <g id="Group_756" data-name="Group 756" transform="translate(-1214 -198)">
+    <g id="icon" transform="translate(1214 198)">
+      <path id="Path_739" data-name="Path 739" d="M23.24,3H16V5.358h2.4v1.6H16V8.531h2.371v1.58H16v1.58h2.371v1.58H16v1.58h2.371v1.58H16V18.8h7.24a.677.677,0,0,0,.662-.687V3.687A.677.677,0,0,0,23.24,3Zm-.918,13.433H19.161v-1.58h3.161Zm0-3.161H19.161v-1.58h3.161Zm0-3.161H19.161V8.531h3.161Zm0-3.161H19.161V5.371h3.161Z" transform="translate(-3.357 -0.629)" fill="#fff"/>
+      <path id="Path_740" data-name="Path 740" d="M0,2.283v15.98l11.853,2.282V0Zm7.5,12L6.118,11.679a2.312,2.312,0,0,1-.162-.536H5.935a4.057,4.057,0,0,1-.185.559L4.366,14.286H2.218l2.551-4-2.333-4H4.629l1.144,2.4a4.192,4.192,0,0,1,.24.675h.022q.068-.235.251-.7L7.559,6.282H9.567l-2.4,3.968,2.467,4.035Z" fill="#fff"/>
+    </g>
+    <g id="Group_755" data-name="Group 755" transform="translate(1214 219.573)">
+      <path id="Rectangle_1534" data-name="Rectangle 1534" d="M0,0H21.93a0,0,0,0,1,0,0V7.287a1,1,0,0,1-1,1H1a1,1,0,0,1-1-1V0A0,0,0,0,1,0,0Z" fill="#fff"/>
+      <g id="Group_754" data-name="Group 754" transform="translate(1.488 0)">
+        <text id="EXCEL" transform="translate(-0.263 6.287)" fill="#40485c" font-size="6" font-family="AvenirNext-Medium, Avenir Next" font-weight="500"><tspan x="0" y="0">EXCEL</tspan></text>
+      </g>
+    </g>
+  </g>
+</svg>

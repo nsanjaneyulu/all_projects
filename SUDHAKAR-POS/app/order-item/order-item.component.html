@@ -1,0 +1,243 @@
+<form (ngSubmit)="createFullOrder()" [formGroup]="orderForm">
+    <div>
+        <div class="border-bottom p-2">
+            <span class="pr-2"><b>Order Type: </b></span>
+            <input type="radio" formControlName="orderType" [value]="orderTypes[0]"  /> <span class="pr-2 ml-1">Dine In</span>
+            <input type="radio" formControlName="orderType" [value]="orderTypes[1]" class="mr-1" /> <span>Take Away</span>
+        </div>
+        <div class="d-table">
+            <div class="d-table-row table-row-header">
+                <div class="d-table-cell p-2">Item Name</div>
+                <div class="d-table-cell p-2">Qty</div>
+                <div class="d-table-cell p-2">Price</div>
+                <div class="d-table-cell p-2">Amount</div>
+                <div class="d-table-cell p-2">Delete</div>
+            </div>
+            <div class="d-table-row" *ngFor="let selectedItem of selectedItems; let i = index">
+                <div class="d-table-cell p-2">{{selectedItem.name}}</div>
+                <div class="d-table-cell p-2">
+                    <span class="btn-sm btn-light" (click)="decCount(i)">-</span>
+                    <span class="p-2">{{ selectedItem.itemCount }}</span>
+                    <span class="btn-sm btn-light" (click)="incCount(i)">+</span>
+                </div>
+                <div class="d-table-cell p-2">{{selectedItem.price}}</div>
+                <div class="d-table-cell p-2">{{selectedItem.amount}}</div>
+                <div class="d-table-cell p-2 text-center text-danger" (click)="deleteItem(selectedItem)"><b>X</b></div>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="isCheckout">
+        <div class="border-top p-2">
+            <div class="input-group input-group-sm mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Mobile</span>
+                </div>
+                <input type="text" formControlName="phoneNumber" class="form-control" placeholder="Enter Mobile Number">
+            </div>
+            <div class="input-group input-group-sm mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Email</span>
+                </div>
+                <input type="email" formControlName="emailId" class="form-control" placeholder="Enter Email">
+            </div>
+            <div>
+                <span class="pr-2">Discount: </span>
+                <select formControlName="discountType">
+                <option value="">Select Discount</option>
+                <option value="customDiscount">Custom Discount</option>
+                <option value="scratchCard">Scratch Card</option>
+            </select>
+                <span class="pl-3 pr-2">Discount Value: </span>
+                <input class="discount-value" formControlName="discountValue" #discount type="number" placeholder="Enter %" (keyup)="applyDiscount(discount.value)"
+                />
+            </div>
+        </div>
+        <div class="border-top p-2">
+            <div>Bill Details</div>
+            <div class="d-table" style="width: 60%;">
+                <div class="d-table-row">
+                    <div class="d-table-cell p-2 font-weight-bold">Item Total: </div>
+                    <div class="d-table-cell p-2">{{ totalAmount | currency:'&#8377;'}}</div>
+                </div>
+                <div class="d-table-row">
+                    <div class="d-table-cell p-2 font-weight-bold">Taxes: </div>
+                    <div class="d-table-cell p-2">{{ taxAmount | currency:'&#8377;'}}</div>
+                </div>
+                <div class="d-table-row">
+                    <div class="d-table-cell p-2 font-weight-bold">Discount</div>
+                    <div class="d-table-cell p-2">{{ discountAmount | currency:'&#8377;'}}</div>
+                </div>
+                <div class="d-table-row">
+                    <div class="d-table-cell p-2 border-top font-weight-bold">To Pay Amount</div>
+                    <div class="d-table-cell p-2 border-top">{{ allTotalAmount | currency:'&#8377;'}}</div>
+                </div>
+            </div>
+            <!--<div style="overflow:hidden">
+            <div class="float-right">
+                <span>Reciept: </span>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1" checked>
+                    <label class="form-check-label" for="inlineCheckbox1">Print</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input formControlName="emailReciept" class="form-check-input" type="checkbox" id="inlineCheckbox2" value="true">
+                    <label class="form-check-label" for="inlineCheckbox2">Email</label>
+                </div>
+            </div>
+        </div>-->
+        </div>
+        <div class="border-top p-2">
+            <div>Payment Mode: </div>
+            <div class="pt-2 payment-mode">
+                <div class="row">
+                    <div class="col-sm-3">
+                        <button type="button" class="btn btn-outline-info" [class.selected]="paymentMode === 'cash'" (click)="selectPaymentMode('cash')">Cash</button>
+                    </div>
+                    <div class="col-sm-4">
+                        <button type="button" class="btn btn-outline-info" [class.selected]="paymentMode === 'cc'" (click)="selectPaymentMode('cc')">Credit Card</button>
+                    </div>
+                    <div class="col-sm-5">
+                        <button type="button" class="btn btn-outline-info" [class.selected]="paymentMode === 'dc'" (click)="selectPaymentMode('dc')">Debit Card</button>
+                    </div>
+                </div>
+                <!--<div class="row mt-3">
+                    <div class="col-sm-3">
+                        <button type="button" class="btn btn-outline-info" [class.selected]="paymentMode === 'gpay'" (click)="selectPaymentMode('gpay')">GPay</button>
+                    </div>
+                    <div class="col-sm-3">
+                        <button type="button" class="btn btn-outline-info" [class.selected]="paymentMode === 'phonepe'" (click)="selectPaymentMode('phonepe')">PhonePe</button>
+                    </div>
+                    <div class="col-sm-3">
+                        <button type="button" class="btn btn-outline-info" [class.selected]="paymentMode === 'paytm'" (click)="selectPaymentMode('paytm')">PayTM</button>
+                    </div>
+                </div>-->
+                <div *ngIf="isCardPayment" class="pt-3">
+                    <div class="pb-3">
+                        <span class="pr-2">Card Type: </span>
+                        <select class="mr-4" formControlName="cardType" (click)="validateCardSelection()">
+                        <option value="">Select Card</option>
+                        <option value="visa">Visa</option>
+                        <option value="mastercard">MasterCard</option>
+                        <option value="mastero">Mastero</option>
+                        <option value="amex">Amex</option>
+                        
+                    </select>
+                        <span class="pr-2">Bank: </span>
+                        <select formControlName="bankName" (click)="validateCardSelection()">
+                        <option value="">Select Bank</option>
+                        <option value="icic">ICIC</option>
+                        <option value="hdfc">HDFC</option>
+                        <option value="sbi">SBI</option>
+                        <option value="kotak">KOTAK</option>
+                    </select>
+                    </div>
+                    <!--<div class="input-group input-group-sm mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Contact Number</span>
+                        </div>
+                        <input type="text" #cardMobileNumber class="form-control" placeholder="Enter Contact Number">
+                    </div>-->
+                    <div class="input-group input-group-sm mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Transaction Ref. No</span>
+                        </div>
+                        <input formControlName="transRefNo" (keyup)="validateCardSelection()" class="form-control" placeholder="Enter Transaction Ref. No">
+                    </div>
+                </div>
+                <div class="pt-3">
+                    <div class="float-right">
+                        <button type="submit" class="btn btn-success btn-sm" [disabled]="!orderForm.valid || !isPaymentModeSelected">Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="section-to-print">
+
+        <div id="top">
+            <div class="info">
+                <h2>TAFEL</h2>
+            </div>
+            <!--End Info-->
+        </div>
+        <!--End InvoiceTop
+
+        <div id="mid">
+            <div class="info">
+                <h2>Contact Info</h2>
+                <p>
+                    Address : </br>
+                    Email : </br>
+                    Phone : </br>
+                </p>
+            </div>
+        </div>
+        End Invoice Mid-->
+
+        <div id="bot">
+
+            <div id="table">
+                <table>
+                    <tr class="tabletitle">
+                        <td class="item">
+                            <h2>Item</h2>
+                        </td>
+                        <td class="Hours">
+                            <h2>Qty</h2>
+                        </td>
+                        <td class="Rate">
+                            <h2>Amount</h2>
+                        </td>
+                    </tr>
+
+                    <tr class="service" *ngFor="let selectedItem of selectedItems; let i = index">
+                        <td class="tableitem">
+                            <p class="itemtext">{{selectedItem.name}}</p>
+                        </td>
+                        <td class="tableitem">
+                            <p class="itemtext">{{selectedItem.itemCount}}</p>
+                        </td>
+                        <td class="tableitem">
+                            <p class="itemtext">{{selectedItem.amount}}</p>
+                        </td>
+                    </tr>
+
+                    <tr class="tabletitle">
+                        <td></td>
+                        <td class="Rate">
+                            <h2>Taxes</h2>
+                        </td>
+                        <td class="payment">
+                            <h2>{{ taxAmount | currency:'&#8377;'}}</h2>
+                        </td>
+                    </tr>
+
+                    <tr class="tabletitle">
+                        <td></td>
+                        <td class="Rate">
+                            <h2>Discount</h2>
+                        </td>
+                        <td class="payment">
+                            <h2>{{ discountAmount | currency:'&#8377;'}}</h2>
+                        </td>
+                    </tr>
+
+                    <tr class="tabletitle">
+                        <td></td>
+                        <td class="Rate">
+                            <h2>Total</h2>
+                        </td>
+                        <td class="payment">
+                            <h2>{{ allTotalAmount | currency:'&#8377;'}}</h2>
+                        </td>
+                    </tr>
+
+                </table>
+            </div>
+            <!--End Table-->
+
+        </div>
+        <!--End InvoiceBot-->
+    </div>
+    <!--End Invoice-->
+</form>

@@ -1,0 +1,80 @@
+<ion-header>
+   <ion-navbar>
+      <ion-title>
+         <ion-item no-lines class="header__styles padding__left__0px">
+            <ion-avatar item-start>
+               <img src="{{imageEndPoint}}/{{getMallDetailsResp.img}}">
+            </ion-avatar>
+            <h2 class="ion__title">{{getMallDetailsResp.name}}</h2>
+            <p class="pending__order padding__left">{{getMallDetailsResp.address.area}},
+               {{getMallDetailsResp.address.city}}
+            </p>
+            <div class="padding__top" item-end>
+               <ion-icon class="ion__title" name="search"></ion-icon>
+            </div>
+         </ion-item>
+      </ion-title>
+   </ion-navbar>
+</ion-header>
+<ion-content padding  >
+   <div *ngIf="!showLoader">
+      <ion-segment [(ngModel)]="segmentSelect">
+      <ion-segment-button value="All" (ionSelect)="segmentChange('All',0)">
+         All
+      </ion-segment-button>
+      <ion-segment-button value="Pending" (ionSelect)="segmentChange('InProgress',0)">
+         Received
+      </ion-segment-button>
+      <ion-segment-button value="InProgress" (ionSelect)="segmentChange('Pending',0)">
+         In Progress
+      </ion-segment-button>
+      </ion-segment>
+   </div>
+   <ion-grid id="allOrders" class="padding__Styles" *ngIf="!showLoader">
+      <div class="bootem__level__space" *ngFor="let fullorder of fullorders" (click)="goOrderDetails($event, fullorder)">
+      <ion-item>
+         <div class="displayFlex">
+            <div class="">
+               <div><span class="order__Id">{{fullorder.fullOrder5DigitId}}</span>
+                  <span *ngIf="(fullorder.packagingCharge > 0)" class="deliveryStyles">
+                  Delivery
+                  <span class="deliveryStylesArrow">
+                  </span>
+                  </span>
+                  <span *ngIf="(fullorder.packagingCharge == 0)" class="pickupStyles">
+                  Pickup
+                  <span class="pickupStylesArrow">
+                  </span>
+                  </span>
+               </div>
+               <div>
+                  <span class="smallTitle"> {{fullorder.createdDateStr | date: "dd-MMM-yyyy H:mm"}}</span>
+                  <span class="smallTitle"> | </span>
+                  <span class="smallTitle font__weight">
+                  ₹
+                  </span>
+                  <span class="smallTitle"><b>{{fullorder.amountStr}}</b></span>
+               </div>
+            </div>
+            <div *ngIf="(fullorder.status === 'RECEIVED')" class="text__right">
+               <div class="new__order">Received</div>
+            </div>
+            <div *ngIf="(fullorder.status === 'INPROGRESS')" class="text__right">
+               <div class="pending__order">In Progress</div>
+            </div>
+         </div>
+      </ion-item>
+      </div>
+   </ion-grid>
+   <page-globalloader *ngIf="showLoader"></page-globalloader>
+   <ion-fab bottom center (click)="newTop()" *ngIf="!showTop">
+         <button ion-fab>
+               <ion-icon name="flash"></ion-icon>
+         </button>
+      </ion-fab>
+      <ion-refresher (ionRefresh)="doRefresh($event)">
+            <ion-refresher-content pullingText="Refresh {{segmentName}} items." pullingIcon="ion-loading-c">
+            </ion-refresher-content>
+         </ion-refresher>
+</ion-content>
+

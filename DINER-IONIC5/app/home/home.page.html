@@ -1,0 +1,60 @@
+<ion-content>
+    <div class="loginPage">
+        <div class="">
+            <span class="tafel_explorer" (click)="exploreDiner()">Explorer ></span>
+        </div>
+        <div id="form_login">
+            <div>
+                <ion-item color='newColor'>
+                    <select [(ngModel)]="countryCode" okText="Okay" cancelText="Cancel" class="selectlabelCss inputField_styles">
+                <option value="+91" selected>IN - +91</option>
+                <option value="+974">QA - +974</option>
+                <option value="+971">AE - +971</option>
+                <option value="+44">GB - +44</option>
+                <option value="+1">US - +1</option>
+                </select>
+                    <ion-input type="tel" class="inputField_styles" #login (ionChange)="phoneNumberLength()" [(ngModel)]="phoneNumber" minlength="5" maxlength="10" placeholder="Enter Phone Number"></ion-input>
+                </ion-item>
+                <div *ngIf="showEmail">
+                    <input class="inputStyles" type="text" [(ngModel)]="emailId" placeholder="Email" />
+                </div>
+                <div *ngIf="!isDisable">
+                    <button class="tafelButtonColor" disabled *ngIf="!showOTP && !showLoginButton">Enter Phone Number</button>
+                </div>
+                <div *ngIf="isDisable">
+                    <button class="tafelButtonColor" *ngIf="!showOTP && !showLoginButton" (click)="checkOTP()">Continue</button>
+                </div>
+                <div *ngIf="isDisable && isLoading">
+                    <button class="tafelButtonColor" disabled>Loading...</button>
+                </div>
+                <ion-row text-center class="enterOTPMargin" *ngIf="showOTP">
+                    <ion-col>
+                        <label class="enter_otp_styles">Enter OTP:</label>
+                        <ion-input class="OTPEnter" type="number" [(ngModel)]="otpNumber1" #otp1 required maxLength="1" (keyup)="otpController($event,otp2,'')">
+                        </ion-input>
+                        <ion-input class="OTPEnter" type="number" [(ngModel)]="otpNumber2" #otp2 required maxLength="1" (keyup)="otpController($event,otp3,otp1)">
+                        </ion-input>
+                        <ion-input class="OTPEnter" type="number" [(ngModel)]="otpNumber3" #otp3 required maxLength="1" (keyup)="otpController($event,otp4,otp2)">
+                        </ion-input>
+                        <ion-input class="OTPEnter" type="number" [(ngModel)]="otpNumber4" #otp4 required maxLength="1" (keyup)="otpController($event,otp5,otp3)">
+                        </ion-input>
+                        <ion-input class="OTPEnter" type="number" [(ngModel)]="otpNumber5" #otp5 required maxLength="1" (keyup)="otpController($event,otp6,otp4)">
+                        </ion-input>
+                        <ion-input class="OTPEnter" type="number" [(ngModel)]="otpNumber6" #otp6 required maxLength="1" (keyup)="otpController($event,'',otp5)">
+                        </ion-input>
+                    </ion-col>
+                </ion-row>
+                <!-- <ion-item class="verify-form-input" *ngIf="showOTP" color='newColor'>
+                <ion-input type="tel" [(ngModel)]="code" placeholder="Enter OTP" minlength="1" maxlength="6"></ion-input>
+                </ion-item> -->
+                <button class="tafelButtonColor" *ngIf="showOTP" (click)="loginFunction()">Login</button>
+                <div class="resendOtpCss">
+                    <a (click)="checkOTP()" style=" color: #5c0931 !important;" *ngIf="showOTP">Resend OTP</a>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="">
+         <span class="tafel_logo_bottom"><img src="../../assets/imgs/tafelLogo.svg" style="width: 8rem; height: 8rem;" /></span>
+       </div> -->
+    </div>
+</ion-content>

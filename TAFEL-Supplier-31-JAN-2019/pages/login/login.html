@@ -1,0 +1,30 @@
+<div id="custom-overlay" [style.display]="splash ? 'flex': 'none'">
+    <div class="flb">
+       <div class="Aligner-item Aligner-item--top"></div>
+       <img src="assets/tafel-logo-animated2.gif" />
+       <div class="Aligner-item Aligner-item--bottom"></div>
+    </div>
+ </div>
+ <ion-content *ngIf="showLoginPage" class="loginPage" padding>
+    <div class="tafel-desc">
+       <div class="tafel-title">TAFEL</div>
+       <div class="tafel-sub-title">Your Digital Steward</div>
+    </div>
+    <div class="phone-form">
+       <!-- <ion-item class="phone-form-input">
+          <ion-label floating class="input-label">Phone Number</ion-label>
+          <ion-input type="phone" [(ngModel)]="phoneNumber" ></ion-input>
+          </ion-item> -->
+       <div class="phone-form-with-logo">
+          <ion-row>
+             <ion-col class="phone-label"> Enter Phone Number </ion-col>
+          </ion-row>
+          <ion-row>
+             <ion-col col-12>
+                <int-phone-prefix [defaultCountry]="'in'" [maxLength]="14" [(ngModel)]="phoneNumber"></int-phone-prefix>
+             </ion-col>
+          </ion-row>
+          <button ion-button block id="sign-in-button" class="phone-form-button" (click)="createOTP()">Login</button>
+       </div>
+    </div>
+ </ion-content>

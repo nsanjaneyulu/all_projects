@@ -1,0 +1,5 @@
+.header_bom {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 3px solid #eee;
+}

@@ -1,0 +1,38 @@
+<header class="w-100">
+   <div class="container">
+      <div class="row justify-content-between">
+         <div class="col-md-5">
+            <ul class="nav">
+               <li *ngFor="let item of authDataInfo.headerActions.leftActions; index as i" class="nav-item"><a
+                     [routerLink]="[item.link]" class="nav-link transition">{{item.title}}</a></li>
+            </ul>
+         </div>
+         <div class="col-md-2 text-center">
+            <a class="logo">
+               <img src="https://devapp.workruit.com/images/logo.svg" alt="logo">
+            </a>
+         </div>
+         <div class="col-md-5">
+            <ul class="nav justify-content-end">
+               <li class="nav-item message">
+                  <a class="nav-link transition"></a>
+               </li>
+               <li class="nav-item user dropdown">
+                  <a class="nav-link transition dropdown-toggle" data-toggle="dropdown">
+                     <img [src]=picture style="border-radius: 50%" alt="">
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="profile">
+                     <a class="dropdown-item transition" href="">{{firstname}} {{lastname}}</a>
+                     <a class="dropdown-item transition"><span>{{email}}</span></a>
+                     <div class="dropdown-divider"></div>
+                     <a class="dropdown-item transition" [routerLink]="[item.link]"
+                        *ngFor="let item of authDataInfo.headerActions.rightActions; index as i"><span class="dropdown-item-span"
+                           *ngIf="!item.isClick">{{item.title}}</span><span class="dropdown-item-span" *ngIf="item.isClick"
+                           (click)="isLogout()">{{item.title}}</span></a>
+                  </div>
+               </li>
+            </ul>
+         </div>
+      </div>
+   </div>
+</header>

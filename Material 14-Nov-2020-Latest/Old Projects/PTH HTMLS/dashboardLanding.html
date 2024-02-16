@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Parameswara Timber Hub Pvt. Ltd</title>
+      <link href="css/bootstrap.min.css" rel="stylesheet">
+      <link href="css/bootstrap-datepicker.min.css" rel="stylesheet">
+      <link href="css/myStyles.css" rel="stylesheet">
+      <script src="js/jquery-2.2.4.js"></script>
+      <script src="js/popper.min.js"></script>
+      <script src="js/bootstrap.min.js"></script>
+      <script src="js/jquery.validate.js"></script>
+      <script src="js/additional-methods.js"></script>
+      <script src="js/fontAwesome.js"></script>
+      <script src="js/bootstrap-datepicker.min.js"></script>     
+      <script src="js/myScripts.js"></script>  
+      <script src="js/daeValidations.js"></script>     
+   </head>
+   <body>
+      <nav class="main_navbar navbar fixed-top navbar-expand-lg navbar-dark bg-dark1">
+         <a class="navbar-brand" href="#">
+         <img src="http://heeditsolutions.com/images/heedit.png" alt="">
+         </a>
+         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+         <span class="navbar-toggler-icon"></span>
+         </button>
+         <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+               <li class="nav-item">
+                  <a class="nav-link" href="#">
+                     <h4>Parameswara Timber Hub Pvt.Ltd</h4>
+                     <h5>Material Management System</h5>
+                  </a>
+               </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+               <li class="nav-item small_Align">
+                  <a class="">
+                  <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+                  <span class="navHideShow topNavActive">Hello, Admin</span>
+                  </a>
+               </li>
+               <li class="nav-item small_Align">
+                  <a class="">
+                  <i class="fa fa-cogs" aria-hidden="true"></i>
+                  <span class="navHideShow topNavActive">Settings</span>
+                  </a>
+               </li>
+               <li class="nav-item small_Align">
+                  <a class="">
+                  <i class="fa fa-power-off" aria-hidden="true"></i>
+                  <span class="navHideShow topNavActive">Log Out</span>
+                  </a>
+               </li>
+            </ul>
+         </div>
+      </nav>
+      <!-- End of Main Navbar -->
+      <section class="main_wrapper">
+         <aside class="main_sidebar bg-dark1">
+            <a class="nav-link" id="sidenavToggler">
+               <h4>Categories</h4>
+            </a>
+            <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
+               <li class="nav-item" data-toggle="tooltip" data-placement="right" title="" data-original-title="Dashboard">
+                  <a class="nav-link active" href="#">
+                  <i class="fa fa-fw fa-dashboard"></i>
+                  <span class="nav-link-text ">Dashboard</span>
+                  </a>
+               </li>
+               <li class="nav-item" data-toggle="tooltip" data-placement="right" title="" data-original-title="Dashboard">
+                  <a class="nav-link" href="#">
+                  <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                  <span class="nav-link-text ">Purchase</span>
+                  </a>
+               </li>
+               <li class="nav-item" data-toggle="tooltip" data-placement="right" title="" data-original-title="Charts">
+                  <a class="nav-link" href="#">
+                  <i class="fa fa-database" aria-hidden="true"></i>
+                  <span class="nav-link-text">Inventory</span>
+                  </a>
+               </li>
+               <li class="nav-item" data-toggle="tooltip" data-placement="right" title="" data-original-title="Tables">
+                  <a class="nav-link" href="#">
+                  <i class="fa fa-university" aria-hidden="true"></i>
+                  <span class="nav-link-text">Accounts</span>
+                  </a>
+               </li>
+               <li class="nav-item" data-toggle="tooltip" data-placement="right" title="" data-original-title="Dashboard">
+                  <a class="nav-link" href="#">
+                  <i class="fa fa-share-alt" aria-hidden="true"></i>
+                  <span class="nav-link-text">Branches</span>
+                  </a>
+               </li>
+               <li class="nav-item" data-toggle="tooltip" data-placement="right" title="" data-original-title="Charts">
+                  <a class="nav-link" href="#">
+                  <i class="fa fa-truck" aria-hidden="true"></i>
+                  <span class="nav-link-text">Dispatch</span>
+                  </a>
+               </li>
+               <li class="nav-item" data-toggle="tooltip" data-placement="right" title="" data-original-title="Tables">
+                  <a class="nav-link" href="#">
+                  <i class="fa fa-fw fa-table"></i>
+                  <span class="nav-link-text">Invoice</span>
+                  </a>
+               </li>
+               <li class="nav-item" data-toggle="tooltip" data-placement="right" title="" data-original-title="Dashboard">
+                  <a class="nav-link" href="#">
+                  <i class="fa fa-bar-chart" aria-hidden="true"></i>
+                  <span class="nav-link-text">Reports</span>
+                  </a>
+               </li>
+               <li class="nav-item" data-toggle="tooltip" data-placement="right" title="" data-original-title="Charts">
+                  <a class="nav-link" href="#">
+                  <i class="fa fa-spinner" aria-hidden="true"></i>
+                  <span class="nav-link-text">Update</span>
+                  </a>
+               </li>
+               <!-- <li class="nav-item" data-toggle="tooltip" data-placement="right" title="" data-original-title="Components">
+                  <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents" data-parent="#exampleAccordion">
+                  <i class="fa fa-fw fa-wrench"></i>
+                  <span class="nav-link-text">Components</span>
+                  </a>
+                  <ul class="sidenav-second-level collapse" id="collapseComponents">
+                     <li>
+                        <a href="navbar.html">Navbar</a>
+                     </li>
+                     <li>
+                        <a href="cards.html">Cards</a>
+                     </li>
+                  </ul>
+                  </li> -->
+            </ul>
+            <a class="nav-link text-center" id="sidenavToggler">
+               <!-- <i class="fa fa-fw fa-angle-left"></i> -->
+            </a>
+         </aside>
+         <div class="main_content ">
+            <div class="inner_content container-fluid">
+               <!-- Breadcrumbs-->
+               <ol class="breadcrumb">
+                  <li class="breadcrumb-item">
+                     <a href="#" class="text-secondary">Home</a>
+                  </li>
+                  <li class="breadcrumb-item active text-danger">Purchase</li>
+               </ol>
+               <div class="card">
+                  <div class="card-header">
+                     Purchase
+                  </div>
+                  <div class="card-block">
+                     <form class="col-sm-12 my-2">
+                        <div class="form-row">
+                           <div class="form-group col-3">
+                              <label for="">Purchase Date</label>
+                              <div class="input-group date">
+                                 <input type="text" class="form-control datepicker inputFieldDisabled" placeholder="26/12/2017">
+                                 <div class="input-group-addon">
+                                    <i class="fa fa-calendar" aria-hidden="true"></i></span>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="form-row">
+                           <div class="form-group col-3">
+                              <label for="">Customer Id</label>
+                              <input type="text" class="form-control inputFieldDisabled" placeholder="HITS001">
+                           </div>
+                           <div class="form-group col-3">
+                              <label for="">Customer Name</label>
+                              <input type="text" class="form-control" placeholder="Customer Name">
+                           </div>
+                           <div class="form-group col-3">
+                              <label for="">Customer Phone No</label>
+                              <input type="text" class="form-control" placeholder="Customer Phone No">
+                           </div>
+                           <div class="form-group col-3">
+                              <label for="">Product availability</label>
+                              <select class="form-control">
+                                 <option selected>Choose...</option>
+                                 <option>...</option>
+                              </select>
+                           </div>
+                        </div>
+                        <div class="form-row">
+                           <div class="form-group col-3">
+                              <label for="">Billing Address</label>
+                              <textarea class="form-control" placeholder="Billing Address"></textarea>
+                           </div>
+                           <div class="form-group col-3">
+                              <label for="">Shipping Address</label>
+                              <textarea class="form-control" placeholder="Shipping Address"></textarea>
+                           </div>
+                           <div class="form-group col-3">
+                              <label for="">Order Id</label>
+                              <input type="text" class="form-control inputFieldDisabled" placeholder="HITS001">
+                           </div>
+                           <div class="form-group col-3">
+                              <label for="">Order Type</label>
+                              <select class="form-control">
+                                 <option selected>Choose...</option>
+                                 <option>...</option>
+                              </select>
+                           </div>
+                        </div>
+                        <div class="form-row">
+                           <div class="form-group col-3">
+                              <label for="">Type of logs</label>
+                              <select class="form-control">
+                                 <option selected>Choose...</option>
+                                 <option>...</option>
+                              </select>
+                           </div>
+                           <div class="form-group col-3">
+                              <label for="">Type of Products</label>
+                              <select class="form-control">
+                                 <option selected>Choose...</option>
+                                 <option>...</option>
+                              </select>
+                           </div>
+                           <div class="form-group col-3">
+                              <label for="">Estimated Cost</label>
+                              <input type="text" class="form-control" placeholder="Estimation Cost">
+                           </div>
+                           <div class="form-group col-3">
+                              <label for="">Quantity</label>
+                              <input type="text" class="form-control" placeholder="Quantity">
+                           </div>
+                        </div>
+                        <div class="form-row">
+                           <div class="form-group col-3">
+                              <label for="">Length</label>
+                              <input type="text" class="form-control" placeholder="Length">
+                           </div>
+                           <div class="form-group col-1">
+                              <label for="">Measure</label>
+                              <select class="form-control">
+                                 <option selected>MM</option>
+                                 <option>Inches</option>
+                                 <option>Feet</option>
+                              </select>
+                           </div>
+                           <div class="form-group col-3">
+                              <label for="">Width</label>
+                              <input type="text" class="form-control" placeholder="Width">
+                           </div>
+                           <div class="form-group col-1">
+                              <label for="">Measure</label>
+                              <select class="form-control">
+                                 <option selected>MM</option>
+                                 <option>Inches</option>
+                                 <option>Feet</option>
+                              </select>
+                           </div>
+                           <div class="form-group col-3">
+                              <label for="">Thickness</label>
+                              <input class="form-control" placeholder="Thickness">
+                           </div>
+                           <div class="form-group col-1">
+                              <label for="">Measure</label>
+                              <select class="form-control">
+                                 <option selected>MM</option>
+                                 <option>Inches</option>
+                                 <option>Feet</option>
+                              </select>
+                           </div>
+                        </div>
+                        <a href="#" role="button" class="btn btn-danger">Add</a>  <a href="account.html" role="button" class="btn btn-danger">Next</a>
+                     </form>
+                     <div class="col-sm-12 my-4">
+                        <table class="table table-bordered">
+                           <thead>
+                              <tr class="text-center">
+                                 <th scope="col">Customer Id</th>
+                                 <th scope="col">Customer Name</th>
+                                 <th scope="col">Order Type</th>
+                                 <th scope="col">Type of logs</th>
+                                 <th scope="col">Type of products</th>
+                                 <th scope="col">Product Avilability At</th>
+                                 <th scope="col">Length</th>
+                                 <th scope="col">Width</th>
+                                 <th scope="col">Thickness</th>
+                                 <th scope="col">Quantity</th>
+                                 <th scope="col">Estimation Cost</th>
+                              </tr>
+                           </thead>
+                           <tbody>
+                              <tr>
+                                 <td></td>
+                                 <td></td>
+                                 <td></td>
+                                 <td></td>
+                                 <td></td>
+                                 <td></td>
+                                 <td></td>
+                                 <td></td>
+                                 <td></td>
+                                 <td></td>
+                                 <td></td>
+                              </tr>
+                              <tr>
+                                 <td></td>
+                                 <td></td>
+                                 <td></td>
+                                 <td></td>
+                                 <td></td>
+                                 <td></td>
+                                 <td></td>
+                                 <td></td>
+                                 <td></td>
+                                 <td></td>
+                                 <td></td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <footer class="sticky-footer">
+               <div class="container">
+                  <div class="row">
+                     <div class="col-sm-6">
+                        <div class="text-center">
+                           <small>Copyright © Parameswara Timber Hub Pvt.Ltd 2017</small>
+                        </div>
+                     </div>
+                     <div class="col-sm-6">
+                        <div class="text-center">
+                           <small> Application Designed and Built By <a href="http://heeditsolutions.com" target="_blank">Heed IT Solutions</a></small>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </footer>
+         </div>
+      </section>
+   </body>
+</html>

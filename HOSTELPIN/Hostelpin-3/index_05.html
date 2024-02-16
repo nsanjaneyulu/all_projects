@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="css/font-awesome.css">
+<link rel="stylesheet" href="css/bjqs.css">
+<link href="css/styles.css" rel="stylesheet" type="text/css" />
+<script src="js/jquery.min.js"></script>
+
+
+<style>
+
+.checkbox {
+   display: inline-block;
+ padding: 0px 2px;
+  transform: translateZ(0);
+}
+.checkbox label {
+  cursor: pointer;
+  padding-left: 0;
+ }
+ .checkbox input[type=checkbox] {
+     opacity: 0;
+   position: absolute;
+    margin: 0;
+     z-index: -1;
+   width: 0;
+    height: 0;
+    overflow: hidden;
+     left: 0;
+     pointer-events: none;
+    }
+.checkbox .checkbox-material {
+     vertical-align: middle;
+    position: relative;
+    top: 3px;
+  }
+ .checkbox .checkbox-material:before {
+    position: absolute;
+   left: 8px;
+     top: 2px;
+   content: "";
+   /* background-color: rgba(0, 0, 0, 0.5); */
+    height: 4px;
+    width: 4px;
+    border-radius: 100%;
+    z-index: 1;
+    opacity: 0;
+   margin: 0;
+   }
+.checkbox .checkbox-material .check {
+    position: relative;
+ display: inline-block;
+    width: 20px;
+  height: 20px;
+     border: 2px solid;
+    border-radius: 2px;
+    overflow: hidden;
+    z-index: 1;
+   }
+  .checkbox .checkbox-material .check:before {
+   position: absolute;
+  content: "";
+    transform: rotate(45deg);
+   display: block;
+   margin-top: -4px;
+  margin-left: 6px;
+   width: 0;
+   height: 0;
+   box-shadow: 0 0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 0 inset;
+   animation: checkbox-off 0.3s forwards ease-out;
+ }
+.checkbox input[type=checkbox]:focus + .checkbox-material .check:after {
+    opacity: 0.2;
+   }
+ .checkbox input[type=checkbox]:checked + .checkbox-material .check:before {
+   box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0px 0 20px, 0px 32px 0 20px, -5px 5px 0 10px, 20px -12px 0 11px;
+    animation: checkbox-on 0.3s forwards ease-out;
+  }
+ .checkbox input[type=checkbox]:not(:checked) + .checkbox-material:before {
+    animation: rippleOff 700ms forwards ease-out;
+  }
+ .checkbox input[type=checkbox]:checked + .checkbox-material:before {
+  animation: rippleOn 700ms forwards ease-out;
+   }
+ .checkbox input[type=checkbox]:not(:checked) + .checkbox-material .check:after {
+    animation: rippleOff 700ms forwards ease-out;
+  }
+ .checkbox input[type=checkbox]:checked + .checkbox-material .check:after {
+    animation: rippleOn 700ms forwards ease-out;
+ }
+ .checkbox input[type=checkbox][disabled]:not(:checked) ~ .checkbox-material .check:before,
+ .checkbox input[type=checkbox][disabled] + .circle {
+     opacity: 0.5;
+   }
+.checkbox input[type=checkbox][disabled] + .checkbox-material .check:after {
+    background-color: rgba(0, 0, 0, 0.84);
+   transform: rotate(-45deg);
+   }
+ .coloured .checkbox-material .check {
+     color: #2FAEF8;
+   }
+.coloured .checkbox-material:before {
+   background-color: #2FAEF8;
+  }
+.coloured input[type=checkbox]:checked + .checkbox-material .check {
+  color: #2FAEF8;
+  }
+  @keyframes checkbox-on {
+  0% {
+   box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0px 0 20px, 0px 32px 0 20px, -5px 5px 0 10px, 15px 2px 0 11px;
+   }
+   50% {
+    box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0px 0 20px, 0px 32px 0 20px, -5px 5px 0 10px, 20px 2px 0 11px;
+ }
+  100% {
+     box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0px 0 20px, 0px 32px 0 20px, -5px 5px 0 10px, 20px -12px 0 11px;
+   }
+ }
+ @keyframes checkbox-off {
+  0% {
+     box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0px 0 20px, 0px 32px 0 20px, -5px 5px 0 10px, 20px -12px 0 11px, 0 0 0 0 inset;
+  }
+   25% {
+   box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0px 0 20px, 0px 32px 0 20px, -5px 5px 0 10px, 20px -12px 0 11px, 0 0 0 0 inset;
+   }
+   50% {
+    transform: rotate(45deg);
+     margin-top: -4px;
+    margin-left: 6px;
+     width: 0px;
+      height: 0px;
+      box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0px 0 20px, 0px 32px 0 20px, -5px 5px 0 10px, 15px 2px 0 11px, 0 0 0 0 inset;
+    }
+    51% {
+    transform: rotate(0deg);
+    margin-top: -2px;
+     margin-left: -2px;
+    width: 20px;
+    height: 20px;
+    box-shadow: 0 0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 0, 0px 0px 0 10px inset;
+   }
+ 100% {
+   transform: rotate(0deg);
+    margin-top: -2px;
+     margin-left: -2px;
+   width: 20px;
+   height: 20px;
+   box-shadow: 0 0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 0, 0px 0px 0 0px inset;
+  }
+}
+ @keyframes rippleOn {
+  0% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0;
+     transform: scale(13, 13);
+   }
+ }
+  @keyframes rippleOff {
+   0% {
+     opacity: 0.5;
+   }
+  100% {
+     opacity: 0;
+    transform: scale(13, 13);
+    }
+  }
+  label {
+     font-weight: 400;
+    display: block;
+   margin-bottom: 5px;;
+   }
+ .gap-small {
+   margin: 15px 0 15px 0;
+    }
+ aside.sidebar-right {
+   padding-left: 30px;
+    border-left: 1px solid #d4d4d4;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="gap-small"></div>
+  <h1>Register your business</h1>
+</div>
+<div class="container">
+  <div class="col-md-7">
+    <form class="mt30" method="post" name="registration" action="controller/register.php" onsubmit="return validateForm()">
+      <div class="row">
+
+        <div class="col-md-6">
+          <label>Accommodation Type</label>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox"><span class="checkbox-material"><span class="check"></span></span> Food
+            </label>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" checked><span class="checkbox-material"><span class="check"></span></span> Beauty
+            </label>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox"><span class="checkbox-material"><span class="check"></span></span> Experiences
+            </label>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <label>Accommodation Type</label>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox"><span class="checkbox-material"><span class="check"></span></span> Food
+            </label>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" checked><span class="checkbox-material"><span class="check"></span></span> Beauty
+            </label>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox"><span class="checkbox-material"><span class="check"></span></span> Experiences
+            </label>
+          </div>
+        </div>
+
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <label>Hostel/PG/Lodge Name</label>
+          <input name="businessName" id="businessName" class="form-control" type="text">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <label>Owner Name</label>
+          <input class="form-control" type="text" name="owner" id="owner">
+        </div>
+        <div class="col-md-6">
+          <label>Email Id</label>
+          <input name="email" id="email" class="form-control" type="text" placeholder="Ex. contact@gmail.com">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <label>Mobile</label>
+          <input name="mobile" id="mobile" class="form-control" type="text" placeholder="Ex. 9985223312 (10 digit number) ">
+        </div>
+        <div class="col-md-6">
+          <label>Phone / Alternate Mobile number</label>
+          <input name="phone" id="phone" class="form-control" type="text">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <label>H.No#, Street</label>
+          <input name="street" id="street" class="form-control" type="text" placeholder="Ex. H.No: 1-2-3, arunodaya colony">
+        </div>
+        <div class="col-md-6">
+          <label>Land Mark</label>
+          <input name="landmark" id="landmark" class="typeahead form-control" type="text" placeholder="Ex. Near Hi-tech theater">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <label>Address (Area, City, State)<small> Auto-suggestion list from Google map</small></label>
+          <div class="form-group">
+            <input id="address" name="address" onfocus="geolocate()" class="form-control" placeholder="area,city, state" type="text" autocomplete="off">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <label>Website (if any)</label>
+          <input name="website" id="website" class="form-control" type="text" placeholder="Ex. http://www.hostelname.com">
+        </div>
+      </div>
+      <div class="gap-small"></div>
+      <h5 class="text-info">Facilities Information</h5>
+      <hr style="margin-top:0">
+      <div class="">
+        <div class="checkbox">
+          <label>
+            Room Price  <input type="checkbox" data-toggle="toggle" data-size="mini">
+          </label>
+        </div>
+        <div class="checkbox">
+          <label>
+            Room Price  <input type="checkbox" data-toggle="toggle" data-size="mini">
+          </label>
+        </div>
+      </div>
+      <div class="gap-small"></div>
+      <h5 class="text-info">Price Information</h5>
+      <hr style="margin-top:0">
+      <div class="row">
+        <div class="col-md-2">
+          <label></label>
+        </div>
+        <div class="col-md-2">
+          <label>Single</label>
+        </div>
+        <div class="col-md-2">
+          <label>2 Share</label>
+        </div>
+        <div class="col-md-2">
+          <label>3 Share</label>
+        </div>
+        <div class="col-md-2">
+          <label>4 Share</label>
+        </div>
+        <div class="col-md-2">
+          <label>5 Share</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-2">
+          <label>Room Price</label>
+        </div>
+        <div class="col-md-2">
+          <input class="form-control" type="text" name="single" id="single" placeholder="6000">
+        </div>
+        <div class="col-md-2">
+          <input class="form-control" type="text" name="doubleShare" id="doubleShare" placeholder="5000">
+        </div>
+        <div class="col-md-2">
+          <input class="form-control" type="text" name="tripleShare" id="tripleShare" placeholder="4000">
+        </div>
+        <div class="col-md-2">
+          <input class="form-control" type="text" name="fourShare" id="fourShare" placeholder="3500">
+        </div>
+        <div class="col-md-2">
+          <input class="form-control" type="text" name="fiveShare" id="fiveShare" placeholder="3000">
+        </div>
+      </div>
+      <div class="gap-small"></div>
+      <div class="row">
+        <div class="col-md-2">
+          <label>AC Room Price</label>
+        </div>
+        <div class="col-md-2">
+          <input class="form-control" type="text" name="acSingle" id="acSingle" placeholder="9000">
+        </div>
+        <div class="col-md-2">
+          <input class="form-control" type="text" name="acDoubleShare" id="acDoubleShare" placeholder="8000">
+        </div>
+        <div class="col-md-2">
+          <input class="form-control" type="text" name="acTripleShare" id="acTripleShare" placeholder="7000">
+        </div>
+        <div class="col-md-2">
+          <input class="form-control" type="text" name="acFourShare" id="acFourShare" placeholder="6000">
+        </div>
+        <div class="col-md-2">
+          <input class="form-control" type="text" name="acFiveShare" id="acFiveShare" placeholder="5000">
+        </div>
+      </div>
+      <div class="gap-small"></div>
+      <h5 class="text-info">Food Information</h5>
+      <hr style="margin-top:0">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="checkbox">
+            <label>
+              <input type="checkbox"><span class="checkbox-material"><span class="check"></span></span> South Indian
+            </label>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" checked><span class="checkbox-material"><span class="check"></span></span> North Indian
+            </label>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox"><span class="checkbox-material"><span class="check"></span></span> Vegetarian
+            </label>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox"><span class="checkbox-material"><span class="check"></span></span> Non Vegetarian
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-2">
+          Breakfast
+        </div>
+        <div class="col-md-10">
+          <input class="form-control" type="textarea" name="breakfast" id="breakfast">
+        </div>
+        <div class="col-md-2">
+          Lunch
+        </div>
+        <div class="col-md-10">
+          <input class="form-control" type="textarea" name="lunch" id="lunch">
+        </div>
+        <div class="col-md-2">
+          Dinner
+        </div>
+        <div class="col-md-10">
+          <input class="form-control" type="textarea" name="dinner" id="dinner">
+        </div>
+        <div class="col-md-2">
+          Special
+        </div>
+        <div class="col-md-10">
+          <input class="form-control" type="textarea" name="specials" id="specials">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <input type="checkbox" value="yes"> I agree to the hosteldunia.com <a href="terms-of-service" target="_blank">Terms of Services</a> &amp; <a href="privacy-policy" target="_blank">Privacy Policy</a>.
+        </div>
+      </div>
+      <div class="gap-small"></div>
+      <input class="btn btn-primary" type="submit" value="Register">
+    </form>
+  </div>
+  <div class="col-md-4">
+    <aside class="sidebar-right">
+      <p>Are you facing any problem in filling the online form? <br>
+        Please do let us know. We are happy to help you !!!
+      </p>
+      <ul class="address-list list">
+        <li>
+          <h5>Phone Numbers</h5>
+          +91-9985 2233 12<br>+91-8341 5152 56
+        </li>
+        <li>
+          <h5>Email</h5>
+          <a href="mailto:contact@hosteldunia.com">contact@hosteldunia.com</a>
+        </li>
+      </ul>
+    </aside>
+  </div>
+  <div class="gap"></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,506 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Welcome to Company Name</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+	<link href="style.css" rel="stylesheet" type="text/css" />
+	<script language="javascript">
+		function printpage()
+		{
+			window.print()
+		}
+	</script>
+          <script type="text/javascript">
+// From: http://www.webdeveloper.com/forum/showthread.php?t=218226
+
+function ToggleList(IDS) {
+  var CState = document.getElementById(IDS);
+  if (CState.style.display != "block") { CState.style.display = "block"; }
+                                  else { CState.style.display = "none"; }
+}
+function HideRange(sect,elTag,IDS) {
+  var ContentObj = document.getElementById(sect);
+  var AllContentDivs = ContentObj.getElementsByTagName(elTag);
+  for (i=0; i<AllContentDivs.length; i++) {
+    if (IDS != AllContentDivs[i].id) { AllContentDivs[i].style.display="none"; }
+  }
+}
+
+</script>
+<style type="text/css">
+  .divInfo { display:none; }
+.style19 {font-family: Verdana, Arial, Helvetica, sans-serif; font-size: medium; font-style: italic; }
+.style20 {color: #FF0099; font-size: large;}
+.style21 {
+	font-size: small;
+	font-weight: bold;
+}
+.style23 {color: #FF0099; font-size: small; font-weight: bold; }
+</style>
+	<style type="text/css">	
+    #container { 
+width : 1605px;
+margin : 0 auto;
+border : 10px solid #fff;
+line-height : 2em;
+background:#CCCCFF;
+color:#6600CC;
+height: auto;
+} </style>
+</head>
+<body>
+	<div id="container">
+		<div id="top">
+		<h1><font color="#330066">Welcome to Company Name</font></h1>
+		<div class="search">
+		<!-- for search -->
+		</div>
+	</div>
+	<div id="navcontainer">
+		<ul id="navlist">
+		<li id="active"><a href="HomePage.html" id="current">Home</a></li>
+		<li><a href="ContactUs.html">Contact us</a></li>
+		</ul>
+	</div>
+<div id="leftnav">
+    <h2>Menu</h2>
+   <ul id="leftnavmenu">
+        <li><a href="#" onClick="ToggleList('a')">Live Stock Management</a></li>
+   <div id="a" class="divInfo">
+        <li style="padding-left:10%;"><a href="LiveStockNew.html">Add Live Stock</a></li>
+		<li style="padding-left:10%;"><a href="EditUpdateSearch.html">Edit / Update Live Stock</a></li>
+        <li style="padding-left:10%;"><a href="PromotedSearch.html">Promoted LiveStock Hostory</a></li>
+   </div>
+         <li><a href="#" onClick="ToggleList('b')">Milk Yeild Management</a></li>
+   <div id="b" class="divInfo">
+		 <li style="padding-left:10%;"><a href="WeeklyMilkProduction.html">Add Daily Milk Production</a></li>
+        <li style="padding-left:10%;"><a href="MilkProductionEdit.html">Add / Edit Milk Production</a></li>
+    </div>
+         <li><a href="#" onClick="ToggleList('c')">Feeding Management</a></li>
+        <li style="padding-left:10%;"><a href="AddDailyFeeding.html">Add Daily Feeding</a></li>
+        <li style="padding-left:10%;"><a href="AddNewFeeding.html">Add Feeding Type</a></li>
+        <li style="padding-left:10%;"><a href="Feeding.html">Edit / Update Feeding Type</a></li>
+        <li style="padding-left:10%;"><a href="SuggestedFeeding.html">Suggested Feeding</a></li>
+       <li><a href="#" onClick="ToggleList('d')">Search Management</a></li>
+     <div id="d" class="divInfo">
+		<li style="padding-left:10%;"><a href="SearchCriteria.html">Search Criteria</a></li>
+     </div>
+        <li><a href="#" onClick="ToggleList('e')">Provisions Management</a></li>
+     <div id="e" class="divInfo">
+		<li style="padding-left:10%;"><a href="MonthlyProvisionNew.html">Add Monthly Provisions</a></li> 
+        <li style="padding-left:10%;"><a href="MonthlyProvisionEdit.html">Edit / Update Monthly Provisions</a></li> 
+         <li style="padding-left:10%;"><a href="SuggestedProvisions.html">Suggested Provisions</a></li>
+     </div>
+         <li><a href="#" onClick="ToggleList('f')">Stock Management</a></li>
+      <div id="f" class="divInfo">
+		<li style="padding-left:10%;"><a href="StockAddNew.html">Add New Stock</a></li> 
+        <li style="padding-left:10%;"><a href="Stocks.html">Edit / Update Stock</a></li> 
+      </div>
+         <li><a href="#" onClick="ToggleList('g')">Financial Management</a></li>
+      <div id="g" class="divInfo">
+		 <li style="padding-left:10%;"><a href="Revenue.html">Revenue / Sales</a></li> 
+         <li style="padding-left:10%;"><a href="Expenses.html">Expenses</a></li> 
+         <li style="padding-left:10%;"><a href="ProfitLoss.html">Profit / Loss</a></li> 
+      </div>
+         <li><a href="#" onClick="ToggleList('h')">Employee Management</a></li>
+      <div id="h" class="divInfo">
+		  <li style="padding-left:10%;"><a href="AddEmpNew.html">Add New Employee</a></li> 
+          <li style="padding-left:10%;"><a href="AddEditEmp.html">Edit / Update Employee</a></li> 
+      </div>
+          <li><a href="#" onClick="ToggleList('i')">Assets Management</a></li>
+      <div id="i" class="divInfo">
+		   <li style="padding-left:10%;"><a href="AssetsNew.html">Add New Assets</a></li> 
+           <li style="padding-left:10%;"><a href="Assets.html">Edit / Update Assets</a></li>
+      </div>
+           <li><a href="#" onClick="ToggleList('j')">Vendor Management</a></li>
+      <div id="j" class="divInfo">
+		    <li style="padding-left:10%;"><a href="VendorNew.html">Add New Vendor</a></li> 
+            <li style="padding-left:10%;"><a href="Vendor.html">Edit / Update Vendor</a></li>
+      </div>
+            <li><a href="#" onClick="ToggleList('k')">Admin</a></li>
+       <div id="k" class="divInfo">
+           <li style="padding-left:10%;"><a href="ParameterSetup.html">Parameter Setup</a></li>
+		   <li style="padding-left:10%;"><a href="ConfigureDropdown.html">Configure Dropdown</a></li> 
+      </div>
+	</ul>
+</div>
+	<div id="content"> 
+		
+		<table>
+			<tr>
+				<th>RFID</th>
+				<th>Live Stock Code</th>
+				<th>Breed</th>
+				<th>Milking Status</th>
+				<th>Lactation Day</th>
+				<th>Age</th>
+				<th>Weight (in KGS)</th>
+				<th>Pregnancy Days</th>
+				<th colspan=2>Morning Milk Yeild </th>   
+				<th colspan=2 >Evening Milk Yeild)</th>
+				<th colspan=2>Total Yeild (till Today)</th>
+				<th colspan=3>Morning Feeding</th>
+				<th colspan=3>Evening Feeding</th>
+			</tr>
+			<tr>
+				<th></th>
+				<th></th>
+				<th></th>
+				<th></th>
+				<th></th>
+				<th></th>
+				<th></th>
+				<th></th>
+				<th>in KGS</th>   
+				<th>in Litres</th>
+				<th>in KGS</th>   
+				<th>in Litres</th>
+				<th>in KGS</th>   
+				<th>in Litres</th>
+				<th>Green Fodder</th>
+				<th>Dry Fodder </th>
+				<th>Concentration</th>
+				<th>Green Fodder</th>
+				<th>Dry Fodder </th>
+				<th>Concentration</th>
+			</tr>
+			<tr>
+				<td wrap=false> RFA01A</td>
+				<td>JEHKA01A</td>
+				<td>Jersey</td>
+				<td nowrap="nowrap">Non-Pregnant</td>
+				<td>154</td>
+				<td>8</td>
+				<td>100</td>
+			  <td>102</td>
+				<td>11.0</td>
+			  <td>11.0</td>
+				<td>8.0</td>     
+			    <td>8.0</td>        
+				<td>17.0</td>  
+				<td>17.0</td> 
+			  <td>40</td>
+				<td>20</td>
+				<td>28</td>
+				<td>38</td>
+				<td>18</td>
+				<td>20</td>
+			</tr>
+			<tr>
+				<td wrap=false> RFA02A</td>
+				<td>HEHKA01A</td>
+				<td nowrap="nowrap">Holstein  Fresian</td>
+			  <td>Non-Pregnant</td>
+				<td>124</td>
+				<td>17</td>
+				<td>450</td>
+			  <td>112</td>
+				<td>10.0</td>
+			  <td>10.0</td>
+				<td>7.0</td>     
+				<td>7.0</td>         
+			  <td>17.0</td>  
+			  <td>17.0</td> 
+			  <td>30</td>
+				<td>10</td>
+				<td>18</td>
+			  <td>28</td>
+				<td>28</td>
+				<td>10</td>
+			</tr><tr>
+				<td wrap=false> RFA03C</td>
+				<td>AHEKA01A</td>
+				<td>Ayreshire</td>
+			  <td>Non-Pregnant</td>
+				<td>132</td>
+				<td>11</td>
+			  <td>170</td>
+			  <td>122</td>
+				<td>9.0</td>
+			  <td>9.0</td>
+				<td>6.0</td>     
+			  <td>6.0</td>          
+			  <td>15.0</td>  
+			  <td>15.0</td> 
+			  <td>40</td>
+				<td>20</td>
+				<td>28</td>
+				<td>38</td>
+				<td>18</td>
+				<td>20</td>
+			</tr><tr>
+				<td wrap=false> RFA04D</td>
+				<td>RHEKA01A</td>
+				<td nowrap="nowrap">Red  Breeds &amp; Illawarras</td>
+			  <td>Non-Pregnant</td>
+			  <td>172</td>
+				<td>17</td>
+				<td>430</td>
+				<td>132</td>
+				<td>8.0</td>
+				<td>8.0</td>
+				<td>5.0</td>     
+				<td>5.0</td>          
+			  <td>13.0</td>  
+			  <td>13.0</td> 
+			  <td>30</td>
+				<td>10</td>
+			  <td>18</td>
+			  <td>28</td>
+				<td>28</td>
+				<td>10</td>
+			</tr><tr>
+				<td wrap=false> RFA05E</td>
+				<td>JEHKA02A</td>
+			  <td>Jersey</td>
+				<td>Non-Pregnant</td>
+				<td>154</td>
+				<td>12</td>
+				<td>120</td>
+			  <td>102</td>
+				<td>11.0</td>
+			  <td>11.0</td>
+			  <td>8.0</td>     
+			  <td>8.0</td>          
+			  <td>17.0</td>  
+			  <td>17.0</td> 
+			  <td>40</td>
+				<td>20</td>
+				<td>28</td>
+				<td>38</td>
+				<td>18</td>
+				<td>20</td>
+			</tr><tr>
+				<td wrap=false> RFA05F</td>
+				<td>HEHKA02A</td>
+			  <td>Holstein  Fresian</td>
+			  <td>Non-Pregnant</td>
+			  <td>124</td>
+				<td>17</td>
+				<td>450</td>
+				<td>112</td>
+				<td>10.0</td>
+			  <td>10.0</td>
+			  <td>7.0</td>     
+			  <td>7.0</td>         
+			  <td>17.0</td>  
+			  <td>17.0</td> 
+			  <td>30</td>
+				<td>10</td>
+				<td>18</td>
+			  <td>28</td>
+			  <td>28</td>
+				<td>10</td>
+			</tr><tr>
+				<td wrap=false> RFA06A</td>
+				<td>AHEKA02A</td>
+			  <td>Ayreshire</td>
+			  <td>Non-Pregnant</td>
+				<td>132</td>
+			  <td>10</td>
+			  <td>100</td>
+			  <td>122</td>
+				<td>9.0</td>
+			  <td>9.0</td>
+			  <td>6.0</td>     
+			<td>6.0</td>         
+			  <td>15.0</td>  
+			  <td>15.0</td> 
+			  <td>40</td>
+				<td>20</td>
+				<td>28</td>
+				<td>38</td>
+				<td>18</td>
+				<td>20</td>
+			</tr><tr>
+				<td wrap=false> RFA07B</td>
+				<td>RHEKA02A</td>
+			  <td>Red  Breeds &amp; Illawarras</td>
+			  <td>Non-Pregnant</td>
+			  <td>172</td>
+				<td>18</td>
+			  <td>750</td>
+				<td>132</td>
+				<td>8.0</td>
+			  <td>8.0</td>
+			  <td>5.0</td>     
+			  <td>5.0</td>         
+			  <td>13.0</td>  
+			  <td>13.0</td> 
+			  <td>30</td>
+				<td>10</td>
+			  <td>18</td>
+				<td>28</td>
+				<td>28</td>
+				<td>10</td>
+			</tr><tr>
+				<td wrap=false> RFA0BA</td>
+				<td>JEHKA03A</td>
+			  <td>Jersey</td>
+				<td>Non-Pregnant</td>
+				<td>155</td>
+			  <td>12</td>
+			  <td>190</td>
+			  <td>102</td>
+				<td>11.0</td>
+			  <td>11.0</td>
+			  <td>8.0</td>     
+			  <td>8.0</td>         
+			  <td>17.0</td>  
+			  <td>17.0</td> 
+			  <td>40</td>
+				<td>20</td>
+				<td>28</td>
+				<td>38</td>
+				<td>18</td>
+				<td>20</td>
+			</tr><tr>
+				<td wrap=false> RFA09A</td>
+				<td>HEHKA03A</td>
+			  <td>Holstein  Fresian</td>
+			  <td>Non-Pregnant</td>
+				<td>124</td>
+				<td>11</td>
+				<td>650</td>
+				<td>112</td>
+				<td>10.0</td>
+			  <td>7.0</td>
+			  <td>7.0</td>     
+			  <td>7.0</td>        
+				<td>17.0</td>  
+			  <td>17.0</td> 
+			  <td>30</td>
+				<td>10</td>
+			  <td>18</td>
+			  <td>28</td>
+				<td>28</td>
+				<td>10</td>
+			</tr><tr>
+				<td wrap=false> RFA010A</td>
+				<td>AHEKA03A</td>
+			  <td>Jersey</td>
+				<td>Non-Pregnant</td>
+			  <td>132</td>
+				<td>21</td>
+				<td>820</td>
+			  <td>122</td>
+				<td>9.0</td>
+			  <td>9.0</td>
+			  <td>6.0</td>     
+			  <td>6.0</td>         
+			  <td>15.0</td>  
+			  <td>15.0</td> 
+			  <td>40</td>
+				<td>20</td>
+				<td>28</td>
+				<td>38</td>
+				<td>18</td>
+				<td>20</td>
+			</tr><tr>
+				<td wrap=false> RFA011A</td>
+				<td>AHEKA03A</td>
+			  <td>Ayreshire</td>
+			  <td>Non-Pregnant</td>
+				<td>172</td>
+				<td>10</td>
+				<td>130</td>
+			  <td>132</td>
+				<td>8.0</td>
+			  <td>8.0</td>
+			  <td>5.0</td>     
+			  <td>5.0</td>         
+			  <td>13.0</td>  
+			  <td>13.0</td> 
+			  <td>30</td>
+				<td>10</td>
+				<td>18</td>
+			  <td>28</td>
+				<td>28</td>
+				<td>10</td>
+			</tr><tr>
+				<td wrap=false> RFA012A</td>
+				<td>JEHKA04A</td>
+			  <td>Jersey</td>
+				<td>Non-Pregnant</td>
+			  <td>154</td>
+				<td>20</td>
+				<td>950</td>
+			  <td>112</td>
+				<td>11.0</td>
+			  <td>11.0</td>
+			  <td>8.0</td>     
+				<td>8.0</td>         
+				<td>17.0</td>  
+			  <td>17.0</td> 
+			  <td>40</td>
+				<td>20</td>
+				<td>28</td>
+				<td>38</td>
+				<td>18</td>
+				<td>20</td>
+			</tr>
+			<tr>
+				<td wrap=false> RFA013A</td>
+				<td>AHEKA04A</td>
+			  <td>Ayreshire</td>
+			  <td>Non-Pregnant</td>
+				<td>124</td>
+				<td>11</td>
+				<td>150</td>
+				<td>102</td>
+				<td>9.0</td>
+			  <td>9.0</td>
+				<td>6.0</td>     
+			  <td>6.0</td>         
+			  <td>15.0</td>  
+			  <td>15.0</td> 
+			  <td>30</td>
+				<td>10</td>
+			  <td>18</td>
+			  <td>28</td>
+				<td>28</td>
+				<td>10</td>
+			</tr>
+			<tr>
+				<td wrap=false> RFA014A</td>
+				<td>AHEKA05A</td>
+			  <td>Ayreshire</td>
+			  <td>Non-Pregnant</td>
+			  <td>132</td>
+			  <td>19</td>
+			  <td>450</td>
+				<td>112</td>
+				<td>11.0</td>
+			  <td>11.0</td>
+			  <td>8.0</td>     
+				<td>8.0</td>         
+				<td>17.0</td>  
+			  <td>17.0</td> 
+			  <td>40</td>
+				<td>20</td>
+				<td>28</td>
+				<td>38</td>
+				<td>18</td>
+				<td>20</td>
+			</tr>
+				<tr>
+				<td colspan=14 align="right"> Total</td>
+			
+				<td>400</td>
+				<td>380</td>
+				<td>280</td>
+				<td>380</td>
+				<td>180</td>
+				<td>200</td>
+			</tr>
+			<tr>
+				<form method="post" action="#">
+					<td colspan="20" align="Center"><input type="submit" name="subnit" value="Print" onClick="printpage();" class="button"/></td>
+				</form>
+			</tr>
+		</table>
+</br>	  </br>	  </br>	  </br>	  </br>	  </br>	  </br>	  </br></br>	  </br>	  </br>	  </br>	  </br>	  </br>	  </br>	  </br></br>	  </br>  </br>	  </br>	  </br>	  </br>	  </br>	  </br>	  </br></br>	  </br>
+	</div>
+    </div>
+</body>
+</html>

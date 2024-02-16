@@ -1,0 +1,32 @@
+<wicket:extend>
+	<div id="content">
+    <div class="bread-crumb">
+            	<h1>Vendor Management / Vendor List</h1>
+            </div>
+	<h2><div wicket:id="feedback"></div></h2> 
+        	<div class="containerDiv">
+                   <div class="rowDivHeader">
+                   		<div>Vendor Code</div>
+                        <div>Vendor Type</div>
+                        <div>Vendor Name</div>	
+                        <div>Contact Person</div>				
+                        <div>Contact No</div>
+                        <div>Alternative No</div>					
+                        <div>Address</div>
+                        <div>Remarks</div>
+                   </div>
+                
+                   <div class="rowDiv" wicket:id="rows">
+                   		<div style="height:50px;"><a href="#" wicket:id="vendor_edit"><span wicket:id="vendorCode" /></a></div>
+					<div style="height:50px;"><span wicket:id="vendorType" /></div>
+					<div style="height:50px;"><span wicket:id="vendorName" /></div>	
+					<div style="height:50px;"><span wicket:id="vendorContactPerson" /></div>				
+					<div style="height:50px;"><span wicket:id="contactNumber" /></div>
+					<div style="height:50px;"><span wicket:id="alternateContactNumber" /></div>					
+					<div style="width:226px; height:50px;"><span wicket:id="vendorAddress" /></div>
+					<div class="last" style="height:50px;"><span wicket:id="remarks" /></div>
+                   </div>
+                </div>
+		
+	</div>
+</wicket:extend>

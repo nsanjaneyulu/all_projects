@@ -1,0 +1,86 @@
+.login_Content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+.signIn_Content {
+  display: flex;
+  box-shadow: 0px 0px 10px #aaaaaa;
+  border-radius: 2em;
+  flex-wrap: wrap;
+}
+.remeberMe_ForgotPassword--block {
+  font-family: "Brandon Grotesque Regular";
+  display: flex;
+  align-self: center;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.3em;
+  padding: 1em 0em;
+}
+
+.signIn_left--Content {
+  flex: 5;
+  padding: 7em;
+}
+.signIn_Right--Content {
+  flex: 2;
+  background: beige;
+  border-top-right-radius: 2em;
+  border-bottom-right-radius: 2em;
+  padding: 6em 7em;
+  text-align: center;
+}
+.goodBoxImage {
+  width: 14em;
+}
+.nsmImage {
+  width: 17em;
+  cursor: pointer;
+}
+.signIn_Form {
+  padding: 1em;
+}
+.signIn_Heading {
+  color: #41742c;
+  font-family: "NSMFoodie";
+  font-size: 2em;
+}
+.rememberMe_Lable {
+  margin-left: 0.3em;
+}
+hr {
+  border-top: 2px solid #41742c;
+  margin: 0 auto;
+  width: 2em;
+}
+.signIn_Heading--Block {
+  padding: 0em 0em 1em 0em;
+}
+.signIn_Lable {
+  font-family: "Brandon Grotesque Regular";
+  font-size: 1.3em;
+}
+.signIn_Input {
+  padding: 1.5em;
+  width: 100%;
+}
+.signIn_Button {
+  button {
+    color: white;
+    background: #41742c;
+    border: 1px solid #41742c;
+    padding: 0.3em 2em;
+    border-radius: 2em;
+    font-family: "Brandon Grotesque Regular";
+    font-size: 1.4em;
+    font-weight: 500;
+    margin-top: 2em;
+  }
+}
+.invalid-feedback {
+  color: red;
+}

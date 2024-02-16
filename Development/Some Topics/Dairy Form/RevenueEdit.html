@@ -1,0 +1,168 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Welcome to Company Name</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<script language="javascript" type="text/javascript" src="datetimepicker.js">
+
+//Date Time Picker script- by TengYong Ng of http://www.rainforestnet.com
+//Script featured on JavaScript Kit (http://www.javascriptkit.com)
+//For this script, visit http://www.javascriptkit.com
+
+</script>
+         <script type="text/javascript">
+// From: http://www.webdeveloper.com/forum/showthread.php?t=218226
+
+function ToggleList(IDS) {
+  var CState = document.getElementById(IDS);
+  if (CState.style.display != "block") { CState.style.display = "block"; }
+                                  else { CState.style.display = "none"; }
+}
+function HideRange(sect,elTag,IDS) {
+  var ContentObj = document.getElementById(sect);
+  var AllContentDivs = ContentObj.getElementsByTagName(elTag);
+  for (i=0; i<AllContentDivs.length; i++) {
+    if (IDS != AllContentDivs[i].id) { AllContentDivs[i].style.display="none"; }
+  }
+}
+
+</script>
+<style type="text/css">
+  .divInfo { display:none; }
+.style19 {font-family: Verdana, Arial, Helvetica, sans-serif; font-size: medium; font-style: italic; }
+.style20 {color: #FF0099; font-size: large;}
+.style21 {
+	font-size: small;
+	font-weight: bold;
+}
+.style23 {color: #FF0099; font-size: small; font-weight: bold; }
+</style>
+<link href="style.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+
+</style>
+</head>
+<body>
+<div id="container">
+  <div id="top">
+    <h1><font color="#330066">Welcome to Company Name</font></h1>
+    <div class="search">
+      <!-- for search -->
+    </div>
+  </div>
+  <div id="navcontainer">
+    <ul id="navlist">
+      <li id="active"><a href="HomePage.html" id="current">Home</a></li>
+      <li><a href="ContactUs.html">Contact us</a></li>
+     </ul>
+  </div>
+  <div id="leftnav">
+    <h2>Menu</h2>
+   <ul id="leftnavmenu">
+        <li><a href="#" onClick="ToggleList('a')">Live Stock Management</a></li>
+   <div id="a" class="divInfo">
+        <li style="padding-left:10%;"><a href="LiveStockNew.html">Add Live Stock</a></li>
+		<li style="padding-left:10%;"><a href="EditUpdateSearch.html">Edit / Update Live Stock</a></li>
+        <li style="padding-left:10%;"><a href="PromotedSearch.html">Promoted LiveStock Hostory</a></li>
+   </div>
+         <li><a href="#" onClick="ToggleList('b')">Milk Yeild Management</a></li>
+   <div id="b" class="divInfo">
+        <li style="padding-left:10%;"><a href="AddDailyMilkProduction.html">Add Daily Milk Production</a></li>
+        <li style="padding-left:10%;"><a href="MilkProductionEdit.html">Add / Edit Daily Milk Production</a></li>
+    </div>
+         <li><a href="#" onClick="ToggleList('c')">Feeding Management</a></li>
+    <div id="c" class="divInfo">
+       <li style="padding-left:10%;"><a href="AddDailyFeeding.html">Add Daily Feeding</a></li>
+        <li style="padding-left:10%;"><a href="AddNewFeeding.html">Add Feeding Type</a></li>
+        <li style="padding-left:10%;"><a href="Feeding.html">Edit / Update Feeding Type</a></li>
+        <li style="padding-left:10%;"><a href="SuggestedFeeding.html">Suggested Feeding</a></li>
+    </div>
+       <li><a href="#" onClick="ToggleList('d')">Search Management</a></li>
+     <div id="d" class="divInfo">
+		<li style="padding-left:10%;"><a href="SearchCriteria.html">Search Criteria</a></li>
+     </div>
+        <li><a href="#" onClick="ToggleList('e')">Provisions Management</a></li>
+     <div id="e" class="divInfo">
+		<li style="padding-left:10%;"><a href="MonthlyProvisionNew.html">Add Monthly Provisions</a></li> 
+        <li style="padding-left:10%;"><a href="MonthlyProvisionEdit.html">Edit / Update Monthly Provisions</a></li> 
+         <li style="padding-left:10%;"><a href="SuggestedProvisions.html">Suggested Provisions</a></li>
+     </div>
+         <li><a href="#" onClick="ToggleList('f')">Stock Management</a></li>
+      <div id="f" class="divInfo">
+		<li style="padding-left:10%;"><a href="StockAddNew.html">Add New Stock</a></li> 
+        <li style="padding-left:10%;"><a href="Stocks.html">Edit / Update Stock</a></li> 
+      </div>
+         <li><a href="#" onClick="ToggleList('g')">Financial Management</a></li>
+		 <li style="padding-left:10%;"><a href="Revenue.html">Revenue / Sales</a></li> 
+         <li style="padding-left:10%;"><a href="Expenses.html">Expenses</a></li> 
+         <li style="padding-left:10%;"><a href="ProfitLoss.html">Profit / Loss</a></li> 
+         <li><a href="#" onClick="ToggleList('h')">Employee Management</a></li>
+      <div id="h" class="divInfo">
+		  <li style="padding-left:10%;"><a href="AddEmpNew.html">Add New Employee</a></li> 
+          <li style="padding-left:10%;"><a href="AddEditEmp.html">Edit / Update Employee</a></li> 
+      </div>
+          <li><a href="#" onClick="ToggleList('i')">Assets Management</a></li>
+      <div id="i" class="divInfo">
+		   <li style="padding-left:10%;"><a href="AssetsNew.html">Add New Assets</a></li> 
+           <li style="padding-left:10%;"><a href="Assets.html">Edit / Update Assets</a></li>
+      </div>
+           <li><a href="#" onClick="ToggleList('j')">Vendor Management</a></li>
+      <div id="j" class="divInfo">
+		    <li style="padding-left:10%;"><a href="VendorNew.html">Add New Vendor</a></li> 
+            <li style="padding-left:10%;"><a href="Vendor.html">Edit / Update Vendor</a></li>
+      </div>
+            <li><a href="#" onClick="ToggleList('k')">Admin</a></li>
+       <div id="k" class="divInfo">
+           <li style="padding-left:10%;"><a href="ParameterSetup.html">Parameter Setup</a></li>
+		   <li style="padding-left:10%;"><a href="ConfigureDropdown.html">Configure Dropdown</a></li> 
+      </div>
+	</ul>
+</div>
+  <div id="content">
+ <h2>Revenue / Sale Information</h2>   
+    <table>
+      <tr>
+        <td>
+        <table>
+       <tr>
+          <td><label>Receipt No</label></td>
+           <td>        
+			<input type="text" id="demo1" size="10"  value="RFA001A">
+		  </td>
+          <td><label>Sale Date</label></td>
+         <td>
+									<input type="text" id="demo2" size="10" value="01-Jun-2012">
+									<a href="javascript:NewCal('demo12,'ddmmyyyy')"><img src="images/cal.gif" alt="Pick a date"></a>
+								</td>
+           </tr>
+           <tr>
+          <td><label>Vendor Code</label></td>
+           <td>
+          <input type="text" id="demo1" size="10"  value="VAKE001A">
+          </td>
+          <td><label>Receipt Type</label></td>
+            <td>
+            <select><option>Select</option><option selected value="Milk Sale">Milk sale</option><option>Mannure Sale</option><option>Animal Sale</option><option>Missllaneous</option></select>
+            </td>
+            </tr>
+            <tr>
+          <td><label>Remorks</label></td>
+           <td>
+             <textarea name="descrirtion"></textarea>
+            </td>  
+          <td><label>Amount (in Rs.)</label></td>
+           <td><input type="text" id="demo1" size="10"  value="3,789">
+			</td>
+       </tr>
+      </table>
+      </td>  
+  </tr>  
+   <tr>
+	  	 <td colspan="6" align="center"> <INPUT type="button" value="Update" class="button"/>  </td>
+		 </tr>	 
+    </table>
+ <br /> </br>	  </br>	  </br>	  </br>	  </br>	  </br>	  </br>   <br /> </br>	  </br>	  </br>	  </br>	  </br>	  </br>	  </br></br>	  </br>	  </br>	  </br>	  </br>	  </br>	  </br>	  </br></br>	  </br>	  </br>	  </br>	  </br>	  </br>	  </br>	  </br></br>	  </br>  </br>	  </br>	  </br>	  </br>	  </br>	  </br>	  </br></br>	  </br>
+</div>
+</div>
+</body>
+</html>

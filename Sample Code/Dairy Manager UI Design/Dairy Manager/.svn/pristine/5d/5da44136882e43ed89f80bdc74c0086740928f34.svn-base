@@ -1,0 +1,192 @@
+<wicket:extend>	
+	<div id="content">
+    <div class="bread-crumb">
+            	<h1>Live Stock Management / Live Stock Details</h1>
+            </div>
+        <form method="post" wicket:id="livestocknew">
+        <div wicket:id="feedback">[Feedback Panel]</div>
+	    <div class="addData" style="clear:both;">
+		  <ul>
+            <li>
+			        <label>Origin</label><font color="#FF0000">*</font><br />
+				    <select id="newUrl" wicket:id="origin" class="dropdown_effect" maxlength="30">
+						<option>Select</option>
+						<option value="LiveStockNew.html">In-House Born</option>
+						<option value="#">Purchased</option>
+					</select>
+   			</li>
+            <li>
+				    <label>Mother's Breed</label><font color="#FF0000">*</font><br />
+				    <select wicket:id="motherBreed" class="dropdown_effect" maxlength="30"><option>Select</option>
+                    <option>Jersey</option><option>Holstein Fresian</option><option>Ayreshire</option>
+                    <option>Red Breeds & Illawarras</option></select>
+      		</li>
+            <li>
+			        <label>Mother's Live Stock Code</label><br />
+				    <input type="text" name="motherLiveStockCode" wicket:id="mothercode" class="number_effect" maxlength="30"/>
+     		</li>
+            <li>
+				    <label>Sire Number</label><br />
+				    <input name="fsemen" type="text" wicket:id="fsemen" class="number_effect" maxlength="30"/>
+           </li>
+            <li>
+				    <label>Initial Value</label><br />
+				    <input name="initialValue" type="text" wicket:id="initialValue" class="number_effect" maxlength="30"/>
+        	</li>
+        
+            <li>
+				    <label>Preferred Type</label><font color="#FF0000">*</font><br />
+				    <select wicket:id="preferredType" class="dropdown_effect">
+						<option>Select</option>
+						<option>Nurture</option>
+						<option>Pending</option>
+				    </select>
+   			</li>
+            <li>
+				    <label>RFID</label><br />
+				    <input name="rfid" type="text" wicket:id="rfid" class="number_effect" maxlength="64"/>
+      		</li>
+            <li>
+				    <label>Live Stock Code</label><font color="#FF0000">*</font><br />
+				    <input name="code" type="text"  wicket:id="code" class="number_effect" maxlength="30"/>
+    		</li>
+            <li>
+			        <label>Sex</label><font color="#FF0000">*</font><br />
+                    <select name="select" class="dropdown_effect" wicket:id="sex" maxlength="1">
+                    </select>
+            </li>
+            <li>
+				    <label>Live Stock State</label><font color="#FF0000">*</font><br />
+				    <select wicket:id="stateType" class="dropdown_effect" maxlength="30"><option>Select</option>
+                    <option>Calf</option><option>Heifer</option><option>Herd</option></select>
+         	</li>
+            <li>
+			        <label>Milking Status</label><font color="#FF0000">*</font><br />
+				    <select wicket:id="milkingStatus" class="dropdown_effect" maxlength="30"><option>Select</option>
+                    <option>Non-Pregnant</option><option>Pregnant-Milking</option><option>Pregnant-Dry</option></select>
+      		</li>
+            <li>	
+				    <label>Conceived Date</label><br />
+				    <input type="text" id="conceiveDate"  wicket:id="conceiveDate" class="date_effect">
+           	</li>
+            <li>
+				    <label>Lactation Number</label><br />
+				    <input name="lactationNumber" type="text" wicket:id="lactationNumber" class="number_effect" maxlength="3"
+                    style="text-align:right;"/>
+         	</li>
+            <li>
+				    <label>Lactation Start Date</label><br />
+				     <input type="text" id="lactationDays"  wicket:id="startDate" class="date_effect">
+       		</li>
+            <li>	
+			        <label>Date of Birth</label><font color="#FF0000">*</font><br />
+				    <input type="text" id="birth Date"  wicket:id="birthDate" class="date_effect">
+          	</li>
+            <li>
+				    <label>Age (in years)</label><font color="#FF0000">*</font><br />
+				    <input name="age" type="text"  wicket:id="age" class="number_effect" maxlength="10" style="text-align:right;"/>
+       		</li>
+           <!--  <li>	
+			        <label>Photos</label><br />
+                    <div id="FileUpload">
+                        <input type="file" size="24" id="BrowserHidden" onchange="getElementById('FileField').value =                        getElementById('BrowserHidden').value;"/>
+                    <div id="BrowserVisible">
+                        <input type="text" id="FileField" />
+                    </div>
+                    </div>
+     		</li> -->
+            <li>
+				    <label>Breed</label><font color="#FF0000">*</font><br />
+				    <select wicket:id="breedTypeByBreedType" class="dropdown_effect" maxlength="30"><option>Select</option>
+                    <option>Jersey</option><option >Holstein Fresian</option><option >Ayreshire</option>
+                    <option>Red Breeds & Illawarras</option></select>
+          	</li>
+            <li>
+					<label>Height (in cm's)</label><br />
+				    <input name="height" type="text"  wicket:id="height" class="number_effect" maxlength="10"
+                    style="text-align:right;"/>
+      		</li>
+            <li>
+				    <label>Weight (in kg's)</label><br />
+				    <input name="weight" type="text" wicket:id="weight" class="number_effect" maxlength="10"
+                    style="text-align:right;"/>
+      		</li>
+            <li>
+			        <label>Length (in cm's)</label><br />
+				    <input name="length" type="text"  wicket:id="length" class="number_effect" maxlength="10"
+                    style="text-align:right;"/>
+      		</li>
+            <li>
+				    <label>Appearence</label><br />
+				    <input name="appearance" type="text" wicket:id="appearance" class="number_effect" maxlength="500"/>
+      		</li>
+            <li>
+				    <label>Milk Yielding (per Day)</label><br />
+				    <input name="yeild" type="text"  wicket:id="yeild" class="number_effect" maxlength="8"
+                    style="text-align:right;"/>
+          	</li>
+            <li>
+				    <label>Fat (%)</label><br />
+				    <input name="fat" type="text"  wicket:id="fat" class="number_effect" maxlength="8"
+                    style="text-align:right;"/>
+       		</li>
+            <li>
+			        <label>Purchased Cost</label><br />
+					<input name="purchaseCost" type="text"  wicket:id="purchaseCost" class="number_effect" maxlength="8"
+                    style="text-align:right;"/>
+         	</li>
+            <li>
+					<label>Purchased Location</label><br />
+				    <input name="purchaseLocation" type="text"  wicket:id="purchaseLocation" class="textfield_effect" 
+                    maxlength="100"/>
+       		</li>
+            <li>
+					<label>Transportation Distance</label><br />
+					<input name="transDist" type="text"  wicket:id="transDist" class="number_effect" maxlength="8"
+                    style="text-align:right;"/>
+          	</li>
+            <li>
+					<label>Transportation Cost</label><br />
+					<input name="transCost" type="text"  wicket:id="transCost" class="number_effect" maxlength="8"
+                    style="text-align:right;"/>
+          	</li>
+            <li>
+					<label>Owner/Farm name</label><br />
+					<input name="purchaseFarm" type="text"  wicket:id="purchaseFarm" class="textfield_effect" maxlength="50"/>
+        	</li>
+            <li>
+					<label>Broker</label><br />
+					<input name="purchaseBroker" type="text"  wicket:id="purchaseBroker" class="textfield_effect" maxlength="50"/>
+      		</li>
+            <li>
+					<label>Drying Off</label><font color="#FF0000">*</font><br />
+					<select wicket:id="stopMilkingStatus" class="dropdown_effect" maxlength="1"></select>
+           	</li>
+           	 <li>
+					<label>Drying Off Date</label><br />
+					<input name="dryoff Date" type="text" id="dryoff Date"  wicket:id="dryoffDate" class="date_effect" >
+           	</li>
+           	<li>
+					<label>Stop Calf Feeding</label><font color="#FF0000">*</font><br />
+					<select wicket:id="stopFeedingStatus" class="dropdown_effect" maxlength="1"></select>
+           	</li>
+                <li>
+				    <label>Delivery Mode (At the time of birth)</label><br />
+				    <input name="deliverymode" type="text" wicket:id="deliverymode" class="textfield_effect" maxlength="30"/>
+      		</li>
+             <li>
+					<label>Remarks</label><br />
+					<textarea wicket:id="remarks" class="bigtextarea_effect" maxlength="130"></textarea><br/>
+          	</li>
+          </ul>
+		 
+	    </div>
+         <div style="clear:both;" ></div>
+		  
+					<div class="newButton">
+					  <input type="submit" name="saveandnext" value="Save & Next"  wicket:id="savenext" class="button"/>
+					  <input type="submit" name="deceasedLiveStock" value="Mark Discard"  wicket:id="deceased" class="button"/>
+					</div>
+	  </form>
+	</div>
+</wicket:extend>

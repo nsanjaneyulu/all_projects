@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width">
+      <title>Demo</title>
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css">
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css">
+      <link rel="stylesheet" href="styles.css">
+      <link href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap.min.css">
+      <script src="https://code.jquery.com/jquery.min.js"></script>
+      <script type="" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+      <script type="" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+   </head>
+   <body>
+      <div class="app menu__active">
+         <!-- App Top Header -->
+         <div class="app__header d-flex align-items-center">
+            <div class="app__header__logo d-flex align-items-center">
+               <img src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Wicon.png" alt="" class="logo__image">
+               <div class="logo__text ml-2">
+                  WYNTA
+               </div>
+            </div>
+            <div class="app__header__top d-flex align-items-center w-100">
+               <a class="app__header__menu__toggle">
+               <i class="fa fa-bars"></i>
+               </a>
+               <div class="app__header__search">
+                  <input type="text" placeholder="Search" class="app__header__search">
+                  <i class="fa fa-search"></i>
+               </div>
+               <ul class="app__header__menu d-flex list-unstyled mb-0 ml-auto">
+                  <li class="app__header__menu__item">
+                     <a href="">
+                     <i class="fas fa-question-circle"></i>
+                     </a>
+                  </li>
+                  <li class="app__header__menu__item">
+                     <a href="">
+                     <i class="fas fa-user" aria-hidden="true"></i>
+                     </a>
+                  </li>
+                  <li class="app__header__menu__item">
+                     <a href="">
+                     <i class="fas fa-bell"></i>
+                     </a>
+                  </li>
+                  <li class="app__header__menu__item">
+                     <a href="">
+                     <i class="fas fa-server"></i>
+                     </a>
+                  </li>
+               </ul>
+            </div>
+         </div>
+         <div class="app__content">
+            <!-- App Sidebar Menu -->
+            <div class="app__sidebar">
+               <div class="app__sidebar__header">Main</div>
+               <!-- Sidebar Menu List -->
+               <ul class="app__sidebar__menu menu__list">
+                  <!-- li.menu__item*7>(a.menu__text>i.fa.fa-home.menu__icon+{Text $}+i.fa.fa-home.menu__dropdown__icon)+ul.menu__submenu submenu>li*4>a.submenu__item{Sub Menu $} -->
+                  <li class="menu__item active">
+                     <a href="" class="menu__text">
+                     <i class="fas fa-tachometer-alt menu__icon"></i>
+                     <span class="menu__item__text"> Dashboard</span>
+                     </a>
+                  </li>
+                  <li class="menu__item">
+                     <a href="" class="menu__text">
+                     <i class="fas fa-columns menu__icon"></i>
+                     <span class="menu__item__text"> Text 1</span>
+                     <i class="fa fa-chevron-down menu__dropdown__icon"></i>
+                     </a>
+                     <ul class="menu__submenu submenu">
+                        <li>
+                           <a href="" class="submenu__item">Sub Menu 1</a>
+                        </li>
+                        <li>
+                           <a href="" class="submenu__item">Sub Menu 2</a>
+                        </li>
+                        <li>
+                           <a href="" class="submenu__item">Sub Menu 3</a>
+                        </li>
+                        <li>
+                           <a href="" class="submenu__item">Sub Menu 4</a>
+                        </li>
+                     </ul>
+                  </li>
+                  <li class="menu__item">
+                     <a href="" class="menu__text">
+                     <i class="fas fa-chart-line menu__icon"></i>
+                     <span class="menu__item__text"> Text 2</span>
+                     <i class="fa fa-chevron-down menu__dropdown__icon"></i>
+                     </a>
+                     <ul class="menu__submenu submenu">
+                        <li>
+                           <a href="" class="submenu__item">Sub Menu 1</a>
+                        </li>
+                        <li>
+                           <a href="" class="submenu__item">Sub Menu 2</a>
+                        </li>
+                        <li>
+                           <a href="" class="submenu__item">Sub Menu 3</a>
+                        </li>
+                        <li>
+                           <a href="" class="submenu__item">Sub Menu 4</a>
+                        </li>
+                     </ul>
+                  </li>
+                  <li class="menu__item">
+                     <a href="" class="menu__text">
+                     <i class="fas fa-award menu__icon"></i>
+                     <span class="menu__item__text"> Text 3</span>
+                     <i class="fa fa-chevron-down menu__dropdown__icon"></i>
+                     </a>
+                     <ul class="menu__submenu submenu">
+                        <li>
+                           <a href="" class="submenu__item">Sub Menu 1</a>
+                        </li>
+                        <li>
+                           <a href="" class="submenu__item">Sub Menu 2</a>
+                        </li>
+                        <li>
+                           <a href="" class="submenu__item">Sub Menu 3</a>
+                        </li>
+                        <li>
+                           <a href="" class="submenu__item">Sub Menu 4</a>
+                        </li>
+                     </ul>
+                  </li>
+                  <li class="menu__item">
+                     <a href="" class="menu__text">
+                     <i class="fas fa-arrows-alt menu__icon"></i>
+                     <span class="menu__item__text"> Text 4</span>
+                     <i class="fa fa-chevron-down menu__dropdown__icon"></i>
+                     </a>
+                     <ul class="menu__submenu submenu">
+                        <li>
+                           <a href="" class="submenu__item">Sub Menu 1</a>
+                        </li>
+                        <li>
+                           <a href="" class="submenu__item">Sub Menu 2</a>
+                        </li>
+                        <li>
+                           <a href="" class="submenu__item">Sub Menu 3</a>
+                        </li>
+                        <li>
+                           <a href="" class="submenu__item">Sub Menu 4</a>
+                        </li>
+                     </ul>
+                  </li>
+                  <li class="menu__item">
+                     <a href="" class="menu__text">
+                     <i class="fas fa-ban menu__icon"></i>
+                     <span class="menu__item__text"> Text 5</span>
+                     <i class="fa fa-chevron-down menu__dropdown__icon"></i>
+                     </a>
+                     <ul class="menu__submenu submenu">
+                        <li>
+                           <a href="" class="submenu__item">Sub Menu 1</a>
+                        </li>
+                        <li>
+                           <a href="" class="submenu__item">Sub Menu 2</a>
+                        </li>
+                        <li>
+                           <a href="" class="submenu__item">Sub Menu 3</a>
+                        </li>
+                        <li>
+                           <a href="" class="submenu__item">Sub Menu 4</a>
+                        </li>
+                     </ul>
+                  </li>
+                  <li class="menu__item">
+                     <a href="" class="menu__text">
+                     <i class="fas fa-archway menu__icon"></i>
+                     <span class="menu__item__text"> Text 6</span>
+                     <i class="fa fa-chevron-down menu__dropdown__icon"></i>
+                     </a>
+                     <ul class="menu__submenu submenu">
+                        <li>
+                           <a href="" class="submenu__item">Sub Menu 1</a>
+                        </li>
+                        <li>
+                           <a href="" class="submenu__item">Sub Menu 2</a>
+                        </li>
+                        <li>
+                           <a href="" class="submenu__item">Sub Menu 3</a>
+                        </li>
+                        <li>
+                           <a href="" class="submenu__item">Sub Menu 4</a>
+                        </li>
+                     </ul>
+                  </li>
+                  <li class="menu__item">
+                     <a href="" class="menu__text">
+                     <i class="fas fa-balance-scale menu__icon"></i>
+                     <span class="menu__item__text"> Text 7</span>
+                     <i class="fa fa-chevron-down menu__dropdown__icon"></i>
+                     </a>
+                     <ul class="menu__submenu submenu">
+                        <li>
+                           <a href="" class="submenu__item">Sub Menu 1</a>
+                        </li>
+                        <li>
+                           <a href="" class="submenu__item">Sub Menu 2</a>
+                        </li>
+                        <li>
+                           <a href="" class="submenu__item">Sub Menu 3</a>
+                        </li>
+                        <li>
+                           <a href="" class="submenu__item">Sub Menu 4</a>
+                        </li>
+                     </ul>
+                  </li>
+               </ul>
+            </div>
+            <!-- App Content  -->
+            <div class="app__main">
+               <header class="app__main__header"></header>
+               <div class="app__main__container container-fluid">
+                  <div class="card">
+                     <div class="card-body py-0">
+                        <div class="row">
+                           <h3 class="card__title">Quick Stats: Last 7 Days <i class="fa fa-chevron-down menu__dropdown__icon pl-2" style="color: #6f6f6f"></i></h3>
+                        </div>
+                        <div class="row">
+                           <div class="col-md-3 text-black-50 card__stats">
+                              <h4>$28,800</h4>
+                              <p>Deposits</p>
+                              <small>+16.93% charges</small>
+                           </div>
+                           <div class="col-md-3 text-black-50 card__stats">
+                              <h4>$28,800</h4>
+                              <p>Deposits</p>
+                              <small>+16.93% charges</small>
+                           </div>
+                           <div class="col-md-3 text-black-50 card__stats">
+                              <h4>$28,800</h4>
+                              <p>Deposits</p>
+                              <small>+16.93% charges</small>
+                           </div>
+                           <div class="col-md-3 text-black-50 card__stats">
+                              <h4>$28,800</h4>
+                              <p>Deposits</p>
+                              <small>+16.93% charges</small>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="card my-5">
+                     <div class="card-body py-0">
+                        <div class="row">
+                           <h3 class="card__title">Quick Stats: Last 7 Days <i class="fa fa-chevron-down menu__dropdown__icon pl-2" style="color: #6f6f6f"></i></h3>
+                        </div>
+                        <div class="row">
+                           <canvas id="myChart" width="50" height="10"></canvas>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="card my-5">
+                     <div class="card-body py-0">
+                        <div class="row">
+                           <h3 class="card__title">Quick Stats: Last 7 Days <i class="fa fa-chevron-down menu__dropdown__icon pl-2" style="color: #6f6f6f"></i></h3>
+                        </div>
+                        <div class="row">
+                           <div class="col-6">
+                              <div class="row">
+                                 <div class="col-md-6 text-black-50 card__stats">
+                                    <h4>$28,800</h4>
+                                    <p>Deposits</p>
+                                    <small>+16.93% charges</small>
+                                 </div>
+                                 <div class="col-md-6 text-black-50 card__stats">
+                                    <h4>$28,800</h4>
+                                    <p>Deposits</p>
+                                    <small>+16.93% charges</small>
+                                 </div>
+                              </div>
+                              <canvas id="myChart1" width="50" height="10"></canvas>
+                           </div>
+                           <div class="col-6">
+                              <div class="row">
+                                 <div class="col-md-4 text-black-50 card__stats">
+                                    <h4>$28,800</h4>
+                                    <p>Deposits</p>
+                                    <small>+16.93% charges</small>
+                                 </div>
+                                 <div class="col-md-4 text-black-50 card__stats">
+                                    <h4>$28,800</h4>
+                                    <p>Deposits</p>
+                                    <small>+16.93% charges</small>
+                                 </div>
+                                 <div class="col-md-4 text-black-50 card__stats">
+                                    <h4>$28,800</h4>
+                                    <p>Deposits</p>
+                                    <small>+16.93% charges</small>
+                                 </div>
+                              </div>
+                              <canvas id="myChart2" width="50" height="10"></canvas>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="card my-5">
+                     <div class="card-body py-0">
+                        <div class="row">
+                           <h3 class="card__title">Quick Stats: Last 7 Days <i class="fa fa-chevron-down menu__dropdown__icon pl-2" style="color: #6f6f6f"></i></h3>
+                        </div>
+                        <div class="row">
+                           <table id="example" class="table table-striped col-12" >
+                              <thead>
+                                 <tr>
+                                    <th>Name</th>
+                                    <th>Position</th>
+                                    <th>Office</th>
+                                    <th>Age</th>
+                                    <th>Start date</th>
+                                    <th>Salary</th>
+                                 </tr>
+                              </thead>
+                              <tbody>
+                                 <tr>
+                                    <td>Ashton Cox</td>
+                                    <td>Junior Technical Author</td>
+                                    <td>San Francisco</td>
+                                    <td>66</td>
+                                    <td>2009/01/12</td>
+                                    <td>$86,000</td>
+                                 </tr>
+                                 <tr>
+                                    <td>Cedric Kelly</td>
+                                    <td>Senior Javascript Developer</td>
+                                    <td>Edinburgh</td>
+                                    <td>22</td>
+                                    <td>2012/03/29</td>
+                                    <td>$433,060</td>
+                                 </tr>
+                                 <tr>
+                                    <td>Airi Satou</td>
+                                    <td>Accountant</td>
+                                    <td>Tokyo</td>
+                                    <td>33</td>
+                                    <td>2008/11/28</td>
+                                    <td>$162,700</td>
+                                 </tr>
+                                 <tr>
+                                    <td>Donna Snider</td>
+                                    <td>Customer Support</td>
+                                    <td>New York</td>
+                                    <td>27</td>
+                                    <td>2011/01/25</td>
+                                    <td>$112,000</td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <script>
+         (function($){
+         
+             $("body").on("click", ".app__header__menu__toggle", function() {
+                 $(".app").toggleClass("menu__active");
+             })
+         })(jQuery);
+          $('#example').DataTable( {
+         "order": [[ 3, "desc" ]],
+         "bSort": true,
+         "bPaginate": false,
+         "bInfo": false,
+         } );
+         var ctx = document.getElementById('myChart');
+         var chart = new Chart(ctx, {
+         // The type of chart we want to create
+         type: 'line',
+         
+         // The data for our dataset
+         data: {
+                labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+                datasets: [{
+                    label: 'My First dataset',
+                    backgroundColor: '#ff6384',
+                    borderColor: '#ff6384',
+                    
+                    data: [
+                        0, 10, 5, 2, 20, 30, 45
+                    ],
+                    fill: false,
+                }, {
+                    label: 'My Second dataset',
+                    fill: false,
+                    backgroundColor: '#36a2eb',
+                    borderColor: '#36a2eb',
+                    data: [
+                        0, 20, 15, 22, 40, 15, 25
+                    ],
+                }]
+            },
+         
+         // Configuration options go here
+         options: {}
+         });
+         
+         var ctx = document.getElementById('myChart1');
+         var chart = new Chart(ctx, {
+         // The type of chart we want to create
+         type: 'line',
+         
+         // The data for our dataset
+         data: {
+                labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+                datasets: [{
+                    label: 'My First dataset',
+                    backgroundColor: '#ff6384',
+                    borderColor: '#ff6384',
+                    
+                    data: [
+                        0, 10, 5, 2, 20, 30, 45
+                    ],
+                    fill: false,
+                }, {
+                    label: 'My Second dataset',
+                    fill: false,
+                    backgroundColor: '#36a2eb',
+                    borderColor: '#36a2eb',
+                    data: [
+                        0, 20, 15, 22, 40, 15, 25
+                    ],
+                }]
+            },
+         
+         // Configuration options go here
+         options: {}
+         });
+         
+         var ctx = document.getElementById('myChart2');
+         var chart = new Chart(ctx, {
+         // The type of chart we want to create
+         type: 'bar',
+         
+         // The data for our dataset
+         data: {
+      labels: ["Africa", "Asia", "Europe", "Latin America", "North America"],
+      datasets: [
+        {
+          label: "Population (millions)",
+          backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"],
+          data: [2478,5267,734,784,433]
+        },
+        {
+          label: "Population (millions) 1",
+          backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"],
+          data: [2478,5267,734,784,433]
+        }
+      ]
+    },
+         // Configuration options go here
+         options: {}
+         });
+         
+      </script>
+   </body>
+</html>

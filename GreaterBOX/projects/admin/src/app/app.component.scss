@@ -1,0 +1,17 @@
+main {
+  max-width: 1600px;
+  margin: 0 auto;
+  position: relative;
+  font-size: 12px;
+}
+.frishBox_SideNav {
+  width: 8.25em;
+  background-color: #41742c;
+  color: white;
+  position: fixed;
+  height: 100vh;
+  z-index: 99;
+  top: 0;
+  overflow: unset;
+  box-shadow: unset;
+}

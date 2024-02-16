@@ -1,0 +1,117 @@
+page-home {
+	
+	.label__details {
+		color: rgba(66, 48, 48, 0.6);
+		font-size: 14px;
+		letter-spacing: 0.19px;
+		line-height: 15px;
+		font-weight: 600;
+	}
+	.label-md {
+		margin: 0px !important;
+	}
+	.clickViewOrder {
+		font-size: 10px;
+		color: #747474;
+	}
+	.search__div {
+		padding: 11px 10px;
+		background: #fff;
+	}
+	.search__container .searchbar-input {
+		box-shadow: none !important;
+		font-size: $fontSize__style + 8px !important;
+	}
+	.searchbar__Styles {
+		padding: 0rem !important;
+		border-bottom: 3px solid rgb(195, 195, 195);
+	}
+	.main__div {
+		background: #edecec !important
+	}
+	.filters {
+		display: flex;
+		justify-content: space-between;
+	}
+	.filter__Styles {
+		color: rgba(51, 51, 51, 0.8);
+		font-size: $fontSize__style + 4px;
+		line-height: $lineHeight__styles + 8px;
+		text-align: center;
+	}
+	.select__border__none {
+		border: none !important
+	}
+	.dropdown__styles {
+		background: #fff !important
+	}
+	.orderLable__styles {
+		color: #747474;
+		font-size: $fontSize__style + 2px;
+		letter-spacing: 0.19px;
+		line-height: $lineHeight__styles + 5px;
+		font-weight: bold;
+	}
+	.bootem__level__space {
+		border-bottom: 2px solid #c3c3c3;
+	}
+	.bootem__level__styles {
+		border-bottom: 1px dotted #dedede;
+	}
+	// .bootem__level__space:nth-child(odd) .item-md {
+	// 	background-color: #F1F7FF;
+	// 	box-shadow: 0rem 0.13rem 0.3rem 0rem rgba(0, 0, 0, 0.06);		
+	// }
+	.orderId {
+		color: #11BA91;
+		font-size: 16px ;
+		font-weight: bold;
+		letter-spacing: 0.19px;
+		line-height: $lineHeight__styles + 8px;
+	}
+	.OrderStatus {
+		color: #333333;
+		font-size: 12px ;
+		font-weight: 500;
+		letter-spacing: 0.19px;
+		line-height: $lineHeight__styles + 8px;
+	}
+	.orderIdStatus {
+		display: flex;
+		justify-content: space-between;
+	}
+	.date__Vehicle {
+		color: #a9435e;
+		font-size: $fontSize__style + 2px;
+		letter-spacing: 0.19px;
+		line-height: $lineHeight__styles + 5px;
+	}
+	.diner_call {
+		color: #11BA91;
+		font-size: $fontSize__style + 2px;
+		font-weight: 500;
+		line-height: $lineHeight__styles + 3px;
+		padding: 5px;
+    	display: flex;
+    	flex-direction: row-reverse;
+	}	
+	.bootem__level__space__outlet__level {
+		margin-bottom: 0.3rem;
+	}
+	.order__number__styles {
+		display: flex;
+		justify-content: space-between;
+	}
+	.break__word {
+		white-space: initial;
+	}
+	.see__customizations {
+		color: #11BA91;
+		font-size: $fontSize__style;
+		font-weight: bold;
+		line-height: $lineHeight__styles + 3px;
+		text-align: center;
+		word-wrap: break-word;
+	}
+	
+}

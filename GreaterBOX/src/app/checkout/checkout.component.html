@@ -1,0 +1,208 @@
+<main>
+  <div class="container checkout_Main" #checkoutContent id="checkoutContent">
+    <div class="heading_Block">
+      <div class="heading_Information">
+        <img src="../../assets/4.0.Payment.png" />
+        <h3 class="heading--text">Payment Details</h3>
+      </div>
+    </div>
+    <div class="location_PaymentBox--Content">
+      <div
+        class="location_PaymentBox--ErrorMessages"
+        *ngIf="webSessionErrorShow"
+      >
+        <h3>{{ webSessionError }}</h3>
+      </div>
+      <div
+        class="location_PaymentBox--ErrorMessages"
+        *ngIf="PaymentUnsucessShow && !orderPending"
+      >
+        <h3>{{ PaymentUnsucess }}</h3>
+      </div>
+
+      <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
+        <div>
+          <div class="form-row">
+            <div class="col-md-5 your_Information--InputBlock">
+              <div class="form-group required PaymentBox_Input">
+                <label class="your_Information--lable" for="cardNumber"
+                  >Card Number</label
+                >
+
+                <input
+                  type="text"
+                  class="form-control Payment_Box--Inputs"
+                  id="cardNumber"
+                  mask="0000 0000 0000 0*"
+                  [validation]="false"
+                  placeholder="Ex 1234  5678 3456  2456"
+                  formControlName="cardNumber"
+                />
+                <div
+                  *ngIf="checkingCardStatus"
+                  class="location_PaymentBox--CheckingMessages"
+                >
+                  Checking...
+                </div>
+                <div
+                  class="location_PaymentBox--ErrorCardMessages"
+                  *ngIf="!checkingCardStatus && cardNumberErrorGet"
+                >
+                  <span>{{ cardNumberErrorGet }}</span>
+                </div>
+              </div>
+              <div class="form-group required PaymentBox_Input">
+                <label class="your_Information--lable" for="cardHolderFirstName"
+                  >Card Holder First Name</label
+                >
+                <input
+                  type="text"
+                  formControlName="cardHolderFirstName"
+                  class="form-control Payment_Box--Inputs"
+                  id="cardHolderFirstName"
+                  placeholder="Ex John"
+                />
+              </div>
+              <div class="form-group required PaymentBox_Input">
+                <label class="your_Information--lable" for="cardHolderLastName"
+                  >Card Holder Last Name</label
+                >
+                <input
+                  type="text"
+                  formControlName="cardHolderLastName"
+                  class="form-control Payment_Box--Inputs"
+                  id="cardHolderLastName"
+                  placeholder="Ex Doe"
+                />
+              </div>
+              <div class="form-group required PaymentBox_BottomInputs">
+                <div class="PaymentBox_Input ExpiryDate_Input">
+                  <label
+                    class="your_Information--lable"
+                    for="chargeExpirationMMYY"
+                    >Card Expiry (MM/YY)</label
+                  >
+                  <input
+                    formControlName="chargeExpirationMMYY"
+                    type="text"
+                    mask="09/09"
+                    class="form-control Payment_Box--Inputs"
+                    id="chargeExpirationMMYY"
+                    placeholder="Ex 05 / 21"
+                  />
+                </div>
+                <div class="form-group required PaymentBox_Input CVV_Input">
+                  <label class="your_Information--lable" for="cvv">CVV</label>
+                  <input
+                    formControlName="chargeCVN"
+                    type="password"
+                    class="form-control Payment_Box--Inputs"
+                    id="cvv"
+                    placeholder="Ex ***"
+                  />
+                </div>
+              </div>
+              <div class="form-group required required">
+                <label class="your_Information--lable" for="address-1"
+                  >Address Line 1</label
+                >
+                <input
+                  type="text"
+                  class="form-control Payment_Box--Inputs"
+                  id="address-1"
+                  formControlName="cardHolderAddressLine1"
+                  aria-describedby=""
+                  placeholder="Address Line 1"
+                />
+              </div>
+              <div class="form-group">
+                <label class="your_Information--lable" for="address-2"
+                  >Address Line 2</label
+                >
+                <input
+                  type="text"
+                  class="form-control Payment_Box--Inputs"
+                  id="address-2"
+                  formControlName="cardHolderAddressLine2"
+                  aria-describedby=""
+                  placeholder="Address Line 2"
+                />
+              </div>
+              <div class="form-group required">
+                <label class="your_Information--lable" for="city">City</label>
+                <input
+                  type="text"
+                  class="form-control Payment_Box--Inputs"
+                  id="city"
+                  formControlName="cardHolderCity"
+                  aria-describedby=""
+                  placeholder="City"
+                />
+              </div>
+              <div class="PaymentBox_BottomInputs">
+                <div class="form-group required state_dropdown required">
+                  <label class="your_Information--lable" for="state"
+                    >State</label
+                  >
+                  <input
+                    type="text"
+                    mask="AA"
+                    class="form-control Payment_Box--Inputs"
+                    id="state"
+                    formControlName="cardState"
+                    aria-describedby=""
+                    placeholder="State"
+                  />
+                  <small id="state_caption" class="form-text text-muted"
+                    >OR, CA, NM, WA, AZ etc.
+                  </small>
+                  <!-- <select class="form-control Payment_Box--Inputs" id="city">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                  </select> -->
+                </div>
+
+                <div class="form-group required zipcode_Field">
+                  <label class="your_Information--lable" for="zipcode"
+                    >Zipcode</label
+                  >
+                  <input
+                    type=""
+                    class="form-control Payment_Box--Inputs"
+                    id="zipcode"
+                    formControlName="postalCode"
+                    aria-describedby=""
+                    placeholder="Zipcode"
+                  />
+                </div>
+              </div>
+              <div class="Payment_Box--Button">
+                <button
+                  type="submit"
+                  [disabled]="
+                    checkoutForm.invalid || orderPending || cardNumberErrorGet
+                  "
+                  class="Payment_Box--DetailButton"
+                >
+                  Pay ${{ totalProductAmount || 0 }}
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <ngx-spinner
+    bdColor="rgba(51, 51, 51, 0.8)"
+    size="default"
+    type="ball-spin-clockwise"
+  >
+    <p style="color: white;">
+      We are processing your payment, Please do not refresh/close the browser.
+    </p>
+  </ngx-spinner>
+</main>

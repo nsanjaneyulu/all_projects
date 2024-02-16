@@ -1,0 +1,63 @@
+.seatNumber {
+    display: inline;
+    padding: 10px;
+    background-color: lightgray;
+    color: #FFF;
+    border-radius: 5px;
+    cursor: default;
+    line-height: 25px;
+    text-align: center;
+    margin-left: 2px;
+}
+
+.open {
+    border-style: double;
+    margin-left: 5px;
+    background-color: #11BA91 !important;
+    border-color: #11BA91 !important;
+}
+
+.seatNumber2 {
+    display: inline;
+    padding: 10px;
+    //   padding-left: 13px !important;
+    color: #FFF;
+    border-radius: 5px;
+    cursor: default;
+    margin-left: 5px;
+    line-height: 25px;
+    text-align: center;
+    background-image: url('../../../assets/imgs/greenSeat.png') !important;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.seatNumber1 {
+    display: inline;
+    padding: 10px;
+    //   padding-left: 13px !important;
+    color: #FFF;
+    border-radius: 5px;
+    cursor: default;
+    margin-left: 5px;
+    line-height: 25px;
+    text-align: center;
+    background-image: url('../../../assets/imgs/greySeat.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.seatRow {
+    padding: 10px;
+}
+
+.seatSelection {
+    text-align: center;
+    // padding: 5px;
+    margin: 15px;
+}
+
+.titleMargin {
+    margin-bottom: 5%;
+    text-align: center;
+}

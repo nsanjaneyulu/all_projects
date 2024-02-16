@@ -1,0 +1,113 @@
+<div class="row">
+  <div class="col-6">
+    <div class="card">
+      <div class="card-body p-2">
+        <canvas id="myChart"></canvas>
+      </div>
+    </div>
+  </div>
+  <div class="col-6">
+    <div class="card">
+      <div class="card-body p-2">
+        <canvas id="myChart2"></canvas>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row my-4">
+  <div class="col">
+    <div class="d-flex align-items-center my-2">
+      <h5 class="text-gold">Recent Activity</h5>
+
+      <div class="ml-2 px-3 py-1 text-gold d-inline-block cursor_pointer" (click)="showFilters()">
+        <span class="oi oi-sort-ascending text-gold"></span>
+      </div>
+    </div>
+    <div class="row" *ngIf="filtersFormView== true">
+      <div class="col">
+        <form class="needs-validation mb-3" novalidate [formGroup]="filterForm" (ngSubmit)="getFormValues(f)" #f="ngForm">
+          <div class="form-row">
+            <div class="form-group col-md-3 mb-3">
+              <select formControlName="filterType" [ngModel]="DefaultValue"
+                (ngModelChange)="changeFilterType($event,'type')"
+                class="custom-select cst_form_control_type_2 cst_form_control_sm">
+                <option *ngFor="let item of filterTypes; index as i" value="{{item}}">{{item | titlecase}}</option>
+              </select>
+            </div>
+            <div class="col-md-3 mb-3">
+              <!-- <input formControlName="filterText" class="cst_form_control_sm form-control cst_form_control" type="text" placeholder="Enter Value" (ngModelChange)="changeFilterType($event,'value')"> -->
+              <select formControlName="filterText" [ngModel]="DefaultValueFilter"
+                class="custom-select cst_form_control_type_2 cst_form_control_sm">
+                <option *ngFor="let item of filterValuesArray; index as i" value="{{item.id}}">
+                  {{item.displayName | titlecase}}</option>
+              </select>
+            </div>
+            <div class="col-md-3 mb-3">
+              <!-- <input formControlName="filterFromDate" class="cst_form_control_sm form-control cst_form_control" type="date" [ngModel] ="dt | date:'yyyy-MM-dd'" (ngModelChange)="changeFilterType($event,'fromDate')"> -->
+              <!-- <input formControlName="filterFromDate" class="cst_form_control_sm form-control cst_form_control"
+                type="date" [ngModel]="dt | date:'yyyy-MM-dd'"> -->
+              <div class="form-group">
+                <div class="input-group cst_date_picker">
+                  <input class="cst_form_control_sm form-control cst_form_control" placeholder="yyyy-mm-dd" name="dp"
+                    formControlName="filterFromDate" (click)="filterFromDate.toggle(filterToDate.close())" [ngModel]="dt" ngbDatepicker
+                    #filterFromDate="ngbDatepicker">
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 mb-3">
+              <!-- <input formControlName="filterToDate" class="cst_form_control_sm form-control cst_form_control" type="date" [ngModel] ="dt | date:'yyyy-MM-dd'" (ngModelChange)="changeFilterType($event,'toDate')"> -->
+              <!-- <input formControlName="filterToDate" class="cst_form_control_sm form-control cst_form_control"
+                type="date" [ngModel]="dt | date:'yyyy-MM-dd'"> -->
+              <div class="input-group cst_date_picker">
+                <input class="cst_form_control_sm form-control cst_form_control" placeholder="yyyy-mm-dd" name="dp"
+                  formControlName="filterToDate" (click)="(filterToDate.toggle(filterFromDate.close()))" ngbDatepicker
+                  #filterToDate="ngbDatepicker">
+              </div>
+            </div>
+          </div>
+          <button class="theme_button" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+
+    <table *ngIf="isDefaultView" class="table text-gold table-gold">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Activity</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of recentData; index as i">
+          <td>{{i+1}}</td>
+          <td scope="row" *ngIf="item.request_type == 'correspondance'">{{item.request_created_user_name}} request for
+            {{item.request_subject}}</td>
+          <td scope="row" *ngIf="item.request_type == 'appointment'">{{item.request_created_user_name}} released
+            {{item.request_subject}}</td>
+          <td><a [routerLink]="['/dashboard/request/view', item.request_id]" class="text-gold">
+              View</a> | Edit | Delete</td>
+        </tr>
+      </tbody>
+    </table>
+    <table *ngIf="!isDefaultView" class="table text-gold table-gold">
+      <thead>
+        <tr>
+          <th scope="col">Subject</th>
+          <th scope="col">Type</th>
+          <th scope="col">Created</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of recentData; index as i">
+          <td scope="row">{{item.request_subject}}</td>
+          <td>{{item.request_type}}</td>
+          <td scope="row">{{item.request_created_user_name}}</td>
+          <td><a [routerLink]="['/dashboard/request/view', item.request_id]" class="text-gold">
+              View</a> | Edit | Delete</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

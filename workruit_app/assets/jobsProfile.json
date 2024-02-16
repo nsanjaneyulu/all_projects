@@ -1,0 +1,264 @@
+{
+    "jobsProfile": [
+    {
+        "interviewStatus": -1,
+        "loc": 1,
+        "firstname": "Anu9",
+        "totalExperienceText": "11.7 years",
+        "linkdin_user": false,
+        "pic": "",
+        "social_media_links": "",
+        "applicantPeriod": "",
+        "user_website": "",
+        "isInterested": true,
+        "userJobTitle": "Zbjzi",
+        "userExperienceSet": [
+            {
+                "totalExperienceText": "11.7 years",
+                "endDate": "Jun 2021",
+                "jobTitle": "Zbjzi",
+                "isPresent": true,
+                "company": "VJa",
+                "location": "Guadalajara",
+                "startDate": "Jun 2010",
+                "expId": 9514,
+                "$$hashKey": "object:205"
+            }
+        ],
+        "recruiterCompanyName": " ",
+        "lastLoggedIn": 1624611443000,
+        "coverLetter": "athaj",
+        "email": "anu9@yopmail.com",
+        "deviceType": "Android",
+        "resume": "",
+        "user_blog": "",
+        "joining_info": "3 months",
+        "user_linkdin": "",
+        "minSalaryExp": 4,
+        "telephone": "9797676376",
+        "current_salary": 4,
+        "userId": 8196110,
+        "user_github": "",
+        "hide_cur_salary": false,
+        "suggeted": false,
+        "lastname": "9",
+        "recommended": {
+            "sort": "a",
+            "recommended": true
+        },
+        "maxSalaryExp": 8,
+        "userEducationSet": [
+            {
+                "institution": "Vhh",
+                "educationId": 10227,
+                "endDate": "Jun 2021",
+                "degree": {
+                    "degreeId": 77,
+                    "shortTitle": "M.A",
+                    "title": "Master of Arts "
+                },
+                "isPresent": true,
+                "location": "Hyderabad",
+                "fieldOfStudy": "Tyu",
+                "startDate": "Jun 2009",
+                "$$hashKey": "object:212"
+            }
+        ],
+        "hideSalary": false,
+        "lastUpdatedDate": "31 Aug 2021, 03:29 PM",
+        "user_behance": "",
+        "suggetedOrder": "",
+        "relocate": 0,
+        "totalExperience": 11.07,
+        "userSkillsSet": [
+            {
+                "skillId": 12308,
+                "createdDate": 1630403958000,
+                "updatedDate": 1630403958000,
+                "title": "Product Development",
+                "$$hashKey": "object:126"
+            },
+            {
+                "skillId": 13395,
+                "createdDate": 1630403958000,
+                "updatedDate": 1630403958000,
+                "title": "Sales Management",
+                "$$hashKey": "object:127"
+            },
+            {
+                "skillId": 9423,
+                "createdDate": 1630403958000,
+                "updatedDate": 1630403958000,
+                "title": "Market Knowledge",
+                "$$hashKey": "object:128"
+            },
+            {
+                "skillId": 1965,
+                "createdDate": 1630403958000,
+                "updatedDate": 1630403958000,
+                "title": "Business Development",
+                "$$hashKey": "object:129"
+            },
+            {
+                "skillId": 12318,
+                "createdDate": 1630403958000,
+                "updatedDate": 1630403958000,
+                "title": "Product Management",
+                "$$hashKey": "object:130"
+            },
+            {
+                "skillId": 5246,
+                "createdDate": 1630403958000,
+                "updatedDate": 1630403958000,
+                "title": "Executive-level Communication",
+                "$$hashKey": "object:131"
+            },
+            {
+                "skillId": 14677,
+                "createdDate": 1630403958000,
+                "updatedDate": 1630403958000,
+                "title": "Strategic Planning",
+                "$$hashKey": "object:132"
+            },
+            {
+                "skillId": 14676,
+                "createdDate": 1630403958000,
+                "updatedDate": 1630403958000,
+                "title": "Strategic Partnerships",
+                "$$hashKey": "object:133"
+            },
+            {
+                "skillId": 422,
+                "createdDate": 1630403958000,
+                "updatedDate": 1630403958000,
+                "title": "Agility",
+                "$$hashKey": "object:134"
+            },
+            {
+                "skillId": 9429,
+                "createdDate": 1630403958000,
+                "updatedDate": 1630403958000,
+                "title": "Market Research",
+                "$$hashKey": "object:135"
+            },
+            {
+                "skillId": 1807,
+                "createdDate": 1630403958000,
+                "updatedDate": 1630403958000,
+                "title": "Brand Management",
+                "$$hashKey": "object:136"
+            },
+            {
+                "skillId": 13381,
+                "createdDate": 1630403958000,
+                "updatedDate": 1630403958000,
+                "title": "Sales",
+                "$$hashKey": "object:137"
+            },
+            {
+                "skillId": 3456,
+                "createdDate": 1630403958000,
+                "updatedDate": 1630403958000,
+                "title": "Customer Analysis",
+                "$$hashKey": "object:138"
+            },
+            {
+                "skillId": 11100,
+                "createdDate": 1630403958000,
+                "updatedDate": 1630403958000,
+                "title": "Operations Management",
+                "$$hashKey": "object:139"
+            },
+            {
+                "skillId": 9411,
+                "createdDate": 1630403958000,
+                "updatedDate": 1630403958000,
+                "title": "Marketing Communications",
+                "$$hashKey": "object:140"
+            },
+            {
+                "skillId": 1508,
+                "createdDate": 1630403958000,
+                "updatedDate": 1630403958000,
+                "title": "Big Data",
+                "$$hashKey": "object:141"
+            },
+            {
+                "skillId": 8797,
+                "createdDate": 1630403958000,
+                "updatedDate": 1630403958000,
+                "title": "Leadership",
+                "$$hashKey": "object:142"
+            },
+            {
+                "skillId": 12249,
+                "createdDate": 1630403958000,
+                "updatedDate": 1630403958000,
+                "title": "Pricing",
+                "$$hashKey": "object:143"
+            },
+            {
+                "skillId": 9408,
+                "createdDate": 1630403958000,
+                "updatedDate": 1630403958000,
+                "title": "Marketing",
+                "$$hashKey": "object:144"
+            },
+            {
+                "skillId": 3457,
+                "createdDate": 1630403958000,
+                "updatedDate": 1630403958000,
+                "title": "Customer Driven",
+                "$$hashKey": "object:145"
+            },
+            {
+                "skillId": 3616,
+                "createdDate": 1630403958000,
+                "updatedDate": 1630403958000,
+                "title": "Data Analysis",
+                "$$hashKey": "object:146"
+            },
+            {
+                "skillId": 323,
+                "createdDate": 1630403958000,
+                "updatedDate": 1630403958000,
+                "title": "Advertising",
+                "$$hashKey": "object:147"
+            },
+            {
+                "skillId": 9315,
+                "createdDate": 1630403958000,
+                "updatedDate": 1630403958000,
+                "title": "MailChimp",
+                "$$hashKey": "object:148"
+            },
+            {
+                "skillId": 1795,
+                "createdDate": 1630403958000,
+                "updatedDate": 1630403958000,
+                "title": "Branding",
+                "$$hashKey": "object:149"
+            }
+        ],
+        "jobFunctions": [
+            {
+                "jobFunctionId": 192,
+                "jobFunctionName": "Financial Analyst",
+                "categoryId": 3,
+                "$$hashKey": "object:102"
+            },
+            {
+                "jobFunctionId": 154,
+                "jobFunctionName": "CEO",
+                "categoryId": 1,
+                "$$hashKey": "object:103"
+            }
+        ],
+        "totalExperienceDisplay": "10.0 years",
+        "location": "Hyderabad",
+        "userAcademic": [],
+        "status": 1,
+        "$$hashKey": "object:88"
+    }
+]
+}

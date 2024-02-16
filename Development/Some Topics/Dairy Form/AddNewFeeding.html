@@ -1,0 +1,329 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Welcome to Company Name</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<script language="javascript" type="text/javascript" src="datetimepicker.js">
+
+
+</script>
+         <script type="text/javascript">
+// From: http://www.webdeveloper.com/forum/showthread.php?t=218226
+
+function ToggleList(IDS) {
+  var CState = document.getElementById(IDS);
+  if (CState.style.display != "block") { CState.style.display = "block"; }
+                                  else { CState.style.display = "none"; }
+}
+function HideRange(sect,elTag,IDS) {
+  var ContentObj = document.getElementById(sect);
+  var AllContentDivs = ContentObj.getElementsByTagName(elTag);
+  for (i=0; i<AllContentDivs.length; i++) {
+    if (IDS != AllContentDivs[i].id) { AllContentDivs[i].style.display="none"; }
+  }
+}
+
+</script>
+<style type="text/css">
+  .divInfo { display:none; }
+.style19 {font-family: Verdana, Arial, Helvetica, sans-serif; font-size: medium; font-style: italic; }
+.style20 {color: #FF0099; font-size: large;}
+.style21 {
+	font-size: small;
+	font-weight: bold;
+}
+.style23 {color: #FF0099; font-size: small; font-weight: bold; }
+</style>
+<script language="javascript"> </script>
+<link href="style.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+
+</style>
+
+</head>
+<body>
+<div id="container">
+  <div id="top">
+    <h1>&nbsp;</h1>
+    <div class="search">
+      <!-- for search -->
+    </div>
+  </div>
+  <div id="navcontainer">
+    <ul id="navlist">
+      <li id="active"><a href="HomePage.html" id="current">Home</a></li>
+      <li><a href="ContactUs.html">Contact us</a></li>
+     </ul>
+  </div>
+  <div id="leftnav">
+    <h2>Menu</h2>
+   <ul id="leftnavmenu">
+        <li><a href="#" onClick="ToggleList('a')">Live Stock Management</a></li>
+   <div id="a" class="divInfo">
+        <li style="padding-left:10%;"><a href="LiveStockNew.html">Add Live Stock</a></li>
+		<li style="padding-left:10%;"><a href="EditUpdateSearch.html">Edit / Update Live Stock</a></li>
+        <li style="padding-left:10%;"><a href="PromotedSearch.html">Promoted LiveStock Hostory</a></li>
+   </div>
+       <li><a href="#" onClick="ToggleList('b')">Milk Yeild Management</a></li>
+   <div id="b" class="divInfo">
+        <li style="padding-left:10%;"><a href="AddDailyMilkProduction.html">Add Daily Milk Production</a></li>
+        <li style="padding-left:10%;"><a href="MilkProductionEdit.html">Add / Edit Daily Milk Production</a></li>
+    </div>
+         <li><a href="#" onClick="ToggleList('c')">Feeding Management</a></li>
+       <li style="padding-left:10%;"><a href="AddDailyFeeding.html">Add Daily Feeding</a></li>
+        <li style="padding-left:10%;"><a href="AddNewFeeding.html">Add Feeding Type</a></li>
+        <li style="padding-left:10%;"><a href="Feeding.html">Edit / Update Feeding Type</a></li>
+        <li style="padding-left:10%;"><a href="SuggestedFeeding.html">Suggested Feeding</a></li>
+       <li><a href="#" onClick="ToggleList('d')">Search Management</a></li>
+     <div id="d" class="divInfo">
+		<li style="padding-left:10%;"><a href="SearchCriteria.html">Search Criteria</a></li>
+     </div>
+        <li><a href="#" onClick="ToggleList('e')">Provisions Management</a></li>
+     <div id="e" class="divInfo">
+		<li style="padding-left:10%;"><a href="MonthlyProvisionNew.html">Add Monthly Provisions</a></li> 
+        <li style="padding-left:10%;"><a href="MonthlyProvisionEdit.html">Edit / Update Monthly Provisions</a></li> 
+         <li style="padding-left:10%;"><a href="SuggestedProvisions.html">Suggested Provisions</a></li>
+     </div>
+         <li><a href="#" onClick="ToggleList('f')">Stock Management</a></li>
+      <div id="f" class="divInfo">
+		<li style="padding-left:10%;"><a href="StockAddNew.html">Add New Stock</a></li> 
+        <li style="padding-left:10%;"><a href="Stocks.html">Edit / Update Stock</a></li> 
+      </div>
+         <li><a href="#" onClick="ToggleList('g')">Financial Management</a></li>
+      <div id="g" class="divInfo">
+		 <li style="padding-left:10%;"><a href="Revenue.html">Revenue / Sales</a></li> 
+         <li style="padding-left:10%;"><a href="Expenses.html">Expenses</a></li> 
+         <li style="padding-left:10%;"><a href="ProfitLoss.html">Profit / Loss</a></li> 
+      </div>
+         <li><a href="#" onClick="ToggleList('h')">Employee Management</a></li>
+          <div id="h" class="divInfo">
+		  <li style="padding-left:10%;"><a href="AddEmpNew.html">Add New Employee</a></li> 
+          <li style="padding-left:10%;"><a href="AddEditEmp.html">Edit / Update Employee</a></li> 
+          </div>
+          <li><a href="#" onClick="ToggleList('i')">Assets Management</a></li>
+      <div id="i" class="divInfo">
+		   <li style="padding-left:10%;"><a href="AssetsNew.html">Add New Assets</a></li> 
+           <li style="padding-left:10%;"><a href="Assets.html">Edit / Update Assets</a></li>
+      </div>
+           <li><a href="#" onClick="ToggleList('j')">Vendor Management</a></li>
+      <div id="j" class="divInfo">
+		    <li style="padding-left:10%;"><a href="VendorNew.html">Add New Vendor</a></li> 
+            <li style="padding-left:10%;"><a href="Vendor.html">Edit / Update Vendor</a></li>
+      </div>
+            <li><a href="#" onClick="ToggleList('k')">Admin</a></li>
+       <div id="k" class="divInfo">
+           <li style="padding-left:10%;"><a href="ParameterSetup.html">Parameter Setup</a></li>
+		   <li style="padding-left:10%;"><a href="ConfigureDropdown.html">Configure Dropdown</a></li> 
+      </div>
+	</ul>
+</div>
+  <div id="content">
+    <h2> Feeding Information</h2>
+    <table>
+  <tr>
+    <td ><label>Feed Name</label></td>
+    <td ><input name="idnumber" type="text" /></td>
+    <td ><label>Category</label></td>
+    <td ><select><option>Select</option><option>Fat</option><option>Plant Protin</option></select></td>
+     </tr>
+    <tr>
+    <td nowrap="nowrap"><label>International Feed No</label></td>
+    <td ><input name="idnumber" type="text" /></td>
+    <td nowrap="nowrap"><label>Energy Equation Class</label></td>
+    <td ><select><option>Select</option><option>Forage</option><option>Concentrate</option><option>Animal</option></select></td>
+  </tr>
+    <tr>
+    <td ><label>Forage Description</label></td>
+   <td ><input name="idnumber" type="text" /></td>
+    <td ><label>Processing Factor(PAF)</label></td>
+   <td ><input name="idnumber" type="text" /></td>
+    </tr>
+    <tr>
+    <td ><label>TDN(%DM)</label></td>
+    <td ><input name="idnumber" type="text" /></td>
+    <td ><label>DE</label></td>
+    <td><input name="idnumber" type="text" /></td>
+     </tr>
+    <tr>
+    <td ><label>Dry Matter</label></td>
+    <td><input name="idnumber" type="text" /></td>
+    <td ><label>NDF(%DM)</label></td>
+    <td ><input name="idnumber" type="text" /></td>
+     </tr>
+    <tr>
+    <td ><label>ADF(%DM)</label></td>
+    <td ><input name="idnumber" type="text" /></td>
+    <td ><label>Ligin(%DM)</label></td>
+    <td ><input name="idnumber" type="text" /></td>
+     </tr>
+    <tr>
+    <td ><label>CP(%DM)</label></td>
+    <td ><input name="idnumber" type="text" /></td>
+    <td ><label>NDFIP(%DM)</label></td>
+    <td ><input name="idnumber" type="text" /></td>
+     </tr>
+    <tr>
+    <td ><label>ADFIP(%DM)</label></td>
+    <td ><input name="idnumber" type="text" /></td>
+    <td ><label>Protin-A(%CP)</label></td>
+    <td><input name="idnumber" type="text" /> </td>
+     </tr>
+    <tr>
+    <td ><label>Protin-B(%CP)</label></td>
+    <td><input name="idnumber" type="text" /></td>
+    <td ><label>Protin-C(%CP)</label></td>
+    <td><input name="idnumber" type="text" /> </td>
+     </tr>
+    <tr>
+    <td nowrap="nowrap"><label>Protin Degistion Rate(%hr)</label></td>
+    <td><input name="idnumber" type="text" /></td>
+    <td ><label>RUP Digist(%)</label></td>
+    <td><input name="idnumber" type="text" /> </td>
+    </tr>
+    <tr>
+    <td ><label>Fat(%DM)</label></td>
+    <td ><input name="idnumber" type="text" /></td>
+      <td ><label>ASH(%DM)</label></td>
+    <td ><input name="idnumber" type="text" /></td>
+     </tr>
+    <tr>
+     <td ><label>CPt Digistibility</label></td>
+    <td ><input name="idnumber" type="text" /></td>
+      <td ><label>NDF-Digistability</label></td>
+    <td ><input name="idnumber" type="text" /></td>
+    </tr>
+     <tr>
+    <td ><label>Fat Digestibility</label></td>
+    <td ><input name="idnumber" type="text" /></td>
+    <td ><label>Calcium(%DM)</label></td>
+    <td ><input name="idnumber" type="text" /></td>
+     </tr>
+    <tr>
+    <td ><label>Phosphorus(%DM)</label></td>
+    <td ><input name="idnumber" type="text" /></td>
+    <td ><label>Magnisium(%DM)</label></td>
+    <td ><input name="idnumber" type="text" /></td>
+    </tr>
+     <tr>
+    <td ><label>Chlorine(%DM)</label></td>
+    <td ><input name="idnumber" type="text" /></td>
+    <td ><label>Potasium(%DM)</label></td>
+    <td ><input name="idnumber" type="text" /></td>
+     </tr>
+    <tr>
+    <td ><label>Sodium(%DM)</label></td>
+    <td ><input name="idnumber" type="text" /></td>
+    <td ><label>Sulpur(%DM)</label></td>
+    <td ><input name="idnumber" type="text" /></td>
+    </tr>
+     <tr>
+    <td ><label>Cobbalt(mg/kg)</label></td>
+    <td ><input name="idnumber" type="text" /></td>
+    <td ><label>Copper(mg/kg)</label></td>
+    <td ><input name="idnumber" type="text" /></td>
+     </tr>
+    <tr>
+    <td ><label>Lodine(mg/kg)</label></td>
+    <td ><input name="idnumber" type="text" /></td>
+    <td ><label>Iron(mg/kg)</label></td>
+    <td ><input name="idnumber" type="text" /></td>
+    </tr>
+     <tr>
+    <td ><label>Manganese(mg/kg)</label></td>
+    <td ><input name="idnumber" type="text" /></td>
+    <td ><label>Selenium(mg/kg)</label></td>
+    <td ><input name="idnumber" type="text" /></td>
+     </tr>
+    <tr>
+    <td ><label>Zinc(mg/kg)</label></td>
+    <td ><input name="idnumber" type="text" /></td>
+    <td ><label>VIT-A(1000/U/Kg)</label></td>
+    <td ><input name="idnumber" type="text" /></td>
+    </tr>
+     <tr>
+    <td ><label>VIT-D(1000/U/Kg)</label></td>
+    <td ><input name="idnumber" type="text" /></td>
+    <td ><label>Vit-E(U/Kg)</label></td>
+    <td ><input name="idnumber" type="text" /></td>
+     </tr>
+    <tr>
+    <td ><label>Arginine(%CP)</label></td>
+    <td ><input name="idnumber" type="text" /></td>
+    <td ><label>Hstidine(%CP)</label></td>
+    <td ><input name="idnumber" type="text" /></td>
+    </tr>
+     <tr>
+    <td ><label>Isoleucine(%CP)</label></td>
+    <td ><input name="idnumber" type="text" /></td>
+    <td ><label>Lysine(%CP)</label></td>
+    <td ><input name="idnumber" type="text" /></td>
+     </tr>
+    <tr>
+    <td ><label>Methionine(%CP)</label></td>
+    <td ><input name="idnumber" type="text" /></td>
+    <td ><label>Phenylalanine(%CP)</label></td>
+    <td ><input name="idnumber" type="text" /></td>
+    </tr>
+     <tr>
+    <td ><label>Threonine(%CP)</label></td>
+    <td ><input name="idnumber" type="text" /></td>
+    <td ><label>Tryptophan(%CP)</label></td>
+    <td ><input name="idnumber" type="text" /></td>
+     </tr>
+    <tr>
+    <td ><label>Valine(%CP)</label></td>
+    <td ><input name="idnumber" type="text" /></td>
+    <td ><label>Ca-Bioavalibility</label></td>
+    <td ><input name="idnumber" type="text" /></td>
+    </tr>
+     <tr>
+    <td nowrap="nowrap"><label>P-Bioavalibility(g/g)</label></td>
+    <td ><input name="idnumber" type="text" /></td>
+    <td nowrap="nowrap"><label>Mg-Bioavalibility(g/g)</label></td>
+    <td ><input name="idnumber" type="text" /></td>
+     </tr>
+    <tr>
+    <td nowrap="nowrap"><label>Cl-Bioavalibility(g/g)</label></td>
+    <td ><input name="idnumber" type="text" /></td>
+    <td nowrap="nowrap"><label>K-Bioavalibility(g/g)</label></td>
+    <td ><input name="idnumber" type="text" /></td>
+    </tr>
+     <tr>
+    <td nowrap="nowrap"><label>Na-Bioavalibility(g/g)</label></td>
+    <td ><input name="idnumber" type="text" /></td>
+    <td ><label>S-Bioavalibility(g/g)</label></td>
+    <td ><input name="idnumber" type="text" /></td>
+     </tr>
+    <tr>
+    <td nowrap="nowrap"><label>Co-Bioavalibility(g/g)</label></td>
+    <td ><input name="idnumber" type="text" /></td>
+    <td nowrap="nowrap"><label>Cu-Bioavalibility(g/g)</label></td>
+    <td ><input name="idnumber" type="text" /></td>
+    </tr>
+     <tr>
+    <td ><label>I-Bioavalibility(g/g)</label></td>
+    <td ><input name="idnumber" type="text" /></td>
+    <td ><label>Fe-Bioavalibility(g/g)</label></td>
+    <td ><input name="idnumber" type="text" /></td>
+     </tr>
+    <tr>
+    <td nowrap="nowrap"><label>Mn-Bioavalibility(g/g)</label></td>
+    <td ><input name="idnumber" type="text" /></td>
+    <td ><label>Bioavalibility(g/g)</label></td>
+    <td ><input name="idnumber" type="text" /></td>
+    </tr>
+    <tr>
+    <td nowrap="nowrap"><label>Se-Bioavalibility(g/g)</label></td>
+    <td ><input name="idnumber" type="text" /></td>
+      <td ><label>Zn-Bioavalibility(g/g)</label></td>
+    <td colspan="8"><input name="idnumber" type="text" /></td>
+    </tr>
+     <tr>
+    <td  colspan="8" align="center"><input type="button" name="Search" value="Submit" class="button"/></td>
+  </tr>
+</table>
+ </br>	  </br>	  </br>	  </br>	  </br>	  </br>	  </br>	  </br></br>	  </br>	  </br>	  </br>	  </br>	  </br>	  </br>	  </br></br>	  </br>  </br>	  </br>	  </br>	  </br>	  </br>	  </br>	  </br></br>	  </br>
+</div>
+</div>
+</body>
+</html>

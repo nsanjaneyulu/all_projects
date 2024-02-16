@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Sep 21, 2012 4:17:42 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+	<class name="com.dblue.farm.FarmConfiguration" table="farm_configuration">
+		<id name="id" type="java.lang.Integer">
+			<column name="id" />
+			<generator class="identity" />
+		</id>
+		<many-to-one class="com.dblue.farm.Farm" fetch="select"
+			name="farm">
+			<column name="farm_id" not-null="true" />
+		</many-to-one>
+		<property generated="never" lazy="false" name="pagination"
+			type="java.lang.Integer">
+			<column name="pagination" />
+		</property>
+		<property generated="never" lazy="false" name="summaryPagination"
+			type="java.lang.Integer">
+			<column name="summary_pagination" />
+		</property>
+		<property generated="never" lazy="false" name="milkProductionPagination"
+			type="java.lang.Integer">
+			<column name="milk_prd_pagination" />
+		</property>
+		<many-to-one class="com.dblue.farm.StateType" fetch="select"
+			name="calf">
+			<column name="calf_state_type_id" not-null="true" />
+		</many-to-one>
+		<many-to-one class="com.dblue.farm.StateType" fetch="select"
+			name="heafer">
+			<column name="heafer_state_type_id" not-null="true" />
+		</many-to-one>
+		<many-to-one class="com.dblue.farm.StateType" fetch="select"
+			name="herd">
+			<column name="herd_state_type_id" not-null="true" />
+		</many-to-one>
+		<property generated="never" lazy="false" name="autoReProduce"
+			type="char">
+			<column length="1" name="auto_re_produce" not-null="true" />
+		</property>
+		<many-to-one class="com.dblue.farm.MilkingStatus" fetch="select"
+			name="nonMlikingStatus">
+			<column name="non_milking_status_id" not-null="true" />
+		</many-to-one>
+		<property generated="never" lazy="false" name="codePrefix"
+			type="string">
+			<column length="30" name="code_prefix" />
+		</property>
+		<property generated="never" lazy="false" name="milkProductionChoice"
+			type="char">
+			<column length="1" name="milk_prd_choice" not-null="true" />
+		</property>
+		<many-to-one class="com.dblue.farm.OriginType" fetch="select"
+			name="inhouseOriginType">
+			<column name="inhouse_origin_type_id" not-null="true" />
+		</many-to-one>
+	</class>
+</hibernate-mapping>

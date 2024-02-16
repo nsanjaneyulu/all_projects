@@ -1,0 +1,93 @@
+<div class="">
+    <div class="row py-3 px-3">
+
+        <div class="col-2 text-center pt-2"> <img src="https://devapp.workruit.com/images/icons/non-defined-user.svg">
+        </div>
+        <div class="item-title col-10 p-0">
+            <span>
+                <span class="name mr-4 d-flex">
+                    <span class="mr-3">{{cardView.firstname}}&nbsp;{{cardView.userJobTitle}}</span>
+                    <span class="tag d-flex align-items-center mt-1">Interested</span>
+                </span>
+                <div class="item-description">
+                    <span *ngFor="let jonFun of cardView.jobFunctions; index as i">
+                        {{jonFun.jobFunctionName}}
+                        {{(cardView.jobFunctions.length > 0 && i != (cardView.jobFunctions.length -1))? '•':' '}}
+                    </span>
+                </div>
+                <div class="item-meta mt-2">
+                    <span class="meta-location">{{cardView.location}}</span>
+                    <span class="meta-exp">{{cardView.totalExperienceText}}</span>
+                    <span class="meta-price">
+                        <span class="">{{cardView.minSalaryExp}}L - <i></i>{{cardView.maxSalaryExp}}</span>
+                        <!-- <span ngIf="cardView.hideSalary"> - </span> -->
+                    </span>
+                </div>
+            </span>
+        </div>
+
+    </div>
+    <div class="row item-info py-3 px-3">
+        <!-- About -->
+        <div class="col-md-2 text-right element-info">About</div>
+        <div class="col-md-10">
+            <p class="" *ngIf="cardView.coverLetter">{{cardView.coverLetter}}</p>
+            <p class="muted" *ngIf="!cardView.coverLetter">No information provided.</p>
+        </div>
+        <!-- Experience -->
+        <div class="col-md-2 text-right element-info">Experience</div>
+        <div class="col-md-10">
+            <div class="row" *ngFor="let exp of cardView.userExperienceSet; index as i">
+                <div class="col-md-6">
+                    <p class="">{{exp.company}}<br>{{exp.jobTitle}}</p>
+                </div>
+                <div class="col-md-6 text-right">
+                    <p class="muted">{{exp.startDate}} - <span *ngIf="!exp.isPresent">{{exp.endDate}}</span> <span
+                            *ngIf="exp.isPresent">Present</span><br />{{exp.location}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2 text-right element-info">Education</div>
+        <div class="col-md-10">
+            <div *ngIf="cardView.userEducationSet.length!=0">
+                <div class="row" *ngFor="let edu of cardView.userEducationSet; index as i">
+                    <div class="col-md-6">
+                        <p>{{edu.institution}}<br />{{edu.fieldOfStudy}}</p>
+                    </div>
+                    <div class="col-md-6 text-right">
+                        <p class="muted">{{edu.startDate}} - <span *ngIf="!edu.isPresent">{{edu.endDate}}</span> <span
+                                *ngIf="edu.isPresent">Present</span><br />{{edu.location}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Academic -->
+        <div class="col-md-2 text-right element-info">
+            <p class="muted">Academic Projects</p>
+        </div>
+        <div class="col-md-10">
+            <div *ngIf="cardView.userEducationSet.length!=0">
+            <div class="row" *ngFor="let ace of cardView.userAcademic; index as i">
+                <div class="col-md-6">
+                    <p>{{ace.projectTitle}}<br />{{ace.role}}</p>
+                </div>
+                <div class="col-md-6 text-right">
+                    <p class="muted">{{ace.startDate}} - <span *ngIf="!ace.isPresent">{{ace.endDate}}</span> <span
+                            *ngIf="ace.isPresent">Present</span><br />{{ace.location}}</p>
+                </div>
+                </div>
+            </div>
+        </div>
+        <!-- Skills -->
+        <div class="col-md-2 text-right element-info">Skills</div>
+        <div class="col-md-10">
+            <div class="row">
+                <div class="col-md-6">
+                    <span *ngFor="let skilldata of cardView.userSkillsSet; index as i" class=" ">
+                        {{skilldata.title}}{{(cardView.userSkillsSet.length > 0 && i != (cardView.userSkillsSet.length -1))? ', ':' '}}
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

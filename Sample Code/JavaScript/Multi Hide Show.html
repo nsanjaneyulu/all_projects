@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Foo</title>
+<script type="text/javascript"><!--
+
+function show_visibility(){
+for(var i = 0,e = arguments.length;i < e;i++){
+var myDiv = document.getElementById(arguments[i]).style;
+myDiv.display = "block";
+}
+}
+
+function hide_visibility(){
+for(var i = 0,e = arguments.length;i < e;i++){
+var myDiv = document.getElementById(arguments[i]).style;
+myDiv.display = "none";
+}
+}
+//--></script>
+</head>
+
+<body>
+<div id='foo1' style="background:#F9C; width:100px; display:block;">sample one</div>
+<div id='foo2' style="background:#FCF; width:100px; display:none;">sample two</div>
+<div id='foo3' style="background:#99C; width:100px; display:none;">sample three</div>
+<div id='foo4' style="background:#9C9; width:100px; display:none;">sample four</div>
+<div id='foo5' style="background:#6FC; width:100px; display:none;">sample five</div>
+<br />
+<a href="#" onclick="show_visibility('foo1');hide_visibility('foo2','foo3', 'foo4','foo5') ">Display Details Sample 1</a><br />
+<a href="#" onclick="show_visibility('foo2');hide_visibility('foo1','foo3', 'foo4','foo5') ">Display Details Sample 2</a><br />
+<a href="#" onclick="show_visibility('foo3');hide_visibility('foo1','foo2', 'foo4','foo5') ">Display Details Sample 3</a><br />
+<a href="#" onclick="show_visibility('foo4');hide_visibility('foo1','foo2', 'foo3','foo5') ">Display Details Sample 4</a><br />
+<a href="#" onclick="show_visibility('foo5');hide_visibility('foo1','foo2', 'foo3','foo4') ">Display Details Sample 5</a><br />
+</body>
+</html> 

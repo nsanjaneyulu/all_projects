@@ -1,0 +1,271 @@
+<ion-header>
+      <ion-navbar>
+         <ion-title>
+               <ion-item no-lines style="padding-left:0px;" class="header__styles">
+                     <ion-avatar item-start>
+                       <img src="{{imageEndPoint}}/{{getMallDetailsResp.img}}">
+                     </ion-avatar>
+                     <h2 class="ion__title">{{getMallDetailsResp.name}} <span class="outletNameCss" *ngIf = "(allpermited !='Yes')"> ({{outletName}})</span></h2>
+                     <p class="pending__order" style="padding-left:2px;">{{getMallDetailsResp.address.area}}, {{getMallDetailsResp.address.city}}</p>
+                     <div class="ion__title" item-end (click)="logoutSupplier()">
+                           <ion-icon name="log-out"></ion-icon>
+                        </div>
+                   </ion-item>
+           
+         </ion-title>
+      </ion-navbar>
+   </ion-header>
+   <ion-content padding> 
+        <ion-row>
+               <ion-col col-6>
+            <ion-item class="profile_item_text">
+                  <ion-icon name="stats" item-start></ion-icon>
+                  <ion-label>Report</ion-label>
+                  <ion-select [(ngModel)]="reportValue" interface="popover" multiple="false" (ngModelChange)="changeReports(reportValue)"  >
+                              <ion-option value="Today" selected >Today</ion-option>
+                              <ion-option value="Yesterday">Yesterday</ion-option>
+                              <!-- <ion-option value="Week">Weekly</ion-option>
+                              <ion-option value="Month">Monthly</ion-option>
+                              <ion-option value="Year">Year</ion-option>
+                              <ion-option value="LastYear">Last Year</ion-option>                        -->
+                  </ion-select>  
+            </ion-item>
+      </ion-col>
+      <ion-col col-6>
+            <ion-item class="profile_item_text">
+                  <ion-icon name="stats" item-start></ion-icon>
+                  <ion-label>Type</ion-label>
+                  <ion-select [(ngModel)]="type" interface="popover" multiple="false" (ngModelChange)="selectReportType(type)"  >
+                              <ion-option value="Summary" selected >Summary</ion-option>
+                              <ion-option value="Transactional">Transactional</ion-option>
+                  </ion-select>  
+            </ion-item>
+      </ion-col>
+      <!-- <ion-col col-6>
+            <ion-item class="profile_item_text">
+                  <ion-label>Outlet</ion-label>
+                  <ion-select [(ngModel)]="outletID" interface="popover" multiple="false" (ngModelChange)="selectOutlet(reportValue)" [disabled]="disableOutlet" >
+                        <ion-option *ngFor="let data of outletId" value="{{data.id}}">{{data.name}}</ion-option>                       
+                  </ion-select>                    
+            </ion-item>
+      </ion-col> -->
+            </ion-row>
+           
+            <!-- report start ################################################################ -->
+        <!--     <ion-row style="margin-top: 10%">
+               <canvas id="mixed-chart"  width="450" height="300"></canvas>
+           </ion-row>
+          <div class="tableinside" *ngIf="tableData.length>0">
+           <table >
+            <tr  *ngFor="let order of tableData; let i=index;">
+            <th   *ngIf="order[0]!=undefined" class="fixed" >{{order[0]}}</th>
+            <td   *ngIf="order[1]!=undefined" >{{order[1]}}</td>
+            <td   *ngIf="order[2]!=undefined">{{order[2]}}</td>
+            <td   *ngIf="order[3]!=undefined">{{order[3]}}</td>
+            <td   *ngIf="order[4]!=undefined">{{order[4]}}</td>
+            <td   *ngIf="order[5]!=undefined">{{order[5]}}</td>
+            <td   *ngIf="order[6]!=undefined">{{order[6]}}</td>
+            <td   *ngIf="order[7]!=undefined">{{order[7]}}</td>
+            <td   *ngIf="order[8]!=undefined">{{order[8]}}</td>
+            <td   *ngIf="order[9]!=undefined">{{order[9]}}</td>
+            <td   *ngIf="order[10]!=undefined">{{order[10]}}</td>
+            <td   *ngIf="order[11]!=undefined">{{order[11]}}</td>
+            <td   *ngIf="order[12]!=undefined">{{order[12]}}</td>
+            <td   *ngIf="order[13]!=undefined">{{order[13]}}</td>
+            <td   *ngIf="order[14]!=undefined">{{order[14]}}</td>
+            <td   *ngIf="order[15]!=undefined">{{order[15]}}</td>
+            <td   *ngIf="order[16]!=undefined">{{order[16]}}</td>
+            <td   *ngIf="order[17]!=undefined">{{order[17]}}</td>
+            <td   *ngIf="order[18]!=undefined">{{order[18]}}</td>
+            <td   *ngIf="order[19]!=undefined">{{order[19]}}</td>
+            <td   *ngIf="order[20]!=undefined">{{order[20]}}</td>
+            <td   *ngIf="order[21]!=undefined">{{order[21]}}</td>
+            <td   *ngIf="order[22]!=undefined">{{order[22]}}</td>
+            <td   *ngIf="order[23]!=undefined">{{order[23]}}</td>
+            <td   *ngIf="order[24]!=undefined">{{order[24]}}</td>
+            </tr>
+      </table>
+</div> -->
+     
+          <!-- <ion-row>
+                <div style="margin-left: 25%;">
+                  <button ion-button round (click)="sendReportTomail()" style="height: 3.6rem !important;">Export As Excel</button>
+                  <button ion-button round (click)="sendReportTomail()" style="height: 3.6rem !important;">Export As Pdf</button>
+               </div>
+      </ion-row> -->
+      
+      <!-- report end ################################################################### -->
+
+      <!-- endOfthereport start -->
+      <ion-row style="margin-top: 30px;margin-left: 4%;">
+            <ion-col col-12>
+                  <div>
+                              <span class="start_endTime">Start Time:</span>
+                              <span style="margin-left:3px">
+                                    <input type="date" name="bday" [min]="validationStartDate" [max]="validationEndstart" [(ngModel)]="startDate">
+                              </span><span style="margin-left: 8px;"><input type="time" id="appt" name="appt" [(ngModel)]="startTime"
+                                   [min]="startTime" required></span>
+                  </div>
+                 
+                       <div style="margin-top: 10px">
+                        <span style="font-weight:bold">End Time:</span> 
+                        <span style="margin-left: 9px;">
+                              <input type="date" name="bday" [min]="validationStartDate" [max]="validationEndstart" [(ngModel)]="endDate">
+                        </span><span style="margin-left: 10px;"><input type="time" id="appt" name="appt" [(ngModel)]="endTime"
+                              [max]="endTime"  required></span> <button ion-button icon-end class="btn__accept" style="margin-left: 10px; margin-top: -1%" (click)="generateEndOftheReport()">
+                                    APPLY<span style="margin-left: 10px"><img src="assets/imgs/apply.png"></span>
+                                 </button>
+                             
+                       </div>
+                 </ion-col>
+                 <ion-col col-4>
+                  <div style="margin-top: 6%;margin-left: -10%;">
+                  </div>
+                 </ion-col>
+           
+           
+                       
+      </ion-row>
+      <ion-row style="margin-top: 30px;margin-left: 4%;">
+            <ion-col col-12>
+                  <div>
+                              <span class="start_endTime" >Send Email As:</span>
+                              <button ion-button icon-end class="btn__accept"   style=" margin-top:-1% !important;" (click)="sendReportTomailAsPDF()">
+                                    PDF <span style="margin-left: 10px;"><img src="assets/imgs/pdf.png"></span>
+                                 </button> <button ion-button icon-end class="btn__accept" style=" margin-top:-1% !important;" (click)="sendReportTomailAsExcel()">
+                                    EXCEL <span style="margin-left: 10px; margin-top:-1% !important;"><img src="assets/imgs/excel.png"></span>
+                                 </button>
+                              <!-- <span style="margin-left: 3%; color:blue" (click)="print()"><ion-icon name="print"></ion-icon></span> -->
+                  </div>
+                  </ion-col>
+      </ion-row>
+      <ion-row>
+            
+      </ion-row>
+      <div *ngIf="itemList.length>0">
+            <table class="endOftheReport">
+                  <tr class="headerCss">
+                              <th style="text-align: center">S.No</th>
+                              <th style="text-align: center">Item Name</th>
+                              <th style="text-align: center">Item Price</th>
+                              <th style="text-align: center">Quantity</th>
+                              <th style="text-align: center">Amount</th>
+                  </tr>
+                  <tr *ngFor="let item of itemList; let i=index;">
+                        <td style="text-align: center">{{i+1}}</td>
+                        <td style="text-align: left">{{item.itemName}}</td>
+                        <td style="text-align: right" >{{item.itemPrice | number : '1.2-2'}}</td>
+                        <td style="text-align: right">{{item.totalQty}}</td>
+                        <td style="text-align: right">{{item.totalPrice | number : '1.2-2'}}</td>
+                  </tr>
+                  <tr >
+                              <td style="border-style: hidden;border-top-style: inherit;"></td>
+                              <td style="border-style: hidden;border-top-style: inherit;"> </td>
+                              <td style="border-style: hidden;border-top-style: inherit;"></td>
+                              <td style="border-style: hidden;border-top-style: inherit; text-align: left;font-weight: bold;">Total Amount</td>
+                              <td style="border-style: hidden;border-top-style: inherit; text-align: right;font-weight: bold;">{{totalAmount | number : '1.2-2'}}</td>
+                   </tr>
+                   <tr  >
+                              <td style="border-style: hidden"></td>
+                              <td style="border-style: hidden"></td>
+                              <td style="border-style: hidden"></td>
+                              <td style="border-style: hidden;border-bottom-style: groove; text-align: left;font-weight: bold;" >Taxes(CGST + SGST)</td>
+                              <td style="border-style: hidden;border-bottom-style: groove; text-align: right;font-weight: bold;">+{{tax | number : '1.2-2'}}</td>   
+                  </tr>   
+                  <tr  >
+                              <td style="border-style: hidden;    "></td>
+                              <td style="border-style: hidden;    "></td>
+                              <td style="border-style: hidden"></td>
+                              <td style="border-style: hidden; text-align: left;font-weight: bold;">Packaging Charges(Incl.Tax)</td>
+                              <td style="border-style: hidden; text-align: right;font-weight: bold;">+{{packagingCharge | number : '1.2-2'}}</td>   
+                  </tr>
+                  <tr  >
+                              <td style="border-style: hidden"></td>
+                              <td style="border-style: hidden"></td>
+                              <td style="border-style: hidden"></td>
+                              <td style="border-style: hidden; border-bottom-style: groove;  text-align: left; font-weight: bold;">Delivery Charges(Incl.Tax)</td>
+                              <td style="border-style: hidden; border-bottom-style: groove; text-align: right; font-weight: bold;">+{{deliveryCharge | number : '1.2-2'}}</td>   
+                  </tr>
+                 
+                  <tr  >
+                              <td style="border-style: hidden"></td>
+                              <td style="border-style: hidden"></td>
+                              <td style="border-style: hidden"></td>
+                              <td style="border-style: hidden;border-top-style: groove;border-bottom-style: groove; text-align: left;font-weight: bold; color:#5c0632;  background-color: #f9f9f9">Total Net Sale Amount</td>
+                              <td style="border-style: hidden;border-top-style: groove;border-bottom-style: groove; text-align: right; font-weight: bold;  color:#5c0632;  background-color: #f9f9f9">{{totalCreditedAmount | number : '1.2-2'}}</td>   
+                  </tr> 
+                  <tr  >
+                        <td style="border-style: hidden"></td>
+                        <td style="border-style: hidden"></td>
+                        <td style="border-style: hidden"></td>
+                        <td style="border-style: hidden; border-top-style: groove;  font-weight: bold; text-align: left">Refunds Under Process</td>
+                        <td style="border-style: hidden; border-top-style: groove; font-weight: bold; text-align: right">{{refundedAmount  | number : '1.2-2' }}</td>   
+            </tr>
+                  
+                  
+            </table>
+      </div>
+      <div *ngIf="orderList.length>0">
+            <table class="endOftheReport">
+                  <tr class="headerCss">
+                              <th style="text-align: center">S.No</th>
+                              <th style="text-align: center">Order ID</th>
+                              <th style="text-align: center">Mode Of Payment</th>
+                              <th style="text-align: center">Order Value</th>
+                  </tr>
+                  <tr *ngFor="let item of orderList; let i=index;">
+                        <td style="text-align: center">{{i+1}}</td>
+                        <td style="text-align: left">{{item.fullOrder5DigitId}}</td>
+                        <td style="text-align: right">{{item.paymentMode}}</td>
+                        <td style="text-align: right" >{{item.amountWithoutRefunds | number : '1.2-2'}}</td>
+                        
+                  </tr>
+                  <tr >
+                              <td style="border-style: hidden;border-top-style: inherit;"></td>
+                              <td style="border-style: hidden;border-top-style: inherit;"></td>
+                              <td style="border-style: hidden;border-top-style: inherit; text-align: left;font-weight: bold;">Total Amount</td>
+                              <td style="border-style: hidden;border-top-style: inherit; text-align: right;font-weight: bold;">{{totalAmount | number : '1.2-2'}}</td>
+                   </tr>
+                   <tr  >
+                              <td style="border-style: hidden"></td>
+                              <td style="border-style: hidden"></td>
+                              <td style="border-style: hidden;border-bottom-style: groove; text-align: left;font-weight: bold;" >Taxes(CGST + SGST)</td>
+                              <td style="border-style: hidden;border-bottom-style: groove; text-align: right;font-weight: bold;">+{{tax | number : '1.2-2'}}</td>   
+                  </tr>   
+                  <tr  >
+                              <td style="border-style: hidden;    "></td>
+                              <td style="border-style: hidden"></td>
+                              <td style="border-style: hidden; text-align: left;font-weight: bold;">Packaging Charges(Incl.Tax)</td>
+                              <td style="border-style: hidden; text-align: right;font-weight: bold;">+{{packagingCharge | number : '1.2-2'}}</td>   
+                  </tr>
+                  <tr  >
+                              <td style="border-style: hidden"></td>
+                              <td style="border-style: hidden"></td>
+                              <td style="border-style: hidden; border-bottom-style: groove;  text-align: left; font-weight: bold;">Delivery Charges(Incl.Tax)</td>
+                              <td style="border-style: hidden; border-bottom-style: groove; text-align: right; font-weight: bold;">+{{deliveryCharge | number : '1.2-2'}}</td>   
+                  </tr>
+                 
+                  <tr  >
+                              <td style="border-style: hidden"></td>
+                              <td style="border-style: hidden"></td>
+                              <td style="border-style: hidden;border-top-style: groove;border-bottom-style: groove; text-align: left;font-weight: bold; color:#5c0632;  background-color: #f9f9f9">Total Net Sale Amount</td>
+                              <td style="border-style: hidden;border-top-style: groove;border-bottom-style: groove; text-align: right; font-weight: bold;  color:#5c0632;  background-color: #f9f9f9">{{totalCreditedAmount | number : '1.2-2'}}</td>   
+                  </tr> 
+                  <tr  >
+                        <td style="border-style: hidden"></td>
+                        <td style="border-style: hidden"></td>
+                        <td style="border-style: hidden; border-top-style: groove;  font-weight: bold; text-align: left">Refunds Under Process</td>
+                        <td style="border-style: hidden; border-top-style: groove; font-weight: bold; text-align: right">{{refundedAmount  | number : '1.2-2' }}</td>   
+            </tr>
+                  
+                  
+            </table>
+      </div>
+      
+          
+           
+                  <div class="card-title" style="text-align: center;margin-top: 3%; color:darkgray" *ngIf="(itemList.length==0 && type=='Summary') || (orderList.length==0 && type=='Transactional')">--No Data Available--</div>
+    
+           
+      <!-- endoftheReport end -->
+    </ion-content>

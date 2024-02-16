@@ -1,0 +1,12 @@
+<svg id="round-account-button-with-user-inside" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <g id="account-circle">
+    <path id="Path_665" data-name="Path 665" class="cls-1" d="M20,0A20,20,0,1,0,40,20,20.059,20.059,0,0,0,20,0Zm0,6a5.893,5.893,0,0,1,6,6,5.893,5.893,0,0,1-6,6,5.893,5.893,0,0,1-6-6A5.893,5.893,0,0,1,20,6Zm0,28.4A14.591,14.591,0,0,1,8,28c0-4,8-6.2,12-6.2S32,24,32,28A14.591,14.591,0,0,1,20,34.4Z"/>
+  </g>
+</svg>

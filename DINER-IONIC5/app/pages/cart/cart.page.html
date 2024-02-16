@@ -1,0 +1,254 @@
+<ion-header *ngIf="!noItemsAvailable" class="header_styles">
+
+    <ion-row>
+        <ion-icon style="margin-top: 5%;" (click)="goToBack()" ios="ios-arrow-round-back" md="md-arrow-round-back">
+        </ion-icon>
+        <ion-col><span class="">Cart</span></ion-col>
+    </ion-row>
+
+</ion-header>
+<ion-content>
+    <div style="background: #f6f6f6; height: 100%;">
+        <div *ngIf="!noItemsAvailable && showViewCartPage">
+            <ion-list *ngFor="let outlet of orderDetails; let i=index;" class="accordion-list" lines="none" detail="false" no-padding>
+                <ion-item tappable (click)="toggleSection(i)" [ngClass]="{'section-active':outlet.open,'section':!outlet.open}" style="border-bottom:2px solid #eee;">
+                    <ion-icon slot="end" name="arrow-dropdown" *ngIf="!outlet.open"></ion-icon>
+                    <ion-icon slot="end" name="arrow-dropup" *ngIf="outlet.open"></ion-icon>
+                    <div class="display_box">
+                        <img src="{{imageEndPoint+outlet.outletImg}}" width="15%" />
+                        <span class="view_cart_mallName">{{outlet.name}}</span>
+                    </div>
+                </ion-item>
+                <div *ngIf="outlet.orderlets && outlet.open">
+                    <div *ngFor="let item of outlet.orderlets; let i=index;" class="items_div" style="padding: 0.5rem">
+                        <ion-grid style="padding: 0rem !important">
+                            <ion-row>
+                                <ion-col size="6" align-self-center style="padding: 0rem !important">
+                                    <div class="view_cart_item_name"><img *ngIf="item.veg==true" class="veg_nong_veg_styles_3" src="../../../assets/icon/veg2.png"><img *ngIf="item.veg==false" class="veg_nong_veg_styles_3" src="../../../assets/icon/non-veg.png"> {{item.name}}</div>
+                                    <div class="view_cart_item_name">&#8377; {{item.discountedPrice}}</div>
+                                </ion-col>
+                                <ion-col size="4" align-self-center style="padding: 0rem !important">
+                                    <span class="item_qty_inc_dec_main_div item_qty_inc_dec_main_div_1">
+                                        <span *ngIf="item.givenQuantity==0" class="item_qty_inc_dec_1  "
+                                            (click)="addItem(item)">ADD</span>
+                                    <span *ngIf="item.givenQuantity!=0" class="item_qty_inc_dec_inc_1 " (click)="incrementItem(item)">+</span>
+                                    <span *ngIf="item.givenQuantity!=0" class="item_qty_inc_dec_dec_1" (click)="decrementItem(item)"></span>
+                                    <span *ngIf="item.givenQuantity!=0" class="item_qty_inc_dec_qty_1 _18lJJ">{{item.givenQuantity}}</span>
+                                    </span>
+
+
+                                </ion-col>
+                                <ion-col size="2" align-self-center style="padding: 0rem !important">
+                                    <span class="view_cart_label" style="float:right;">
+                                        &#8377; {{(item.givenQuantity*item.discountedPrice).toFixed(2)}}
+                                    </span>
+                                </ion-col>
+                            </ion-row>
+                        </ion-grid>
+                    </div>
+                </div>
+            </ion-list>
+
+            <div style="background: #fff; margin-top: 1rem;">
+                <ion-input type="text" [(ngModel)]="specialInstruction" placeholder="Special Instructions"></ion-input>
+            </div>
+            <div style="background: #fff; margin-top: 1rem;">
+                <div style="padding: 0.4rem">
+                    <div style="padding: 1.2rem 0rem; ">
+                        <span style=" font-size: 1.2rem;" class="view_cart_label">Bill Details</span>
+                    </div>
+                    <div class="billsummary_display view_cart_label">
+                        <span>Item Total</span>
+                        <span>&#8377; {{(billSummary.amount).toFixed(2)}}</span>
+                    </div>
+                    <div class="billsummary_display view_cart_label">
+                        <span>
+                            <span>Taxes</span>
+                        <span class="tooltip">
+                                <ion-icon name="information-circle-outline"></ion-icon>
+                                <span class="tooltiptext"><span class="taxesCharges">Taxes</span><br />
+                        <span class="chargesTaxes">CGST <span
+                                            class="chargessTaxes">&#8377;{{(billSummary.cgst).toFixed(2)}}</span></span><br />
+                        <span class="chargesTaxes">SGST <span class="chargessTaxes">
+                                            &#8377;{{(billSummary.sgst).toFixed(2)}}</span></span>
+                        </span>
+                        </span>
+                        </span>
+                        <span>&#8377;{{(billSummary.cgst + billSummary.sgst).toFixed(2)}}</span>
+                    </div>
+                    <div *ngIf="(billSummary.discount)>0" class="billsummary_display view_cart_label">
+                        <span>Supplier Discount</span>
+                        <span> &#8377;{{(billSummary.discount).toFixed(2)}}</span>
+                    </div>
+                    <div class="billsummary_display view_cart_label" *ngIf="(billSummary.supplierDeliveryCharges + billSummary.supplierDeliveryChargesCgst + billSummary.supplierDeliveryChargesSgst+billSummary.packagingCharge+billSummary.packagingChargeCgst+billSummary.packagingChargeSgst)>0">
+                        <span>
+                            <span>
+                                Charges</span>
+                        <span class="tooltip">
+                                <ion-icon name="information-circle-outline"></ion-icon>
+                                <span class="tooltiptext"><span class="taxesCharges">Charges</span><br />
+                        <span class="chargesTaxes">Delivery Charges
+                                        <span
+                                            class="chargessTaxes">&#8377;{{(billSummary.supplierDeliveryCharges +billSummary.supplierDeliveryChargesSgst+ billSummary.supplierDeliveryChargesCgst).toFixed(2)}}</span></span><br />
+                        <span class="chargesTaxes">Packaging Charges
+                                        <span
+                                            class="chargessTaxes">&#8377;{{(billSummary.packagingCharge+billSummary.packagingChargeCgst+billSummary.packagingChargeSgst).toFixed(2)}}</span></span>
+                        </span>
+                        </span>
+                        </span>
+                        <span>
+                            &#8377;{{(billSummary.supplierDeliveryCharges + billSummary.supplierDeliveryChargesCgst + billSummary.supplierDeliveryChargesSgst+billSummary.packagingCharge+billSummary.packagingChargeCgst+billSummary.packagingChargeSgst).toFixed(2)}}</span>
+                    </div>
+                    <div class="billsummary_display view_cart_label">
+                        <span>SubTotal
+                        </span>
+                        <span>&#8377;{{((billSummary.amount+billSummary.cgst + billSummary.sgst+billSummary.supplierDeliveryCharges + billSummary.supplierDeliveryChargesCgst + billSummary.supplierDeliveryChargesSgst+billSummary.packagingCharge+billSummary.packagingChargeCgst+billSummary.packagingChargeSgst)-billSummary.discount).toFixed(2)}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="!noItemsAvailable && showViewCartPage" style="background: #fff;">
+            <div>
+                <div style="padding: 0.4rem;">
+                    <div class="padding__left billsummary_display">
+                        <span class="view_cart_label">Will Pick Up</span>
+                        <span>
+                            <ion-radio slot="end" value="pickUp" [checked]="!needDelivery"
+                                (click)="changeDelivery(false)">
+                            </ion-radio>
+                        </span>
+                    </div>
+                    <div class="padding__left billsummary_display" style="padding: 0.6rem 0rem;">
+                        <span *ngIf="mallData.typeOfDining == 'CAFETERIA'" class="view_cart_label">Need Delivery</span>
+                        <span *ngIf="mallData.typeOfDining == 'CINEMAS'" [class.check]="deliveryRes">To Your Seat
+                        </span>
+                        <span *ngIf="mallData.typeOfDining == 'FOODCOURT'" [class.check]="deliveryRes">To Your Table
+                        </span>
+                        <span>
+                            <ion-radio slot="end" value="needDelivery" (click)="changeDelivery(true)"
+                                [checked]="needDelivery">
+                            </ion-radio>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="!noItemsAvailable && showViewCartPage && needDelivery" style="background: #fff;">
+            <span class="view_cart_label" style="padding:0.4rem;">Delivery Address:</span>
+            <ion-list>
+                <ion-item class="padding__left">
+                    <ion-label class="view_cart_label">Name*</ion-label>
+                    <ion-input [(ngModel)]="name" type="text"></ion-input>
+                </ion-item>
+                <ion-item class="padding__left" *ngIf="mallData.typeOfDining == 'FOODCOURT'">
+                    <ion-label>Table No*</ion-label>
+                    <ion-input [(ngModel)]="a1selectedadress">
+                    </ion-input>
+
+                    <!-- <ion-input #companyValue  type ="text" [(ngModel)]="a3selectedadress" ></ion-input> -->
+                </ion-item>
+                <ion-item class="padding__left" (click)="chooseScreenLayout()" *ngIf="mallData.typeOfDining == 'CINEMAS'">
+                    <button style="background: transparent;" ion-button color="dark" clear><span
+                            style="font-size: 14px;color: #6b6b6b">Select Seat:&nbsp;&nbsp;&nbsp;</span>
+                        <span>
+                            <img src="assets/imgs/seating.png" width="30px" height="30px" />
+                        </span>
+                        <span>{{rowAndSeat}}</span>
+                        <span>
+                        </span>
+                    </button>
+                    <!-- <ion-icon name="arrow-dropdown" item-end></ion-icon> -->
+                </ion-item>
+                <ion-item class="padding__left" *ngIf="mallData.typeOfDining == 'CAFETERIA'">
+                    <ion-label class="view_cart_label">Company*</ion-label>
+                    <ion-input [(ngModel)]="a1selectedadress" (ionChange)="filterCompanyNames(a1selectedadress)">
+                    </ion-input>
+                </ion-item>
+
+                <ion-item class="padding__left" *ngIf="showcompanyName">
+                    <ion-list>
+                        <ion-item *ngFor="let a1 of aladress">
+                            <span (click)="selectCompany(a1)">{{a1}}</span>
+                        </ion-item>
+                    </ion-list>
+                </ion-item>
+                <ion-item class="padding__left" *ngIf="mallData.typeOfDining == 'CAFETERIA'">
+                    <ion-label class="view_cart_label">Quadrant*</ion-label>
+                    <ion-select [(ngModel)]="a2selectedadress" (ionChange)="getA3Adress()">
+                        <ion-select-option *ngFor="let a2 of a2adress" [value]="a2">{{a2}}</ion-select-option>
+                    </ion-select>
+                </ion-item>
+                <ion-item class="padding__left" *ngIf="mallData.typeOfDining == 'CAFETERIA'">
+                    <ion-label class="view_cart_label">Floor*</ion-label>
+                    <ion-select [(ngModel)]="a3selectedadress">
+                        <ion-select-option *ngFor="let a3 of a3adress" [value]="a3">{{a3}}</ion-select-option>
+                    </ion-select>
+                </ion-item>
+            </ion-list>
+        </div>
+        <div *ngIf="noItemsAvailable && showViewCartPage" style="background: #fff;">
+            <img class="centering" src="../../../assets/icon/cookingFood.png" />
+            <span class="centered">FOOD IS HOT</span>
+            <!-- <h3 class="centeerValue view_cart_label">FOOD IS HOT</h3> -->
+            <span class="centeerValue view_cart_label centeredText">Your cart is empty.</span>
+            <span class="centeerValue view_cart_label centeredText">Add items from the menu.</span>
+            <div>
+                <button routerLink="/dashboard" class="revertBack">Lobby</button>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="!showViewCartPage">
+        <div style="position: absolute; top: 50%; left: calc(50% - 40px);">
+            <svg class="lds-typing" width="80px" height="80px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" style="background: none;">
+                <circle cx="24.5" cy="48.4263" r="6" fill="#e15b64">
+                    <animate attributeName="cy" calcMode="spline" keySplines="0 0.5 0.5 1;0.5 0 1 0.5;0.5 0.5 0.5 0.5"
+                        repeatCount="indefinite" values="62.5;37.5;62.5;62.5" keyTimes="0;0.25;0.5;1" dur="1s"
+                        begin="-0.5s">
+                    </animate>
+                </circle>
+                <circle cx="41.5" cy="62.5" r="6" fill="#f47e60">
+                    <animate attributeName="cy" calcMode="spline" keySplines="0 0.5 0.5 1;0.5 0 1 0.5;0.5 0.5 0.5 0.5"
+                        repeatCount="indefinite" values="62.5;37.5;62.5;62.5" keyTimes="0;0.25;0.5;1" dur="1s"
+                        begin="-0.375s">
+                    </animate>
+                </circle>
+                <circle cx="58.5" cy="62.5" r="6" fill="#f8b26a">
+                    <animate attributeName="cy" calcMode="spline" keySplines="0 0.5 0.5 1;0.5 0 1 0.5;0.5 0.5 0.5 0.5"
+                        repeatCount="indefinite" values="62.5;37.5;62.5;62.5" keyTimes="0;0.25;0.5;1" dur="1s"
+                        begin="-0.25s">
+                    </animate>
+                </circle>
+                <circle cx="75.5" cy="62.5" r="6" fill="#abbd81">
+                    <animate attributeName="cy" calcMode="spline" keySplines="0 0.5 0.5 1;0.5 0 1 0.5;0.5 0.5 0.5 0.5"
+                        repeatCount="indefinite" values="62.5;37.5;62.5;62.5" keyTimes="0;0.25;0.5;1" dur="1s"
+                        begin="-0.125s">
+                    </animate>
+                </circle>
+            </svg>
+        </div>
+    </div>
+</ion-content>
+
+<ion-footer *ngIf="!noItemsAvailable && showViewCartPage">
+
+    <ion-toolbar>
+        <ion-grid class="footer_styles_bg">
+            <ion-row>
+                <ion-col>
+                    <div class="total-amount" (click)="goToBack()">
+                        <span class="proceed-title">Back To DashBoard</span>
+                    </div>
+                </ion-col>
+                <ion-col class="rightAlign" style="text-align: right;">
+                    <div class="proceed-container">
+                        <div class="proceed-icon-container" (click)="proceedToPaymentOptions()">
+
+                            <span class="proceed-title">Proceed To Payment</span>
+                        </div>
+
+                    </div>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </ion-toolbar>
+</ion-footer>

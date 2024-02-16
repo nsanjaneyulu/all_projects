@@ -1,0 +1,36 @@
+<div class="card">
+  <div class="card-body">
+   <h5 class="card-title">Leave Status</h5>
+   <div class="table-responsive">
+      <table *ngIf="getEmsStatusObj && !!getEmsStatusObj?.length" datatable [dtOptions]="dtOptions" class="row-border hover table table-striped table-bordered" cellspacing="0" width="100%" >
+          <thead>
+             <tr>
+                <th>Name</th>
+                <th>Leave Type</th>
+                <th>From date</th>
+                <th>To Date</th>
+                <th>Applying Date</th>
+                <th>No Of Days</th>
+                <th>Leave Purpose</th>
+                <th>Status</th>
+                <th>Actions</th>
+             </tr>
+          </thead>            
+          <tbody>
+             <tr *ngFor="let emsLeaveList of getEmsStatusObj; let i=index">
+               <td>{{emsLeaveList.userName}}</td> 
+               <td>{{emsLeaveList.leaveType}}</td> 
+               <td>{{emsLeaveList.fromDate}}</td>
+               <td>{{emsLeaveList.toDate}}</td>  
+               <td *ngFor="let format of formatsDateTest">{{dateNow | date: format}}</td>  
+               <td>{{emsLeaveList.noOfDays}}</td> 
+               <td>{{emsLeaveList.leaveReason}}</td>  
+               <td>Approved</td>  
+               <td><i class="fa fa-trash-o" aria-hidden="true"></i>&nbsp;<i (click)="goEmsLeaveListDetails(emsLeaveList,i)" style="margin-left:10px;" class="fa fa-pencil-square-o" aria-hidden="true"></i></td>              
+             </tr>
+             
+          </tbody>
+       </table>
+   </div>
+  </div>
+  </div>

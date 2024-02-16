@@ -1,0 +1,81 @@
+{
+  "project_info": {
+    "project_number": "652834813315",
+    "firebase_url": "https://tafel-b8c71.firebaseio.com",
+    "project_id": "tafel-b8c71",
+    "storage_bucket": "tafel-b8c71.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:652834813315:android:d12facb731aa3fd9",
+        "android_client_info": {
+          "package_name": "in.tafel"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "652834813315-ea24g3hta35dm73bar8qhpo7qb2ghek3.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "652834813315-ea24g3hta35dm73bar8qhpo7qb2ghek3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAHsYgl6p-MpCafOW0K7YQN0CeMQ3Vz9zA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:652834813315:android:630415af113577f5",
+        "android_client_info": {
+          "package_name": "in.tafel.outlet"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "652834813315-ea24g3hta35dm73bar8qhpo7qb2ghek3.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "652834813315-ea24g3hta35dm73bar8qhpo7qb2ghek3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAHsYgl6p-MpCafOW0K7YQN0CeMQ3Vz9zA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

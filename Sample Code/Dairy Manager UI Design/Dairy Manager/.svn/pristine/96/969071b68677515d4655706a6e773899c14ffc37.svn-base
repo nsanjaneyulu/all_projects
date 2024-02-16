@@ -1,0 +1,38 @@
+<wicket:extend>
+	<div id="content">
+		<h1>Stock Information</h1>
+                        <form method="post" wicket:id="addnewstock">
+                            <div wicket:id="feedback"></div> 
+                                <div class="addData">
+                                <ul>
+                                  <li>	
+                                     <label>Stock Code</label><font color="#FF0000">*</font><br />
+                                     <input type="text" name="stockCode"  wicket:id="stockCode" class="number_effect" maxlength="30"                                      >	
+                                   </li>
+                                    <li>
+                                      <label>Stock Name</label><font color="#FF0000">*</font><br />
+                                      <input type="text" name="stockName"  wicket:id="stockName" class="textfield_effect" 
+                                      maxlength="30">
+                                     </li>
+                                   <li>
+                                      <label>Stock Category</label><font color="#FF0000">*</font><br />
+                                      <select wicket:id="stockCategory" class="dropdown_effect" maxlength="30">
+                                      <option>Select</option><option>GreenFodder</option><option >DryFodder</option></select>							
+                                    </li>
+                                    <li>
+                                        <label>Minimum Stock Level(in Quantity)</label><font color="#FF0000">*</font><br />
+                                        <input type="text" name="stockMinLevel"  wicket:id="stockMinLevel" class="number_effect"                                         maxlength="8" style="text-align:right;"/>
+                                     </li>                                   
+                                     <li>
+                                        <label>Stock Balance(in Quantity)</label><font color="#FF0000">*</font><br />
+                                        <input type="text" name="stockBalance"  wicket:id="stockBalance" class="number_effect"                                         maxlength="8" style="text-align:right;"/>
+                                     </li>
+                              </ul>
+                              <div style="clear:both;"></div>
+                                  <div class="newButton">
+                                      <INPUT type="submit" value="Submit" class="button" wicket:id="save"/>
+                                  </div>
+                         </div>
+                      </form>	
+	</div>
+</wicket:extend>

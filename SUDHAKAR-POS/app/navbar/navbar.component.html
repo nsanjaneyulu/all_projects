@@ -1,0 +1,55 @@
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark fixed-top" *ngIf="this.currentRoute!=='/' && this.currentRoute!=='/login'">
+    <div class="navbar-collapse">
+        <div class="navbar-nav mr-auto">
+            <a class="nav-item nav-link" routerLink="/sale" routerLinkActive="active">
+                <span class="nav-icon"><i class="fas fa-cart-plus"></i></span>
+                <span>Sale</span>
+            </a>
+            <a class="nav-item nav-link" routerLink="/posorders" routerLinkActive="active">
+                <span class="nav-icon"><i class="fas fa-pizza-slice"></i></span>
+                <span>POS Orders</span>
+            </a>
+            <a class="nav-item nav-link" routerLink="/online-orders" routerLinkActive="active">
+                <span class="nav-icon"><i class="fas fa-tablet-alt"></i><i class="fas fa-pizza-slice overlop-icon"></i></span>
+                <span>Online Orders</span>
+            </a>
+            <a class="nav-item nav-link" routerLink="/inventory" routerLinkActive="active">
+                <span class="nav-icon"><i class="fas fa-building"></i></span>
+                <span>Inventory</span>
+            </a>
+            <a class="nav-item nav-link" routerLink="/reports" routerLinkActive="active">
+                <span class="nav-icon"><i class="fas fa-chart-bar"></i></span>
+                <span>Reports</span>
+            </a>
+            <a class="nav-item nav-link" routerLink="/delivery" routerLinkActive="active">
+                <span class="nav-icon"><i class="fas fa-truck"></i></span>
+                <span>Delivery</span>
+            </a>
+        </div>
+    </div>
+    <span class="navbar-brand" routerLink="#">TAFEL</span>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav ml-auto">
+            <a class="nav-item nav-link" routerLink="/refunds">
+                <span class="nav-icon"><i class="fas fa-cart-arrow-down"></i></span>
+                <span>Voids/Refunds</span>
+            </a>
+            <a class="nav-item nav-link" routerLink="/employees">
+                <span class="nav-icon"><i class="fas fa-users"></i></span>
+                <span>Employees</span>
+            </a>
+            <a class="nav-item nav-link" routerLink="/settings">
+                <span class="nav-icon"><i class="fas fa-cog"></i></span>
+                <span>Settings</span>
+            </a>
+            <a class="nav-item nav-link" routerLink="/login" (click)="logout()">
+                <span class="nav-icon"><i class="fas fa-user-circle"></i></span>
+                <span>Logout</span>
+            </a>
+        </div>
+    </div>
+</nav>

@@ -1,0 +1,16 @@
+<wicket:extend>
+	<div id="content">
+	<div class="ingredientFormulaCost ingredientFormulaCost-List">
+                <div>
+					<h2>Formula Name</h2>	
+                    <h2 class="ifcLast">Formula Cost (in Rs.)</h2>			
+				</div>
+				<div wicket:id="rows" style="clear:both;">
+					<div>
+                        <h3><span wicket:id="formulaName"/></h3>
+                    	<h3 class="ifcLast"><span wicket:id="formulaCost"/></h3>				
+					</div>
+				</div>
+			</div>    
+	</div>
+</wicket:extend>

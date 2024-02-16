@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Mixitup</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, maximum-scale=1.0, minimum-scale=1.0">
+<link rel="stylesheet" media="screen" href="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="http://lokeshdhakar.com/projects/lightbox2/css/lightbox.css">
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src='http://lokeshdhakar.com/projects/lightbox2/js/lightbox.js'></script>
+<script src="http://cdn.jsdelivr.net/jquery.mixitup/latest/jquery.mixitup.min.js"></script>
+<style>
+	*
+	{
+		margin: 0; 
+		padding: 0;
+	}
+	ul#mixer li.mix {
+	  display: none;
+	}
+	ul#mixer .content
+	{
+		display:none;
+	}
+	ul#mixer img {
+	  display: block;
+	}
+	
+	.mix li img:hover { margin-top:-50px !important; }
+    .mix:hover .content {
+        top: 100%;
+        opacity: 1;
+        transform: translateY(0%);
+    }
+</style>
+</head>
+
+<body>
+<div class="container-fluid">
+	<div class="row">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                    	<li><a href="#" class="filter" data-filter="all">All</a></li>
+                        <li><a href="#" class="filter" data-filter=".html5">HTML5</a></li>
+                        <li><a href="#" class="filter" data-filter=".css3">CSS3</a></li>
+                        <li><a href="#" class="filter" data-filter=".javascript">JavaScript</a></li>
+                        <li><a href="#" class="filter" data-filter=".jquery">JQuery</a></li>
+                        <li><a href="#" class="filter" data-filter=".wordpress">Wordpress</a></li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
+        <ul id="mixer">
+            <li class="mix html5"><a href="#"><img src="http://placehold.it/400x400" alt=""></a>
+            <div class="content">
+                <h3>Anjaneyulu</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+            </li>
+            <li class="mix css3"><a href="#"><img src="http://placehold.it/400x400" alt=""></a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+            </li>
+            <li class="mix javascript"><a href="#"><img src="http://placehold.it/400x400" alt=""></a></li>
+            <li class="mix jquery"><a href="#"><img src="http://placehold.it/400x400" alt=""></a></li>
+            <li class="mix html5"><a href="#"><img src="http://placehold.it/400x400" alt=""></a></li>
+            <li class="mix css3"><a href="#"><img src="http://placehold.it/400x400" alt=""></a></li>
+            <li class="mix javascript"><a href="#"><img src="http://placehold.it/400x400" alt=""></a></li>
+            <li class="mix jquery"><a href="#"><img src="http://placehold.it/400x400" alt=""></a></li>
+            <li class="mix wordpress"><a href="#"><img src="http://placehold.it/400x400" alt=""></a></li>
+            <li class="mix html5"><a href="#"><img src="http://placehold.it/400x400" alt=""></a></li>
+            <li class="mix css3"><a href="#"><img src="http://placehold.it/400x400" alt=""></a></li>
+            <li class="mix javascript"><a href="#"><img src="http://placehold.it/400x400" alt=""></a></li>
+            <li class="mix jquery"><a href="#"><img src="http://placehold.it/400x400" alt=""></a></li>
+            <li class="mix wordpress"><a href="#"><img src="http://placehold.it/400x400" alt=""></a></li>
+            <li class="mix html5"><a href="#"><img src="http://placehold.it/400x400" alt=""></a></li>
+            <li class="mix css3"><a href="#"><img src="http://placehold.it/400x400" alt=""></a></li>
+            <li class="mix javascript"><a href="#"><img src="http://placehold.it/400x400" alt=""></a></li>
+            <li class="mix jquery"><a href="#"><img src="http://placehold.it/400x400" alt=""></a></li>
+            <li class="mix wordpress"><a href="#"><img src="http://placehold.it/400x400" alt=""></a></li>
+            <li class="mix html5"><a href="#"><img src="http://placehold.it/400x400" alt=""></a></li>
+        </ul>
+    </div>
+</div>
+<script>
+	$('document').ready(function(){
+	$('#mixer').mixItUp({
+            animation: {
+                effects: 'fade scale',
+                duration: 2500,
+                animateResizeContainer: false
+            }
+        });
+	});
+</script>
+</body>
+</html>

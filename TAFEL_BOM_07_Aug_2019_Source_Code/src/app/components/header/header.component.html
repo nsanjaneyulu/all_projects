@@ -1,0 +1,52 @@
+<header class="bow_header bow_left_header_bg_Styles ">
+  <ul class="nav bow_align_items">
+    <li class="nav-item">
+      <a class="nav-link active" (click)="onMenuIconClick()"><i class="fa fa-bars" aria-hidden="true"></i></a>
+    </li>
+   
+   
+  </ul>
+  <ul class="nav bow_align_items">
+    <li class="nav-item bow_tafel_text">
+      <a class="nav-link"><img style="height: 30px;" src="https://tafel-images.s3.ap-south-1.amazonaws.com/bom/assets/tafel_logo.svg"></a>
+    </li>
+   
+  </ul>
+  <ul class="nav bow_align_items">
+    <!-- <li class="nav-item">
+      <a class="nav-link active"><i class="fa fa-life-ring" aria-hidden="true"></i></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#"><i class="fa fa-comments" aria-hidden="true"></i></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#"><i class="fa fa-bell-o" aria-hidden="true"></i></a>
+    </li> -->
+    <li class="nav-item dropdown">
+      <a class="nav-link login__title bow_userName_Styles" >{{userName}}</a>
+     
+    </li>
+    <li class="nav-item bow_user_web_hide">
+      <a class="nav-link bow_userName_Styles login__title" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+      aria-expanded="false"><img src="https://tafel-images.s3.ap-south-1.amazonaws.com/bom/assets/user.svg"></a>
+      <div class="dropdown-menu">
+        <!-- <a class="dropdown-item" href="#">Status</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="#">Account Testing</a> -->
+        <!-- <div class="dropdown-divider"></div> -->
+        <a class="dropdown-item" [routerLink]="['/login']" (click)="logoutClick()">Logout</a>
+      </div>
+    </li>
+    <li class="nav-item bow_title_hide_1">
+        <a class="nav-link bow_userName_Styles login__title" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+        aria-expanded="false"><img class="bow_user_styles" src="https://tafel-images.s3.ap-south-1.amazonaws.com/bom/assets/web_user.png"></a>
+        <div class="dropdown-menu">
+          <!-- <a class="dropdown-item" href="#">Status</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Account Testing</a> -->
+          <!-- <div class="dropdown-divider"></div> -->
+          <a class="dropdown-item" [routerLink]="['/login']" (click)="logoutClick()">Logout</a>
+        </div>
+      </li>
+  </ul>
+</header>

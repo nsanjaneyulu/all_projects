@@ -1,0 +1,38 @@
+<wicket:extend>
+	<div id="content">
+		<h1>Feeding History</h1>
+					<form wicket:id="feedquery">
+						<div wicket:id="feedback"></div> 
+                             <div class="addData">
+                             <ul>
+                               <li>
+								<label>Start Date</label>
+								<input type="text" id="startDate"  wicket:id="startDate" class="date_effect">
+							   </li>
+                               <li>
+								<label>End Date</label>
+								<input type="text" id="endDate"  wicket:id="endDate" class="date_effect">
+								</li>
+							</ul>
+							 <div style="clear:both;"></div>
+                             <div class="newButton">
+								<input type="submit" wicket:id="search" value="Search" class="button"/>
+                                </div>
+						      </div>
+							</form>
+                            <div wicket:id="reportContainer">
+                                <div class="list list-Header">
+                                    <div>
+                                        <h2 wicket:id="headerlist"><span wicket:id="header"></span></h2>
+                                    </div>
+                                    <div wicket:id="rows" style="clear:both;">
+                                        <div class="list-Rows">
+                                            <h3 ><span wicket:id="rowhead"></span></h3>
+                                            <h3 wicket:id="row_id"><span wicket:id="count"></span></h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+	</div>
+</wicket:extend>

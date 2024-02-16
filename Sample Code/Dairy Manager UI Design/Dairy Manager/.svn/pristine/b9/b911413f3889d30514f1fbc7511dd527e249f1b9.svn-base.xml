@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Sep 15, 2012 10:15:19 AM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dblue.farm.Production" table="production" >
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="livestock" class="com.dblue.farm.Livestock" fetch="select">
+            <column name="livestock_id" />
+        </many-to-one>
+        <many-to-one name="farm" class="com.dblue.farm.Farm" fetch="select">
+            <column name="farm_id" not-null="true" />
+        </many-to-one>
+        <many-to-one name="productionConfig" class="com.dblue.farm.ProductionConfig" fetch="select">
+            <column name="production_config_id" />
+        </many-to-one>
+        <property name="date" type="timestamp">
+            <column name="date" length="19" not-null="true" />
+        </property>
+        <property name="yield" type="big_decimal">
+            <column name="yield" precision="10" />
+        </property>
+        <property name="fatPercentile" type="big_decimal">
+            <column name="fat_percentile" precision="10" />
+        </property>
+        <property name="month" type="int">
+            <column name="month" not-null="true" />
+        </property>
+        <property name="snf" type="big_decimal">
+            <column name="snf" precision="10" />
+        </property>
+        <property name="clr" type="big_decimal">
+            <column name="clr" precision="10" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,111 @@
+<HTML xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/HTML; charset=iso-8859-1" />
+<title>Interchange/Swap List Items</title>
+<script type="text/javaScript">
+function moveToRightOrLeft(side){
+var listLeft=document.getElementById('selectLeft');
+var listRight=document.getElementById('selectRight');
+
+if(side==1){
+if(listLeft.options.length==0){
+alert('You have already moved all countries to Right');
+return false;
+}else{
+var selectedCountry=listLeft.options.selectedIndex;
+
+move(listRight,listLeft.options[selectedCountry].value,listLeft.options[selectedCountry].text);
+listLeft.remove(selectedCountry);
+
+if(listLeft.options.length>0){
+listLeft.options[0].selected=true;
+}
+}
+}else if(side==2){
+if(listRight.options.length==0){
+alert('You have already moved all countries to Left');
+return false;
+}else{
+var selectedCountry=listRight.options.selectedIndex;
+
+move(listLeft,listRight.options[selectedCountry].value,listRight.options[selectedCountry].text);
+listRight.remove(selectedCountry);
+
+if(listRight.options.length>0){
+listRight.options[0].selected=true;
+}
+}
+}
+}
+
+function move(listBoxTo,optionValue,optionDisplayText){
+var newOption = document.createElement("option");
+newOption.value = optionValue;
+newOption.text = optionDisplayText;
+listBoxTo.add(newOption, null);
+return true;
+}
+</script>
+</head>
+
+<body>
+<div>
+<ul>
+<li><table border="0">
+<tr>
+<td colspan="4">Example 1:</td>
+</tr>
+<tr>
+<td colspan="2">Available Countries </td>
+<td colspan="2">Your Selection </td>
+</tr>
+<tr>
+<td rowspan="3" align="right"><label>
+<select name="selectLeft" size="10" id="selectLeft">
+<option value="AS" selected="selected">American Samoa</option>
+<option value="AD">Andorra</option>
+<option value="AO">Angola</option>
+<option value="AI">Anguilla</option>
+<option value="AQ">Antarctica</option>
+<option value="AG">Antigua And Barbuda</option>
+<option value="AR">Argentina</option>
+<option value="AM">Armenia</option>
+<option value="AW">Aruba</option>
+<option value="AU">Australia</option>
+<option value="AT">Austria</option>
+</select>
+</label></td>
+<td align="left">&nbsp;</td>
+<td align="left">&nbsp;</td>
+<td rowspan="3" align="left"><select name="selectRight" size="10" id="selectRight">
+<option value="AF" selected="selected">Afghanistan</option>
+<option value="AX">&Atilde;&hellip;Land Islands</option>
+<option value="AL">Albania</option>
+<option value="DZ">Algeria</option>
+</select></td>
+</tr>
+<tr>
+<td align="left">&nbsp;</td>
+<td align="left"><label>
+<input name="btnRight" type="button" id="btnRight" value="&gt;&gt;" onClick="javaScript:moveToRightOrLeft(1);">
+</label></td>
+</tr>
+<tr>
+<td align="left">&nbsp;</td>
+<td align="left"><label>
+<input name="btnLeft" type="button" id="btnLeft" value="&lt;&lt;" onClick="javaScript:moveToRightOrLeft(2);">
+</label></td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td align="left">&nbsp;</td>
+<td align="left">&nbsp;</td>
+<td align="left">&nbsp;</td>
+</tr>
+</table>
+</li>
+
+</ul>
+</div>
+</body>
+</HTML>

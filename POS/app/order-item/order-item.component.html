@@ -1,0 +1,154 @@
+<form (ngSubmit)="createFullOrder()" [formGroup]="orderForm">
+        <div>
+           <div class="orderType ordertype-styles">
+              <span class="pr-2">Order Type: </span>
+              <div class="custom-control custom-radio custom-control-inline">
+                 <input type="radio" id="customRadioInline1" formControlName="orderType" name="orderType" value="POS-Dinein" class="custom-control-input">
+                 <label class="custom-control-label" for="customRadioInline1">Dine In</label>
+              </div>
+              <div class="custom-control custom-radio custom-control-inline">
+                 <input type="radio" id="customRadioInline2" formControlName="orderType" name="orderType" value="POS-TakeAway" class="custom-control-input">
+                 <label class="custom-control-label" for="customRadioInline2">Take Away</label>
+              </div>
+              <div class="btn-inline-block">
+                  <button type="button" class="btn btn-danger btn-styles btn-sm" (click)="onClearOrder()" [disabled]="!orderItemService.itemsSelected.length">Clear Order</button>
+              </div>
+           </div>
+           <table class="table mt-2 table-sm">
+              <thead class="thead-light">
+                 <tr>
+                    <th>Item Name</th>
+                    <th>Qty</th>
+                    <th>Price</th>
+                    <th>Amount</th>
+                    <th>Delete</th>
+                 </tr>
+              </thead>
+              <tbody>
+                    <tr *ngIf="!orderItemService.itemsSelected.length">
+                            <td colspan="5" class="text-center no-items-found"><i class="fa fa-cart-arrow-down pr-2" aria-hidden="true"></i>No Items Found</td>
+                            
+                         </tr>
+                 <tr *ngFor="let selectedItem of orderItemService.itemsSelected; let i = index">
+                    <td>{{selectedItem.name}}</td>
+                    <td>
+                        <span class="super_number menu from-menu">
+                              <span class="ui left attached button dec" (click)="decCount(i, selectedItem)"> - </span>
+                              <input type="text" value="{{ selectedItem.itemCount }}" readonly="">
+                              <span class="ui right attached button inc" (click)="incCount(i,selectedItem)"> + </span>
+                           </span>
+                     
+                    </td>
+                    <td>{{selectedItem.price}}</td>
+                    <td>{{selectedItem.price * selectedItem.itemCount}}</td>
+                    <td (click)="deleteItem(selectedItem, i)"><i class="fa fa-trash" aria-hidden="true"></i></td>
+                 </tr>
+              </tbody>
+           </table>
+        </div>
+        <div *ngIf="selectedItems.length">
+           <div class="border-top p-2">
+                <div class="input-group input-group-sm mb-3">
+                        <div class="input-group-prepend">
+                           <span class="input-group-text" id="phoneNumber">Mobile</span>
+                        </div>
+                        <input type="text" formControlName="phoneNumber" class="form-control" placeholder="Enter Mobile Number">
+                     </div>
+                     <div class="input-group input-group-sm mb-3">
+                        <div class="input-group-prepend">
+                           <span class="input-group-text" id="email">Email</span>
+                        </div>
+                        <input type="text" formControlName="emailId" class="form-control" placeholder="Enter Email">
+                     </div>
+                     
+           </div>
+           <div class="border-top p-2">
+             
+              <div class="d-table text-right" >
+                 <div class="d-table-row">
+                    <div class="d-table-cell p-2 font-weight-bold itemTotal">Item Total: </div>
+                    <div class="d-table-cell p-2 itemTotal">{{ billDetails.totalAmount | currency:'&#8377;'}}</div>
+                 </div>
+                 <div class="d-table-row">
+                    <div class="d-table-cell p-2 font-weight-bold itemTotal">Taxes: </div>
+                    <div class="d-table-cell p-2 itemTotal">{{ billDetails.taxAmount | currency:'&#8377;'}}</div>
+                 </div>
+                 <div class="d-table-row">
+                    <div class="d-table-cell p-2 font-weight-bold itemTotal">Discount</div>
+                    <div class="d-table-cell p-2 itemTotal">{{ billDetails.discountAmount | currency:'&#8377;'}}</div>
+                 </div>
+                 <div class="d-table-row">
+                    <div class="d-table-cell p-2 border-top font-weight-bold itemTotal">To Pay Amount</div>
+                    <div class="d-table-cell p-2 border-top itemTotal">{{ billDetails.allTotalAmount | currency:'&#8377;'}}</div>
+                 </div>
+              </div>
+             
+           </div>
+           <div class="border-top p-2">
+             
+              <div class="pt-2 payment-mode">
+                 <div class="row mx-0">
+                        <div class="col-sm-4">
+                                <button type="button" class="btn_styles btn-danger btn btn-sm btn-block" [class.selected]="paymentMode === 'cash'" (click)="selectPaymentMode('cash')">Cash</button>
+                             </div>
+                             <div class="col-sm-4">
+                                <button type="button" class="btn_styles btn-danger btn btn-sm btn-block" [class.selected]="paymentMode === 'cc'" *ngIf ="isOnline == true" (click)="selectPaymentMode('cc')">Credit Card</button>
+                             </div>
+                             <div class="col-sm-4">
+                                <button type="button" class="btn_styles btn-danger btn btn-sm btn-block" [class.selected]="paymentMode === 'dc'" *ngIf ="isOnline == true" (click)="selectPaymentMode('dc')">Debit Card</button>
+                             </div>
+                 </div>
+               
+                 <div *ngIf="isCardPayment" class="pt-3">
+                        <div class="input-group input-group-sm mb-3">
+                                <div class="input-group-prepend">
+                                   <span class="input-group-text" id="cardType">Card Type</span>
+                                </div>
+                                <select class="form-control" formControlName="cardType" (click)="validateCardSelection()">
+                                   <option value="">Select Card</option>
+                                   <option value="visa">Visa</option>
+                                   <option value="mastercard">MasterCard</option>
+                                   <option value="mastero">Mastero</option>
+                                   <option value="amex">Amex</option>
+                                </select>
+                             </div>
+                             <div class="input-group input-group-sm mb-3">
+                                <div class="input-group-prepend">
+                                   <span class="input-group-text" id="bank">Bank</span>
+                                </div>
+                                <select class="form-control" formControlName="bankName" (click)="validateCardSelection()">
+                                   <option value="">Select Bank</option>
+                                   <option value="icic">ICIC</option>
+                                   <option value="hdfc">HDFC</option>
+                                   <option value="sbi">SBI</option>
+                                   <option value="kotak">KOTAK</option>
+                                </select>
+                             </div>
+                   
+                    <div class="input-group input-group-sm mb-3">
+                       <div class="input-group-prepend">
+                          <span class="input-group-text">Transaction Ref. No</span>
+                       </div>
+                       <input formControlName="transRefNo" (keyup)="validateCardSelection()" class="form-control" placeholder="Enter Transaction Ref. No">
+                    </div>
+                 </div>
+                 <div class="row mt-2 mx-0">
+                        <div class="col-sm-4">
+                        </div>
+                        <div class="col-sm-4">
+                           <button type="submit" value="Create" class="btn_styles btn-danger btn btn-sm btn-block" [disabled]="!orderForm.valid || !isPaymentModeSelected">Create</button>
+                        </div>
+                        <div class="col-sm-4">
+                           <button type="submit" value="Print" class="btn_styles btn-danger btn btn-sm btn-block" [disabled]="!orderForm.valid || !isPaymentModeSelected" >Print</button>
+                        </div>
+                     </div>
+              </div>
+           </div>
+        </div>
+        <div id="section-to-print">
+           <div id="top">
+              
+           </div>
+           
+        </div>
+        </form>

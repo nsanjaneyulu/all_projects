@@ -1,0 +1,54 @@
+<wicket:extend>
+	<div id="content">
+		<h1>Revenue/Sale Receipt</h1>
+            <form method="post" wicket:id="addnewrevenue">
+			    <div wicket:id="feedback"></div>
+				   <div class="addData">
+                    <ul>
+                       <li>
+						   <label>Receipt Number</label><font color="#FF0000">*</font><br />
+						   <input type="text" name="receiptNumber"  wicket:id="receiptNumber" class="number_effect" maxlength="30">	
+                       </li>
+                       <li>
+						   <label>Receipt Type</label><font color="#FF0000">*</font><br />
+						   <select wicket:id="receiptType" class="dropdown_effect" maxlength="30"/>	
+                       </li>
+                       <li>								
+	                       <label>Vendor Code</label><font color="#FF0000">*</font><br />
+						   <select wicket:id="vendor" class="dropdown_effect"/>
+                       </li>
+                       <li>									
+						    <label>Sale Date</label><font color="#FF0000">*</font><br />
+							<input type="text" id="saleDate" name="saleDate"  wicket:id="saleDate" class="date_effect">	
+                       </li>
+                       
+                            <li>						
+								<label>Quantity</label><font color="#FF0000">*</font><br />
+								<input type="text" name="quantity"  wicket:id="quantity" class="number_effect" maxlength="6"
+                                style="text-align:right;"/>
+                            </li>	
+                             <li>						
+								<label>Unit price (in Rs.)</label><font color="#FF0000">*</font><br />
+								<input type="text" name="unitprice"  wicket:id="unitprice" class="number_effect" maxlength="8"
+                                style="text-align:right;"/>
+                            </li>
+                             					
+                         <li>						
+                            <label>Amount (in Rs.)</label><font color="#FF0000">*</font><br />
+							<input type="text" name="amount"  wicket:id="amount" class="number_effect" maxlength="15"
+                            style="text-align:right;"/>	
+                       </li>
+                       <li>
+							<label>Remarks</label><br />
+						    <textarea name="remarks" wicket:id="remarks" class="bigtextarea_effect" maxlength="220"></textarea>							
+						</li>
+                   </ul>
+                            <div style="clear:both;"></div>
+                            <br />
+                                <div class="newButton">
+                                <INPUT type="submit" value="Submit" class="button" wicket:id="save"/>
+                                </div> 						 
+			</div>
+		</form>	
+	</div>
+</wicket:extend>

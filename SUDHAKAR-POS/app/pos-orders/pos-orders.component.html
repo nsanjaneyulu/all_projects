@@ -1,0 +1,70 @@
+<div class="page-top-margin">
+    <div style="margin-left: 15px; margin-right: 15px;">
+        <span class="pr-1">Invoice No</span> <input [(ngModel)]="invoiceNo" (keyup)="filterByInvoiceNo(dt)" type="text" placeholder="Enter Invoice No" />
+    </div>
+    <div style="border: 1px solid #A9A9A9; margin: 15px;">
+        <p-table #dt [columns]="cols" [value]="data" dataKey="invoiceNo">
+            <ng-template pTemplate="header" let-columns>
+                <tr>
+                    <th style="width: 3em"></th>
+                    <th *ngFor="let col of columns" [pSortableColumn]="col.field">
+                        {{col.header}}
+                        <p-sortIcon [field]="col.field" ariaLabel="Activate to sort" ariaLabelDesc="Activate to sort in descending order" ariaLabelAsc="Activate to sort in ascending order"></p-sortIcon>
+                    </th>
+                    <!--<th style="width: 200px">Actions</th>-->
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-rowData let-expanded="expanded" let-columns="columns" let-index="rowIndex">
+                <tr>
+                    <td>
+                        <a href="#" [pRowToggler]="rowData">
+                            <i [ngClass]="expanded ? 'pi pi-chevron-down' : 'pi pi-chevron-right'"></i>
+                        </a>
+                    </td>
+                    <td *ngFor="let col of columns">
+                        {{rowData[col.field]}} <span *ngIf="col.field === 'grandTotal'"><i class="fa fa-info-circle" aria-hidden="true" (click)="openBillDialog(index)"></i></span>
+                    </td>
+                    <!--<td>
+                        <div>
+                            <button type="button" class="btn btn-danger btn-sm mr-2" (click)="rejectOrder(index)" [disabled]="rowData['status'] !== 'CREATED'">Reject</button>
+                            <button type="button" class="btn btn-warning btn-sm" (click)="updateOrder(index)" [disabled]="rowData['status'] !== 'CREATED'">Update</button>
+                        </div>
+                    </td>-->
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="rowexpansion" let-rowData let-columns="columns" let-index="rowIndex">
+                <tr>
+                    <td [attr.colspan]="columns.length + 1">
+                        <div class="container">
+                            <table class="table table-hover">
+                                <thead class="thead-light">
+                                    <tr>
+                                        <th scope="col">Item Name</th>
+                                        <th scope="col">Quantity</th>
+                                        <th scope="col">Price</th>
+                                        <th scope="col">Status</th>
+                                        <!--<th scope="col"></th>-->
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let item of rowData.jmOrderLet; let j = index">
+                                        <td>{{ item.itemName }}</td>
+                                        <td>
+                                            <!--<button type="button" class="btn btn-outline-secondary" (click)="decCount(index, j)">-</button>-->
+                                            <span class="p-2">{{ item.quantity }}</span>
+                                            <!--<button type="button" class="btn btn-outline-secondary" (click)="incCount(index, j)">+</button>-->
+                                        </td>
+                                        <td>{{ item.amount }}</td>
+                                        <td>{{ item.status }}</td>
+                                        <!--<td><button type="button" class="btn btn-outline-danger" (click)="deleteItem(index, j)"><b>X</b></button></td>-->
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </div>
+</div>
+

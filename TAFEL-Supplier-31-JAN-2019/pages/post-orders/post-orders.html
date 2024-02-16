@@ -1,0 +1,49 @@
+<ion-header>
+   <ion-navbar>
+      <ion-title>
+         <ion-item no-lines class="header__styles padding__left__0px">
+            <ion-avatar item-start>
+               <img src="{{imageEndPoint}}/{{getMallDetailsResp.img}}">
+            </ion-avatar>
+            <h2 class="ion__title">{{getMallDetailsResp.name}}</h2>
+            <p class="pending__order padding__left">{{getMallDetailsResp.address.area}}, {{getMallDetailsResp.address.city}}</p>
+         </ion-item>
+      </ion-title>
+   </ion-navbar>
+</ion-header>
+<ion-content padding>
+   <ion-grid id="allOrders" class="padding__Styles" *ngIf="!showLoader">
+      <div class="bootem__level__space" *ngFor="let completeOrders of getAllCompletedFullOrdersResp" (click)="goOrderDetails($event, completeOrders)">
+      <ion-item>
+         <div class="displayFlex">
+            <div class="">
+               <div><span class="order__Id">{{completeOrders.fullOrder5DigitId}}</span>
+                  <span *ngIf ="(completeOrders.packagingCharge > 0)" class="deliveryStyles">
+                  Delivery
+                  <span class="deliveryStylesArrow">
+                  </span>
+                  </span>
+                  <span *ngIf ="(completeOrders.packagingCharge == 0)" class="pickupStyles">
+                  Pickup
+                  <span class="pickupStylesArrow">
+                  </span>
+                  </span>
+               </div>
+               <div>
+                  <span class="smallTitle"> {{completeOrders.createdDateStr | date: "dd-MMM-yyyy H:mm"}}</span>
+                  <span class="smallTitle"> | </span>
+                  <span class="smallTitle" style="font-weight:bold;">
+                  ₹
+                  </span>
+                  <span class="smallTitle">{{completeOrders.amountStr}}</span>
+               </div>
+            </div>
+            <div class="text__align__right">
+               <div class="itemStatus__Completed completed__color">{{completeOrders.status}}</div>
+            </div>
+         </div>
+      </ion-item>
+      </div>
+   </ion-grid>
+   <page-globalloader *ngIf="showLoader"></page-globalloader>
+</ion-content>

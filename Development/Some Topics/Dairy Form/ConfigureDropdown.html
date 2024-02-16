@@ -1,0 +1,632 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Welcome to Company Name</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link href="style.css" rel="stylesheet" type="text/css" />
+<script language="javascript" type="text/javascript" src="datetimepicker.js">
+
+
+</script>
+         <script type="text/javascript">
+// From: http://www.webdeveloper.com/forum/showthread.php?t=218226
+
+function ToggleList(IDS) {
+  var CState = document.getElementById(IDS);
+  if (CState.style.display != "block") { CState.style.display = "block"; }
+                                  else { CState.style.display = "none"; }
+}
+function HideRange(sect,elTag,IDS) {
+  var ContentObj = document.getElementById(sect);
+  var AllContentDivs = ContentObj.getElementsByTagName(elTag);
+  for (i=0; i<AllContentDivs.length; i++) {
+    if (IDS != AllContentDivs[i].id) { AllContentDivs[i].style.display="none"; }
+  }
+}
+
+</script>
+<style type="text/css">
+  .divInfo { display:none; }
+.style19 {font-family: Verdana, Arial, Helvetica, sans-serif; font-size: medium; font-style: italic; }
+.style20 {color: #FF0099; font-size: large;}
+.style21 {
+	font-size: small;
+	font-weight: bold;
+}
+.style23 {color: #FF0099; font-size: small; font-weight: bold; }
+</style>
+<SCRIPT language="javascript">
+        function addRow(tableID) {
+ 
+            var table = document.getElementById(tableID);
+ 
+            var rowCount = table.rows.length-1;
+            var row = table.insertRow(rowCount);
+ 
+            var cell1 = row.insertCell(0);
+            var element1 = document.createElement("input");
+            element1.type = "checkbox";
+			element1.setAttribute("size","10");
+            cell1.appendChild(element1);
+ 
+            var cell2 = row.insertCell(1);
+            var element2 = document.createElement("input");
+            element2.type = "text";
+			element2.setAttribute("size","10");
+			cell2.appendChild(element2);
+
+
+            var cell3 = row.insertCell(2);
+           
+			var element3 = document.createElement("input");
+            element3.type = "text";
+			element3.setAttribute("size","20");
+			cell3.appendChild(element3);			         
+        }
+ 
+        function deleteRow(tableID) {
+            try {
+            var table = document.getElementById(tableID);
+            var rowCount = table.rows.length;
+ 
+            for(var i=0; i<rowCount; i++) {
+                var row = table.rows[i];
+                var chkbox = row.cells[0].childNodes[0];
+                if(null != chkbox && true == chkbox.checked) {
+                    table.deleteRow(i);
+                    rowCount--;
+                    i--;
+                }
+ 
+            }
+            }catch(e) {
+                alert(e);
+            }
+        }
+ 
+    </SCRIPT>
+
+<style type="text/css">
+</style>
+</head>
+<body>
+<div id="container">
+  <div id="top">
+    <h1><font color="#330066">Welcome to Company Name</font></h1>
+    <div class="search">
+      <!-- for search -->
+    </div>
+  </div>
+  <div id="navcontainer">
+    <ul id="navlist">
+      <li id="active"><a href="HomePage.html" id="current">Home</a></li>
+      <li><a href="ContactUs.html">Contact us</a></li>
+    </ul>
+  </div>
+ <div id="leftnav">
+    <h2>Menu</h2>
+   <ul id="leftnavmenu">
+        <li><a href="#" onClick="ToggleList('a')">Live Stock Management</a></li>
+   <div id="a" class="divInfo">
+        <li style="padding-left:10%;"><a href="LiveStockNew.html">Add Live Stock</a></li>
+		<li style="padding-left:10%;"><a href="EditUpdateSearch.html">Edit / Update Live Stock</a></li>
+        <li style="padding-left:10%;"><a href="PromotedSearch.html">Promoted LiveStock Hostory</a></li>
+   </div>
+        <li><a href="#" onClick="ToggleList('b')">Milk Yeild Management</a></li>
+   <div id="b" class="divInfo">
+        <li style="padding-left:10%;"><a href="AddDailyMilkProduction.html">Add Daily Milk Production</a></li>
+        <li style="padding-left:10%;"><a href="MilkProductionEdit.html">Add / Edit Daily Milk Production</a></li>
+    </div>
+         <li><a href="#" onClick="ToggleList('c')">Feeding Management</a></li>
+    <div id="c" class="divInfo">
+  <li style="padding-left:10%;"><a href="AddDailyFeeding.html">Add Daily Feeding</a></li>
+        <li style="padding-left:10%;"><a href="AddNewFeeding.html">Add Feeding Type</a></li>
+        <li style="padding-left:10%;"><a href="Feeding.html">Edit / Update Feeding Type</a></li>
+        <li style="padding-left:10%;"><a href="SuggestedFeeding.html">Suggested Feeding</a></li>
+    </div>
+       <li><a href="#" onClick="ToggleList('d')">Search Management</a></li>
+     <div id="d" class="divInfo">
+		<li style="padding-left:10%;"><a href="SearchCriteria.html">Search Criteria</a></li>
+     </div>
+        <li><a href="#" onClick="ToggleList('e')">Provisions Management</a></li>
+     <div id="e" class="divInfo">
+		<li style="padding-left:10%;"><a href="MonthlyProvisionNew.html">Add Monthly Provisions</a></li> 
+        <li style="padding-left:10%;"><a href="MonthlyProvisionEdit.html">Edit / Update Monthly Provisions</a></li> 
+         <li style="padding-left:10%;"><a href="SuggestedProvisions.html">Suggested Provisions</a></li>
+     </div>
+         <li><a href="#" onClick="ToggleList('f')">Stock Management</a></li>
+      <div id="f" class="divInfo">
+		<li style="padding-left:10%;"><a href="StockAddNew.html">Add New Stock</a></li> 
+        <li style="padding-left:10%;"><a href="Stocks.html">Edit / Update Stock</a></li> 
+      </div>
+         <li><a href="#" onClick="ToggleList('g')">Financial Management</a></li>
+      <div id="g" class="divInfo">
+		 <li style="padding-left:10%;"><a href="Revenue.html">Revenue / Sales</a></li> 
+         <li style="padding-left:10%;"><a href="Expenses.html">Expenses</a></li> 
+         <li style="padding-left:10%;"><a href="ProfitLoss.html">Profit / Loss</a></li> 
+      </div>
+         <li><a href="#" onClick="ToggleList('h')">Employee Management</a></li>
+      <div id="h" class="divInfo">
+		  <li style="padding-left:10%;"><a href="AddEmpNew.html">Add New Employee</a></li> 
+          <li style="padding-left:10%;"><a href="AddEditEmp.html">Edit / Update Employee</a></li> 
+      </div>
+          <li><a href="#" onClick="ToggleList('i')">Assets Management</a></li>
+      <div id="i" class="divInfo">
+		   <li style="padding-left:10%;"><a href="AssetsNew.html">Add New Assets</a></li> 
+           <li style="padding-left:10%;"><a href="Assets.html">Edit / Update Assets</a></li>
+      </div>
+           <li><a href="#" onClick="ToggleList('j')">Vendor Management</a></li>
+      <div id="j" class="divInfo">
+		    <li style="padding-left:10%;"><a href="VendorNew.html">Add New Vendor</a></li> 
+            <li style="padding-left:10%;"><a href="Vendor.html">Edit / Update Vendor</a></li>
+      </div>
+            <li><a href="#" onClick="ToggleList('k')">Admin</a></li>
+           <li style="padding-left:10%;"><a href="ParameterSetup.html">Parameter Setup</a></li>
+		   <li style="padding-left:10%;"><a href="ConfigureDropdown.html">Configure Dropdown</a></li> 
+	</ul>
+</div>
+  <div id="content">
+    <h2>Configuration Information</h2>
+    <table>
+   <tr>
+    <td>Breed Type Configuration:</td>
+    </tr><tr><td>
+      <table id="dataTable">
+        <tr>
+        <td ></td>
+          <td>Breed Type</td>
+          <td>Description</td>
+        </tr>
+        <tr>
+		<td><input type="checkbox" name="check" id="check" /></td>
+         <td ><input name="idnumber" type="text"  value="Jersey" size="10"/></td>
+          <td><input name="description" type="text"></td>
+         </tr>
+         <tr>
+		<td><input type="checkbox" name="check" id="check" /></td>
+         <td ><input name="idnumber" type="text"  value="Holstein Fresian" size="10"/></td>
+         <td><input name="description" type="text"></td>
+         </tr>
+         <tr>
+		<td><input type="checkbox" name="check" id="check" /></td>
+         <td ><input name="idnumber" type="text"  value="Ayreshire" size="10"/></td>
+         <td><input name="description" type="text"></td>
+         </tr>
+      <tr>
+	  <td colspan="1" align="right"> <INPUT type="button" value="Add Row" onClick="addRow('dataTable')"  class="button"/>  </td>
+       <td colspan="1"><INPUT type="button" value="Delete Row" onClick="deleteRow('dataTable')" class="button"/></td>
+       <td colspan="1" align="right"><INPUT type="button" value="Update" class="button"/></td>
+	  </tr>
+      </table>
+      </td>
+  </tr> 
+  <tr>
+    <td>Mother's Breed Type Configuration:</td>
+    </tr><tr><td>
+      <table id="dataTable1">
+        <tr>
+        <td ></td>
+          <td>Breed Type</td>
+          <td>Description</td>
+        </tr>
+        <tr>
+		<td><input type="checkbox" name="check" id="check" /></td>
+         <td ><input name="idnumber" type="text"  value="Jersey" size="10"/></td>
+          <td><input name="description" type="text"></td>
+         </tr>
+         <tr>
+		<td><input type="checkbox" name="check" id="check" /></td>
+         <td ><input name="idnumber" type="text"  value="Holstein Fresian" size="10"/></td>
+         <td><input name="description" type="text"></td>
+         </tr>
+         <tr>
+		<td><input type="checkbox" name="check" id="check" /></td>
+         <td ><input name="idnumber" type="text"  value="Ayreshire" size="10"/></td>
+        <td><input name="description" type="text"></td>
+         </tr>
+      <tr>
+	  <td colspan="1" align="right"> <INPUT type="button" value="Add Row" onClick="addRow('dataTable1')"  class="button"/>  </td>
+       <td colspan="1"><INPUT type="button" value="Delete Row" onClick="deleteRow('dataTable1')" class="button"/></td>
+       <td colspan="1" align="right"><INPUT type="button" value="Update" class="button"/></td>
+	  </tr>
+      </table>
+      </td>
+  </tr>   
+   <tr>
+   <td colspan="4"><br /></td></tr>
+    <tr>
+    <td>Live Stock State Configuration:</td>
+    </tr><tr><td>
+        <table id="dataTable12">
+        <tr>
+        <td ></td>
+          <td>Live Stock status</td>
+          <td>Description</td>
+        </tr>
+        <tr>
+		<td><input type="checkbox" name="check" id="check" /></td>
+         <td ><input name="idnumber" type="text"  value="Calf" size="10"/></td>
+                    <td><input name="description" type="text"></td>
+         </tr>
+         <tr>
+		<td><input type="checkbox" name="check" id="check" /></td>
+         <td ><input name="idnumber" type="text"  value="Heifer" size="10"/></td>
+                    <td><input name="description" type="text"></td>
+         </tr>
+         <tr>
+		<td><input type="checkbox" name="check" id="check" /></td>
+         <td ><input name="idnumber" type="text"  value="Herd" size="10"/></td>
+                    <td><input name="description" type="text"></td>
+         </tr>
+     <tr>
+	  <td colspan="1" align="right"> <INPUT type="button" value="Add Row" onClick="addRow('dataTable12')"  class="button"/>  </td>
+       <td colspan="1"><INPUT type="button" value="Delete Row" onClick="deleteRow('dataTable12')" class="button"/></td>
+       <td colspan="1" align="right"><INPUT type="button" value="Update" class="button"/></td>
+	  </tr>
+      </table>
+ </td>
+  </tr>
+   <tr>
+   <td colspan="4"><br /></td></tr>
+    <tr>
+    <td>Live Stock Status Configuration:</td>
+    </tr><tr><td>
+        <table id="dataTable13">
+        <tr>
+        <td ></td>
+          <td>Live Stock status</td>
+          <td>Description</td>
+        </tr>
+        <tr>
+		<td><input type="checkbox" name="check" id="check" /></td>
+         <td ><input name="idnumber" type="text"  value="Prgnent-Milking" size="10"/></td>
+                    <td><input name="description" type="text"></td>
+         </tr>
+         <tr>
+		<td><input type="checkbox" name="check" id="check" /></td>
+         <td ><input name="idnumber" type="text"  value="Milking-Dry" size="10"/></td>
+                    <td><input name="description" type="text"></td>
+         </tr>
+         <tr>
+		<td><input type="checkbox" name="check" id="check" /></td>
+         <td ><input name="idnumber" type="text"  value="Non-Pregnent" size="10"/></td>
+                    <td><input name="description" type="text"></td>
+         </tr>
+     <tr>
+	  <td colspan="1" align="right"> <INPUT type="button" value="Add Row" onClick="addRow('dataTable13')"  class="button"/>  </td>
+       <td colspan="1"><INPUT type="button" value="Delete Row" onClick="deleteRow('dataTable13')" class="button"/></td>
+       <td colspan="1" align="right"><INPUT type="button" value="Update" class="button"/></td>
+	  </tr>
+      </table>
+ </td>
+  </tr>
+  <tr>
+   <td colspan="4"><br /></td></tr>
+    <tr>
+    <td>Origin configuration:</td>
+    </tr><tr><td>
+        <table id="dataTable4">
+        <tr>
+        <td ></td>
+          <td>Origin</td>
+          <td>Description</td>
+        </tr>
+        <tr>
+		<td><input type="checkbox" name="check" id="check" /></td>
+         <td ><input name="idnumber" type="text"  value="In-House Born" size="10"/></td>
+                    <td><input name="description" type="text"></td>
+         </tr>
+         <tr>
+		<td><input type="checkbox" name="check" id="check" /></td>
+         <td ><input name="idnumber" type="text"  value="Purchased" size="10"/></td>
+                    <td><input name="description" type="text"></td>
+         </tr>
+      <tr>
+	  <td colspan="1" align="right"> <INPUT type="button" value="Add Row" onClick="addRow('dataTable4')"  class="button"/>  </td>
+       <td colspan="1"><INPUT type="button" value="Delete Row" onClick="deleteRow('dataTable4')" class="button"/></td>
+       <td colspan="1" align="right"><INPUT type="button" value="Update" class="button"/></td>
+	  </tr>
+      </table>
+ </td>
+  </tr>
+  <tr>
+   <td colspan="4"><br /></td></tr>
+    <tr>
+    <td>Milking Configuration:</td>
+    </tr><tr><td>
+        <table id="dataTable3">
+        <tr>
+        <td ></td>
+          <td>Milking</td>
+          <td>Description</td>
+        </tr>
+        <tr>
+		<td><input type="checkbox" name="check" id="check" /></td>
+         <td ><input name="idnumber" type="text"  value="Yes" size="10"/></td>
+                    <td><input name="description" type="text"></td>
+          
+         </tr>
+         <tr>
+		<td><input type="checkbox" name="check" id="check" /></td>
+         <td ><input name="idnumber" type="text"  value="No" size="10"/></td>
+                    <td><input name="description" type="text"></td>
+         </tr>
+      <tr>
+	  <td colspan="1" align="right"> <INPUT type="button" value="Add Row" onClick="addRow('dataTable3')"  class="button"/>  </td>
+       <td colspan="1"><INPUT type="button" value="Delete Row" onClick="deleteRow('dataTable3')" class="button"/></td>
+       <td colspan="1" align="right"><INPUT type="button" value="Update" class="button"/></td>
+	  </tr>
+      </table>
+ </td>
+  </tr>
+  <tr>
+   <td colspan="4"><br /></td></tr>
+    <tr>
+    <td>Vaccination Type Configuration:</td>
+    </tr><tr><td>
+        <table id="dataTable14">
+        <tr>
+        <td ></td>
+          <td>Vaccination Type</td>
+          <td>Description</td>
+        </tr>
+        <tr>
+		<td><input type="checkbox" name="check" id="check" /></td>
+         <td ><input name="idnumber" type="text"  value="IBR" size="10"/></td>
+                    <td><input name="description" type="text"></td>
+         </tr>
+         <tr>
+		<td><input type="checkbox" name="check" id="check" /></td>
+         <td ><input name="idnumber" type="text"  value="Leptospirosis" size="10"/></td>
+                    <td><input name="description" type="text"></td>
+         </tr>
+         <tr>
+		<td><input type="checkbox" name="check" id="check" /></td>
+         <td ><input name="idnumber" type="text"  value="Hemophilus" size="10"/></td>
+                    <td><input name="description" type="text"></td>
+         </tr>
+      <tr>
+	  <td colspan="1" align="right"> <INPUT type="button" value="Add Row" onClick="addRow('dataTable14')"  class="button"/>  </td>
+       <td colspan="1"><INPUT type="button" value="Delete Row" onClick="deleteRow('dataTable14')" class="button"/></td>
+       <td colspan="1" align="right"><INPUT type="button" value="Update" class="button"/></td>
+	  </tr>
+      </table>
+ </td>
+  </tr>
+  <tr>
+   <td colspan="4"><br /></td></tr>
+    <tr>
+    <td>Diease Type Configuration:</td>
+    </tr><tr><td>
+        <table id="dataTable5">
+        <tr>
+        <td ></td>
+          <td>Dieases Type</td>
+          <td>Description</td>
+        </tr>
+        <tr>
+		<td><input type="checkbox" name="check" id="check" /></td>
+         <td ><input name="idnumber" type="text"  value="Dystocia" size="10"/></td>
+                    <td><input name="description" type="text"></td>
+         </tr>
+         <tr>
+		<td><input type="checkbox" name="check" id="check" /></td>
+         <td ><input name="idnumber" type="text"  value="Paralysis" size="10"/></td>
+                    <td><input name="description" type="text"></td>
+         </tr>
+         <tr>
+		<td><input type="checkbox" name="check" id="check" /></td>
+         <td ><input name="idnumber" type="text"  value="Metritis" size="10"/></td>
+                    <td><input name="description" type="text"></td>
+         </tr>
+      <tr>
+	  <td colspan="1" align="right"> <INPUT type="button" value="Add Row" onClick="addRow('dataTable5')"  class="button"/>  </td>
+       <td colspan="1"><INPUT type="button" value="Delete Row" onClick="deleteRow('dataTable5')" class="button"/></td>
+       <td colspan="1" align="right"><INPUT type="button" value="Update" class="button"/></td>
+	  </tr>
+      </table>
+ </td>
+  </tr>
+   <tr>
+   <td colspan="4"><br /></td></tr>
+    <tr>
+    <td>Provision Type Configuration:</td>
+    </tr><tr><td>
+        <table id="dataTable16">
+        <tr>
+        <td ></td>
+          <td>Live Stock status</td>
+          <td>Description</td>
+        </tr>
+        <tr>
+		<td><input type="checkbox" name="check" id="check" /></td>
+         <td ><input name="idnumber" type="text"  value="Bran" size="10"/></td>
+                    <td><input name="description" type="text"></td>
+         </tr>
+         <tr>
+		<td><input type="checkbox" name="check" id="check" /></td>
+         <td ><input name="idnumber" type="text"  value="Grits" size="10"/></td>
+                    <td><input name="description" type="text"></td>
+         </tr>
+         <tr>
+		<td><input type="checkbox" name="check" id="check" /></td>
+         <td ><input name="idnumber" type="text"  value="Wheat" size="10"/></td>
+                    <td><input name="description" type="text"></td>
+         </tr>
+     <tr>
+	  <td colspan="1" align="right"> <INPUT type="button" value="Add Row" onClick="addRow('dataTable16')"  class="button"/>  </td>
+       <td colspan="1"><INPUT type="button" value="Delete Row" onClick="deleteRow('dataTable16')" class="button"/></td>
+       <td colspan="1" align="right"><INPUT type="button" value="Update" class="button"/></td>
+	  </tr>
+      </table>
+ </td>
+  </tr>
+   <tr>
+   <td colspan="4"><br /></td></tr>
+    <tr>
+    <td>Stock Type Configuration:</td>
+    </tr><tr><td>
+        <table id="dataTable17">
+        <tr>
+        <td ></td>
+          <td>Live Stock status</td>
+          <td>Description</td>
+        </tr>
+        <tr>
+		<td><input type="checkbox" name="check" id="check" /></td>
+         <td ><input name="idnumber" type="text"  value="Green Fooder" size="10"/></td>
+                    <td><input name="description" type="text"></td>
+         </tr>
+         <tr>
+		<td><input type="checkbox" name="check" id="check" /></td>
+         <td ><input name="idnumber" type="text"  value="Dry Fooder" size="10"/></td>
+                    <td><input name="description" type="text"></td>
+         </tr>
+         <tr>
+		<td><input type="checkbox" name="check" id="check" /></td>
+         <td ><input name="idnumber" type="text"  value="Medicines" size="10"/></td>
+                    <td><input name="description" type="text"></td>
+         </tr>
+     <tr>
+	  <td colspan="1" align="right"> <INPUT type="button" value="Add Row" onClick="addRow('dataTable17')"  class="button"/>  </td>
+       <td colspan="1"><INPUT type="button" value="Delete Row" onClick="deleteRow('dataTable17')" class="button"/></td>
+       <td colspan="1" align="right"><INPUT type="button" value="Update" class="button"/></td>
+	  </tr>
+      </table>
+ </td>
+  </tr>
+   <tr>
+   <td colspan="4"><br /></td></tr>
+    <tr>
+    <td>Receipt Type Configuration:</td>
+    </tr><tr><td>
+        <table id="dataTable18">
+        <tr>
+        <td ></td>
+          <td>Live Stock status</td>
+          <td>Description</td>
+        </tr>
+        <tr>
+		<td><input type="checkbox" name="check" id="check" /></td>
+         <td ><input name="idnumber" type="text"  value="Animal Sale" size="10"/></td>
+                    <td><input name="description" type="text"></td>
+         </tr>
+         <tr>
+		<td><input type="checkbox" name="check" id="check" /></td>
+         <td ><input name="idnumber" type="text"  value="Milk Sale" size="10"/></td>
+                    <td><input name="description" type="text"></td>
+         </tr>
+         <tr>
+		<td><input type="checkbox" name="check" id="check" /></td>
+         <td ><input name="idnumber" type="text"  value="Mannure Sale" size="10"/></td>
+                    <td><input name="description" type="text"></td>
+         </tr>
+     <tr>
+	  <td colspan="1" align="right"> <INPUT type="button" value="Add Row" onClick="addRow('dataTable18')"  class="button"/>  </td>
+       <td colspan="1"><INPUT type="button" value="Delete Row" onClick="deleteRow('dataTable18')" class="button"/></td>
+       <td colspan="1" align="right"><INPUT type="button" value="Update" class="button"/></td>
+	  </tr>
+      </table>
+ </td>
+  </tr>
+   <tr>
+   <td colspan="4"><br /></td></tr>
+    <tr>
+    <td>Voucher TypeConfiguration:</td>
+    </tr><tr><td>
+        <table id="dataTable19">
+        <tr>
+        <td ></td>
+          <td>Live Stock status</td>
+          <td>Description</td>
+        </tr>
+        <tr>
+		<td><input type="checkbox" name="check" id="check" /></td>
+         <td ><input name="idnumber" type="text"  value="Repair's & Maintaince" size="10"/></td>
+                    <td><input name="description" type="text"></td>
+         </tr>
+         <tr>
+		<td><input type="checkbox" name="check" id="check" /></td>
+         <td ><input name="idnumber" type="text"  value="Transportations" size="10"/></td>
+                    <td><input name="description" type="text"></td>
+         </tr>
+         <tr>
+		<td><input type="checkbox" name="check" id="check" /></td>
+         <td ><input name="idnumber" type="text"  value="Services" size="10"/></td>
+                    <td><input name="description" type="text"></td>
+         </tr>
+     <tr>
+	  <td colspan="1" align="right"> <INPUT type="button" value="Add Row" onClick="addRow('dataTable19')"  class="button"/>  </td>
+       <td colspan="1"><INPUT type="button" value="Delete Row" onClick="deleteRow('dataTable19')" class="button"/></td>
+       <td colspan="1" align="right"><INPUT type="button" value="Update" class="button"/></td>
+	  </tr>
+      </table>
+ </td>
+  </tr>
+   <tr>
+   <td colspan="4"><br /></td></tr>
+    <tr>
+    <td>Vendor Type Configuration:</td>
+    </tr><tr><td>
+        <table id="dataTable110">
+        <tr>
+        <td ></td>
+          <td>Live Stock status</td>
+          <td>Description</td>
+        </tr>
+        <tr>
+		<td><input type="checkbox" name="check" id="check" /></td>
+         <td ><input name="idnumber" type="text"  value="Purchase" size="10"/></td>
+                    <td><input name="description" type="text"></td>
+         </tr>
+         <tr>
+		<td><input type="checkbox" name="check" id="check" /></td>
+         <td ><input name="idnumber" type="text"  value="Supplier" size="10"/></td>
+                    <td><input name="description" type="text"></td>
+         </tr>
+        
+     <tr>
+	  <td colspan="1" align="right"> <INPUT type="button" value="Add Row" onClick="addRow('dataTable110')"  class="button"/>  </td>
+       <td colspan="1"><INPUT type="button" value="Delete Row" onClick="deleteRow('dataTable110')" class="button"/></td>
+       <td colspan="1" align="right"><INPUT type="button" value="Update" class="button"/></td>
+	  </tr>
+      </table>
+ </td>
+  </tr>
+  <tr>
+   <td colspan="4"><br /></td></tr>
+    <tr>
+    <td>Assets Type Configuration:</td>
+    </tr><tr><td>
+        <table id="dataTable11">
+        <tr>
+        <td ></td>
+          <td>Feeding  Type</td>
+          <td>Description</td>
+        </tr>
+        <tr>
+		<td><input type="checkbox" name="check" id="check" /></td>
+         <td ><input name="idnumber" type="text"  value="Animal" size="10"/></td>
+                    <td><input name="description" type="text"></td>
+         </tr>
+         <tr>
+		<td><input type="checkbox" name="check" id="check" /></td>
+         <td ><input name="idnumber" type="text"  value="Milk Machine" size="10"/></td>
+                    <td><input name="description" type="text"></td>
+         </tr>
+      <tr>
+	  <td colspan="1" align="right"> <INPUT type="button" value="Add Row" onClick="addRow('dataTable11')"  class="button"/>  </td>
+       <td colspan="1"><INPUT type="button" value="Delete Row" onClick="deleteRow('dataTable11')" class="button"/></td>
+       <td colspan="1" align="right"><INPUT type="button" value="Update" class="button"/></td>
+	  </tr>
+      </table>
+ </td>
+  </tr>
+ 
+    </table>
+    
+<br /></br>	  </br>	  </br>	  </br>	  </br>	  </br>	  </br>	  </br></br>	  </br>	  </br>	  </br>	  </br>	  </br>	  </br>	  </br></br>	  </br>  </br>	  </br>	  </br>	  </br>	  </br>	  </br>	  </br></br>	  </br>
+</div>
+</div>
+</body>
+</html>

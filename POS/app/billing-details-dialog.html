@@ -1,0 +1,24 @@
+<h1 mat-dialog-title>Bill Details</h1>
+<div mat-dialog-content>
+    <div class="d-table">
+        <div class="d-table-row">
+            <div class="d-table-cell p-2 font-weight-bold">Item Total:</div>
+            <div class="d-table-cell p-2">{{ data.itemTotal }}</div>
+        </div>
+        <div class="d-table-row">
+            <div class="d-table-cell p-2 font-weight-bold">Taxes:</div>
+            <div class="d-table-cell p-2">{{ data.taxes }}</div>
+        </div>
+        <div class="d-table-row">
+            <div class="d-table-cell p-2 font-weight-bold">Discount:</div>
+            <div class="d-table-cell p-2">{{ data.discount }}</div>
+        </div>
+        <div class="d-table-row">
+            <div class="d-table-cell p-2 border-top font-weight-bold">Grand Total:</div>
+            <div class="d-table-cell p-2 border-top">{{ data.grandTotal }}</div>
+        </div>
+    </div>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="closeDialog()" cdkFocusInitial>Ok</button>
+</div>

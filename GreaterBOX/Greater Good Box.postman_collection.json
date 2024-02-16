@@ -1,0 +1,992 @@
+{
+	"info": {
+		"_postman_id": "66d7c159-bcf9-47f0-9b9a-4a5aa1acf14d",
+		"name": "Greater Good Box",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Orders",
+			"item": [
+				{
+					"name": "Api/Order",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiTmlrZSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6Ik5pa2UiLCJlbWFpbCI6Im5pa2UuYUB0YWxlbnRhcy5pbiIsIm5iZiI6MTU4NTg4NzcwNiwiZXhwIjoxNTg1OTc0MTA2LCJpc3MiOiJHb29kQm94QXBpIiwiYXVkIjoiR29vZEJveFdlYiJ9.J4VK30WrNQ0BC4cKs0JOmJvQz2XH8ANhOwL4lJOypi8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"firstName\": \"Sandeep\",\r\n        \"lastName\": \"Dachepally1\",\r\n        \"email\": \"sandeep.d@cconfigure.com\",\r\n        \"phoneNumber\": \"9010096581\",\r\n        \"products\": [\r\n            {\r\n                \"id\": \"e042018a-485d-40df-8f13-ef8b4ccb5d20\",\r\n                \"quantity\": 1\r\n            }\r\n        ],\r\n        \"pickUpLocationId\": \"732206a4-faf8-4c84-90aa-c536fcdb3897\",\r\n        \"pickUpLocationName\": \"Dock 4 on the North side of the Redd building located at 1140 SE 7th Avenue, Portland, 97214 (on SE Taylor Street, between 7th and 8th).\",\r\n        \"paymentCard\": {\r\n            \"webSessionID\": \"101_2\",\r\n            \"transactionID\": \"1585927193974\",\r\n            \"chargeAccountNumberToken\": \"6440800000012102\",\r\n            \"paymentDeviceLast4\": \"3084\",\r\n            \"cardHolderName\": \"Sandeep R Test\",\r\n            \"cardHolderFirstName\": \"Sandeep R\",\r\n            \"cardHolderLastName\": \"Test\",\r\n            \"addressLine1\": \"test\",\r\n            \"addressLine2\": \"Test\",\r\n            \"state\": \"VA\",\r\n            \"city\": \"TEst\",\r\n            \"postalCode\": \"20170\",\r\n            \"chargeExpirationMMYY\": \"0523\",\r\n            \"chargeCVN\": \"123\"\r\n        },\r\n        \"isActive\": true\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}Api/Order",
+							"host": [
+								"{{host}}Api"
+							],
+							"path": [
+								"Order"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Api/Orders",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiTmlrZSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6Ik5pa2UiLCJlbWFpbCI6Im5pa2UuYUB0YWxlbnRhcy5pbiIsIm5iZiI6MTU4NjE3MzE1MywiZXhwIjoxNTg2MjU5NTUzLCJpc3MiOiJHb29kQm94QXBpIiwiYXVkIjoiR29vZEJveFdlYiJ9.OYURv0k7C3DHbtxpktU2-JB9HoEmKRDCmGuPm5zKs4g",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}Api/Orders",
+							"host": [
+								"{{host}}Api"
+							],
+							"path": [
+								"Orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Api/Order/6caf35cd-8153-4926-876b-54afd482429e",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}Api/Order/9c1ffe55-21ef-4700-aed5-ddc9b32def41",
+							"host": [
+								"{{host}}Api"
+							],
+							"path": [
+								"Order",
+								"9c1ffe55-21ef-4700-aed5-ddc9b32def41"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Api/Order",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n    {\r\n        \"id\": \"9c1ffe55-21ef-4700-aed5-ddc9b32def41\",\r\n        \"firstName\": \"A Nikil\",\r\n        \"lastName\": \"Reddy\",\r\n        \"email\": \"nikil.a@talentas.in\",\r\n        \"phoneNumber\": \"0987654321\",\r\n        \"products\": [\r\n            {\r\n                \"id\": \"0cbc7a0d-c9ef-4b63-b0e9-783ffdbb136c\",\r\n                \"quantity\": 1\r\n            }\r\n        ],\r\n        \"pickUpLocationId\": \"f3770207-499c-4952-b970-dfaee6fdca83\",\r\n        \"pickUpLocationName\": \"Redd building located at 1140 SE 7th Avenue, Portland, 97214 (on SE Taylor Street, between 7th and 8th)\",\r\n        \"paymentStatus\": \"Successful\",\r\n        \"pickUpDate\": \"2020-04-03T00:00:00+05:30\",\r\n        \"paymentCard\": {\r\n            \"webSessionID\": \"101_2\",\r\n            \"transactionID\": \"1585640625966\",\r\n            \"chargeAccountNumberToken\": \"6440800000010791\",\r\n            \"paymentDeviceLast4\": \"6843\",\r\n            \"cardHolderName\": \"Nikil Reddy\",\r\n            \"cardHolderFirstName\": \"Nikil\",\r\n            \"cardHolderLastName\": \"Reddy\",\r\n            \"addressLine1\": \"address 1\",\r\n            \"addressLine2\": \"address 2\",\r\n            \"state\": \"virginia\",\r\n            \"city\": \"virginia 1\",\r\n            \"postalCode\": \"vir123\",\r\n            \"chargeExpirationMMYY\": \"1220\",\r\n            \"chargeCVN\": \"243\"\r\n        },\r\n        \"paymentResponse\": {\r\n            \"partnerCustomerKey\": null,\r\n            \"responseCode\": 0,\r\n            \"responseText\": null,\r\n            \"paymentAcquirerName\": \"Chase Paymentech\",\r\n            \"chargeAccountLast4\": \"3084\",\r\n            \"paymentID\": \"BPUZNLLEL6\",\r\n            \"authorizedAmount\": \"50.0\",\r\n            \"paymentDeviceTypeCD\": \"6\",\r\n            \"chargeAccountFirst6\": \"644034\",\r\n            \"paymentStatus\": 10\r\n        }\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}Api/Order",
+							"host": [
+								"{{host}}Api"
+							],
+							"path": [
+								"Order"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Api/Order/6caf35cd-8153-4926-876b-54afd482429e",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}Api/Order/3856e2ca-104d-4d1a-a3cf-3569a35a086a",
+							"host": [
+								"{{host}}Api"
+							],
+							"path": [
+								"Order",
+								"3856e2ca-104d-4d1a-a3cf-3569a35a086a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Api/Orders/PickUpDate?pickUpDate=3/27/2020 12:00:00 AM",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiTmlrZSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6Ik5pa2UiLCJlbWFpbCI6Im5pa2UuYUB0YWxlbnRhcy5pbiIsIm5iZiI6MTU4NjE3NDI5NiwiZXhwIjoxNTg2MjYwNjk2LCJpc3MiOiJHb29kQm94QXBpIiwiYXVkIjoiR29vZEJveFdlYiJ9.S17R2wC0dpLrmMqR3O2YMmwtMrVlbqgFbC5R3pEPiHs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}Api/Orders/PickUpDate?pickUpDate=4/10/2020",
+							"host": [
+								"{{host}}Api"
+							],
+							"path": [
+								"Orders",
+								"PickUpDate"
+							],
+							"query": [
+								{
+									"key": "pickUpDate",
+									"value": "4/10/2020"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Api/Orders/StartDate/EndDate?StartDate=3/26/2020 12:00:00 AM&EndDate=4/3/2020 12:00:00 AM",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiTmlrZSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6Ik5pa2UiLCJlbWFpbCI6Im5pa2UuYUB0YWxlbnRhcy5pbiIsIm5iZiI6MTU4NjQxMjIyMywiZXhwIjoxNTg2NDk4NjIzLCJpc3MiOiJHb29kQm94QXBpIiwiYXVkIjoiR29vZEJveFdlYiJ9.Ppj-aV6_t8LtDIskB399OL5H6rEducKN0oERQBdDPp4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}Api/Orders/StartDate/EndDate?StartDate=4/7/2020&EndDate=4/7/2020&timeZoneOffset=-330",
+							"host": [
+								"{{host}}Api"
+							],
+							"path": [
+								"Orders",
+								"StartDate",
+								"EndDate"
+							],
+							"query": [
+								{
+									"key": "StartDate",
+									"value": "4/7/2020"
+								},
+								{
+									"key": "EndDate",
+									"value": "4/7/2020"
+								},
+								{
+									"key": "timeZoneOffset",
+									"value": "-330"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Orders Controller Api url's",
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "Api/Product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiTmlrZSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6Ik5pa2UiLCJlbWFpbCI6Im5pa2UuYUB0YWxlbnRhcy5pbiIsIm5iZiI6MTU4NTg4NzcwNiwiZXhwIjoxNTg1OTc0MTA2LCJpc3MiOiJHb29kQm94QXBpIiwiYXVkIjoiR29vZEJveFdlYiJ9.J4VK30WrNQ0BC4cKs0JOmJvQz2XH8ANhOwL4lJOypi8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"name\": \"Testing\",\r\n        \"description\": \"Test Testing\",\r\n        \"pricePerUnit\": 25,\r\n        \"items\": \"items1, item2\",\r\n        \"sequence\": 5,\r\n        \"isActive\": true\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}Api/Product",
+							"host": [
+								"{{host}}Api"
+							],
+							"path": [
+								"Product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Api/Products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}Api/Products",
+							"host": [
+								"{{host}}Api"
+							],
+							"path": [
+								"Products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Api/Product/2e1686cc-2265-4d64-be82-345a97776eef",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}Api/Product/2e131f3e-12b7-40e5-873d-88690edda9d2",
+							"host": [
+								"{{host}}Api"
+							],
+							"path": [
+								"Product",
+								"2e131f3e-12b7-40e5-873d-88690edda9d2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Api/Product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiTmlrZSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6Ik5pa2UiLCJlbWFpbCI6Im5pa2UuYUB0YWxlbnRhcy5pbiIsIm5iZiI6MTU4NzEyMjU2NiwiZXhwIjoxNTg3MjA4OTY2LCJpc3MiOiJHb29kQm94QXBpIiwiYXVkIjoiR29vZEJveFdlYiJ9.N7DNSclua9WnmePYm1jDJTv6Q3GLiOAwsbg8iKkRpKw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"id\": \"c3704372-9339-4b5a-be80-d5e9f9bcad36\",\r\n        \"name\": \"Testing\",\r\n        \"description\": \"Test Testing\",\r\n        \"pricePerUnit\": 25,\r\n        \"items\": \"items1, item3\",\r\n        \"sequence\": 5\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}Api/Product",
+							"host": [
+								"{{host}}Api"
+							],
+							"path": [
+								"Product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Api/Product/2e1686cc-2265-4d64-be82-345a97776eef",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiTmlrZSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6Ik5pa2UiLCJlbWFpbCI6Im5pa2UuYUB0YWxlbnRhcy5pbiIsIm5iZiI6MTU4NzAyMjU1MywiZXhwIjoxNTg3MTA4OTUzLCJpc3MiOiJHb29kQm94QXBpIiwiYXVkIjoiR29vZEJveFdlYiJ9.GkD-7KQwkzbbOb7fVwh5ne962vfjZSuP8uJKO7vMoDo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}Api/Product/0cbc7a0d-c9ef-4b63-b0e9-783ffdbb136c",
+							"host": [
+								"{{host}}Api"
+							],
+							"path": [
+								"Product",
+								"0cbc7a0d-c9ef-4b63-b0e9-783ffdbb136c"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Products Controller Api Url's",
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Inventory",
+			"item": [
+				{
+					"name": "Api/Inventory",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiTmlrZSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6Ik5pa2UiLCJlbWFpbCI6Im5pa2UuYUB0YWxlbnRhcy5pbiIsIm5iZiI6MTU4NTg4NzcwNiwiZXhwIjoxNTg1OTc0MTA2LCJpc3MiOiJHb29kQm94QXBpIiwiYXVkIjoiR29vZEJveFdlYiJ9.J4VK30WrNQ0BC4cKs0JOmJvQz2XH8ANhOwL4lJOypi8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n        \"id\": \"84988e8b-6803-440d-b921-5eac01a2d14f\",\r\n        \"productId\": \"2d18945a-5737-483e-ab31-02e14a9e72a6\",\r\n        \"productName\": \"Testing\",\r\n        \"beginingInventory\": 100,\r\n        \"isActive\": true\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}Api/Inventory",
+							"host": [
+								"{{host}}Api"
+							],
+							"path": [
+								"Inventory"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Api/Inventories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}Api/Inventories",
+							"host": [
+								"{{host}}Api"
+							],
+							"path": [
+								"Inventories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Api/Inventory/e1f19651-b4c1-4ab8-a420-cb91939f5477",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}Api/Inventory/84988e8b-6803-440d-b921-5eac01a2d14f",
+							"host": [
+								"{{host}}Api"
+							],
+							"path": [
+								"Inventory",
+								"84988e8b-6803-440d-b921-5eac01a2d14f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Api/Inventory",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiTmlrZSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6Ik5pa2UiLCJlbWFpbCI6Im5pa2UuYUB0YWxlbnRhcy5pbiIsIm5iZiI6MTU4NTg4NzcwNiwiZXhwIjoxNTg1OTc0MTA2LCJpc3MiOiJHb29kQm94QXBpIiwiYXVkIjoiR29vZEJveFdlYiJ9.J4VK30WrNQ0BC4cKs0JOmJvQz2XH8ANhOwL4lJOypi8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n        \"id\": \"84988e8b-6803-440d-b921-5eac01a2d14f\",\r\n        \"beginingInventory\": 50\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}Api/Inventory",
+							"host": [
+								"{{host}}Api"
+							],
+							"path": [
+								"Inventory"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Api/Inventory/e1f19651-b4c1-4ab8-a420-cb91939f5477",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiTmlrZSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6Ik5pa2UiLCJlbWFpbCI6Im5pa2UuYUB0YWxlbnRhcy5pbiIsIm5iZiI6MTU4NTg4NzcwNiwiZXhwIjoxNTg1OTc0MTA2LCJpc3MiOiJHb29kQm94QXBpIiwiYXVkIjoiR29vZEJveFdlYiJ9.J4VK30WrNQ0BC4cKs0JOmJvQz2XH8ANhOwL4lJOypi8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}Api/Inventory/84988e8b-6803-440d-b921-5eac01a2d14f",
+							"host": [
+								"{{host}}Api"
+							],
+							"path": [
+								"Inventory",
+								"84988e8b-6803-440d-b921-5eac01a2d14f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Api/Available/Inventories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}Api/Available/Inventories",
+							"host": [
+								"{{host}}Api"
+							],
+							"path": [
+								"Available",
+								"Inventories"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Inventory Controller Api Url's",
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Configurations",
+			"item": [
+				{
+					"name": "Api/Configuration",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiTmlrZSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6Ik5pa2UiLCJlbWFpbCI6Im5pa2UuYUB0YWxlbnRhcy5pbiIsIm5iZiI6MTU4NTg4NzcwNiwiZXhwIjoxNTg1OTc0MTA2LCJpc3MiOiJHb29kQm94QXBpIiwiYXVkIjoiR29vZEJveFdlYiJ9.J4VK30WrNQ0BC4cKs0JOmJvQz2XH8ANhOwL4lJOypi8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"orderWindowCloseDay\": \"Monday\",\r\n        \"pickUpTime\": \"07:00 PM\",\r\n        \"maximumQuantityOrderPerPerson\": 1,\r\n        \"isActive\": true\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}Api/Configuration",
+							"host": [
+								"{{host}}Api"
+							],
+							"path": [
+								"Configuration"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Api/Configurations",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}Api/Configurations",
+							"host": [
+								"{{host}}Api"
+							],
+							"path": [
+								"Configurations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Api/Configuration/c8d70ac2-4ba6-4527-a094-d78f3debd76d",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}Api/Configuration/a8a26eb6-614f-4a8c-8fc6-d360528da653",
+							"host": [
+								"{{host}}Api"
+							],
+							"path": [
+								"Configuration",
+								"a8a26eb6-614f-4a8c-8fc6-d360528da653"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Api/Configuration",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiTmlrZSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6Ik5pa2UiLCJlbWFpbCI6Im5pa2UuYUB0YWxlbnRhcy5pbiIsIm5iZiI6MTU4NTg4NzcwNiwiZXhwIjoxNTg1OTc0MTA2LCJpc3MiOiJHb29kQm94QXBpIiwiYXVkIjoiR29vZEJveFdlYiJ9.J4VK30WrNQ0BC4cKs0JOmJvQz2XH8ANhOwL4lJOypi8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"id\": \"569a608d-37b8-4c35-bd19-29e3571288e7\",\r\n        \"orderWindowCloseDay\": \"Wensday\",\r\n        \"pickUpTime\": \"08:00 PM\",\r\n        \"maximumQuantityOrderPerPerson\": 2\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}Api/Configuration",
+							"host": [
+								"{{host}}Api"
+							],
+							"path": [
+								"Configuration"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Api/Configuration/c8d70ac2-4ba6-4527-a094-d78f3debd76d",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiTmlrZSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6Ik5pa2UiLCJlbWFpbCI6Im5pa2UuYUB0YWxlbnRhcy5pbiIsIm5iZiI6MTU4NTg4NzcwNiwiZXhwIjoxNTg1OTc0MTA2LCJpc3MiOiJHb29kQm94QXBpIiwiYXVkIjoiR29vZEJveFdlYiJ9.J4VK30WrNQ0BC4cKs0JOmJvQz2XH8ANhOwL4lJOypi8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}Api/Configuration/569a608d-37b8-4c35-bd19-29e3571288e7",
+							"host": [
+								"{{host}}Api"
+							],
+							"path": [
+								"Configuration",
+								"569a608d-37b8-4c35-bd19-29e3571288e7"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Configurations Controller Api Url's",
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "PickUpLocations",
+			"item": [
+				{
+					"name": "Api/PickUp/Location",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiTmlrZSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6Ik5pa2UiLCJlbWFpbCI6Im5pa2UuYUB0YWxlbnRhcy5pbiIsIm5iZiI6MTU4NTg4NzcwNiwiZXhwIjoxNTg1OTc0MTA2LCJpc3MiOiJHb29kQm94QXBpIiwiYXVkIjoiR29vZEJveFdlYiJ9.J4VK30WrNQ0BC4cKs0JOmJvQz2XH8ANhOwL4lJOypi8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\n{\n    \"location\": \"Testing\",\n    \"pickUpTimeStart\": \"03:00 PM\",\n    \"pickUpTimeEnd\": \"07:00 PM\",\n    \"isActive\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}Api/PickUp/Location",
+							"host": [
+								"{{host}}Api"
+							],
+							"path": [
+								"PickUp",
+								"Location"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Api/PickUp/Locations",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}Api/PickUp/Locations",
+							"host": [
+								"{{host}}Api"
+							],
+							"path": [
+								"PickUp",
+								"Locations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Api/PickUp/Location/a57b8c2d-a285-400a-9739-37cfdef3265d",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}Api/PickUp/Location/7780985d-5315-418d-afb2-6022ed6e71cd",
+							"host": [
+								"{{host}}Api"
+							],
+							"path": [
+								"PickUp",
+								"Location",
+								"7780985d-5315-418d-afb2-6022ed6e71cd"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Api/PickUp/Location",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiTmlrZSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6Ik5pa2UiLCJlbWFpbCI6Im5pa2UuYUB0YWxlbnRhcy5pbiIsIm5iZiI6MTU4NTg4NzcwNiwiZXhwIjoxNTg1OTc0MTA2LCJpc3MiOiJHb29kQm94QXBpIiwiYXVkIjoiR29vZEJveFdlYiJ9.J4VK30WrNQ0BC4cKs0JOmJvQz2XH8ANhOwL4lJOypi8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\n        \"id\": \"732206a4-faf8-4c84-90aa-c536fcdb3897\",\n        \"location\": \"Testing 123\",\n        \"pickUpTimeStart\": \"03:00 PM\",\n        \"pickUpTimeEnd\": \"07:00 PM\"\n    }\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}Api/PickUp/Location",
+							"host": [
+								"{{host}}Api"
+							],
+							"path": [
+								"PickUp",
+								"Location"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Api/PickUp/Location/a57b8c2d-a285-400a-9739-37cfdef3265d",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiTmlrZSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6Ik5pa2UiLCJlbWFpbCI6Im5pa2UuYUB0YWxlbnRhcy5pbiIsIm5iZiI6MTU4NTg4NzcwNiwiZXhwIjoxNTg1OTc0MTA2LCJpc3MiOiJHb29kQm94QXBpIiwiYXVkIjoiR29vZEJveFdlYiJ9.J4VK30WrNQ0BC4cKs0JOmJvQz2XH8ANhOwL4lJOypi8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}Api/PickUp/Location/732206a4-faf8-4c84-90aa-c536fcdb3897",
+							"host": [
+								"{{host}}Api"
+							],
+							"path": [
+								"PickUp",
+								"Location",
+								"732206a4-faf8-4c84-90aa-c536fcdb3897"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "PickUpLocations Controller Api Url's",
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Api/User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiTmlrZSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6Ik5pa2UiLCJlbWFpbCI6Im5pa2UuYUB0YWxlbnRhcy5pbiIsIm5iZiI6MTU4NTg4NjY5OCwiZXhwIjoxNTg1OTczMDk4LCJpc3MiOiJHb29kQm94QXBpIiwiYXVkIjoiR29vZEJveFdlYiJ9.wMPtcGQ73fpjn9VYlreOrP0Y64q9gXGgY40St9-7iuQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"nikil.a@talentas.in\",\r\n    \"name\": \"Nikil\",\r\n    \"password\": \"nikil123\",\r\n    \"roles\": [\r\n        {\r\n            \"id\": \"4\",\r\n            \"name\": \"Nikil\",\r\n            \"order\": 4\r\n        }\r\n    ],\r\n    \"isActive\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}Api/User",
+							"host": [
+								"{{host}}Api"
+							],
+							"path": [
+								"User"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Api/User/Token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"Email\":\"nike.a@talentas.in\",\n\t\"Password\":\"nike123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}Api/User/Token",
+							"host": [
+								"{{host}}Api"
+							],
+							"path": [
+								"User",
+								"Token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Api/User/reddy.a@talentas.in",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}Api/User/nikil.a@talentas.in",
+							"host": [
+								"{{host}}Api"
+							],
+							"path": [
+								"User",
+								"nikil.a@talentas.in"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Api/Users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}Api/Users",
+							"host": [
+								"{{host}}Api"
+							],
+							"path": [
+								"Users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Api/User/nikil.a@talentas.in",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}Api/User/nike.a@talentas.in",
+							"host": [
+								"{{host}}Api"
+							],
+							"path": [
+								"User",
+								"nike.a@talentas.in"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Api/User",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n        \"id\": \"nikil.a@talentas.in\",\r\n        \"name\": \"Nikil\",\r\n        \"roles\": [\r\n            {\r\n                \"id\": \"4\",\r\n                \"name\": \"Nikil Reddy\",\r\n                \"order\": 4\r\n            }\r\n        ]\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}Api/User",
+							"host": [
+								"{{host}}Api"
+							],
+							"path": [
+								"User"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Api/User/Update/Password?Id=nike.a@talentas.in&Password=123&NewPassword=321",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "{{host}}Api/User/Update/Password?Id=nikil.a@talentas.in&Password=nikil123&NewPassword=123nikil",
+							"host": [
+								"{{host}}Api"
+							],
+							"path": [
+								"User",
+								"Update",
+								"Password"
+							],
+							"query": [
+								{
+									"key": "Id",
+									"value": "nikil.a@talentas.in"
+								},
+								{
+									"key": "Password",
+									"value": "nikil123"
+								},
+								{
+									"key": "NewPassword",
+									"value": "123nikil"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Users Controller Api Url's",
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

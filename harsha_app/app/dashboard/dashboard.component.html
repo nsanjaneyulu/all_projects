@@ -1,0 +1,30 @@
+<div class="main">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="bg_dark cst_width" [ngClass]="(asideMenu==true)?'menu-on col-md-8':'menu-off col-md-10'">
+        <div class="wrap_content_start">
+          <div class="row my-4">
+            <div class="col">
+              <img [src]=masterData.appInfo.appLogo alt="" class="dashboard_site_logo">
+              <!-- <h3 class="text-gold">{{masterData.appTitle}}</h3> -->
+            </div>
+            <div class="col d-flex justify-content-end">
+              <div class="text-right">
+                <div class="mt-2 px-3 py-1 border-gold-1x text-gold d-inline-block cursor_pointer"
+                  (click)="toggleAsideMenu()">
+                  <span class="oi oi-align-right"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <router-outlet></router-outlet>
+        </div>
+      </div>
+      <div class="px-0 bg_dark_black d-flex flex-column cst_width"
+        [ngClass]="(asideMenu==true)?'menu-on col-md-4':'menu-off col-md-1'">
+        <app-aside-menu></app-aside-menu>
+      </div>
+    </div>
+  </div>
+
+</div>

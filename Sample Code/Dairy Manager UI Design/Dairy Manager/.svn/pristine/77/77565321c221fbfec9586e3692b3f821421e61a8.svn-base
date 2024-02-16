@@ -1,0 +1,67 @@
+<wicket:extend>
+	<div id="content">
+		<h1>Ingredient Rate List</h1>
+		<table>
+			<tr>
+				<td>
+					<form wicket:id="ingredientForm">
+						<div wicket:id="feedback"></div>
+						<div wicket:id="rowPanel">
+							<table id="dataTable" class="healthDetails">
+								<tr>
+									<th nowrap="nowrap"></th>
+									<th>Ingredient Type<font color="#FF0000">*</font></th>
+									<th>TDN % <font color="#FF0000">*</font></th>
+									<th>CP % <font color="#FF0000">*</font></th>
+									<th>UDP % <font color="#FF0000">*</font></th>
+									<th>RDP % <font color="#FF0000">*</font></th>
+									<th>CA % <font color="#FF0000">*</font></th>
+									<th>P % <font color="#FF0000">*</font></th>									
+									<th>Rate ( in Rs.)<font color="#FF0000">*</font></th>
+								</tr>
+								<span wicket:id="rows">
+									<tr>
+										<td nowrap="nowrap"><input type="checkbox" name="ingredientfeedcheck"
+											id="ingredientfeedcheck" wicket:id="ingredientfeedcheck" />
+										</td>
+										<td><select wicket:id="ingredientType" class="ingredienttype_effect" maxlength="30"></select>
+                                        </td>
+										<td><input name=tdn type="text"	id="tdn" wicket:id="tdn" class="textfield_effect"
+                                         maxlength="8" style="text-align:right;"/></td>
+										<td><input name=cp type="text"	id="cp" wicket:id="cp" class="textfield_effect" maxlength="8"
+                                        style="text-align:right;"/></td>
+										<td><input name=udp type="text"	id="udp" wicket:id="udp" class="textfield_effect"
+                                         maxlength="8" style="text-align:right;"></td>
+										<td><input name=rdp type="text"	id="rdp" wicket:id="rdp" class="textfield_effect" 
+                                        maxlength="8" style="text-align:right;"></td>
+										<td><input name=ca type="text"	id="ca" wicket:id="ca" class="textfield_effect"
+                                         maxlength="8" style="text-align:right;"></td>
+										<td><input name=p type="text"	id="p" wicket:id="p" class="textfield_effect" maxlength="8"
+                                        style="text-align:right;"/></td>
+										<td><input name=rate type="text" id="rate" wicket:id="rate" class="textfield_effect" 
+                                        maxlength="8" style="text-align:right;"/></td>
+										
+									</tr>
+								 </span>
+								<tr>
+									<td class="buttonBg"><input type="button"
+										value="Add Row" wicket:id="addRow" class="button" />
+									</td>
+									<td class="buttonBg"><input type="button" value="Delete Row"
+										wicket:id="removeRow" class="button" />
+									</td>
+									<td class="buttonBg"><input type="button"
+										value="Update" wicket:id="update" class="button" />
+									</td>
+								</tr>
+							</table>
+						</div>
+					</form></td>
+			</tr>
+			<tr>
+				<td colspan="4">
+				</td>
+			</tr>
+		</table>
+	</div>
+</wicket:extend>

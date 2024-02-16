@@ -1,0 +1,137 @@
+
+
+.bg-styles {
+  background: #f0f0f7;
+}
+:host {
+  overflow: hidden !important;
+}
+.cateogoryName {
+  font-size: 16px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.63;
+  letter-spacing: normal;
+  text-align: left;
+  color: #4d4f5c;
+}
+txtColorGreen{
+  color: green;
+}
+textColorRed{
+  color: red !important;
+}
+.search_container_icon {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  right: 16px;
+  transform: translateY(-50%);
+}
+.container-fluid {
+  display: flex;
+  flex: 1;
+  height: 100%;
+  flex-direction: column;
+}
+
+.container-fluid .row {
+  flex: 1;
+  height: 100%;
+  overflow: hidden;
+}
+
+.container-fluid .row [class*="col"] {
+  height: 100%;
+  overflow-y: auto;
+}
+.detailsContainer{
+  height: 100%;
+  overflow: hidden !important;
+}
+
+.search__container {
+  display: flex;
+  flex-direction: column;
+}
+
+.search__container > div {
+  flex: 1;
+}
+
+.icon_styles {
+    width: 20px;
+    height: 22px;
+  }
+ .search {
+      width: 100%;
+      position: relative;
+      display: flex;
+    }
+    .form-control {
+   
+      border-radius: 0rem;
+      background: transparent;
+      border: 0;
+      border-bottom: 1px solid #fff;
+    }
+    .form-control::placeholder { 
+      color: #fff !important;
+      font-size: 18px;
+      font-weight: 500;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.39;
+      letter-spacing: normal;
+      text-align: left;
+    }
+    .form-control:focus {
+     
+      box-shadow: none !important;
+      outline:  none !important;
+      color: #fff;
+  
+      border-radius: 0rem;
+      background: transparent;
+      border: 0;
+      border-bottom: 1px solid #fff;
+  }
+ 
+.category {
+    list-style-type: none;
+    padding: 0;
+
+    li {
+        cursor: pointer;
+        position: relative;
+        left: 0;
+        padding: .3em .5em;
+       &.selected {
+            color: #4d4f5c;
+            background-color: #83c9e9;
+        }
+    }
+}
+
+.status-message {
+    color: #ffffff;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.8s linear;
+}
+
+.show-message {
+    visibility: visible;
+    opacity: 1;
+}
+
+.page-top-margin {
+    margin-top: 115px; 
+}
+@media only screen and (min-device-width: 767.98px) and (max-device-width: 991.98px) and (orientation:landscape) {
+  .form-control::placeholder { 
+    
+    font-size: 14px;
+  }
+}

@@ -1,0 +1,47 @@
+<wicket:extend>
+    <div id="content">
+    <div class="bread-crumb">
+            	<h1>Stock Management / Procure/Consume Stock</h1>
+            </div>
+        <form method="post" wicket:id="pcstockform">
+            <div wicket:id="feedback"></div>
+                <div class="addData">
+                    <ul>
+						<li>	
+                            <label>Stock Balance</label><font color="#FF0000">*</font><br />
+                            <div wicket:id="sBalance"></div>                            
+                        </li>
+                        <li>	
+                            <label>Minimum Stock Balance</label><font color="#FF0000">*</font><br />
+                            <div wicket:id="smBalance"></div>
+                        </li>                    
+                    	<li>
+                            <label>Date</label><font color="#FF0000">*</font><br />
+                            <input type="text" id="auditDate" name="auditDate" wicket:id="auditDate"
+                             class="date_effect">
+                        </li>
+                        <li>	
+                            <label>Stock Type</label><font color="#FF0000">*</font><br />
+                            <select wicket:id="stockType" class="dropdown_effect" maxlength="30"></select>							
+                        </li>
+                        
+						<li>
+							<label>Operation</label><font color="#FF0000">*</font><br />
+         					<select name="select" class="dropdown_effect" wicket:id="operation" maxlength="10"></select>
+ 						</li>
+                        
+                        <li>	
+                            <label>Quantity</label><font color="#FF0000">*</font><br />
+                            <input type="text" id="quantity" name="quantity" wicket:id="quantity" class="number_effect" 
+                            maxlength="10" style="text-align:right;"/>
+                        </li>                                                
+                    </ul>
+                       	
+            	</div>
+                 <div style="clear:both;"></div>
+                    <div class="newButton">
+                       <INPUT TYPE="SUBMIT" VALUE="Submit" wicket:id="save" class="button">
+                	</div>   
+        </form>
+    </div>
+</wicket:extend>

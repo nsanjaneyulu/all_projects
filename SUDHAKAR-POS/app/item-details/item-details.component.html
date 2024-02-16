@@ -1,0 +1,136 @@
+<div class="bow_display_Flex" style="border-bottom: 1px solid #eee;">
+    <span>
+    <h5 class="col-12">{{itemDetailsGet.name}}</h5>
+    </span>
+    <span (click)="modalDismiss()" style="cursor: pointer;">
+    <i style="font-size: 14px;color:#5c0632;" class="fa fa-times" aria-hidden="true"></i>
+    </span>
+    </div>
+    <div class="mt-2">
+      <div class="pt-2 mb-3 row col-12 ">
+      <div class="col-12 bow_display_Flex" >
+          <span style="color: #5c0632;font-size: 18px;font-weight: bold;">Item Settings</span>
+          <mat-slide-toggle [(ngModel)]="itemAvailability" id="itemAvailability">Item Open</mat-slide-toggle>
+       
+        </div>
+      </div>
+      <div class="row col-12">
+        <div class="col-2">
+            <mat-radio-button id="itemWiseOpen" name="itemWiseOpen" [checked]="itemWiseOpen" (click)="itemCheckOpen()"><span class="bow_inv_lable_styles">Open Hrs</span></mat-radio-button> 
+        </div>
+        <div class="col-5">
+          <div class="form-group row">
+            <label for="openhrsstarttime" class="col-sm-4 col-form-label bow_inv_sub_lable_styles">Start Time:</label>
+            <div class="col-sm-5">
+              <select class="form-control form-control-sm " [(ngModel)]="itemOpenStartTime" [disabled]="!open">
+                <option *ngFor="let time  of times" value="{{time}}">{{time}}</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="col-5">
+          <div class="form-group row">
+            <label for="openhrsstarttime" class="col-sm-4 col-form-label bow_inv_sub_lable_styles">End Time:</label>
+            <div class="col-sm-5">
+              <select class="form-control form-control-sm " [(ngModel)]="itemOpenEndTime" [disabled]="!open">
+                <option *ngFor="let time  of times" value="{{time}}">{{time}}</option>
+              </select>
+            </div>
+          </div>
+        </div>
+    
+      </div>
+      <div class="row col-12">
+        <div class="col-2">
+            <mat-radio-button id="itemWiseClose" name="itemWiseOpen" [checked]="itemWiseClose" (click)="itemCheckClose()"><span class="bow_inv_lable_styles">Close Hrs</span></mat-radio-button>
+         
+        </div>
+        <div class="col-5">
+          <div class="form-group row">
+            <label for="openhrsstarttime" class="col-sm-4 col-form-label bow_inv_sub_lable_styles">Start Time:</label>
+            <div class="col-sm-5">
+              <select class="form-control form-control-sm " [(ngModel)]="itemCloseStartTime" [disabled]="!close">
+                <option *ngFor="let time  of times" value="{{time}}">{{time}}</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="col-5">
+          <div class="form-group row">
+            <label for="openhrsstarttime" class="col-sm-4 col-form-label bow_inv_sub_lable_styles">End Time:</label>
+            <div class="col-sm-5">
+              <select class="form-control form-control-sm " [(ngModel)]="itemCloseEndTime" [disabled]="!close">
+                <option *ngFor="let time  of times" value="{{time}}">{{time}}</option>
+              </select>
+            </div>
+          </div>
+        </div>
+    
+      </div>
+      <div class="row col-12">
+        <div class="col-3">
+          <span class="bow_inv_lable_styles">Week Selection:</span>
+        </div>
+        <div class="col-9">
+          <div>
+            <div class="custom-control custom-checkbox custom-control-inline"
+              *ngFor="let itemWeeks of itemWeeksSelection; let j = index">
+              <input id="{{itemWeeks.id}}" type="checkbox" value="{{itemWeeks.value}}"
+                class="custom-control-input" id="{{itemWeeks.value}}" [checked]="itemWeeks.checked"
+                (click)="itemWeeksSelectionFunction(itemWeeks,j)">
+              <label class="custom-control-label bow_label_styles bow_radio_checkbox_styles"
+                for="{{itemWeeks.value}}">{{itemWeeks.name}}</label>
+            </div>
+          </div>
+        </div>
+    
+        <div class="col-3 mt-3">
+          <span class="bow_inv_lable_styles">Price:</span>
+        </div>
+        <div class="col-2 mt-3">
+          <input type="text" class="form-control form-control-sm bow_input_styles" [(ngModel)]="price" min="1" max="90"
+            placeholder="Enter Price">
+    
+        </div>
+       
+            <div class="col-3 mt-3">
+                <span class="bow_inv_lable_styles">Quantity:</span>
+              </div>
+              <div class="col-2 mt-3">
+                <input type="text" class="form-control form-control-sm bow_input_styles" [(ngModel)]="itemQuantity" min="1" max="90"
+                  placeholder="Enter Supplier Discount">
+          
+              </div>
+              <div class="col-2 mt-3"></div>
+        <div class="col-3 mt-3">
+          <span class="bow_inv_lable_styles">Preparation Time:</span>
+        </div>
+        <div class="col-2 mt-3">
+          <input type="text" class="form-control form-control-sm bow_input_styles" [(ngModel)]="preparationTime" min="1" max="90"
+            placeholder="Enter Preparation Time">
+    
+        </div>
+       
+            <div class="col-3 mt-3">
+                <span class="bow_inv_lable_styles">Live Quantity:</span>
+              </div>
+              <div class="col-2 mt-3">
+                <input type="text" class="form-control form-control-sm bow_input_styles" [(ngModel)]="itemLiveQuantity" min="1" max="100"
+                  placeholder="Quantity">
+          
+              </div>
+              <div class="col-2 mt-3"></div>
+        <div class="col-3 mt-3">
+          <span class="bow_inv_lable_styles">Supplier Discount:</span>
+        </div>
+        <div class="col-2 mt-3">
+          <input type="text" class="form-control form-control-sm bow_input_styles" [(ngModel)]="itemDiscount" min="1" max="90"
+            placeholder="Enter Supplier Discount">
+    
+        </div>
+        <div class="col-7">
+          <button type="submit" class="btn-danger btn bow_button_styles btn-sm" (click)="updateItem()"
+            style="float:right;">Update</button>
+        </div>
+      </div>
+    </div>

@@ -1,0 +1,163 @@
+.container {
+    width: 600px;
+    margin: 100px auto;
+}
+
+.progressbar {
+    counter-reset: step;
+}
+
+.progressbar li {
+    list-style-type: none;
+    width: 12%;
+    float: left;
+    font-size: 12px;
+    position: relative;
+    text-align: center;
+    color: #7d7d7d;
+}
+
+.progressbar li:before {
+    width: 30px;
+    height: 30px;
+    content: counter(step);
+    counter-increment: step;
+    line-height: 30px;
+    border: 2px solid #7d7d7d;
+    display: block;
+    text-align: center;
+    margin: 0 auto 10px auto;
+    border-radius: 50%;
+    background-color: white;
+}
+
+.progressbar li:after {
+    width: 100%;
+    height: 2px;
+    content: '';
+    position: absolute;
+    background-color: #7d7d7d;
+    top: 15px;
+    left: -50%;
+    z-index: -1;
+}
+
+.progressbar li:first-child:after {
+    content: none;
+}
+
+.progressbar li.active {
+    color: green;
+}
+
+.progressbar li.active:before {
+    border-color: #55b776;
+}
+
+.progressbar li.active+li:after {
+    background-color: #55b776;
+}
+
+    .order_summary_lable {
+       
+        font-size: 0.8rem;
+        font-weight: 500;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        text-align: left;
+        color: #515968;
+      }
+      .order_summary_lable_value {
+       font-size: 1rem;
+        font-weight: 500;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        text-align: left;
+        color: #000000;
+      }
+      .order_summary_bg_styles {
+      
+        
+        background-color: #f6f6f6;
+        padding: 0.5rem;
+      }
+      .order_summary_need_help {
+          font-size: 1rem;
+        font-weight: 600;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        text-align: left;
+        color: #5c0931;
+      }
+      .order_summary_need_help {
+          font-size: 0.9rem;
+        font-weight: 500;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        text-align: left;
+        color: #000000;
+      }
+      .order_summary_view_summary {
+        font-size: 1rem;
+        font-weight: 500;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        text-align: left;
+        color: #515968;
+      }
+      .order_summary_item_name {
+        font-size: 1rem;
+        font-weight: 500;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        text-align: left;
+        color: #000000;
+      }
+      .order_summary_accepted {
+        font-size: 1rem;
+        font-weight: 500;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        text-align: left;
+        color: #00cd79;
+      }
+      .order_summary_rejected {
+        font-size: 1rem;
+        font-weight: 500;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        text-align: left;
+        color: #ba1231;
+      }
+      li:nth-child(odd) { background: #ffffff; }
+  li:nth-child(even) { background: #80808030; }
+  .order_summary_items_list {
+	display: list-item;
+	list-style-type: none; 
+}
+div.order_summary_items_list:nth-child(even) {
+    background: #f6f6f6;
+    padding: 0.5rem;
+  }
+  
+  div.order_summary_items_list:nth-child(odd) {
+    background: #FFF;
+    padding: 0.5rem;
+  }
+      

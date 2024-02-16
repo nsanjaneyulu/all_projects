@@ -1,0 +1,24 @@
+<wicket:extend>
+	<div id="content">
+		<h2><div wicket:id="feedback"></div></h2> 
+		<h1>Stock List</h1> 
+			<div class="list list-Header">
+				<div>
+					<h2>Stock Code</h2>
+					<h2>Stock Name</h2>
+					<h2>Stock Category</h2>						
+					<h2>Minimum Stock Level (Qty)</h2>
+					<h2 class="last">Stock Balance(Qty)</h2>
+				</div>
+				<div wicket:id="rows" style="clear:both;">
+				<div class="list-Rows">
+					<h3><a href="#" wicket:id="stock_edit"><span wicket:id="stockCode" /></a></h3>
+					<h3><span wicket:id="stockName" /></h3>
+					<h3><span wicket:id="stockCategory" /></h3>	
+					<h3><span wicket:id="stockMinLevel" /></h3>
+					<h3 class="last"><span wicket:id="stockBalance" /></h3>
+				</div>
+				</div>
+			</div>
+ </div>
+</wicket:extend>

@@ -1,0 +1,155 @@
+<ion-header class="header_styles">
+    <ion-row>
+        <ion-icon style="margin-top: 5%;" (click)="goToBack()" ios="ios-arrow-round-back" md="md-arrow-round-back">
+        </ion-icon>
+        <ion-col><span class="">Order Summary</span></ion-col>
+    </ion-row>
+</ion-header>
+<ion-content>
+    <div *ngIf="showOrderSummary">
+        <div class="order-details-section">
+            <ion-row class="order_summary_bg_styles">
+                <ion-col style="text-align: left">
+                    <div class="order_summary_lable">Order ID</div>
+                    <div class="order_summary_lable_value">{{ fullOrderDetails.fullOrder5DigitId }}</div>
+                </ion-col>
+                <ion-col>
+                    <div class="order_summary_lable">Date</div>
+                    <div class="order_summary_lable_value">{{getFormattedDate(fullOrderDetails.createdDate)}}</div>
+                </ion-col>
+                <ion-col style="text-align: right">
+                    <div>
+                        <div class="order_summary_lable" style="text-align: right">Amount Paid</div>
+                        <div class="order_summary_lable_value" style="text-align: right">&#8377; {{ (fullOrderDetails.amount+fullOrderDetails.packagingCharge+ fullOrderDetails.cgst + fullOrderDetails.sgst + fullOrderDetails.convenience + supplierDeliveryCharges + tafelDeliveryCharges ).toFixed(2) }}
+                        </div>
+                    </div>
+                </ion-col>
+            </ion-row>
+            <ion-row style="padding: 0.5rem;">
+                <ion-col style="text-align: left">
+                    <div>
+                        <div class="order_summary_lable">Order Wait Time</div>
+                        <div class="order_summary_lable_value"> {{ preparationTime }} minutes</div>
+                    </div>
+                </ion-col>
+                <ion-col>
+                    <div>
+                        <div class="order_summary_lable" style="text-align: right">Order Type</div>
+                        <div class="order_summary_lable_value" style="text-align: right; color: #5c0931">
+                            ({{ fullOrderDetails.orderType }})
+                        </div>
+                    </div>
+                </ion-col>
+            </ion-row>
+        </div>
+        <div *ngIf="orderInfo" class="confirmation-code-container">
+            <ion-row class="order_summary_bg_styles">
+                <ion-col>
+                    <div>
+                        <div class="order_summary_lable" style="text-align: center">Confirmation Code</div>
+                        <div class="order_summary_lable_value" style="text-align: center; color: #00cd79">
+                            {{orderInfo.otpDiner}}
+                        </div>
+                    </div>
+                </ion-col>
+            </ion-row>
+        </div>
+        <div style="padding: 0.5rem;">{{fullOrderDetailsGet.status}}</div>
+        <div style="padding: 0.5rem;">
+
+            <img *ngIf="fullOrderDetailsGet.status=='REJECTED'" class="success-failure-image" src="https://cdn0.iconfinder.com/data/icons/medical-and-health-cool-vector-5/128/205-512.png">
+            <img *ngIf="fullOrderDetailsGet.status=='HANDEDOVER'" class="success-failure-image" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMoAAADKCAMAAADTuy+aAAAAb1BMVEUYfXUAcGf///8JdWydyMQAamEAZ12Swr4qh4DR5eP4+/t+trIAZ14AbWQ2jocOd2/f7ezt9fTl8PDG390ig3u52NVSnphepZ9Fl5Cv0s80jYZtraimzcqIvLhjp6LX6eeXxcGz1NLA3NlMmpMAX1WxE1QlAAANqElEQVR4nNWdcZu6KBDHWdM0K7Uysyzb6t7/azxAU0BAhLH29/3jnn3uul0+DQzDMADyZtIuOzyu4bqqT8Xr9SqKU12tw+txtd/N9RcR/K/cH/x1kaDFj1RpnhTr62EGIFiU3SE8XVI5Ay+U1D4wDxxKfLi9kAlFr7wIVzFYA4BQ9tdTPg3jrag+AxkHAmXvF0adSiVUXCFonFHisxtHS1MfnXuaI8p9HblzNIpu2RdRjoXC49opPR2+gxJfE0iORuX58yjxL1jP4pVcbQeNHUrszwRCdLl+EOV8mQ+EKDl+COVQzgtCVKw+gLKv5gfBWqwnz5pTUfyJYZa9oqnObBrK/fUpEKLTfj6UECBEmSI0yZdNQMk+apJGpwkjxhzl/LFRwioy98umKPFnHJdEN2CU7ANziUqFYSczQ3l+pXO9FZnNl0Yov6Cx/HSlRp7MBGX9XRAikwEzjhKfvs1BVAGg7L444FkVo8uYMZT9DEtFO73GHNkISjbjEmuqyhEWPcpfIsErMj2LFuVvkfyk+j6mQ9n/MRKEtBO/BmX3Z0Y81QJhnTR+TI0S/xEv3CpFVLUNSvHtxnNaoFbr6ShfC+qlSlGn36kov99uPCeGBKHHNJTnl2NhXhwJyhUxvxwl++r6RNQC8VJMlVKU+E+54RSJkrsxKcqfGvKiTYhCU5Tzt1vPamgTItmekgTFbqAEG/yP7TIgPwb0x63m09tgE+j++wiJdLhIUKxm+e2rWvxs0yrBDTzhdecWrSN1W4O0PJXpxpoEIcmqcogSWpEs9l4ZLE/eahvknpdvNzfvGihJarKDmtWjhlGSIDRMjg9Q7lZ54S3aeUWwqbzVTxB5XhQsQ++pamjw/kpDJewoCYoGufEBil0QSdr/eqPE3iVY3vCPcpZt3oW31dKWROKRRRTfiuQnSDzSwXoU3MGyVI6y7Pt5nGvsoicZBjACyt5ymg8KDiUhVtkhBQozK6jH0yjJwIsJKLUdyc+ypihrFiWO5O1kUdRmGSVB6KZDOViS/GAIAQX/i2QcxVsrPLIBCcrvGhTr2GsTEpTNG4VSYZc2jnKX/z5ZtDLUSY1ytSX5Ca4U5cah1HL/xKFgDyH5iIlNiJ4qlNg+w7J9SlDWJiiVpIeZkqCXCsVl5bgiQ6NDeVGUUD4OeJTH0CrGJPycz6DEliWDWNs0IyhByKEoPC2Pki1El202ThqVsRTFKvhqUXDcQlB+W5SCohzH5xVv6LIn2IQ3S4/iYBTafA5lQ1BW8g/zKKKfm2ITYhYZimXI0qDguIWg+C3KaYPDMVXkIqDwM8s0m2AdhygO7gujEFdyEVEUkYuA4rNWmWgTrGKI8nAgoXELQbm2KDVFieWLLwGFHVGTbYK1GqA4ZYg3axGFhr/yyEVAYeb76TZBzHryjbJyyuGRuAWvt4Jzi1I1KC/pxCKg7LsRZUWC8r2A4pYvInELQXnwKCcTlDjfupD0maQWZeeWjgyODcrxjbKkKPKwV0Dx2onFZpxQvafJFsU+kGy0onNdh7JebogjkEcuIkozomxtgrqkWIviVupF4xYJytUI5UVQrG2CuoHfoGRu5Xc0bsELQhwfcyjyyEVEIdO9g00QinYMikP4RVFIDkVAIcsieeQiotQbJ5ugdyDWoDhuO9K4haAcWpRbgzKMemUo1dKRpM0jUZTMcWOIxi0k4yCgyCOXAcrWkaTtYRTFJZKkjTsJKOGGosgjFxFl7TRQqI4diutmMI1bYhRgn8yhyCOXGVCqN4rj/Ig72E1A+d0ERednP4CSxC3K0ZGkiVswyuLeovgtijRymQEF3VsU54JCGrdwKMsGRZpzmQPFb1HcN1EPtJv2KNfWKuGnUOoGZe9aab9dZA0Kjl9alKBBkUYuc6BcYoriPFRo3OLt0gAjkV0vjLIMaP5AGrnMgULWkhjl5oxC937i5D9sjz3670Uilv+of5Sm02dBuVIU5wMQNG7BMUNI/Mjql5jo6NNFhDRymQWlIigu+a8W5eUpJI1cZkEpCYprAIYn+5MchFnszo6CwzDkljVqUAo5yCdR8LhHrmsVrKCUg7DZlNlRzhjFdvuxF7N7LehzHgzdMApEtafqgMntU7M9me+RU6641UZVmykN8rf+HCgvDzmHLT/v6X4oaWnIYjELyiVGik2QaVKYpZQYZYHmQcn3yDkCI9ou7hISXxJM4mbPg4JWyDUv2Wgp8cd7yVRPWj0TyhO5TytUgT9AkSwhaaNnQjkjoDNpWyTWZ0kC/KbNM6H4yH2GbLQU6rMkxTptk2dCuSGwUwRb/rTvcFn/bvFMKGsEdlybbnh3GpbodQ2eCaVCcKdUlmx9VimO+b69/wDKNu1H/lEcKExzZ0KpEWD5/aaPEwvBKGxrZ0I5QaL065adsE7hGjsTSgGJ0keVRw3Jv4HSRWI+54mFpv4LHaxJuBLd2KEitnS2YQ96ZPC9mmR3uQcNFVEqKBTAG03onjcVkysetlNEebluRTaq4AIXdmI5d9OK5BsXUDIQEBK4QIWTBAW9Q5enrgJHQAHqXzicBDzX1SeR3kkjaSt5lAdM90LoFznn8XsFl3f77k3aW/59cyj3HArlilw3ulmUbrbfUxRFz+FQCqDuhdARPQBRuow+zeCrGsmiHKBsgtABWR+OGGrZZfRJ2lv5dbMoNzCj5Bly35PoUbo1MV4Nq9vIotRgVol2yH2nqBOT2Et+1H90HpTSQwBb3R1Kv4zUzeAsClD8hchZFgR428Hm1+jbZlFCMJQ1RoG7nCnoL4yqDFGuYCg+RoHJtFKU/nifruOwKEewsXLAKCCpfCpytMjAyXLzChRJvscoziVUvfqj47+GKFBhMSk2Rs6Fk53YnYmr4VjZRUAotAQB7M4DNg+mi3dZlDgBGiwhRYEa9+w23tMQxSuBUA4UBSp0Yfe8dcOZj4xhUEhNK3I8T8SIzX/fTVF0E9AEkXoOUqUHtCZmiyqy3BAFanOlRYEaLEypi84zcSg6rz1BhxbF8XBBq0XK7HvtLuqOw6HARC60/JuWTEMExwu0YG7x0DlZDkXn6sxFv0SKApCqIPvxbB2CxslyKCsIkuYKZ4riHobR/Xh210uzYOFQdP7BWM3JNYri7I6b/Xj2ErKTIcouAuhhjb9pzq84rlna/Xj2flvNfMGhgEQuPoPi1sNaJ5Syt5Fo5gs+OwmQ/M4zBsVzeVnh3ej0ybRQs2DhUTQ90VRtzqpFcfBhfZvZm640i3YeBSByOXMo9rMk02S2kMo3RXFP6rUH8LqDt7Z5F6YhOftAz9lw2OuYDfWezt4olhVubDtytupQk3/gUTTMhloJKHZTC0uSXlgUTV6bR3FOVHRBbHfe3qbEjesbacKV66j/No+iW9kY6TxAsUi88L085WoONakUHmXvGLn0X2B/zcbkGV8Yr2lh2EIeRbccMFH/y3qUqf5Y9Dwpd15CE1vxKLFbooIZoMyVNNOSSAMfmnIVh5rYStghdktUMEXxDMoks0gqC/iyafWXLaA4bbFEjNdkr2+aYBZZZQF/iZo6TBRQnBIV7EkFFsW8PF9aWSDc/2OK4hK5cFMZd9WZqRMzqCzQ9Bvhg75DB+N+E4diOLfIv8aUv59TXe8hoDiUU5TcESD+Lj2jegRFG1OhztgUxSFy4f+icFmjQRpJ2UT+Yl71EACrPBLqzQWU8YIE9SDlT0mp044Cyt52iyUXXv0ULzYdc8gad8P/ZvVmkYAS20Yu4ks5IspOX5GgIcn5oxLq0SxW6VlGLqV47G9wc672tmwNSRrx573UGVQRxTJyGdyZPbyaWfM0kW4y45crugXLoAzUCmV4umyIou5i2mk5FQyuXlKBFOcOupf07m/VMl//FydYBeCIp+wFA9nl8vL4ZewPCsNenX5IhfnAJj8peyNDhiJ9vGD0qxOeRKuV/4PgIGymSOnzBdLXCyQ35Y93AuM0hbAcsCjOlT8qIX8e4zGdBLMwTmVkmfvsP2mRB1M89aF4tOQ2nYSwvO2S6eeKNO+iaH8yCFI9U6p6SuY0nQT3nPJMTJ+FY/s/aVo/8Sd3D5vpUXWMXIXCPrpk3pnTNCqLMl+MN5B8MolSCxLlw0vKt4r6R72mDcvUtHmp8Sc5vZTPYalfkLojG5K5lajfJtY8UXZI/x7JRXYYfhzFOy7+Gon2lVXtc37nxR8jkT2GY4binb/deE56krGnL48QxQ5AGiEZfZD0+WdYxkjGn4k9QNWcOirR+C5DFG+VfJuCqMxGG2rwpPL+9W0OhEwehzd5HTquv01SjT5CbIiCY/7vkiifiLRA8c5fHPyXp1kbDVG8e/ktkmJ8wE9D8eLqOyQ3k2EyDeU7nSw5jrfLAsXLTp8mqQx8sBWK510/apjL8Mk+OBQv++AUM8kk01E87/GhOOb1nNqyyShefPtAL4t8Y8flgIJ72dx+OV+rkxGwKDhannXIVKPxPCAKXsbM5ZjzSpeKmAOFWGaGBWa+tgVxQcFx2RrYAVxupvEWNIrn7XzAZVlxnTiRgKJgHaoLBEfi0LOgULBpzrVjR4uq4/RpZA4Uj9DY2yapjm4d6y0YFKzd4VZMNk5UhAcAezQCQyHaH28nY+skdXiAMUcrUBSi+H6+1aXWPtGrDh93MGu8BY7SaHd/XsN1XbzK5BJRXZLyVVTr8PzMQG3R63/F7w+IaOUlOAAAAABJRU5ErkJggg==">
+            <img *ngIf="fullOrderDetailsGet.status=='RECEIVED'" src="../../../assets/imgs/processBar.png">
+            <img *ngIf="fullOrderDetailsGet.status=='INPROGRESS'" src="../../../assets/imgs/processBar-2.png">
+            <img *ngIf="fullOrderDetailsGet.status=='READY'" src="../../../assets/imgs/processBar-3.png">
+        </div>
+        <ion-row class="order_summary_bg_styles">
+            <ion-col>
+                <div class="order_summary_need_help" style="color: #5c0931 !important;">
+
+                    Items
+                </div>
+            </ion-col>
+        </ion-row>
+        <div style="padding: 0.5rem;">
+            <ion-list *ngFor="let order of information;let i=index;" class="accordion-list" lines="none" detail="false" no-padding>
+                <ion-item tappable (click)="toggleSection(i)" [ngClass]="{'section-active':order.open,'section':!order.open}" style="border-bottom:2px solid #eee;">
+                    <ion-icon slot="end" name="arrow-dropdown" *ngIf="!order.open"></ion-icon>
+                    <ion-icon slot="end" name="arrow-dropup" *ngIf="order.open"></ion-icon>
+                    <div class="display_box">
+                        <img src="{{imageEndPoint+order.outlet.image}}" width="15%" />
+                        <!-- <span class="view_cart_mallName">{{outlet.name}}</span> -->
+                        <span style="color: #5c0931 !important;">{{order.outletName}}</span>
+                    </div>
+                </ion-item>
+                <div *ngIf="order.consolidatedOrderlets && order.open">
+                    <div *ngFor="let orderlet of order.consolidatedOrderlets; let i=index;" class="items_div" style="padding: 0.5rem">
+                        <div class="order_summary_item_name">{{orderlet.item.name}} x {{orderlet.totalQty}}</div>
+                        <div><span class="order_summary_accepted">Accepted ({{orderlet.acceptQty}})</span> | <span class="order_summary_rejected">Rejected ({{orderlet.rejectQty}})</span></div>
+                    </div>
+                </div>
+            </ion-list>
+            <!-- <div *ngFor="let order of information">
+                <div class="order_summary_item_name" style="color: #000000 !important; margin: 0.5rem 0rem;">Outlet Name: <span style="color: #5c0931 !important;">{{order.outletName}}</span>
+                </div>
+               
+             <div *ngFor="let orderlet of order.consolidatedOrderlets" class="order_summary_items_list">
+                <div class="order_summary_item_name">{{orderlet.item.name}} x {{orderlet.totalQty}}</div>
+                <div><span class="order_summary_accepted">Accepted ({{orderlet.acceptQty}})</span> | <span class="order_summary_rejected">Rejected ({{orderlet.rejectQty}})</span></div>
+             </div>
+           
+          </div> -->
+        </div>
+        <div style="padding-top: 1.2rem;">
+            <div class="order_summary_need_help "><span class="ml-2" style="padding-left: 1rem;">Need Help?</span></div>
+            <ion-row class="order_summary_bg_styles">
+                <ion-col>
+                    <div class="order_summary_need_help" style="color: #5c0931 !important;">
+                        <ion-icon name="call"></ion-icon>
+                        040 2555 5555
+                    </div>
+                </ion-col>
+            </ion-row>
+        </div>
+        <div style="padding-top: 0.5rem;">
+            <ion-row class="">
+                <ion-col>
+                    <div class="order_summary_view_summary">
+                        <ion-icon name="information-circle-outline"></ion-icon>
+                        You can view order summary anytime from your profile tab.
+                    </div>
+                </ion-col>
+            </ion-row>
+        </div>
+    </div>
+    <div *ngIf="!showOrderSummary">
+        <div style="position: absolute; top: 50%; left: calc(50% - 40px);">
+            <svg class="lds-typing" width="80px" height="80px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" style="background: none;">
+                <circle cx="24.5" cy="48.4263" r="6" fill="#e15b64">
+                    <animate attributeName="cy" calcMode="spline" keySplines="0 0.5 0.5 1;0.5 0 1 0.5;0.5 0.5 0.5 0.5"
+                        repeatCount="indefinite" values="62.5;37.5;62.5;62.5" keyTimes="0;0.25;0.5;1" dur="1s"
+                        begin="-0.5s">
+                    </animate>
+                </circle>
+                <circle cx="41.5" cy="62.5" r="6" fill="#f47e60">
+                    <animate attributeName="cy" calcMode="spline" keySplines="0 0.5 0.5 1;0.5 0 1 0.5;0.5 0.5 0.5 0.5"
+                        repeatCount="indefinite" values="62.5;37.5;62.5;62.5" keyTimes="0;0.25;0.5;1" dur="1s"
+                        begin="-0.375s">
+                    </animate>
+                </circle>
+                <circle cx="58.5" cy="62.5" r="6" fill="#f8b26a">
+                    <animate attributeName="cy" calcMode="spline" keySplines="0 0.5 0.5 1;0.5 0 1 0.5;0.5 0.5 0.5 0.5"
+                        repeatCount="indefinite" values="62.5;37.5;62.5;62.5" keyTimes="0;0.25;0.5;1" dur="1s"
+                        begin="-0.25s">
+                    </animate>
+                </circle>
+                <circle cx="75.5" cy="62.5" r="6" fill="#abbd81">
+                    <animate attributeName="cy" calcMode="spline" keySplines="0 0.5 0.5 1;0.5 0 1 0.5;0.5 0.5 0.5 0.5"
+                        repeatCount="indefinite" values="62.5;37.5;62.5;62.5" keyTimes="0;0.25;0.5;1" dur="1s"
+                        begin="-0.125s">
+                    </animate>
+                </circle>
+            </svg>
+        </div>
+    </div>
+</ion-content>

@@ -1,0 +1,77 @@
+<main class="main_Content">
+  <form [formGroup]="addProductForm" (ngSubmit)="onAddSubmit()">
+    <div class="form-group col-md-6">
+      <label for="location">Location:</label>
+      <input
+        type="text"
+        class="form-control"
+        id="location"
+        placeholder="Enter Location"
+        name="location"
+        formControlName="location"
+        [ngClass]="{ 'is-invalid': submitted && f.location.errors }"
+      />
+      <div *ngIf="submitted && f.location.errors" class="invalid-feedback">
+        <div *ngIf="f.location.errors.required">Location is required</div>
+      </div>
+    </div>
+    <div class="form-group col-md-6">
+      <label for="pickUpTimeStart">Pick Up Start Time:</label>
+      <input
+        type="time"
+        class="form-control"
+        id="pickUpTimeStart"
+        placeholder="Enter Pick Up Start Time"
+        name="pickUpTimeStart"
+        formControlName="pickUpTimeStart"
+        [ngClass]="{ 'is-invalid': submitted && f.pickUpTimeStart.errors }"
+      />
+      <div
+        *ngIf="submitted && f.pickUpTimeStart.errors"
+        class="invalid-feedback"
+      >
+        <div *ngIf="f.pickUpTimeStart.errors.required">
+          Start Time is required
+        </div>
+      </div>
+    </div>
+    <div class="form-group col-md-6">
+      <label for="pickUpTimeEnd">Pick Up End Time:</label>
+      <input
+        type="time"
+        class="form-control"
+        id="pickUpTimeEnd"
+        placeholder="Enter Pick Up End Time"
+        name="pickUpTimeEnd"
+        formControlName="pickUpTimeEnd"
+        [ngClass]="{ 'is-invalid': submitted && f.pickUpTimeEnd.errors }"
+      />
+      <div *ngIf="submitted && f.pickUpTimeEnd.errors" class="invalid-feedback">
+        <div *ngIf="f.pickUpTimeEnd.errors.required">End Time is required</div>
+      </div>
+    </div>
+    <div class="col-md-6 row formButtons">
+      <div>
+        <button type="submit" class="btn btn-success addLocationButton">
+          Add Location
+        </button>
+      </div>
+      <div>
+        <a
+          class="btn btn-primary addCancelButton"
+          style="margin-top: 0; cursor: pointer; margin-left: 15px;"
+          (click)="reset()"
+          >Cancel</a
+        >
+      </div>
+    </div>
+  </form>
+  <ngx-spinner
+    bdColor="rgba(51,51,51,0.8)"
+    size="medium"
+    color="#fff"
+    type="line-scale-party"
+  >
+    <p class="spinnerText_Color">Loading...</p>
+  </ngx-spinner>
+</main>

@@ -1,0 +1,35 @@
+<div class="my-2">
+   <button type="button" class="btn btn-primary" (click)="createSupplier()">Add Supplier</button>
+</div>
+<table class="col-12 table table-striped table-borderless">
+    <thead class="thead-light">
+       <tr>
+        <th class="">S No</th>
+          <th class="">Name</th>
+          <th class="">Contact Number</th>
+          <th class="">Mall Name</th>
+          <th class="">Outlet Name</th>
+          <th>Actions</th>
+         
+       </tr>
+    </thead>
+    <tbody >
+       <tr *ngFor="let supplier of getSupplier; let i=index">
+           <td>{{i+1}}</td>
+         <td>{{ supplier.firstName}}</td>
+         <td>{{ supplier.phoneNumber}}</td>
+         <td > 
+            
+              <span *ngFor="let mall of supplier.mall" id="mall.mallId" >{{mall.mallName}}</span>
+         
+        </td>
+        <td > 
+           
+             <span *ngFor="let outlet of supplier.outlet" id="outlet.id" >{{outlet.name}}</span>
+         
+       </td>
+       <td><span (click)="updateSupplier(supplier)"><i class="fa fa-check" aria-hidden="true"></i></span></td>
+       </tr>
+    </tbody>
+   
+ </table>

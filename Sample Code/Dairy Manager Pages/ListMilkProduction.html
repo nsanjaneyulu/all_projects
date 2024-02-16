@@ -1,0 +1,38 @@
+<wicket:extend>
+	<div id="content">
+    <div class="bread-crumb">
+            	<h1>Milk Yield Management / Milk Production List</h1>
+            </div>
+		<div wicket:id="yearselection">
+			<span wicket:id="yearrepeater"><a wicket:id="year"><span
+					wicket:id="yerlabel" />
+            </a>
+            </span>
+		</div>
+		<div wicket:id="feedback"></div>
+		<div wicket:id="reportpanel">
+        <div class="containerDiv">
+           <div class="rowDivHeader">
+           		<div>Month</div>
+				<div>Yield</div>
+				<div>Fat Percentile</div>
+				<div>SNF</div>
+				<div>CLR</div>
+				<div>Rejection</div>
+				<div class="last">Deduction</div>
+           </div>
+
+           <div class="rowDiv" wicket:id="rows" >
+           		<div><a href="#" wicket:id="milkproduction_edit"><span wicket:id="month" /></a></div>
+                <div><span wicket:id="yield" /></div>
+                <div><span wicket:id="fatPercentile" /></div>
+                <div><span wicket:id="snf" /></div>
+                <div><span wicket:id="clr" /> </div>
+                <div><span wicket:id="rejection" /></div>
+                <div><span wicket:id="deduction" /></div>
+           </div>
+		</div>
+		
+		</div>
+	</div>
+</wicket:extend>

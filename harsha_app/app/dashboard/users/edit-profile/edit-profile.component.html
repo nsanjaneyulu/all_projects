@@ -1,0 +1,60 @@
+<div class="row" *ngIf="userData">
+  <div class="col-8 d-flex justify-content-between m-auto mb-3">
+    <h4 class="text-capitalize text-gold">{{pageTitle}}</h4>
+    <div>
+      <ul class="list-inline">
+        <li class="list-inline-item"><a [routerLink]="['/dashboard/profile/view']"
+            class="text-gold">Back to Profile</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="col-12">
+    <hr>
+  </div>
+  <div class="col-8 d-flex justify-content-between m-auto " *ngIf="userData">
+    <form [formGroup]="userForm" (ngSubmit)="updateProfile(userForm.value)" class="col-12 mb-3">
+      <div class="row">
+        <div class="col-8">
+          <div class="form-group">
+            <label for="user_email" class="text-gray"> Email</label>
+            <input type="text" class="form-control cst_form_control" id="user_email" aria-describedby="emailHelp"
+              name="user_email" formControlName="user_email" placeholder="Email">
+          </div>
+          <div class="form-group">
+            <label for="user_first_name" class="text-gray">First Name</label>
+            <input type="text" class="form-control cst_form_control" id="user_first_name" aria-describedby="emailHelp"
+              name="user_first_name" formControlName="user_first_name" placeholder="Name">
+          </div>
+          <div class="form-group">
+            <label for="user_last_name" class="text-gray">Last Name</label>
+            <input type="text" class="form-control cst_form_control" id="user_last_name" aria-describedby="emailHelp"
+              name="user_last_name" formControlName="user_last_name" placeholder="Name">
+          </div>
+          <div class="form-group">
+            <label for="user_phone" class="text-gray">Phone</label>
+            <input type="text" class="form-control cst_form_control" id="user_phone" aria-describedby="emailHelp"
+              name="user_phone" formControlName="user_phone" placeholder="Phone">
+          </div>
+          <div class="form-group">
+            <label for="user_address" class="text-gray"> Address</label>
+            <textarea name="address" id="user_address " cols="5" rows="5" class="form-control cst_form_control w-100"
+              formControlName="user_address" placeholder="Address"></textarea>
+          </div>
+        </div>
+        <div class="col-4 d-flex justify-content-center">
+          <label for="userPic" class="cursor_pointer store_picture text-center">
+            <img src="assets/images/plusmax-tracker_icons_plus-max-logo.png" alt="" class="img-responsive w-100" id=""
+              *ngIf="!userData.user_image">
+            <img [src]="userData.user_image" alt="" class="img-responsive w-100" id="" *ngIf="userData.user_image">
+            <input type="file" name="userPic" id="userPic" accept="image/*" (change)="changeListener($event)"
+              class="d-none">
+            <span class="text-gold"> {{masterData.infoMessages.userImageUpload}}</span>
+          </label>
+        </div>
+        <div class="col-12">
+          <button type="submit" class="btn  theme_button">Update Profile</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

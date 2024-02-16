@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" type="image/png" sizes="16x16" href="../plugins/images/favicon.png">
+    <title>Visitors Managament System</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../plugins/bower_components/datatables/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
+    <!-- Menu CSS -->
+    <link href="../plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.css" rel="stylesheet">
+    <!-- vector map CSS -->
+    <link href="../plugins/bower_components/vectormap/jquery-jvectormap-2.0.2.css" rel="stylesheet" />
+    <link href="../plugins/bower_components/css-chart/css-chart.css" rel="stylesheet">
+    <!-- animation CSS -->
+    <link href="css/animate.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="css/style.css" rel="stylesheet">
+    <!-- color CSS -->
+    <link href="css/colors/blue.css" id="theme" rel="stylesheet">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+      <![endif]-->
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="cssload-speeding-wheel"></div>
+    </div>
+    <div id="wrapper">
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-static-top m-b-0">
+            <div class="navbar-header">
+                <a class="navbar-toggle hidden-sm hidden-md hidden-lg " href="javascript:void(0)" data-toggle="collapse" data-target=".navbar-collapse"><i class="ti-menu"></i></a>
+                <div class="top-left-part"><a class="logo" href="index.html"><b><img src="../plugins/images/eliteadmin-logo.png" alt="home" /></b><span class="hidden-xs"><img src="../plugins/images/eliteadmin-text.png" alt="home" /></span></a></div>
+                <ul class="nav navbar-top-links navbar-left hidden-xs">
+                    <li><a href="javascript:void(0)" class="open-close hidden-xs waves-effect waves-light"><i class="icon-arrow-left-circle ti-menu"></i></a></li>
+                    <li>
+                        <form role="search" class="app-search hidden-xs">
+                            <input type="text" placeholder="Search..." class="form-control">
+                            <a href=""><i class="fa fa-search"></i></a>
+                        </form>
+                    </li>
+                </ul>
+                <ul class="nav navbar-top-links navbar-right pull-right">
+                    <li class="dropdown">
+                        <a class="dropdown-toggle waves-effect waves-light" data-toggle="dropdown" href="#">
+                            <i class="icon-envelope"></i>
+                            <div class="notify"><span class="heartbit"></span><span class="point"></span></div>
+                        </a>
+                        <ul class="dropdown-menu mailbox animated bounceInDown">
+                            <li>
+                                <div class="drop-title">You have 4 new messages</div>
+                            </li>
+                            <li>
+                                <div class="message-center">
+                                    <a href="#">
+                                        <div class="user-img"> <img src="../plugins/images/users/pawandeep.jpg" alt="user" class="img-circle"> <span class="profile-status online pull-right"></span> </div>
+                                        <div class="mail-contnet">
+                                            <h5>Pavan kumar</h5>
+                                            <span class="mail-desc">Just see the my admin!</span> <span class="time">9:30 AM</span>
+                                        </div>
+                                    </a>
+                                    <a href="#">
+                                        <div class="user-img"> <img src="../plugins/images/users/sonu.jpg" alt="user" class="img-circle"> <span class="profile-status busy pull-right"></span> </div>
+                                        <div class="mail-contnet">
+                                            <h5>Sonu Nigam</h5>
+                                            <span class="mail-desc">I've sung a song! See you at</span> <span class="time">9:10 AM</span>
+                                        </div>
+                                    </a>
+                                    <a href="#">
+                                        <div class="user-img"> <img src="../plugins/images/users/arijit.jpg" alt="user" class="img-circle"> <span class="profile-status away pull-right"></span> </div>
+                                        <div class="mail-contnet">
+                                            <h5>Arijit Sinh</h5>
+                                            <span class="mail-desc">I am a singer!</span> <span class="time">9:08 AM</span>
+                                        </div>
+                                    </a>
+                                    <a href="#">
+                                        <div class="user-img"> <img src="../plugins/images/users/pawandeep.jpg" alt="user" class="img-circle"> <span class="profile-status offline pull-right"></span> </div>
+                                        <div class="mail-contnet">
+                                            <h5>Pavan kumar</h5>
+                                            <span class="mail-desc">Just see the my admin!</span> <span class="time">9:02 AM</span>
+                                        </div>
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <a class="text-center" href="javascript:void(0);"> <strong>See all notifications</strong> <i class="fa fa-angle-right"></i> </a>
+                            </li>
+                        </ul>
+                        <!-- /.dropdown-messages -->
+                    </li>
+                    <!-- /.dropdown -->
+                    <li class="dropdown">
+                        <a class="dropdown-toggle waves-effect waves-light" data-toggle="dropdown" href="#">
+                            <i class="icon-note"></i>
+                            <div class="notify"><span class="heartbit"></span><span class="point"></span></div>
+                        </a>
+                        <ul class="dropdown-menu dropdown-tasks animated slideInUp">
+                            <li>
+                                <a href="#">
+                                    <div>
+                                        <p> <strong>Task 1</strong> <span class="pull-right text-muted">40% Complete</span> </p>
+                                        <div class="progress progress-striped active">
+                                            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%"> <span class="sr-only">40% Complete (success)</span> </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a href="#">
+                                    <div>
+                                        <p> <strong>Task 2</strong> <span class="pull-right text-muted">20% Complete</span> </p>
+                                        <div class="progress progress-striped active">
+                                            <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%"> <span class="sr-only">20% Complete</span> </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a href="#">
+                                    <div>
+                                        <p> <strong>Task 3</strong> <span class="pull-right text-muted">60% Complete</span> </p>
+                                        <div class="progress progress-striped active">
+                                            <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%"> <span class="sr-only">60% Complete (warning)</span> </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a href="#">
+                                    <div>
+                                        <p> <strong>Task 4</strong> <span class="pull-right text-muted">80% Complete</span> </p>
+                                        <div class="progress progress-striped active">
+                                            <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%"> <span class="sr-only">80% Complete (danger)</span> </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a class="text-center" href="#"> <strong>See All Tasks</strong> <i class="fa fa-angle-right"></i> </a>
+                            </li>
+                        </ul>
+                        <!-- /.dropdown-tasks -->
+                    </li>
+                    <!-- /.dropdown -->
+                    <li class="dropdown">
+                        <a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#"> <img src="../plugins/images/users/varun.jpg" alt="user-img" width="36" class="img-circle"><b class="hidden-xs">Steave</b> </a>
+                        <ul class="dropdown-menu dropdown-user animated flipInY">
+                            <li><a href="#"><i class="ti-user"></i> My Profile</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#"><i class="ti-settings"></i> Account Setting</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#"><i class="fa fa-power-off"></i> Logout</a></li>
+                        </ul>
+                        <!-- /.dropdown-user -->
+                    </li>
+                    <li class="right-side-toggle"> <a class="waves-effect waves-light" href="javascript:void(0)"><i class="ti-plus"></i></a></li>
+                    <!-- /.dropdown -->
+                </ul>
+            </div>
+            <!-- /.navbar-header -->
+            <!-- /.navbar-top-links -->
+            <!-- /.navbar-static-side -->
+        </nav>
+        <!-- Left navbar-header -->
+        <div class="navbar-default sidebar" role="navigation">
+            <div class="sidebar-nav navbar-collapse slimscrollsidebar">
+                <ul class="nav" id="side-menu">
+                    <li class="sidebar-search hidden-sm hidden-md hidden-lg">
+                        <!-- input-group -->
+                        <div class="input-group custom-search-form">
+                            <input type="text" class="form-control" placeholder="Search...">
+                            <span class="input-group-btn">
+                     <button class="btn btn-default" type="button"> <i class="fa fa-search"></i> </button>
+                     </span>
+                        </div>
+                        <!-- /input-group -->
+                    </li>
+                    <li class="user-pro">
+                        <a href="#" class="waves-effect"><img src="../plugins/images/users/varun.jpg" alt="user-img" class="img-circle"> <span class="hide-menu"> Steve Gection<span class="fa arrow"></span></span>
+                        </a>
+                        <ul class="nav nav-second-level">
+                            <li><a href="javascript:void(0)"><i class="ti-user"></i> My Profile</a></li>
+                            <li><a href="javascript:void(0)"><i class="ti-wallet"></i> My Balance</a></li>
+                            <li><a href="javascript:void(0)"><i class="ti-email"></i> Inbox</a></li>
+                            <li><a href="javascript:void(0)"><i class="ti-settings"></i> Account Setting</a></li>
+                            <li><a href="javascript:void(0)"><i class="fa fa-power-off"></i> Logout</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-small-cap m-t-10">--- Main Menu</li>
+                    <li><a href="dashboard.html" class="waves-effect"><i class="fa-dashboard fa fa-fw" data-icon="v"></i> <span class="hide-menu">Dashboard</span></a></li>
+                    <li class="active"><a href="visitors.html" class="waves-effect"><i class="fa-users fa fa-fw" data-icon="v"></i> <span class="hide-menu">Visitors <span class="fa arrow"></span></span></a>
+                        <ul class="nav nav-second-level">
+                            <li class="active"> <a href="visitors.html">Visitors</a></li>
+                            <li> <a href="pre-register.html">Pre Register</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="employees.html" class="waves-effect"><i class="fa-user fa fa-fw" data-icon="v"></i> <span class="hide-menu">Employees</span></a></li>
+                    <li><a href="settings.html" class="waves-effect"><i class="fa-cog fa fa-fw" data-icon="v"></i> <span class="hide-menu">Settings</span></a></li>
+                    <li><a href="reports.html" class="waves-effect"><i class="fa-book fa fa-fw" data-icon="v"></i> <span class="hide-menu">Reports</span></a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- Left navbar-header end -->
+        <!-- Page Content -->
+        <div id="page-wrapper">
+            <div class="container-fluid">
+                <div class="row bg-title">
+                    <div class="col-lg-12 flex layout--horizontal items--vcenter items--spacebetween ">
+                        <h4 class="page-title">Visitors</h4>
+                        <form role="search" class="app-search hidden-xs">
+                            <input type="text" placeholder="Search..." class="form-control m-0 ">
+                            <a href=""><i class="fa fa-search"></i></a>
+                        </form>
+                    </div>
+                </div>
+                <div class="row content__visitors">
+                    <div class="col-sm-12">
+                        <div class="white-box table-responsive">
+                            <p class="date"><strong class="day">Thursday</strong> Febraury 18th 2016 </p>
+                            <table class="table table-condensed" id='table__visitors'>
+                                <thead>
+                                    <tr>
+                                        <th>Photo</th>
+                                        <th>Visitor Information</th>
+                                        <th>Signed In</th>
+                                        <th>Host Notification</th>
+                                        <th>Signed In</th>
+                                        <th>Signed Out</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- tr*55>(td>img[src='http://placehold.it/45x45'].img-circle)+td{Visitor $}+td{04:$ AM}+td{Email}+td{04:$ AM}+td{06:$ PM} -->
+                                    <tr>
+                                        <td><img src="http://placehold.it/45x45" alt="" class="img-circle"></td>
+                                        <td>Visitor 1</td>
+                                        <td>04:1 AM</td>
+                                        <td>Email</td>
+                                        <td>04:1 AM</td>
+                                        <td>06:1 PM</td>
+                                    </tr>
+                                    <tr>
+                                        <td><img src="http://placehold.it/45x45" alt="" class="img-circle"></td>
+                                        <td>Visitor 2</td>
+                                        <td>04:2 AM</td>
+                                        <td>Email</td>
+                                        <td>04:2 AM</td>
+                                        <td>06:2 PM</td>
+                                    </tr>
+                                    <tr>
+                                        <td><img src="http://placehold.it/45x45" alt="" class="img-circle"></td>
+                                        <td>Visitor 3</td>
+                                        <td>04:3 AM</td>
+                                        <td>Email</td>
+                                        <td>04:3 AM</td>
+                                        <td>06:3 PM</td>
+                                    </tr>
+                                    <tr>
+                                        <td><img src="http://placehold.it/45x45" alt="" class="img-circle"></td>
+                                        <td>Visitor 4</td>
+                                        <td>04:4 AM</td>
+                                        <td>Email</td>
+                                        <td>04:4 AM</td>
+                                        <td>06:4 PM</td>
+                                    </tr>
+                                    <tr>
+                                        <td><img src="http://placehold.it/45x45" alt="" class="img-circle"></td>
+                                        <td>Visitor 5</td>
+                                        <td>04:5 AM</td>
+                                        <td>Email</td>
+                                        <td>04:5 AM</td>
+                                        <td>06:5 PM</td>
+                                    </tr>
+                                    <tr>
+                                        <td><img src="http://placehold.it/45x45" alt="" class="img-circle"></td>
+                                        <td>Visitor 6</td>
+                                        <td>04:6 AM</td>
+                                        <td>Email</td>
+                                        <td>04:6 AM</td>
+                                        <td>06:6 PM</td>
+                                    </tr>
+                                    <tr>
+                                        <td><img src="http://placehold.it/45x45" alt="" class="img-circle"></td>
+                                        <td>Visitor 7</td>
+                                        <td>04:7 AM</td>
+                                        <td>Email</td>
+                                        <td>04:7 AM</td>
+                                        <td>06:7 PM</td>
+                                    </tr>
+                                    <tr>
+                                        <td><img src="http://placehold.it/45x45" alt="" class="img-circle"></td>
+                                        <td>Visitor 8</td>
+                                        <td>04:8 AM</td>
+                                        <td>Email</td>
+                                        <td>04:8 AM</td>
+                                        <td>06:8 PM</td>
+                                    </tr>
+                                    <tr>
+                                        <td><img src="http://placehold.it/45x45" alt="" class="img-circle"></td>
+                                        <td>Visitor 9</td>
+                                        <td>04:9 AM</td>
+                                        <td>Email</td>
+                                        <td>04:9 AM</td>
+                                        <td>06:9 PM</td>
+                                    </tr>
+                                    <tr>
+                                        <td><img src="http://placehold.it/45x45" alt="" class="img-circle"></td>
+                                        <td>Visitor 10</td>
+                                        <td>04:10 AM</td>
+                                        <td>Email</td>
+                                        <td>04:10 AM</td>
+                                        <td>06:10 PM</td>
+                                    </tr>
+                                    <tr>
+                                        <td><img src="http://placehold.it/45x45" alt="" class="img-circle"></td>
+                                        <td>Visitor 11</td>
+                                        <td>04:11 AM</td>
+                                        <td>Email</td>
+                                        <td>04:11 AM</td>
+                                        <td>06:11 PM</td>
+                                    </tr>
+                                    <tr>
+                                        <td><img src="http://placehold.it/45x45" alt="" class="img-circle"></td>
+                                        <td>Visitor 12</td>
+                                        <td>04:12 AM</td>
+                                        <td>Email</td>
+                                        <td>04:12 AM</td>
+                                        <td>06:12 PM</td>
+                                    </tr>
+                                    <tr>
+                                        <td><img src="http://placehold.it/45x45" alt="" class="img-circle"></td>
+                                        <td>Visitor 13</td>
+                                        <td>04:13 AM</td>
+                                        <td>Email</td>
+                                        <td>04:13 AM</td>
+                                        <td>06:13 PM</td>
+                                    </tr>
+                                    <tr>
+                                        <td><img src="http://placehold.it/45x45" alt="" class="img-circle"></td>
+                                        <td>Visitor 14</td>
+                                        <td>04:14 AM</td>
+                                        <td>Email</td>
+                                        <td>04:14 AM</td>
+                                        <td>06:14 PM</td>
+                                    </tr>
+                                    <tr>
+                                        <td><img src="http://placehold.it/45x45" alt="" class="img-circle"></td>
+                                        <td>Visitor 15</td>
+                                        <td>04:15 AM</td>
+                                        <td>Email</td>
+                                        <td>04:15 AM</td>
+                                        <td>06:15 PM</td>
+                                    </tr>
+                                    <tr>
+                                        <td><img src="http://placehold.it/45x45" alt="" class="img-circle"></td>
+                                        <td>Visitor 16</td>
+                                        <td>04:16 AM</td>
+                                        <td>Email</td>
+                                        <td>04:16 AM</td>
+                                        <td>06:16 PM</td>
+                                    </tr>
+                                    <tr>
+                                        <td><img src="http://placehold.it/45x45" alt="" class="img-circle"></td>
+                                        <td>Visitor 17</td>
+                                        <td>04:17 AM</td>
+                                        <td>Email</td>
+                                        <td>04:17 AM</td>
+                                        <td>06:17 PM</td>
+                                    </tr>
+                                    <tr>
+                                        <td><img src="http://placehold.it/45x45" alt="" class="img-circle"></td>
+                                        <td>Visitor 18</td>
+                                        <td>04:18 AM</td>
+                                        <td>Email</td>
+                                        <td>04:18 AM</td>
+                                        <td>06:18 PM</td>
+                                    </tr>
+                                    <tr>
+                                        <td><img src="http://placehold.it/45x45" alt="" class="img-circle"></td>
+                                        <td>Visitor 19</td>
+                                        <td>04:19 AM</td>
+                                        <td>Email</td>
+                                        <td>04:19 AM</td>
+                                        <td>06:19 PM</td>
+                                    </tr>
+                                    <tr>
+                                        <td><img src="http://placehold.it/45x45" alt="" class="img-circle"></td>
+                                        <td>Visitor 20</td>
+                                        <td>04:20 AM</td>
+                                        <td>Email</td>
+                                        <td>04:20 AM</td>
+                                        <td>06:20 PM</td>
+                                    </tr>
+                                    <tr>
+                                        <td><img src="http://placehold.it/45x45" alt="" class="img-circle"></td>
+                                        <td>Visitor 21</td>
+                                        <td>04:21 AM</td>
+                                        <td>Email</td>
+                                        <td>04:21 AM</td>
+                                        <td>06:21 PM</td>
+                                    </tr>
+                                    <tr>
+                                        <td><img src="http://placehold.it/45x45" alt="" class="img-circle"></td>
+                                        <td>Visitor 22</td>
+                                        <td>04:22 AM</td>
+                                        <td>Email</td>
+                                        <td>04:22 AM</td>
+                                        <td>06:22 PM</td>
+                                    </tr>
+                                    <tr>
+                                        <td><img src="http://placehold.it/45x45" alt="" class="img-circle"></td>
+                                        <td>Visitor 23</td>
+                                        <td>04:23 AM</td>
+                                        <td>Email</td>
+                                        <td>04:23 AM</td>
+                                        <td>06:23 PM</td>
+                                    </tr>
+                                    <tr>
+                                        <td><img src="http://placehold.it/45x45" alt="" class="img-circle"></td>
+                                        <td>Visitor 24</td>
+                                        <td>04:24 AM</td>
+                                        <td>Email</td>
+                                        <td>04:24 AM</td>
+                                        <td>06:24 PM</td>
+                                    </tr>
+                                    <tr>
+                                        <td><img src="http://placehold.it/45x45" alt="" class="img-circle"></td>
+                                        <td>Visitor 25</td>
+                                        <td>04:25 AM</td>
+                                        <td>Email</td>
+                                        <td>04:25 AM</td>
+                                        <td>06:25 PM</td>
+                                    </tr>
+                                    <tr>
+                                        <td><img src="http://placehold.it/45x45" alt="" class="img-circle"></td>
+                                        <td>Visitor 26</td>
+                                        <td>04:26 AM</td>
+                                        <td>Email</td>
+                                        <td>04:26 AM</td>
+                                        <td>06:26 PM</td>
+                                    </tr>
+                                    <tr>
+                                        <td><img src="http://placehold.it/45x45" alt="" class="img-circle"></td>
+                                        <td>Visitor 27</td>
+                                        <td>04:27 AM</td>
+                                        <td>Email</td>
+                                        <td>04:27 AM</td>
+                                        <td>06:27 PM</td>
+                                    </tr>
+                                    <tr>
+                                        <td><img src="http://placehold.it/45x45" alt="" class="img-circle"></td>
+                                        <td>Visitor 28</td>
+                                        <td>04:28 AM</td>
+                                        <td>Email</td>
+                                        <td>04:28 AM</td>
+                                        <td>06:28 PM</td>
+                                    </tr>
+                                    <tr>
+                                        <td><img src="http://placehold.it/45x45" alt="" class="img-circle"></td>
+                                        <td>Visitor 29</td>
+                                        <td>04:29 AM</td>
+                                        <td>Email</td>
+                                        <td>04:29 AM</td>
+                                        <td>06:29 PM</td>
+                                    </tr>
+                                    <tr>
+                                        <td><img src="http://placehold.it/45x45" alt="" class="img-circle"></td>
+                                        <td>Visitor 30</td>
+                                        <td>04:30 AM</td>
+                                        <td>Email</td>
+                                        <td>04:30 AM</td>
+                                        <td>06:30 PM</td>
+                                    </tr>
+                                    <tr>
+                                        <td><img src="http://placehold.it/45x45" alt="" class="img-circle"></td>
+                                        <td>Visitor 31</td>
+                                        <td>04:31 AM</td>
+                                        <td>Email</td>
+                                        <td>04:31 AM</td>
+                                        <td>06:31 PM</td>
+                                    </tr>
+                                    <tr>
+                                        <td><img src="http://placehold.it/45x45" alt="" class="img-circle"></td>
+                                        <td>Visitor 32</td>
+                                        <td>04:32 AM</td>
+                                        <td>Email</td>
+                                        <td>04:32 AM</td>
+                                        <td>06:32 PM</td>
+                                    </tr>
+                                    <tr>
+                                        <td><img src="http://placehold.it/45x45" alt="" class="img-circle"></td>
+                                        <td>Visitor 33</td>
+                                        <td>04:33 AM</td>
+                                        <td>Email</td>
+                                        <td>04:33 AM</td>
+                                        <td>06:33 PM</td>
+                                    </tr>
+                                    <tr>
+                                        <td><img src="http://placehold.it/45x45" alt="" class="img-circle"></td>
+                                        <td>Visitor 34</td>
+                                        <td>04:34 AM</td>
+                                        <td>Email</td>
+                                        <td>04:34 AM</td>
+                                        <td>06:34 PM</td>
+                                    </tr>
+                                    <tr>
+                                        <td><img src="http://placehold.it/45x45" alt="" class="img-circle"></td>
+                                        <td>Visitor 35</td>
+                                        <td>04:35 AM</td>
+                                        <td>Email</td>
+                                        <td>04:35 AM</td>
+                                        <td>06:35 PM</td>
+                                    </tr>
+                                    <tr>
+                                        <td><img src="http://placehold.it/45x45" alt="" class="img-circle"></td>
+                                        <td>Visitor 36</td>
+                                        <td>04:36 AM</td>
+                                        <td>Email</td>
+                                        <td>04:36 AM</td>
+                                        <td>06:36 PM</td>
+                                    </tr>
+                                    <tr>
+                                        <td><img src="http://placehold.it/45x45" alt="" class="img-circle"></td>
+                                        <td>Visitor 37</td>
+                                        <td>04:37 AM</td>
+                                        <td>Email</td>
+                                        <td>04:37 AM</td>
+                                        <td>06:37 PM</td>
+                                    </tr>
+                                    <tr>
+                                        <td><img src="http://placehold.it/45x45" alt="" class="img-circle"></td>
+                                        <td>Visitor 38</td>
+                                        <td>04:38 AM</td>
+                                        <td>Email</td>
+                                        <td>04:38 AM</td>
+                                        <td>06:38 PM</td>
+                                    </tr>
+                                    <tr>
+                                        <td><img src="http://placehold.it/45x45" alt="" class="img-circle"></td>
+                                        <td>Visitor 39</td>
+                                        <td>04:39 AM</td>
+                                        <td>Email</td>
+                                        <td>04:39 AM</td>
+                                        <td>06:39 PM</td>
+                                    </tr>
+                                    <tr>
+                                        <td><img src="http://placehold.it/45x45" alt="" class="img-circle"></td>
+                                        <td>Visitor 40</td>
+                                        <td>04:40 AM</td>
+                                        <td>Email</td>
+                                        <td>04:40 AM</td>
+                                        <td>06:40 PM</td>
+                                    </tr>
+                                    <tr>
+                                        <td><img src="http://placehold.it/45x45" alt="" class="img-circle"></td>
+                                        <td>Visitor 41</td>
+                                        <td>04:41 AM</td>
+                                        <td>Email</td>
+                                        <td>04:41 AM</td>
+                                        <td>06:41 PM</td>
+                                    </tr>
+                                    <tr>
+                                        <td><img src="http://placehold.it/45x45" alt="" class="img-circle"></td>
+                                        <td>Visitor 42</td>
+                                        <td>04:42 AM</td>
+                                        <td>Email</td>
+                                        <td>04:42 AM</td>
+                                        <td>06:42 PM</td>
+                                    </tr>
+                                    <tr>
+                                        <td><img src="http://placehold.it/45x45" alt="" class="img-circle"></td>
+                                        <td>Visitor 43</td>
+                                        <td>04:43 AM</td>
+                                        <td>Email</td>
+                                        <td>04:43 AM</td>
+                                        <td>06:43 PM</td>
+                                    </tr>
+                                    <tr>
+                                        <td><img src="http://placehold.it/45x45" alt="" class="img-circle"></td>
+                                        <td>Visitor 44</td>
+                                        <td>04:44 AM</td>
+                                        <td>Email</td>
+                                        <td>04:44 AM</td>
+                                        <td>06:44 PM</td>
+                                    </tr>
+                                    <tr>
+                                        <td><img src="http://placehold.it/45x45" alt="" class="img-circle"></td>
+                                        <td>Visitor 45</td>
+                                        <td>04:45 AM</td>
+                                        <td>Email</td>
+                                        <td>04:45 AM</td>
+                                        <td>06:45 PM</td>
+                                    </tr>
+                                    <tr>
+                                        <td><img src="http://placehold.it/45x45" alt="" class="img-circle"></td>
+                                        <td>Visitor 46</td>
+                                        <td>04:46 AM</td>
+                                        <td>Email</td>
+                                        <td>04:46 AM</td>
+                                        <td>06:46 PM</td>
+                                    </tr>
+                                    <tr>
+                                        <td><img src="http://placehold.it/45x45" alt="" class="img-circle"></td>
+                                        <td>Visitor 47</td>
+                                        <td>04:47 AM</td>
+                                        <td>Email</td>
+                                        <td>04:47 AM</td>
+                                        <td>06:47 PM</td>
+                                    </tr>
+                                    <tr>
+                                        <td><img src="http://placehold.it/45x45" alt="" class="img-circle"></td>
+                                        <td>Visitor 48</td>
+                                        <td>04:48 AM</td>
+                                        <td>Email</td>
+                                        <td>04:48 AM</td>
+                                        <td>06:48 PM</td>
+                                    </tr>
+                                    <tr>
+                                        <td><img src="http://placehold.it/45x45" alt="" class="img-circle"></td>
+                                        <td>Visitor 49</td>
+                                        <td>04:49 AM</td>
+                                        <td>Email</td>
+                                        <td>04:49 AM</td>
+                                        <td>06:49 PM</td>
+                                    </tr>
+                                    <tr>
+                                        <td><img src="http://placehold.it/45x45" alt="" class="img-circle"></td>
+                                        <td>Visitor 50</td>
+                                        <td>04:50 AM</td>
+                                        <td>Email</td>
+                                        <td>04:50 AM</td>
+                                        <td>06:50 PM</td>
+                                    </tr>
+                                    <tr>
+                                        <td><img src="http://placehold.it/45x45" alt="" class="img-circle"></td>
+                                        <td>Visitor 51</td>
+                                        <td>04:51 AM</td>
+                                        <td>Email</td>
+                                        <td>04:51 AM</td>
+                                        <td>06:51 PM</td>
+                                    </tr>
+                                    <tr>
+                                        <td><img src="http://placehold.it/45x45" alt="" class="img-circle"></td>
+                                        <td>Visitor 52</td>
+                                        <td>04:52 AM</td>
+                                        <td>Email</td>
+                                        <td>04:52 AM</td>
+                                        <td>06:52 PM</td>
+                                    </tr>
+                                    <tr>
+                                        <td><img src="http://placehold.it/45x45" alt="" class="img-circle"></td>
+                                        <td>Visitor 53</td>
+                                        <td>04:53 AM</td>
+                                        <td>Email</td>
+                                        <td>04:53 AM</td>
+                                        <td>06:53 PM</td>
+                                    </tr>
+                                    <tr>
+                                        <td><img src="http://placehold.it/45x45" alt="" class="img-circle"></td>
+                                        <td>Visitor 54</td>
+                                        <td>04:54 AM</td>
+                                        <td>Email</td>
+                                        <td>04:54 AM</td>
+                                        <td>06:54 PM</td>
+                                    </tr>
+                                    <tr>
+                                        <td><img src="http://placehold.it/45x45" alt="" class="img-circle"></td>
+                                        <td>Visitor 55</td>
+                                        <td>04:55 AM</td>
+                                        <td>Email</td>
+                                        <td>04:55 AM</td>
+                                        <td>06:55 PM</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.row -->
+                <!-- /.container-fluid -->
+                <footer class="footer text-center"> 2016 &copy; </footer>
+            </div>
+            <!-- /#page-wrapper -->
+        </div>
+        <!-- /#wrapper -->
+        <!-- jQuery -->
+        <script src="../plugins/bower_components/jquery/dist/jquery.min.js"></script>
+        <!-- Bootstrap Core JavaScript -->
+        <script src="bootstrap/dist/js/bootstrap.min.js"></script>
+        <!-- Menu Plugin JavaScript -->
+        <script src="../plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.js"></script>
+        <!--slimscroll JavaScript -->
+        <script src="js/jquery.slimscroll.js"></script>
+        <!--Wave Effects -->
+        <script src="js/waves.js"></script>
+        <!-- Custom Theme JavaScript -->
+        <script src="js/custom.js"></script>
+        <script src="../plugins/bower_components/datatables/jquery.dataTables.min.js"></script>
+        <script>
+            (function($){
+                 var table = $('#table__visitors').DataTable()
+            })(jQuery)
+        </script>
+</body>
+
+</html>

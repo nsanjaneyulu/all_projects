@@ -1,0 +1,97 @@
+<main class="main_Content">
+  <h1 class="table_Heading">Location Table</h1>
+  <div class="row">
+    <div class="col-md-12 text-right">
+      <button class="btn btn-success new_box_btn" (click)="addNew()">
+        Add New Location
+      </button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="table-responsive">
+        <table class="table table-fixed order_table">
+          <thead class="thead-light">
+            <tr>
+              <th>Location Name</th>
+              <th>Pickup Start Time</th>
+              <th>Pickup End Time</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let user of tableData; let i = index">
+              <td *ngIf="user.id === editRowID">
+                <textarea
+                  class="userLocationEdit"
+                  [(ngModel)]="user.location"
+                ></textarea>
+              </td>
+              <td *ngIf="user.id !== editRowID">{{ user.location }}</td>
+              <td *ngIf="user.id === editRowID">
+                <input type="text" [(ngModel)]="user.pickUpTimeStart" />
+              </td>
+              <td *ngIf="user.id !== editRowID">
+                {{ user.pickUpTimeStart }}
+              </td>
+              <td *ngIf="user.id === editRowID">
+                <input type="text" [(ngModel)]="user.pickUpTimeEnd" />
+              </td>
+              <td *ngIf="user.id !== editRowID">
+                {{ user.pickUpTimeEnd }}
+              </td>
+              <td *ngIf="user.id === editRowID">
+                <div id="btnwrap">
+                  <button
+                    class="btn btn-info"
+                    id="idEditButton"
+                    (click)="Save(user.id, i)"
+                  >
+                    Save
+                  </button>
+                  <button
+                    class="btn btn-danger"
+                    id="idDeleteButton"
+                    (click)="Deactivate(i)"
+                    [disabled]="tableData?.length === 1"
+                    [ngClass]="{ disabled: tableData?.length === 1 }"
+                  >
+                    {{ user.id.isActive === true ? "Activate" : "Deactivate" }}
+                  </button>
+                </div>
+              </td>
+              <td *ngIf="user.id !== editRowID">
+                <div id="btnwrap">
+                  <button
+                    class="btn btn-info"
+                    id="idEditButton"
+                    (click)="Edit(user.id)"
+                  >
+                    Edit
+                  </button>
+                  <button
+                    class="btn btn-danger"
+                    id="idDeleteButton"
+                    (click)="Deactivate(i)"
+                    [disabled]="tableData?.length === 1"
+                    [ngClass]="{ disabled: tableData?.length === 1 }"
+                  >
+                    {{ user.id.isActive === true ? "Activate" : "Deactivate" }}
+                  </button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <ngx-spinner
+    bdColor="rgba(51,51,51,0.8)"
+    size="medium"
+    color="#fff"
+    type="line-scale-party"
+  >
+    <p class="spinnerText_Color">Loading...</p>
+  </ngx-spinner>
+</main>

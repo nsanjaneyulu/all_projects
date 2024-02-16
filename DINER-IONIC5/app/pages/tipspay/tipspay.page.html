@@ -1,0 +1,170 @@
+<ion-header class="header_styles_items_page" style="background: #5c0931; padding: 0.5rem 0rem;">
+
+    <ion-row>
+
+
+
+        <ion-col>
+            <span style="float: left;" class="headerFontCss">TIPS Pay Balance</span><span style="float: right;" class="headerFontCss"> {{(walletInfo.balance?walletInfo.balance:0) | number : '1.2-2'}}</span>
+
+        </ion-col>
+    </ion-row>
+
+</ion-header>
+<ion-content>
+    <ion-grid>
+        <ion-row class="Points-Earned">
+            <ion-col col-6 [class.onActive]="pointsEarned" (click)="getPointsEarned()">Points Earned</ion-col>
+            <ion-col col-6 [class.onActive]="pointsRedeem" (click)="getPointsRedeem()">Points Redeemed</ion-col>
+        </ion-row>
+        <br>
+        <ion-row style="
+            background-color: gray;color:white; font-size:12px">
+            <ion-col col-3>
+                Date
+            </ion-col>
+            <ion-col col-3>
+                OrderID
+            </ion-col>
+            <ion-col col-3 style="text-align: right">
+                Order Value
+            </ion-col>
+            <ion-col style="text-align: right" col-3>
+                Points
+            </ion-col>
+        </ion-row>
+        <ion-row *ngFor="let wallet of walletData; let i=index;" style="border-bottom-style: groove">
+            <ion-col col-3 (click)="slectRow(i,wallet.serviceStationID,wallet.mallID,wallet.fullOrderID)" [class.apply]="i==k" style="font-size:12px">{{wallet.createdDate |date: 'dd/MM/yyyy'}}</ion-col>
+            <ion-col col-3 (click)="slectRow(i,wallet.serviceStationID,wallet.mallID,wallet.fullOrderID)" [class.apply]="i==k" style="font-size:12px">{{wallet.fullOrder5DigitID}}</ion-col>
+            <ion-col col-3 style="text-align: right; font-size: 12px" (click)="slectRow(i,wallet.serviceStationID,wallet.mallID,wallet.fullOrderID)" [class.apply]="i==k">{{wallet.fullOrderAmount | number : '1.2-2'}}</ion-col>
+            <ion-col col-3 style="text-align: right; font-size: 12px" (click)="slectRow(i,wallet.serviceStationID,wallet.mallID,wallet.fullOrderID)" [class.apply]="i==k">{{wallet.walletTransactionAmount | number : '1.2-2'}}</ion-col>
+            <div style="margin-top: 5%;
+                border-style: ridge;
+                border-radius: 4%;
+                border-color: #5c0632;
+                margin-bottom: 5%;     width: 100%;" *ngIf="i==k">
+                <ion-col col-12 style="font-weight: bold;">
+                    <p style="margin-left: 1rem">{{details.mall.name}}</p>
+                    <p style="margin-left: 1rem;
+                      margin-top: -5%;
+                      font-size: 11px;
+                      color: gray;">{{details.mall.address.line2}}, {{details.mall.address.city}} </p>
+                    <p style="margin-left: 1rem">OrderType: <span style="font-size: 12px; font-weight: 100">{{details.orderType}}</span></p>
+                    <p style="margin-left: 1rem">Date: <span style="font-size: 12px; font-weight: 100">{{getFormattedDate(wallet.createdDate)}}</span></p>
+
+                </ion-col>
+                <br>
+                <div style="width: 100%">
+
+
+
+                    <ion-row *ngFor="let outlet of details.orders">
+                        <ion-row style="margin-left: 2%; width: 100%;margin-top: 3%;">
+                            <span><img [src]="getImage(outlet.outlet.image)" width="22px"/></span><span class="outlet-name-text" style="margin-left: 2%; font-size: 16px">{{outlet.outletName}}</span>
+                        </ion-row>
+                        <ion-row style="background-color: gray; color:white; font: bold; width: 100%">
+                            <ion-col col-6>Item Name</ion-col>
+                            <ion-col col-3> Status</ion-col>
+                            <ion-col col-3 style="text-align: right"> Price</ion-col>
+                        </ion-row>
+                        <ion-row *ngFor="let item of outlet.orderlets" style="width: 100%">
+                            <ion-col col-6>{{item.item.name}}</ion-col>
+                            <ion-col col-3>{{item.status}}</ion-col>
+                            <ion-col col-3 style="text-align: right">{{item.item.price | number : '1.2-2'}}</ion-col>
+                        </ion-row>
+                    </ion-row>
+                </div>
+                <div>
+                    <ion-row style="background-color: gray; color:white; font: bold;"><span style="margin-left: 1rem">Bill Details</span></ion-row>
+                    <ion-row>
+                        <ion-col col-8>Item Total</ion-col>
+                        <ion-col col-4 style="text-align: right">{{itemWithoutDiscout | number : '1.2-2'}}</ion-col>
+                        <ion-col col-8>Supplier Discount</ion-col>
+                        <ion-col col-4 style="text-align: right">-{{details.supplierDiscount | number : '1.2-2'}}</ion-col>
+                        <ion-col col-8>
+                            <span style="float: left;margin-right: 3px">Taxes</span>
+                            <span class="tooltip">   <img src="assets/imgs/info.png" width="11px" height="11px" />
+        
+                                    <span class="tooltiptext">
+                                            <div>
+                                             <span style="float: left ;    margin-left: 4%;">CGST (2.5%)</span>
+                            <span style="float: right;    margin-right: 4%;">{{details.cgst | number : '1.2-2'}}</span>
+                </div>
+                <br>
+                <div>
+                    <span style="float: left;    margin-left: 4%;">SGST (2.5%)</span>
+                    <span style="float: right;    margin-right: 4%;">{{details.sgst | number : '1.2-2'}}</span>
+                </div>
+                </span>
+                </span>
+                </ion-col>
+                <ion-col col-4 style="text-align: right">{{details.cgst + details.sgst | number : '1.2-2'}}</ion-col>
+                <ion-col col-8 *ngIf="details.orderType!='Pickup'">
+                    <span style="float: left;margin-right: 3px">Charges</span>
+                    <span class="tooltip">   <img src="assets/imgs/info.png" width="11px" height="11px" />
+        
+                                    <span class="tooltiptext1">
+                                            <div style="font-size: 10px;">
+                                             <span style="float: left;margin-left: 4%;" >Packaging Charges(Inc. Taxes)</span>
+                    <span style="float: right;margin-right: 4%">{{details.packagingCharge | number : '1.2-2'}}</span>
+            </div>
+            <br>
+            <div style="font-size: 10px;">
+                <span style="float: left;margin-left: 4%;">Delivery Charges(Inc. Taxes)</span>
+                <span style="float: right;margin-right: 4%">{{details.supplierDeliveryCharge | number : '1.2-2'}}</span>
+            </div>
+            </span>
+            </span>
+            </ion-col>
+            <ion-col col-4 style="text-align: right" *ngIf="details.orderType!='Pickup'">{{details.supplierDeliveryCharge+details.packagingCharge | number : '1.2-2'}}</ion-col>
+            <ion-col col-8>Sub Total</ion-col>
+            <ion-col col-4 style="text-align: right">{{(itemWithoutDiscout -details.supplierDiscount +details.cgst + details.sgst + details.supplierDeliveryCharge+details.packagingCharge) | number : '1.2-2'}}</ion-col>
+            <ion-col col-8>Convenience Charges</ion-col>
+            <ion-col col-4 style="text-align: right">{{(details.convenience) | number : '1.2-2'}}</ion-col>
+            <ion-col col-8 style="color:maroon;" *ngIf="pointsRedeem">Points Redeemed</ion-col>
+            <ion-col col-4 style="text-align: right;color:maroon;" *ngIf="pointsRedeem">-{{wallet.walletTransactionAmount | number : '1.2-2'}}</ion-col>
+            <ion-col col-8 style="font-weight: bold; " *ngIf="pointsRedeem">Paid</ion-col>
+            <ion-col col-4 style="text-align: right;font-weight: bold;" *ngIf="pointsRedeem">{{itemWithoutDiscout - details.supplierDiscount + details.cgst + details.sgst + details.supplierDeliveryCharge+details.packagingCharge - wallet.walletTransactionAmount | number : '1.2-2'}}</ion-col>
+            <ion-col col-8 style="font-weight: bold; " *ngIf="pointsEarned">Paid</ion-col>
+            <ion-col col-4 style="text-align: right;font-weight: bold;" *ngIf="pointsEarned">{{itemWithoutDiscout - details.supplierDiscount + details.cgst + details.sgst + details.supplierDeliveryCharge+details.packagingCharge | number : '1.2-2'}}</ion-col>
+            <ion-col col-8 style="color:maroon;" *ngIf="pointsEarned">Points Earned</ion-col>
+            <ion-col col-4 style="text-align: right;color:maroon;" *ngIf="pointsEarned">{{wallet.walletTransactionAmount | number : '1.2-2'}}</ion-col>
+            <ion-col col-8 style="margin-bottom: 5%"></ion-col>
+            <ion-col col-4 style="margin-bottom: 5%"></ion-col>
+            </ion-row>
+            </div>
+            </div>
+        </ion-row>
+    </ion-grid>
+</ion-content>
+<ion-footer>
+    <ion-toolbar style="height: 3rem !important">
+        <ion-tabs>
+            <ion-tab-bar slot="bottom">
+                <ion-tab-button class="ionButtonNon" (click)="routerChange('dashboard')">
+                    <!-- <ion-icon ios="ios-home" md="md-home"></ion-icon> -->
+                    <img class="tabImage" src="../../../assets/icon/tafelicon/home.svg" />
+                    <ion-label class="labelFont">Home</ion-label>
+                    <!-- <ion-badge class="badgeNumber">6</ion-badge> -->
+                </ion-tab-button>
+                <!-- (click)="goToCartPage()" -->
+                <ion-tab-button class="ionButtonNon" (click)="routerChange('cart')">
+                    <!-- <ion-icon ios="ios-cart" md="md-cart"></ion-icon> -->
+                    <img class="tabImage" src="../../../assets/icon/tafelicon/shopping-bag.svg" />
+                    <ion-label class="labelFont">Cart</ion-label>
+                    <ion-badge class="badgeNumber" *ngIf="itemsCountDetails>0">{{itemsCountDetails}}</ion-badge>
+                </ion-tab-button>
+                <ion-tab-button class="ionButton">
+                    <!-- <ion-icon name="map"></ion-icon> -->
+                    <img class="tabImage" src="../../../assets/icon/tafelicon/wallet.svg" />
+                    <ion-label class="labelFont">Tips Pay</ion-label>
+                </ion-tab-button>
+                <ion-tab-button class="ionButtonNon" (click)="routerChange('profile')">
+                    <!-- <ion-icon name="information-circle"></ion-icon> -->
+                    <img class="tabImage" src="../../../assets/icon/tafelicon/user.svg" />
+                    <ion-label class="labelFont">Profile</ion-label>
+                </ion-tab-button>
+            </ion-tab-bar>
+        </ion-tabs>
+    </ion-toolbar>
+</ion-footer>

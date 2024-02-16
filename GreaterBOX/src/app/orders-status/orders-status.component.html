@@ -1,0 +1,49 @@
+<main class="successMessage_Main">
+  <section class="container successMessage_Container">
+    <h3 class="successMessage">You’ve Successfully Placed Your Order</h3>
+    <p class="successMessage_Conformation">
+      You will receive a confirmation message to your email shortly.
+    </p>
+
+    <div class="successMessage_DeailBlock">
+      <div class="successMessage_OrderId">
+        <p>Your Name :</p>
+        <span class="successMessage_Details">{{ orderResponse.firstName }} {{ orderResponse.lastName }}</span>
+      </div>
+      <div class="successMessage_OrderId">
+        <p>Your Order ID :</p>
+        <span class="successMessage_Details">{{ orderResponse.paymentCard.transactionID }}</span>
+      </div>
+      <div class="successMessage_BoxDetails">
+        <p>Box Details :</p>
+        <span class="successMessage_Details">{{ totalQuantity }} {{ totalQuantity === 1 ? "box" : "boxes" }}</span>
+      </div>
+      <div class="successMessage_PickUpLocation">
+        <p>Pick Up Location :</p>
+        <span class="successMessage_Details">{{ orderResponse.pickUpLocationName }}</span>
+      </div>
+
+      <div class="successMessage_PickUpLocation">
+        <p>Pick Up Date :</p>
+        <span class="successMessage_Details">{{ pickupDate }}</span>
+      </div>
+      <div class="successMessage_PickUpLocation">
+        <p>Pick Up Time Frame :</p>
+        <span class="successMessage_Details">2pm To 5pm</span>
+      </div>
+      <p class="successMessage_paid">
+        Paid : $<span> {{ totalAmountPaid }} </span>
+      </p>
+    </div>
+    <p class="successMessage_Subdata">
+      All sales of Greater Good Boxes are final. If you decide not to pick up
+      your box, we will donate it to someone in need.
+    </p>
+    <!-- <div class="successMessage_QuiresBlock">
+      <h3 class="successMessage_Quires">For Any Question?</h3>
+      <a class="successMessage_QueriesMailId"
+        >thegreatergoodbox@newseasonsmarket.com</a
+      >
+    </div> -->
+  </section>
+</main>

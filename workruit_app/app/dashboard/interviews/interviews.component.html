@@ -1,0 +1,45 @@
+<div>
+    <app-header></app-header>
+    <div class="content col-12">
+        <div class="row justify-content-center">
+            <div class="col-md-5">
+        <app-tabs [tabsName]="interviewsTabs" (tabChange)="tabClick($event)"></app-tabs>
+        </div>
+        <div class="container">
+            <div class="mt-5" *ngIf="activeTab.name ==='Scheduled' && scheduledObjGet.length>0">
+                <app-list-view [tableColumns]="tableColumns" [tableData]="scheduledObjGet" [activeTab]="activeTab"></app-list-view>
+            </div>
+            <div class="mt-5" *ngIf="activeTab.name ==='Scheduled' && scheduledObjGet.length==0">
+                <div class="row h-100 justify-content-center align-items-center">
+                    <div class="col-md-4 empty text-center">
+                        <h1>{{authDataInfo.messages.scheduled_title}}</h1>
+                        <h2>{{authDataInfo.messages.scheduled_subTitle}}</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-5" *ngIf="activeTab.name ==='Hired' && hiredObjGet.length>0">
+                <app-list-view [tableColumns]="hiredColumns" [tableData]="hiredObjGet" [activeTab]="activeTab"></app-list-view>
+            </div>
+            <div class="mt-5" *ngIf="activeTab.name ==='Hired' && hiredObjGet.length==0">
+                <div class="row h-100 justify-content-center align-items-center">
+                    <div class="col-md-4 empty text-center">
+                        <h1>{{authDataInfo.messages.hired_title}}</h1>
+                        <h2>{{authDataInfo.messages.hired_subTitle}}</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-5" *ngIf="activeTab.name ==='Rejected' && rejectedbjGet.length>0">
+                <app-list-view [tableColumns]="rejectedColumns" [tableData]="rejectedbjGet" [activeTab]="activeTab"></app-list-view>
+            </div>
+            <div class="mt-5" *ngIf="activeTab.name ==='Rejected' && rejectedbjGet.length==0">
+                <div class="row h-100 justify-content-center align-items-center">
+                    <div class="col-md-4 empty text-center">
+                        <h1>{{authDataInfo.messages.rejected_title}}</h1>
+                        <h2>{{authDataInfo.messages.rejected_subTitle}}</h2>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    </div>

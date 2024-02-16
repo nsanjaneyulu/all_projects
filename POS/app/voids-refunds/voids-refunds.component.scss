@@ -1,0 +1,215 @@
+.table tbody {
+    background-color: #ffffff;
+}
+.table td {
+    background: #fff !important;
+}
+.form-control {
+   
+    border-radius: 0rem;
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid #fff;
+  }
+  .form-control::placeholder { 
+    color: #fff !important;
+    font-size: 18px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.39;
+    letter-spacing: normal;
+    text-align: left;
+  }
+  .form-control:focus {
+   
+    box-shadow: none !important;
+    outline:  none !important;
+    color: #fff;
+
+    border-radius: 0rem;
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid #fff;
+}
+.search_container_icon {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    right: 16px;
+    transform: translateY(-50%);
+  }
+  .display-flex-justify {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #40485c;
+  }
+  .pos-top-title-bg {
+      background: #40485c;
+  }
+  .pos-top-title {
+    font-size: 18px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.39;
+    letter-spacing: normal;
+    text-align: left;
+  } 
+  table, thead, tr, th{
+    font-size: 14px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.14;
+    letter-spacing: normal;
+    text-align: left;
+    color: #1a1a1a;
+  }
+  table, tbody, tr, td{
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.14;
+    letter-spacing: normal;
+    text-align: left;
+    color: #1a1a1a;
+  }
+  
+ 
+  .filter-cols {
+    font-size: 15px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.67;
+  letter-spacing: normal;
+  text-align: left;
+  color: #43425d;
+  }
+ .selectAll {
+  font-size: 18px;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.44;
+  letter-spacing: normal;
+  text-align: left;
+  color: #40485c;
+ }
+ .super_number.menu.from-menu {
+  display: inline-block;
+}
+.super_number.menu .ui.attached.button.dec {
+  padding-top: 4px!important;
+}
+.super_number.menu .ui.attached.button {
+  padding-right: 6px!important;
+  padding-left: 6px!important;
+  background: #fff!important;
+  color: #707070!important;
+  box-shadow: 0 0 0 1px #707070!important;
+  float: left;
+  cursor: pointer;
+  line-height: 10px;
+  height: 20px;
+  font-size: 22px;
+}
+.ui.left.attached.button {
+  display: inline-block;
+  border-left: none;
+  text-align: right;
+  padding-right: .75em;
+  
+}
+.ui.attached.button {
+  position: relative;
+  display: block;
+  margin: 0;
+  border-radius: 0;
+  box-shadow: 0 0 0 1px #707070!important;
+}
+.ui.button {
+  cursor: pointer;
+  display: inline-block;
+  min-height: 1em;
+  outline: 0;
+  border: none;
+  vertical-align: baseline;
+  background: #E0E1E2;
+  color: rgba(0,0,0,.6);
+ 
+  margin: 0 .25em 0 0;
+  // padding: .78571429em 1.5em;
+  text-transform: none;
+  text-shadow: none;
+  line-height: 1em;
+  font-style: normal;
+  text-align: center;
+  text-decoration: none;
+
+  box-shadow: 0 0 0 1px transparent inset, 0 0 0 0 #e7e7e7 inset;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  
+}
+.super_number.menu input {
+  position: relative;
+  width: 20px;
+  margin: 0;
+ 
+  color: #707070;
+  font-size: 14px;
+  height: 24px;
+  border: 1px solid #707070;
+  float: left;
+  top: -1px;
+  padding: 0;
+  text-align: center;
+  border-radius: 0;
+}
+.super_number.menu .ui.attached.button.inc {
+  padding-top: 8px!important;
+  padding-left: 7px!important;
+}
+.super_number.menu .ui.attached.button {
+  padding-right: 6px!important;
+  padding-left: 6px!important;
+  background: #fff!important;
+  color: #707070!important;
+  box-shadow: 0 0 0 1px #707070!important;
+  float: left;
+  cursor: pointer;
+  line-height: 10px;
+  height: 20px;
+  font-size: 22px;
+}
+.ui.right.attached.button {
+  display: inline-block;
+  text-align: left;
+  padding-left: .75em;
+ 
+}
+.ui.attached.button {
+  position: relative;
+  display: block;
+  margin: 0;
+  border-radius: 0;
+  box-shadow: 0 0 0 1px #707070!important;
+}
+.rotate {
+  cursor: context-menu;
+}
+.spinEffect {
+  transform: rotate(360deg);
+  /*transform: rotate(180deg);*/
+  transition: 3s;
+}
+.spinEffect2 {
+  transform: rotate(0deg);
+  transition: 3s;
+}

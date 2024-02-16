@@ -1,0 +1,106 @@
+<div>
+    <!-- <app-breadcrumbs></app-breadcrumbs> -->
+    <app-header></app-header>
+    <div class="content">
+        <div class="container">
+            <div class="row" *ngIf="viewPostedJobsLength > 1">
+                <div class="col-md-12 filter mt-3 py-3 border-radius ng-scope" id="search-box" data-ng-if="prefbox"
+                    style="">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label>Job</label>
+                                <select class="form-control ng-pristine ng-untouched ng-valid ng-not-empty" #jobTypeSelect (change)='jobTypeChange(jobTypeSelect.value)'>
+
+                                    <option *ngFor="let item of jobsData; index as i" value="{{item.jobPostId}}">
+                                        {{item.title}} </option>
+                                </select>
+                            </div>
+                        </div>
+                        <!-- Experience -->
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label>Experience (years)</label>
+                                <div class="mt-4" style="margin-top: 1.0rem !important;">
+                                    <div class="form-group">
+                                        <div>
+                                                <ngx-slider [(value)]="minValue" [(highValue)]="maxValue" [options]="options"></ngx-slider>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <!-- Location -->
+                            <div class="form-group" style="margin-bottom: 5px;">
+                                <label>Location</label>
+                                <div class="ng-autocomplete">
+                                    <ng-autocomplete [data]="countries" [searchKeyword]="keyword"
+                                        placeholder="Enter the Country Name" (selected)='selectEvent($event)'
+                                        (inputChanged)='onChangeSearch($event)' (inputFocused)='onFocused($event)'
+                                        historyIdentifier="countries" [itemTemplate]="itemTemplate"
+                                        [notFoundTemplate]="notFoundTemplate">
+                                    </ng-autocomplete>
+
+                                    <ng-template #itemTemplate let-item>
+                                        <a [innerHTML]="item.title"></a>
+                                    </ng-template>
+
+                                    <ng-template #notFoundTemplate let-notFound>
+                                        <div [innerHTML]="notFound"></div>
+                                    </ng-template>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <div class="mt-4" style="margin-top: 1.8rem !important;">
+                                    <div class="form-group">
+                                        <div>
+                                            <a href="#applicants" class="btnn">
+                                                <button class="btn btn-primary mrg-t-b-5" ng-disabled="disableSrchBtn">Search</button>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 mt-3 mb-3 ng-scope d-block">
+                    <div class="row" id="applicants">
+                        <div class="item col-md-12 mt-4 transition border-radius" *ngFor="let item of jobProfilesData; index as i">
+                            <div class="row">
+                                <div class="col-9 m-0 bordered">
+                                    <app-card-view [cardView]="item"></app-card-view>
+                                </div>
+                                <div class="col-sm-3 m-0">
+                                    <app-jobstatus></app-jobstatus>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row h-100 justify-content-center align-items-center" *ngIf="limit">
+                <div class="col-md-4 empty text-center">
+                    <h1>{{limitTitle}}</h1>
+                    <h2>{{limitDescription}}</h2>
+                </div>
+            </div>
+           
+                <div class="row h-100 justify-content-center align-items-center" *ngIf="viewPostedJobsLength === 0">
+                    <div class="col-md-4 empty text-center">
+                      <h1>Welcome to Workruit!</h1>
+                      <h2>You can start by posting a new<br />job, clicking on the button below.</h2>
+                      <a href="#postjob"><button type="button" class="btn btn-primary btn-lg px-5 mt-3" data-event="e_jobs_postajob_web">Post a job</button></a>
+                    </div>
+                  </div>
+           
+
+        </div>
+    </div>
+</div>

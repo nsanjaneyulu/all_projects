@@ -1,0 +1,127 @@
+<div class="col-12">
+      <div  style="display: flex;font-size: 20px; " class="int-connect-disconnect-bg" *ngIf="allpermited=='No'">
+            <div style="width: 25%;"  >
+             <span><b>Name:</b></span> &nbsp;  <span> {{mallName}}</span>  
+            </div>
+            <div >
+                  <span><b>Outlet Name:</b></span>&nbsp; 
+                  <span *ngIf="outletDetails.length>1" >
+                        <select [(ngModel)]="outeltId" (change)="selectoutLet(outeltId)" >
+         
+                              <option *ngFor="let outlet Of outletDetails;" [value]="outlet.id">{{outlet.name}}</option>
+                            </select>
+                  </span>
+                  <span *ngIf="outletDetails.length==1">
+                     {{outletDetails[0].name}}
+                        <!-- <select [(ngModel)]="outeltId" (change)="selectoutLet(outeltId)">
+         
+                              <option *ngFor="let outlet Of outletDetails;" [value]="outlet.id">{{outlet.name}}</option>
+                            </select> -->
+                  </span>
+            </div>
+            
+         </div>
+        <div class="border table-styles">
+           <p-table #dt [columns]="filterCols" [value]="data" dataKey="invoiceNo" [paginator]="true" [rows]="10" [totalRecords]="data.length" expandableRows="true" rowExpandMode="single">
+           <ng-template pTemplate="header" let-columns>
+              <tr>
+                 <th *ngFor="let col of columns" [pSortableColumn]="col.field" class="text-center">
+                 {{col.header}}
+                 <!-- <p-sortIcon [field]="col.field" ariaLabel="Activate to sort" ariaLabelDesc="Activate to sort in descending order" ariaLabelAsc="Activate to sort in ascending order"></p-sortIcon> -->
+                 </th>
+              </tr>
+           </ng-template>
+           <ng-template pTemplate="body" let-rowData let-expanded="expanded" let-columns="columns" let-index="rowIndex">
+               
+            <tr [pRowToggler]="rowData">
+                 <td *ngFor="let col of columns" (click)="refund(rowData)">
+                     <span *ngIf="col.field !== 'dateNTime' ">{{rowData[col.field]}} 
+                           <!-- <span
+                              *ngIf="col.field === 'grandTotal'"><i class="fa fa-info-circle" aria-hidden="true"
+                                 (click)="openBillDialog(index)"></i></span> -->
+                        </span>
+                        <span *ngIf="col.field == 'dateNTime'">  
+                              {{rowData[col.field] | date: "dd-MM-yyyy H:mm" }}  
+                        </span>
+                 </td>
+              </tr>
+           </ng-template>
+           <ng-template pTemplate="emptymessage" let-columns>
+               <tr>
+                   <td [attr.colspan]="columns.length" class="noDataFound" style="text-align: center !important;">
+                      {{noDataFound}}
+                   </td>
+               </tr>
+            </ng-template>
+           <ng-template pTemplate="rowexpansion" let-rowData let-columns="columns" let-index="rowIndex">
+              <tr>
+                 <td [attr.colspan]="columns.length">
+                        <div class="container-fluid">
+                                <div class="row">
+                                   <div class="col-8 table-responsive table__orderDetails pr-0">
+                                      <table class="table">
+                                         <thead class="">
+                                            <tr>
+                                               <th scope="col">Item Name</th>
+                                               <th scope="col">Quantity</th>
+                                               <th scope="col">Amount</th>
+                                               <!-- <th scope="col">Status</th> -->
+                                            </tr>
+                                         </thead>
+                                         <tbody>
+                                            <tr *ngFor="let item of rowData.jmOrderLet; let j = index">
+                                               <td><div style="display: flex;">
+                                                   <div>
+                                                      {{ item.itemName }}
+                                                   </div>
+                                                   <div *ngIf="item.itemCustomization!=null">
+                                                      <span *ngFor="let cItems of item.itemCustomization[0].customization">
+                                                         <span
+                                                            *ngIf="item.itemCustomization[0].type=='radio'">({{cItems.name}})</span>
+                                                      </span>
+                                                   </div>
+                                                </div>
+                                                   <div style="font-size: 10px;    margin-top: 3%;">
+                                                         <span style="color:green">HandedOver</span>: <span>{{item.handedOverQuantity}}  |</span> <span style="color: red;">Rejected</span>: <span>{{item.rejectedQunatity}}  </span>
+                                                      </div>
+                                               </td>
+                                              
+                                               <td >
+                                                  {{ item.quantity }}
+                                               </td>
+                                               <td>{{ item.itemPrice*item.tempQuantity }}</td>
+                                           
+                                               <!-- <td>{{ item.status }}</td> -->
+                                            </tr>
+                                         </tbody>
+                                      </table>
+                                   </div>
+                                   <div class="col-4">
+                                      <dl class="row">
+                                         <div class="col-sm-12 billDetails pb-2"><span class="pt-1 pb-1">Bill Details</span></div>
+                                         <dt class="col-sm-7">Total Amount:</dt>
+                              <dd class="col-sm-5" style="text-align: right;">{{rowData.itemTotal}}</dd>
+                              <dt class="col-sm-7" >Supplier Discount:</dt>
+                              <dd class="col-sm-5" style="text-align: right;">{{rowData.suppplierDiscount}}</dd>
+                              <dt class="col-sm-7">Tax(CGST(2.5%)+SGST(2.5%)):</dt>
+                              <dd class="col-sm-5" style="text-align: right;">{{rowData.taxes}}</dd>
+                              <dt class="col-sm-7">Delivery Charges:</dt>
+                              <dd class="col-sm-5" style="text-align: right;">{{rowData.deliveryCharges}}</dd>
+                              <dt class="col-sm-7">Packaging Charges:</dt>
+                              <dd class="col-sm-5" style="text-align: right;">{{rowData.packagingCharge}}</dd>
+                              <dt class="col-sm-7">Tafel Discount:</dt>
+                              <dd class="col-sm-5" style="text-align: right;">{{rowData.tafelDiscount}}</dd>
+                              <dt class="col-sm-7">You Paid:</dt>
+                              <dd class="col-sm-5" style="text-align: right;">{{rowData.grandTotal}}</dd>
+                              <dt class="col-sm-7">Refund:</dt>
+                              <dd class="col-sm-5" style="text-align: right;">{{refundAmount | number : '1.2-2'}}</dd>                                      </dl>
+                                   </div>
+                                </div>
+                             </div>
+                 </td>
+              </tr>
+           </ng-template>
+           </p-table>
+           
+        </div>
+     </div>

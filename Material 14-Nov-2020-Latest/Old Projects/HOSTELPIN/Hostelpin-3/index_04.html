@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+      <link rel="stylesheet" href="css/font-awesome.css">
+      <link rel="stylesheet" href="css/bjqs.css">
+      <link href="css/styles.css" rel="stylesheet" type="text/css" />
+      <script src="js/jquery.min.js"></script>
+      <title>Hostel Plan</title>
+      <style>
+         .login-signup {
+            padding: 0 0 25px;
+         }
+
+         .btn-success {
+            background: #f0ad4e;
+            border-radius:0;
+            border: 2px solid #f0ad4e;
+            webkit-transition: all 400ms cubic-bezier(.4,0,.2,1);
+            transition: all 400ms cubic-bezier(.4,0,.2,1);
+         }
+
+         .btn-success:hover,.btn-success:focus {
+            background: rgba(26, 161, 157, 0);
+            border: 2px solid #f0ad4e;
+            webkit-transition: all 400ms cubic-bezier(.4,0,.2,1);
+            transition: all 400ms cubic-bezier(.4,0,.2,1);
+            color: #f0ad4e;
+         }
+
+         a {
+            color: #23bab5;
+         }
+
+         ul {
+            list-style-type: none;
+         }
+
+         article[role="login"] {
+            background: #fff;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+            -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 10px rgba(0, 0, 0, 0.24);
+            webkit-transition: all 400ms cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 400ms cubic-bezier(0.4, 0, 0.2, 1);
+            padding: 30px 50px;
+            margin-bottom: 20px;
+         }
+
+         article[role="login"] input[type="submit"] {
+            padding: 10px 15px;
+            font-size: 16px;
+         }
+
+         article[role="login"]:hover {
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+            -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 1px 15px rgba(0, 0, 0, 0.23);
+            webkit-transition: all 400ms cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 400ms cubic-bezier(0.4, 0, 0.2, 1);
+         }
+
+         article[role="login"] h3 {
+            font-size: 26px;
+            font-weight: 300;
+            color: #f0ad4e;
+            margin-bottom: 20px;
+         }
+
+         article[role="login"] p {
+            font-size: 16px;
+            padding: 5px 15px;
+         }
+
+         .nav-tab-holder {
+            padding: 0 0 0 30px;
+            float: right;
+         }
+
+         .nav-tab-holder .nav-tabs {
+            border: 0;
+            float: none;
+            display: table;
+            table-layout: fixed;
+            width: 100%;
+         }
+
+         .nav-tab-holder .nav-tabs > li {
+            margin-bottom: -3px;
+            text-align: center;
+            padding: 0;
+            display: table-cell;
+            float: none;
+            padding: 0;
+         }
+
+         .nav-tab-holder .nav-tabs > li > a {
+            background: #d9d9d9;
+            color: #6c6c6c;
+            margin: 0;
+            font-size: 18px;
+            font-weight: 300;
+         }
+
+         .nav-tab-holder .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+            color: #FFF;
+            background-color: #f0ad4e;
+            border: 0;
+            border-radius: 0;
+         }
+
+         .mobile-pull {
+            float: right;
+         }
+
+         article[role="manufacturer"] {
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+            -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 10px rgba(0, 0, 0, 0.24);
+            padding: 0 0 40px;
+            max-width: 420px;
+            margin: -45px auto 0;
+         }
+
+         article[role="manufacturer"] header {
+            background: #f0ad4e;
+            color: #fff;
+            padding: 10px;
+            font-size: 18px;
+            font-weight: 300;
+         }
+
+         article[role="manufacturer"] h1 {
+            font-size: 26px;
+            font-weight: 300;
+            border-bottom: 1px solid #f2f2f2;
+            padding: 25px 15px;
+         }
+
+         article[role="manufacturer"] ul {
+            padding: 0 25px;
+         }
+
+         article[role="manufacturer"] ul li {
+            font-size: 16px;
+            border-bottom: 1px solid #eaeaea;
+            padding: 20px 15px;
+            color:#404040;
+         }
+
+         article[role="manufacturer"] ul li i {
+            color: #23bab5;
+         }
+
+         .login-signup {
+            padding: 0 0 25px;
+         }
+
+         @media only screen and (max-width: 767px) {
+            .mobile-pull {
+               float: none;
+            }
+
+            .nav-tab-holder {
+               float: none;
+               overflow: hidden;
+            }
+
+            .nav-tabs > li > a {
+               font-size: 13px;
+               font-weight: 600;
+               padding: 10px 5px;
+               overflow: hidden;
+               text-overflow: ellipsis;
+            }
+
+            .nav-tabs > li {
+               width: 50%;
+            }
+         }
+         body {
+            background: url(http://borgeshostel.com/wp-content/uploads/2014/08/Hostel-2397.jpg) no-repeat center center fixed #000;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+         }
+         html,body {
+            height:100%;
+            width:100%;
+            margin:0;
+         }
+         body , body {
+            display:flex;
+         }
+         .formAlign {
+            margin:auto;
+         }
+         article[role="manufacturer"] ul li
+         {
+            color: #ffffff !important;
+         }
+      </style>
+   </head>
+   <body>
+      <div id="loader">
+         <div class="loader">
+            <div class="dot dot1"></div>
+            <div class="dot dot2"></div>
+            <div class="dot dot3"></div>
+            <div class="dot dot4"></div>
+         </div>
+      </div>
+
+      <div class="login-signup col-lg-8 col-lg-offset-2 formAlign">
+         <div class="row">
+            <div class="col-sm-6 nav-tab-holder">
+               <ul class="nav nav-tabs row" role="tablist">
+                  <li role="presentation" class="active col-sm-6"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Admin</a></li>
+                  <li role="presentation" class="col-sm-6"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">User</a></li>
+               </ul>
+            </div>
+
+         </div>
+
+
+         <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="home">
+               <div class="row">
+
+                  <div class="col-sm-6 mobile-pull">
+                     <article role="login">
+                        <h3 class="text-center"><i class="fa fa-lock"></i>USER</h3>
+                        <form class="signup" action="index.html" method="post">
+                           <div class="form-group">
+                              <input type="text" class="form-control" placeholder="UserName">
+                           </div>
+                           <div class="form-group">
+                              <input type="email" class="form-control" placeholder="Email Address">
+                           </div>
+                           <div class="form-group">
+                              <input type="text" class="form-control" placeholder="Phone Number">
+                           </div>
+                           <div class="form-group">
+                              <input type="password" class="form-control" placeholder="Password">
+                           </div>
+                           <div class="form-group">
+                              <input type="password" class="form-control" placeholder="Confirm Password">
+                           </div>
+                           <div class="form-group">
+                              <div class="checkbox">
+                                 <label>
+                                    <input type="checkbox"> Please accept the terms and conditions to proceed with your request.
+                                 </label>
+                              </div>
+                           </div>
+                           <div class="form-group">
+                              <input type="submit" class="btn btn-success btn-block"  value="SUBMIT">
+                           </div>
+                        </form>
+
+
+
+                     </article>
+                  </div>
+
+                  <div class="col-sm-6">
+                     <article role="manufacturer"  class="text-center" style="background: #000; opacity: 0.6; color: #fff;">
+                        <header>
+                           ADMIN
+                        </header>
+                        <h1>FREE</h1>
+                        <ul class="text-left">
+                           <li><i class="fa fa-check"></i>  Unlimited  access</li>
+                           <li><i class="fa fa-check"></i>  Create Project Lists</li>
+                           <li><i class="fa fa-check"></i>  Create Project Lists</li>
+
+                        </ul>
+                        <a href="#" class="btn btn-success">SignUp  For Admin</a>
+                     </article>
+                  </div>
+
+               </div>
+               <!-- end of row -->
+            </div>
+            <!-- end of home -->
+
+            <div role="tabpanel" class="tab-pane" id="profile">
+               <div class="row">
+
+                  <div class="col-sm-6 mobile-pull">
+                     <article role="login">
+                        <h3 class="text-center"><i class="fa fa-lock"></i> Create User Account</h3>
+                        <form class="signup" action="index.html" method="post">
+                           <div class="form-group">
+                              <input type="text" class="form-control" placeholder="UserName">
+                           </div>
+                           <div class="form-group">
+                              <input type="email" class="form-control" placeholder="Email Address">
+                           </div>
+
+                           <div class="form-group">
+                              <input type="password" class="form-control" placeholder="Password">
+                           </div>
+                           <div class="form-group">
+                              <input type="password" class="form-control" placeholder="Confirm Password">
+                           </div>
+                           <div class="form-group">
+                              <div class="checkbox">
+                                 <label>
+                                    <input type="checkbox"> Please accept the terms and conditions to proceed with your request.
+                                 </label>
+                              </div>
+                           </div>
+                           <div class="form-group">
+                              <input type="submit" class="btn btn-success btn-block"  value="SUBMIT">
+                           </div>
+                        </form>
+
+
+                     </article>
+                  </div>
+
+                  <div class="col-sm-6">
+                     <article role="manufacturer"  class="text-center" style="background: #000; opacity: 0.6; color: #fff;">
+                        <header>
+                           USER
+                        </header>
+                        <h1>FREE</h1>
+                        <ul class="text-left">
+                           <li><i class="fa fa-check"></i>  Unlimited Site Access</li>
+                           <li><i class="fa fa-check"></i>   Unlimited Site Access</li>
+                           <li><i class="fa fa-check"></i>  Unlimited Site Access</li>
+
+                        </ul>
+
+                        <a href="#" class="btn btn-success">SignUp  For User</a>
+                     </article>
+                  </div>
+               </div>
+            </div>
+         </div>
+      <!-- EMd of Content -->
+
+      <script src="js/bootstrap.min.js"></script>
+      <script src="js/bjqs.min.js"></script>
+      <script src="js/my_scripts.js"></script>
+   </body>
+</html>

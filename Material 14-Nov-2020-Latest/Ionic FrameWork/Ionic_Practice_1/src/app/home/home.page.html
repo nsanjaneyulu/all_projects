@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="test">List</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding class="table heroes">
+    <ion-grid>
+        <ion-row>
+          <ion-col col-2>ID</ion-col>
+          <ion-col col-2>name</ion-col>
+          <ion-col col-2>city</ion-col>
+          <ion-col col-2>lng</ion-col>
+          <ion-col col-2>catchPhrase</ion-col>
+          <ion-col col-2>ID</ion-col>
+        </ion-row>
+        <ion-row *ngFor="let user of users">
+            <ion-col col-2>{{user.id}}</ion-col>
+            <ion-col col-2>{{user.name}}</ion-col>
+            <ion-col col-2>{{user.address.city}}</ion-col>
+            <ion-col col-2>{{user.address.geo.lat}}</ion-col>
+            <ion-col col-2>{{user.company.name}}</ion-col>
+            <ion-col col-2>ID</ion-col>
+        </ion-row>
+      </ion-grid>
+ 
+</ion-content>

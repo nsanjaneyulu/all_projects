@@ -1,0 +1,184 @@
+<wicket:extend>
+        <div id="content">
+            <div class="summaryPage">
+            <!-- Main div start here -->
+                <div class="summaryLiveStocks">
+                    <h1>Live Stock By State</h1>
+                    <div class="liveStocks-Header">
+                        <p><p class="liveStocks-Data">Live Stock Count</p> 
+                        <p class="liveStocks-Count" wicket:id="totalCount_bystate"></p></p>
+                    </div>
+                    <div class="liveStocks-Rows" wicket:id="ls_rows" style="clear:both;">
+                        <p><p wicket:id="state" class="liveStocksRows-Data" style="clear:both;"></p> 
+                        <p wicket:id="count" class="liveStocksRows-Count"></p>
+                        </p>
+                    </div>
+                </div>
+
+            <!-- Main div end here -->
+            <div class="summaryLiveStocks">
+               <h1>Live Stock By Sex</h1>
+                <div class="liveStocks-Header">
+                    <p><p class="liveStocks-Data">Live Stock Count</p>
+                    <p wicket:id="totalCount_bysex" class="liveStocks-Count"></p></p>
+                </div>
+                <div wicket:id="lss_rows" class="liveStocks-Rows" style="clear:both;">
+                    <p><p wicket:id="sex" class="liveStocksRows-Data"></p><p wicket:id="count" class="liveStocksRows-Count"></p></p>
+                </div>
+            </div>
+            <div class="summaryLiveStocks">
+               <h1>Live Stock By Breed</h1>
+                <div class="liveStocks-Header">
+                    <p><p class="liveStocks-Data">Live Stock Count</p>
+                    <p wicket:id="totalCount_breedtype" class="liveStocks-Count"></p></p>
+                </div>
+                <div wicket:id="bt_rows" class="liveStocks-Rows" style="clear:both;">
+                    <p><p wicket:id="state" class="liveStocksRows-Data"></p><p wicket:id="count" class="liveStocksRows-Count"></p></p>
+                </div>
+            </div>
+            <div class="summaryHealth">
+                <h1>Due for Vaccinnation</h1>
+                <div class="health-Rows">
+                    <p><p wicket:id="vacci_navigator" class="health-Navigation">[dataview navigator]
+                    </p></p>
+                </div>
+                <div class="health-Header">
+                    <h2 wicket:id="vaccine_orderbycode">Live Stock Code</h2>
+                    <h2>Last Vaccination Date</h2>
+                    <h2>Next Vaccination Date</h2>
+                </div>
+                <div wicket:id="vaccination_due_rows" style="clear:both;">
+                    <div class="health-Rows">
+                        <h3><a href="#" wicket:id="livestock_edit"><span wicket:id="lsLiveStockCode" /></a></h3>
+                        <h3><span wicket:id="lastVaccinationDate"></span></h3>
+                        <h3><span wicket:id="nextVaccinationDate"></span></h3>
+                    </div>
+                </div>
+            </div>
+            <div class="summaryHealth">
+              <h1>Due for De-worming</h1>
+                <div class="health-Rows">
+                    <p><p wicket:id="deworm_navigator" class="health-Navigation">[dataview navigator]</p></p>	
+                </div>
+                <div class="health-Header">
+                    <h2 wicket:id="deworm_orderbycode">Live Stock Code</h2>
+                    <h2>Last De-Worming Date</h2>
+                    <h2>Next De-Worming Date</h2>
+                </div>
+                <div wicket:id="deworm_due_rows">
+                    <div class="health-Rows">
+                        <h3><a href="#" wicket:id="livestock_edit"><span wicket:id="lsLiveStockCode" /></a></h3>
+                        <h3><span wicket:id="lastVermDate"></span></h3>
+                        <h3><span wicket:id="nextVermDate"></span></h3>
+                    </div>
+                </div>
+            </div>
+             <div class="summaryHealth">
+               <h1>Employee Summary</h1>
+               <br />
+                <div class="health-Header">
+                    <p><p class="health-Data">No of Employees</p><p wicket:id="totalCount_person" class="health-Count"></p></p>
+                </div>
+                <div wicket:id="person_rows" class="health-Rows">
+                    <p><p wicket:id="state" class="healthRows-Data"></p><span wicket:id="count" class="healthRows-Count"></span></p>
+                </div>
+            </div>
+             <div class="summaryHealth">
+              <h1>Calves due for Stop Feeding</h1>
+                <div class="health-Rows">
+                    <p><p wicket:id="stop_feeding_navigator" class="health-Navigation">[dataview navigator]</p></p>
+                </div>
+                <div class="health-Header">
+                    <h2 wicket:id="stop_feeding_orderbycode">Live Stock Code</h2>
+                    <h2>Birth Date</h2>
+                    <h2>Calf (s) Feeding Stop  Date</h2>
+              </div>
+                <div wicket:id="stopfeeding_rows">
+                    <div class="health-Rows">
+                        <h3><a href="#" wicket:id="livestock_edit"><span wicket:id="lsLiveStockCode" /></a></h3>
+                        <h3><span wicket:id="birthDate"></span></h3>
+                        <h3><span wicket:id="stopFeedingDate"></span></h3>
+                    </div>
+                </div>
+            </div>
+            <div class="summaryHealth">
+              <h1>Herds due for Dry Off</h1>
+                <div class="health-Rows">
+                    <p><p wicket:id="stop_milking_navigator" class="health-Navigation">[dataview navigator]</p></p>
+                </div>
+                <div class="health-Header">
+                    <h2 wicket:id="stop_milk_orderbycode">Live Stock Code</h2>
+                    <h2>Conceived Date</h2>
+                    <h2>Drying Off Herds <br />Date</h2>
+              </div>
+                <div wicket:id="stopmilking_rows">
+                    <div class="health-Rows">
+                        <h3><a href="#" wicket:id="livestock_edit"><span wicket:id="lsLiveStockCode" /></a></h3>
+                        <h3><span wicket:id="conceivedDate"></span></h3>
+                        <h3><span wicket:id="stopMilkingDate"></span></h3>
+                    </div>
+                </div>
+            </div>
+              <div class="summaryMilkyield">
+               <h1>Milk Yeilding: <span wicket:id="ytdYield"></span></h1>
+                <div class="milkYeild-Header">
+                    <h2>Month</h2>
+                    <h2>MilkYeilding</h2>
+                </div>
+                <div class="milkYeild-HeaderData">
+                    <p><h2> <span>&nbsp;</span></h2>
+                    <h2 wicket:id="milk_header"><span wicket:id="milk_headr_id"></span></h2>						
+                    <h2>Total</h2></p>
+                </div>
+                <div wicket:id="milk_rows" class="milkYeild-Rows">
+                    <h3><span wicket:id="month"></span></h3>
+                    <h3 wicket:id="slotYield"><span wicket:id="slotYield"></span></h3>
+                    <h3><span wicket:id="yield"></span></h3>
+                </div>
+            </div>
+            <div class="netResult">
+              <h1>Expense Report</h1>
+                <div class="netResult-Header">
+                    <p><p class="netResult-Data">Expense YTD</p><p wicket:id="expense_count" class="netResult-Count"></p></p>
+                </div>
+                <div wicket:id="expense_rows" class="netResult-Rows" style="clear:both;">
+                    <p><p wicket:id="state" class="netResultRows-Data"></p><p wicket:id="count" class="netResultRows-Count"></p></p>
+                </div>
+            </div>
+            <div class="netResult">
+              <h1>Revenue Report</h1>
+                <div class="netResult-Header">
+                    <p><p class="netResult-Data">Revenue YTD</p><p wicket:id="purcchase_count" class="netResult-Count"></p></p>
+                </div> 
+                <div wicket:id="purchase_rows" class="netResult-Rows" style="clear:both;">
+                    <p><p wicket:id="state" class="netResultRows-Data"></p><p wicket:id="count" class="netResultRows-Count"></p></p>
+                </div>
+            </div>
+            <div class="netResult">
+              <h1>Net Profit / Loss</h1>
+                <div class="netResult-Header">
+                    <p><p class="netResult-Data">Profit/Loss YTD</p><p wicket:id="netprofit_loss_count" class="netResult-Count"></p>
+                    </p>
+                </div>
+                <div wicket:id="net_profit_loss_rows" class="netResult-Rows" style="clear:both;">
+                    <p><p wicket:id="state" class="netResultRows-Data"></p><p wicket:id="count" class="netResultRows-Count"></p></p>
+                </div>
+            </div>
+            <div class="summaryFeed">
+              <h1>Feeding Summary</h1>
+                <div class="feed-HeaderData">
+                    <h2>Month</h2>
+                    <h2>Feeding</h2>
+                </div>
+                <div class="feed-HeaderFeedData" style="clear:both;">
+                    <h2><span>&nbsp;</span></h2>
+                    <h2 wicket:id="feed_header"><span wicket:id="feed_headr_id">&nbsp;</span></h2>													
+                </div>
+                <div wicket:id="feeding_rows" class="feed-Rows">
+                    <h3><span wicket:id="month"></span></h3>
+                    <h3 wicket:id="feeding_columns"><span wicket:id="column"></span></h3>							
+                </div>
+            </div>
+        </div>
+    </div>
+</wicket:extend>

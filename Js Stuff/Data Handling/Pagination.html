@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title>Paginat</title>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+   </head>
+   <body class="col-md-12">
+      <input class="form-controls" id="tableSearch"/>
+      <div class="table-responsive">
+         <table class="table table_posts">
+         </table>
+      </div>
+      <a href="#" class="btn btn-primary" id="retrieve-resources">Retrieve List</a>
+      <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+      <script>
+         $(document).ready(function() {
+         
+             var users = [];
+         
+         
+         
+             function getPosts() {
+                 $.ajax({
+                     type: "GET",
+                     url: "https://jsonplaceholder.typicode.com/users",
+                     success: function(result) {
+                         users = result;
+                         renderUsers(result)
+                         console.log("Ajax Response Completed", users)
+                     }
+                 });
+             }
+         
+             function renderUsers(result) {
+                 var $postTable = $('.table_posts');
+         
+                 if (!Array.isArray(result) || !result.length) {
+                     return false;
+                 }
+         
+                 tableHeadings = Object.keys(result[0]);
+                 console.log('tableHeadings', tableHeadings);
+         
+                 $thead = $("<thead/>").appendTo($postTable);
+                 $theadRow = $("<tr/>").appendTo($thead);
+                 tableHeadings.forEach(function(heading) {
+         
+                     if (typeof result[0][heading] !== 'object') {
+                         $("<th/>").text(heading).attr('key', heading).appendTo($theadRow)
+                     }
+         
+         
+                 });
+         
+         
+                 $tbody = $("<tbody/>").appendTo($postTable);
+         
+                 result.forEach(function(post) {
+         
+                     $row = $("<tr/>").appendTo($tbody);
+         
+                     Object.keys(post).forEach(function(key) {
+         
+                         if (typeof post[key] !== 'object') {
+                             $("<td/>").text(post[key]).appendTo($row)
+                         }
+         
+                     })
+                 });
+
+                 generatePagination($postTable, 5);
+             }
+
+             function generatePagination($table, per_page) {
+                var totalRows = $table.find("tbody tr").length;
+                var recordsPerPage = per_page || 2;
+                var numOfPages = Math.ceil(totalRows / recordsPerPage);
+
+                $table.data({
+                    totalRows: totalRows,
+                    recordsPerPage: recordsPerPage,
+                    numOfPages: numOfPages,
+                    currentPage: 1
+                });
+
+                var $nav = $("<nav/>");
+                var $ul = $("<ul/>")
+                            .addClass('pagination')
+                            .data({
+                                table: $table
+                            })
+                            .appendTo($nav);
+
+                var $prevLi = $("<li/>").addClass('previous  disabled').appendTo($ul);
+                var $prev  = $("<a/>")
+                                .text('Prev')
+                                .attr('href', '#')
+                                .appendTo($prevLi);
+
+                //Generating pagination links
+                for(var i=0; i < numOfPages; i++) {
+                    var $li = $("<li/>").appendTo($ul);
+                    var $link  = $("<a/>").text(i + 1).attr('href', '#').appendTo($li);
+                    if(i == 0) {
+                        $li.addClass('active')
+                    }
+                }
+
+                var $nextLi = $("<li/>").addClass('next').appendTo($ul);
+                var $next  = $("<a/>").text('Next').attr('href', '#').appendTo($nextLi);
+                
+
+                $($nav).insertAfter($table);
+                console.log('table data', $table.data())
+             }
+         
+             getPosts();
+
+             $("body").on("click", ".pagination a", function(e){
+                e.preventDefault();
+
+                var $this = $(this);
+                var $li = $this.parent();
+                var currentPage = $.trim( $this.text() );
+                var $paginationUl = $this.parents(".pagination").first();
+
+                if($this.parent().hasClass("disabled") || $this.parent().hasClass("active")) {
+                    return false;
+                }
+
+                var $table = $paginationUl.data('table');
+                var $rows = $table.find("tbody tr");
+                var tableData = $table.data();
+
+                $paginationUl.find("li").removeClass('active');
+                $paginationUl.find("li").removeClass('disabled');
+
+
+                if(currentPage === 'Prev') {
+
+                    tableData.currentPage--;
+                    currentPage = tableData.currentPage;
+
+                } else if(currentPage === 'Next') {
+
+                    tableData.currentPage++;
+                    currentPage = tableData.currentPage;
+
+                } else {
+                    tableData.currentPage = currentPage
+                }
+
+
+                if( !$li.hasClass('previous') && !$li.hasClass('next') ) {
+                    $li.addClass('active')
+                } else {
+                    $paginationUl.find("li").eq(currentPage).addClass('active')
+                }
+
+                if(currentPage == 1) {
+                    $paginationUl.find(".previous").addClass('disabled');
+                }
+
+                if(currentPage == tableData.numOfPages) {
+                    $paginationUl.find(".next").addClass('disabled');
+                }
+
+                var init = (currentPage == 1) ? 1 : ((tableData.currentPage - 1) * tableData.recordsPerPage);
+                var next = 
+                console.log('init', init)
+                for(var i = init; i < )
+
+                //$table.data(tableData)
+
+
+                console.log('Table', $table, tableData, currentPage)
+
+             }) 
+         
+         });
+      </script>
+   </body>
+</html>

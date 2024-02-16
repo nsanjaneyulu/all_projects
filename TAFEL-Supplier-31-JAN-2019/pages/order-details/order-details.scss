@@ -1,0 +1,89 @@
+page-order-details {
+	.divHide__styles {
+	
+		
+	}
+	.text__elipsis {
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		overflow: hidden;
+	
+	
+		@supports (-webkit-line-clamp: 1) {
+		  overflow: hidden;
+		  text-overflow: ellipsis;
+		  white-space: initial;
+		  display: -webkit-box;
+		  -webkit-line-clamp: 1;
+		  -webkit-box-orient: vertical;
+		}
+	  }
+	.row__reverse {
+		display: flex;
+		flex-direction: row-reverse;
+	}
+	.rejected__qty {
+		color: #e78161;
+	}
+	.handedover__qty {
+		color: #5cd0b4;
+	}
+	.item__completed__status {
+		color: #11BA91
+	}
+	.padding__vehicleNumber {
+		padding: 5px 0px;
+	}
+	.font__weight {
+		font-weight: bold;
+	}
+	.module {
+		height: 40px;
+	}
+	.module>span {
+		padding: 12px 10px;
+	}
+	.module__sub {
+		color: #fff;
+		font-weight: bold;
+		border-radius: 5px;
+		background: repeating-linear-gradient( 45deg, #ff9f1c, #ff9f1c 10px, #ff9f1c 10px, #ff9f1c 20px);
+	}
+	.diner_call {
+		color: #11BA91;
+		font-size: $fontSize__style + 4px;
+		font-weight: 500;
+		line-height: $lineHeight__styles + 3px;
+		display: flex;
+		flex-direction: row-reverse;
+	}
+	.header>.toolbar>.toolbar-background-md {
+		background: #fff;
+	}
+	.declaneStyle {
+		border: 1px solid #e67e22 !important;
+		color: #e67e22;
+	}
+	.aceptStyle {
+		border: 1px solid #27ae60 !important;
+		color: #27ae60;
+	}
+	.label-md {
+		margin: 0px !important;
+	}
+	.full__order {
+		background: #f8f8f8;
+		margin-top: 8px;
+	}
+	.quantity__Styles {
+		color: #11BA91;
+		font-size: 10px;
+		font-weight: bold;
+		line-height: 16px;
+	}
+	.quantity__Styles_Lables {
+		color: rgba(0, 0, 0, 0.6);
+		font-size: 12px;
+		line-height: 16px;
+	}
+}

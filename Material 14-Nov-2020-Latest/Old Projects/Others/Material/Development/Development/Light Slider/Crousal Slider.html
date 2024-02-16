@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Crousal Slider</title>
+<style>
+#lightSlider img 
+{
+	width:100%;
+}
+</style>
+<link type="text/css" rel="stylesheet" href="css/lightSlider.css" />
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="js/jquery.lightSlider.js"></script>
+</head>
+
+<body>
+	<ul id="lightSlider">
+        <li>
+            <img src="http://placehold.it/450x310/6FA5C1" />
+        </li>
+        <li>
+            <img src="http://placehold.it/450x310/4B4ED8" />
+        </li>
+        <li>
+            <img src="http://placehold.it/450x310/4BD86C" />
+        </li>
+        <li>
+            <img src="http://placehold.it/450x310/F18127" />
+        </li>
+        <li>
+            <img src="http://placehold.it/450x310/E324E1" />
+        </li>
+        <li>
+            <img src="http://placehold.it/450x310/3D7355" />
+        </li>
+        <li>
+            <img src="http://placehold.it/450x310/F18127" />
+        </li>
+        <li>
+            <img src="http://placehold.it/450x310/4BD86C" />
+        </li>
+        <li>
+            <img src="http://placehold.it/450x310/4B4ED8" />
+        </li>
+        <li>
+            <img src="http://placehold.it/450x310/6FA5C1" />
+        </li>
+	</ul>
+    <script type="text/javascript">
+    $(document).ready(function() {
+    $('#lightSlider').lightSlider({
+        item:5,
+		auto:true,
+        loop:true,
+        slideMove:1,
+        easing: 'cubic-bezier(0.25, 0, 0.25, 1)',
+        speed:600,
+        responsive : [
+            {
+                breakpoint:800,
+                settings: {
+                    item:3,
+                    slideMove:1,
+                    slideMargin:6,
+                  }
+            },
+            {
+                breakpoint:480,
+                settings: {
+                    item:2,
+                    slideMove:1
+                  }
+            }
+        ]
+    });  
+  });
+	</script>
+</body>
+</html>

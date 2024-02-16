@@ -1,0 +1,27 @@
+<div class="container-fluid tafelpos-body">
+    <div class="row">
+        <div class="col-md-7">
+            <div class="main-text-block">
+                <h2>Long Queues?</h2>
+                <h1>Get Your TAFEL <br /> Ditch the Queue</h1>
+            </div>
+        </div>
+        <div class="col-md-5">
+            <div class="login-form-block">
+                <div class="mb-3" style="font-size: 1.1rem;">Welcome back! Please login to your account.</div>
+                <form [formGroup]="loginForm" (ngSubmit)="login()">
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" class="form-control" formControlName="userId" placeholder="Enter username">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" formControlName="password" placeholder="Enter password">
+                    </div>
+                    <button type="submit" class="btn btn-secondary mt-2" [disabled]="!loginForm.valid">Login</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="border-top copyright-block">&copy; 2019-TAFEL. All rights reserved.</div>
+</div>

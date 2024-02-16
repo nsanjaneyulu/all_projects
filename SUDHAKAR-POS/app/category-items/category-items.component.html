@@ -1,0 +1,17 @@
+<div>
+    <input class="form-control" placeholder="Search Item" [(ngModel)]="searchCategoryItem" />
+</div>
+<perfect-scrollbar [config]="customScrollBarConfig" class="container">
+    <div style="height: 100%;">
+        <div class="row" style="height: 410px;">
+            <div class="col-sm-2 col-md-4 col-lg-3" *ngFor="let categoryItem of categoryItems | uniqueFilter: 'id'  | menuFilter: searchCategoryItem; let i=index" (click)="onSelectItem(categoryItem, i)">
+                <div class="item border d-table" [class.selected]="categoryItem.isSelected === true">
+                    <div class="d-table-cell">
+                        <span>{{categoryItem.name}}</span><br />
+                        <span class="item-price">{{categoryItem.price | currency:'&#8377;'}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</perfect-scrollbar>

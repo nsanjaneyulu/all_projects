@@ -1,0 +1,82 @@
+<div class="row col-12 mt-2">
+  <div class="col-6 row">
+     <label for="staticEmail" class="col-sm-3 col-form-label">Select Mall</label>
+     <div class="col-sm-6">
+        <select class="form-control" [(ngModel)]="mallId" (change)="mallNameChange(mallId)">
+        <option *ngFor="let mall of mallDataResp" [value]="mall.mallId">{{mall.mallName}}</option>
+        </select>
+     </div>
+  </div>
+  <div class="col-6 row" *ngIf="allPermitted == 'No'">
+     <label for="inputEmail3" class="col-sm-3 col-form-label">Select Outlet</label>
+     <div class="col-sm-6">
+        <select [(ngModel)]="outletId" class="form-control" (change)="outletNameChange(outletId)">
+        <option *ngFor="let outlet of outletDetailsResp.jmoutlet" [value]="outlet.id">
+        {{outlet.name}}
+        </option>
+        </select>
+     </div>
+  </div>
+</div>
+<div class="col-12 mt-3">
+  <ul class="list-group list-group-horizontal col-12">
+     <li class="list-group-item" (click)="orderDetailsTable('Pending')">Pending</li>
+     <li class="list-group-item" (click)="orderDetailsTable('Accept')">Accept</li>
+     <li class="list-group-item" (click)="orderDetailsTable('Ready')">Ready</li>
+     <li class="list-group-item" (click)="orderDetailsTable('Rejected')">Rejected</li>
+     <li class="list-group-item" (click)="orderDetailsTable('Completed')">Completed</li>
+  </ul>
+</div>
+<div>
+  <div class="col-lg-9 col-xs-12 mt-3">
+     <div class="table_styles table-responsive bg-white ">
+        <table class="col-12 table table-striped table-borderless">
+           <thead class="thead-light">
+              <tr>
+                 <th class="">ORDER ID</th>
+                 <th class="">OUTLET NAME</th>
+                 <th class="">ORDER VALUE</th>
+                 <th class="">STATUS</th>
+                 <th class="">View Details</th>
+              </tr>
+           </thead>
+           <tbody *ngIf="orderDetailsTableShow && !loader">
+              <tr *ngFor="let orderDetails of orderDetailsResp; let i=index;">
+                 <td class="align-middle">{{orderDetails.fullOrder5DigitID}}</td>
+                 <td class="align-middle">{{orderDetails.outletName}}</td>
+                 <td class="align-middle">{{orderDetails.amount}}</td>
+                 <td class="align-middle">{{orderDetails.status}}</td>
+                 <td>
+                    <button type="button" (click)="viewOrderDetails(orderDetails)" class="btn btn-primary btn-sm rounded-pill">View Details</button>
+                 </td>
+              </tr>
+           </tbody>
+           <tbody *ngIf="!orderDetailsTableShow">
+              <tr>
+                 <td colspan="4" class="align-middle text-center">No Data Found</td>
+              </tr>
+           </tbody>
+        </table>
+     </div>
+  </div>
+</div>
+<div class="parent">
+	<strong>Parent Component</strong>
+	<hr /> 
+  Enter a value:
+	<input type="text" [(ngModel)]="myTextVal">
+	<button (click)="sendTextValue()">Pass Value to Subject Observable</button>
+	<br /><br /> Value emitted from child using @Output: <strong>{{valueFromChild}}</strong>
+  <br />  <br />
+  <hr />
+  <button (click)="toggleChildElementHandler()">Toggle Chhile Element</button>
+  <br />
+  <br />
+
+	<!--Child-->
+	<app-learn (myOutputVal)="readOutputValueEmitted($event)" *ngIf="toggleChildElement"></app-learn>
+
+</div>
+<div *ngIf="loader">
+  <app-loader></app-loader>
+</div>

@@ -1,0 +1,324 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http//www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xmlns="http//www.w3.org/1999/xhtml">
+	<head>
+	<title>Welcome to Company Name</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+	<link href="style.css" rel="stylesheet" type="text/css" />
+	<script language="javascript" type="text/javascript" src="datetimepicker.js">
+
+
+	</script>
+<script>
+		function changeUrl() {
+		var redirect;
+		redirect = document.getElementById('newUrl').value;
+		document.location.href = redirect;
+		}
+	</script>	
+	<style type="text/css">
+	<!--
+
+	-->
+	</style>
+    <script type="text/javascript">
+// From: http://www.webdeveloper.com/forum/showthread.php?t=218226
+
+function ToggleList(IDS) {
+HideRange('ulist','div',IDS);  // not required unless using 'HideRange()' below
+  var CState = document.getElementById(IDS);
+  if (CState.style.display != "block") { CState.style.display = "block"; }
+                                  else { CState.style.display = "none"; }
+}
+function HideRange(sect,elTag,IDS) {
+  var ContentObj = document.getElementById(sect);
+  var AllContentDivs = ContentObj.getElementsByTagName(elTag);
+  for (i=0; i<AllContentDivs.length; i++) {
+    if (IDS != AllContentDivs[i].id) { AllContentDivs[i].style.display="none"; }
+  }
+}
+
+</script>
+
+<style type="text/css">
+  .divInfo { display:none; }
+.style6 {
+	font-size: small;
+	font-weight: bold;
+	font-style: italic;
+}
+.style7 {font-size: small}
+.style13 {font-size: small; font-weight: bold; }
+</style>
+
+	</head>
+<body>
+	<div id="container">
+		<div id="top">
+		<h1><font color="#330066">Welcome to Company Name</font></h1>
+		<div class="search">
+		<!-- for search -->
+		</div>
+	</div>
+	<div id="navcontainer">
+		<ul id="navlist">
+		<li id="active"><a href="HomePage.html" id="current">Home</a></li>
+		<li><a href="ContactUs.html">Contact us</a></li>
+		</ul>
+		</div>
+	<div id="leftnav">
+    <h2>Menu</h2>
+   <ul id="leftnavmenu">
+        <li><a href="#" onClick="ToggleList('a')">Live Stock Management</a></li>
+        <li style="padding-left:10%;"><a href="LiveStockNew.html">Add Live Stock</a></li>
+		<li style="padding-left:10%;"><a href="EditUpdateSearch.html">Edit / Update Live Stock</a></li>
+        <li style="padding-left:10%;"><a href="PromotedSearch.html">Promoted LiveStock Hostory</a></li>
+        <li><a href="#" onClick="ToggleList('b')">Milk Yeild Management</a></li>
+   <div id="b" class="divInfo">
+        <li style="padding-left:10%;"><a href="AddDailyMilkProduction.html">Add Daily Milk Production</a></li>
+        <li style="padding-left:10%;"><a href="MilkProductionEdit.html">Add / Edit Daily Milk Production</a></li>
+    </div>
+         <li><a href="#" onClick="ToggleList('c')">Feeding Management</a></li>
+    <div id="c" class="divInfo">
+      <li style="padding-left:10%;"><a href="AddDailyFeeding.html">Add Daily Feeding</a></li>
+        <li style="padding-left:10%;"><a href="AddNewFeeding.html">Add Feeding Type</a></li>
+        <li style="padding-left:10%;"><a href="Feeding.html">Edit / Update Feeding Type</a></li>
+        <li style="padding-left:10%;"><a href="SuggestedFeeding.html">Suggested Feeding</a></li>
+    </div>
+       <li><a href="#" onClick="ToggleList('d')">Search Management</a></li>
+     <div id="d" class="divInfo">
+		<li style="padding-left:10%;"><a href="SearchCriteria.html">Search Criteria</a></li>
+     </div>
+        <li><a href="#" onClick="ToggleList('e')">Provisions Management</a></li>
+     <div id="e" class="divInfo">
+		<li style="padding-left:10%;"><a href="MonthlyProvisionNew.html">Add Monthly Provisions</a></li> 
+        <li style="padding-left:10%;"><a href="MonthlyProvisionEdit.html">Edit / Update Monthly Provisions</a></li> 
+         <li style="padding-left:10%;"><a href="SuggestedProvisions.html">Suggested Provisions</a></li>
+     </div>
+         <li><a href="#" onClick="ToggleList('f')">Stock Management</a></li>
+      <div id="f" class="divInfo">
+		<li style="padding-left:10%;"><a href="StockAddNew.html">Add New Stock</a></li> 
+        <li style="padding-left:10%;"><a href="Stocks.html">Edit / Update Stock</a></li> 
+      </div>
+         <li><a href="#" onClick="ToggleList('g')">Financial Management</a></li>
+      <div id="g" class="divInfo">
+		 <li style="padding-left:10%;"><a href="Revenue.html">Revenue / Sales</a></li> 
+         <li style="padding-left:10%;"><a href="Expenses.html">Expenses</a></li> 
+         <li style="padding-left:10%;"><a href="ProfitLoss.html">Profit / Loss</a></li> 
+      </div>
+         <li><a href="#" onClick="ToggleList('h')">Employee Management</a></li>
+      <div id="h" class="divInfo">
+		  <li style="padding-left:10%;"><a href="AddEmpNew.html">Add New Employee</a></li> 
+          <li style="padding-left:10%;"><a href="AddEditEmp.html">Edit / Update Employee</a></li> 
+      </div>
+          <li><a href="#" onClick="ToggleList('i')">Assets Management</a></li>
+      <div id="i" class="divInfo">
+		   <li style="padding-left:10%;"><a href="AssetsNew.html">Add New Assets</a></li> 
+           <li style="padding-left:10%;"><a href="Assets.html">Edit / Update Assets</a></li>
+      </div>
+           <li><a href="#" onClick="ToggleList('j')">Vendor Management</a></li>
+      <div id="j" class="divInfo">
+		    <li style="padding-left:10%;"><a href="VendorNew.html">Add New Vendor</a></li> 
+            <li style="padding-left:10%;"><a href="Vendor.html">Edit / Update Vendor</a></li>
+      </div>
+            <li><a href="#" onClick="ToggleList('k')">Admin</a></li>
+       <div id="k" class="divInfo">
+           <li style="padding-left:10%;"><a href="ParameterSetup.html">Parameter Setup</a></li>
+		   <li style="padding-left:10%;"><a href="ConfigureDropdown.html">Configure Dropdown</a></li> 
+      </div>
+	</ul>
+</div>
+	<div id="content">
+		<h2>Live Stock Details</h2>
+		<table>
+			<tr>
+				<th colspan="4" align="left">Live Stock Details</th>
+			</tr>
+			<tr>		
+				<td><label>Origin</label></td>
+				<td colspan="3">
+					<select id="newUrl" onchange="changeUrl();">
+						<option>Select</option>
+						<option value="#" selected value="In-House Born">In-House Born</option>
+						<option value="addNewLiveStock-Purchasededit.html">Purchased</option>
+					</select>
+				</td>
+			</tr>
+			<tr>		
+				<td><label>Mother's Live Stock Code</label></td>
+				<td ><input type"text" name="motherLiveStockCode"  value="HEKA0001A"/></td>
+				<td><label>Mother's Breed</label></td>
+				<td><select ><option>Select</option><option>Jersey</option><option>Holstein Fresian</option><option selected value="Ayreshire">Ayreshire</option><option>Red Breeds & Illawarras</option></select></td>
+			</tr>			
+			<tr>
+				<td ><label>RFID</label></td>
+				<td><input name="idnumber" type="text"  value="RFA001A"/></td>
+				<td><label>Live Stock Code</label></td>
+				<td><input name="idnumber" type="text" size="15"  value="HEFA001A"/></td>
+			</tr>
+			<tr>
+				<td><label>Sex</label></td>
+				<td colspan="3"><select><option>Select</option><option selected value="Male">Male</option><option>Female</option></select></td>				
+			</tr>
+			<tr>
+				<td><label>Date of Birth</label></td>
+				<td><input type="text" id="demo1" size="10" value="01-Apr-1999">
+				<a href="javascript:NewCal('demo1','ddmmyyyy')"><img src="images/cal.gif" alt="Pick a date"></a></td>
+				<td><label>Age (in years)</label></td>
+				<td><input name="idnumber" type="text" size="15" value="21"/></td>
+			</tr>
+			<tr>
+				<td><label>Photos</label></td>
+				<td><input type="file" name="somename" size="chars"> </td>
+				<td><label>Breed</label></td>
+				<td><select><option>Select</option><option selected value="Jersey">Jersey</option><option >Holstein Fresian</option><option >Ayreshire</option><option>Red Breeds & Illawarras</option></select></td>
+			</tr>						
+			<tr>
+				<td><label>Height (in centimeters</label></td>
+				<td><input name="idnumber" type="text" size="15" value="159"/></td>
+				<td><label>Weight (in kg's)</label></td>
+				<td><input name="idnumber" type="text" size="15" value="190"/></td>
+			</tr>
+			<tr>
+				<td><label>Length (in cms)</label></td>
+				<td><input name="idnumber" type="text" size="15" value="120"/></td>
+				<td><label>Appearence</label></td>
+				<td colspan="3"><textarea>Fully Block</textarea></td>
+			</tr>
+			<tr>
+				<td><label>Dam Sire</label></td>
+				<td><input name="idnumber" type="text" size="15" value="FAK001A"/></td>
+				<td><label>Delivery Mode</label></td>
+				<td colspan="3"><input name="idnumber" type="text" size="15" value="Normal"/></td>
+			</tr>
+			<tr>
+				<td><label>Initial Value</label></td>
+				<td><input name="idnumber" type="text" size="15" value="001"/></td>
+				<td><label>Remarks</label></td>
+				<td colspan="3"><textarea></textarea></td>
+			</tr>
+            <tr>
+            <td>
+             <label>Preferred Type:</label></td>
+             <td colspan="3"><select>
+						<option>Select</option>
+						<option>Nurture</option>
+						<option>Pending</option>
+					</select></td>
+             </tr>
+		</table>
+        <br/>
+        <table>
+        <tr>
+        <td>
+		 <ul id="ulist">
+         <a href="#" class="style23 style7" onClick="ToggleList('m')"><img src="images/th_plus-sign-red.gif"/></a>
+         <span class="style13 style7">Mother's Yeilding History-Click Me</span>
+        <br/>
+        <div id="m" class="divInfo">
+    <table>
+    <tr>		
+				<th>Lactation No</th>
+				<th>Lactation Start Date</th>
+				<th>Lactation End Date</th>
+				<th>Milk Yeid</th>
+		  </tr>
+			<tr>
+				<td>1</td>
+				<td>01-Mar-2012</td>
+				<td>28-Mar-2012</td>
+				<td>3240</td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td>01-Apr-2012</td>
+				<td>28-Apr-2012</td>
+				<td>3500</td>
+			</tr>
+        </table>	
+     </div>
+           <a href="#" class="style23  style7" onClick="ToggleList('n')" ><img src="images/th_plus-sign-red.gif"/></a>
+         <span class="style13">Mother's Reproduction History-Click Me</span>
+          <br/>   
+        <div id="n" class="divInfo">
+ <table>
+ <tr>
+				<th>Re-Production Number</th>
+				<th>Calf Sex</th>
+				<th>Calf Breed</th>
+				<th>Live Stock Code</th>
+				<th>RFID</th>
+				<th>Semen Number</th>
+				<th>Semen Given Date</th>	
+                <th>At Present Sold</th>			
+				<th>Remarks</th>				
+		  </tr>
+			<tr>
+				<td>1</td>
+				<td>Male</td>
+				<td>Jersey</td>
+				<td>JERCAL001</td>
+				<td>JERCAL001</td>
+				<td>HFX0013XY01</td>
+				<td>01-Apr-2011</td>
+                <td>Selling</td>
+				<td>Normal Delivery</td>	
+			</tr>
+			<tr>
+				<td>2</td>
+				<td>Female</td>
+				<td>Jersey</td>
+				<td>JERCAL002</td>
+				<td>RFA0012</td>
+				<td>HFX0013XY987</td>
+				<td>01-Apr-2012</td>
+                <td>Selling</td>
+				<td>Complicated Delivery</td>	
+			</tr>			
+</table>
+</div>
+          <a href="#" class="style23 style6" onClick="ToggleList('p')" ><img src="images/th_plus-sign-red.gif"/></a>
+          <span class="style13">Mother's Diseases History-Click Me</span>
+          <br/>   
+        <div id="p" class="divInfo">
+<table>
+<tr>		
+				<th>Diseases Type</th>
+				<th>Start Date</th>
+				<th>End Date</th>
+				<th>Medicine attempted</th>
+				<th>Treatment Given By</th>
+				<th>Remarks</th>
+		  </tr>
+			<tr>
+				<td>Dystocia</td>
+				<td>01-Mar-2012</td>
+				<td>28-Mar-2012</td>
+				<td>Abeon Cipla</td>
+				<td>Dr. Raju</td>
+				<td>Dr. Raju gave Aboen Cipla and acted in 4 hours and went well</td>	
+			</tr>
+			<tr>
+				<td>Paralysis</td>
+				<td>01-Apr-2012</td>
+				<td>28-Apr-2012</td>
+				<td>Aceon Comple</td>
+				<td>Dr. Manjunath</td>
+				<td>Dr. Raju gave Aceon Comple and acted in 4 hours and went well</td>	
+			</tr>	
+</table>
+</div>
+</ul>
+</td>
+</tr>
+</table>	
+<table>	
+			<td><input type="submit" name="saveandnext" value="Update"  class="button"/></td>
+		<form method="post" action="HealthEdit.html">
+			<td><input type="submit" name="saveandnext" value="Save & Next"  class="button"/></td>
+		</form>
+       </table>
+       </br> </br> </br> </br> </br> </br> </br> </br> </br> </br> </br> </br></br> </br> </br> </br> </br> </br> </br> </br> </br> </br> </br> </br> </br>	  </br>	  </br>	  </br>	  </br>	  </br>	  </br>	  </br></br>	  </br>	  </br>	  </br>	  </br>	  </br>	  </br>	  </br></br>	  </br>  </br>	  </br>	  </br>	  </br>	  </br>	  </br>	  </br></br>	  </br>
+		</div>
+	</div>
+	</body>
+</html>

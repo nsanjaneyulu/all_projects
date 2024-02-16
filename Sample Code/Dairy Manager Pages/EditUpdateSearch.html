@@ -1,0 +1,78 @@
+<wicket:extend>
+	<div id="content">
+    <div class="bread-crumb">
+            	<h1>Live Stock Management / Live Stock Search</h1>
+            </div>
+            <form method="post" wicket:id="stockSearch">
+                <div wicket:id="feedback"></div>
+                    <div class="addData">
+                        <ul>
+                            <li>
+                                <label>RFID:</label><br />
+                                <input type="text" wicket:id="rfid" class="number_effect" />
+                            </li>
+                            <li>
+                                <label>Live Stock Code:</label><br />
+                                <input type="text" id="liveStockCode" wicket:id="code" class="number_effect" />
+                            </li>
+                            <li>
+                                <label>Breed:</label><br />
+                                <select wicket:id="breedTypeByBreedType" class="dropdown_effect"></select>
+                            </li>
+                            <li>
+                                <label>Origin:</label><br />
+                                <select wicket:id="origin" class="dropdown_effect"></select>
+                            </li>
+                            <li>
+                                <label>Live Stock State:</label><br />
+                                <select wicket:id="stateType" class="dropdown_effect"></select>
+                            </li>
+                            <li>
+                                <label>Milking Status:</label><br />
+                                <select wicket:id="milkingStatus" class="dropdown_effect"></select>
+                            </li>
+                            <li>
+                                <label>Drying Off:</label><br />
+                                <select wicket:id="stopMilkingStatus" class="dropdown_effect"></select>
+                            </li>
+                            <li>
+                                <label>Sex:</label><br />
+                                <select wicket:id="sex" class="dropdown_effect"></select>
+                            </li>
+                        </ul>
+                        
+                    </div>
+                    <div style="clear:both;"></div>
+                            <div  class="newButton"><input type="submit" name="Search" value="Search" class="button" 
+                            wicket:id="search" /></div>
+            </form>
+            <div wicket:id="datawrapper">
+            <div>
+               <span wicket:id="navigator">[dataview navigator]</span>
+             </div>	
+             <div class="containerDiv">
+                   <div class="rowDivHeader">
+                   		<div>RFID</div>
+                        <div >Live Stock Code</div>
+                        <div>Mother Live Stock Code</div>                        
+                        <div>Live Stock State</div>
+                        <div>Breed</div>
+                        <div>Milking Status</div>
+                        <div class="last">Origin</div>
+                   
+                   </div>
+    
+                   <div class="rowDiv" wicket:id="rows">
+                   		<div><span wicket:id="lsRfid" /></div>
+                        <div><a href="#" wicket:id="livestock_edit"><span wicket:id="lsLiveStockCode" /></a></div>
+                        <div><a href="#" wicket:id="motherlscode"><span wicket:id="lsmotherlbl" /></a></div>                        
+                        <div><span wicket:id="lsStateType" /></div>
+                        <div><span wicket:id="lsBreedType" /></div>
+                        <div><span wicket:id="milkingStatus" /></div>
+                        <div><span wicket:id="originType" /></div>
+                   </div>
+			 </div>				
+                
+            </div>					
+	</div>
+</wicket:extend>

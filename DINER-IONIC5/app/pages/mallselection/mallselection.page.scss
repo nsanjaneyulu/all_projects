@@ -1,0 +1,104 @@
+.imageBorder{
+    border:1px solid #878787;
+    // border-radius: 10%;
+    width: 100%;
+}
+
+.mall-rating{             
+    //background-color: #10C89C;
+    
+   
+    
+    font-size: 0.8rem;
+    color:#878787;
+    margin-top: 3%;
+    
+    
+
+    .mall-rating-text{                    
+        border-bottom: 1px solid #5c0931;
+        font-size: 0.7rem;
+        font-weight: 300;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: 0.07px;
+        text-align: left;
+        color: #000000;
+        // padding: 0.5%;  
+        // margin-left: 2%;
+    }
+}
+.imgWidth{
+    width: 10%;
+}
+.mall-address{        
+    color: #5c0931;        
+    font-size: 0.8rem;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    
+}
+.rowborder{
+    margin-bottom: 2%;
+}
+.mallName{
+    font-size: 0.9rem;
+    font-weight: 500;
+   
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #000000;
+}
+
+.colorIcon{
+    color:#5c0632;
+    animation: fa-spin 10s infinite linear;
+    font-size: 1.3rem;
+}
+
+.mall-offer{
+    margin-top: 1%;
+}
+.centering {
+    display: block;
+    margin-top: 15%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
+  .centered{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-size: 1.8rem;
+  }
+
+  .revertBack{
+    color: #5c0632 !important;
+    width: 50%;
+    height: 2.5rem;
+    margin-top: 3%;
+    margin-left: 25%;
+    font-weight: bold;
+    font-size: 1.1rem;
+    border-radius: 0.5rem;
+    background-color: #FFFFFF;
+    border: 2px solid #5c0632;
+    
+}
+.alert-button.sc-ion-alert-md {
+  
+    color: #5c0632 !important;
+    font-weight: 500 !important;
+    
+}

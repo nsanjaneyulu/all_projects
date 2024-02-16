@@ -1,0 +1,1596 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@import '~@angular/material/theming';
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+@import "~@angular/material/prebuilt-themes/pink-bluegrey.css";
+@import "~@angular/material/prebuilt-themes/purple-green.css";
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$Bow-primary: mat-palette($mat-indigo);
+$Bow-accent: mat-palette($mat-pink, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$Bow-warn: mat-palette($mat-red);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$Bow-theme: mat-light-theme($Bow-primary, $Bow-accent, $Bow-warn);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($Bow-theme);
+
+/* You can add global styles to this file, and also import other style files */
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 200;
+  src: local('Source Sans Pro ExtraLight'), local('SourceSansPro-ExtraLight'), url(https://fonts.gstatic.com/s/sourcesanspro/v12/6xKydSBYKcSV-LCoeQqfX1RYOo3i94_wmhduz8A.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+
+/* cyrillic */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 200;
+  src: local('Source Sans Pro ExtraLight'), local('SourceSansPro-ExtraLight'), url(https://fonts.gstatic.com/s/sourcesanspro/v12/6xKydSBYKcSV-LCoeQqfX1RYOo3i94_wkxduz8A.woff2) format('woff2');
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+
+/* greek-ext */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 200;
+  src: local('Source Sans Pro ExtraLight'), local('SourceSansPro-ExtraLight'), url(https://fonts.gstatic.com/s/sourcesanspro/v12/6xKydSBYKcSV-LCoeQqfX1RYOo3i94_wmxduz8A.woff2) format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+
+/* greek */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 200;
+  src: local('Source Sans Pro ExtraLight'), local('SourceSansPro-ExtraLight'), url(https://fonts.gstatic.com/s/sourcesanspro/v12/6xKydSBYKcSV-LCoeQqfX1RYOo3i94_wlBduz8A.woff2) format('woff2');
+  unicode-range: U+0370-03FF;
+}
+
+/* vietnamese */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 200;
+  src: local('Source Sans Pro ExtraLight'), local('SourceSansPro-ExtraLight'), url(https://fonts.gstatic.com/s/sourcesanspro/v12/6xKydSBYKcSV-LCoeQqfX1RYOo3i94_wmBduz8A.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB;
+}
+
+/* latin-ext */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 200;
+  src: local('Source Sans Pro ExtraLight'), local('SourceSansPro-ExtraLight'), url(https://fonts.gstatic.com/s/sourcesanspro/v12/6xKydSBYKcSV-LCoeQqfX1RYOo3i94_wmRduz8A.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* latin */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 200;
+  src: local('Source Sans Pro ExtraLight'), local('SourceSansPro-ExtraLight'), url(https://fonts.gstatic.com/s/sourcesanspro/v12/6xKydSBYKcSV-LCoeQqfX1RYOo3i94_wlxdu.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Source Sans Pro Light'), local('SourceSansPro-Light'), url(https://fonts.gstatic.com/s/sourcesanspro/v12/6xKydSBYKcSV-LCoeQqfX1RYOo3ik4zwmhduz8A.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+
+/* cyrillic */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Source Sans Pro Light'), local('SourceSansPro-Light'), url(https://fonts.gstatic.com/s/sourcesanspro/v12/6xKydSBYKcSV-LCoeQqfX1RYOo3ik4zwkxduz8A.woff2) format('woff2');
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+
+/* greek-ext */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Source Sans Pro Light'), local('SourceSansPro-Light'), url(https://fonts.gstatic.com/s/sourcesanspro/v12/6xKydSBYKcSV-LCoeQqfX1RYOo3ik4zwmxduz8A.woff2) format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+
+/* greek */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Source Sans Pro Light'), local('SourceSansPro-Light'), url(https://fonts.gstatic.com/s/sourcesanspro/v12/6xKydSBYKcSV-LCoeQqfX1RYOo3ik4zwlBduz8A.woff2) format('woff2');
+  unicode-range: U+0370-03FF;
+}
+
+/* vietnamese */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Source Sans Pro Light'), local('SourceSansPro-Light'), url(https://fonts.gstatic.com/s/sourcesanspro/v12/6xKydSBYKcSV-LCoeQqfX1RYOo3ik4zwmBduz8A.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB;
+}
+
+/* latin-ext */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Source Sans Pro Light'), local('SourceSansPro-Light'), url(https://fonts.gstatic.com/s/sourcesanspro/v12/6xKydSBYKcSV-LCoeQqfX1RYOo3ik4zwmRduz8A.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* latin */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Source Sans Pro Light'), local('SourceSansPro-Light'), url(https://fonts.gstatic.com/s/sourcesanspro/v12/6xKydSBYKcSV-LCoeQqfX1RYOo3ik4zwlxdu.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Source Sans Pro Regular'), local('SourceSansPro-Regular'), url(https://fonts.gstatic.com/s/sourcesanspro/v12/6xK3dSBYKcSV-LCoeQqfX1RYOo3qNa7lqDY.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+
+/* cyrillic */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Source Sans Pro Regular'), local('SourceSansPro-Regular'), url(https://fonts.gstatic.com/s/sourcesanspro/v12/6xK3dSBYKcSV-LCoeQqfX1RYOo3qPK7lqDY.woff2) format('woff2');
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+
+/* greek-ext */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Source Sans Pro Regular'), local('SourceSansPro-Regular'), url(https://fonts.gstatic.com/s/sourcesanspro/v12/6xK3dSBYKcSV-LCoeQqfX1RYOo3qNK7lqDY.woff2) format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+
+/* greek */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Source Sans Pro Regular'), local('SourceSansPro-Regular'), url(https://fonts.gstatic.com/s/sourcesanspro/v12/6xK3dSBYKcSV-LCoeQqfX1RYOo3qO67lqDY.woff2) format('woff2');
+  unicode-range: U+0370-03FF;
+}
+
+/* vietnamese */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Source Sans Pro Regular'), local('SourceSansPro-Regular'), url(https://fonts.gstatic.com/s/sourcesanspro/v12/6xK3dSBYKcSV-LCoeQqfX1RYOo3qN67lqDY.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB;
+}
+
+/* latin-ext */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Source Sans Pro Regular'), local('SourceSansPro-Regular'), url(https://fonts.gstatic.com/s/sourcesanspro/v12/6xK3dSBYKcSV-LCoeQqfX1RYOo3qNq7lqDY.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* latin */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Source Sans Pro Regular'), local('SourceSansPro-Regular'), url(https://fonts.gstatic.com/s/sourcesanspro/v12/6xK3dSBYKcSV-LCoeQqfX1RYOo3qOK7l.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Source Sans Pro SemiBold'), local('SourceSansPro-SemiBold'), url(https://fonts.gstatic.com/s/sourcesanspro/v12/6xKydSBYKcSV-LCoeQqfX1RYOo3i54rwmhduz8A.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+
+/* cyrillic */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Source Sans Pro SemiBold'), local('SourceSansPro-SemiBold'), url(https://fonts.gstatic.com/s/sourcesanspro/v12/6xKydSBYKcSV-LCoeQqfX1RYOo3i54rwkxduz8A.woff2) format('woff2');
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+
+/* greek-ext */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Source Sans Pro SemiBold'), local('SourceSansPro-SemiBold'), url(https://fonts.gstatic.com/s/sourcesanspro/v12/6xKydSBYKcSV-LCoeQqfX1RYOo3i54rwmxduz8A.woff2) format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+
+/* greek */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Source Sans Pro SemiBold'), local('SourceSansPro-SemiBold'), url(https://fonts.gstatic.com/s/sourcesanspro/v12/6xKydSBYKcSV-LCoeQqfX1RYOo3i54rwlBduz8A.woff2) format('woff2');
+  unicode-range: U+0370-03FF;
+}
+
+/* vietnamese */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Source Sans Pro SemiBold'), local('SourceSansPro-SemiBold'), url(https://fonts.gstatic.com/s/sourcesanspro/v12/6xKydSBYKcSV-LCoeQqfX1RYOo3i54rwmBduz8A.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB;
+}
+
+/* latin-ext */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Source Sans Pro SemiBold'), local('SourceSansPro-SemiBold'), url(https://fonts.gstatic.com/s/sourcesanspro/v12/6xKydSBYKcSV-LCoeQqfX1RYOo3i54rwmRduz8A.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* latin */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Source Sans Pro SemiBold'), local('SourceSansPro-SemiBold'), url(https://fonts.gstatic.com/s/sourcesanspro/v12/6xKydSBYKcSV-LCoeQqfX1RYOo3i54rwlxdu.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Source Sans Pro Bold'), local('SourceSansPro-Bold'), url(https://fonts.gstatic.com/s/sourcesanspro/v12/6xKydSBYKcSV-LCoeQqfX1RYOo3ig4vwmhduz8A.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+
+/* cyrillic */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Source Sans Pro Bold'), local('SourceSansPro-Bold'), url(https://fonts.gstatic.com/s/sourcesanspro/v12/6xKydSBYKcSV-LCoeQqfX1RYOo3ig4vwkxduz8A.woff2) format('woff2');
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+
+/* greek-ext */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Source Sans Pro Bold'), local('SourceSansPro-Bold'), url(https://fonts.gstatic.com/s/sourcesanspro/v12/6xKydSBYKcSV-LCoeQqfX1RYOo3ig4vwmxduz8A.woff2) format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+
+/* greek */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Source Sans Pro Bold'), local('SourceSansPro-Bold'), url(https://fonts.gstatic.com/s/sourcesanspro/v12/6xKydSBYKcSV-LCoeQqfX1RYOo3ig4vwlBduz8A.woff2) format('woff2');
+  unicode-range: U+0370-03FF;
+}
+
+/* vietnamese */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Source Sans Pro Bold'), local('SourceSansPro-Bold'), url(https://fonts.gstatic.com/s/sourcesanspro/v12/6xKydSBYKcSV-LCoeQqfX1RYOo3ig4vwmBduz8A.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB;
+}
+
+/* latin-ext */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Source Sans Pro Bold'), local('SourceSansPro-Bold'), url(https://fonts.gstatic.com/s/sourcesanspro/v12/6xKydSBYKcSV-LCoeQqfX1RYOo3ig4vwmRduz8A.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* latin */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Source Sans Pro Bold'), local('SourceSansPro-Bold'), url(https://fonts.gstatic.com/s/sourcesanspro/v12/6xKydSBYKcSV-LCoeQqfX1RYOo3ig4vwlxdu.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 900;
+  src: local('Source Sans Pro Black'), local('SourceSansPro-Black'), url(https://fonts.gstatic.com/s/sourcesanspro/v12/6xKydSBYKcSV-LCoeQqfX1RYOo3iu4nwmhduz8A.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+
+/* cyrillic */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 900;
+  src: local('Source Sans Pro Black'), local('SourceSansPro-Black'), url(https://fonts.gstatic.com/s/sourcesanspro/v12/6xKydSBYKcSV-LCoeQqfX1RYOo3iu4nwkxduz8A.woff2) format('woff2');
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+
+/* greek-ext */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 900;
+  src: local('Source Sans Pro Black'), local('SourceSansPro-Black'), url(https://fonts.gstatic.com/s/sourcesanspro/v12/6xKydSBYKcSV-LCoeQqfX1RYOo3iu4nwmxduz8A.woff2) format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+
+/* greek */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 900;
+  src: local('Source Sans Pro Black'), local('SourceSansPro-Black'), url(https://fonts.gstatic.com/s/sourcesanspro/v12/6xKydSBYKcSV-LCoeQqfX1RYOo3iu4nwlBduz8A.woff2) format('woff2');
+  unicode-range: U+0370-03FF;
+}
+
+/* vietnamese */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 900;
+  src: local('Source Sans Pro Black'), local('SourceSansPro-Black'), url(https://fonts.gstatic.com/s/sourcesanspro/v12/6xKydSBYKcSV-LCoeQqfX1RYOo3iu4nwmBduz8A.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB;
+}
+
+/* latin-ext */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 900;
+  src: local('Source Sans Pro Black'), local('SourceSansPro-Black'), url(https://fonts.gstatic.com/s/sourcesanspro/v12/6xKydSBYKcSV-LCoeQqfX1RYOo3iu4nwmRduz8A.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* latin */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 900;
+  src: local('Source Sans Pro Black'), local('SourceSansPro-Black'), url(https://fonts.gstatic.com/s/sourcesanspro/v12/6xKydSBYKcSV-LCoeQqfX1RYOo3iu4nwlxdu.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+body {
+  font-family: 'Source Sans Pro';
+
+}
+
+.app {
+  display: flex;
+  height: 100vh;
+}
+
+/* Menu Bar Styles Start */
+.bow_login_container app-menu-bar {
+  display: none !important;
+}
+.bow_menu_bar {
+  width: 48px;
+  height: 100vh;
+  position: relative;
+  z-index: 1;
+
+  .bow_sub_menu,
+  .bow_dropdown_list_items {
+    display: none;
+  }
+
+  &:before,
+  &:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url(https://tafel-images.s3.ap-south-1.amazonaws.com/bom/assets/bo-left-mainbg.jpg) no-repeat center/cover;
+    z-index: -1;
+    top: 0;
+    left: 0;
+
+  }
+
+  &:after {
+    background: #5c063294;
+  }
+
+  .bow_main_logo {
+    display: none;
+    height: 28px;
+  }
+
+  .bow_main_icon {
+    height: 36px;
+  }
+
+  li>.bow_dropdown_list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .bow_text_menu {
+      display: none;
+    }
+
+    .fa {
+      display: inline-block;
+    }
+
+  }
+
+  &.active {
+    width: 180px;
+
+    .bow_sub_menu,
+    .bow_dropdown_list_items {
+      display: block;
+    }
+
+    .bow_main_logo {
+      display: block;
+    }
+
+    .bow_main_icon {
+      display: none;
+    }
+
+    li {
+      .bow_text_menu {
+        display: block;
+        margin-right: auto;
+        margin-left: 12px;
+      }
+    }
+  }
+}
+
+.bow_menu_bar_styles>li {
+  &>.bow_dropdown_list {
+    padding: 12px;
+    font-size: 15px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.27;
+    letter-spacing: normal;
+    text-align: left;
+    color: #ffffff;
+    overflow: hidden;
+    flex-wrap: wrap;
+
+    &:after {
+      content: "";
+      width: 1px;
+      height: 1px;
+      border: 8px solid #fff;
+      border-top-color: transparent;
+      border-bottom-color: transparent;
+      border-left-color: transparent;
+      position: absolute;
+      right: 0;
+      display: none;
+    }
+
+    &.active {
+
+      .bow_icon_minus {
+        display: block;
+      }
+
+      .bow_icon_plus {
+        display: none;
+      }
+    }
+  }
+
+  &.active {
+    ul {
+      display: block;
+    }
+
+  }
+
+
+  ul {
+    width: 100%;
+    margin: 0;
+    padding-left: 30px;
+    list-style: none;
+
+    li {
+      padding: 8px 0;
+      font-size: .9rem;
+      cursor: pointer;
+      color: #fff;
+
+      a {
+        color: #fff;
+      }
+    }
+  }
+}
+
+.bow_menu_bar_styles>li:focus {
+  outline: none !important;
+}
+
+.bow_menu_bar_styles {
+  padding-top: 24px;
+}
+
+
+.bow_menu_bar_styles>li.test_link>.bow_dropdown_list {
+  background: #91034b;
+  box-shadow: inset 6px 0 0 #fff;
+  cursor: pointer;
+
+  &:after {
+    display: block;
+  }
+}
+
+/* Menu Bar Styles End */
+/* Menu Bar Header Styles Start */
+.bow_left_header_bg_Styles {
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, .05);
+}
+
+.bow_left_header_bg_Styles>ul>li>a {
+  color: #939393;
+}
+
+/* Menu Bar Header Styles End */
+/* Section Styles Start */
+.bow_section {
+  background: #f0f0f7;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.bow_header {
+  height: 48px;
+  background: #fff;
+}
+
+.bow_section_page {
+  padding: 1em;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+
+  router-outlet+* {
+    flex: 1;
+    display: block;
+    width: 100%;
+  }
+}
+
+/* Section Styles End */
+
+/* Section Header Styles Start */
+.bow_right_header_bg_styles {
+  background: #5c0632;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bow_right_header_bg_styles>span>img {
+  height: 30px;
+}
+
+/* Section Header Styles End */
+/* Section Footer Styles Start */
+.bow_footer_Styles>div {
+  font-size: 12px;
+  color: #fff;
+}
+
+/* Section Footer Styles End */
+/* Dashboard Styles Start */
+.bow_order_statistics {
+  padding: .75em;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  color: #fff;
+  position: relative;
+  height: 130px;
+  background-repeat: no-repeat;
+  background-size: 45px;
+  background-position: right;
+  background-position-y: 12px;
+  display: flex;
+  align-items: center;
+  background-position-x: calc(100% - 12px);
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+}
+
+.bow_page_title {
+  background: #5c0632;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.bow_page_title>span {
+  font-size: 30px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.27;
+  letter-spacing: normal;
+  text-align: left;
+  color: #ffffff;
+}
+
+.bow_page_title .title {
+  font-size: 30px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.27;
+  letter-spacing: normal;
+  text-align: left;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.bow_page_title_styles {
+  display: flex;
+  align-items: center;
+}
+
+.bow_overdue_icon_bg {
+  background-image: url(https://tafel-images.s3.ap-south-1.amazonaws.com/bom/assets/overdue-icon.png);
+}
+
+.bow_overdue_styles {
+  background-color: #e50808;
+  border-radius: 5px;
+  box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.15);
+  border: solid 1px #e4e4e4;
+}
+
+.bow_rejected_icon_bg {
+  background-image: url(https://tafel-images.s3.ap-south-1.amazonaws.com/bom/assets/rejected-icon.png);
+}
+
+.bow_rejected_styles {
+  opacity: 1;
+  border-radius: 5px;
+  box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.15);
+  border: solid 1px #e4e4e4;
+  background-color: #edac06;
+}
+
+.bow_completed_icon_bg {
+  background-image: url(https://tafel-images.s3.ap-south-1.amazonaws.com/bom/assets/completed-icon.png);
+}
+
+.bow_completed_styles {
+  background-color: #249502;
+  border-radius: 5px;
+  box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.15);
+  border: solid 1px #e4e4e4;
+}
+
+.bow_revenue_icon_bg {
+  background-image: url(https://tafel-images.s3.ap-south-1.amazonaws.com/bom/assets/revenue-icon.png);
+}
+
+.bow_revenue_styles {
+  background-color: #0077cc;
+  border-radius: 5px;
+  box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.22);
+  border: solid 1px #e4e4e4;
+}
+
+.bow_order_statistics .title {
+  font-size: 20px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.25;
+  letter-spacing: normal;
+  text-align: left;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.bow_order_statistics .Count {
+  position: absolute;
+  bottom: 0px;
+  right: 10px;
+  font-size: 40px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.25;
+  letter-spacing: normal;
+  text-align: left;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.table_styles>.table>td,
+.table_styles>.table>th {
+  border-top: 0px !important;
+}
+
+.bow_text_decoration {
+  // text-decoration: underline;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.bow_mb {
+  margin-bottom: 6px;
+}
+
+/* Dashboard Styles End */
+
+.login__title {
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.54;
+  letter-spacing: normal;
+  text-align: left;
+  color: #515968;
+}
+
+.bow_display_Flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.bottom__Styles {
+  position: absolute;
+  bottom: 0;
+  background: #5c0632;
+  opacity: 0.9;
+  height: 40px;
+  width: 100%;
+}
+
+/* Login Page Styles Start */
+.bow_login_form ::placeholder {
+  font-size: 11px;
+  color:#fff !important;
+}
+// .bow_input_bg {
+//   opacity: 0.1;
+//   background: #fff;
+// }
+.wrapper {
+  height: 100%;
+  width: 100%;
+}
+
+.message {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  height: 45%;
+  bottom: 0;
+  display: block;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  padding: 0.5em;
+}
+
+.bow_login_form_title {
+  font-size: 18px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 0.72;
+  letter-spacing: normal;
+  text-align: center;
+  color: #4d4f5c;
+}
+
+.bow_forgot_title {
+  line-height: 1.22;
+}
+
+.bow_remember_me {
+  font-size: 15px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.67;
+  letter-spacing: normal;
+  text-align: left;
+  color: #43425d;
+}
+
+/* Login Page Styles End */
+/* state wise components show hide start */
+.bow_login_container {
+
+  .bow_header,
+  .bow_footer,
+  app-menu-bar {
+    display: none;
+  }
+
+  .bow_section_page {
+    margin: 0 !important;
+    background: url(https://tafel-images.s3.ap-south-1.amazonaws.com/bom/assets/login-BG.jpg) no-repeat center/cover;
+   
+  }
+  
+}
+
+.container {
+  height: 100%;
+
+  section {
+    display: flex;
+    flex: 1;
+  }
+}
+
+/* state wise components show hide end */
+/* Button styles start */
+.bow_button_styles {
+  border-radius: 4px;
+  border: solid 1px #280016;
+  background-color: #5c0632;
+
+}
+
+.bow_button_styles_tables {
+  font-size: 11px;
+  padding: 5px;
+  line-height: 0.7;
+}
+
+/* Button styles end */
+
+
+
+
+
+/* Live Order Styles Start */
+.bow_live_Order {
+  padding: .75em;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  color: #fff;
+  position: relative;
+  height: 90px;
+  background-repeat: no-repeat;
+  background-size: 45px;
+  background-position: right;
+  background-position-y: 12px;
+  display: flex;
+  align-items: center;
+  background-position-x: calc(100% - 12px);
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+}
+
+
+
+
+
+
+.bow_pending_icon_bg {
+  background-image: url(https://tafel-images.s3.ap-south-1.amazonaws.com/bom/assets/pending.png);
+}
+
+.bow_accept_icon_bg {
+  background-image: url(https://tafel-images.s3.ap-south-1.amazonaws.com/bom/assets/accept-big.png);
+}
+
+.bow_ready_icon_bg {
+  background-image: url(https://tafel-images.s3.ap-south-1.amazonaws.com/bom/assets/ready.png);
+}
+
+.bow_hover_icon_bg {
+  background-image: url(https://tafel-images.s3.ap-south-1.amazonaws.com/bom/assets/h-over.png);
+}
+
+.bow_pending_styles {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.15);
+  border: solid 1px #e4e4e4;
+
+  &.active {
+    background-color: #5c0632;
+
+  }
+}
+
+.bow_live_Order .title {
+  font-size: 20px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.25;
+  letter-spacing: normal;
+  text-align: left;
+  color: #5c0632;
+  cursor: pointer;
+}
+
+.bow_live_Order .Count {
+  position: absolute;
+  bottom: 0px;
+  right: 18px;
+  font-size: 26px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.25;
+  letter-spacing: normal;
+  text-align: left;
+  color: #5c0632;
+
+}
+
+.bow_order_details_styles {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.bow_order_styles {
+
+  opacity: 1;
+  border-radius: 5px;
+  box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.15);
+  border: solid 1px #e4e4e4;
+  background-color: #ffffff;
+  padding: 20px;
+}
+
+.bow_order_id {
+  font-size: 30px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.2;
+  letter-spacing: normal;
+  text-align: left;
+  color: #000000;
+}
+
+.bow_order_type {
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.23;
+  letter-spacing: normal;
+  text-align: left;
+  color: #515968;
+}
+
+.bow_date_time {
+  font-size: 13px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.23;
+  letter-spacing: normal;
+  text-align: left;
+  color: #515968;
+}
+
+.bow_diner_details {
+  font-size: 18px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.22;
+  letter-spacing: normal;
+  text-align: center;
+  color: #515968;
+}
+
+.bow_pending_bg.active {
+  background-image: url(https://tafel-images.s3.ap-south-1.amazonaws.com/bom/assets/pending-white.png);
+}
+
+.bow_pending_bg.active>.title,
+.bow_pending_bg.active>.Count {
+  color: #fff;
+}
+
+.bow_accept_bg.active {
+  background-image: url(https://tafel-images.s3.ap-south-1.amazonaws.com/bom/assets/accept-big-white.png);
+}
+
+.bow_accept_bg.active>.title,
+.bow_accept_bg.active>.Count {
+  color: #fff;
+}
+
+.bow_ready_bg.active {
+  background-image: url(https://tafel-images.s3.ap-south-1.amazonaws.com/bom/assets/ready-white.png);
+}
+
+.bow_ready_bg.active>.title,
+.bow_ready_bg.active>.Count {
+  color: #fff;
+}
+
+.bow_handover_bg.active {
+  background-image: url(https://tafel-images.s3.ap-south-1.amazonaws.com/bom/assets/h-over-white.png);
+}
+
+.bow_handover_bg.active>.title,
+.bow_handover_bg.active>.Count {
+  color: #fff;
+}
+
+
+/* Live Order Styles End */
+
+.btn-danger:hover {
+  color: #fff;
+  background-color: #280016;
+  border-color: #280016;
+}
+
+.bow_modal_header_bg {
+  background-color: #5c0632 !important;
+}
+
+.bow_view_details_head {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.23;
+  letter-spacing: normal;
+  text-align: left;
+  color: #515968;
+}
+
+.bow_view_details_body {
+  font-size: 14px;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.23;
+  letter-spacing: normal;
+  text-align: left;
+  color: #515968;
+}
+
+.bow_bill_summary {
+  font-size: 16px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.2;
+  letter-spacing: normal;
+  text-align: left;
+  color: #5c0632;
+}
+
+/* Table styles started */
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: #ffffff;
+}
+
+.table-striped tbody tr:nth-of-type(even) {
+  background-color: #fcfcfc;
+}
+
+.table-striped tbody tr td {
+  font-size: 15px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.23;
+  letter-spacing: normal;
+  text-align: left;
+  color: #5e5f65;
+}
+
+.table-striped thead tr th {
+  font-size: 15px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.2;
+  letter-spacing: normal;
+  text-align: left;
+  color: #5e5f65;
+}
+
+.table .thead-light th {
+  color: #495057;
+  background-color: #f5f6fa;
+  border-color: #f5f6fa;
+}
+
+.table_styles>table>tr>td {
+  text-align: center;
+  vertical-align: middle;
+  font-size: 13px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.23;
+  letter-spacing: normal;
+  text-align: left;
+  color: #5e5f65;
+}
+
+.table_styles>table>thead>tr>th {
+  font-size: 15px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.2;
+  letter-spacing: normal;
+  text-align: left;
+  color: #5e5f65 !important;
+}
+
+/* Table styles end */
+.login_header {
+  font-size: 3.5em;
+  font-weight: 700 !important;
+}
+
+.bow_display_flex_center {
+  display: flex;
+  justify-content: center;
+}
+
+.bow_tafel_text {
+  display: none;
+}
+.bow_tafel_text > a{
+  color: #fff;
+  font-size: 28px;
+}
+.bow_margin_Styles_mall {
+  margin: 12px 0px;
+}
+.bow_margin_Styles_section {
+  margin-left: 15px;
+}
+.bow_margin_styles_table {
+  margin-top: 12px;
+}
+.bow_user_web_hide {
+  display: none;
+}
+.bow_user_styles {
+  width: 30px;
+  height: 30px;
+}
+@media (max-width: 768px) {
+  .bow_login_form_title_mobile {
+    
+      
+     
+      font-size: 18px;
+      font-weight: normal;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 0.72;
+      letter-spacing: normal;
+      text-align: center;
+      color: #ffffff;
+    }
+    .bow_login_form_username_mobile {
+      
+      opacity: 1;
+     
+      font-size: 15px;
+      font-weight: normal;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 1.67;
+      letter-spacing: normal;
+      text-align: left;
+      color: #ffffff;
+    }
+  
+ 
+  .bow_user_web_hide {
+    display: block !important;
+  }
+  .login_header{
+    text-align: center;
+  }
+  .bow_button_styles {
+    border-radius: 4px;
+    border: solid 1px #fff;
+    background-color: #fff;
+    color: #5c0632;
+}
+  .bow_user_password {
+    color: #fff;
+  }
+  .bow_login_form_title {
+    color: #fff;
+  }
+  input:focus { 
+    // background-color: yellow;
+  }
+  input[type="text"], textarea {
+
+    // background-color : #d1d1d1; 
+  
+  }
+  .bg-white {
+    background: none !important;
+  }
+  .bow_section_page_login_bg {
+    // margin: 0 !important;
+    background: linear-gradient(rgba(102,8,64, .5), rgba(102,8,64,.5)), url(https://tafel-images.s3.ap-south-1.amazonaws.com/bom/assets/login-BG.jpg) no-repeat center/cover !important;
+   
+  }
+  .bow_padding_3rem {
+    padding: 0px !important;
+  }
+  .bow_live_Order .title {
+    font-size: 12px;
+  }
+  .access_btn{
+    margin-top: 6.2% !important;
+
+  }
+  .ml-5, .mx-5 {
+    margin-left: -16rem!important;
+}
+  .bow_order_statistics .title {
+    font-size: 15px;
+  }
+  .bow_text_decoration {
+    font-size: 11px;
+  }
+  .bow_amount_text {
+    font-size: 11px;
+  }
+  .bow_login_container .bow_section_page .bow_login_form {
+    margin: 0px !important;
+    width: 100%;
+ 
+   
+}
+  .bow_margin_left_2rem {
+    margin-left: 0px !important;
+  }
+  .bow_margin_top_5px {
+    margin-top: 10px;
+  }
+  .table_styles > table > thead > tr > th {
+    font-size: 11px;
+  }
+  .table-striped tbody tr td {
+    font-size: 11px;
+  }
+  .dropdown-menu {
+    padding: 15px;
+  }
+  // .bow_section_page {
+  //   background-size: auto 40% !important;
+  //   background-position: center top !important;
+  //   background-color: #fff !important;
+  // }
+  .bow_title_hide_1 {
+    display: none;
+  }
+  .bow_login_container {
+    .bow_section_page {
+      padding: 0px;
+      .container {
+        // padding: 0px;
+        
+      }
+    }
+    .bow_section_page {
+      .bow_login_form {
+        // margin: 0px !important;
+        // width: 100%;
+      }
+    }
+    .bow_section_page {
+      .bow_align_items_end {
+        // align-items: flex-end !important;
+      }
+    }
+  }
+  .bow_menu_bar {
+    display: none;
+  }
+
+  .bow_menu_bar.active {
+    display: block;
+    position: absolute;
+    top: 48px;
+    left: 0;
+    z-index: 9;
+    width: 75%;
+    height: calc(100vh - 48px);
+    box-shadow: 9px 16px 20px #00000099;
+  }
+
+  .bow_tafel_text {
+    display: block;
+  }
+
+  .bow_header {
+    height: 48px;
+    background: #5c0632;
+    color: #fff;
+  }
+
+  aside .bow_header {
+    display: none;
+  }
+  .bow_align_items {
+    align-items: center;
+    line-height: 0px;
+  }
+  .bow_left_header_bg_Styles > ul > li > a {
+    color: #ffffff;
+}
+.login__title {
+  font-size: 14px;
+}
+.bow_userName_Styles {
+  padding: .5rem .2rem;
+}
+.bow_page_title>span {
+  font-size: 16px;
+}
+.stats__item {
+  margin-bottom: 10px;
+}
+.bow_margin_Styles_section {
+  margin-left: 0px;
+}
+.bow_page_title {
+  padding: 8px;
+}
+}
+.btn__accept {
+		
+  color: #fff;
+  background-color:	#00cd79;
+
+
+}
+.btn__ready {
+
+color: #fff;
+background-color:	#c0ad1f;
+border: 1px solid #c0ad1f;
+
+
+}
+.btn__hover {
+
+color: #fff;
+background-color:	#00cd79;
+
+
+}
+.btn__Item__Close {
+
+  background-color:	#fff;
+border: 1px solid	#5c0632;
+
+}
+.btn__reject {
+
+color: #fff;
+background-color:	#5c0632;
+
+
+}
+.bow_inc_dec {
+  float: right;
+  margin-top: -3px;
+}
+.bow_inc_dec_block {
+  display: inline-block;
+  height: 30px;
+  width: 83px;
+  border: 1px solid #d4d5d9;
+  color: #60b246;
+  font-size: .9rem;
+  font-weight: 600;
+  line-height: 30px;
+  position: relative;
+  text-align: center;
+  background-color: #fff;
+}
+
+
+.bow_inc_position {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 33.33333%;
+  display: inline-block;
+  opacity: 1;
+  transform: translateZ(0);
+  cursor: pointer;
+  font-size: 150%;
+  font-weight: 600;
+}
+
+.bow_dec_position {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 33.33333%;
+  display: inline-block;
+  opacity: 1;
+  transform: translateZ(0);
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+.bow_dec_position:before {
+  content: "";
+  display: inline-block;
+  height: 2px;
+  width: 10px;
+  background-color: #bebfc5;
+  position: relative;
+  top: -6px;
+}
+
+.bow_inc_dec_qty {
+  position: absolute;
+ 
+  top: 0;
+  
+  display: inline-block;
+  opacity: 1;
+  transform: translateZ(0);
+  cursor: pointer;
+}
+.bow_margin_left_2rem {
+  margin-left: .5rem;
+}
+@media screen and (min-width: 768px) and (max-width: 992px) { 
+  .bow_live_order_margin_top {
+    margin-top: 10px;
+  }
+  .display-3{
+    font-size: 22px !important;
+  }
+  .loader {
+    margin: 100 !important;
+    
+  }
+}
+
+.formValueSelect{
+    
+  display: block;
+  height: calc(1.5em + .75rem + 2px);
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: .25rem;
+  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.selectDashboardMargin{
+margin-left: 1rem;
+}
+.ngx-pagination .current {
+  background: #5c0632 !important;
+}
+.bow_padding_3rem{
+  padding: 3rem;
+}
+.bow_cursor_pointer {
+  cursor: pointer;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.dataTables_wrapper .dataTables_length {
+  display: none !important;
+}
+.dataTables_wrapper .dataTables_filter {
+  display: none !important;
+}
+.dataTables_wrapper .dataTables_info {
+  clear: both;
+  float: left;
+  padding-top: 0.755em;
+  font-size: 12px;
+}
+.dataTables_wrapper .dataTables_paginate {
+  float: right;
+  text-align: right;
+  padding-top: 0.25em;
+  font-size: 12px;
+}
+.cdk-overlay-pane {
+  box-sizing: border-box;
+  z-index: 1000;
+  display: flex;
+  max-height: 100%;margin-left: 11% !important;
+}
+.btn.focus, .btn:focus {
+  outline: 0;
+   box-shadow: none;
+}

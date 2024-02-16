@@ -1,0 +1,269 @@
+<ion-header>
+   <ion-navbar>
+      <ion-title *ngIf="!isOpenedSearchBar">
+         <ion-item no-lines class="header__styles padding__left__0px">
+            <ion-avatar item-start  (click)="buzzerOnOff()">
+               <img src="{{imageEndPoint}}/{{getMallDetailsResp.img}}">     
+            </ion-avatar>
+            <h2 class="ion__title">{{getMallDetailsResp.name}} <span class="outletNameCss" *ngIf = "(allpermited !='Yes')"> ({{getOutletDetailsVal.name}})</span></h2>
+            
+            <p class="pending__order padding__left">{{getMallDetailsResp.address.area}},
+               {{getMallDetailsResp.address.city}}
+            </p>
+         </ion-item>
+      </ion-title>
+      <ion-searchbar class="searchelement" *ngIf="isOpenedSearchBar" [(ngModel)]="searchTerm" (ionInput)="setFilteredItems()"
+         [showCancelButton]="true" #search (ionCancel)="cancelSearch()"></ion-searchbar>
+      <ion-buttons end>
+         <button [hidden]="isOpenedSearchBar" (click)="(isOpenedSearchBar = !isOpenedSearchBar) && autoFocusCursor()"
+            ion-button icon-only>
+            <ion-icon class="ion__title" name="search"></ion-icon>
+         </button>
+      </ion-buttons>
+   </ion-navbar>
+</ion-header>
+<ion-content class="main__div">
+   <ion-grid *ngIf="!showLoader" class="stickSegment bootem__level__space padding__Styles" style="margin-top:10px;">
+      <ion-item>
+            <ion-segment [(ngModel)]="segmentSelect" class="segment__Bg">
+                  <ion-segment-button class="pending_styling" style="display:flex;height: 55px;" value="Pending" (ionSelect)="segmentChange('Pending',0)"><span style="margin-top:5px;font-size: 14px;">Pending</span>
+                     <span style="margin-top:10px;margin-left:10px">
+                        <img src="../../assets/imgs/pendingBlackIcon.png" class="margin__top" width="30" height="30" *ngIf="!showPendingBlock" /><img src="../../assets/imgs/pendingWhiteIcon.png" class="margin__top" width="30" height="30" *ngIf="showPendingBlock" />
+                   </span>
+                   <span style="margin-top:5px;font-size: 14px;margin-left: 5px;">{{getAllReceivedFullOrdersLength}}</span>
+                  </ion-segment-button>
+                  <ion-segment-button style="display:flex;height: 55px;" class="accepted_styling" value="Accepted" (ionSelect)="segmentChange('Accepted',0)"><span style="margin-top:5px;font-size: 14px;">Accept</span>
+                     <span style="margin-top:10px;margin-left:10px"><img src="../../assets/imgs/acceptBlackIcon.png" class="margin__top" width="30" height="30" *ngIf="!showAcceptedBlock"/>
+                        <img src="../../assets/imgs/acceptWhiteIcon.png" class="margin__top" width="30" height="30" *ngIf="showAcceptedBlock"/></span>
+                        <span style="margin-top:5px;font-size: 14px;margin-left: 5px;">{{getAllPendingFullOrdersLength}}</span>
+                     </ion-segment-button>
+                  <ion-segment-button style="display:flex;height: 55px;" class="rtho_styling" value="RTHO" (ionSelect)="segmentChange('Ready',0)"><span style="margin-top:5px;font-size: 14px;">Ready</span>
+                     <span style="margin-top:10px;margin-left:10px"> <img src="../../assets/imgs/readyBlackIcon.png" class="margin__top" width="30" height="30" *ngIf="!showReadyBlock"/> <img src="../../assets/imgs/readyWhiteIcon.png" class="margin__top" width="30" height="30" *ngIf="showReadyBlock"/>
+                  </span>
+                  <span style="margin-top:5px;font-size: 14px;margin-left: 5px;">{{getAllReadyFullOrdersLength}}</span>
+                        </ion-segment-button>
+                  <ion-segment-button style="display:flex;height: 55px;" class="handedOver_styling" value="handedOver" (ionSelect)="segmentChange('handedOver',0)"><span style="margin-top:5px;font-size: 14px;">Handed</span>
+                        <span style="margin-top:10px;margin-left:10px"> <img src="../../assets/imgs/hOverBlackIcon.png" class="margin__top" width="30" height="30" *ngIf="showhandedOverBlock"/>
+                           <img src="../../assets/imgs/hOverWhiteIcon.png" class="margin__top" width="30" height="30" *ngIf="!showhandedOverBlock"/>
+                        </span>
+                        <span style="margin-top:5px;font-size: 14px;margin-left: 5px;">{{getAllHandedOverOrdersLength}}</span>
+                        </ion-segment-button>
+               </ion-segment>
+      </ion-item>
+   </ion-grid>
+   <div>
+      <ion-grid id="allOrders" class="padding__Styles" *ngIf="!showLoader">
+         <div class="bootem__level__space" *ngFor="let fullorder of searchFullorders; let i=index">
+            <ion-item style="padding:20px; border-bottom: 1px solid #eee" no-lines>
+               <ion-row>
+                  <ion-col col-12 class="padding__Styles">
+                     <div class="displayFlex">
+                        <div  (click)="goOrderDetails($event, fullorder,i)"><span class="order__Id">{{fullorder.fullOrder5DigitId}}
+                           </span>
+                           <span *ngIf="(fullorder.orderType == 'Delivery')" class=""><span class="status__Styles">Delivery</span>
+                              <img src="../../assets/imgs/delivery.png" class="tab__Count" />
+                           </span>
+                           <span *ngIf="(fullorder.orderType == 'Pickup')" class="pickupStyles"><span class="status__Styles">Pickup</span>
+                              <img src="../../assets/imgs/pick.png" class="tab__Count" />
+                           </span>
+                           <span *ngIf="(fullorder.specialInstructions != null)" class="pickupStyles">
+                           <ion-icon name="ribbon" style="font-size:35px"></ion-icon>
+                           </span>
+                        </div>
+                        <div>
+                           <div class="float__left">
+                              <div *ngIf="(fullorder.status === 'RECEIVED')">
+                                 <button *ngIf="fullorder.showAcceptDecline" ion-button icon-end class="btn__accept" (click)="acceptFullOrder(fullorder)">
+                                    Accept
+                                    <ion-icon name="checkmark"></ion-icon>
+                                 </button>
+                                 <button *ngIf="fullorder.showAcceptDecline" ion-button icon-end class="btn__reject" (click)="rejectFullOrder(fullorder)">
+                                    Decline
+                                    <ion-icon name="close"></ion-icon>
+                                 </button>
+                              </div>
+                              <div *ngIf="(fullorder.status === 'INPROGRESS')">
+                                 <button ion-button icon-end class="btn__ready" (click)="readyFullOrder(fullorder)">
+                                    Ready
+                                    <ion-icon name="restaurant"></ion-icon>
+                                 </button>
+                              </div>
+                              <div *ngIf="(fullorder.status === 'READY')">
+                                 <button ion-button icon-end class="btn__hover" (click)="handOverFullOrder(fullorder)">
+                                    H.Over
+                                    <ion-icon name="cube"></ion-icon>
+                                 </button>
+                              </div>
+                              <div *ngIf="(fullorder.status === 'COMPLETED') || (fullorder.status === 'EXPIRED')">
+                               
+                                    
+                                 <ion-icon style="cursor: pointer" style="color:#067bc1" name="print" (click)="printFunction(fullorder)"></ion-icon>
+                            
+                             
+                           </div>
+                           </div>
+                        </div>
+                     </div>
+                  </ion-col>
+               </ion-row>
+               <ion-row class="align__items__center" (click)="goOrderDetails($event, fullorder,i)">
+                  <ion-col col-9 class="padding__Styles">
+                     <div>
+                        <span class="smallTitle"> {{fullorder.createdDateStr | date: "dd-MMM-yyyy H:mm"}}</span>
+                        <span class="smallTitle"> | </span>
+                        <span class="smallTitle">
+                           ₹
+                        </span>
+                        <span class="smallTitle"><b>{{fullorder.amountStr}}</b></span>
+                     </div>
+                  </ion-col>
+               </ion-row>
+               <ion-row class="align__items__center" >
+                  <ion-col col-9 class="padding__Styles" (click)="goOrderDetails($event, fullorder,i)">
+                     <div *ngIf="(fullorder.status === 'RECEIVED')">
+                        <div class="items" *ngFor="let itemDec of fullorder.itemFullName">
+                           {{itemDec}}
+                        </div>
+                     </div>
+                     <div *ngIf="(fullorder.status === 'REJECTED'||fullorder.status=='COMPLETED'||fullorder.status === 'EXPIRED')">
+                        <div *ngIf="fullorder.status=='COMPLETED'" class="itemStatus__Completed completed__color">
+                           {{fullorder.status}}
+                        </div>
+                        <div *ngIf="fullorder.status=='REJECTED'" class="itemStatus__Completed rejected__color">
+                           {{fullorder.status}}
+                        </div>
+                        <div *ngIf="fullorder.status=='EXPIRED'" class="itemStatus__Completed expired__color">
+                           {{fullorder.status}}
+                        </div>
+                     </div>
+                  </ion-col>
+                  <ion-col col-3 class="padding__Styles" *ngIf="(fullorder.status === 'READY')||(fullorder.status === 'RECEIVED')||(fullorder.status === 'INPROGRESS')" (click)=callDiner(fullorder.phoneNumber)>
+                     <div class="text__float__right">
+                        <span class="status__Styles">Call Diner</span>
+                        <ion-icon name="call" class="status__Styles"></ion-icon>
+                     </div>
+                  </ion-col>
+                  <ion-col col-12 class="padding__Styles" *ngIf="fullorder.typeOfDinning=='CINEMAS'">
+                     <!-- <div>
+                        <span>{{fullorder.deliveryAddress}}</span>
+                     </div> -->
+                     
+                     <div style="white-space: normal;" *ngIf="(fullorder.orderType == 'Delivery')">
+                        <b>Name: </b>{{fullorder.deliveryAddress}}
+                     </div>
+                     <div style="white-space: normal;"  *ngIf="(fullorder.orderType == 'Delivery')">
+                        <b>Screen: </b>{{fullorder.deliveryAddress1}} | <b>Row: </b>{{fullorder.deliveryAddress2}} | <b>Seat: </b>{{fullorder.deliveryAddress3}}
+                      </div>
+                     
+                  </ion-col>
+                  <ion-col col-12 class="padding__Styles" *ngIf="fullorder.typeOfDinning=='FOODCOURT'">
+                     <!-- <div>
+                        <span>{{fullorder.deliveryAddress}}</span>
+                     </div> -->
+                     
+                     <div style="white-space: normal;" *ngIf="(fullorder.orderType == 'Delivery')">
+                        <b>Name: </b>{{fullorder.deliveryAddress}}
+                     </div>
+                     <div style="white-space: normal;"  *ngIf="(fullorder.orderType == 'Delivery')">
+                        <b>Table Number: </b>{{fullorder.deliveryAddress1}}
+                      </div>
+                     
+                  </ion-col>
+                  <ion-col col-12 class="padding__Styles" *ngIf="fullorder.typeOfDinning=='RESTAURANT'">
+                     <!-- <div>
+                        <span>{{fullorder.deliveryAddress}}</span>
+                     </div> -->
+                     <div style="white-space: normal;" *ngIf="(fullorder.orderType == 'Delivery')">
+                        <b>Name: </b>{{fullorder.deliveryAddress}}
+                     </div>
+                     <div style="white-space: normal;" *ngIf="(fullorder.orderType == 'Delivery')">
+                        <b>Company: </b>{{fullorder.deliveryAddress1}} | <b>Quadrant: </b>{{fullorder.deliveryAddress2}} | <b>Floor: </b>{{fullorder.deliveryAddress3}}
+                      </div>
+                      
+                  </ion-col>
+               </ion-row>
+            </ion-item>
+            <div *ngIf="!showOrderLoader">
+               <div [hidden]="!(i==k)" *ngFor="let order of outletOrdersDetails;let lst = last;">
+                  <div class="">
+                     <ion-item style="padding-right:10px;">
+                        <ion-row>
+                           <ion-col col-6>
+                              <div class="itemName__Styles break__word" style="display:flex;"><img *ngIf="!(order.itemType)" src="../../assets/nveg.png" class="margin__top" width="14" height="14" /><img *ngIf="(order.itemType)" src="../../assets/veg.png" class="margin__top" width="14" height="14" />{{order.itemName}}</div>
+                              <div class="span_style_Values">
+                                 <div class="itemName__Status" *ngIf="(order.rejectedCount>0) && (order.status === 'RECEIVED')">
+                                    <!-- Accepted:<b>{{order.NonrejecetdItems.length}}</b> -->
+                                 </div>
+                                 <div class="itemName__Status" *ngIf="(order.status === 'INPROGRESS')">
+                                    Accepted:<b>{{order.NonrejecetdItems.length}}</b>
+                                 </div>
+                                 <div class="itemName__Status" *ngIf="(order.status === 'READY')">
+                                    Accepted:<b>{{order.NonrejecetdItems.length}}</b>
+                                 </div>
+                                 <div class="itemName__Status" *ngIf="(order.status === 'COMPLETED')">
+                                    Accepted:<b>{{order.NonrejecetdItems.length}}</b>
+                                 </div>
+                                 <div class="itemName__Status" *ngIf="(order.status === 'REJECTED')">
+                                    Accepted:<b>{{order.NonrejecetdItems.length}}</b>
+                                 </div>
+                                 <div class="itemName__Status">Rejected : <b>{{order.rejecetdItems.length}}</b>
+                                 </div>
+                              </div>
+                           </ion-col>
+                           <ion-col col-3>
+                              <div *ngIf="(order.status != 'COMPLETED')">
+                                 <span *ngIf="(order.status == 'RECEIVED')">
+                                    <div class="add-button">
+                                       <span class="quantity-decrement">
+                                          <ion-icon item-left name="md-remove" class="quantity-icon" (click)="quantityDecrement(order)"></ion-icon>
+                                       </span>
+                                       <span class="quantity-value">{{order.rejectedCount}}</span>
+                                       <span class="quantity-increment">
+                                          <ion-icon item-right name="md-add" class="quantity-icon" (click)="quantityIncreament(order)"></ion-icon>
+                                       </span>
+                                    </div>
+                                 </span>
+                              </div>
+                           </ion-col>
+                           <ion-col col-3>
+                              <div class="smallTitle text__float__right">
+                              <b>₹ {{(order.itemPrice*order.NonrejecetdItems.length).toFixed(2)}}
+                                 </b>
+                              </div>
+                              <br />
+                              <div class="text__float__right" *ngIf="(order.status != 'COMPLETED')">
+                                 <span *ngIf="(order.status == 'RECEIVED')">
+                                    <button ion-button class="btn__Item__Close" outline (click)="deleteItemLevel(fullorder,order)">
+                                       <ion-icon name="close"></ion-icon>
+                                    </button>
+                                 </span>
+                              </div>
+                           </ion-col>
+                           <ion-col col-12 *ngIf="lst">Note: <span class="itemName__Styles" style="color:#000000;font-weight: bold;">{{fullorder.specialInstructions}}</span></ion-col>
+                        </ion-row>
+                     </ion-item>
+                  </div>
+               </div>
+            </div>
+            <page-globalloader *ngIf="showOrderLoader"></page-globalloader>
+         </div>
+      </ion-grid>
+   </div>
+   <page-globalloader *ngIf="showLoader"></page-globalloader>
+   <ion-fab bottom center (click)="newTop()" *ngIf="!showTop">
+      <button ion-fab>
+         <ion-icon name="arrow-dropup" class="ion_icon_style"></ion-icon>
+      </button>
+   </ion-fab>
+</ion-content>
+
+<div id="pullout"  style="background-color: maroon; margin-top: 8%">
+   <div id="pullout-inner" style="width: 100%">
+      <ion-list style="border-style: groove">
+         <ion-item style="height: 94px">
+           <ion-label>Buzzer</ion-label>
+           <ion-toggle [(ngModel)]="buzzer"></ion-toggle>
+         </ion-item>
+         </ion-list>
+   </div>
+ </div>

@@ -1,0 +1,7 @@
+Required='${label}' requires a mandatory input
+IConverter.Integer='${label}' requires a valid integer value. (ex\: 10)
+IConverter.BigDecimal='${label}' requires a valid number value. (ex\: 100.10)
+IConverter.Double='${label}' requires a valid double value. (ex\: 123.12)
+IConverter.String='${label}' requires a valid character information. (ex\: Dairy)
+IConverter.Date='${label}' requires a valid Date information. (ex\: 24/10/12 for 24th october 2012 )
+RangeValidator=Field '${label}' must have a value between ${min} and ${max}

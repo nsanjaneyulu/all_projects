@@ -1,0 +1,26 @@
+@import "../../_variables.scss";
+
+.item {
+    cursor: pointer;
+    text-align: center;
+    padding: .5em;
+    margin: .4em 0;
+    height: 120px;
+    &:hover, &.selected {
+        color: #ffffff;
+        background-color: #607D8B;
+    }
+    &.border {
+        border-color: $dark-border !important; 
+    }
+    &.d-table {
+        width: 100%;
+    }
+    .d-table-cell {
+        vertical-align: middle;
+        .item-price {
+            line-height: 2.5;
+            font-weight: bold;
+        }
+    }
+}

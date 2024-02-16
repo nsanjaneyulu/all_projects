@@ -1,0 +1,792 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- SQL XML created by WWW SQL Designer, http://code.google.com/p/wwwsqldesigner/ -->
+<!-- Active URL: file:///D:/tools/wwwsqldesigner-2.6/wwwsqldesigner-2.6/index.html -->
+<sql>
+<datatypes db="mysql">
+	<group label="Numeric" color="rgb(238,238,170)">
+		<type label="Integer" length="0" sql="INTEGER" re="INT" quote=""/>
+		<type label="Decimal" length="1" sql="DECIMAL" re="DEC" quote=""/>
+		<type label="Single precision" length="0" sql="FLOAT" quote=""/>
+		<type label="Double precision" length="0" sql="DOUBLE" re="DOUBLE" quote=""/>
+	</group>
+
+	<group label="Character" color="rgb(255,200,200)">
+		<type label="Char" length="1" sql="CHAR" quote="'"/>
+		<type label="Varchar" length="1" sql="VARCHAR" quote="'"/>
+		<type label="Text" length="0" sql="MEDIUMTEXT" re="TEXT" quote="'"/>
+		<type label="Binary" length="1" sql="BINARY" quote="'"/>
+		<type label="Varbinary" length="1" sql="VARBINARY" quote="'"/>
+		<type label="BLOB" length="0" sql="BLOB" re="BLOB" quote="'"/>
+	</group>
+
+	<group label="Date &amp; Time" color="rgb(200,255,200)">
+		<type label="Date" length="0" sql="DATE" quote="'"/>
+		<type label="Time" length="0" sql="TIME" quote="'"/>
+		<type label="Datetime" length="0" sql="DATETIME" quote="'"/>
+		<type label="Year" length="0" sql="YEAR" quote=""/>
+		<type label="Timestamp" length="0" sql="TIMESTAMP" quote="'"/>
+	</group>
+	
+	<group label="Miscellaneous" color="rgb(200,200,255)">
+		<type label="ENUM" length="1" sql="ENUM" quote=""/>
+		<type label="SET" length="1" sql="SET" quote=""/>
+		<type label="Bit" length="0" sql="bit" quote=""/>
+	</group>
+</datatypes><table x="353" y="126" name="livestock">
+<row name="id" null="0" autoincrement="1">
+<datatype>INTEGER(10)</datatype>
+</row>
+<row name="RFID" null="0" autoincrement="0">
+<datatype>VARCHAR(64)</datatype>
+</row>
+<row name="breed_type" null="0" autoincrement="0">
+<datatype>VARCHAR(30)</datatype>
+</row>
+<row name="state" null="0" autoincrement="0">
+<datatype>VARCHAR(30)</datatype>
+</row>
+<row name="origin" null="0" autoincrement="0">
+<datatype>VARCHAR(30)</datatype>
+</row>
+<row name="milking_status" null="0" autoincrement="0">
+<datatype>INTEGER(2)</datatype>
+</row>
+<row name="birth_date" null="0" autoincrement="0">
+<datatype>DATETIME</datatype>
+</row>
+<row name="purchase_date" null="0" autoincrement="0">
+<datatype>DATETIME</datatype>
+</row>
+<row name="vendor_id" null="1" autoincrement="0">
+<datatype>INTEGER(10)</datatype>
+<relation table="vendor" row="id" />
+</row>
+<row name="current_stat_id" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<relation table="statistics" row="id" />
+</row>
+<row name="purchase_stat_id" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<relation table="statistics" row="id" />
+</row>
+<row name="code" null="1" autoincrement="0">
+<datatype>VARCHAR(30)</datatype>
+</row>
+<row name="farm_id" null="0" autoincrement="0">
+<datatype>INTEGER(10)</datatype>
+<relation table="farm" row="id" />
+</row>
+<row name="id_health" null="1" autoincrement="0">
+<datatype>INTEGER(10)</datatype>
+<relation table="health" row="id" />
+</row>
+<row name="stock_type" null="1" autoincrement="0">
+<datatype>VARCHAR(30)</datatype>
+<relation table="stock_type" row="stock_type" />
+</row>
+<row name="mother_stock_id" null="1" autoincrement="0">
+<datatype>INTEGER(10)</datatype>
+<relation table="livestock" row="id" />
+</row>
+<row name="father_stock_id" null="1" autoincrement="0">
+<datatype>INTEGER(10)</datatype>
+<relation table="livestock" row="id" />
+</row>
+<row name="semen_id" null="1" autoincrement="0">
+<datatype>VARCHAR(30)</datatype>
+</row>
+<row name="delivery_mode" null="1" autoincrement="0">
+<datatype>VARCHAR(30)</datatype>
+</row>
+<row name="initial_value" null="1" autoincrement="0">
+<datatype>VARCHAR(30)</datatype>
+</row>
+<row name="remarks" null="1" autoincrement="0">
+<datatype>VARCHAR(300)</datatype>
+</row>
+<row name="preferred_type" null="0" autoincrement="0">
+<datatype>VARCHAR(30)</datatype>
+<default>'nurture'</default></row>
+<key type="PRIMARY" name="">
+<part>id</part>
+</key>
+<key type="UNIQUE" name="uq_identity">
+<part>RFID</part>
+</key>
+<key type="UNIQUE" name="">
+<part>breed_type</part>
+</key>
+<key type="UNIQUE" name="">
+<part>origin</part>
+</key>
+<key type="UNIQUE" name="">
+<part>milking_status</part>
+</key>
+</table>
+<table x="715" y="12" name="farm">
+<row name="id" null="0" autoincrement="1">
+<datatype>INTEGER(10)</datatype>
+</row>
+<row name="name" null="0" autoincrement="0">
+<datatype>VARCHAR(150)</datatype>
+</row>
+<row name="registration_number" null="0" autoincrement="0">
+<datatype>VARCHAR(15)</datatype>
+</row>
+<row name="contact_id" null="1" autoincrement="0">
+<datatype>INTEGER(10)</datatype>
+<relation table="contact" row="id" />
+</row>
+<key type="PRIMARY" name="">
+<part>id</part>
+</key>
+<comment>Represents a Farm</comment>
+</table>
+<table x="690" y="448" name="vendor">
+<row name="id" null="0" autoincrement="1">
+<datatype>INTEGER(10)</datatype>
+</row>
+<row name="name" null="0" autoincrement="0">
+<datatype>VARCHAR(150)</datatype>
+</row>
+<row name="vendor_contact_id" null="1" autoincrement="0">
+<datatype>INTEGER(10)</datatype>
+<relation table="contact" row="id" />
+</row>
+<row name="code" null="0" autoincrement="0">
+<datatype>VARCHAR(30)</datatype>
+</row>
+<key type="PRIMARY" name="">
+<part>id</part>
+</key>
+</table>
+<table x="762" y="573" name="health">
+<row name="id" null="1" autoincrement="1">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<key type="PRIMARY" name="">
+<part>id</part>
+</key>
+<key type="UNIQUE" name="">
+</key>
+</table>
+<table x="980" y="391" name="contact">
+<row name="id" null="0" autoincrement="1">
+<datatype>INTEGER(10)</datatype>
+</row>
+<row name="name" null="1" autoincrement="0">
+<datatype>VARCHAR(150)</datatype>
+</row>
+<row name="phone_number1" null="1" autoincrement="0">
+<datatype>VARCHAR(20)</datatype>
+</row>
+<row name="phone_number2" null="1" autoincrement="0">
+<datatype>VARCHAR(30)</datatype>
+</row>
+<row name="phone_number3" null="1" autoincrement="0">
+<datatype>VARCHAR(30)</datatype>
+</row>
+<key type="PRIMARY" name="">
+<part>id</part>
+</key>
+</table>
+<table x="123" y="536" name="stock_type">
+<row name="id" null="1" autoincrement="1">
+<datatype>INTEGER</datatype>
+</row>
+<row name="stock_type" null="0" autoincrement="0">
+<datatype>VARCHAR(30)</datatype>
+</row>
+<key type="PRIMARY" name="">
+<part>id</part>
+</key>
+<key type="UNIQUE" name="">
+<part>stock_type</part>
+</key>
+</table>
+<table x="66" y="331" name="promotion_history">
+<row name="id" null="0" autoincrement="1">
+<datatype>INTEGER(10)</datatype>
+</row>
+<row name="livestock_id" null="0" autoincrement="0">
+<datatype>INTEGER(10)</datatype>
+<relation table="livestock" row="id" />
+</row>
+<row name="initial_stock_type" null="0" autoincrement="0">
+<datatype>INTEGER(10)</datatype>
+<relation table="stock_type" row="id" />
+</row>
+<row name="final_stock_type" null="0" autoincrement="0">
+<datatype>INTEGER(10)</datatype>
+<relation table="stock_type" row="id" />
+</row>
+<row name="promotion_date" null="0" autoincrement="0">
+<datatype>DATETIME</datatype>
+<default>'CURTIME()'</default></row>
+<key type="PRIMARY" name="">
+<part>id</part>
+</key>
+</table>
+<table x="732" y="160" name="purchases">
+<row name="id" null="1" autoincrement="1">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="id_vendor" null="1" autoincrement="0">
+<datatype>INTEGER(10)</datatype>
+<default>NULL</default><relation table="vendor" row="id" />
+</row>
+<row name="receipt_number" null="0" autoincrement="0">
+<datatype>VARCHAR(30)</datatype>
+<default>'NULL'</default></row>
+<row name="sale_date" null="0" autoincrement="0">
+<datatype>DATETIME</datatype>
+<default>'CURTIME()'</default></row>
+<row name="receipt_type" null="0" autoincrement="0">
+<datatype>VARCHAR(30)</datatype>
+<default>'NULL'</default></row>
+<row name="remarks" null="1" autoincrement="0">
+<datatype>VARCHAR(250)</datatype>
+<default>NULL</default></row>
+<row name="amount" null="0" autoincrement="0">
+<datatype>DECIMAL</datatype>
+<default>0</default></row>
+<row name="id_livestock" null="1" autoincrement="0">
+<datatype>INTEGER(10)</datatype>
+<default>NULL</default><relation table="livestock" row="id" />
+</row>
+<row name="id_farm" null="1" autoincrement="0">
+<datatype>INTEGER(10)</datatype>
+<default>NULL</default><relation table="farm" row="id" />
+</row>
+<key type="PRIMARY" name="">
+<part>id</part>
+</key>
+</table>
+<table x="1318" y="159" name="expenses">
+<row name="id" null="0" autoincrement="1">
+<datatype>INTEGER(10)</datatype>
+</row>
+<row name="id_vendor" null="1" autoincrement="0">
+<datatype>INTEGER(10)</datatype>
+<relation table="vendor" row="id" />
+</row>
+<row name="receipt_number" null="0" autoincrement="0">
+<datatype>VARCHAR(30)</datatype>
+</row>
+<row name="sale_date" null="0" autoincrement="0">
+<datatype>DATETIME</datatype>
+<default>'CURTIME()'</default></row>
+<row name="receipt_type" null="0" autoincrement="0">
+<datatype>VARCHAR(30)</datatype>
+</row>
+<row name="remarks" null="1" autoincrement="0">
+<datatype>VARCHAR(250)</datatype>
+</row>
+<row name="amount" null="0" autoincrement="0">
+<datatype>DECIMAL(10)</datatype>
+<default>0</default></row>
+<row name="id_livestock" null="1" autoincrement="0">
+<datatype>INTEGER(10)</datatype>
+<relation table="livestock" row="id" />
+</row>
+<row name="id_farm" null="0" autoincrement="0">
+<datatype>INTEGER(10)</datatype>
+<relation table="farm" row="id" />
+</row>
+<key type="PRIMARY" name="">
+<part>id</part>
+</key>
+</table>
+<table x="1505" y="33" name="person">
+<row name="id" null="0" autoincrement="1">
+<datatype>INTEGER</datatype>
+</row>
+<row name="employee_number" null="0" autoincrement="0">
+<datatype>VARCHAR(30)</datatype>
+</row>
+<row name="name" null="0" autoincrement="0">
+<datatype>VARCHAR(150)</datatype>
+</row>
+<row name="dept_number" null="0" autoincrement="0">
+<datatype>VARCHAR(30)</datatype>
+</row>
+<row name="dept_name" null="0" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+</row>
+<row name="salary" null="0" autoincrement="0">
+<datatype>DECIMAL(10)</datatype>
+<default>0</default></row>
+<row name="hike_details" null="0" autoincrement="0">
+<datatype>VARCHAR(250)</datatype>
+</row>
+<row name="hire_date" null="0" autoincrement="0">
+<datatype>DATETIME</datatype>
+</row>
+<row name="releive_date" null="0" autoincrement="0">
+<datatype>DATETIME</datatype>
+</row>
+<row name="academic_qual" null="0" autoincrement="0">
+<datatype>VARCHAR(250)</datatype>
+</row>
+<row name="year_passing" null="0" autoincrement="0">
+<datatype>INTEGER(4)</datatype>
+<default>2000</default></row>
+<row name="sex" null="0" autoincrement="0">
+<datatype>CHAR(1)</datatype>
+<default>'M'</default></row>
+<row name="date_of_birth" null="0" autoincrement="0">
+<datatype>DATETIME</datatype>
+</row>
+<row name="marital_status" null="0" autoincrement="0">
+<datatype>CHAR(1)</datatype>
+<default>'M'</default></row>
+<row name="photo_id" null="1" autoincrement="0">
+<datatype>INTEGER(10)</datatype>
+<relation table="images" row="id" />
+</row>
+<row name="job_type" null="0" autoincrement="0">
+<datatype>VARCHAR(30)</datatype>
+</row>
+<row name="blood_group" null="0" autoincrement="0">
+<datatype>VARCHAR(3)</datatype>
+<default>'o+'</default></row>
+<row name="id_contact" null="1" autoincrement="0">
+<datatype>INTEGER(10)</datatype>
+<relation table="contact" row="id" />
+</row>
+<row name="spouse_name" null="0" autoincrement="0">
+<datatype>VARCHAR(150)</datatype>
+</row>
+<row name="id_farm" null="1" autoincrement="0">
+<datatype>INTEGER(10)</datatype>
+<relation table="farm" row="id" />
+</row>
+<key type="PRIMARY" name="">
+<part>id</part>
+</key>
+</table>
+<table x="115" y="125" name="statistics">
+<row name="id" null="0" autoincrement="1">
+<datatype>INTEGER</datatype>
+</row>
+<row name="height" null="1" autoincrement="0">
+<datatype>VARCHAR(10)</datatype>
+</row>
+<row name="weight" null="1" autoincrement="0">
+<datatype>VARCHAR(10)</datatype>
+</row>
+<row name="appearance" null="1" autoincrement="0">
+<datatype>VARCHAR(10)</datatype>
+</row>
+<row name="production" null="1" autoincrement="0">
+<datatype>VARCHAR(10)</datatype>
+</row>
+<row name="fat_percent" null="1" autoincrement="0">
+<datatype>DECIMAL(10)</datatype>
+</row>
+<key type="PRIMARY" name="">
+<part>id</part>
+</key>
+</table>
+<table x="50" y="679" name="production">
+<row name="id" null="1" autoincrement="1">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="yield" null="1" autoincrement="0">
+<datatype>DECIMAL(10)</datatype>
+</row>
+<row name="fat_percentile" null="1" autoincrement="0">
+<datatype>DECIMAL(10)</datatype>
+</row>
+<row name="yeild_slot_name" null="1" autoincrement="0">
+<datatype>VARCHAR(10)</datatype>
+</row>
+<row name="date" null="0" autoincrement="0">
+<datatype>DATETIME</datatype>
+</row>
+<row name="livestock_id" null="1" autoincrement="0">
+<datatype>INTEGER(10)</datatype>
+<relation table="livestock" row="id" />
+</row>
+<row name="lactation_day" null="0" autoincrement="0">
+<datatype>INTEGER(10)</datatype>
+</row>
+<key type="PRIMARY" name="">
+<part>id</part>
+</key>
+<key type="UNIQUE" name="">
+<part>yeild_slot_name</part>
+</key>
+<key type="UNIQUE" name="">
+<part>livestock_id</part>
+<part>lactation_day</part>
+</key>
+</table>
+<table x="797" y="705" name="images">
+<row name="id" null="0" autoincrement="1">
+<datatype>INTEGER(10)</datatype>
+</row>
+<row name="raw_image" null="0" autoincrement="0">
+<datatype>VARBINARY(2000)</datatype>
+</row>
+<row name="livestock_id" null="1" autoincrement="0">
+<datatype>INTEGER(10)</datatype>
+<relation table="livestock" row="id" />
+</row>
+<key type="PRIMARY" name="">
+<part>id</part>
+</key>
+</table>
+<table x="1085" y="1" name="inventory">
+<row name="id" null="0" autoincrement="1">
+<datatype>INTEGER(10)</datatype>
+</row>
+<row name="id_farm" null="1" autoincrement="0">
+<datatype>INTEGER(10)</datatype>
+<relation table="farm" row="id" />
+</row>
+<key type="PRIMARY" name="">
+<part>id</part>
+</key>
+</table>
+<table x="1285" y="-38" name="provision_inventory">
+<row name="id" null="0" autoincrement="1">
+<datatype>INTEGER(10)</datatype>
+</row>
+<row name="id_inventory" null="1" autoincrement="0">
+<datatype>INTEGER(10)</datatype>
+<relation table="inventory" row="id" />
+</row>
+<row name="provision_name" null="0" autoincrement="0">
+<datatype>VARCHAR(30)</datatype>
+<relation table="provisions" row="provision_name" />
+</row>
+<row name="quantity" null="0" autoincrement="0">
+<datatype>DECIMAL(10)</datatype>
+</row>
+<row name="unit_price" null="0" autoincrement="0">
+<datatype>DECIMAL</datatype>
+</row>
+<row name="purchase_date" null="0" autoincrement="0">
+<datatype>DATETIME</datatype>
+</row>
+<key type="PRIMARY" name="">
+<part>id</part>
+</key>
+</table>
+<table x="970" y="863" name="decease">
+<row name="id" null="1" autoincrement="1">
+<datatype>INTEGER(10)</datatype>
+</row>
+<row name="decease_type" null="0" autoincrement="0">
+<datatype>VARCHAR(150)</datatype>
+</row>
+<row name="start_date" null="0" autoincrement="0">
+<datatype>DATETIME</datatype>
+</row>
+<row name="end_date" null="0" autoincrement="0">
+<datatype>DATETIME</datatype>
+</row>
+<row name="treatment_date" null="0" autoincrement="0">
+<datatype>DATETIME</datatype>
+</row>
+<row name="treatment_description" null="0" autoincrement="0">
+<datatype>VARCHAR(150)</datatype>
+<default>'Default'</default></row>
+<row name="health_id" null="1" autoincrement="0">
+<datatype>INTEGER(10)</datatype>
+<relation table="health" row="id" />
+</row>
+<key type="PRIMARY" name="">
+<part>id</part>
+</key>
+<key type="UNIQUE" name="">
+<part>decease_type</part>
+</key>
+</table>
+<table x="1268" y="818" name="vaccination">
+<row name="id" null="0" autoincrement="1">
+<datatype>INTEGER(10)</datatype>
+</row>
+<row name="vaccination_type" null="0" autoincrement="0">
+<datatype>VARCHAR(30)</datatype>
+</row>
+<row name="last_vaccination_date" null="1" autoincrement="0">
+<datatype>DATETIME</datatype>
+</row>
+<row name="next_vaccination_date" null="1" autoincrement="0">
+<datatype>DATETIME</datatype>
+</row>
+<row name="vaccine_brand" null="0" autoincrement="0">
+<datatype>VARCHAR(150)</datatype>
+<default>'Default'</default></row>
+<row name="vaccine_expiry_date" null="1" autoincrement="0">
+<datatype>DATETIME</datatype>
+</row>
+<row name="dosage" null="0" autoincrement="0">
+<datatype>DECIMAL(10)</datatype>
+</row>
+<row name="health_id" null="1" autoincrement="0">
+<datatype>INTEGER(10)</datatype>
+<relation table="health" row="id" />
+</row>
+<key type="PRIMARY" name="">
+<part>id</part>
+</key>
+<key type="UNIQUE" name="">
+<part>vaccination_type</part>
+</key>
+</table>
+<table x="1268" y="443" name="asset">
+<row name="id" null="0" autoincrement="1">
+<datatype>INTEGER</datatype>
+</row>
+<row name="asset_code" null="0" autoincrement="0">
+<datatype>VARCHAR(30)</datatype>
+</row>
+<row name="asset_type_id" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+</row>
+<row name="id_vendor" null="1" autoincrement="0">
+<datatype>INTEGER(10)</datatype>
+<relation table="vendor" row="id" />
+</row>
+<row name="purchase_date" null="0" autoincrement="0">
+<datatype>DATETIME</datatype>
+</row>
+<row name="quantitiy" null="0" autoincrement="0">
+<datatype>DECIMAL</datatype>
+<default>0</default></row>
+<row name="unit_cost" null="0" autoincrement="0">
+<datatype>DECIMAL</datatype>
+<default>0</default></row>
+<row name="description" null="0" autoincrement="0">
+<datatype>VARCHAR(150)</datatype>
+</row>
+<row name="remarks" null="1" autoincrement="0">
+<datatype>VARCHAR(300)</datatype>
+</row>
+<key type="PRIMARY" name="">
+<part>id</part>
+</key>
+<key type="UNIQUE" name="">
+<part>asset_type_id</part>
+</key>
+</table>
+<table x="984" y="551" name="address">
+<row name="id" null="1" autoincrement="1">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="line1" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default></row>
+<row name="line2" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+</row>
+<row name="line3" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+</row>
+<row name="city" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+</row>
+<row name="state" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+</row>
+<row name="zip" null="1" autoincrement="0">
+<datatype>VARCHAR(10)</datatype>
+</row>
+<row name="country" null="1" autoincrement="0">
+<datatype>VARCHAR(15)</datatype>
+<default>'India'</default></row>
+<row name="id_contact" null="1" autoincrement="0">
+<datatype>INTEGER(10)</datatype>
+<relation table="contact" row="id" />
+</row>
+<row name="type" null="0" autoincrement="0">
+<datatype>VARCHAR(30)</datatype>
+<default>'P'</default></row>
+<key type="PRIMARY" name="">
+<part>id</part>
+</key>
+</table>
+<table x="50" y="898" name="production_config">
+<row name="id" null="0" autoincrement="1">
+<datatype>INTEGER(10)</datatype>
+</row>
+<row name="yeild_slot_name" null="0" autoincrement="0">
+<datatype>VARCHAR(10)</datatype>
+<relation table="production" row="yeild_slot_name" />
+</row>
+<row name="order" null="0" autoincrement="0">
+<datatype>INTEGER(2)</datatype>
+</row>
+<key type="PRIMARY" name="">
+<part>id</part>
+</key>
+<key type="UNIQUE" name="">
+<part>yeild_slot_name</part>
+</key>
+<key type="UNIQUE" name="">
+<part>order</part>
+</key>
+</table>
+<table x="582" y="634" name="devermitization">
+<row name="id" null="0" autoincrement="1">
+<datatype>INTEGER(10)</datatype>
+</row>
+<row name="health_id" null="1" autoincrement="0">
+<datatype>INTEGER(10)</datatype>
+<relation table="health" row="id" />
+</row>
+<key type="PRIMARY" name="">
+<part>id</part>
+</key>
+</table>
+<table x="240" y="733" name="feeding_config">
+<row name="id" null="1" autoincrement="1">
+<datatype>INTEGER(10)</datatype>
+</row>
+<row name="feed_slot_name" null="0" autoincrement="0">
+<datatype>VARCHAR(30)</datatype>
+</row>
+<row name="feed_type" null="0" autoincrement="0">
+<datatype>VARCHAR(30)</datatype>
+<relation table="feed_type" row="feed_type" />
+</row>
+<row name="order" null="0" autoincrement="0">
+<datatype>INTEGER(10)</datatype>
+</row>
+<key type="PRIMARY" name="">
+<part>id</part>
+</key>
+<key type="UNIQUE" name="">
+<part>order</part>
+</key>
+<key type="UNIQUE" name="">
+<part>feed_slot_name</part>
+<part>feed_type</part>
+</key>
+</table>
+<table x="332" y="888" name="feed_type">
+<row name="id" null="0" autoincrement="1">
+<datatype>INTEGER(10)</datatype>
+</row>
+<row name="feed_type" null="0" autoincrement="0">
+<datatype>VARCHAR(30)</datatype>
+</row>
+<key type="PRIMARY" name="">
+<part>id</part>
+</key>
+<key type="UNIQUE" name="">
+<part>feed_type</part>
+</key>
+</table>
+<table x="1115" y="703" name="provisions">
+<row name="id" null="0" autoincrement="1">
+<datatype>INTEGER(10)</datatype>
+</row>
+<row name="provision_name" null="0" autoincrement="0">
+<datatype>VARCHAR(30)</datatype>
+</row>
+<key type="PRIMARY" name="">
+<part>id</part>
+</key>
+<key type="UNIQUE" name="">
+<part>provision_name</part>
+</key>
+</table>
+<table x="1267" y="692" name="asset_type">
+<row name="id" null="0" autoincrement="1">
+<datatype>INTEGER</datatype>
+<relation table="asset" row="asset_type_id" />
+</row>
+<row name="asset" null="0" autoincrement="0">
+<datatype>VARCHAR(30)</datatype>
+</row>
+<key type="PRIMARY" name="">
+<part>id</part>
+</key>
+</table>
+<table x="520" y="15" name="breed_type">
+<row name="id" null="0" autoincrement="1">
+<datatype>INTEGER(10)</datatype>
+</row>
+<row name="breed_type" null="0" autoincrement="0">
+<datatype>VARCHAR(30)</datatype>
+<relation table="livestock" row="breed_type" />
+</row>
+<key type="PRIMARY" name="">
+<part>id</part>
+</key>
+</table>
+<table x="159" y="11" name="origin_type">
+<row name="id" null="0" autoincrement="1">
+<datatype>INTEGER(10)</datatype>
+</row>
+<row name="origin_type" null="0" autoincrement="0">
+<datatype>VARCHAR(30)</datatype>
+<relation table="livestock" row="origin" />
+</row>
+<key type="PRIMARY" name="">
+<part>id</part>
+</key>
+</table>
+<table x="335" y="20" name="milking_status">
+<row name="id" null="0" autoincrement="1">
+<datatype>INTEGER(10)</datatype>
+</row>
+<row name="status" null="0" autoincrement="0">
+<datatype>INTEGER(2)</datatype>
+<relation table="livestock" row="milking_status" />
+</row>
+<key type="PRIMARY" name="">
+<part>id</part>
+</key>
+</table>
+<table x="1522" y="788" name="vaccine_type">
+<row name="id" null="0" autoincrement="1">
+<datatype>INTEGER(10)</datatype>
+</row>
+<row name="vaccine" null="0" autoincrement="0">
+<datatype>VARCHAR(30)</datatype>
+<relation table="vaccination" row="vaccination_type" />
+</row>
+<key type="PRIMARY" name="">
+<part>id</part>
+</key>
+</table>
+<table x="754" y="844" name="decease_type">
+<row name="id" null="0" autoincrement="1">
+<datatype>INTEGER(10)</datatype>
+</row>
+<row name="decease" null="0" autoincrement="0">
+<datatype>VARCHAR(150)</datatype>
+<relation table="decease" row="decease_type" />
+</row>
+<key type="PRIMARY" name="">
+<part>id</part>
+</key>
+</table>
+<table x="541" y="787" name="feeding_history">
+<row name="id" null="0" autoincrement="1">
+<datatype>INTEGER(10)</datatype>
+</row>
+<row name="feed_type" null="0" autoincrement="0">
+<datatype>VARCHAR(30)</datatype>
+<relation table="feed_type" row="feed_type" />
+</row>
+<row name="id_livestock" null="1" autoincrement="0">
+<datatype>INTEGER(10)</datatype>
+<relation table="livestock" row="id" />
+</row>
+<row name="quantity" null="0" autoincrement="0">
+<datatype>DECIMAL</datatype>
+<default>0</default></row>
+<row name="feed_date" null="0" autoincrement="0">
+<datatype>DATETIME</datatype>
+</row>
+<key type="PRIMARY" name="">
+<part>id</part>
+</key>
+</table>
+</sql>

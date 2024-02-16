@@ -1,0 +1,5 @@
+please delete current schema
+
+run createtables.sql
+run changetables.sql
+run seeddata.sql

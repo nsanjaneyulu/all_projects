@@ -1,0 +1,90 @@
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark" *ngIf="this.currentRoute!=='/' && this.currentRoute!=='/login'">
+    <div class="navbar-collapse pl-3">
+        <div class="navbar-nav mr-auto">
+            <a class="nav-item nav-link" routerLink="/sale" routerLinkActive="active">
+                <span class="nav-icon"><img src="../../assets/images/sales.svg" class="icon_styles"></span>
+                <span>Sale</span>
+            </a>
+            <a class="nav-item nav-link" routerLink="/posorders" routerLinkActive="active">
+                <span class="nav-icon"><img src="../../assets/images/posOrders.svg" class="icon_styles"></span>
+                <span>POS Orders</span>
+            </a>
+            <a class="nav-item nav-link" routerLink="/online-orders" routerLinkActive="active">
+                <span class="nav-icon"><img src="../../assets/images/onlineOrders.svg" class="icon_styles"></span>
+                <span>Online Orders</span>
+            </a>
+            <a class="nav-item nav-link" routerLink="/inventory" routerLinkActive="active">
+                <span class="nav-icon"><img src="../../assets/images/inventory.svg" class="icon_styles"></span>
+                <span>Inventory</span>
+            </a>
+            <a class="nav-item nav-link" routerLink="/reports" routerLinkActive="active">
+                <span class="nav-icon"><img src="../../assets/images/reports.svg" class="icon_styles"></span>
+                <span>Reports</span>
+            </a>
+            <a class="nav-item nav-link" routerLink="/delivery" routerLinkActive="active">
+                <span class="nav-icon"><img src="../../assets/images/delivery.svg" class="icon_styles"></span>
+                <span>Delivery</span>
+            </a>
+        </div>
+    </div>
+    <a class="nav-item nav-link" routerLink="/delivery" routerLinkActive="active">
+        <img src="../../assets/images/tafel-logo-white.svg" class="image__styles">
+    </a>
+    <a class="nav-item nav-link" routerLink="/delivery" routerLinkActive="active" class="border-left-styles">
+        <!-- <img src="../../assets/images/logo.png" class="image__styles"> -->
+        <img src="{{mallImageURL + mallImage}}" class="image__styles">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse pr-3" id="navbarNavAltMarkup">
+        <div class="navbar-nav ml-auto">
+            <a class="nav-item nav-link" routerLink="/voidsrefunds" routerLinkActive="active">
+                <span class="nav-icon"><img src="../../assets/images/voidsRefunds.svg" class="icon_styles"></span>
+                <span>Voids/Refunds</span>
+            </a>
+            <a class="nav-item nav-link" routerLink="/employees">
+                <span class="nav-icon"><img src="../../assets/images/employees.svg" class="icon_styles"></span>
+                <span>Employees</span>
+            </a>
+            <a class="nav-item nav-link" routerLink="/settings">
+                <span class="nav-icon"><img src="../../assets/images/settings.svg" class="icon_styles"></span>
+                <span>Settings</span>
+            </a>
+            <a class="nav-item nav-link"   data-toggle="modal" data-target="#myModal2" >
+                <span class="nav-icon"><img src="../../assets/images/logout.svg" class="icon_styles"></span>
+                <span>Logout</span>
+            </a>
+        </div>
+    </div>
+</nav>
+<div class="progress" *ngIf="message === 'Internet connected'">
+        <div class="progress-bar progress-bar-striped bg-success progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 110%; height: 0.5rem;"></div>
+      </div>
+      <div class="progress" *ngIf="message != 'Internet connected'">
+           <div class="progress-bar progress-bar-striped bg-danger progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 110%; height: 0.5rem;"></div>
+         </div>
+<div class="container">
+        <div class="modal fade" id="myModal2" role="dialog">
+          <div class="modal-dialog">
+          
+            <div class="modal-content">
+              <div class="modal-header" style="font-size: 23px;">
+                        <a style="float: left;margin-top: -7px;" >Alert</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a style="float:right;margin-top: -7px;font-size: 20px" data-dismiss="modal" >&times;</a> 
+              </div>
+              <div class="modal-body" >
+                <p style="font-size: 18px;">Are you sure want to logout?</p>
+              </div>
+              <div class="modal-footer">
+                  <div  style="    width: 100%;"> 
+                        <a  data-dismiss="modal" style="  cursor: pointer;color: red">Cancel</a> 
+                        <a  data-dismiss="modal" (click)="logout()" style="      cursor: pointer;margin-left: 3%; color: green;     float: right;">OK</a> 
+                      </div>         
+                     </div>
+            </div>
+            
+          </div>
+        </div>
+        
+      </div>

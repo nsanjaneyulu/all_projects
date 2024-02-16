@@ -1,0 +1,32 @@
+<wicket:extend>
+	<div id="content">
+	   <h2><div wicket:id="feedback"></div></h2> 
+		<h1>Employee List</h1> 
+			<div class="list list-Header">
+                <div>
+					<h2>Emp Number</h2>
+					<h2>Emp Name</h2>
+					<h2>Dept Name</h2>	
+					<h2>Job Type</h2>	
+					<h2>Contact Number</h2>			
+					<h2>Sex</h2>
+					<h2>Date of Birth</h2>					
+					<h2>Salary</h2>
+					<h2 class="last">Blood Group</h2>
+				</div>
+				<div wicket:id="rows" style="clear:both;">
+				<div class="list-Rows">
+					<h3><a href="#" wicket:id="employee_edit"><span wicket:id="employeeNumber" /></a></h3>
+					<h3><span wicket:id="name" /></h3>
+					<h3><span wicket:id="deptName" /></h3>	
+					<h3><span wicket:id="jobType" /></h3>	
+					<h3><span wicket:id="contactNumber"/></h3>			
+					<h3><span wicket:id="sex" /></h3>
+					<h3><span wicket:id="dateOfBirth" /></h3>					
+					<h3><span wicket:id="salary" /></h3>
+					<h3 class="last"><span wicket:id="bloodGroup"/></h3>
+				</div>
+				</div>
+			</div>
+	</div>
+</wicket:extend>

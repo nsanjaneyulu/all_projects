@@ -1,0 +1,61 @@
+.table tbody {
+    background-color: #ffffff;
+}
+.form-control {
+   
+    border-radius: 0rem;
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid #fff;
+  }
+  .form-control::placeholder { 
+    color: #fff !important;
+    font-size: 18px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.39;
+    letter-spacing: normal;
+    text-align: left;
+  }
+  .form-control:focus {
+   
+    box-shadow: none !important;
+    outline:  none !important;
+    color: #fff;
+
+    border-radius: 0rem;
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid #fff;
+}
+.search_container_icon {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    right: 16px;
+    transform: translateY(-50%);
+  }
+  .display-flex-justify {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #40485c;
+  }
+  .pos-top-title-bg {
+      background: #40485c;
+  }
+  .pos-top-title {
+    font-size: 18px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.39;
+    letter-spacing: normal;
+    text-align: left;
+  } 
+
+  .displayflexcenter{
+    display: flex;
+    align-items: center;
+  }

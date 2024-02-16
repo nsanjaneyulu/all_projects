@@ -1,0 +1,159 @@
+<ion-header>
+   <div class="search__div">
+      <div class="search__container">
+         <ion-searchbar class="searchbar__Styles one__edge__shadow" placeholder="Search OrderIds" (ionInput)="getItems($event)"></ion-searchbar>
+      </div>
+   </div>
+</ion-header>
+<ion-content class="main__div" onload="refresh__Page()">
+   <ion-item>
+      <div class="filters">
+         <select class="filter__Styles select__border__none dropdown__styles" [(ngModel)]="selectStatus" (change)=OrderStatusChange()>
+         <option  *ngFor="let status of statusLet"  [value]="status">{{status}}</option>
+         </select>
+         <select [(ngModel)]="selectedOutlet" class="filter__Styles select__border__none dropdown__styles" (change)=valueChangeOutlet(selectedOutlet)>
+         <option *ngFor="let outlet of outlets" [value]="outlet.id">{{outlet.name}}</option>
+         </select>
+      </div>
+   </ion-item>
+   <ion-grid  padding class="ng-hide" id = "allOrders" >
+      <div class="bootem__level__space" *ngFor="let pendingFullOrder of pendingFullOrderObj">
+         <ion-item class="item__inner__border_styles" id ={{pendingFullOrder.id}} >
+            <ion-row>
+               <ion-col col-11>
+                  <div>
+                     <div class="order__Details">Order #{{pendingFullOrder.fullOrder5DigitId}}</div>
+                     <div>
+                        <span class="date__Vehicle">
+                        {{pendingFullOrder.createdDateStr | date: "dd/MM/yyyy H:mm"}}
+                        </span>
+                        <span class="date__Vehicle"> | </span>
+                        <span class="date__Vehicle">
+                        Vehicle #{{pendingFullOrder.vehicleNumber}}
+                        </span>
+                     </div>
+                     <div>
+                        <span class="diner_call" (click) = callDiner(pendingFullOrder.dinner.phoneNumber)>
+                           <ion-icon name="call" > Call Diner</ion-icon>
+                        </span>
+                     </div>
+                  </div>
+               </ion-col>
+               <ion-col col-1>
+                  <div (click)="getOrderDetails(pendingFullOrder)">
+                     <ion-icon class="accorions__Styles" [name]="pendingFullOrder.showOrderList ? 'remove' :'add'"></ion-icon>
+                  </div>
+               </ion-col>
+            </ion-row>
+         </ion-item>
+         <ion-item class="reject__layout__Styles item__inner__border_none margin__bottom__styles" *ngIf =pendingFullOrder.showDiv>
+            <div class="reject__Styles">
+               <div class="reject__order" id = {{pendingFullOrder.id}} (click)="goDelete(pendingFullOrder, orderData)" >
+                  <ion-icon name="trash"></ion-icon>
+                  <span class="text-transform">Reject Order</span>
+               </div>
+               <div>
+                  <select [(ngModel)]= "pendingFullOrder.status" class="set__Status filter__Styles select__border__none reject__layout__dropdown received" (change) ="fullorderChange(pendingFullOrder)">
+                  <option  *ngFor="let status of statusPopulate(pendingFullOrder.status)"  [value]="status.status"><span class= 'options'> {{status.status}}</span></option>
+                  </select>
+               </div>
+            </div>
+         </ion-item>
+         <ion-grid *ngIf="pendingFullOrder.showOrderList && pendingFullOrder?.fullOrderObject" id="{{pendingFullOrder?.fullOrderObject?.id}}">
+            <!-- <ion-grid *ngIf="fullOrderObject"> -->
+            <ion-row align-items: center *ngFor="let fullOrder of pendingFullOrder?.fullOrderObject?.jmorders">
+               <ion-item class="rejectItelLevelOrderDiv" *ngFor="let oderlet of fullOrder.orderlet">
+                  <!-- <ion-item class="" *ngFor="let oderlet of pendingFullOrder?.fullOrderObject?.jmorder?.orderlet"> -->
+                  <ion-avatar item-start>
+                     <img src="{{imageEndPoint}}/{{fullOrder.img}}">
+                  </ion-avatar>
+                  <div class="sub__item__name break__word">
+                     {{oderlet.item.name}}
+                  </div>
+                  <div class="sub__item__name">
+                     <span class="see__customizations" *ngFor = " let customization of oderlet.customization" >
+                     <span class ="beakword" *ngFor = "let selecteditems of customization.selectedItems">
+                     {{selecteditems.name}} : {{selecteditems.values}}
+                     </span>
+                     </span>
+                  </div>
+                  <div class="sub__item__name">
+                     <span class="see__customizations">Quantity : {{oderlet.quantity}}</span> 
+                  </div>
+                  <ion-note item-end *ngIf =showDivForAllPage(oderlet.status)  >
+                     <ion-icon class="remove__order" name="trash" (click) = "goDeleteForOrder(oderlet)"></ion-icon>
+                     <select [(ngModel)]=oderlet.status class="filter__Styles select__border__none received dropdown__styles options" (change) = orderStatusChange(fullOrder,oderlet) >
+                     <option  *ngFor="let status of statusPopulate(oderlet.status)"  [value]="status.status"><span class= 'options'> {{status.status}}</span></option>
+                     </select>
+                  </ion-note>
+                  <ion-note item-end *ngIf = !showDivForAllPage(oderlet.status) >
+                     <span class="see__customizations">
+                        <ion-icon name="basket"></ion-icon>
+                     </span>
+                     <span class="see__customizations sub__item__name">{{oderlet.status}}</span>
+                  </ion-note>
+               </ion-item>
+            </ion-row>
+         </ion-grid>
+      </div>
+   </ion-grid>
+   <ion-grid  padding class="ng-hide" id = "outletOrders">
+      <div class="bootem__level__space" *ngFor="let orderLet of outletorderArray">
+         <ion-item class="item__inner__border_styles" *ngIf = showRejectedCompletedDiv(orderLet)>
+            <ion-row >
+               <ion-col col-12>
+                  <div>
+                     <div class="order__Details">Order #{{orderLet.fullOrderId5didgit}}</div>
+                     <div>
+                        <span class="date__Vehicle">
+                        {{orderLet.createdDateStr | date: "dd/MM/yyyy H:mm"}}
+                        </span>
+                        <span class="date__Vehicle"> | </span>
+                        <span class="date__Vehicle">
+                        Vehicle #{{orderLet.dinnerVehicleNumber}}
+                        </span>
+                     </div>
+                     <div>
+                        <span class="item__Details"><b>Name: </b>{{orderLet.item.name}}</span>
+                     </div>
+                     <div>
+                        <span class="diner_call">Quantity: {{orderLet.quantity}}</span>
+                        <span class="date__Vehicle"> | </span>
+                        <span class="diner_call">
+                           <ion-icon name="call" (click) = callDiner(orderLet.dinnerPhoneNumber) ></ion-icon>
+                           Call Dinner 
+                        </span>
+                     </div>
+                  </div>
+                  <div *ngIf = !orderLet.showdeletediv>
+                     <span class="item__Details"><b>Status : </b></span> <span class="diner_call">{{orderLet.status}}</span>
+                  </div>
+               </ion-col>
+            </ion-row>
+         </ion-item>
+         <ion-item class="reject__layout__Styles item__inner__border_none margin__bottom__styles" *ngIf =orderLet.showdeletediv>
+            <div class="reject__Styles">
+               <div class="reject__order">
+                  <span (click)="goDeleteForOrder(orderLet)">
+                     <ion-icon name="trash" ></ion-icon>
+                     <span class="text-transform">Reject</span>
+                  </span>
+               </div>
+               <div>
+                  <select [(ngModel)]="orderLet.status" class="set__Status filter__Styles select__border__none reject__layout__dropdown"  id={{orderLet.orderId}}-orderStatus (change) ="orderStatusChange_outlet(orderLet)">
+                  <option  *ngFor="let status of statusPopulate(orderLet.status)"  [value]="status.status">{{status.status}}</option>
+                  </select>
+               </div>
+            </div>
+         </ion-item>
+      </div>
+   </ion-grid>
+   <!-- <ion-refresher (ionRefresh)="goRefresh($event)">
+      <ion-refresher-content
+         pullingIcon="arrow-dropdown"
+         pullingText="Pull to refresh"
+         refreshingSpinner="circles"
+         refreshingText="Refreshing...">
+      </ion-refresher-content>
+      </ion-refresher> -->
+</ion-content>

@@ -1,0 +1,11 @@
+.bow_dropdown_list.active {
+    background: #91034b;
+    border-left: 5px solid #fff;
+    /* color: #91034b; */
+}
+.bow_dropdown_list:focus {
+    outline: 0px !important;
+}
+.bow_dropdown_list {
+    padding: 5px;
+}

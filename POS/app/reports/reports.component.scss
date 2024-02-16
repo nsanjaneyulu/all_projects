@@ -1,0 +1,124 @@
+.color_styles {
+    color: #a81919;
+    font-size: 12px;
+    font-weight: bold;
+
+}
+.filter_styles {
+    font-size: 16px;
+    font-weight: bold;
+}
+.bg-styles {
+    background: #f0f0f7;
+  }
+:host {
+    overflow: hidden !important;
+  }
+.container-fluid {
+    display: flex;
+    flex: 1;
+    height: 100%;
+    flex-direction: column;
+  }
+  
+  .container-fluid .row {
+    flex: 1;
+    height: 100%;
+    overflow: hidden;
+  }
+  
+  .container-fluid .row [class*="col"] {
+    height: 100%;
+    overflow-y: auto;
+  }
+  
+  .search__container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .search__container > div {
+    flex: 1;
+  }
+  .report-title {
+    font-size: 18px;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.39;
+    letter-spacing: normal;
+    text-align: left;
+    color: #fff;
+  }
+  .report-title-600 {
+    font-weight: 600;
+  }
+  .report-title-500 {
+    font-weight: 500;
+  }
+  .report-filter-header {
+    font-size: 18px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.44;
+    letter-spacing: normal;
+    text-align: left;
+    color: #40485c;
+    background-color: #f0f0f7;
+  }
+  .report-filter-body{
+    font-size: 16px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.56;
+    letter-spacing: normal;
+    text-align: left;
+    color: #43425d;
+  }
+  table > thead > tr > th {
+    font-size: 14px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.14;
+    letter-spacing: normal;
+    text-align: left;
+    color: #1a1a1a;
+  }
+  table > tbody > tr > td {
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.14;
+    letter-spacing: normal;
+    text-align: left;
+    color: #1a1a1a;
+  }
+  @media only screen and (min-device-width: 767.98px) and (max-device-width: 991.98px) and (orientation:landscape) {
+    .report-title {
+      font-size: 12px;
+    }
+    .reportTitleNone {
+      display: none;
+    }
+  }
+  @keyframes zoominoutsinglefeatured {
+    0% {
+        transform: scale(1,1);
+    }
+    50% {
+        transform: scale(1.2,1.2);
+    }
+    100% {
+        transform: scale(1,1);
+    }
+}
+
+.cardcontainer img {
+	animation: zoominoutsinglefeatured 1s infinite ;
+}
+.cardcontainer1 img {
+	animation: zoominoutsinglefeatured 1s infinite ;
+}

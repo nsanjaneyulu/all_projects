@@ -1,0 +1,539 @@
+/* amith code START story MY-20 */
+body{
+	font-family: Arial, Helvetica;
+	height: 100%;
+}
+
+#cool{
+	Position:fixed;
+	top:0;
+	left:0;
+	z-index:-999;
+	width:100%;
+	height:100%;
+	min-width:280px;
+	min-height:800px;
+}
+
+#glogo{
+	margin-top:-50px;
+	}
+	
+	
+#logo{
+	padding-bottom:10px;
+	}
+	
+	
+	.rounded-box{
+	background:#f3f3f3;
+	border-radius:5px;
+	padding-left:10px;
+	padding-right:10px;
+	padding-bottom:10px;
+	margin-top:50px;
+		
+	}
+
+	.ourmission{
+	font-size:20px;
+	font-weight:bold;
+	}
+
+
+#pholder{
+	padding-left:30px;
+}
+
+	.signup{
+	padding-top:10px;
+}
+
+
+#lorem{	
+	color:#35569b;
+	border-right:1px solid #d3d3d3;
+	
+}
+
+#para{
+	color:#333;
+	font-style:none;	
+	font-size:15px;
+	}
+
+.has-name{
+	position:relative;
+}
+
+.form-control-name{
+	color:#999;
+	position:absolute;
+	top:10px;
+	left:10px;
+	display:block;
+	}
+
+.form-control {
+	border-radius:5px;
+	border-color:#a5a9b3;
+	font-size:14px;
+	}
+
+.btn-primary {
+	background-color:#35569b;
+	border-color:#35569b;
+	font-size:14px;
+	}
+
+.btn:hover{
+	border-color: #3a938f;
+	background-color:#3a938f;
+    }
+
+
+#sign{
+	padding:10px;
+	padding-left:20px;
+	margin-top:-45px;
+	}
+
+#register{
+	padding-top:10px;
+}
+
+
+hr {
+	color: #b9b9b9;
+	background-color: #b9b9b9;
+	height: 1px;
+}
+
+h5{
+	color:#35569b;
+	font-weight:bold;
+}
+
+h4{
+	color:#35569b;
+	font-weight:bold;
+}
+
+
+#accordion__intro {
+    font-size: 14px;
+}
+
+#accordion__intro .panel {
+    background: none;
+    border: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+	z-index:1;
+}
+
+#accordion__intro .panel-heading {
+    padding-left: 0px;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(0,0,0,.2);
+    -webkit-box-shadow: none;
+    box-shadow: none;    
+}
+
+#accordion__intro .panel-heading a {
+    text-decoration: none;
+    color: #35569b;
+	font-weight:bold;
+	font-size: 15px;
+
+}
+
+#accordion__intro .panel-heading a[aria-expanded="true"] {
+    color: #333;
+}
+
+#accordion__intro .panel-heading a .caret {
+    -webkit-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+}
+
+#accordion__intro .panel-heading a[aria-expanded="true"] .caret {
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+}
+
+#accordion__intro .panel-body {
+    color: #333;
+}
+
+
+
+@media only screen and (min-width: 310px) and (max-width: 568px) { 
+		
+	#glogo{
+		margin-top:-10px;
+	}
+	
+.rounded-box{
+		background:#f3f3f3;
+		border-radius:5px;
+		margin:10px;
+		padding-bottom:10px;
+			
+	}
+	
+	#lorem{	
+		border-right:0px;
+			}
+	
+	#sign{
+		border-left:0px;
+		border-top:1px solid #d3d3d3;
+		margin-top:35px;
+		padding-left:10px;
+		padding-right:10px;
+		}
+}
+
+
+@media only screen and (min-width : 580px) and (max-width : 991px) { 
+
+	#glogo{
+		margin-top:-10px;
+	}
+	
+.rounded-box{
+		background:#f3f3f3;
+		border-radius:5px;
+		margin:10px;
+		padding-bottom:10px;
+			
+	}
+	
+	#lorem{	
+		border-right:0px;
+			}
+	
+	#sign{
+		border-left:0px;
+		border-top:1px solid #d3d3d3;
+		margin-top:35px;
+		padding-left:10px;
+		padding-right:10px;
+		}
+}
+	
+/* amith END story MY-20 */
+
+
+
+/* amith code START story MY-3 */
+
+.d-name{
+	position:relative;
+}
+
+.dform-control-name{
+	color:#999;
+	position:absolute;
+	top:10px;
+	left:10px;
+	display:block;
+	z-index:2;
+	}
+	
+#dlorem{	
+	color:#35569b;
+	margin-top:20px;
+	margin-bottom:20px;
+	
+	}
+
+
+#dsign{
+	border-left:1px solid #d3d3d3;
+	padding:10px;
+	padding-left:20px;
+	margin-top:-45px;
+	}
+
+#dpara{
+	color:#333;
+	font-style:none;	
+	font-size:15px;
+	}
+	
+	
+@media only screen and (min-width: 310px) and (max-width: 568px) { 
+
+	#dlorem{	
+		border-right:0px;
+		padding-left:10px;
+			}
+	
+	#dsign{
+		border-left:0px;
+		border-top:1px solid #d3d3d3;
+		margin-top:35px;
+		padding-left:10px;
+		padding-right:10px;
+		}
+}
+
+
+@media only screen and (min-width : 580px) and (max-width : 991px) { 
+
+	#dlorem{	
+		border-right:0px;
+		margin-left:0px;
+			}
+	
+	#dsign{
+		border-left:0px;
+		border-top:1px solid #d3d3d3;
+		margin-top:35px;
+		padding-left:10px;
+		padding-right:10px;
+		}
+}
+
+/* amith END story MY-3 */
+
+
+
+/* amith Start story MY-21 */
+
+.remember{
+	font-weight:100;
+	font-size:14px;
+	}
+	
+#esign{
+	padding:10px;
+	padding-left:20px;
+	margin-top:-45px;
+	}
+	
+	
+@media only screen and (min-width: 310px) and (max-width: 568px) { 
+		
+	#esign{
+		border-left:0px;
+		border-top:1px solid #d3d3d3;
+		margin-top:35px;
+		padding-left:10px;
+		padding-right:10px;
+		}
+}
+
+
+@media only screen and (min-width : 580px) and (max-width : 991px) { 
+
+	#esign{
+		border-left:0px;
+		border-top:1px solid #d3d3d3;
+		margin-top:35px;
+		padding-left:10px;
+		padding-right:10px;
+		}
+}
+
+/* amith END story MY-21 */
+
+
+
+
+/* amith START story MY-10 */
+
+#main-header {
+    padding: 10px 0;
+    background: #f3f3f3;
+    border-bottom: 1px solid #aaa;
+    margin-bottom: 2em;
+}
+
+#main-header img {
+    max-width: 100%;
+}
+
+#main-header #logo img {
+    max-width: 100%;
+}
+
+#menu h4 {
+    font-family: Arial;
+    font-weight: bold;
+}
+
+#menu img {
+    padding-top: 10px;
+}
+
+.drcc-logo{
+	padding-top: 15px;
+}
+
+.users-table .btn {
+    margin-right: 10px;
+}
+
+#menu li:not(:last-child) {
+    margin-bottom: 2em;
+}
+
+.panel-user h3 {
+    font-weight: bold;
+}
+
+
+.list--user-skills li {
+    line-height: 24px;
+    margin: 0 2em 1em 0;
+}
+
+.list--user-skills {
+    padding: 1em;
+}
+
+
+tr a:hover {
+    text-decoration: none;
+    color: #315198;
+}
+
+.pagination li a {
+    color: rgba(0, 0, 0, 0.61);
+}
+
+.pagination li a:hover {
+    color: white;
+    background: #315198;
+}
+
+footer {
+    padding: 20px 0;
+    text-align: center;
+    background: #666;
+}
+
+.copyright {
+    color: white;
+}
+
+.quicklinks a {
+    color: white;
+}
+
+.modal-footer .btn-default:hover {
+    background: #315198;
+    color: white;
+}
+
+.btn-logout {
+    margin-bottom: 8px;
+}
+
+#save{
+	margin-top:20px;
+}
+
+@media (min-width: 210px) and (max-width: 768px) {
+    .get-logo,
+    .drcc-logo,
+    .nav-footer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .get-logo {
+        margin-bottom: 8px;
+    }
+}
+
+.control {
+    display: block;
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.control input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+}
+
+.control__indicator {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background: #315198;
+    border-radius: 50%;
+}
+
+.control:hover input ~ .control__indicator,
+.control input:focus ~ .control__indicator {
+    background: #315198;
+}
+
+.control input:checked ~ .control__indicator {
+    background: #315198;
+}
+
+.control:hover input:not([disabled]):checked ~ .control__indicator,
+.control input:checked:focus ~ .control__indicator {
+    background: #0e647d;
+}
+
+.control input:disabled ~ .control__indicator {
+    background: #e6e6e6;
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.control__indicator:after {
+    content: '';
+    position: absolute;
+    display: none;
+}
+
+.control input:checked ~ .control__indicator:after {
+    display: block;
+}
+
+.control--checkbox .control__indicator:after {
+    left: 9px;
+    top: 3px;
+    width: 8px;
+    height: 16px;
+    border: solid #fff;
+    border-width: 0 4px 4px 0;
+    transform: rotate(45deg);
+}
+
+.control--checkbox input:disabled ~ .control__indicator:after {
+    border-color: #7b7b7b;
+}
+
+/* amith END story MY-10 */
+
+
+
+
+
+
+
+
+
+
+
+

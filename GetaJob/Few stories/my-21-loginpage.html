@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+      <title>GetaJob - Login</title>
+      <!-- Bootstrap -->
+      <!-- Latest compiled and minified CSS -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" 
+         >
+      <!-- Custom CSS -->
+      <link href="css/styles.css" rel="stylesheet">
+      <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+      <style type="text/css"></style>
+   </head>
+   <body style="margin-top:3%">
+      <div class="container-fluid ">
+         <img src="img/background.jpg"  alt="" id="cool"> 
+         <div class="row">
+            <div class="rounded-box col-md-8 col-md-offset-2">
+               <img src="img/get-logo.png" class="img-responsive" id="glogo"  alt="">
+               <div class="col-md-7" id="lorem">
+                  <p class="ourmission">Our Mission</p>
+                  <p>The Dulles Regional Chamber of Commerce, in collaboration with Allwyn Corporation aims to act as an enabler and a catalyst for increasing employment in the Dulles area by bringing together America’s young talent and local employers.
+                  </p>
+                  <div class="panel-group" id="accordion__intro" role="tablist" aria-multiselectable="true">
+                     <div class="panel panel-default">
+                        <div class="panel-heading" role="tab">
+                           <h4 class="panel-title">
+                              <a role="button" data-toggle="collapse" data-parent="#accordion__intro" href="#tab__about" aria-expanded="true" aria-controls="tab__about"> <span class="caret"> </span> About the Program</a>
+                           </h4>
+                        </div>
+                        <div id="tab__about" class="panel-collapse collapse in" role="tabpanel">
+                           <div class="panel-body">
+                              The GetaJob program allows for local employers in the Dulles region to publish job openings for current and recently graduated high school and college students.  Applicants are encouraged to register and provide their areas of interest, skills and availability along with a resume so employers can contact them.
+                           </div>
+                        </div>
+                     </div>
+                     <div class="panel panel-default">
+                        <div class="panel-heading" role="tab">
+                           <h4 class="panel-title">
+                              <a role="button" data-toggle="collapse" data-parent="#accordion__intro" href="#tab__contact" aria-expanded="false" aria-controls="tab__contact">
+                              <span class="caret"> </span> Contact us
+                              </a>
+                           </h4>
+                        </div>
+                        <div id="tab__contact" class="panel-collapse collapse" role="tabpanel">
+                           <div class="panel-body">
+                              For any questions about the program, please contact DRCC at <a href="#">xxx@xxx.com</a> or call us at <a href="#">xxxx</a>.
+                           </div>
+                        </div>
+                     </div>
+                     <div class="panel panel-default">
+                        <div class="panel-heading" role="tab">
+                           <h4 class="panel-title">
+                              <a role="button" data-toggle="collapse" data-parent="#accordion__intro" href="#tab__technical" aria-expanded="false" aria-controls="tab__technical"> <span class="caret"> </span>
+                              Technical Support
+                              </a>
+                           </h4>
+                        </div>
+                        <div id="tab__technical" class="panel-collapse collapse" role="tabpanel">
+                           <div class="panel-body">
+                              For technical support and/or questions on how to use the portal, please email us at <a href="#">support@getajob.allwynprotrack.com</a> or submit a request for support online at <a href="#">http://getajob.allwynprotrack.com/help</a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-5 panel__user-login" id="esign">
+                  <h5 align="center">Brought to you together by</h5>
+                  <div id="logo" align="center">
+                     <img src="img/drcc_allwyn.png" class="img-responsive"  alt="Responsive image" >
+                  </div>
+                  <form action="" method="POST" role="form" id="form__login">
+                     <h4 align="center">Sign In</h4>
+                     <div class="form-group has-user d-name">
+                        <input type="text" class="form-control" id="pholder" placeholder="Email Address*">
+                        <span><i class="fa fa-envelope dform-control-name" aria-hidden="true"></i></span>
+                     </div>
+                     <div class="form-group dhas-user d-name">
+                        <input type="text" class="form-control" id="pholder" placeholder="Password*">
+                        <span><i class="fa fa-key dform-control-name" aria-hidden="true"></i></span>
+                     </div>
+                     <div class="form-group">
+                        <input id="stayin" name="stayin" type="checkbox">
+                        <label class="remember">Stay signed in?</label>
+                        <a href="#" class="btn-forgetPassword pull-right">Forgot Password?</a>
+                        <div class="clearfix"></div>
+                     </div>
+                     <div class="form-group text-right">
+                        <button type="submit" class="btn btn-primary login-btn">Sign In</button>
+                     </div>
+                     <hr class="hr-line">
+                     <div class="form-group text-center">
+                        <p>Not registered yet?
+                           <button type="submit" class="btn btn-primary login-btn">Sign Up</button>
+                        </p>
+                     </div>
+                  </form>
+                  <form action="" method="POST" role="form" id="form__forgetPassword" class="hide">
+                     <legend>Reset Password</legend>
+                     <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="sample@sample.com">
+                        <p class="text-right"><a href="#" class="text-muted btn-bactToLogin">Back to Login?</a></p>
+                     </div>
+                     <div class="form-group text-right">
+                        <button type="submit" class="btn btn-primary">Reset Password</button>
+                     </div>
+                  </form>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+      <!-- Include all compiled plugins (below), or include individual files as needed -->
+      <script src="js/bootstrap.min.js"></script>
+      <!-- jQuery -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.15.0/jquery.validate.min.js"></script>
+      <!-- Bootstrap JavaScript -->
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+   </body>
+</html>

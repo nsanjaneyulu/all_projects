@@ -1,0 +1,21 @@
+{
+  "name": "iteligent-code",
+  "description": "",
+  "main": "",
+  "authors": [
+    "Zakeer <zakeer579@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "paper-elements": "^1.0.7",
+    "vaadin-combo-box": "^3.0.2"
+  }
+}

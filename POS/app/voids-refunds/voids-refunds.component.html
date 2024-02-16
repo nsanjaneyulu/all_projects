@@ -1,0 +1,196 @@
+
+<div class="col-12 mt-2 ">
+        <!-- <div class="int-connect-disconnect-bg">
+           <div class="p-2 ml-1">
+              <span [ngClass]="message === 'Internet connected'?'topTitle':'topTitle1'"><span class="pl-2"><img class="int-connect-disconnect"
+                       *ngIf="message === 'Internet connected'" src="../../assets//images/wifi.svg"><img
+                       class="int-connect-disconnect" *ngIf="message === 'No internet connected'"
+                       src="../../assets//images/noInternet.svg"></span><span class="pl-1">{{ message }}</span></span>
+           </div>
+        </div> -->
+        <div  style="display: flex;font-size: 20px; " class="int-connect-disconnect-bg" *ngIf="allpermited=='No'">
+            <div style="width: 25%;"  >
+             <span><b>Name:</b></span> &nbsp;  <span> {{mallName}}</span>  
+            </div>
+            <div >
+                  <span><b>Outlet Name:</b></span>&nbsp; 
+                  <span *ngIf="outletDetails.length>1" >
+                        <select [(ngModel)]="outeltId" (change)="selectoutLet(outeltId)" style="border-style: hidden;">
+         
+                              <option *ngFor="let outlet Of outletDetails;" [value]="outlet.id">{{outlet.name}}</option>
+                            </select>
+                  </span>
+                  <span *ngIf="outletDetails.length==1">
+                     {{outletDetails[0].name}}
+                  </span>
+            </div>
+            
+         </div>
+        <div class="row pos-top-title-bg ml-0 mr-0 text-white mt-2">
+           <div class="row col-6 align-items-center">
+              <label for="staticEmail" class="col-sm-4 col-md-4 col-lg-2 col-xl-2 col-form-label pos-top-title">Invoice No: </label>
+              <div class="col-sm-8 search-styles">
+                 <input class="form-control text-white" type="text" placeholder="Enter Invoice No" [(ngModel)]="invoiceNo"
+                    (keyup)="filterByInvoiceNo(dt)" /><span class="text-white search_container_icon"><i class="fa fa-search"
+                       aria-hidden="true"></i></span>
+              </div>
+           </div>
+           <div class="col-6" style="align-items: center; display: flex; justify-content: flex-end;">
+              <span class="pr-3" (click)="posOrdersRefresh()"><span class="pos-top-title pr-2 rotate" >Refresh</span><span><img
+                       style="width: 30px; height: 30px;" class="refresh spinEffect" src="../../assets/images/refresh.svg" /></span></span>
+     
+              <!-- <span class="pl-1" style="display: contents;"><span class="pos-top-title pr-2">Settings</span><span>
+                    <div class="dropdown filter__dropdown">
+                       <span class="btn btn-default dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown"
+                          aria-haspopup="true" aria-expanded="true">
+                          <img style="width: 30px; height: 30px;" src="../../assets/images/filter.svg" />
+                       </span>
+                       <div class="dropdown-menu filter__dropdown-menu">
+                          <div style="display: flex; border-bottom:1px solid #eeeeee;">
+                             <label class="dropdown-item" >
+                                <div class="custom-control custom-checkbox my-1 mr-sm-2">
+                                   <input type="checkbox" id="filterSelectAll" (change)="toggleFilterSelectAll($event)" class="custom-control-input">
+                                   <label class="custom-control-label selectAll" for="filterSelectAll">Select All</label>
+                                </div>
+                             </label>
+                             <label class="dropdown-item">
+                                <div class=" my-1 mr-sm-2">
+                                   <label class="selectAll" (click)="toggleFilterClearAll($event)"><i class="fa fa-trash" aria-hidden="true"></i> Clear All</label>
+                                </div>
+                             </label>
+                          </div>
+     
+                          <label class="dropdown-item" *ngFor="let field of cols">
+                             <div class="custom-control custom-checkbox my-1 mr-sm-2">
+                                <input type="checkbox" [checked]="field.active" (change)="toggleFilterMenu(field)"
+                                   class="custom-control-input" [id]="field.field">
+                                <label class="custom-control-label filter-cols" [for]="field.field">{{ field.header }}</label>
+                             </div>
+                          </label>
+     
+     
+                       </div>
+                    </div>
+                 </span></span> -->
+           </div>
+        </div>
+        <div class="border table-styles">
+           <p-table #dt [columns]="filterCols" [value]="data" dataKey="invoiceNo" [paginator]="true" [rows]="10"
+              [totalRecords]="data.length" expandableRows="true" rowExpandMode="single">
+              <ng-template pTemplate="header" let-columns>
+                 <tr>
+                    <th *ngFor="let col of columns" [pSortableColumn]="col.field" class="text-center">
+                       {{col.header}}
+                       <!-- <p-sortIcon [field]="col.field" ariaLabel="Activate to sort"
+                          ariaLabelDesc="Activate to sort in descending order"
+                          ariaLabelAsc="Activate to sort in ascending order"></p-sortIcon> -->
+                    </th>
+                    <!-- <th class="text-center">Actions</th> -->
+                 </tr>
+              </ng-template>
+              <ng-template pTemplate="body" let-rowData let-expanded="expanded" let-columns="columns" let-index="rowIndex">
+                 <tr  *ngIf="!showLoader">
+                    <td *ngFor="let col of columns" (click)="refund(rowData)" [pRowToggler]="rowData">
+                        <span *ngIf="col.field !== 'reprint' && col.field !== 'dateNTime' ">{{rowData[col.field]}} 
+                              <!-- <span
+                                 *ngIf="col.field === 'grandTotal'"><i class="fa fa-info-circle" aria-hidden="true"
+                                    (click)="openBillDialog(index)"></i></span> -->
+                           </span>
+                           <span *ngIf="col.field == 'dateNTime'">  
+                                 {{rowData[col.field] | date: "dd-MM-yyyy H:mm" }}  
+                           </span>
+                    </td>
+                    <!-- <td>
+                   
+                            <div *ngIf = "rowData.status == 'COMPLETED'">
+                                             
+                                              
+                                               <button type="button"
+                                               class="btn btn-danger btn-reject pos-orders-btn btn-sm mr-2"
+                                               (click)="changeFullOrderStatus(rowData['id'], 'REJECTED', index, rowData)">Reject <img
+                                                  src="../../../assets/images/reject.svg" /></button>
+                                             
+                                            </div>
+                                         </td> -->
+                 </tr>
+              </ng-template>
+              <ng-template pTemplate="emptymessage" let-columns>
+                  <tr>
+                      <td [attr.colspan]="columns.length" class="noDataFound" style="text-align: center !important;">
+                          {{noDataFound}}
+                      </td>
+                  </tr>
+               </ng-template>
+              <ng-template pTemplate="rowexpansion" let-rowData let-columns="columns" let-index="rowIndex">
+                 <tr>
+                    <td [attr.colspan]="columns.length">
+                       <div class="p-1">
+                          <div class="row pt-1">
+                             <div class="col-8 table-responsive table__orderDetails pr-0">
+                                <table class="table">
+                                   <thead class="">
+                                      <tr class="bg-white">
+                                         <th scope="col">Item Name</th>
+                                         <th scope="col">Quantity</th>
+                                         <th scope="col">Amount</th>
+                                         <!-- <th scope="col" *ngIf = "rowData.status == 'COMPLETED'">Actions</th> -->
+                                         <!-- <th scope="col">Status</th> -->
+                                      </tr>
+                                   </thead>
+                                   <tbody>
+                                      <tr *ngFor="let item of rowData.jmOrderLet; let j = index">
+                                         <td><div style="display: flex;">
+                                             <div>
+                                                {{ item.itemName }}
+                                             </div>
+                                             <div *ngIf="item.itemCustomization!=null">
+                                                <span *ngFor="let cItems of item.itemCustomization[0].customization">
+                                                   <span
+                                                      *ngIf="item.itemCustomization[0].type=='radio'">({{cItems.name}})</span>
+                                                </span>
+                                             </div>
+                                          </div>
+                                             <div style="font-size: 10px;    margin-top: 3%;">
+                                                   <span style="color:green">HandedOver</span>: <span>{{item.handedOverQuantity}}  |</span> <span style="color: red;">Rejected</span>: <span>{{item.rejectedQunatity}}  </span>
+                                                </div>
+                                         </td>
+                                        
+                                         <td >
+                                            <span class="p-2">{{ item.quantity }}</span>
+                                         </td>
+                                         <td>{{  item.itemPrice *  item.tempQuantity }}</td>
+                                      </tr>
+                                   </tbody>
+                                </table>
+                             </div>
+                             <div class="col-4">
+                                <dl class="row" style="background: #fff;">
+                                   <div class="col-sm-12 billDetails pb-2"><span class="pt-1 pb-1">Bill Details</span></div>
+                                   <dt class="col-sm-7">Total Amount:</dt>
+                                   <dd class="col-sm-5" style="text-align: right;">{{rowData.itemTotal}}</dd>
+                                   <dt class="col-sm-7" >Supplier Discount:</dt>
+                                   <dd class="col-sm-5" style="text-align: right;">{{rowData.suppplierDiscount}}</dd>
+                                   <dt class="col-sm-7">Tax(CGST(2.5%)+SGST(2.5%)):</dt>
+                                   <dd class="col-sm-5" style="text-align: right;">{{rowData.taxes}}</dd>
+                                   <dt class="col-sm-7">Delivery Charges:</dt>
+                                   <dd class="col-sm-5" style="text-align: right;">{{rowData.deliveryCharges}}</dd>
+                                   <dt class="col-sm-7">Packaging Charges:</dt>
+                                   <dd class="col-sm-5" style="text-align: right;">{{rowData.packagingCharge}}</dd>
+                                   <dt class="col-sm-7">Tafel Discount:</dt>
+                                   <dd class="col-sm-5" style="text-align: right;">{{rowData.tafelDiscount}}</dd>
+                                   <dt class="col-sm-7">You Paid:</dt>
+                                   <dd class="col-sm-5" style="text-align: right;">{{rowData.grandTotal}}</dd>
+                                   <dt class="col-sm-7">Refund:</dt>
+                                   <dd class="col-sm-5" style="text-align: right;">{{refundAmount}}</dd>
+                                </dl>
+                             </div>
+                          </div>
+                       </div>
+                    </td>
+                 </tr>
+              </ng-template>
+           </p-table>
+        </div>
+     </div>
+     
+        

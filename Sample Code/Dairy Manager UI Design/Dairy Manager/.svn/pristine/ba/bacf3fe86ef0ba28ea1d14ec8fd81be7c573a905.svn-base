@@ -1,0 +1,51 @@
+<wicket:extend>
+	<div id="content">
+    <div class="bread-crumb">
+            	<h1>Admin / Vaccination Repeat Interval</h1>
+            </div>
+	<form method="post" wicket:id="vaccineTypeForm">
+	<h2><div wicket:id="feedback"></div></h2>        
+        	<div class="containerDiv">
+               <div class="rowDivHeader">
+               		<div>Vaccination Type</div>
+                    <div>Interval (In Days)</div>	
+               		
+               </div>
+            
+               <div class="rowDiv" wicket:id="vaccine_rows">
+               		 <div><span wicket:id="vaccine" /></div>
+                            <div><input type="text" wicket:id="intervalPeriod" class="textfield_effect" 
+                            maxlength="3" style="text-align:right;"/></div>
+               </div>
+            </div>
+            		   <div class="newButton">
+                         <INPUT type="submit" value="Submit" class="button" wicket:id="vaccinTypeSave"/>
+                       </div>
+                        	
+        </form>
+        <br />
+        <div class="bread-crumb">
+            	<h1>Admin / De-Worming Repeat Interval</h1>
+            </div>
+        <form method="post" wicket:id="devermitizationTypeForm">
+		<h2><div wicket:id="feedback"></div></h2>       
+        	<div class="containerDiv">
+               <div class="rowDivHeader">
+                <div>De-Worming Type</div>
+                <div class="icLast">Interval (In Days)</div>									
+            </div>
+            <div wicket:id="rows" style="clear:both;" class="rowDiv">
+            
+                    <div><span wicket:id="deVermitizationType" /></div>
+                    <div class="icLast"><input type="text" wicket:id="intervalPeriod" class="textfield_effect" maxlength="3" style="text-align:right;"/></div>
+              
+            </div>
+            </div>
+            <div class="newButton">
+                  <INPUT type="submit" value="Submit" class="button" wicket:id="deVermitizationTypeSave"/>
+                 </div>
+          
+               	
+        </form>
+	</div>
+</wicket:extend>

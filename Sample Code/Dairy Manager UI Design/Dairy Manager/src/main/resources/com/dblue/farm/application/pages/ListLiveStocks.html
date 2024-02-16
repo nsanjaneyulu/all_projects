@@ -1,0 +1,44 @@
+<wicket:extend>
+	<div id="content">
+    <div class="bread-crumb">
+            	<h1>Live Stock Management / Live Stock List</h1>
+            </div>
+	<h2><div wicket:id="feedback"></div></h2> 
+		<span wicket:id="navigator" style="line-height: 51px;">[dataview navigator]</span>
+		<div style="clear:both;"></div>
+        
+                <div class="containerDiv">
+                         <div class="rowDivHeader">
+                                <div>RFID</div>
+                                <div><span  wicket:id="orderbycode">Live Stock Code</span></div>
+                                <div>Date of Birth</div>
+                                <div>Mother Code</div>
+                                <div>Live Stock State</div>
+                                <div>Breed</div>
+                                <div>Origin</div>
+                                <div>Milking</div>
+                                <div>Lactation No</div>
+                                <div>Lactation Start Date</div>
+                                <div>Lactation End Date</div>
+                                <div>Milk Yield</div>
+                         </div>
+        
+                         <div class="rowDiv" wicket:id="rows">
+                            <div><span wicket:id="lsRfid" /></div>
+                            <div><a href="#" wicket:id="livestock_edit">
+                            <span wicket:id="lsLiveStockCode" /></a></div>	
+                            <div><span wicket:id="birthDate" /></div>
+                            <div><a href="#" wicket:id="motherlscode">
+                            <span wicket:id="lsmotherlbl" /></a></div>
+                            <div><span wicket:id="lsStateType" /></div>
+                            <div><span wicket:id="lsBreedType" /></div>
+                            <div><span wicket:id="originType" /></div>
+                            <div><span wicket:id="milkingStatus" /></div>
+                            <div><span wicket:id="lactationNumber" /></div>
+                            <div><span wicket:id="lactationDays" /></div>
+                            <div><span wicket:id="dryoffDate" /></div>
+                            <div><span wicket:id="milkYield" /></div>
+                         </div>			
+		</div>
+	</div>
+</wicket:extend>

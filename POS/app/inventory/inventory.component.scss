@@ -1,0 +1,195 @@
+.inv-margin-top {
+  margin-top: 100px;
+}
+.inv-outlet-settings {
+  color: #5c0632;
+  font-size: 18px;
+  font-weight: bold;
+}
+.inv-no-data-found {
+  color:#5c0632; 
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+}
+.inv-sub-menu {
+  color: #5c0632;font-size: 18px;font-weight: bold;
+}
+.inv-border-top {
+  border-top: 1px solid #eee;
+}
+
+.inv-border-top {
+  border-top: 1px solid #eee;
+}
+.mall__Styles {
+  color: #5c0632;
+  font-size: 16px;
+  font-weight: bold;
+}
+.box_shadow {
+  box-shadow: 0 8px 6px -6px black;
+  padding: 20px;
+}
+.bow_time_styles {
+    // margin-bottom: .75rem;
+    // font-size: 1.25rem;
+    // font-weight: 500;
+    // line-height: 1.2;
+    // margin-top: 0;
+}
+.bow_display_Flex {
+  display: flex;
+  justify-content: space-between;
+}
+.mat-form-field {
+    width: 100%;
+}
+.mat-list-base .mat-list-item {
+    border-bottom: 1px solid #eee !important;
+}
+.custom-control label {   
+   
+    // font-size: 14px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    // line-height: 1.14;
+    letter-spacing: normal;
+    text-align: left;
+    color: #1a1a1a;
+  }
+  .form-group label {
+      font-size: 14px;
+  }
+  .bow_week_discount{
+      // font-size: 14px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    // line-height: 1.14;
+    letter-spacing: normal;
+    text-align: left;
+    color: #1a1a1a;
+  }
+  .bow_item_name {
+   
+       
+        font-size: 14px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.22;
+        letter-spacing: normal;
+        text-align: left;
+        color: #515968;
+     
+  }
+  .bow_item_price {
+      font-weight: 500;
+      font-size: 12px;
+  }
+  .mat-select-value-text {
+    font-size: 14px !important;
+  }
+  .bow_label_styles{
+   
+   font-size: 12px;
+    font-weight: normal !important;
+    
+    
+    color: #5e5f65 !important;
+  }
+  .bow_label_title_styles {
+    font-size: 14px;
+    font-weight: normal !important;
+    
+    
+    color: #5e5f65 !important;
+  }
+  .custom-control-input:checked~.custom-control-label::before {
+    color: #fff;
+    border-color: #007bff;
+    background-color: #007bff;
+}
+.bow_radio_checkbox_styles::before {
+    
+    top: 0.10rem;
+    left: -1.5rem;
+   
+    width: 17px;
+    height: 17px;
+   
+} 
+.bow_radio_checkbox_styles::after {
+   
+    top: 0.10rem;
+    left: -1.5rem;
+   
+    width: 17px;
+    height: 17px;
+}
+.bow_item_name_hover {
+  cursor: pointer;
+}
+.bow_input_styles {
+  border: none;
+  border-bottom: 1px solid #eee;
+  border-radius: 0;
+}
+.bow_inv_lable_styles {
+  font-size: 13px;
+    font-weight: normal !important;
+    
+    
+    color: #5e5f65 !important;
+} 
+.bow_inv_sub_lable_styles {
+  font-size: 11px !important;
+    font-weight: normal !important;
+    
+    
+    color: #5e5f65 !important;
+} 
+.bow_dishes_panel_header {
+  height: 30px !important;
+}
+::ng-deep .mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
+  border-color: #007bff !important;
+}
+::ng-deep .mat-radio-button.mat-accent .mat-radio-inner-circle, .mat-radio-button.mat-accent .mat-radio-ripple .mat-ripple-element:not(.mat-radio-persistent-ripple), .mat-radio-button.mat-accent.mat-radio-checked .mat-radio-persistent-ripple, .mat-radio-button.mat-accent:active .mat-radio-persistent-ripple {
+  background-color: #007bff !important;
+}
+::ng-deep .mat-slide-toggle.mat-checked .mat-slide-toggle-bar {
+  background-color: #07c20c !important;
+}
+::ng-deep .mat-slide-toggle.mat-checked .mat-slide-toggle-thumb {
+  background-color: #08950d !important;
+}
+
+// ::ng-deep .mat-radio-button.mat-accent .mat-radio-ripple .mat-ripple-element {
+//   opacity: 0.5 !important;     /*click effect color change*/
+//   background-color: blue !important;
+// }
+
+// ::ng-deep .mat-radio-button.mat-accent .mat-radio-inner-circle {
+//   background-color: blue !important;   /*inner circle color change*/
+// }
+
+// ::ng-deep.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
+//  border-color:blue !important; /*outer ring color change*/
+// }
+.form-control:focus {
+      box-shadow: none !important;
+}
+.accordion_outlet_title{
+   
+  font-size: 16px;
+   font-weight: normal !important;
+   
+   
+   color: #995d00 !important;
+ }
+.bow_mat_list_styles{
+  padding-top: 0px;
+}

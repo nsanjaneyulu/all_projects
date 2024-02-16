@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    	<meta charset="utf-8">
+        <title>Mixitup</title>
+    	<style>
+			*
+			{
+				margin: 0; padding: 0; list-style: none
+			}
+
+			#mixer {
+			  width: 80%;
+			  margin: 0 auto;
+			}
+			
+			ul#mixer li {
+			  width: 24%;
+			  display: inline-block;
+			}
+			
+			ul#mixer li.mix {
+			  display: none;
+			}
+			
+			ul#mixer img {
+			  width: 100%;
+			  display: block;
+			}
+		</style>
+		<script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script>
+		$('document').ready(function(){
+			$('#mixer').mixItUp();
+		});
+	</script>
+    </head>
+    <body>
+        <nav>
+            <a href="#" class="filter" data-filter="all">All</a>
+            <a href="#" class="filter" data-filter=".web">web</a>
+            <a href="#" class="filter" data-filter=".java">java</a>
+            <a href="#" class="filter" data-filter=".html">html</a>
+            <a href="#" class="filter" data-filter=".js">js</a>
+        </nav>
+        <ul id="mixer">
+            <li class="mix web"><img src="http://placehold.it/450x310" alt=""></li>
+            <li class="mix web"><img src="http://placehold.it/450x310" alt=""></li>
+            <li class="mix java"><img src="http://placehold.it/450x310" alt=""></li>
+            <li class="mix java"><img src="http://placehold.it/450x310" alt=""></li>
+            <li class="mix web"><img src="http://placehold.it/450x310" alt=""></li>
+            <li class="mix js"><img src="http://placehold.it/450x310" alt=""></li>
+            <li class="mix java"><img src="http://placehold.it/450x310" alt=""></li>
+            <li class="mix web"><img src="http://placehold.it/450x310" alt=""></li>
+            <li class="mix html"><img src="http://placehold.it/450x310" alt=""></li>
+            <li class="mix java"><img src="http://placehold.it/450x310" alt=""></li>
+            <li class="mix java"><img src="http://placehold.it/450x310" alt=""></li>
+            <li class="mix js"><img src="http://placehold.it/450x310" alt=""></li>
+            <li class="mix html"><img src="http://placehold.it/450x310" alt=""></li>
+            <li class="mix html"><img src="http://placehold.it/450x310" alt=""></li>
+            <li class="mix js"><img src="http://placehold.it/450x310" alt=""></li>
+            <li class="mix java"><img src="http://placehold.it/450x310" alt=""></li>
+            <li class="mix html"><img src="http://placehold.it/450x310" alt=""></li>
+            <li class="mix js"><img src="http://placehold.it/450x310" alt=""></li>
+            <li class="mix web"><img src="http://placehold.it/450x310" alt=""></li>
+            <li class="mix html"><img src="http://placehold.it/450x310" alt=""></li>
+        </ul>
+    <script src="http://cdn.jsdelivr.net/jquery.mixitup/latest/jquery.mixitup.min.js"></script>
+    </body>
+</html>

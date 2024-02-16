@@ -1,0 +1,162 @@
+.super_number.menu.from-menu {
+    display: inline-block;
+}
+.super_number.menu .ui.attached.button.dec {
+    padding-top: 4px!important;
+}
+.super_number.menu .ui.attached.button {
+    padding-right: 6px!important;
+    padding-left: 6px!important;
+    background: #fff!important;
+    color: #707070!important;
+    box-shadow: 0 0 0 1px #707070!important;
+    float: left;
+    cursor: pointer;
+    line-height: 10px;
+    height: 20px;
+    font-size: 22px;
+}
+.ui.left.attached.button {
+    display: inline-block;
+    border-left: none;
+    text-align: right;
+    padding-right: .75em;
+    
+}
+.ui.attached.button {
+    position: relative;
+    display: block;
+    margin: 0;
+    border-radius: 0;
+    box-shadow: 0 0 0 1px #707070!important;
+}
+.ui.button {
+    cursor: pointer;
+    display: inline-block;
+    min-height: 1em;
+    outline: 0;
+    border: none;
+    vertical-align: baseline;
+    background: #E0E1E2;
+    color: rgba(0,0,0,.6);
+   
+    margin: 0 .25em 0 0;
+    // padding: .78571429em 1.5em;
+    text-transform: none;
+    text-shadow: none;
+    line-height: 1em;
+    font-style: normal;
+    text-align: center;
+    text-decoration: none;
+  
+    box-shadow: 0 0 0 1px transparent inset, 0 0 0 0 #e7e7e7 inset;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    
+}
+.super_number.menu input {
+    position: relative;
+    width: 20px;
+    margin: 0;
+   
+    color: #707070;
+    font-size: 14px;
+    height: 24px;
+    border: 1px solid #707070;
+    float: left;
+    top: -1px;
+    padding: 0;
+    text-align: center;
+    border-radius: 0;
+}
+.super_number.menu .ui.attached.button.inc {
+    padding-top: 8px!important;
+    padding-left: 7px!important;
+}
+.super_number.menu .ui.attached.button {
+    padding-right: 6px!important;
+    padding-left: 6px!important;
+    background: #fff!important;
+    color: #707070!important;
+    box-shadow: 0 0 0 1px #707070!important;
+    float: left;
+    cursor: pointer;
+    line-height: 10px;
+    height: 20px;
+    font-size: 22px;
+}
+.ui.right.attached.button {
+    display: inline-block;
+    text-align: left;
+    padding-left: .75em;
+   
+}
+.ui.attached.button {
+    position: relative;
+    display: block;
+    margin: 0;
+    border-radius: 0;
+    box-shadow: 0 0 0 1px #707070!important;
+}
+.btn-accept {
+    background-color: #03aa6f;
+    border-color: #03aa6f;
+}
+.btn-reject {
+    background-color: #e6012e;
+    border-color: #e6012e;
+}
+.btn-handedover {
+    background-color: #5c0632;
+    border-color: #5c0632;
+}
+.btn-ready {
+    background-color: #5c0632;
+    border-color: #5c0632
+}
+.custom-btn {
+    max-width: 100%;
+    padding: 6px 25px;
+}
+@media only screen and (min-device-width: 767.98px) and (max-device-width: 991.98px) and (orientation:landscape) {
+    .btnNone { 
+      
+      display: none;
+    }
+  }
+  .modal1 {
+    display: none;
+    position: fixed; 
+    z-index: 1; 
+    padding-top: 100px; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%;
+    overflow: hidden; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
+  }
+  .applyCss{
+      border-bottom-style: hidden;;
+  }
+  @media screen and (min-width: 600px) {
+    .modal-content1 {
+        background-color: #fefefe;
+        margin: auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 35%;
+      }
+  }
+  @media screen and (max-width: 780px) {
+    .modal-content1 {
+        background-color: #fefefe;
+        margin: auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+      }
+  }

@@ -1,0 +1,49 @@
+<wicket:extend>
+	<div id="content">
+	<form method="post" wicket:id="vaccineTypeForm">
+	<h2><div wicket:id="feedback"></div></h2> 
+		<h1> Vaccination Repeat Interval </h1>
+                <div class="intervalConfiguration intervalConfiguration-List">
+                    <div>
+                        <h2>Vaccination Type</h2>
+                        <h2 class="icLast">Interval (In Days)</h2>									
+                    </div>
+                    <div wicket:id="vaccine_rows" style="clear:both;">
+                        <div>
+                            <h3><span wicket:id="vaccine" /></h3>
+                            <h3 class="icLast"><input type="text" wicket:id="intervalPeriod" class="textfield_effect" 
+                            maxlength="3" style="text-align:right;"/></h3>
+                        </div>
+                    </div>
+                    <div style="clear:both;">
+                    <div class="newButton">
+                         <INPUT type="submit" value="Submit" class="button" wicket:id="vaccinTypeSave"/>
+                       </div>
+                    </div>	
+                </div>        	
+        </form>
+        <br /> <br />  <br /> <br /> <br /> <br /><br /> <br />  <br />  <br />  <br /> 
+        <form method="post" wicket:id="devermitizationTypeForm">
+		<h2><div wicket:id="feedback"></div></h2> 
+		<h1> De-Worming Repeat Interval</h1>
+        <div class="intervalConfiguration intervalConfiguration-List">
+            <div>
+                <h2>De-Worming Type</h2>
+                <h2 class="icLast">Interval (In Days)</h2>									
+            </div>
+            <div wicket:id="rows" style="clear:both;">
+                <div>
+                    <h3><span wicket:id="deVermitizationType" /></h3>
+                    <h3 class="icLast"><input type="text" wicket:id="intervalPeriod" class="textfield_effect" maxlength="3"
+                    style="text-align:right;"/></h3>
+                </div>
+            </div>
+            <div style="clear:both;">
+            <div class="newButton">
+                  <INPUT type="submit" value="Submit" class="button" wicket:id="deVermitizationTypeSave"/>
+                 </div>
+            </div>	
+        </div>        	
+        </form>
+	</div>
+</wicket:extend>

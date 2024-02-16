@@ -1,0 +1,104 @@
+<ul class="breadcrumb animated bounceInLeft delay-1s mt-2">
+  <li><a href="#" title="Home">Home</a></li>
+  <li><a href="#" title="Sales">User Update</a></li>
+  <li><a href="#" title="Orders">Employee Info</a></li>
+</ul>
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">Employee Info</h5>
+    <div class="row" *ngFor="let emsServiceList of emsAddGetData; let i=index">
+      <div class="form-group col-sm-3">
+        <label>User Name</label>
+        <div>{{emsServiceList.userName}}</div>
+      </div>
+      <div class="form-group col-sm-3">
+        <label>Password</label>
+        <div>{{emsServiceList.password}}</div>
+      </div>
+      <div class="form-group col-sm-3">
+        <label for="retypePassword">Retype Password</label>
+        <div>{{emsServiceList.retypePassword}}</div>
+      </div>
+      <div class="form-group col-sm-3">
+        <label for="fullName">Full Name</label>
+        <div>{{emsServiceList.fullName}}</div>
+      </div>
+      <div class="form-group col-sm-3">
+        <label for="sex">Blood Group</label>
+        <div>{{emsServiceList.bloodGroup}}</div>
+      </div>
+      <div class="form-group col-sm-3">
+        <label for="sex">Sex</label>
+        <div>{{emsServiceList.sex}}</div>
+      </div>
+      <div class="form-group col-sm-3">
+        <label for="nationality">Nationality</label>
+        <div>{{emsServiceList.nationality}}</div>
+      </div>
+      <div class="form-group col-sm-3">
+        <label for="martialStatus">Martial Status</label>
+        <div>{{emsServiceList.martialStatus}}</div>
+      </div>
+      <div class="form-group col-sm-3">
+        <label for="dob">DOB</label>
+        <div>{{emsServiceList.dob}}</div>
+      </div>
+      <div class="form-group col-sm-3">
+        <label for="bloodGroup">Joining Date</label>
+        <div>{{emsServiceList.joiningDate}}</div>
+      </div>
+      <div class="form-group col-sm-3">
+        <label for="contactNumber">Contact No</label>
+        <div>{{emsServiceList.contactNumber}}</div>
+      </div>
+      <div class="form-group col-sm-3">
+        <label for="personalEmail">Personal email</label>
+        <div>{{emsServiceList.personalEmail}}</div>
+      </div>
+      <div class="form-group col-sm-3">
+        <label for="designation">Designation</label>
+        <div>{{emsServiceList.designation}}</div>
+      </div>
+      <div class="form-group col-sm-3">
+        <label for="address">Address</label>
+        <div>{{emsServiceList.address}}</div>
+      </div>
+      <div class="form-group col-sm-3">
+        <label for="city">City</label>
+        <div>{{emsServiceList.city}}</div>
+      </div>
+      <div class="form-group col-sm-3">
+        <label for="pinCode">Pincode</label>
+        <div>{{emsServiceList.pinCode}}</div>
+      </div>
+      <div class="form-group col-sm-3">
+          <label for="uploadPhoto">Upload Photo</label>
+          <div class="custom-file">
+            <input type="file" class="custom-file-input" id="customFile">
+            <label class="custom-file-label" for="customFile">Photo</label>
+          </div>
+        </div>
+        <div class="form-group col-sm-3">
+          <label for="uploadResume">Upload Resume</label>
+          <div class="custom-file">
+            <input type="file" class="custom-file-input" id="customFile">
+            <label class="custom-file-label" for="customFile">Resume</label>
+          </div>
+        </div>
+      <div class="form-group col-sm-3">
+        <label for="uploadResume">Policy Elgible</label>
+        <div class="clearfix"></div>
+        <ui-switch size="small" [(ngModel)]="policyElgible" [ngModelOptions]="{standalone: true}"></ui-switch>
+      </div>
+      <div class="form-group col-sm-3">
+        <label for="uploadResume">Bonus</label>
+        <div class="clearfix"></div>
+      <ng5-slider [(value)]="minValue" [(highValue)]="maxValue" [options]="options" ></ng5-slider>
+    </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-1">
+        <button type="submit" (click)="goEmsUpdate()" class="btn btn-primary" value="Sign up">Submit</button>
+      </div>
+    </div>
+  </div>

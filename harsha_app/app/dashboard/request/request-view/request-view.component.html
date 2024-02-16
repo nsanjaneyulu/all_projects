@@ -1,0 +1,43 @@
+<div class="col-8 d-flex justify-content-between m-auto mb-3">
+  <h4 class="text-capitalize text-gold">{{pageTitle}}</h4>
+  <a class="text-gold" routerLink="/dashboard/request/list">
+    Back to list
+  </a>
+</div>
+<div class="col-8 m-auto text-gold" id="contentToConvert" *ngIf="requestData">
+  <!-- <div *ngFor="let item of requestData"> -->
+  <ul class="list-unstyled">
+    <!-- <li class="text-capitalize"> request body heading: {{item.request_body_heading}}</li>
+      <li class="text-capitalize"> request conclusion statement: {{item.request_conclusion_statement}}</li>
+      <li class="text-capitalize"> request created date: {{item.request_created_date}}</li> -->
+    <li class="text-capitalize"> ref.No: {{requestData.request_ref_number}}</li>
+    <li class="text-capitalize"> subject: {{requestData.request_subject}}</li>
+    <!-- <li class="text-capitalize"> request status: {{item.request_status}}</li>
+      <li class="text-capitalize"> request type: {{item.request_type}}</li> -->
+  </ul>
+  <!-- <p class="text-capitalize text-bold"> request body content</p> -->
+  <article [innerHTML]="requestData.request_body_content"></article>
+  <!-- </div> -->
+</div>
+<div class="col-8 m-auto text-gold" *ngIf="requestData">
+  <label for="upload_response_pdf" class="m-0" *ngIf="!requestData.is_response_attached">
+    <input type="checkbox" name="upload_response_pdf" id="upload_response_pdf" [(ngModel)]="upload_response_pdf">
+    <span>Upload Response Pdf</span>
+  </label>
+  <div class="d-flex justify-content-between align-items-center my-3">
+    <!-- <button type="submit" (click)="generatePdf(this.request_id)" class="btn  theme_button">Generate PDF</button> -->
+    <!-- <span class="cursor_pointer theme_button" (click)="generateBlob()">Generate</span> -->
+    <div *ngIf="!requestData.is_response_attached && upload_response_pdf">
+      <div *ngIf="uploadResponseName" class="mb-3"><span>{{uploadResponseName}}</span> </div>
+      <label for="r_attachment" class="btn  theme_button m-0" *ngIf="!responseFile">
+        Choose file
+        <input type="file" name="r_attachment" id="r_attachment" (change)="changeListener($event)"
+          accept="application/pdf" value="Choose file" class="d-none">
+      </label>
+      <button class="btn theme_button" *ngIf="uploadResponseBtn" (click)="removeAttachment()">Remove</button>
+      <button class="btn theme_button" *ngIf="uploadResponseBtn" (click)="uploadResponse()">Upload Response</button>
+    </div>
+    <a class="btn  theme_button" target="_blank" id="generate"
+      href="http://50.62.35.149:8200/getDoc/1/{{this.request_id}}" *ngIf="!upload_response_pdf">Generate</a>
+  </div>
+</div>

@@ -1,0 +1,46 @@
+<ion-header class="header_styles">
+
+    <ion-row>
+        <ion-icon style="margin-top: 5%;" (click)="goToDashBoard()" ios="ios-arrow-round-back" md="md-arrow-round-back"></ion-icon>
+        <ion-col><span class=""><span *ngIf="dinningType=='FOOD_COURT'">FOOD COURT</span><span *ngIf="dinningType!='FOOD_COURT'">{{dinningType}}</span></span>
+        </ion-col>
+    </ion-row>
+</ion-header>
+
+<ion-content>
+    <div class="bgContent" *ngIf="mallDataCount>0">
+        <ion-grid>
+            <ion-row class="rowborder" *ngFor="let mallDetail of mallData" (click)="openOutletsPage(mallDetail)">
+                <ion-col size="3">
+                    <img class="imageBorder" src="{{imageEndPoint}}{{mallDetail.img}}">
+                </ion-col>
+                <ion-col>
+                    <div class="mallName">{{mallDetail.name}}</div>
+                    <div class="mall-address">{{mallDetail.address.line2}}</div>
+                    <!-- <div class="mall-offer"><i class="fa fa-certificate colorIcon" aria-hidden="true"></i> 40% off</div> -->
+                    <div class="section-divider"></div>
+                    <div class="mall-rating">
+                        <span class="mall-rating-text">{{mallDetail.distanceFromUser}} Km</span>
+                    </div>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </div>
+    <div *ngIf="mallDataCount == 0" class="malls-unavailable">
+        <span *ngIf="dinningType == 'FOOD_COURT'"><img class="centering" src="../../../assets/icon/foodcourts.png"></span>
+        <span *ngIf="dinningType == 'CINEMAS'"><img class="centering" src="../../../assets/icon/cinemas.png"></span>
+        <span *ngIf="dinningType == 'DRIVE_IN'"><img class="centering" src="../../../assets/icon/drivein.png"></span>
+        <span *ngIf="dinningType == 'CAFETERIAS'"><img class="centering" src="../../../assets/icon/cafeteria.png"></span>
+        <span *ngIf="dinningType == 'DINEIN'"><img class="centering" src="../../../assets/icon/drivein.png"></span>
+        <span class="centered">No <span *ngIf="dinningType == 'FOOD_COURT'">Food Courts</span>
+        <span *ngIf="dinningType == 'CINEMAS'">Cinemas</span>
+        <span *ngIf="dinningType == 'DRIVE_IN'">Drive Ins</span>
+        <span *ngIf="dinningType == 'CAFETERIAS'">Cafeterias</span>
+        <span *ngIf="dinningType == 'DINEIN'">Dine-In's</span>
+        <!-- around you. Launching soon!! Keep watching this space. -->
+        </span>
+        <div>
+            <button routerLink="/dashboard" class="revertBack">Back</button>
+        </div>
+    </div>
+</ion-content>

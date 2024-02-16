@@ -1,0 +1,61 @@
+<wicket:extend>
+	<div id="content">
+    <div class="bread-crumb">
+            	<h1>Feeding Management / Suggested Feeding</h1>
+            </div>
+            <br />
+             	<form wicket:id="suggestedForm">
+						<div wicket:id="feedback"></div>
+						<div wicket:id="rowPanel">
+							<table id="dataTable">
+								<tr>
+									<th></th>
+									<th>Live Stock State <font color="#FF0000">*</font></th>
+									<th>Feed Type <font color="#FF0000">*</font></th>
+									<th class="feed-last">Feed Quantity Per Live Stock<font color="#FF0000">*</font></th>
+									<!--
+									<th>Total Feed Quantity</th>
+									-->
+								</tr>
+								<tr>
+									<td colspan="2">Select Effective Date</td>
+									<td colspan="1" nowrap="nowrap"><input type="text" id="effectiveDate" size="10" 
+                                    wicket:id="effectiveDate" class="date_effect_SuffestedFeeding"/></td>
+									<td colspan="1"><a wicket:id="report">
+                                    <img src="images/print.gif" alt="View Report"></a></td>
+								</tr>
+								<span wicket:id="rows">
+									<tr>
+										<td><input type="checkbox" name="suggestedfeedcheck"
+											id="suggestedfeedcheck" wicket:id="suggestedfeedcheck" />
+										</td>
+										<td>
+											<select wicket:id="state_type" class="dropdown_effect" maxlength="30"></select>
+                                            <span wicket:id="livestock_total" class="state_effect"></span>
+										</td>
+										<td>
+											<select wicket:id="feed" class="dropdown_effect" maxlength="30"></select>
+										</td>
+										<td class="feed-last"><input name="feedquantity" type="text"
+											id="breeddesc" wicket:id="feedquantity" class="number_effect" maxlength="15"
+                                            style="text-align:right;"/>
+										</td>
+										
+									</tr> </span>
+								
+							</table>
+                           
+									<input type="button" value="Add Row" wicket:id="suggest_addRow" class="button" />
+									
+									<input type="button" value="Delete Row"
+										wicket:id="suggest_removeRow" class="button" />
+									
+									<input type="button" value="Update" wicket:id="suggest_update" class="button" />
+									
+								
+						</div>
+					</form>
+		
+		
+	</div>
+</wicket:extend>

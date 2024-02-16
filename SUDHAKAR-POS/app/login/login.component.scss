@@ -1,0 +1,47 @@
+@import "../../_variables.scss";
+
+.tafelpos-body {
+    background-image: url("/assets/images/login-BG.jpg");
+    background-color: #301100;
+    height: 100%;
+    .main-text-block {
+        margin: 140px 0 0 60px;
+        h1 {
+            color: $light-color;
+            font-size: 3.5rem;
+            font-weight: bold;
+        }
+
+        h2 {
+            color: $light-color;
+            font-size: 1.75rem;
+        }
+    }
+
+    .login-form-block {
+        background-color: $light-color;
+        padding: 45px;
+        margin: 70px 55px 90px 0;
+
+        label {
+            font-size: 1rem;
+        }
+
+        .btn {
+            width: 100%;
+        }
+        
+        .form-control {
+            border: 0;
+            border-bottom: 1px solid #494F56;
+        }
+    }
+
+    .copyright-block {
+        color: #ffffff;
+        position: absolute;
+        left: 70px;
+        bottom: 20px;
+        width: calc(100% - 140px);
+    }
+}

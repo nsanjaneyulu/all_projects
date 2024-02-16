@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+      <link rel="stylesheet" href="css/font-awesome.css">
+      <link rel="stylesheet" href="css/bjqs.css">
+      <link rel="stylesheet" href="css/jquery-ui.css">
+      <script src="js/jquery.min.js"></script>
+      <script src="js/jquery-ui.min.js"></script>
+      <link href="css/styles.css" rel="stylesheet" type="text/css" />
+      <title>Hostel Plan</title>
+   </head>
+   <body>
+      <div id="loader">
+         <div class="loader">
+            <div class="dot dot1"></div>
+            <div class="dot dot2"></div>
+            <div class="dot dot3"></div>
+            <div class="dot dot4"></div>
+         </div>
+      </div>
+      <section id="slider">
+         <ul class="bjqs">
+            <li><img src="img/slider/001.jpg" alt=""></li>
+            <li><img src="img/slider/002.jpg" alt=""></li>
+            <li><img src="img/slider/003.jpg" alt=""></li>
+            <li><img src="img/slider/004.jpg" alt=""></li>
+         </ul>
+      </section>
+      <!-- End of Slider -->
+      <section id="intro">
+         <div class="container">
+            <header>
+               <div id="logo">
+                  <img src="img/logo.png" alt="">
+               </div>
+               <nav>
+                  <a href="#" class="btn__close-menu"><i class="fa fa-times" aria-hidden="true"></i></a>
+                  <ul>
+                     <li><a href="#">Home</a></li>
+                     <li><a href="#">About</a></li>
+                     <li><a href="#">Contact Us</a></li>
+                     <li><a href="#">Login</a></li>
+                     <li><a href="#">Signup</a></li>
+                  </ul>
+               </nav>
+               <a href="#" class="btn__open-menu"><i class="fa fa-bars" aria-hidden="true"></i></a>
+            </header>
+            <div id="search">
+               <div class="content">
+                  <h2>Say Close to your...</h2>
+                  <p>Lorem Ipsum is simply dummy text of the priummy text of the printing</p>
+                  <ul class="menu__intro">
+                     <li><a href="#"><span class="fa fa-home icon"></span>Hostels</a></li>
+                     <li><a href="#"><span class="fa fa-bed icon"></span>Paying Guest</a></li>
+                     <li><a href="#"><span class="fa fa-building icon"></span>Flatmates</a></li>
+                  </ul>
+                  <div class="row">
+                     <div class="col-sm-6">
+                        <div class="row">
+                           <div class="col-sm-6">
+                              <div class="div search__box">
+                                 <select name="" id="input" class="form-control bg-white" required="required">
+                                    <option value="">Select city</option>
+                                    <option value="">Hyderabad</option>
+                                    <option value="">Chennai</option>
+                                    <option value="">Bangalore</option>
+                                 </select>
+                              </div>
+                           </div>
+                           <div class="col-sm-6">
+                              <div class="div search__box">
+                                 <select name="" id="input" class="form-control bg-white" required="required">
+                                    <option value="">Select Area</option>
+                                    <option value="">Hyderabad</option>
+                                    <option value="">Chennai</option>
+                                    <option value="">Bangalore</option>
+                                 </select>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-sm-6">
+                        <div class="row">
+                           <div class="col-sm-5">
+                              <div class="search__box"><input type="date" class="form-control" placeholder="checkin"></div>
+                           </div>
+                           <div class="col-sm-5">
+                              <div class="search__box"><input type="date" class="form-control" placeholder="checkout"></div>
+                           </div>
+                           <div class="col-sm-2">
+                              <div class="search__box">
+                                 <button class="btn btn-block btn-warning"><span class="glyphicon glyphicon-search" aria-hidden="true"></span> </button>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <form class="search__box hide">
+                     <select name="" id="input" class="" required="required">
+                        <option value="">Select city</option>
+                        <option value="">Hyderabad</option>
+                        <option value="">Chennai</option>
+                        <option value="">Bangalore</option>
+                     </select>
+                     <input type="text" class="">
+                     <button type="submit" class="btn btn-warning">
+                     <span class="fa fa-search"></span>
+                     </button>
+                  </form>
+               </div>
+            </div>
+         </div>
+      </section>
+      <!-- End of Intro Content -->
+      <section id="content">
+         <div class="container">
+            <div class="col-sm-3 filters">
+               <div class="main__title">
+                  <h3> <span class="glyphicon glyphicon-filter" aria-hidden="true"></span> Filters</h3>
+                  <a href="#">clear all</a>
+               </div>
+               <div class="box">
+                  <h5 class="filter__tiltle">Price</h5>
+                  <div id="slider-range" class="slider"></div>
+                  <p class="filter__price">
+                     <span class="filter__price-min">0</span>
+                     <span class="filter__price-max">1000</span>
+                  </p>
+               </div>
+               <div class="box">
+                  <h5 class="filter__tiltle">Rating</h5>
+                  <div id="slider-rating" class="slider"></div>
+                  <h3 class="text-center  container__rating">
+                     <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                  </h3>
+               </div>
+               <div class="box">
+                  <h5 class="filter__tiltle">Room Type</h5>
+                  <ul class="list-unstyled filter__roomType">
+                     <li>
+                        <label class="control control--checkbox">
+                           First checkbox
+                           <input type="checkbox" />
+                           <div class="control__indicator"></div>
+                        </label>
+                     </li>
+                  </ul>
+               </div>
+               <div class="box">
+                  <h5 class="filter__tiltle">Facilities</h5>
+                  <ul class="list-unstyled filter__roomType">
+                     <li>
+                        <label class="control control--checkbox">
+                           First checkbox
+                           <input type="checkbox" />
+                           <div class="control__indicator"></div>
+                        </label>
+                     </li>
+                  </ul>
+               </div>
+               <div class="box">
+                  <h5 class="filter__tiltle">Another Type</h5>
+                  <ul class="list-unstyled filter__roomType">
+                     <li>
+                        <label class="control control--checkbox">
+                           First checkbox
+                           <input type="checkbox" />
+                           <div class="control__indicator"></div>
+                        </label>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+            <div class="col-sm-9">
+               <ul class="list-unstyled list__rooms">
+                  <li class="row list__room">
+                     <div class="col-sm-3 list__room-bg" data-image="http://www.scienceinstitute.in/images/hOSTEL2.jpg">
+                        <img src="http://www.scienceinstitute.in/images/hOSTEL2.jpg" class="img-responsive hide" />
+                     </div>
+                     <div class="col-sm-9 room__info">
+                        <div class="row">
+                           <div class="col-sm-7">
+                              <h4 class="room__title">Lorium ipsum is dummy text...</h4>
+                              <small class="room__price-from">3km from lorium</small>
+                              <p><b>Gender: </b>Lorem <b>Lorium resident type: </b>working</p>
+                              <p><b>Address: </b>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when</p>
+                              <p><b>Phone: </b><a href="#">+91-9876543212</a> <a href="#">040-24536712</a></p>
+                           </div>
+                           <div class="col-sm-5">
+                              <div><strong>Rooms Details</strong></div>
+                              <div class="room__details"><span>12 Bed mixed room</span><span>$800.00</span></div>
+                              <div class="room__details active"><span>12 Bed mixed room</span><span>$800.00</span></div>
+                              <div class="room__details"><span>12 Bed mixed room</span><span>$800.00</span></div>
+                              <p class="text-right"><a href="#">More</a></p>
+                           </div>
+                        </div>
+                        <div class="row facilities__wrapper">
+                           <div class="col-sm-7">
+                              <h5>Facilities:</h5>
+                              <ul class="list-inline facilities__Styles">
+                                 <li><img src="http://placehold.it/35x35/f00" /></li>
+                                 <li><img src="http://placehold.it/35x35/4c35c3" /></li>
+                                 <li><img src="http://placehold.it/35x35/c335b0" /></li>
+                                 <li><img src="http://placehold.it/35x35/3dc335" /></li>
+                                 <li><img src="http://placehold.it/35x35/c38b35" /></li>
+                                 <li><img src="http://placehold.it/35x35/827d75" /></li>
+                              </ul>
+                           </div>
+                           <div class="col-sm-5 text-right">
+                              <button class="btn btn-warning">Book Now</button>
+                           </div>
+                        </div>
+                     </div>
+                  </li>
+               </ul>
+            </div>
+         </div>
+      </section>
+      <!-- EMd of Content -->
+      <footer id="introfooter">
+         <div class="container">
+            <h3 class="title">Contact Us</h3>
+            <h4 class="text-muted text-center">You can download our app for free on</h4>
+            <p class="text-center app__links">
+               <a href="#"><img src="./img/appstore.png" /></a>
+               <a href="#"><img src="./img/google-play.png" /></a>
+            </p>
+            <div class="row footer__links__row">
+               <div class="col-md-3 col-sm-6">
+                  <h5 class="footer__link__title">Quick Links</h5>
+                  <ul class="footer__links">
+                     <li><a href="#">Hostel in Gurgon</a></li>
+                     <li><a href="#">Hostel in Hyderabad</a></li>
+                     <li><a href="#">Hostel in Secunderabad</a></li>
+                     <li><a href="#">Hostel in Delhi</a></li>
+                     <li><a href="#">Hostel in Bangalore</a></li>
+                  </ul>
+               </div>
+               <div class="col-md-3 col-sm-6">
+                  <h5 class="footer__link__title">Quick Links</h5>
+                  <ul class="footer__links">
+                     <li><a href="#">Hostel in Gurgon</a></li>
+                     <li><a href="#">Hostel in Hyderabad</a></li>
+                     <li><a href="#">Hostel in Secunderabad</a></li>
+                     <li><a href="#">Hostel in Delhi</a></li>
+                     <li><a href="#">Hostel in Bangalore</a></li>
+                  </ul>
+               </div>
+               <div class="col-md-3 col-sm-6">
+                  <h5 class="footer__link__title">Quick Links</h5>
+                  <ul class="footer__links">
+                     <li><a href="#">Hostel in Gurgon</a></li>
+                     <li><a href="#">Hostel in Hyderabad</a></li>
+                     <li><a href="#">Hostel in Secunderabad</a></li>
+                     <li><a href="#">Hostel in Delhi</a></li>
+                     <li><a href="#">Hostel in Bangalore</a></li>
+                  </ul>
+               </div>
+               <div class="col-md-3 col-sm-6">
+                  <h5 class="footer__link__title">Quick Links</h5>
+                  <ul class="footer__links">
+                     <li><a href="#">Hostel in Gurgon</a></li>
+                     <li><a href="#">Hostel in Hyderabad</a></li>
+                     <li><a href="#">Hostel in Secunderabad</a></li>
+                     <li><a href="#">Hostel in Delhi</a></li>
+                     <li><a href="#">Hostel in Bangalore</a></li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+         </div>
+         </div>
+      </footer>
+      <script src="js/bootstrap.min.js"></script>
+      <script src="js/bjqs.min.js"></script>
+      <script src="js/my_scripts.js"></script>
+      <script></script>
+   </body>
+</html>

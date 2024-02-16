@@ -1,0 +1,54 @@
+<div>
+    <app-header></app-header>
+    <div class="content">
+        <div class="container">
+            <div class="row justify-content-end">
+                <app-tabs class="col-6" [tabsName]="jobsTabs" (tabChange)="tabClick($event)"></app-tabs>
+                <div class="col-2 offset-md-1">
+                    <a *ngIf="activeJobs !== 0 && closedJobs !== 0 && pendingJobs !== 0" [routerLink]="['/postjob']" class="btn btn-primary btn-lg btn-block postJob_btn">Post a job</a>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="mt-5" *ngIf="activeTab.name ==='Active' && activeJobs.length>0">
+                <app-list-view [tableColumns]="tableColumns" [tableData]="activeJobs" [activeTab]="activeTab">
+                </app-list-view>
+            </div>
+            <div class="mt-5" *ngIf="activeTab.name ==='Active' && activeJobs==0">
+                <div class="row h-100 justify-content-center align-items-center">
+                    <div class="col-md-4 empty text-center">
+                        <h1>Post Your First Job</h1>
+                        <h2>Find the right talent before your competitors do, post your first job now.</h2>
+                        <p><a href="#postjob" class="btn btn-primary btn-lg postJob_btn px-5 mt-3">Post a job</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-5" *ngIf="activeTab.name ==='Closed' && closedJobs.length>0">
+                <app-list-view [tableColumns]="closedCloumns" [tableData]="closedJobs" [activeTab]="activeTab">
+                </app-list-view>
+            </div>
+            <div class="mt-5" *ngIf="activeTab.name ==='Closed' && closedJobs==0">
+                <div class="row h-100 justify-content-center align-items-center">
+                    <div class="col-md-4 empty text-center">
+                        <h1>No Jobs Closed</h1>
+                        <h2>You have no closed jobs.</h2>
+                        <p><a href="#postjob" class="btn btn-primary btn-lg postJob_btn px-5 mt-3">Post a job</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-5" *ngIf="activeTab.name ==='Pending' && pendingJobs>0">
+                <app-list-view [tableColumns]="tableColumns" [tableData]="pendingJobs" [activeTab]="activeTab">
+                </app-list-view>
+            </div>
+            <div class="mt-5" *ngIf="activeTab.name ==='Pending' && pendingJobs==0">
+                <div class="row h-100 justify-content-center align-items-center">
+                    <div class="col-md-4 empty text-center">
+                        <h1>No Jobs Pending</h1>
+                        <h2>Jobs posted can be viewed here until activation.</h2>
+                        <p><a href="#postjob" class="btn btn-primary postJob_btn btn-lg px-5 mt-3">Post a job</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

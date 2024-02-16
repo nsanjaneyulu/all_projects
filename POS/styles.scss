@@ -1,0 +1,396 @@
+@import '~@angular/material/theming';
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+@import "~@angular/material/prebuilt-themes/pink-bluegrey.css";
+@import "~@angular/material/prebuilt-themes/purple-green.css";
+@include mat-core();
+$Bow-primary: mat-palette($mat-indigo);
+$Bow-accent: mat-palette($mat-pink, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$Bow-warn: mat-palette($mat-red);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$Bow-theme: mat-light-theme($Bow-primary, $Bow-accent, $Bow-warn);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($Bow-theme);
+/* You can add global styles to this file, and also import other style files */
+@import "_variables.scss";
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #section-to-print, #section-to-print * {
+    visibility: visible;
+  }
+  #section-to-print {
+    position: fixed;
+    left: 0;
+    top: 0;
+  }
+}
+.search-styles {
+    background: #40485c !important; 
+    padding: 4px; 
+    position: relative;
+  }
+.swal2-styled {
+   
+    padding: 0.3rem 4em !important;
+   
+}
+.swal2-title {
+    font-size: 40px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.38;
+  letter-spacing: normal;
+  text-align: center;
+  color: #03aa6f !important;
+}
+.swal2-icon.swal2-success .swal2-success-ring  {
+
+    color: #03aa6f !important;
+    
+    }
+.input-group>.input-group-prepend {
+    flex: 0 0 30%;
+}
+.input-group .input-group-text {
+    width: 100%;
+}
+body, html, tafelposapp-root {
+    color: #494F56;
+    background-color: #f0f0f7 !important;
+    font-family: AvenirNext !important;
+}
+
+body, .btn-group-sm>.btn, .btn-sm {
+    font-size: 0.8rem !important;
+}
+
+.page-top-margin {
+    margin-top: $page-top-margin;
+}
+
+.min-h-100 {
+    min-height: 100%;
+}
+
+.no-gutter-right {
+    padding-right:0 !important;
+}
+
+.no-gutter-left {
+    padding-left:0 !important;
+}
+
+.btn-light {
+    cursor: pointer;
+}
+
+.tafelpos-body {
+    .form-control {
+        border-radius: 0;
+    }
+    
+    .border {
+        border-color: $medium-border !important;
+    }
+
+    .btn-secondary {
+        background-color: $secondory-base-color;
+        border-color: $secondory-base-color;
+        &:hover {
+            background-color: #ff0055;
+            border-color: #ff0055;
+        }
+    }
+
+    .bg-secondory {
+        background-color: $secondory-base-color;
+        color: #ffffff;
+    }
+}
+
+.fa-info-circle {
+    cursor: pointer;
+    color: #82c91e;
+}
+
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.app_container {
+    flex: 1;
+    overflow: hidden;
+}
+
+.app_container router-outlet + * {
+    flex: 1;
+    overflow-y: auto;
+    display: block;
+    height: 100%;
+}
+
+*::-webkit-scrollbar {
+    width: 3px;
+}
+ 
+*::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 1px rgba(0,0,0,0.1);
+}
+ 
+*::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+}
+.ui-table .ui-table-thead > tr > th {
+    padding: 0.5rem !important;
+    border: 1px solid #c8c8c8 !important;
+    font-weight: 400 !important;
+    color: #40485c;
+    background-color: #f0f0f7 !important;
+}
+// .ui-table .ui-table-tbody > tr > td {
+//     border: none !important; 
+// }
+.ui-table .ui-sortable-column.ui-state-highlight {
+    color: #000000 !important;
+}
+.ui-table .ui-sortable-column.ui-state-highlight .ui-sortable-column-icon {
+    color: #000000 !important;
+}
+.mat-tab-link {
+    height: 40px !important;
+    opacity: 1 !important;
+}
+.mat-tab-label-active {
+    border-bottom: 2px solid #fff !important;
+}
+.mat-tab-group.mat-primary .mat-ink-bar, .mat-tab-nav-bar.mat-primary .mat-ink-bar {
+    background-color: #ffffff !important; 
+}
+.ui-table .ui-table-tbody > tr > td {
+    // padding: 20px !important;
+}
+body .ui-table .ui-table-tbody > tr:nth-child(even) {
+    background:  #ffffff !important;
+}
+body .ui-table .ui-table-tbody > tr > td {
+    border: 0px solid #f00 !important;
+}
+
+.ui-table-tbody > tr { 
+    border-top: 1px solid #707070 !important;
+    opacity: 0.8;
+}
+.ui-table .ui-table-tbody > tr > td {
+    border: 0px solid #f00 !important;
+    text-align: center !important;
+    font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.14;
+  letter-spacing: normal;
+  text-align: left;
+  color: #1a1a1a;
+}
+.ui-table .ui-table-tbody > tr > td:first-child {
+    text-align: left !important;
+    // padding: 20px 12px !important;
+}
+.ui-table .ui-table-thead > tr > th:first-child {
+    text-align: left !important;
+}
+.ui-table .ui-table-thead > tr > th {
+    border: 0px solid #c8c8c8 !important;
+    border-right: 1px solid #c8c8c8 !important;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold !important;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.14;
+    letter-spacing: normal;
+    text-align: left;
+    color: #1a1a1a;
+    padding: 15px !important;
+   
+}
+.ui-paginator {
+    text-align: left !important;
+    background-color: #ffffff !important;
+    border: 1px solid #ffffff !important;
+    border-radius: 3px !important;
+    // margin-top: 2px !important;
+    // border-top: 1px solid #707070 !important;
+}
+.ui-paginator .ui-paginator-pages .ui-paginator-page {
+    background:  #ffffff !important;
+    border: 1px solid #e8e9ec !important;
+    margin: 0px 3px !important;
+    border-radius: 3px !important;
+}
+.ui-paginator .ui-paginator-pages .ui-paginator-page.ui-state-active {
+    background-color: #40485c !important;
+    color: #ffffff;
+    border-radius: 3px !important;
+}
+.ui-paginator-first, .ui-paginator-prev, .ui-paginator-next, .ui-paginator-last {
+    background:  #ffffff !important;
+    border: 1px solid #e8e9ec !important;
+    margin: 0px 3px !important;
+    border-radius: 3px !important;
+}
+.mat-tab-links {
+    // padding: 0px 10px;
+    display: inline-flex !important;
+    border-bottom: 1px solid #fff;
+    
+}
+.mat-tab-link {
+    min-width: 0px !important;
+    padding: 0px !important;
+    margin: 0px 10px;
+}
+.inv-float {
+    float: right;
+  }
+  .int-connect-disconnect {
+    width: 20px; 
+    height:20px;
+  }
+  .int-connect-disconnect-bg {
+    background: #fff !important;
+  }
+  .topTitle{
+    font-size: 20px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.1;
+    letter-spacing: normal;
+    text-align: left;
+    color: #30de98;
+  }
+  .topTitle1{
+    font-size: 20px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.1;
+    letter-spacing: normal;
+    text-align: left;
+    color: red;
+  }
+  .table-styles {
+    padding: 10px;
+    background: #fff;
+}
+.custom-radio .custom-control-input:checked ~ .custom-control-label::after {
+    background-image: none !important;
+}
+.custom-control-input:checked ~ .custom-control-label::before {
+    color: #fff;
+    border-color: #8699c6 !important;
+    background-color: #8699c6 !important;
+}
+.table__orderDetails {
+    max-height: 190px;
+    overflow: hidden;
+    overflow-y: auto;
+  }
+  .dropdown-toggle::after {
+      display: none !important;
+  }
+  .dropdown-menu {
+      left: -12px !important;
+  }
+  .row dt {
+    font-size: 14px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.36;
+  letter-spacing: normal;
+  text-align: left;
+  color: #40485c;
+  }
+  .row dd {
+    font-size: 14px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.36;
+  letter-spacing: normal;
+  text-align: left;
+  color: #40485c;
+  }
+  .billDetails {
+    font-size: 18px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.39;
+  letter-spacing: normal;
+  text-align: left;
+  color: #40485c;
+  border-bottom:  1px solid #f0f0f7;
+  }
+  .pos-orders-btn {
+    font-size: 18px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.11;
+    letter-spacing: normal;
+    text-align: left;
+    color: #fff;
+    border-radius: 0px !important;
+}
+.rotate {
+    cursor: pointer;
+    animation: rotation 0.7s infinite linear;
+  }
+  @keyframes rotation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(359deg);
+    }
+  }
+  .noDataFound {
+      color: #5C0632 !important;
+      font-weight: bold !important;
+  }
+  .ui-table .ui-table-tbody > tr > td {
+    /* padding: 20px !important; */
+}
+
+@media only screen and (min-width: 768px){
+    perfect-scrollbar > .ps {
+        position: static;
+        display: block;
+        width: inherit;
+        height: inherit;
+        max-width: inherit;
+        max-height: 420px !important;
+    }
+  }
+  @media only screen and (min-width: 1200px){
+    perfect-scrollbar > .ps {
+        position: static;
+        display: block;
+        width: inherit;
+        height: inherit;
+        max-width: inherit;
+        max-height: 700px !important;
+    }
+  }

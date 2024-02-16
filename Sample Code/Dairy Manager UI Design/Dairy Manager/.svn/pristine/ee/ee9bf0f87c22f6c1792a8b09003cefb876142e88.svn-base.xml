@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 15 Jul, 2012 7:41:56 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dblue.farm.DeceaseType" table="decease_type" >
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="decease" type="string">
+            <column name="decease" length="150" not-null="true" />
+        </property>
+        <property name="description" type="string">
+            <column name="description" length="150" />
+        </property>
+        <many-to-one class="com.dblue.farm.Farm" fetch="select" name="farm">
+ 			<column name="farm_id" not-null="true"/>
+		</many-to-one>
+        <set name="deceases" table="decease" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="decease_type_id" not-null="true" />
+            </key>
+            <one-to-many class="com.dblue.farm.Decease" />
+        </set>
+    </class>
+</hibernate-mapping>

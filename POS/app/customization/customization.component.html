@@ -1,0 +1,110 @@
+
+<div class="bow_display_Flex item-border-bottom">
+        <span>
+        <h5 class="col-12">{{itemDetail.name}}</h5>
+        </span>
+        <span (click)="modalDismiss()" class="item-cursor">
+        <i class="item-close" class="fa fa-times" aria-hidden="true"></i>
+        </span>
+        </div>
+<br>
+<br>
+<mat-dialog-content style="    height: 200px;">
+<div  >
+    <div *ngFor="let category of itemDetail.itemCustomization; let i = index" style="margin-bottom: -9%;">
+        <div *ngIf="category.type == 'radio'">
+                <div class="category-name" style="font-weight: bold;size: 18px;">
+                        {{category.groupName}}
+                </div>
+                <div *ngFor="let item of category.customization; let j = index" >
+                    <div class="row" style="height: 30px;">
+                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                                    <input type="radio" [checked]="item.selected" [value]="item" (click)="selectItem(item)" [disabled]="item.availability!='Yes'"><span style="margin-left: 4%;">{{item.name}}</span>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="text-align: right;">
+                                    +&#8377;{{item.customizationPrice}} 
+                                                   </div>
+                    </div>
+                    
+                </div>
+        </div>
+        <br>
+        
+        <div *ngIf="category.type == 'checkbox'">
+                <div class="category-name" style="font-weight: bold;size: 18px;">
+                        {{category.groupName}}
+                </div>
+                <div *ngFor="let item of category.customization; let j = index" >
+                        <div class="row" style="height: 30px;">
+                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                            <input type="checkbox" [checked]="item.selected" [value]="item" (click)="selectItem(item)" [disabled]="item.availability!='Yes'"><span style="margin-left: 4%;">{{item.name}}</span>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="text-align: right;">
+                            +&#8377;{{item.customizationPrice}} 
+                                           </div>
+                                           </div>
+                </div>
+        </div>
+
+<br>
+
+
+        <div *ngIf="category.type =='quantity'"  >
+                <div class="category-name" style="font-weight: bold;size: 18px;">
+                  {{category.groupName}}(<span style="font-size: 10px;color:maroon"> Choose minimum {{category.min}} at max {{category.max}}
+                  </span>)
+                </div>
+                <div>
+                </div>
+                <div *ngFor="let item of category.customization; let i=index" >
+                        <div class="row" style="height: 30px;">
+                    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                            {{item.name}}
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                            <span class="add-button"  *ngIf="!item.showAddButton">
+                                    <span class="quantity-decrement"  >
+                                    <i class="fa fa-minus" aria-hidden="true" (click)="decrementItem(item,category)"></i>
+                                     
+                                    </span>
+                                    <span class="quantity-value">{{item.quantity}}</span>
+                                    <span class="quantity-increment">
+                                            <i class="fa fa-minus" aria-hidden="true" (click)="incrementItem(item,category)"></i>
+                                     
+                                    </span>
+                                  </span>
+                                  <span>
+                                        <button  item-end class="item-add-button"  
+                                        (click)="addSelectedItem(item.id,category)">
+                                        Add
+                                      </button>
+                                  </span>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3" style="text-align: right;">
+                                +&#8377;{{item.customizationPrice}}
+                            </div>
+                            </div>
+                </div>
+            </div>
+    </div>
+
+</div>
+  
+</mat-dialog-content>
+<mat-dialog-actions>
+    <div class="row" style="width: 100%;">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="    margin-top: 1%;
+            font-size: 18px;">
+                    &#8377; {{selectedItemsPrice}}
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="    text-align: end;">
+                    <button type="button" class="btn  btn-outline-danger btn-sm" (click)="addToCart()">Add Item</button>
+        
+            </div>
+    </div>
+    
+        
+      </mat-dialog-actions>
+
+  
+  

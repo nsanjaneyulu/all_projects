@@ -1,0 +1,40 @@
+page-rejectorder {
+	.reasons__title {
+		color: #11BA91;
+	}
+	.quantity-increment,
+	.quantity-decrement,
+	.quantity-value {
+		width: 24px;
+		float: left;
+		text-align: center;
+		padding-top: 4px;
+		color: #1abc9c;
+		font-size: 12px;
+		font-weight: 600;
+	}
+	.quantity-value {
+		padding-top: 2.5px;
+		font-size: 14px;
+		font-weight: normal;
+		height: 24px;
+		background: #1abc9c;
+		color: #ffffff;
+	}
+	.quantity-icon {
+		margin: 0px !important;
+	}
+	.add-button {
+		width: 75px;
+		//padding: 2px 8px;
+		border: 1px solid #1abc9c;
+		border-radius: 2px;
+		height: 25px;
+		margin-top: 2px;
+	}
+	.btn__quantity {
+		width: 28px;
+		height: 28px !important;
+		margin: 0 8px;
+	}
+}

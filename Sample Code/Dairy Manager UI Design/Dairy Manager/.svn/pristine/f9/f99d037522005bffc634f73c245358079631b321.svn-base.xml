@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jul 24, 2012 10:23:30 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dblue.farm.Purchases" table="purchases" >
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="vendor" class="com.dblue.farm.Vendor" fetch="select">
+            <column name="id_vendor" />
+        </many-to-one>
+        <many-to-one name="livestock" class="com.dblue.farm.Livestock" fetch="select">
+            <column name="id_livestock" />
+        </many-to-one>
+        <many-to-one name="farm" class="com.dblue.farm.Farm" fetch="select">
+            <column name="id_farm" />
+        </many-to-one>
+        <many-to-one name="receiptType" class="com.dblue.farm.ReceiptType" fetch="select">
+            <column name="id_receipt_type" not-null="true" />
+        </many-to-one>
+        <property name="receiptNumber" type="string">
+            <column name="receipt_number" length="30" not-null="true" />
+        </property>
+        <property name="saleDate" type="timestamp">
+            <column name="sale_date" length="19" not-null="true" />
+        </property>
+        <property name="remarks" type="string">
+            <column name="remarks" length="250" />
+        </property>
+        <property name="amount" type="big_decimal">
+            <column name="amount" precision="18" not-null="true" />
+        </property>
+        <property name="unitPrice" type="big_decimal">
+            <column name="unitprice" precision="10" not-null="true" />
+        </property>
+        <property name="quantity" type="big_decimal">
+            <column name="quantity" precision="10" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

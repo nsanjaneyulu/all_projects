@@ -1,0 +1,1780 @@
+ <link rel="stylesheet" href="http://lokeshdhakar.com/projects/lightbox2/css/lightbox.css">
+    <style>
+    #portfolio,
+    #list {
+        width: 100%;
+        margin: auto;
+        position: relative;
+    }
+    #list {
+         margin-bottom :8em;
+          }
+    #portfolio .mix,
+    #list .item {
+        position: relative;
+        line-height: 0;
+        width: 24%;
+        float: left;
+        padding: 0%;
+        transition: all .3s;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        -webkit-transition: all .6s;
+        -o-transition: all .6s;
+        transition: all .6s;
+        margin: .3%;
+    }
+    #portfolio .mix {
+        display: none;
+    }
+    #portfolio .mix.remove {
+        display: none;
+        width: 0 !important;
+        height: 0;
+        overflow: hidden;
+        padding: 0 !important;
+        border: none;
+        visibility: hidden;
+    }
+    .mix .content {
+        box-sizing: border-box;
+        transition: all .6s;
+        -webkit-transition: all .6s;
+        position: absolute;
+        background-color: #fff;
+        padding: 10px;
+        opacity: 0;
+        transform: translateY(-100%);
+        z-index: 100;
+        line-height: 1;
+        width: 100%;
+    }
+	.mix.item:hover { margin-top:-50px !important; }
+    .mix:hover .content {
+        top: 100%;
+        opacity: 1;
+        transform: translateY(0%);
+    }
+    .portfolioimgwidth {
+        width: 100%;
+    }
+		/*  PORTFOLIO START  */
+  #content ul.portfolionav 
+  {    
+    display: block;
+    text-align: center;
+	list-style-type:none;
+  }
+  #content ul.portfolionav ul {
+    margin: 0;
+    padding:0;
+    list-style-type:none;
+	font-size:18px;
+  }
+  #content ul.portfolionav a {
+    display:block; 
+    color:#777777; 
+    text-decoration: none;
+    padding: .8em 1.8em;
+    text-transform: uppercase;
+    font-size: 13px;
+	letter-spacing: 2px;
+    position: relative;
+	list-style::none;
+  }
+  #content ul.portfolionav{  
+    vertical-align: top; 
+    display: inline-block;
+	list-style::none;
+  }
+  #content ul.portfolionav li
+  {
+	  position: relative;
+   }
+  #content ul.portfolionav > li 
+  { 
+    float:left; 
+    margin-right: 1px; 
+  } 
+  #content ul.portfolionav > li > a 
+  { 
+    margin-bottom:1px;
+  }
+  #content ul.portfolionav > li:hover , #content ul.portfolionav > li:hover >a
+  {
+	  color:#7ddbf8;
+  }
+  #content ul.portfolionav li:hover > a 
+  { 
+  	  color:#7ddbf8; 
+  }
+  #content ul.portfolionav li li a 
+  { 
+  		margin-top:1px
+  }
+    #content ul.portfolionav li a:first-child:nth-last-child(2):before 
+	{ 
+     content:""; 
+     position: absolute; 
+     height:0; 
+     width: 0; 
+     border: 5px solid transparent; 
+     top: 50% ;
+     right:5px;  
+   } 
+   /* submenu positioning*/
+	#content ul.portfolionav ul {
+	  position: absolute;
+	  white-space: nowrap;
+	  z-index: 101;
+	  left: -99999em;
+	  list-style-type:none;
+          background:#FFF;
+	}
+	#content ul.portfolionav > li:hover > ul {
+	  left: auto;
+	  padding-top: 5px  ;
+	  min-width: 100%;
+	  list-style-type:none;
+	}
+	#content ul.portfolionav > li li ul {  border-left:1px solid #fff;}
+	#content ul.portfolionav > li li:hover > ul { 
+	 /* margin-left: 1px */
+	  left: 100%;
+	  top: -1px;
+	}
+	/* arrow hover styling */
+	#content ul.portfolionav > li > a:first-child:nth-last-child(2):before { 
+	  border-top-color: #aaa; 
+	}
+	#content ul.portfolionav > li:hover > a:first-child:nth-last-child(2):before {
+	  border: 5px solid transparent; 
+	  border-bottom-color:#999;
+	  margin-top:-5px;
+	}
+	#content ul.portfolionav li li > a:first-child:nth-last-child(2):before {  
+	  border-left-color: #999; 
+	  margin-top: -5px;
+	}
+	#content ul.portfolionav li li:hover > a:first-child:nth-last-child(2):before {
+	  border: 5px solid transparent; 
+	  border-right-color: #999;
+	  right: 10px; 
+	}
+	/*  PORTFOLIO CLOSE  */
+    </style>
+   <!-- portfolio Navigation -->
+    <nav>
+        <ul class="portfolionav">
+            <li class="filter" data-filter='all'><a href="#">All</a></li>
+            <li class="filter" data-filter='bim'><a href="#">BIM</a></li>
+            <li class="filter" data-filter='cad'><a href="#">CAD</a></li>
+        	<li><a href="#">VISUALIZATION</a>
+                <ul>
+                    <li><a href="#" style="text-align:right;">INTERIOR</a>
+                        <ul>
+                            <li class="filter" data-filter='ci'><a href="#">COMMERCIAL INTERIORS</a></li>
+                            <li class="filter" data-filter='ieh'><a href="#">EDUCATIONAL & HOSPITAL</a></li>
+                            <li class="filter" data-filter='iri'><a href="#">RESIDENTIAL INTERIORS</a></li>
+                        </ul>
+            		</li>
+                	<li><a href="#" style="text-align:right;">EXTERIOR</a>
+                        <ul>
+                            <li class="filter" data-filter='comercialspaces'><a href="#">COMMERCIAL SPACES</a></li>
+                            <li class="filter" data-filter='eh'><a href="#">EDUCATIONAL & HOSPITALS</a></li>
+                            <li class="filter" data-filter='ih'><a href="#">INDIVIDUAL HOMES</a></li>
+                            <li class="filter" data-filter='industrial'><a href="#">INDUSTRIAL</a></li>
+                            <li class="filter" data-filter='residential'><a href="#">RESIDENTIAL APARTMENTS</a></li>
+                        </ul>
+                	</li>
+            		<li class="filter" data-filter='cd'><a href="#">CONCEPT DEVELOPMENT</a></li>
+            	</ul>
+            </li>
+           <li class="filter" data-filter='floorplans'><a href="#">FLOOR PLANS</a></li>
+        </ul>
+    </nav>
+<!-- portfolio Navigation Close -->
+<!-- portfolio Start -->
+     <div id="portfolio">
+        <!-- portfolio bim category Start -->
+        <div class="mix item bim">
+            <a data-lightbox="bim" href="http://sisbim.net/wp-content/uploads/2015/08/sisbim_bim01_big.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/08/sisbim_bim01_small.jpg" />
+            </a>
+            <div class="content">
+                <p><b>NEW DOHA ZOO PARK</b></p>
+                <p>Doha, Qatar.</p>
+                <p><small>Scope: Hardscape BIM Model, LOD-200</small>
+                </p>
+            </div>
+        </div>
+        <div class="mix item bim">
+            <a data-lightbox="bim" href="http://sisbim.net/wp-content/uploads/2015/08/sisbim_bim02_big.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/08/sisbim_bim02_small.jpg" />
+            </a>
+            <div class="content">
+                <p><b>NEW DOHA ZOO PARK</b></p>
+                <p>Doha, Qatar.</p>
+                <p><small>Scope: Hardscape BIM Model, LOD-200</small>
+                </p>
+            </div>
+        </div> 
+        <div class="mix item bim">
+            <a data-lightbox="bim" href="http://sisbim.net/wp-content/uploads/2015/08/sisbim_bim03_big.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/08/sisbim_bim03_small.jpg" />
+            </a>
+            <div class="content">
+                <p><b>HOSPITAL</b></p>
+                <p>Al Garhoud, UAE.</p>
+                <p><small>Scope: BIM from Schematic Design, Clash detection and Coordination.</small>
+                </p>
+            </div>
+        </div>
+        <div class="mix item bim">
+            <a data-lightbox="bim" href="http://sisbim.net/wp-content/uploads/2015/08/sisbim_bim04_big.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/08/sisbim_bim04_small.jpg" />
+            </a>
+            <div class="content">
+                <p><b>HOSPITAL</b></p>
+                <p>Al Garhoud, UAE.</p>
+                <p><small>Scope: BIM from Schematic Design, Clash detection and Coordination.</small>
+                </p>
+            </div>
+        </div>
+        <div class="mix item bim">
+            <a data-lightbox="bim" href="http://sisbim.net/wp-content/uploads/2015/08/sisbim_bim05_big.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/08/sisbim_bim05_small.jpg" />
+            </a>
+            <div class="content">
+                <p><b>SECONDARY TECHNICAL SCHOOL</b></p>
+                <p>UAQ, UAE</p>
+                <p><small>Scope: Shop drawings development, LOD-400</small>
+                </p>
+            </div>
+        </div>   
+        <div class="mix item bim">
+            <a data-lightbox="bim" href="http://sisbim.net/wp-content/uploads/2015/08/sisbim_bim06_big.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/08/sisbim_bim06_small.jpg" />
+            </a>
+            <div class="content">
+                <p><b>SECONDARY TECHNICAL SCHOOL</b></p>
+                <p>UAQ, UAE</p>
+                <p><small>Scope: Shop drawings development, LOD-400</small>
+                </p>
+            </div>
+        </div>
+        <div class="mix item bim">
+            <a data-lightbox="bim" href="http://sisbim.net/wp-content/uploads/2015/08/sisbim_bim07_big.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/08/sisbim_bim07_small.jpg" />
+            </a>
+            <div class="content">
+                <p><b>SECONDARY TECHNICAL SCHOOL</b></p>
+                <p>UAQ, UAE</p>
+                <p><small>Scope: Shop drawings development, LOD-400</small>
+                </p>
+            </div>
+        </div>
+        <div class="mix item bim">
+            <a data-lightbox="bim" href="http://sisbim.net/wp-content/uploads/2015/08/MTC_01.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/08/MTC_01A.jpg" />
+            </a>
+            <div class="content">
+                <p><b>Manjeera Trinity Corporate</b></p>
+                <p>Hyderabad, INDIA</p>
+                <p><small>Scope: BIM LOD-400 and Service Co-ordination</small>
+                </p>
+            </div>
+        </div>
+        <div class="mix item bim">
+            <a data-lightbox="bim" href="http://sisbim.net/wp-content/uploads/2015/08/MTC_02.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/08/MTC_02A.jpg" />
+            </a>
+            <div class="content">
+                <p><b>Manjeera Trinity Corporate</b></p>
+                <p>Hyderabad, INDIA</p>
+                <p><small>Scope: BIM LOD-400 and Service Co-ordination</small>
+                </p>
+            </div>
+        </div>
+        <div class="mix item bim">
+            <a data-lightbox="bim" href="http://sisbim.net/wp-content/uploads/2015/08/MTC_03.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/08/MTC_03A.jpg" />
+            </a>
+            <div class="content">
+                <p><b>Manjeera Trinity Corporate</b></p>
+                <p>Hyderabad, INDIA</p>
+                <p><small>Scope: BIM LOD-400 and Service Co-ordination</small>
+                </p>
+            </div>
+        </div>  
+         <div class="mix item bim">
+            <a data-lightbox="bim" href="http://sisbim.net/wp-content/uploads/2015/08/PAVAN_01.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/08/PAVAN_01A.jpg" />
+            </a>
+            <div class="content">
+                <p><b>MR.PAVAN RESIDENCE</b></p>
+                <p>KPHB, Hyderabad.</p>
+                <p><small>cope:Concept design, Design Development, Documentation through BIM LOD-400 </small>
+                </p>
+            </div>
+        </div>
+        <div class="mix item bim">
+            <a data-lightbox="bim" href="http://sisbim.net/wp-content/uploads/2015/08/PAVAN_02.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/08/PAVAN_02A.jpg" />
+            </a>
+            <div class="content">
+                <p><b>MR.PAVAN RESIDENCE</b></p>
+                <p>KPHB, Hyderabad.</p>
+                <p><small>cope:Concept design, Design Development, Documentation through BIM LOD-400 </small>
+                </p>
+            </div>
+        </div>
+        
+        
+        <!-- portfolio bim category close -->
+        <!-- portfolio floor plans category Start -->
+        <div class="mix item floorplans">
+            <a data-lightbox="floorplans" href="http://sisbim.net/wp-content/uploads/2015/02/sisbim_fp1.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/sisbim_fp1_small.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div>
+        <div class="mix item floorplans">
+            <a data-lightbox="floorplans" href="http://sisbim.net/wp-content/uploads/2015/02/sisbim_fp10.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/sisbim_fp10_small.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div>  
+        <div class="mix item floorplans">
+            <a data-lightbox="floorplans" href="http://sisbim.net/wp-content/uploads/2015/02/sisbim_fp2.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/sisbim_fp2_small.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div> 
+        <div class="mix item floorplans">
+            <a data-lightbox="floorplans" href="http://sisbim.net/wp-content/uploads/2015/02/sisbim_fp3.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/sisbim_fp3_small.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div>
+        <div class="mix item floorplans">
+            <a data-lightbox="floorplans" href="http://sisbim.net/wp-content/uploads/2015/02/sisbim_fp4.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/sisbim_fp4_small.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div>
+        <div class="mix item floorplans">
+            <a data-lightbox="floorplans" href="http://sisbim.net/wp-content/uploads/2015/02/sisbim_fp5.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/sisbim_fp5_small.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div>
+        <div class="mix item floorplans">
+            <a data-lightbox="floorplans" href="http://sisbim.net/wp-content/uploads/2015/02/sisbim_fp12.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/sisbim_fp12_small.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div>    
+        
+         <div class="mix item floorplans">
+            <a data-lightbox="floorplans" href="http://sisbim.net/wp-content/uploads/2015/02/sisbim_fp14.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/sisbim_fp14_small.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div> 
+        <div class="mix item floorplans">
+            <a data-lightbox="floorplans" href="http://sisbim.net/wp-content/uploads/2015/02/sisbim_fp7.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/sisbim_fp7_small.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div>
+        <div class="mix item floorplans">
+            <a data-lightbox="floorplans" href="http://sisbim.net/wp-content/uploads/2015/02/sisbim_fp9.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/sisbim_fp9_small.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div>
+        
+        <div class="mix item floorplans">
+            <a data-lightbox="floorplans" href="http://sisbim.net/wp-content/uploads/2015/02/sisbim_fp15.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/sisbim_fp15_small.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div>
+        
+         <div class="mix item floorplans">
+            <a data-lightbox="floorplans" href="http://sisbim.net/wp-content/uploads/2015/02/sisbim_fp11.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/sisbim_fp11_small.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div>
+          
+       <div class="mix item floorplans">
+            <a data-lightbox="floorplans" href="http://sisbim.net/wp-content/uploads/2015/02/sisbim_fp6.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/sisbim_fp6_small.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div>
+          
+         <div class="mix item floorplans">
+            <a data-lightbox="floorplans" href="http://sisbim.net/wp-content/uploads/2015/02/sisbim_fp13.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/sisbim_fp13_small.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div>
+         
+           <div class="mix item floorplans">
+            <a data-lightbox="floorplans" href="http://sisbim.net/wp-content/uploads/2015/02/sisbim_fp8.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/sisbim_fp8_small.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div>
+        <!-- portfolio floor plans category close -->
+        <!-- portfolio exterior comercial spaces category Start -->
+        <div class="mix item comercialspaces">
+            <a data-lightbox="comercialspaces" href="http://sisbim.net/wp-content/uploads/2015/02/sisbim_cs-1.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/sisbim_cs-small_1.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div>
+        <div class="mix item comercialspaces">
+            <a data-lightbox="comercialspaces" href="http://sisbim.net/wp-content/uploads/2015/02/sisbim_cs-2.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/sisbim_cs-small_2.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div> 
+        <div class="mix item comercialspaces">
+            <a data-lightbox="comercialspaces" href="http://sisbim.net/wp-content/uploads/2015/02/sisbim_cs-3.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/sisbim_cs-small_3.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div>
+        <div class="mix item comercialspaces">
+            <a data-lightbox="comercialspaces" href="http://sisbim.net/wp-content/uploads/2015/02/sisbim_cs-5.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/sisbim_cs-small_5.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div>
+        <div class="mix item comercialspaces">
+            <a data-lightbox="comercialspaces" href="http://sisbim.net/wp-content/uploads/2015/02/sisbim_cs-4.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/sisbim_cs-small_4.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div>   
+        <div class="mix item comercialspaces">
+            <a data-lightbox="comercialspaces" href="http://sisbim.net/wp-content/uploads/2015/02/sisbim_cs-6.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/sisbim_cs-small_6.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div>
+        <div class="mix item comercialspaces">
+            <a data-lightbox="comercialspaces" href="http://sisbim.net/wp-content/uploads/2015/02/sisbim_cs-7.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/sisbim_cs-small_8.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div>
+        <div class="mix item comercialspaces">
+            <a data-lightbox="comercialspaces" href="http://sisbim.net/wp-content/uploads/2015/02/sisbim_cs-8.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/sisbim_cs-small_7.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div>
+        <div class="mix item eh">
+            <a data-lightbox="eh" href="http://sisbim.net/wp-content/uploads/2015/02/sisbim_eh-1.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/sisbim_eh_small-1.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div>
+        <!-- portfolio exterior comercial spaces category close -->
+        <!-- portfolio exterior educational and hospital category Start -->
+        <div class="mix item eh">
+            <a data-lightbox="eh" href="http://sisbim.net/wp-content/uploads/2015/02/sisbim_eh-2.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/sisbim_eh_small-2.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div> 
+        <div class="mix item eh">
+            <a data-lightbox="eh" href="http://sisbim.net/wp-content/uploads/2015/02/sisbim_eh-3.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/sisbim_eh_small-3.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div>
+        <div class="mix item eh">
+            <a data-lightbox="eh" href="http://sisbim.net/wp-content/uploads/2015/02/sisbim_eh-5.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/sisbim_eh_small-5.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div>
+        <div class="mix item eh">
+            <a data-lightbox="eh" href="http://sisbim.net/wp-content/uploads/2015/02/sisbim_eh-6.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/sisbim_eh_small-6.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div>   
+        <div class="mix item eh">
+            <a data-lightbox="eh" href="http://sisbim.net/wp-content/uploads/2015/02/sisbim_eh-7.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/sisbim_eh_small-7.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div>
+        <div class="mix item eh">
+            <a data-lightbox="eh" href="http://sisbim.net/wp-content/uploads/2015/02/sisbim_eh-8.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/sisbim_eh_small-8.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div>
+        <div class="mix item eh">
+            <a data-lightbox="eh" href="http://sisbim.net/wp-content/uploads/2015/02/sisbim_eh-9.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/sisbim_eh_small-9.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div>
+        <!-- portfolio exterior educational and hospital category close --> 
+        <!-- portfolio exterior individual houses category Start -->
+        <div class="mix item ih">
+            <a data-lightbox="ih" href="http://sisbim.net/wp-content/uploads/2015/02/sisbim_ih-1.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/sisbim_ih_small-1.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div>
+        <div class="mix item ih">
+            <a data-lightbox="ih" href="http://sisbim.net/wp-content/uploads/2015/02/sisbim_ih-2.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/sisbim_ih_small-2.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div> 
+        <div class="mix item ih">
+            <a data-lightbox="ih" href="http://sisbim.net/wp-content/uploads/2015/02/sisbim_ih-6.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/sisbim_ih_small-6.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div>
+        <div class="mix item ih">
+            <a data-lightbox="ih" href="http://sisbim.net/wp-content/uploads/2015/02/sisbim_ih-7.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/sisbim_ih_small-7.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div>
+        <div class="mix item ih">
+            <a data-lightbox="ih" href="http://sisbim.net/wp-content/uploads/2015/02/sisbim_ih-3.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/sisbim_ih_small-3.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div>   
+        <div class="mix item ih">
+            <a data-lightbox="ih" href="http://sisbim.net/wp-content/uploads/2015/02/sisbim_ih-4.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/sisbim_ih_small-4.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div>
+        <div class="mix item ih">
+            <a data-lightbox="ih" href="http://sisbim.net/wp-content/uploads/2015/02/sisbim_ih-8.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/sisbim_ih_small-8.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div>
+        <div class="mix item ih">
+            <a data-lightbox="ih" href="http://sisbim.net/wp-content/uploads/2015/02/sisbim_ih-5.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/sisbim_ih_small-5.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div>
+        <!-- portfolio exterior individual houses category close -->
+        <!-- portfolio concept development category Start -->
+ <div class="mix item cd">
+            <a data-lightbox="cd" href="http://sisbim.net/wp-content/uploads/2015/02/sisbim_cd-17.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/sisbim_cd-17_small.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div>
+        <div class="mix item cd">
+            <a data-lightbox="cd" href="http://sisbim.net/wp-content/uploads/2015/02/sisbim_cd-16.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/sisbim_cd-16_small.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div> 
+        <div class="mix item cd">
+            <a data-lightbox="cd" href="http://sisbim.net/wp-content/uploads/2015/02/sisbim_cd-15.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/sisbim_cd-15_small.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div>
+        <div class="mix item cd">
+            <a data-lightbox="cd" href="http://sisbim.net/wp-content/uploads/2015/02/sisbim_cd-14.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/sisbim_cd-14_small.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div>
+        <div class="mix item cd">
+            <a data-lightbox="cd" href="http://sisbim.net/wp-content/uploads/2015/02/sisbim_cd-13.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/sisbim_cd-13_small.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div>   
+        <div class="mix item cd">
+            <a data-lightbox="cd" href="http://sisbim.net/wp-content/uploads/2015/02/sisbim_cd-10.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/sisbim_cd-10_small.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div>
+        <div class="mix item cd">
+            <a data-lightbox="cd" href="http://sisbim.net/wp-content/uploads/2015/02/sisbim_cd-9.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/sisbim_cd-9_small.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div>
+        <div class="mix item cd">
+            <a data-lightbox="cd" href="http://sisbim.net/wp-content/uploads/2015/02/sisbim_cd-8.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/sisbim_cd-8_small.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div>
+         <div class="mix item cd">
+            <a data-lightbox="cd" href="http://sisbim.net/wp-content/uploads/2015/02/sisbim_cd-6.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/sisbim_cd-6_small.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div>
+        <div class="mix item cd">
+            <a data-lightbox="cd" href="http://sisbim.net/wp-content/uploads/2015/02/sisbim_cd-5.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/sisbim_cd-5_small.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div>
+         <div class="mix item cd">
+            <a data-lightbox="cd" href="http://sisbim.net/wp-content/uploads/2015/02/sisbim_cd-4.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/sisbim_cd-4_small.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div>
+        <div class="mix item cd">
+            <a data-lightbox="cd" href="http://sisbim.net/wp-content/uploads/2015/02/sisbim_cd-3.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/sisbim_cd-3_small.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div>
+         <div class="mix item cd">
+            <a data-lightbox="cd" href="http://sisbim.net/wp-content/uploads/2015/02/sisbim_cd-2.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/sisbim_cd-2_small.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div>
+        <div class="mix item cd">
+            <a data-lightbox="cd" href="http://sisbim.net/wp-content/uploads/2015/02/sisbim_cd-1.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/sisbim_cd-1_small.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div>
+        <!-- portfolio concept development category close -->
+        <!-- portfolio exterior induxtrial category start -->
+        <div class="mix item industrial">
+            <a data-lightbox="industrial" href="http://sisbim.net/wp-content/uploads/2015/02/sisbim_individual-34.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/sisbim_individual-33_smal.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div>
+        <div class="mix item industrial">
+            <a data-lightbox="industrial" href="http://sisbim.net/wp-content/uploads/2015/02/sisbim_individual-32.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/sisbim_individual-32_smal.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div> 
+        <div class="mix item industrial">
+            <a data-lightbox="industrial" href="http://sisbim.net/wp-content/uploads/2015/02/sisbim_individual-31.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/sisbim_individual-31_smal.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div>
+        <div class="mix item industrial">
+            <a data-lightbox="industrial" href="http://sisbim.net/wp-content/uploads/2015/02/sisbim_individual-29.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/sisbim_individual-29_smal.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div>
+        <div class="mix item industrial">
+            <a data-lightbox="industrial" href="http://sisbim.net/wp-content/uploads/2015/02/sisbim_individual-1.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/sisbim_individual-1_small.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div>   
+        <div class="mix item industrial">
+
+            <a data-lightbox="industrial" href="http://sisbim.net/wp-content/uploads/2015/02/sisbim_individual-2.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/sisbim_individual-2_small.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div>
+        <div class="mix item industrial">
+            <a data-lightbox="industrial" href="http://sisbim.net/wp-content/uploads/2015/02/sisbim_individual-3.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/sisbim_individual-3_small.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div>
+        <div class="mix item industrial">
+            <a data-lightbox="industrial" href="http://sisbim.net/wp-content/uploads/2015/02/sisbim_individual-4.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/sisbim_individual-4_small.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div>
+        <div class="mix item industrial">
+            <a data-lightbox="industrial" href="http://sisbim.net/wp-content/uploads/2015/02/sisbim_individual-56.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/sisbim_individual-5_small.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div>
+        <div class="mix item industrial">
+            <a data-lightbox="industrial" href="http://sisbim.net/wp-content/uploads/2015/02/sisbim_individual-56.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/sisbim_individual-6_small.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div>  
+         <div class="mix item industrial">
+            <a data-lightbox="industrial" href="http://sisbim.net/wp-content/uploads/2015/02/sisbim_individual-8.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/sisbim_individual-8_small.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div>
+        <div class="mix item industrial">
+            <a data-lightbox="industrial" href="http://sisbim.net/wp-content/uploads/2015/02/sisbim_individual-9.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/sisbim_individual-9_small.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div>
+        <div class="mix item industrial">
+            <a data-lightbox="industrial" href="http://sisbim.net/wp-content/uploads/2015/02/sisbim_individual-10.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/sisbim_individual-10_smal.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div>  
+        <div class="mix item industrial">
+            <a data-lightbox="industrial" href="http://sisbim.net/wp-content/uploads/2015/02/sisbim_individual-11.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/sisbim_individual-11_smal.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div> 
+        <div class="mix item industrial">
+            <a data-lightbox="industrial" href="http://sisbim.net/wp-content/uploads/2015/02/sisbim_individual-12.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/sisbim_individual-12_smal.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div>
+        <div class="mix item industrial">
+            <a data-lightbox="industrial" href="http://sisbim.net/wp-content/uploads/2015/02/sisbim_individual-13.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/sisbim_individual-13_smal.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div>
+        <div class="mix item industrial">
+            <a data-lightbox="industrial" href="http://sisbim.net/wp-content/uploads/2015/02/sisbim_individual-14.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/sisbim_individual-14_smal.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div>
+        <div class="mix item industrial">
+            <a data-lightbox="industrial" href="http://sisbim.net/wp-content/uploads/2015/02/sisbim_individual-1516.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/sisbim_individual-15_smal.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div>    
+        
+         <div class="mix item industrial">
+            <a data-lightbox="industrial" href="http://sisbim.net/wp-content/uploads/2015/02/sisbim_individual-1516.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/sisbim_individual-16_smal.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div> 
+        <div class="mix item industrial">
+            <a data-lightbox="industrial" href="http://sisbim.net/wp-content/uploads/2015/02/sisbim_individual-17.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/sisbim_individual-17_smal.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div>
+        <div class="mix item industrial">
+            <a data-lightbox="industrial" href="http://sisbim.net/wp-content/uploads/2015/02/sisbim_individual-18.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/sisbim_individual-18_smal.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div>
+        
+        <div class="mix item industrial">
+            <a data-lightbox="industrial" href="http://sisbim.net/wp-content/uploads/2015/02/sisbim_individual-19.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/sisbim_individual-19_smal.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div>
+        
+         <div class="mix item industrial">
+            <a data-lightbox="industrial" href="http://sisbim.net/wp-content/uploads/2015/02/sisbim_individual-20.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/sisbim_individual-20_smal.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div>
+          
+       <div class="mix item industrial">
+            <a data-lightbox="industrial" href="http://sisbim.net/wp-content/uploads/2015/02/sisbim_individual-22.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/sisbim_individual-22_smal.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div>
+          
+         <div class="mix item industrial">
+            <a data-lightbox="industrial" href="http://sisbim.net/wp-content/uploads/2015/02/sisbim_individual-2324.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/sisbim_individual-23_smal.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div>
+         
+           <div class="mix item industrial">
+            <a data-lightbox="industrial" href="http://sisbim.net/wp-content/uploads/2015/02/sisbim_individual-2324.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/sisbim_individual-24_smal.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div>
+        <div class="mix item industrial">
+            <a data-lightbox="industrial" href="http://sisbim.net/wp-content/uploads/2015/02/sisbim_individual-25.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/sisbim_individual-25_smal.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div>
+        <div class="mix item industrial">
+            <a data-lightbox="industrial" href="http://sisbim.net/wp-content/uploads/2015/02/sisbim_individual-26.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/sisbim_individual-26_smal.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div> 
+        <div class="mix item industrial">
+            <a data-lightbox="industrial" href="http://sisbim.net/wp-content/uploads/2015/02/sisbim_individual-27.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/sisbim_individual-27_smal.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div>
+        <div class="mix item industrial">
+            <a data-lightbox="industrial" href="http://sisbim.net/wp-content/uploads/2015/02/sisbim_individual-30.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/sisbim_individual-30_smal.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div>
+        <div class="mix item residential">
+            <a data-lightbox="residential" href="http://sisbim.net/wp-content/uploads/2015/02/sisbim_residentiall-1.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/sisbim_residentiall-1_sma.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div>
+        <div class="mix item residential">
+            <a data-lightbox="residential" href="http://sisbim.net/wp-content/uploads/2015/02/sisbim_residentiall-2.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/sisbim_residentiall-2_sma.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div>
+        <!-- portfolio exterior induxtrial category close --> 
+        <!-- portfolio exterior residential apartments category start --> 
+        <div class="mix item residential">
+            <a data-lightbox="residential" href="http://sisbim.net/wp-content/uploads/2015/02/sisbim_residentiall-3.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/sisbim_residentiall-3_sma.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div>
+        <div class="mix item residential">
+            <a data-lightbox="residential" href="http://sisbim.net/wp-content/uploads/2015/02/sisbim_residentiall-4.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/sisbim_residentiall-4_sma.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div>
+        <div class="mix item residential">
+            <a data-lightbox="residential" href="http://sisbim.net/wp-content/uploads/2015/02/sisbim_residentiall-5.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/sisbim_residentiall-5_sma.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div>   
+        <div class="mix item residential">
+            <a data-lightbox="residential" href="http://sisbim.net/wp-content/uploads/2015/02/sisbim_residentiall-6.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/sisbim_residentiall-6_sma.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div>
+        <div class="mix item residential">
+            <a data-lightbox="residential" href="http://sisbim.net/wp-content/uploads/2015/02/sisbim_residentiall-7.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/sisbim_residentiall-7_sma.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div>
+        <div class="mix item residential">
+            <a data-lightbox="residential" href="http://sisbim.net/wp-content/uploads/2015/02/sisbim_residentiall-8.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/sisbim_residentiall-8_sma.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div>
+        <div class="mix item residential">
+            <a data-lightbox="residential" href="http://sisbim.net/wp-content/uploads/2015/02/sisbim_residentiall-9.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/sisbim_residentiall-9_sma.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div>
+        <!-- portfolio exterior residential apartments category close-->
+         <!-- portfolio interior comercial interior category start -->
+        <div class="mix item ci">
+            <a data-lightbox="ci" href="http://sisbim.net/wp-content/uploads/2015/02/sisbim_ci-11.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/sisbim_ci-11_small.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div>
+        <div class="mix item ci">
+            <a data-lightbox="ci" href="http://sisbim.net/wp-content/uploads/2015/02/sisbim_ci-10.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/sisbim_ci-10_small.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div> 
+        <div class="mix item ci">
+            <a data-lightbox="ci" href="http://sisbim.net/wp-content/uploads/2015/02/sisbim_ci-9.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/sisbim_ci-9_small.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div>
+        <div class="mix item ci">
+            <a data-lightbox="ci" href="http://sisbim.net/wp-content/uploads/2015/02/sisbim_ci-8.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/sisbim_ci-8_small.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div>
+        <div class="mix item ci">
+            <a data-lightbox="ci" href="http://sisbim.net/wp-content/uploads/2015/02/sisbim_ci-7.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/sisbim_ci-7_small.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div>   
+        <div class="mix item ci">
+            <a data-lightbox="ci" href="http://sisbim.net/wp-content/uploads/2015/02/sisbim_ci-6.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/sisbim_ci-6_small.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div>
+        <div class="mix item ci">
+            <a data-lightbox="ci" href="http://sisbim.net/wp-content/uploads/2015/02/sisbim_ci-5.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/sisbim_ci-5_small.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div>
+        <div class="mix item ci">
+            <a data-lightbox="ci" href="http://sisbim.net/wp-content/uploads/2015/02/sisbim_ci-4.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/sisbim_ci-4_small.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div>
+        <div class="mix item ci">
+            <a data-lightbox="ci" href="http://sisbim.net/wp-content/uploads/2015/02/sisbim_ci-3.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/sisbim_ci-3_small.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div>
+        <div class="mix item ci">
+            <a data-lightbox="ci" href="http://sisbim.net/wp-content/uploads/2015/02/sisbim_ci-2.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/sisbim_ci-2_small.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div>  
+         <div class="mix item ci">
+            <a data-lightbox="ci" href="http://sisbim.net/wp-content/uploads/2015/02/sisbim_ci-1.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/sisbim_ci-1_small.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div>
+        <!-- portfolio interior comercial interior category close --> 
+        <!-- portfolio interior educational hospital category start -->
+        <div class="mix item ieh">
+            <a data-lightbox="ieh" href="http://sisbim.net/wp-content/uploads/2015/02/sisbim_eh-21.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/sisbim_eh-2_small.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div>
+        <div class="mix item ieh">
+            <a data-lightbox="ieh" href="http://sisbim.net/wp-content/uploads/2015/02/sisbim_eh-11.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/sisbim_eh-1_small.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div> 
+        <!-- portfolio interior educational hospital category close -->
+<!-- portfolio interior residencial interior category start -->
+        <div class="mix item iri">
+            <a data-lightbox="iri" href="http://sisbim.net/wp-content/uploads/2015/02/sisbim_ri-23.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/sisbim-ri-23_small.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div> 
+        <div class="mix item iri">
+            <a data-lightbox="iri" href="http://sisbim.net/wp-content/uploads/2015/02/sisbim_ri-22.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/sisbim-ri-22_small.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div>
+        <div class="mix item iri">
+            <a data-lightbox="iri" href="http://sisbim.net/wp-content/uploads/2015/02/sisbim_ri-21.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/sisbim-ri-21_small.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div>
+        <div class="mix item iri">
+            <a data-lightbox="iri" href="http://sisbim.net/wp-content/uploads/2015/02/sisbim_ri-20.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/sisbim-ri-20_small.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div>   
+        <div class="mix item iri">
+            <a data-lightbox="iri" href="http://sisbim.net/wp-content/uploads/2015/02/sisbim_ri-19.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/sisbim-ri-19_small.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div>
+        <div class="mix item iri">
+            <a data-lightbox="iri" href="http://sisbim.net/wp-content/uploads/2015/02/sisbim_ri-18.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/sisbim-ri-18_small.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div>
+        <div class="mix item iri">
+            <a data-lightbox="iri" href="http://sisbim.net/wp-content/uploads/2015/02/sisbim_ri-17.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/sisbim-ri-17_small.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div>
+        <div class="mix item iri">
+            <a data-lightbox="iri" href="http://sisbim.net/wp-content/uploads/2015/02/sisbim_ri-16.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/sisbim-ri-16_small.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div>
+        <div class="mix item iri">
+            <a data-lightbox="iri" href="http://sisbim.net/wp-content/uploads/2015/02/sisbim_ri-15.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/sisbim-ri-15_small.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div>  
+         <div class="mix item iri">
+            <a data-lightbox="iri" href="http://sisbim.net/wp-content/uploads/2015/02/sisbim_ri-14.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/sisbim-ri-14_small.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div>
+        <div class="mix item iri">
+            <a data-lightbox="iri" href="http://sisbim.net/wp-content/uploads/2015/02/sisbim_ri-13.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/sisbim-ri-13_small.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div>
+        <div class="mix item iri">
+            <a data-lightbox="iri" href="http://sisbim.net/wp-content/uploads/2015/02/sisbim_ri-12.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/sisbim-ri-12_small.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div>  
+        <div class="mix item iri">
+            <a data-lightbox="iri" href="http://sisbim.net/wp-content/uploads/2015/02/sisbim_ri-11.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/sisbim-ri-11_small.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div> 
+        <div class="mix item iri">
+            <a data-lightbox="iri" href="http://sisbim.net/wp-content/uploads/2015/02/sisbim_ri-10.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/sisbim-ri-10_small.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div>
+        <div class="mix item iri">
+            <a data-lightbox="iri" href="http://sisbim.net/wp-content/uploads/2015/02/sisbim_ri-9.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/sisbim-ri-9_small.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div>
+        <div class="mix item iri">
+            <a data-lightbox="iri" href="http://sisbim.net/wp-content/uploads/2015/02/sisbim_ri-8.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/sisbim-ri-8_small.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div>
+        <div class="mix item iri">
+            <a data-lightbox="iri" href="http://sisbim.net/wp-content/uploads/2015/02/sisbim_ri-7.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/sisbim-ri-7_small.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div>    
+        
+         <div class="mix item iri">
+            <a data-lightbox="iri" href="http://sisbim.net/wp-content/uploads/2015/02/sisbim_ri-6.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/sisbim-ri-6_small.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div> 
+        <div class="mix item iri">
+            <a data-lightbox="iri" href="http://sisbim.net/wp-content/uploads/2015/02/sisbim_ri-5.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/sisbim-ri-5_small.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div>
+        <div class="mix item iri">
+            <a data-lightbox="iri" href="http://sisbim.net/wp-content/uploads/2015/02/sisbim_ri-4.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/sisbim-ri-4_small.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div>
+        
+        <div class="mix item iri">
+            <a data-lightbox="iri" href="http://sisbim.net/wp-content/uploads/2015/02/sisbim_ri-3.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/sisbim-ri-3_small.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div>
+        
+         <div class="mix item iri">
+            <a data-lightbox="iri" href="http://sisbim.net/wp-content/uploads/2015/02/sisbim_ri-2.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/sisbim-ri-2_small.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div>
+          
+       <div class="mix item iri">
+            <a data-lightbox="iri" href="http://sisbim.net/wp-content/uploads/2015/02/sisbim_ri-1.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/sisbim-ri-1_small.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div>
+        <!-- portfolio interior residencial interior category close-->
+       <!-- portfolio cad category Start -->
+        <div class="mix item cad">
+            <a data-lightbox="cad" href="http://sisbim.net/wp-content/uploads/2015/02/SISBIM_Portfolio_CAD_08.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/SISBIM_Port_CAD_Small_08_.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div>
+        <div class="mix item cad">
+            <a data-lightbox="cad" href="http://sisbim.net/wp-content/uploads/2015/02/SISBIM_Portfolio_CAD_07.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/SISBIM_Port_CAD_Small_07_.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div> 
+        <div class="mix item cad">
+            <a data-lightbox="cad" href="http://sisbim.net/wp-content/uploads/2015/02/SISBIM_Portfolio_CAD_06.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/SISBIM_Port_CAD_Small_06_.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div>
+        <div class="mix item cad">
+            <a data-lightbox="cad" href="http://sisbim.net/wp-content/uploads/2015/02/SISBIM_Portfolio_CAD_05.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/SISBIM_Port_CAD_Small_05_.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div>
+        <div class="mix item cad">
+            <a data-lightbox="cad" href="http://sisbim.net/wp-content/uploads/2015/02/SISBIM_Portfolio_CAD_04.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/SISBIM_Port_CAD_Small_04_.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div>   
+        <div class="mix item cad">
+            <a data-lightbox="cad" href="http://sisbim.net/wp-content/uploads/2015/02/SISBIM_Portfolio_CAD_03.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/SISBIM_Port_CAD_Small_03_.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div>
+        <div class="mix item cad">
+            <a data-lightbox="cad" href="http://sisbim.net/wp-content/uploads/2015/02/SISBIM_Portfolio_CAD_02.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/SISBIM_Port_CAD_Small_02_.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div>
+        <div class="mix item cad">
+            <a data-lightbox="cad" href="http://sisbim.net/wp-content/uploads/2015/02/SISBIM_Portfolio_CAD_01.jpg"><img class="portfolioimgwidth" src="http://sisbim.net/wp-content/uploads/2015/02/SISBIM_Port_CAD_Small_01_.jpg" />
+            </a>
+            <div class="content">
+                <h3>SISBIM</h3>
+                <p>Hyderabad </p>
+                <p><small>BIM Model  Development </small>
+                </p>
+            </div>
+        </div>
+        <!-- portfolio cad category close -->         
+    </div> 
+    <!-- portfolio close -->       
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src='http://lokeshdhakar.com/projects/lightbox2/js/lightbox.js'></script>
+    <script src="http://cdn.jsdelivr.net/jquery.mixitup/latest/jquery.mixitup.min.js"></script>
+    <script src="http://masonry.desandro.com/masonry.pkgd.min.js"></script>
+    <script>
+    jQuery(function() {
+
+        // Instantiate MixItUp:
+
+        jQuery('#portfolio1').mixItUp({
+            animation: {
+                effects: 'fade scale',
+                duration: 1100,
+                animateResizeContainer: false
+            }
+        });
+    });
+
+    var jQuerylist = jQuery("<div>", {
+        id: "list"
+    });
+    jQuerylist.insertAfter('#portfolio');
+
+    var data = jQuery('#portfolio .mix').clone();
+    jQuery(data).appendTo('#list');
+	var list = jQuery('#list .item');
+		for(var i=4; i<=list.length; i = i + 4){
+   			jQuery('<div style="clear:both"></div>').insertAfter(list[i-1])
+		}
+               jQuery('<div style="clear:both"></div>').insertAfter(list[list.length - 1]);
+                jQuery('#list').height(jQuery('#list').height());
+
+    jQuery('nav li.filter').on('click', function() {
+        console.log(jQuery(this).data('filter'));
+        jQuery('#list').remove()
+        var i = jQuery(this).data('filter');
+        var jQuerylist = jQuery("<div>", {
+            id: "list"
+        });
+        jQuerylist.insertAfter('#portfolio')
+        if (i == 'all') {
+            var data = jQuery('#portfolio .mix').clone();
+            jQuery(data).appendTo('#list');
+        } else {
+            var data = jQuery('#portfolio .mix.' + i).clone();
+            jQuery(data).appendTo('#list');
+        }
+		
+		var list = jQuery('#list .item');
+		for(var i=4; i<=list.length; i = i + 4){
+   			jQuery('<div style="clear:both"></div>').insertAfter(list[i-1])
+		}
+                jQuery('<div style="clear:both"></div>').insertAfter(list[list.length - 1]);
+                jQuery('#list').height(jQuery('#list').height());
+    })
+    </script>

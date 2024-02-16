@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Sep 7, 2012 7:36:18 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dblue.farm.Farm" table="farm" >
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="contact" class="com.dblue.farm.Contact" fetch="select">
+            <column name="contact_id" />
+        </many-to-one>      
+        <property name="name" type="string">
+            <column name="name" length="150" not-null="true" />
+        </property>
+        <property name="registrationNumber" type="string">
+            <column name="registration_number" length="15" not-null="true" unique="true" />
+        </property>
+        <set name="persons" table="person" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="id_farm" />
+            </key>
+            <one-to-many class="com.dblue.farm.Person" />
+        </set>
+        <set name="expenseses" table="expenses" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="id_farm" not-null="true" />
+            </key>
+            <one-to-many class="com.dblue.farm.Expenses" />
+        </set>
+        <set name="vendors" table="vendor" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="farm_id" not-null="true" />
+            </key>
+            <one-to-many class="com.dblue.farm.Vendor" />
+        </set>
+        <set name="inventories" table="inventory" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="id_farm" />
+            </key>
+            <one-to-many class="com.dblue.farm.Inventory" />
+        </set>
+        <set name="purchaseses" table="purchases" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="id_farm" />
+            </key>
+            <one-to-many class="com.dblue.farm.Purchases" />
+        </set>
+        <set name="livestocks" table="livestock" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="farm_id" not-null="true" />
+            </key>
+            <one-to-many class="com.dblue.farm.Livestock" />
+        </set>
+        <set name="stockTypes" table="stock_type" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="farm_id" not-null="true" />
+            </key>
+            <one-to-many class="com.dblue.farm.StockType" />
+        </set>
+        <set name="productionFarms" table="production_farm" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="farm_id" not-null="true" />
+            </key>
+            <one-to-many class="com.dblue.farm.ProductionFarm" />
+        </set>
+        <set name="productions" table="production" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="farm_id" not-null="true" />
+            </key>
+            <one-to-many class="com.dblue.farm.Production" />
+        </set>
+        <set name="assets" table="asset" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="farm_id" not-null="true" />
+            </key>
+            <one-to-many class="com.dblue.farm.Asset" />
+        </set>
+    </class>
+</hibernate-mapping>

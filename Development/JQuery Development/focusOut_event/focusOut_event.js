@@ -1,0 +1,11 @@
+$(document).ready(function() 
+{
+	 $(':input').focusin(function()
+	 {
+		 $(this).addClass('color');	
+	 }); 
+	 $(':input').focusout(function()
+	 {
+		 $(this).removeClass('color');	
+	 }); 
+});

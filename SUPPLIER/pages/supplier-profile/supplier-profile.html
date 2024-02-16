@@ -1,0 +1,104 @@
+<ion-header>
+        <ion-navbar>
+           <ion-title>
+              <div class="navigation-title">
+                 {{supplierProfile ? (supplierProfile.firstName + ' ' + supplierProfile.lastName) : ' Supplir Name'}} 
+              </div>
+              <div class="navigation-sub-title">
+                 {{supplierProfile ? (supplierProfile.address == null ? ' Location, City ': supplierProfile.address) : ' Location, City'}}
+              </div>
+              
+           </ion-title>
+           <ion-buttons end>
+              <button icon-only small ion-button color="fourth" (click)="logoutSupplier()">
+                 <ion-icon name="log-out" right></ion-icon>
+              </button>
+           </ion-buttons>
+        </ion-navbar>
+     </ion-header>
+     <ion-content  >
+        <div style="width:100%">
+           <div>
+              <ion-segment [(ngModel)]="segmentSelected">
+              <ion-segment-button value="outlet">
+                 Outlets 
+              </ion-segment-button>
+              <ion-segment-button value="terms">
+                 Terms
+              </ion-segment-button>
+              <ion-segment-button value="help">
+                 Help
+              </ion-segment-button>
+              </ion-segment>
+           </div>
+           <div [ngSwitch]="segmentSelected">
+              <div  *ngSwitchCase="'outlet'">
+                 <ion-list >
+                    <div  class="bootem__level__space" *ngFor="let outlet of outlets">
+                       <div class="outlet__level__Styles">
+                          <ion-item >
+                             <ion-avatar item-start>
+                                <img src="{{imageEndPoint}}/{{outlet.img}}">
+                             </ion-avatar>
+                             <ion-label>
+                                {{outlet.name}} 
+                            </ion-label>
+                             <ion-toggle checked="{{outlet.availability.available}}" 
+                             [(ngModel)]="outlet.availability.available" 
+                             (ionChange)="updateOutletStatus(outlet)"></ion-toggle>
+                             <span class="accorions__left_padding" (click)="setShowItems(outlet)" item-end>
+                                <ion-icon class="accorions__Styles" [name]="outlet.showItems ? 'remove' :'add'"></ion-icon>
+                             </span>
+                          </ion-item>
+                       </div>
+                       <div *ngIf="outlet.showItems" style="border-bottom: 10px #dedede solid  !important; ">
+                          
+                          <ion-item >
+                             <div class="outlet__detail">
+                                Select Opening Hours :
+                             </div>
+                          </ion-item >
+                          
+                          <ion-grid style="padding:0px !important; border-top: 1px solid #DE000000;" >
+                             <ion-row>
+                                <ion-col col-6>
+                                   <ion-item>
+                                      <ion-label class="item__Update__Styles">From</ion-label>
+                                      <ion-input type="number" min="0" max="23" placeHolder="00" [attr.maxlength]="2" maxlength="2" 
+                                      [(ngModel)]="outlet.availability.startHour"></ion-input>
+                                   </ion-item>
+                                </ion-col>
+                                <ion-col col-6>
+                                   <ion-item>
+                                      <ion-label class="item__Update__Styles">To</ion-label>
+                                      <ion-input type="number" min="0" max="23" placeHolder="23" [attr.maxlength]="2" maxlength="2"
+                                      [(ngModel)]="outlet.availability.endHour"></ion-input>
+                                   </ion-item>
+                                </ion-col>
+                             </ion-row>
+                             <ion-row>
+                                <ion-col col-12 style="text-align:right;">
+                                   <button  ion-button color="danger" outline center (click)="updateOpenTime(outlet)">Update Open Time</button>
+                                </ion-col>
+                             </ion-row>
+                          </ion-grid>
+                       </div>
+                    </div>
+                 </ion-list>
+              </div>
+              <div *ngSwitchCase="'terms'">
+                 <ion-item >
+                    Terms and Conditions Setting here.
+                 </ion-item>
+              </div>
+              <div *ngSwitchCase="'help'">
+                 <ion-item >
+                    Help Content Here.
+                 </ion-item>
+              </div>
+           </div>
+        </div>
+        <ion-refresher (ionRefresh)="goRefresh($event)">
+         <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="Pull to refresh" refreshingSpinner="circles" refreshingText="Refreshing..."> </ion-refresher-content>
+      </ion-refresher>
+     </ion-content>

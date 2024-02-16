@@ -1,0 +1,106 @@
+
+.containerDiv {
+	 width: 100%; 
+	 display:table;
+	 font-size:12px;
+	 font-weight: normal;
+	 font-family: "Trebuchet MS", Arial;
+	 border-left:1px solid #DDD;
+	  border-left:1px solid #DDD;
+}
+.rowDivHeader {
+	 border: 1px solid #d6d6d6; 
+	 color: #fff;
+	 display:table-row;
+ }
+.rowDivHeader div {
+	color: #0088cc;
+	padding: 5px 3px;
+	line-height:1.5em;
+	display: table-cell;
+	border-top:1px solid #dddddd;
+	border-right:1px solid #dddddd;
+	border-bottom:1px solid #dddddd;
+	font-weight:bold;
+	font-size:12px;
+	 /*width:12%;*/
+	text-align: left;
+	background: #f0f0f0;
+}
+.rowDivHeaderSub {
+	 border: 1px solid #d6d6d6; 
+	 color: #fff;
+	 display:table-row;
+ }
+.rowDivHeaderSub div{
+	color: #0088cc;
+	padding: 5px 3px;
+	line-height:1.5em;
+	display: table-cell;
+	border-bottom:1px solid #dddddd;
+	font-weight:bold;
+	font-size:12px;
+	 /*width:12%;*/
+	text-align: left;
+	background: #f0f0f0;
+}
+.rowDivHeader div:last-child
+{
+ 	border-right:1px solid #dddddd;
+}
+ .rowDiv {
+	 border: 1px solid #668db6; 
+	 display:table-row;
+ }
+ .rowDiv div {
+	 border-right: 1px solid #dddddd;
+	 display: table-cell;
+	 /*width:10%;*/
+	 padding: 5px 5px;
+	 color: #000;
+	 text-align: left;
+	 font-size:11px;
+	 border-bottom: 1px solid #dddddd;
+ }
+.tableheader {
+    background: none repeat scroll 0 0 #F0F0F0;
+    border-bottom: 1px solid #DDDDDD;
+    border-right: 1px solid #DDDDDD;
+    border-top: 1px solid #DDDDDD;
+    color: #0088CC;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 1.5em;
+    padding: 5px 3px;
+    text-align: left;
+}
+.tabledata {
+background-color:#ffffff;
+font-family:Verdana, Arial, Helvetica, sans-serif;
+font-size:11px;
+
+}
+.tabledata1 {
+background-color:#ffffff;
+font-family:Verdana, Arial, Helvetica, sans-serif;
+font-size:11px;
+font-weight:bold;
+}
+.tableentire {
+margin-top:10px;
+margin-left:10px;
+width:98%;
+background-color:#dddddd;
+}
+.tabledata .saleindentwidth {
+width:20px;
+}
+.tabledata .finace {
+width:80px;
+}
+.rowDiv div .saleindentwidth {
+width:20px;
+}
+.rowDiv div .saleindentwidthselect {
+width:80px;
+}

@@ -1,0 +1,117 @@
+html, body {
+    height: 100%;
+  }
+  
+  body {
+    background: url(http://nemo-uploads-clone.s3.amazonaws.com/uploads/product/image/4446/RANCH_WOOD_LIGHT_GRAY_RW02.png);
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+  }
+
+  .order {
+
+    &__address {
+
+        margin-top: 1.25rem;
+        display: flex;
+
+        &__shipping, &__billing {
+            flex: 1;
+
+            
+        }
+
+        & > div:first-child {
+            padding-right: 1.5rem;
+        }
+
+        & > div:last-child {
+            padding-left: 1.5rem;
+            border-left: 1px solid rgba($color: #000000, $alpha: .15);
+        }
+
+        
+
+        &__header {
+            margin-bottom: 1.25rem;
+
+            label {
+                flex-shrink: 0;
+                margin: 0;
+            }
+
+            .form-control {
+                // max-width: 320px;
+                flex: 1;
+                margin: 0 .75rem
+
+            }
+            
+        }
+
+        // End of header
+
+        &__details {
+
+            li {
+                margin-bottom: .75rem;
+                display: flex;
+                align-items: flex-start;
+                line-height: 1.2;
+
+                strong {
+                    margin-right: .2rem;
+                }
+
+                i {
+                    width: 24px;
+                    text-align: center;
+                    padding-right: .75rem;
+                    margin-right: .5rem;
+                    position: relative;
+                    display: block;
+
+                    &::after {
+                        content: ':';
+                        position: absolute;
+                        right: 0;
+                        top: 0;
+                    }
+                }
+            }
+        }
+    }
+  }
+
+
+  .actions {
+      .btn {
+          transition: all .3s;
+          color: #fff;
+
+          &:hover {
+              box-shadow: 0 2px 4px rgba($color: #000000, $alpha: .2);
+              transform: translateY(-2px);
+          }
+      }
+  }
+
+  .box-shadow {
+      box-shadow: 0 2px 6px rgba($color: #000000, $alpha: .15);
+  }
+
+  .box-title {
+      border-bottom: 1px solid rgba($color: #000000, $alpha: .1);
+      position: relative;
+      display: flex;
+      align-items: center;
+      margin-bottom: 1.25rem;
+
+      span {
+          display: block;
+          padding-bottom: .75rem;
+          border-bottom: 2px solid #111; 
+          margin-right: auto;
+      }
+  }

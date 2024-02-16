@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width">
+      <title>Click to Show Value Users</title>
+      <script src="https://code.jquery.com/jquery.min.js"></script>
+      <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+   </head>
+   <body>
+      <div class="container">
+         <div class="well">
+            <ul id="users">
+               <!--<li>User name here...</li>-->
+
+
+            </ul>
+         </div>
+         <div class="well">
+            <h3>Click to Show Value Users</h3>
+            <div id="selectedUser">
+
+            </div>
+
+            <div class="well">
+               <table class="table">
+                  <thead>
+                  <tr>
+                     <th>Id</th>
+                     <th>Email</th>
+                     <th>Username</th>
+                     <th>Name</th>
+                     <th>Phone</th>
+                     <th>Website</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr class="row_display_user">
+                     <td class="id"></td>
+                     <td class="email"></td>
+                     <td class="username"></td>
+                     <td class="name"></td>
+                     <td class="phone"></td>
+                     <td class="website"></td>
+                  </tr>
+                  </tbody>
+               </table>
+            </div>
+         </div>
+      </div>
+      <script>
+
+         var users = []; //Init Users array with empty
+         
+         
+         console.log("Ajax Start");
+
+         // Ajax call for getting Users from API
+         var API_URL = "https://jsonplaceholder.typicode.com/users";
+
+         // Ajax Start
+         $.ajax({
+             type: "GET",
+             url: API_URL,
+
+             // On Ajax Success we get result
+             success: function(result) { // result is response of ajax
+
+                 // Once we get result from ajax assiging results to users array;
+                 // To check the result is array -> Array.isArray(result);
+
+                 users = result;
+                 console.log("Ajax Response Completed", users);
+
+                 // Calling renderUsers function for generating view in HTML
+                 renderUsers(users)
+
+             }
+         });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+         
+         console.log("Ajax Completed");
+         
+         
+         
+         
+         function renderUsers(usersList) {
+
+             console.log('renderUsers method call', usersList);
+
+             //Render userslist array by forEach which accept a callback function with current running item
+             // [1,2,3,4,5].forEach(function (item) {});
+             usersList.forEach(function(passingRowUser, rowLineNumber) {
+                 console.log('Loop ' + rowLineNumber, passingRowUser);
+                 addUserToList(passingRowUser);
+             });
+
+
+         
+             /*for (var i = 0; i < users.length; i++) {
+                 var loopUser = users[i];
+                 $("<li/>")
+                     .text(loopUser.username)
+                     .data('user', loopUser)
+                     .attr('id', 'User_' + loopUser.id)
+                     .on('click', function() {
+         
+                         var selectedUser = $(this).data('user');
+                         $('#selectedUser').empty();
+                         $("<div/>").text(selectedUser.email).appendTo('#selectedUser');
+         
+                     })
+                     .appendTo('#users');
+             }*/
+         }
+
+         function addUserToList(user) {
+
+             //Create a new li element
+             var $li = $("<li></li>");
+             console.log('New Li element created', $li);
+
+             // Append text to newly created li which is $li by using jQuery .text( ) method
+             $li.text(user["username"]);
+             console.log('New Li element text added', $li.text());
+
+             // Adding Attribure to created li
+             $li.attr({
+                 id: "user_" + user["id"]
+             });
+
+             // Adding Current user object to created li by using jQuery.data() method
+             $li.data({
+                 x: user
+             });
+
+             // Append new created li to DOM to the ul which is #users -> <ul id="users"> by using jQuery .appendTo() method
+             $li.appendTo( "#users" );
+             console.log('New Li element appendTo #users', $( "#users" ));
+         }
+
+         $("body").on("click", "#users li", function(e) {
+
+             var $li = $(this);
+             console.log("Click on user list item", $li);
+
+             // Reterive user object from selected li by calling jQuery.data('key');
+             // Here key we used is 'x'
+             var user = $li.data('x');
+             console.log("Click on user", user);
+
+             var $tableTr = $(".row_display_user");
+
+             // Set id
+             $tableTr.find('.id').text( user["id"]  );
+
+             // Set email
+             $tableTr.find('.email').text( user["email"]  );
+
+             // Set username
+             $tableTr.find('.username').text( user["username"]  );
+
+             // Set name
+             $tableTr.find('.name').text( user["name"]  );
+
+             // Set phone
+             $tableTr.find('.phone').text( user["phone"]  );
+
+             // Set website
+             $tableTr.find('.website').text( user["website"]  );
+
+             $('#selectedUser').empty();
+             $("<div/>").text(user.email).appendTo('#selectedUser');
+         });
+
+
+      </script>
+   </body>
+</html>

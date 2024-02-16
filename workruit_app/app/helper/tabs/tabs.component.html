@@ -1,0 +1,6 @@
+<ul class="nav nav-pills nav-fill" role="tablist" id="tabs">
+   <li class="nav-item" *ngFor="let tab of tabsName"><a (click)="tabsClick(tab)"
+         [ngClass]="{'active': tab.active === true }" class="nav-link transition">{{tab.name}}
+         <span *ngIf="tab.count">({{tab.count}})</span></a>
+   </li>
+</ul>

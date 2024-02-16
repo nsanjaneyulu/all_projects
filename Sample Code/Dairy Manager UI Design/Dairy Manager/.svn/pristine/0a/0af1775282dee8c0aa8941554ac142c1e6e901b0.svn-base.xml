@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jul 18, 2012 10:07:01 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dblue.farm.Vendor" table="vendor" >
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="farm" class="com.dblue.farm.Farm" fetch="select">
+            <column name="farm_id" not-null="true" />
+        </many-to-one>
+        <many-to-one name="contact" class="com.dblue.farm.Contact" fetch="select">
+            <column name="vendor_contact_id" />
+        </many-to-one>
+        <many-to-one name="vendorType" class="com.dblue.farm.VendorType" fetch="select">
+            <column name="vendor_type_id" not-null="true" />
+        </many-to-one>
+        <property name="name" type="string">
+            <column name="name" length="150" not-null="true" unique="true" />
+        </property>
+        <property name="code" type="string">
+            <column name="code" length="30" not-null="true" unique="true" />
+        </property>
+        <property name="remarks" type="string">
+            <column name="remarks" length="150" />
+        </property>
+        <set name="expenseses" table="expenses" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="id_vendor" />
+            </key>
+            <one-to-many class="com.dblue.farm.Expenses" />
+        </set>
+        <set name="livestocks" table="livestock" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="vendor_id" />
+            </key>
+            <one-to-many class="com.dblue.farm.Livestock" />
+        </set>
+        <set name="purchaseses" table="purchases" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="id_vendor" />
+            </key>
+            <one-to-many class="com.dblue.farm.Purchases" />
+        </set>
+    </class>
+</hibernate-mapping>

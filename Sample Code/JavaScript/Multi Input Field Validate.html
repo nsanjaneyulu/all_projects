@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript">
+function validateForm() {
+
+var x=document.forms["myForm"]["name"].value;
+if (x==null || x=="")
+ {
+  alert("Name must be filled out");
+  return false;
+ }
+
+var y=document.forms["myForm"]["password"].value;
+if (y==null || y=="") {
+  alert("Password name must be filled out");
+  return false;
+}
+
+var z=document.forms["myForm"]["gender"].value;
+if (z==null || z=="") {
+  alert("Gender name must be filled out");
+  return false;
+}
+
+var m=document.forms["myForm"]["gender"].value;
+if (m==null || m=="") {
+  alert("Gender must be filled out");
+  return false;
+}
+}
+</script>
+</head>
+
+<body>
+
+<form name="myForm" action="demo_form.asp" onsubmit="return validateForm()" method="post">
+Name*: <input type="text" name="name"> <br>
+Password*: <input type="password" name="password"><br>
+Email*: <input type="text" name="gender"><br>
+Gender*: <select name="gender"><option>Select</option><option>Male</option><option>Female</option></select><br>
+<input type="submit" value="Submit">
+</form>
+</body>
+<html>

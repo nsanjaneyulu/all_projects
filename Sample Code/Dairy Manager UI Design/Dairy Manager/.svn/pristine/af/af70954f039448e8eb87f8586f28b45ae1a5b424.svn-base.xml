@@ -1,0 +1,155 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Sep 21, 2012 4:17:42 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+ <class name="com.dblue.farm.Livestock" table="livestock">
+  <id name="id" type="java.lang.Integer">
+   <column name="id"/>
+   <generator class="identity"/>
+  </id>
+  <many-to-one class="com.dblue.farm.Health" fetch="select" name="health">
+   <column name="id_health"/>
+  </many-to-one>
+  <many-to-one class="com.dblue.farm.MilkingStatus" fetch="select" name="milkingStatus">
+   <column name="milking_status_id" not-null="true"/>
+  </many-to-one>
+  <many-to-one class="com.dblue.farm.Farm" fetch="select" name="farm">
+   <column name="farm_id" not-null="true"/>
+  </many-to-one>
+  <many-to-one class="com.dblue.farm.BreedType" fetch="select" name="breedTypeByBreedTypeId">
+   <column name="breed_type_id" not-null="true"/>
+  </many-to-one>
+  <many-to-one class="com.dblue.farm.Vendor" fetch="select" name="vendor">
+   <column name="vendor_id"/>
+  </many-to-one>
+  <many-to-one class="com.dblue.farm.Statistics" fetch="select" name="statisticsByCurrentStatId">
+   <column name="current_stat_id"/>
+  </many-to-one>
+  <many-to-one class="com.dblue.farm.BreedType" fetch="select" name="breedTypeByMotherBreedId">
+   <column name="mother_breed_id" not-null="true"/>
+  </many-to-one>
+  <many-to-one class="com.dblue.farm.StateType" fetch="select" name="stateType">
+   <column name="state_type_id" not-null="true"/>
+  </many-to-one>
+  <many-to-one class="com.dblue.farm.Statistics" fetch="select" name="statisticsByPurchaseStatId">
+   <column name="purchase_stat_id"/>
+  </many-to-one>
+  <many-to-one class="com.dblue.farm.OriginType" fetch="select" name="originType">
+   <column name="origin_id" not-null="true"/>
+  </many-to-one>
+  <property generated="never" lazy="false" name="rfid" type="string">
+   <column length="64" name="RFID" unique="true"/>
+  </property>
+  <property generated="never" lazy="false" name="birthDate" type="timestamp">
+   <column length="19" name="birth_date" not-null="true"/>
+  </property>
+  <property generated="never" lazy="false" name="conceivedDate" type="timestamp">
+   <column length="19" name="conceived_date"/>
+  </property>
+  <property generated="never" lazy="false" name="code" type="string">
+   <column length="30" name="code"/>
+  </property>
+  <property generated="never" lazy="false" name="mothercode" type="string">
+   <column length="30" name="mothercode"/>
+  </property>
+  <property generated="never" lazy="false" name="sex" type="char">
+   <column length="1" name="sex" not-null="true"/>
+  </property>
+  <property generated="never" lazy="false" name="deceased" type="char">
+   <column length="1" name="deceased" not-null="true"/>
+  </property>
+  <property generated="never" lazy="false" name="deceasedDate" type="timestamp">
+   <column length="19" name="deceased_date"/>
+  </property>
+  <property generated="never" lazy="false" name="fatherSemenNumber" type="string">
+   <column length="30" name="father_semen_number"/>
+  </property>
+  <property generated="never" lazy="false" name="deliveryMode" type="string">
+   <column length="30" name="delivery_mode"/>
+  </property>
+  <property generated="never" lazy="false" name="initialValue" type="string">
+   <column length="30" name="initial_value"/>
+  </property>
+  <property generated="never" lazy="false" name="remarks" type="string">
+   <column length="300" name="remarks"/>
+  </property>
+  <property generated="never" lazy="false" name="preferredType" type="string">
+   <column length="30" name="preferred_type" not-null="true"/>
+  </property>
+  <property generated="never" lazy="false" name="yeild" type="big_decimal">
+   <column name="yeild" precision="10"/>
+  </property>
+  <property generated="never" lazy="false" name="fat" type="big_decimal">
+   <column name="fat" precision="10"/>
+  </property>
+  <property generated="never" lazy="false" name="age" type="java.lang.Integer">
+   <column name="age"/>
+  </property>
+  <property generated="never" lazy="false" name="stopMilkingDate" type="timestamp">
+   <column length="19" name="stop_milking_date"/>
+  </property>
+  <property generated="never" lazy="false" name="stopMilkingStatus" type="java.lang.Character">
+   <column length="1" name="stop_milking_status"/>
+  </property>
+  <property generated="never" lazy="false" name="stopFeedingStatus" type="java.lang.Character">
+   <column length="1" name="stop_calf_feed_status"/>
+  </property>
+  <set fetch="select" inverse="true" lazy="true" name="productions"
+   sort="unsorted" table="production">
+   <key>
+    <column name="livestock_id"/>
+   </key>
+   <one-to-many class="com.dblue.farm.Production"/>
+  </set>
+  <set fetch="select" inverse="true" lazy="true" name="feedingHistories"
+   sort="unsorted" table="feeding_history">
+   <key>
+    <column name="id_livestock"/>
+   </key>
+   <one-to-many class="com.dblue.farm.FeedingHistory"/>
+  </set>
+  <set fetch="select" inverse="true" lazy="true" name="expenseses"
+   sort="unsorted" table="expenses">
+   <key>
+    <column name="id_livestock"/>
+   </key>
+   <one-to-many class="com.dblue.farm.Expenses"/>
+  </set>
+  <set fetch="select" inverse="true" lazy="true" name="reproductions"
+   sort="unsorted" table="reproduction">
+   <key>
+    <column name="livestock_id" not-null="true"/>
+   </key>
+   <one-to-many class="com.dblue.farm.Reproduction"/>
+  </set>
+  <set fetch="select" inverse="true" lazy="true" name="purchaseses"
+   sort="unsorted" table="purchases">
+   <key>
+    <column name="id_livestock"/>
+   </key>
+   <one-to-many class="com.dblue.farm.Purchases"/>
+  </set>
+  <set fetch="select" inverse="true" lazy="true"
+   name="promotionHistories" sort="unsorted" table="promotion_history">
+   <key>
+    <column name="livestock_id" not-null="true"/>
+   </key>
+   <one-to-many class="com.dblue.farm.PromotionHistory"/>
+  </set>
+  <set fetch="select" inverse="true" lazy="true" name="imageses"
+   sort="unsorted" table="images">
+   <key>
+    <column name="livestock_id"/>
+   </key>
+   <one-to-many class="com.dblue.farm.Images"/>
+  </set>
+  <set fetch="select" inverse="true" lazy="true" name="lactations"
+   order-by="lactation_number desc" table="lactatioin">
+   <key>
+    <column name="livestock_id" not-null="true"/>
+   </key>
+   <one-to-many class="com.dblue.farm.Lactation"/>
+  </set>
+ </class>
+</hibernate-mapping>

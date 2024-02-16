@@ -1,0 +1,119 @@
+<main class="main_Content">
+  <form [formGroup]="addProductForm" (ngSubmit)="onAddSubmit()">
+    <div class="form-group col-md-6">
+      <label for="name">Name:</label>
+      <input
+        type="text"
+        class="form-control"
+        id="name"
+        placeholder="Enter name"
+        formControlName="name"
+        [ngClass]="{ 'is-invalid': submitted && f.name.errors }"
+      />
+      <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+        <div *ngIf="f.name.errors.required">Name is required</div>
+      </div>
+    </div>
+    <div class="form-group col-md-6">
+      <label for="description">Description:</label>
+      <textarea
+        type="text"
+        class="form-control"
+        id="description"
+        placeholder="Enter description"
+        formControlName="description"
+        [ngClass]="{ 'is-invalid': submitted && f.description.errors }"
+      >
+      </textarea>
+      <div *ngIf="submitted && f.description.errors" class="invalid-feedback">
+        <div *ngIf="f.description.errors.required">Description is required</div>
+      </div>
+    </div>
+    <div class="form-group col-md-6">
+      <label for="pricePerUnit">Price Per Unit:</label>
+      <input
+        type="number"
+        class="form-control"
+        id="pricePerUnit"
+        placeholder="Enter pricePerUnit"
+        formControlName="pricePerUnit"
+        [ngClass]="{ 'is-invalid': submitted && f.pricePerUnit.errors }"
+      />
+      <div *ngIf="submitted && f.pricePerUnit.errors" class="invalid-feedback">
+        <div *ngIf="f.pricePerUnit.errors.required">
+          Price Per Unit is required
+        </div>
+        <div *ngIf="f.pricePerUnit.errors.pattern">It must be number</div>
+      </div>
+    </div>
+    <div class="form-group col-md-6">
+      <label for="beginngInventory">Beginning Inventory: </label>
+      <input
+        type="number"
+        class="form-control"
+        id="beginngInventory"
+        placeholder="Enter Beginning Inventory"
+        formControlName="beginningInventory"
+        [ngClass]="{ 'is-invalid': submitted && f.beginningInventory.errors }"
+      />
+      <div
+        *ngIf="submitted && f.beginningInventory.errors"
+        class="invalid-feedback"
+      >
+        <div *ngIf="f?.beginningInventory?.errors?.required">
+          Beginning Inventory is required
+        </div>
+        <div *ngIf="f?.beginningInventory?.errors?.pattern">
+          It must be number
+        </div>
+      </div>
+    </div>
+    <div class="form-group col-md-6">
+      <label for="items">Items:</label>
+      <input
+        type="text"
+        class="form-control"
+        id="items"
+        placeholder="Enter items"
+        formControlName="items"
+        [ngClass]="{ 'is-invalid': submitted && f.items.errors }"
+      />
+      <div *ngIf="submitted && f.items.errors" class="invalid-feedback">
+        <div *ngIf="f.items.errors.required">Items is required</div>
+      </div>
+    </div>
+    <div class="form-group col-md-6">
+      <label for="sequence">Sequence:</label>
+      <input
+        type="number"
+        class="form-control"
+        id="sequence"
+        placeholder="Enter sequence"
+        formControlName="sequence"
+        [ngClass]="{ 'is-invalid': submitted && f.sequence.errors }"
+      />
+      <div *ngIf="submitted && f.sequence.errors" class="invalid-feedback">
+        <div *ngIf="f.sequence.errors.required">Sequence is required</div>
+        <div *ngIf="f.sequence.errors.pattern">Sequence must be number</div>
+      </div>
+    </div>
+    <div class="col-md-6 row formButtons">
+      <div>
+        <button type="submit" class="btn btn-success addProcuctButton">
+          Add Product
+        </button>
+      </div>
+      <div>
+        <a class="btn btn-primary addCancelButton" (click)="reset()">Cancel</a>
+      </div>
+    </div>
+  </form>
+  <!-- <ngx-spinner
+    bdColor="rgba(51,51,51,0.8)"
+    size="medium"
+    color="#fff"
+    type="line-scale-party"
+  >
+    <p class="spinnerText_Color">Loading...</p>
+  </ngx-spinner> -->
+</main>

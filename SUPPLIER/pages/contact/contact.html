@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      {{title}}
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-list-header>New order received</ion-list-header>
+    <ion-item>   
+      <ion-label><h3>{{message}}</h3></ion-label>         
+    </ion-item>    
+  </ion-list>
+  <button block ion-button (click)="closeNotification()">Close</button>
+</ion-content>

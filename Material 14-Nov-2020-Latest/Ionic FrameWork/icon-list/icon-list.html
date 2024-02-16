@@ -1,0 +1,28 @@
+<ion-header>
+    <ion-navbar>
+      <ion-title>Icon List</ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content>
+    <ion-list>
+  
+      <ion-list-header>
+        Icon List Data
+      </ion-list-header>
+  
+      <ion-item *ngFor="let user of users">
+        <ion-icon name="leaf" item-start>
+          <!-- <img src="{{user?.url}}"> -->
+        </ion-icon>
+        {{user?.title}}
+        <ion-note item-end>
+        View
+        </ion-note>
+      </ion-item>
+  
+      
+    </ion-list>
+  
+  
+  </ion-content>

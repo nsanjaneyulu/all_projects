@@ -1,0 +1,29 @@
+<div class="row" *ngIf="userData">
+  <div class="col-8 d-flex justify-content-between m-auto mb-3">
+    <h4 class="text-capitalize text-gold">{{pageTitle}}</h4>
+    <div>
+      <ul class="list-inline">
+        <li class="list-inline-item"><a [routerLink]="['/dashboard/user/edit', userData.user_id]" class="text-gold">Edit profile</a></li>
+        <li class="list-inline-item"><a [routerLink]="['/dashboard/user/changePassword', userData.user_id]" class="text-gold">Change Password</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="col-12">
+    <hr>
+  </div>
+  <div class="col-8 m-auto text-gold">
+    <div class="row">
+      <div class="col-8">
+        <ul class="list-unstyled">
+          <li class="text-capitalize"> Name: {{userData.user_first_name}} {{userData.user_last_name}}</li>
+          <li class="text-capitalize"> Email: {{userData.user_email}}</li>
+          <li class="text-capitalize"> Phone: {{userData.user_phone}}</li>
+          <li class="text-capitalize"> Role: {{userData.user_role}}</li>
+        </ul>
+      </div>
+      <div class="col-4 text-right">
+        <img style="width: 50px;border-radius: 50%;"
+          [src]="userData.user_image!= null ? userData.user_image : cstImageUrl" /> </div>
+    </div>
+  </div>
+</div>

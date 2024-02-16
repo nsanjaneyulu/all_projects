@@ -1,0 +1,148 @@
+<div class="row mt-5">
+    <div class="tab-content w-100 d-flex justify-content-center">
+        <div class="col-md-8">
+            <div class="card w-100">
+                <div class="card-body row">
+                    <div class="col-md-9">
+                        <form [formGroup]="companyInfoForm" (ngSubmit)="onSubmit()">
+                            <div class="form-group form_spacing">
+                                <label>Company Name</label> <input type="text" [(ngModel)]="companyProfileData.companyName" formControlName="companyName" placeholder="" [ngClass]="{ 'is-invalid': submitted && formGet['companyName'].errors }" class="form-control form_control_height transition with-icon icon-company">
+                                <div *ngIf="submitted && formGet['companyName'].errors" class="invalid-feedback">
+                                    <div *ngIf="formGet['companyName'].errors['required']">
+                                        {{authDataInfo.errorMessages.signUpFirstNameError}}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group form_spacing">
+                                <label>Website</label> <input type="text" formControlName="website" placeholder="Enter Your Company Website URL" [ngClass]="{ 'is-invalid': submitted && formGet['website'].errors }" class="form-control form_control_height transition with-icon icon-web company">
+                                <div *ngIf="submitted && formGet['website'].errors" class="invalid-feedback">
+                                    <div *ngIf="formGet['website'].errors['required']">
+                                        {{authDataInfo.errorMessages.signUpFirstNameError}}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group form_spacing">
+                                <label>Location</label>
+                                <div class="ng-autocomplete">
+                                    <ng-autocomplete formControlName="location" [data]="countries" [ngClass]="{ 'is-invalid': submitted && formGet['location'].errors }" [(ngModel)]="companyProfileData.location" [searchKeyword]="keyword" placeholder="Enter the Country Name" (selected)='selectEvent($event)'
+                                        (inputChanged)='onChangeSearch($event)' (inputFocused)='onFocused($event)' historyIdentifier="countries" [itemTemplate]="itemTemplate" [notFoundTemplate]="notFoundTemplate">
+                                    </ng-autocomplete>
+
+                                    <ng-template #itemTemplate let-item>
+                                        <a [innerHTML]="item.title"></a>
+                                    </ng-template>
+
+                                    <ng-template #notFoundTemplate let-notFound>
+                                        <div [innerHTML]="notFound"></div>
+                                    </ng-template>
+                                </div>
+                                <div *ngIf="submitted && formGet['location'].errors" class="invalid-feedback">
+                                    <div *ngIf="formGet['location'].errors['required']">
+                                        {{authDataInfo.errorMessages.signUpFirstNameError}}
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Size -->
+                            <div class="form-group form_spacing">
+                                <label>Company Size</label>
+                                <select class="form-control form_control_height transition company" #jobTypeSelect formControlName="size" [ngClass]="{ 'is-invalid': submitted && formGet['size'].errors }" (change)='sizeChange(jobTypeSelect.value)'>
+                           <option *ngFor="let comp of masterDataSizes; index as i" value="{{comp.csId}}">
+                              {{comp.csTitle}}</option>
+                        </select>
+                                <div *ngIf="submitted && formGet['size'].errors" class="invalid-feedback">
+                                    <div *ngIf="formGet['size'].errors['required']">
+                                        {{authDataInfo.errorMessages.signUpFirstNameError}}
+                                    </div>
+                                </div>
+                                <!-- <select class="form-control form_control_height transition company" [(ngModel)]="compsize" (change)="sizeChange()" >
+                           <option *ngFor="let comp of masterDataSizes; index as i" [ngValue]="comp">
+                              {{comp.csTitle}}</option>
+                        </select> -->
+                            </div>
+                            <div class="form-group form_spacing">
+                                <label>Industry </label>
+                                <div class="force-to-the-bottom">
+                                    <tag-input formControlName="companyIndustriesSet">
+                                        <tag-input-dropdown [autocompleteItems]="items" [ngClass]="{ 'is-invalid': submitted && formGet['companyIndustriesSet'].errors }" [showDropdownIfEmpty]="true" [dynamicUpdate]="false" (selected)='onSelect($event)'>
+                                        </tag-input-dropdown>
+                                    </tag-input>
+                                </div>
+                                <div *ngIf="submitted && formGet['companyIndustriesSet'].errors" class="invalid-feedback">
+                                    <div *ngIf="formGet['companyIndustriesSet'].errors['required']">
+                                        {{authDataInfo.errorMessages.signUpFirstNameError}}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group form_spacing">
+                                <label>Founded Date</label>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <select class="form-control form_control_height company" [ngClass]="{ 'is-invalid': submitted && formGet['establishedMon'].errors }" formControlName="establishedMon">
+                                 <option *ngFor="let month of months; index as i">{{month}}</option>
+                              </select>
+                                        <div *ngIf="submitted && formGet['establishedMon'].errors" class="invalid-feedback">
+                                            <div *ngIf="formGet['establishedMon'].errors['required']">
+                                                {{authDataInfo.errorMessages.signUpFirstNameError}}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <select class="form-control form_control_height company " [ngClass]="{ 'is-invalid': submitted && formGet['establishedYear'].errors }" formControlName="establishedYear">
+                                 <option *ngFor="let year of years; index as i">{{year}}</option>
+                              </select>
+                                        <div *ngIf="submitted && formGet['establishedYear'].errors" class="invalid-feedback">
+                                            <div *ngIf="formGet['establishedYear'].errors['required']">
+                                                {{authDataInfo.errorMessages.signUpFirstNameError}}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Bio -->
+                            <div class="form-group form_spacing">
+                                <label>Company Description</label>
+                                <textarea placeholder="Company Description" formControlName="about" [ngClass]="{ 'is-invalid': submitted && formGet['about'].errors }" class="form-control company "></textarea>
+                                <div *ngIf="submitted && formGet['about'].errors" class="invalid-feedback">
+                                    <div *ngIf="formGet['about'].errors['required']">
+                                        {{authDataInfo.errorMessages.signUpFirstNameError}}
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Facebook -->
+                            <div class="form-group form_spacing">
+                                <label>Facebook</label> <input type="text" formControlName="facebook" [ngClass]="{ 'is-invalid': submitted && formGet['facebook'].errors }" class="form-control form_control_height transition company">
+                                <div *ngIf="submitted && formGet['facebook'].errors" class="invalid-feedback">
+                                    <div *ngIf="formGet['facebook'].errors['required']">
+                                        {{authDataInfo.errorMessages.signUpFirstNameError}}
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Linkedin -->
+                            <div class="form-group form_spacing">
+                                <label>Linkedin</label> <input type="text" formControlName="linkedIn" [ngClass]="{ 'is-invalid': submitted && formGet['linkedIn'].errors }" class="form-control form_control_height transition company">
+                                <div *ngIf="submitted && formGet['linkedIn'].errors" class="invalid-feedback">
+                                    <div *ngIf="formGet['linkedIn'].errors['required']">
+                                        {{authDataInfo.errorMessages.signUpFirstNameError}}
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Twitter -->
+                            <div class="form-group form_spacing">
+                                <label>Twitter</label> <input type="text" formControlName="twitter" [ngClass]="{ 'is-invalid': submitted && formGet['twitter'].errors }" class="form-control form_control_height transition company">
+                                <div *ngIf="submitted && formGet['twitter'].errors" class="invalid-feedback">
+                                    <div *ngIf="formGet['twitter'].errors['required']">
+                                        {{authDataInfo.errorMessages.signUpFirstNameError}}
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Save -->
+                            <div class="form-group"> <button type="submit" class="btn btn-primary btn-lg btn-save">Save</button> </div>
+                        </form>
+                    </div>
+                    <div class="col-md-3 text-center pt-3">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

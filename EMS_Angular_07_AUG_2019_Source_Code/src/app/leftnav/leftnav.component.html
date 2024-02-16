@@ -1,0 +1,33 @@
+<aside class="">
+  <header class="bow_header bow_right_header_bg_styles">
+    <img class="bow_main_logo" src="../../assets/tafel-logo.svg">
+    <img class="bow_main_icon" src="../../assets/logo-small.svg">
+  </header>
+  <ul class="list-unstyled bow_menu_bar_styles">
+
+    <li class="test_link" *ngFor="let menu of navigation" [ngClass]="{'test_link': menu.active}">
+      <div class="bow_dropdown_list" (click)="toggleActiveMenu($event, menu)">
+        <img src="../../assets/{{menu.icon}}">
+        <span class="bow_text_menu">{{menu.title}}</span>
+        <div *ngIf="menu.children && !!menu.children.length" class="bow_sub_menu">
+          <img src="../../assets/plus.png" class="bow_icon_plus" *ngIf="!menu.showChild" />
+          <img src="../../assets/minus.png" class="bow_icon_minus"  *ngIf="menu.showChild" />
+        </div>
+      </div>
+      <ul class="bow_dropdown_list_items" *ngIf="menu.children && !!menu.children.length && menu.showChild">
+        <li [routerLink]="['/liveOrders']">
+          <div *ngFor="let subMenu of menu.children" [routerLink]="[subMenu.link]" class="bow_dropdown_list">
+            <img src="../../assets/right-arrow.png">
+            <span class="bow_text_menu">{{subMenu.title}}</span>
+          </div>
+        </li>
+      </ul>
+     
+    </li>
+
+  
+
+  
+  </ul>
+  <div class="bottom__Styles"></div>
+</aside>

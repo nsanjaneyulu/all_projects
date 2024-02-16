@@ -1,0 +1,62 @@
+<wicket:extend>
+	<div id="content">	
+    <div class="bread-crumb">
+            	<h1>Milk Yield Management / Daily Milk Production by Live Stock Wise</h1>
+            </div>	
+	    <form method="post" wicket:id="dailyproduction">
+		<p>Select Date: <input type="text" wicket:id="effectiveDate" class="selectdate"/></p>		
+		<div wicket:id="feedback"></div>
+        <div class="containterL">
+        <table>
+            <thead>
+            <tr>
+                	<th>RFID</th>
+					<th>Live Stock Code</th>
+					<th>Breed Type</th>
+					<th>Milking Status</th>
+					<th>Lactation Number</th>
+					<th>Lactation Start Date</th>
+					<th>Morning Yield</th>
+					<th>Morning Fat %</th>
+					<th>Morning SNF</th>
+					<th>Morning CLR</th>
+					<th>Evening Yield</th>
+					<th>Evening Fat %</th>
+					<th>Evening SNF</th>
+					<th>Evening CLR</th>
+            
+            </tr>
+            </thead>
+            <tbody>
+            <tr wicket:id="rows" class="containterL">
+              
+				
+					<td style="word-wrap:break-word;height:auto;"><span wicket:id="rfid"/></td>
+					<td style="word-wrap:break-word;"><span wicket:id="code"/></td>
+					<td style="word-wrap:break-word;"><span wicket:id="breedTypeByBreedTypeId" /></td>
+					<td style="word-wrap:break-word;"><span wicket:id="milkingStatus"/></td>
+					<td style="word-wrap:break-word;"><span wicket:id="lactationNumber" /></td>
+					<td style="word-wrap:break-word;"><span wicket:id="lactationDays" /></td>
+				    <span wicket:id="prods">
+						<td><input type="text" wicket:id="yield" class="textfield_effect" maxlength="8"
+                         style="text-align:right;"/></td>
+						<td><input type="text" wicket:id="fatPercentile" class="textfield_effect" maxlength="8"
+                        style="text-align:right;"/>
+                        </td>
+						<td><input type="text" wicket:id="snf" class="textfield_effect" maxlength="8"
+                        style="text-align:right;"/></td>
+						<td class="last"><input type="text" wicket:id="clr" class="textfield_effect" maxlength="8"
+                        style="text-align:right;"/></td>
+					</span>
+          </tr>
+            <span wicket:id="navigator" style="line-height: 51px;">[dataview navigator]</span>
+	
+		</tbody>
+        </table>
+        </div>
+			<div class="newButton">
+				<INPUT type="submit" value="Save" class="button" wicket:id="save"/>				  
+                </div>
+		</form>
+</div>
+</wicket:extend>

@@ -1,0 +1,12 @@
+.nav-bg {
+	background: #000;
+}
+.navbar-dark .navbar-nav .nav-link {
+	color: #fff;
+}
+.navbar {
+	padding: 0px;
+}
+.navbar ul li:not(:last-child){
+	border-right: 1px solid #fff;
+}

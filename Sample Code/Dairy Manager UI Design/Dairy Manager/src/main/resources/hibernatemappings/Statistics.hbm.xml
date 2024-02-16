@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Sep 15, 2012 12:11:16 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dblue.farm.Statistics" table="statistics" >
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="height" type="string">
+            <column name="height" length="10" />
+        </property>
+        <property name="weight" type="string">
+            <column name="weight" length="10" />
+        </property>
+        <property name="length" type="string">
+            <column name="length" length="10" />
+        </property>
+        <property name="appearance" type="string">
+            <column name="appearance" length="500" />
+        </property>
+        <property name="production" type="string">
+            <column name="production" length="10" />
+        </property>
+        <property name="fatPercent" type="big_decimal">
+            <column name="fat_percent" precision="10" />
+        </property>
+        <property name="purchasePrice" type="big_decimal">
+            <column name="purchase_price" precision="10" />
+        </property>
+        <property name="purchaseLocation" type="string">
+            <column name="purchase_location" length="100" />
+        </property>
+        <property name="purchaseDate" type="timestamp">
+            <column name="purchase_date" length="19" />
+        </property>
+        <property name="transportationDist" type="string">
+            <column name="transportation_dist" length="10" />
+        </property>
+        <property name="transportationCost" type="big_decimal">
+            <column name="transportation_cost" precision="10" />
+        </property>
+        <property name="purchaseFarm" type="string">
+            <column name="purchase_farm" length="50" />
+        </property>
+        <property name="purchaseBroker" type="string">
+            <column name="purchase_broker" length="50" />
+        </property>
+        <set name="livestocksForCurrentStatId" table="livestock" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="current_stat_id" />
+            </key>
+            <one-to-many class="com.dblue.farm.Livestock" />
+        </set>
+        <set name="livestocksForPurchaseStatId" table="livestock" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="purchase_stat_id" />
+            </key>
+            <one-to-many class="com.dblue.farm.Livestock" />
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,41 @@
+<html>
+<head>
+<title>untitled</title>
+<script type="text/javascript" language="javascript">
+
+function validator(theSelect)
+{
+if (theSelect[theSelect.selectedIndex].defaultSelected)
+{
+alert("Please select from the drop-down list.");
+theSelect.focus();
+return false;
+}
+return true;
+}
+
+</script>
+</head>
+<body>
+<form method="post" action="#" >
+<select name="bcolor" size="1">
+<option value="pc" selected="selected">Pick a Color</option>
+<option value="rd">Red</option>
+<option value="yl">Yellow</option>
+<option value="gr">Green</option>
+</select>
+<input type="submit" onSubmit="validator(bcolor)">
+</form>
+<form method="post" action="#" onSubmit="return validator(bcolor1)">
+<select name="bcolor1" size="1">
+<option value="pc" selected="selected">Pick a Color</option>
+<option value="rd">Red</option>
+<option value="yl">Yellow</option>
+<option value="gr">Green</option>
+</select>
+<input type="submit">
+</form>
+</body>
+</html>
+	
+Reply With Quote

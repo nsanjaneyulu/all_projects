@@ -1,0 +1,26 @@
+<html>
+<head>
+<title>Email validation using regex</title>
+<script type="text/javascript">
+    function validate() {
+        var email = document.getElementById("email").value;
+        var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+        if (emailPattern.exec(email)) {
+            alert("Email Id: " + email);
+            return true;
+        } else {
+            alert("Email Id is not valid!");
+            return false;
+        }
+    }
+</script>
+
+</head>
+<body>
+<h2>Validating Email Id..</h2>
+Email Id :
+<input type="text" name="email" id="email" />
+<input type="submit" value="Submit" onClick="validate();"/>
+</body>
+</html>
+

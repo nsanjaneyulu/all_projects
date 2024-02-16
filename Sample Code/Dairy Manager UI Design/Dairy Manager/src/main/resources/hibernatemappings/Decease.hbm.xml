@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Sep 19, 2012 11:28:48 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dblue.farm.Decease" table="decease" >
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="health" class="com.dblue.farm.Health" fetch="select">
+            <column name="health_id" />
+        </many-to-one>
+        <many-to-one class="com.dblue.farm.Farm" fetch="select" name="farm">
+ 			<column name="farm_id" not-null="true"/>
+		</many-to-one> 
+        <many-to-one name="deceaseType" class="com.dblue.farm.DeceaseType" fetch="select">
+            <column name="decease_type_id" not-null="true" />
+        </many-to-one>
+        <property name="startDate" type="timestamp">
+            <column name="start_date" length="19" />
+        </property>
+        <property name="endDate" type="timestamp">
+            <column name="end_date" length="19" />
+        </property>
+        <property name="treatmentDate" type="timestamp">
+            <column name="treatment_date" length="19" />
+        </property>
+        <property name="treatmentDescription" type="string">
+            <column name="treatment_description" length="150" not-null="true" />
+        </property>
+        <property name="medicine" type="string">
+            <column name="medicine" length="150" not-null="true" />
+        </property>
+        <property name="remarks" type="string">
+            <column name="remarks" length="150" />
+        </property>
+        <property name="symptoms" type="string">
+            <column name="symptoms" length="150" />
+        </property>
+    </class>
+</hibernate-mapping>

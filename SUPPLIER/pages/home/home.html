@@ -1,0 +1,100 @@
+<ion-header>
+   <div class="search__div">
+      <div class="search__container">
+         <ion-searchbar type="number" [brmasker]="{mask:'00000', len:5}" class="searchbar__Styles" placeholder="Search OrderIds" (ionInput)="getOrders($event)"></ion-searchbar>
+      </div>
+   </div>
+</ion-header>
+<ion-content class="main__div">
+    
+   <!-- <ion-item >
+      <div class="filters">
+         <select class="filter__Styles select__border__none dropdown__styles" [(ngModel)]="selectStatus" (change)=OrderStatusChange()>
+         <option *ngFor="let status of statusLet" [value]="status">{{status}}</option>
+         </select>
+         <select [(ngModel)]="selectedOutlet" class="filter__Styles select__border__none dropdown__styles" (change)=valueChangeOutlet(selectedOutlet)>
+         <option *ngFor="let outlet of outlets" [value]="outlet.id">{{outlet.name}}</option>
+         </select>
+      </div>
+      </ion-item> -->
+   <ion-list style="margin:0px !important;">
+      <ion-item>
+         <ion-label>Choose by status</ion-label>
+         <ion-select [(ngModel)]="selectStatus" (ionChange)="OrderStatusChange()">
+         <ion-option *ngFor="let status of statusLet" [value]="status">{{status}}</ion-option>
+         </ion-select>
+      </ion-item>
+      <ion-item>
+         <ion-label>Choose by outlet</ion-label>
+         <ion-select [(ngModel)]="selectedOutlet" (ionChange)="valueChangeOutlet(selectedOutlet)">
+         <ion-option *ngFor="let outlet of outlets" [value]="outlet.id">{{outlet.name}}</ion-option>
+         </ion-select>
+      </ion-item>
+   </ion-list>
+   <ion-grid class="ng-hide" id="allOrders" style="padding:0px !important; margin-top: 10px; background: #fff;">
+      <div class="bootem__level__space" *ngFor="let pendingFullOrder of pendingFullOrderObj" (click)="goOrderDetails($event, pendingFullOrder)">
+      <ion-item no-lines>
+         <ion-row class="bootem__level__styles">
+            <ion-col col-8 class="orderId">{{pendingFullOrder.fullOrder5DigitId}}</ion-col>
+            <ion-col col-4 class="clickViewOrder" style="text-align:right;">Click to view order</ion-col>
+         </ion-row>
+         <ion-row class="bootem__level__styles">
+            <ion-col col-4 class="orderLable__styles">Status:</ion-col>
+            <ion-col col-8 class="label__details" style="color:#a9435e" *ngIf = "pendingFullOrder.status == 'RECEIVED'">{{pendingFullOrder.status}}</ion-col>
+            <ion-col col-8 class="label__details" style="color:#fff" *ngIf = "pendingFullOrder.status == 'INPROGRESS'">{{pendingFullOrder.status}}</ion-col>
+            <ion-col col-8 class="label__details" style="color:#11BA91" *ngIf = "pendingFullOrder.status == 'COMPLETED'">{{pendingFullOrder.status}}</ion-col>
+            <!-- <ion-col col-8 class="label__details">{{pendingFullOrder.status}}</ion-col> -->
+         </ion-row>
+         <ion-row class="bootem__level__styles">
+            <ion-col col-4 class="orderLable__styles">Address:</ion-col>
+            <ion-col text-wrap col-8 class="label__details">{{pendingFullOrder.vehicleNumber}}</ion-col>
+         </ion-row>
+         <ion-row class="bootem__level__styles">
+            <ion-col col-4 class="orderLable__styles">Date & Time:</ion-col>
+            <ion-col col-8 class="label__details">{{pendingFullOrder.createdDateStr | date: "dd/MM/yyyy H:mm"}}</ion-col>
+         </ion-row>
+         <ion-row>
+            <ion-col col-12 class="orderLable__styles" *ngIf = "pendingFullOrder.status != 'COMPLETED'">
+               <div class="diner_call" style="padding: 5px;" (click)=callDiner(pendingFullOrder.dinner.phoneNumber)>
+                  <ion-icon name="call"> Call Diner</ion-icon>
+               </div>
+            </ion-col>
+         </ion-row>
+      </ion-item>
+      </div>
+   </ion-grid>
+   <ion-grid class="ng-hide" class="" id="outletOrders" style="padding:0px !important;">
+      <div class="bootem__level__space" *ngFor="let outletPendingOrder of outletorderArray" (click)="goOrderDetails($event, outletPendingOrder)">
+       
+         <ion-item no-lines>
+            <ion-row class="bootem__level__styles">
+               <ion-col col-8 class="orderId">{{outletPendingOrder.fullOrder5DigitId}}</ion-col>
+               <ion-col col-4 class="clickViewOrder" style="text-align:right;">Click to view order</ion-col>
+            </ion-row>
+            <ion-row class="bootem__level__styles">
+               <ion-col col-4 class="orderLable__styles">Status:</ion-col>
+               <ion-col col-8 class="label__details">{{outletPendingOrder.status}}</ion-col>
+            </ion-row>
+            <ion-row class="bootem__level__styles">
+               <ion-col col-4 class="orderLable__styles">Address:</ion-col>
+               <ion-col text-wrap col-8 class="label__details">{{outletPendingOrder.currentVehicleNumber}}</ion-col>
+            </ion-row>
+            <ion-row class="bootem__level__styles">
+               <ion-col col-4 class="orderLable__styles">Date & Time:</ion-col>
+               <ion-col col-8 class="label__details">{{outletPendingOrder.createdDateStr | date: "dd/MM/yyyy H:mm"}}</ion-col>
+            </ion-row>
+            <ion-row>
+               <ion-col col-12 class="orderLable__styles" *ngIf = "outletPendingOrder.status != 'COMPLETED'">
+                  <div class="diner_call" style="padding: 5px;" (click)=callDiner(outletPendingOrder.dinner.phoneNumber)>
+                     <ion-icon name="call"> Call Diner</ion-icon>
+                  </div>
+               </ion-col>
+            </ion-row>
+            </ion-item>
+       
+      </div>
+   </ion-grid>
+   <!-- <ion-refresher (ionRefresh)="goRefresh($event)">
+      <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="Pull to refresh" refreshingSpinner="circles" refreshingText="Refreshing..."> </ion-refresher-content>
+      </ion-refresher> -->
+</ion-content>

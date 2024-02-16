@@ -1,0 +1,167 @@
+<ion-header>
+      <ion-navbar>
+          <ion-buttons left>
+             <button ion-button icon-only (click)="BackButtonClick()">
+                <ion-icon name="arrow-back"></ion-icon>
+             </button>
+          </ion-buttons>
+          <ion-title class="order__Id">{{itemDetails.name}}</ion-title>
+       </ion-navbar>
+    
+    </ion-header>
+    
+    
+    <ion-content>
+      <div *ngIf="!showLoader">
+         
+        
+        <ion-item class="background__color">
+         <ion-label class="order__Details">Availability</ion-label>
+         <ion-toggle [(ngModel)]="availability"></ion-toggle>
+        </ion-item>
+        <!-- <ion-item>
+             <ion-label class="item__Details">Veg</ion-label>
+             <ion-toggle color="secondary" [(ngModel)]="availabilityVeg"></ion-toggle>
+          </ion-item> -->
+          <div  *ngIf="availability">
+               <ion-row>
+                  <ion-col col-2>
+                     <ion-item>
+                      <ion-label></ion-label>
+                      </ion-item>
+                  </ion-col>
+                  <ion-col col-5>
+                     <ion-item>
+                        <ion-label>Start Time</ion-label>
+                      </ion-item>
+                  </ion-col>
+                  <ion-col col-5>
+                     <ion-item>
+                        <ion-label>End Time</ion-label>
+                      </ion-item>
+                  </ion-col>
+               </ion-row>
+               <ion-row>
+                  <ion-col col-2>
+                     <ion-item>
+                        <input type="radio" name="openClose" value="1" [checked]="outletOpen" (click)="checkOpen()"> Open<br>
+                      </ion-item>
+                  </ion-col>
+                  <ion-col col-5>
+                     <ion-item>
+                        <ion-select [(ngModel)]="openStartTime" multiple="false" [disabled]="!open">
+                           <ion-option *ngFor="let time  of times" value="{{time}}">{{time}}</ion-option>
+                           </ion-select>
+                      </ion-item>
+                  </ion-col>
+                  <ion-col col-5>
+                     <ion-item>
+                        <ion-select [(ngModel)]="openEndTime" multiple="false"  [disabled]="!open">
+                           <ion-option *ngFor="let time  of times" value="{{time}}">{{time}}</ion-option>
+                           </ion-select>
+                      </ion-item>
+                  </ion-col>
+               </ion-row>
+               <ion-row>
+                  <ion-col col-2>
+                     <ion-item>
+                        <input type="radio" name="openClose" value="2" [checked]="outletClose" (click)="checkClose()"> Close<br>
+                      </ion-item>
+                  </ion-col>
+                  <ion-col col-5>
+                     <ion-item>
+                        <ion-select [(ngModel)]="closeStartTime" multiple="false"  [disabled]="!close" >
+                           <ion-option *ngFor="let time  of times" value="{{time}}">{{time}}</ion-option>
+                           </ion-select>
+                      </ion-item>
+                  </ion-col>
+                  <ion-col col-5>
+                     <ion-item>
+                        <ion-select [(ngModel)]="closeEndTime" multiple="false"  [disabled]="!close">
+                           <ion-option *ngFor="let time  of times" value="{{time}}">{{time}}</ion-option>
+                           </ion-select>
+                      </ion-item>
+                  </ion-col>
+               </ion-row>
+            </div>
+        <ion-item>
+           
+         <ion-label>Weeks</ion-label>
+         <ion-select [(ngModel)]="weeks" multiple="true">
+         <ion-option>Sun</ion-option>
+         <ion-option>Mon</ion-option>
+         <ion-option>Tue</ion-option>
+         <ion-option>Wed</ion-option>
+         <ion-option>Thu</ion-option>
+         <ion-option>Fri</ion-option>
+         <ion-option>Sat</ion-option>
+         </ion-select>
+        </ion-item>
+        <!-- <ion-item>
+         <ion-label>Start Time </ion-label>
+         <ion-datetime displayFormat="HH:mm" [(ngModel)]="startTime" (ionChange)="getOutletStartTime()"></ion-datetime>
+        </ion-item>
+        <ion-item>
+         <ion-label>End Time </ion-label>
+         <ion-datetime displayFormat="HH:mm" [(ngModel)]="endTime" (ionChange)="getOutletEndTime()"></ion-datetime>
+        </ion-item> -->
+        <ion-item>
+             <ion-label>Price</ion-label>
+             <ion-input type="text" [(ngModel)]="price"></ion-input>
+            </ion-item>
+      
+            <ion-item no-lines>
+                  <div class="displayFlex">
+                     <span  style="color: #999;">Supplier Discount (%)</span>
+                     <span class="" style="color:#e46d47; font-weight:bold;padding-right: 10px;">{{itemDiscount}}</span>
+                  </div>
+            </ion-item>
+            
+                <ion-item>
+                    
+                  <!-- <ion-range min="0" max="50" pin="true" [(ngModel)]="itemDiscount" color="secondary">
+                    <ion-icon range-left small name="eye"></ion-icon>
+                    <ion-icon range-right name="eye"></ion-icon>
+                    
+                  </ion-range> -->
+                  <ion-input type="number" [(ngModel)]="itemDiscount"  min="1" max="50" (ionChange)="validateInputValue(itemDiscount)"></ion-input>
+
+                </ion-item>
+                <ion-item no-lines>
+                     <div class="displayFlex">
+                        <span  style="color: #999;">Preparation Time</span>
+                        <span class="" style="color:#e46d47; font-weight:bold;padding-right: 10px;">{{preparationTime}}</span>
+                     </div>
+               </ion-item>
+               
+                   <ion-item>
+                       
+                     <!-- <ion-range min="5" max="90" pin="true" [(ngModel)]="preparationTime" color="secondary">
+                       <ion-icon range-left small name="eye"></ion-icon>
+                       <ion-icon range-right name="eye"></ion-icon>
+                       
+                     </ion-range> -->
+                     <ion-input type="number"   [(ngModel)]="preparationTime"  min="1" max="90" (ionChange)="validatePreperationTime(preparationTime)"></ion-input>
+
+                   </ion-item>
+       <ion-item>
+          <ion-label>Description</ion-label>
+          <ion-input type="text" value="" [(ngModel)]="description"></ion-input>
+       </ion-item>
+       </div>
+       <page-globalloader *ngIf="showLoader"></page-globalloader>
+    </ion-content>
+    <ion-footer class="footer__styles">
+          <ion-grid>
+                <ion-row>
+                 
+                  <ion-col style="text-align: center;" col-12 (click)=updateItem()><span  class="print__callDiner">
+                      <ion-icon name="bookmark"></ion-icon>
+                      Update
+                    </span></ion-col>
+                </ion-row>
+                
+               </ion-grid>
+          
+        </ion-footer>
+    

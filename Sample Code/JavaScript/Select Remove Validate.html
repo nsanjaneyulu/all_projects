@@ -1,0 +1,74 @@
+<HTML xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/HTML; charset=iso-8859-1" />
+<title>Remove Multiple List Items</title>
+<script type="text/javaScript">
+function removeMultipleOptions(){
+var listBox=document.getElementById("selectMultipleCountries");
+if(listBox.options.length==0){
+alert('You have already removed all list box items');
+return false;
+}
+var removedOptionCount=0;
+var valuesToBeRemoved=Array();
+
+for(var x=0;x<listBox.options.length;x++){
+if(listBox.options[x].selected==true){
+valuesToBeRemoved.push(listBox.options[x].value);
+}
+}
+
+for(var j=0;j<valuesToBeRemoved.length;j++){
+removedOptionCount+=removeListItemOneByOne(listBox,valuesToBeRemoved[j]);
+}
+
+if(removedOptionCount==0){
+alert('Please select one or more items to remove');
+listBox.focus();
+return false;
+}else{
+alert(removedOptionCount+' option(s) have been removed successfully');
+return true;
+}
+}
+
+function removeListItemOneByOne(listBox,valueToRemove){
+var removed=0;
+for(var i=0;i<listBox.options.length;i++){
+if(listBox.options[i].value==valueToRemove){
+listBox.remove(i);
+removed=1;
+break;
+}
+}
+return removed;
+}
+</script>
+</head>
+
+<body>
+<table border="0"> <tr>
+<td align="right">Select one or more countries to remove</td>
+<td align="left"><select name="selectMultipleCountries" size="10" multiple="multiple" id="selectMultipleCountries">
+<option value="AF" selected="selected">Afghanistan</option>
+<option value="AX">&Atilde;&hellip;Land Islands</option>
+<option value="AL">Albania</option>
+<option value="DZ">Algeria</option>
+<option value="AS">American Samoa</option>
+<option value="AD">Andorra</option>
+<option value="AO">Angola</option>
+<option value="AI">Anguilla</option>
+<option value="AQ">Antarctica</option>
+<option value="AG">Antigua And Barbuda</option>
+<option value="AR">Argentina</option>
+<option value="AM">Armenia</option>
+<option value="AW">Aruba</option>
+</select></td>
+</tr>
+<tr>
+<td align="right">&nbsp;</td>
+<td align="left"><input name="btnRemoveMultipleOptions" type="button" id="btnRemoveMultipleOptions" value="Remove Selected Options" onClick="javaScript:removeMultipleOptions();" /></td>
+</tr>
+</table>
+</body>
+</HTML>

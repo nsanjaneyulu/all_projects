@@ -1,0 +1,44 @@
+<wicket:extend>	
+<div id="content">
+	<h2>Search Information:</h2>
+	<table class="table">
+	<tr>
+		<td>Live Stock Information:</td>
+	</tr>
+	<tr>
+	<td>
+	    <form method="post" wicket:id="SearchCriteriya">	
+	    <div wicket:id="feedback"></div>
+		<table class="table">
+		<tr>
+				<td><label>Live Stock Code</label></td>
+				<td><input name="lsLiveStockCode" type="text" size="15" wicket:id="lsLiveStockCode" class="smalltextfield_effect"/></td>
+				<td ><label>RFID</label></td>
+				<td><input name="lsRFID" type="text" wicket:id="lsRFID" class="smalltextfield_effect"/></td>
+			</tr>
+			<tr>
+				<td><label>Breed</label></td>
+				<td><select wicket:id="breedType" class="smalltextfield_effect"></select><font color="#FF0000">*</font></td>
+				<td><label>Origin</label></td>
+				<td><select wicket:id="originType" class="smalltextfield_effect"></select><font color="#FF0000">*</font></td>
+			 </tr>
+			 <tr>
+				<td><label>Live Stock State</label></td>
+				<td><select wicket:id="stateType" class="smalltextfield_effect"></select><font color="#FF0000">*</font></td>
+				<td><label>Milking</label></td>
+				<td><select wicket:id="milkingStatus" class="smalltextfield_effect"></select><font color="#FF0000">*</font></td>
+			 </tr>
+			<tr>
+					<td colspan="4" align="center"><input type="submit" name="search" value="Search"  wicket:id="search" class="button"/></td>						
+			</tr>
+			</table>
+			</form>
+			</td>
+			</tr>
+		</table>
+        <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br />
+		<br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br />
+		<br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br />
+		<br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br />
+</div>
+</wicket:extend>

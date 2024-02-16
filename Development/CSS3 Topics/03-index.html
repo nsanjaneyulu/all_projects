@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<style>
+	body
+	{
+		width:400px;
+		margin:10px;
+	}
+	img 
+	{
+		width:100%;
+		margin:auto;
+	}
+	figure
+	{
+		margin:0;
+		position:relative;
+		border:5px solid #fff;
+		box-shadow:0 0 4px rgba(0, 0, 0, .3);
+		display:block;
+		overflow:hidden;
+		cursor:pointer;
+		float:left;
+	}
+	figure img
+	{
+		-webkit-transition: all 1.5s;
+	}
+	figure:hover figcaption
+	{
+		opacity:1;
+		-webkit-transform:rotate(0);
+	}
+	figcaption
+	{
+		opacity:0;
+		position:absolute;
+		top:0;
+		background:rgba(0,0,0,.4);
+		color:#fff;
+		height:100%;
+		width:100%;
+		-webkit-transition:all .4s ease-in;
+		-webkit-transition-delay:1.5s;
+		-webkit-transform:rotate(360deg);
+	}
+	figure:hover img
+	{
+		-webkit-transform:scale(1.1);
+	}
+	figcaption h1
+	{
+		background:#000;
+		margin-top:20px;
+	}
+	figcaption h1, figcaption p
+	{
+		padding:10px 20px;
+		margin-bottom:0;
+		margin-top:0;
+		position:relative;
+		left:100%;
+		-webkit-transition:all 1s;
+	}
+	figure:hover h1, figure:hover p
+	{
+		left:0;
+	}
+	figcaption p
+	{
+		-webkit-transition-delay:1.2s;
+	}
+	figcaption h1
+	{
+		-webkit-transition-delay:1s;
+	}
+	li
+	{
+		margin:0;
+		padding:0;
+		float:left;
+	}
+</style>
+</head>
+<body>
+    <figure>
+        <img src="../../../Public/Pictures/Sample Pictures/Tulips.jpg" />
+        <figcaption>
+            <h1>I am a heading</h1>
+            <p>Believing in equipping our customers with the right tools to increase their productivity at work, we distribute a range of 2D and 3D softwares that </p>
+            <p>Believing in equipping our customers with the right tools to increase their productivity at work, we distribute a range of 2D and 3D softwares that is powerful, yet user-friendly and affordable, and meets the requirements of various industries.</p>
+        </figcaption>
+    </figure>
+    <figure>
+        <img src="../../../Public/Pictures/Sample Pictures/Tulips.jpg" />
+        <figcaption>
+            <h1>I am a heading</h1>
+            <p>Believing in equipping our customers with the right tools to increase their productivity at work, we distribute a range of 2D and 3D softwares that </p>
+            <p>Believing in equipping our customers with the right tools to increase their productivity at work, we distribute a range of 2D and 3D softwares that is powerful, yet user-friendly and affordable, and meets the requirements of various industries.</p>
+        </figcaption>
+    </figure>
+</body>
+</html>

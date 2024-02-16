@@ -1,0 +1,380 @@
+<main>
+  <div class="mainPage_Content">
+    <div class="mainPage_Data container">
+      <div class="mainPage_Data--ImageBlock">
+        <img src="./../../assets/greater_good_box_20.png" alt="nsmImage" />
+      </div>
+      <div class="mainPage_Data--TextBlock">
+        <img
+          class="nsmFoodOrder_Image"
+          alt="nsmFoodOrder_Image"
+          src="../../assets/nsmFoodOrder.PNG"
+        />
+        <p class="nsmFoodOrder_Text">
+          <span class="boldText"
+            >This month local restaurants in our community started closing their
+            doors,</span
+          >
+          leaving Portland-area<br />
+          farmers with an excess of fresh produce and no way to distribute it.
+        </p>
+        <p class="nsmFoodOrder_Text">
+          Enter: <span class="boldText">the Greater Good Box,</span> a New
+          Seasons twist on a classic CSA (Community Supported Agriculture).
+          We're partnering with local producers to bring a variety of farm-fresh
+          produce, local sauces, and even a surprise or two in a weekly grocery
+          box.
+        </p>
+        <p class="nsmFoodOrder_Text">
+          Our goal is to help keep jobs in our community. And with this pop-up
+          solution, we are bringing you seasonal local produce and using our
+          resources to support our friends when they need it most. We teamed up
+          with longtime partners B-Line and Organically Grown Company to pack
+          and prepare your boxes, and together we have set up a "touch-free";
+          pickup for your order.
+        </p>
+        <img
+          class="howToOrder_Image"
+          alt="howToOrder_Image"
+          src="../../assets/howToOreder.PNG"
+        />
+        <p class="nsmFoodOrder_Text">
+          Complete your order by filling out the requested information below and
+          choosing the quantity of boxes you would like to purchase for the
+          week.
+        </p>
+        <p class="nsmFoodOrder_Text boldText">
+          Weekly orders must be placed by Thursday at 5pm to facilitate a Friday
+          pickup.
+        </p>
+        <p class="nsmFoodOrder_Text">
+          Drive-thru, “touch-free” pickup of your Greater Good Box will be at
+          the B-Line at the Redd,<span class="boldText">
+            Dock 4 on the North side of the Redd</span
+          >
+          building located at
+          <span class="boldText">1140 SE 7th Avenue, Portland, 97214</span> (on
+          SE Taylor Street, between 7th and 8th).
+          <span class="boldText">Just look for the New Seasons banner!</span>
+        </p>
+        <p class="nsmFoodOrder_Text boldText">
+          Boxes are available for pickup between 2pm and 5pm each Friday.
+        </p>
+      </div>
+    </div>
+  </div>
+  <section class="mainPage container">
+    <h2 class="foodOrder_Text">
+      PLEASE USE THE FORM TO REGISTER FOR PICKUP
+    </h2>
+    <div class="heading_Block">
+      <div class="heading_Information">
+        <img src="../../assets/1.0.User_Information.png" />
+        <h3 class="heading--text">Your Information</h3>
+      </div>
+    </div>
+    <form [formGroup]="orderForm" (ngSubmit)="onSubmit()" id="orderFormDetails">
+      <div class="your_Information--form">
+        <div class="form-row">
+          <div
+            class="form-group required col-md-6 your_Information--InputBlock"
+          >
+            <label class="your_Information--lable" for="">First Name</label>
+            <input
+              type="text"
+              formControlName="firstName"
+              class="form-control your_Information--Input"
+              [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }"
+            />
+            <div
+              *ngIf="submitted && f.firstName.errors"
+              class="invalid-feedback"
+            >
+              <div *ngIf="f.firstName.errors.required">
+                First Name is required
+              </div>
+            </div>
+          </div>
+          <div
+            class="form-group required col-md-6 your_Information--InputBlock"
+          >
+            <label class="your_Information--lable" for="">Last Name</label>
+            <input
+              type="text"
+              formControlName="lastName"
+              class="form-control your_Information--Input"
+              [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }"
+            />
+            <div
+              *ngIf="submitted && f.lastName.errors"
+              class="invalid-feedback"
+            >
+              <div *ngIf="f.lastName.errors.required">
+                Last Name is required
+              </div>
+            </div>
+          </div>
+          <div
+            class="form-group required col-md-6 your_Information--InputBlock"
+          >
+            <label class="your_Information--lable" for="">Email</label>
+            <input
+              type="email"
+              formControlName="email"
+              class="form-control your_Information--Input"
+              [ngClass]="{ 'is-invalid': submitted && f.email.errors }"
+            />
+            <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+              <div *ngIf="f.email.errors.required">
+                Email is required
+              </div>
+            </div>
+          </div>
+          <div
+            class="form-group required col-md-6 your_Information--InputBlock"
+          >
+            <label class="your_Information--lable" for="">Phone </label>
+            <input
+              type="text"
+              formControlName="phoneNumber"
+              class="form-control your_Information--Input"
+              mask="(000) 000 0000"
+              [ngClass]="{ 'is-invalid': submitted && f.phoneNumber.errors }"
+            />
+            <div
+              *ngIf="submitted && f.phoneNumber.errors"
+              class="invalid-feedback"
+            >
+              <div *ngIf="f.phoneNumber.errors.required">
+                Phone Number is required
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="selectproduct" #selectProductNode>
+        <div class="heading_Block">
+          <div class="heading_Information">
+            <img src="../../assets/2.0.Select_Box.png" />
+            <h3 class="heading--text">Select Box</h3>
+          </div>
+        </div>
+        <div
+          class="select_Box--content"
+          *ngIf="!isloadingProducts; else loadingProductNode"
+        >
+          <p class="box_SubHeading">
+            Suggested weekly supply, 2-4 people
+          </p>
+
+          <div class="selectBox_card">
+            <div
+              class="card_BlockData"
+              *ngFor="let boxTypeDisplay of boxTypeResp; let i = index"
+            >
+              <div class="card">
+                <div class="card-header card_HeadingBlock">
+                  <h4 class="card_Heading">
+                    {{ boxTypeDisplay.name }}
+                  </h4>
+                  <p class="card_SubHeading">
+                    Price - ${{ boxTypeDisplay.pricePerUnit }}
+                  </p>
+                </div>
+                <div class="card-body selectBox_CardBody">
+                  <div class="cardbody_ItemNames">
+                    <div class="cardbody_ItemNames--Content">
+                      <span>
+                        {{ boxTypeDisplay.description }}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-footer">
+                  <div class="card-footerBlock">
+                    <p class="card-footerQuantity">Quantity :</p>
+                    <div
+                      class="card-ItemNamesButtons"
+                      *ngIf="
+                        boxTypeDisplay.remaining > stockThresold ||
+                        boxTypeDisplay.remaining == 0
+                      "
+                    >
+                      <span
+                        class="minus_Button"
+                        id="{{ boxTypeDisplay.id }}"
+                        (click)="updateProductQuantity(boxTypeDisplay, false)"
+                        >-</span
+                      >
+                      <span class="card-ItemNamesValue">{{
+                        boxTypeDisplay.quantity || 0
+                      }}</span>
+                      <span
+                        class="plus_Button"
+                        id="{{ boxTypeDisplay.id }}"
+                        (click)="updateProductQuantity(boxTypeDisplay, true)"
+                        >+</span
+                      >
+                    </div>
+                    <!-- if Order is out of stock -->
+                    <div
+                      class="card-disabledButtons"
+                      *ngIf="
+                        boxTypeDisplay.remaining <= stockThresold &&
+                        boxTypeDisplay.remaining != 0
+                      "
+                    >
+                      <span
+                        class="minus_Buttondisabled"
+                        type="button"
+                        id="{{ boxTypeDisplay.id }}"
+                        >-</span
+                      >
+                      <span class="card-ItemNamesValue">{{
+                        boxTypeDisplay.quantity || 0
+                      }}</span>
+                      <span
+                        class="plus_Buttondisabled"
+                        type="button"
+                        id="{{ boxTypeDisplay.id }}"
+                        >+</span
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <ng-container *ngIf="boxTypeDisplay.remaining != 0">
+                <div
+                  class="outOfStockProduct"
+                  *ngIf="boxTypeDisplay.remaining <= stockThresold"
+                >
+                  {{ outOfStockText }}
+                </div>
+                <div
+                  class="outOfStockProductWarning"
+                  *ngIf="
+                    boxTypeDisplay.remaining <= stockThresoldWarning &&
+                    boxTypeDisplay.remaining > stockThresold
+                  "
+                >
+                  {{ stockWarning }}
+                </div>
+              </ng-container>
+              <!-- </div> -->
+              <!-- <div class="totalCost_Block">
+              <p class="totalCost_BlockHeading">
+                Total Cost -
+                <span class="totalCost_Value"> (${{boxTypeDisplay.totalAmount || 0}})</span>
+              </p>
+            </div> -->
+            </div>
+          </div>
+
+          <div class="box_Bottom--content">
+            <span>Selected Quantity :</span>
+            <span [ngClass]="{ errorQty: selectQty && !selectedBox }">
+              {{
+                selectedBox ||
+                  "No Boxes selected, Atleast One Should Be Selected to Checkout."
+              }}</span
+            >
+            &nbsp; &nbsp;
+
+            <p>
+              <span>Total Cost :</span>
+              <span>$ {{ totalProductAmount || 0 }}</span>
+            </p>
+          </div>
+        </div>
+        <ng-template #loadingProductNode>
+          <div
+            class="message-Products--content"
+            *ngIf="!errorLoadingProducts; else errorloadingProductNode"
+          >
+            <p class="loader">
+              Loading<span class="loader__dot">.</span
+              ><span class="loader__dot">.</span
+              ><span class="loader__dot">.</span>
+            </p>
+          </div>
+          <ng-template #errorloadingProductNode>
+            <div class="message-Products--content">
+              {{ productLoadingError }}
+            </div>
+          </ng-template>
+        </ng-template>
+      </div>
+      <div class="heading_Block">
+        <div class="heading_Information">
+          <img src="../../assets/3.0.Pickup_Location.png" />
+          <h3 class="heading--text">Pickup Location</h3>
+        </div>
+      </div>
+      <div class="pickup_Location--Content">
+        <!-- <h3 class="pickupLocation_Heading">Pickup Location *</h3> -->
+        <!-- <p class="box_SubHeading">
+          Order by Thursday 7pm for next day p/o B-Line Warehouse parking lot
+          Friday 3pm - 7pm.
+        </p> -->
+        <p class="pickupLocation_Text boldText">
+          B-Line at the Redd • 1140 SE 7th Avenue, Portland, 97214- Dock 4
+        </p>
+        <p class="pickupLocation_Text boldText">
+          Weekly orders must be placed by Thursday at 5pm to facilitate a Friday
+          pickup.
+        </p>
+        <p class="pickupLocation_Text">
+          Drive-thru, “touch-free” pickup of your Greater Good Box will be at
+          the B-Line at the Redd,<span class="boldText">
+            Dock 4 on the North side of the Redd</span
+          >
+          building located at
+          <span class="boldText">1140 SE 7th Avenue, Portland, 97214</span> (on
+          SE Taylor Street, between 7th and 8th).
+          <span class="boldText">Just look for the New Seasons banner!</span>
+        </p>
+        <p class="pickupLocation_Text boldText">
+          Boxes are available for pickup between 2pm and 5pm each Friday.
+        </p>
+        <p class="nsmFoodOrder_SamllText">
+          All sales of Greater Good Boxes are final.<br />
+          If you decide not to pick up your box, we will donate it to someone in
+          need.
+        </p>
+        <div class="radioButtons_Block" *ngIf="false">
+          <div
+            class="form-check"
+            *ngFor="let pickUpLocation of pickUpLocationResp; let i = index"
+          >
+            <input
+              id="{{ pickUpLocation.id }}"
+              class="radio-custom"
+              name="radio-group"
+              type="radio"
+              value="{{ i }}"
+              [checked]="i == 0"
+              (change)="handleChange($event, pickUpLocation)"
+            />
+            <label for="{{ pickUpLocation.id }}" class="radio-custom-label">{{
+              pickUpLocation.location
+            }}</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="Payment_Box--Button">
+        <p class="Proceedtopay-Text">
+          <span class="boldText">NOTE : </span>Please fill all the mandatory
+          fields
+        </p>
+        <button
+          type="button"
+          (click)="onSubmit()"
+          class="Proceedtopay--DetailButton"
+        >
+          Proceed to pay ${{ totalProductAmount || 0 }}
+        </button>
+      </div>
+    </form>
+  </section>
+</main>

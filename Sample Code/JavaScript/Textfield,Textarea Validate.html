@@ -1,0 +1,187 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+
+<title>Validate Textbox</title>
+
+<script type="text/javascript">
+
+var reg = /^[0-9]+$/;
+
+function is_valid_integer(textField){
+
+if(!reg.test(textField.value)){
+
+alert("Please enter integers only");
+
+textField.value="";
+
+textField.focus();
+
+return false;
+
+}
+
+}
+
+function validate_form(){
+
+var e = 0;
+
+if(isEmpty("age", "Please enter Age", "age_info") || !reg.test(document.getElementById("age").value)){
+
+e++
+
+}
+
+if(isEmpty("description", "Please enter Description", "description_info")){
+
+e++
+
+}else{
+
+if(document.getElementById("description").value.length<20){
+
+document.getElementById("description_info").innerHTML="Minimum 20 Characters";
+
+e++
+
+}
+
+}
+
+if(e > 0){
+
+alert("Please fill form details correctly");
+
+return false
+
+}else{
+
+return true
+
+}
+
+}
+
+function isEmpty(e, t, n)
+
+{
+
+var r = document.getElementById(e);
+
+var n = document.getElementById(n);
+
+if(r.value.replace(/\s+$/, "") == "")
+
+{
+
+n.innerHTML = t;
+
+r.value = "";
+
+r.focus();
+
+return true
+
+}
+
+else
+
+{
+
+n.innerHTML = "";
+
+return false
+
+}
+
+}
+
+</script>
+
+</head>
+
+<body>
+
+<form id="text_box_validation_4" name="text_box_validation_4" action="#" method="post" onSubmit="javascript:return validate_form();">
+
+<table border="0" class="ex_table">
+
+<tbody>
+
+<tr>
+
+<td colspan="3" align="left">Validate textbox and textare</td>
+
+</tr>
+
+<tr>
+
+<td align="right">Age</td>
+
+<td>
+
+<input name="age" type="text" class="tb" id="age" size="5" maxlength="50" onKeyUp="javascript:is_valid_integer(this);" />
+
+<label id="age_info" style="color: red; font-style: italic;"></label>
+
+</td>
+
+<td>&nbsp;</td>
+
+</tr>
+
+<tr>
+
+<td align="right">Description<br/>(Minimum 20 characters)</td>
+
+<td><textarea name="description" cols="30" rows="5" class="tb" id="description"></textarea><br/>
+
+<label id="description_info" style="color: red; font-style: italic;"></label>
+
+</td>
+
+<td>&nbsp;</td>
+
+</tr>
+
+<tr>
+
+<td></td>
+
+<td>
+
+<input name="btnSubmit" type="submit" value="Submit" id="btnSubmit"/>
+
+</td>
+
+<td></td>
+
+</tr>
+
+<tr>
+
+<td align="right">&nbsp;</td>
+
+<td colspan="2">&nbsp;</td>
+
+</tr>
+
+<tr>
+
+<td colspan="3" align="right"><a href="#" target="_self">Programming Help</a></td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</form>
+
+</body>
+
+</html>

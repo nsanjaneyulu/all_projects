@@ -1,0 +1,65 @@
+<wicket:extend>
+    <div id="content" style="height:100%;">
+    <div class="bread-crumb">
+            	<h1>Assets Management / Asset Information</h1>
+            </div>
+        <form method="post" wicket:id="addnewasset">
+            <div wicket:id="feedback"></div>
+                <div class="addData">
+                    <ul>
+                        <li>
+                            <label>Asset Code</label> <font color="#FF0000">*</font><br />
+                            <input type="text" name="assetCode"wicket:id="assetCode" class="number_effect" maxlength="30">
+                        </li>
+                        <li>	
+                            <label>Asset Type</label><font color="#FF0000">*</font><br />
+                            <select wicket:id="assetType" class="dropdown_effect" maxlength="30"></select>							
+                        </li>
+                        <li>
+                            <label>Asset Name</label><font color="#FF0000">*</font><br />
+                            <input type="text" name="assetName"wicket:id="assetName" class="textfield_effect" maxlength="30">
+                        </li>
+                        <li>
+                            <label>Date of Purchase</label><font color="#FF0000">*</font><br />
+                            <input type="text" id="dateOfPurchase" name="dateOfPurchase" wicket:id="dateOfPurchase"
+                             class="date_effect">
+                        </li>
+                        <li>
+                            <label>Warranty End Date</label><br />
+                            <input type="text" id="warrantyEndDate" name="warrantyEndDate" wicket:id="warrantyEndDate"
+                             class="date_effect">							
+                        </li>
+                        <li>	
+                            <label>Quantity</label><font color="#FF0000">*</font><br />
+                            <input type="text" name="quantity" wicket:id="quantity" class="number_effect" maxlength="6"
+                            style="text-align:right;">
+                        </li>
+                        <li>	
+                            <label>Cost Per Unit</label><font color="#FF0000">*</font><br />
+                            <input type="text" name="cost"  wicket:id="cost" class="number_effect" maxlength="8"
+                            style="text-align:right;">
+                        </li>
+                        <li>
+                            <label>Total Cost</label><font color="#FF0000">*</font><br />
+                            <input type="text" name="totalCost" wicket:id="totalCost" class="number_effect" maxlength="15"
+                            style="text-align:right;">
+                        </li>  
+                        <li>			
+                            <label>Description</label><font color="#FF0000">*</font><br />
+                            <textarea name="description" wicket:id="description" class="bigtextarea_effect" maxlength="140"></textarea>
+                        </li>
+                        <li>
+                            <label>Remarks</label><br />
+                            <textarea name="remarks" wicket:id="remarks" class="bigtextarea_effect" maxlength="270"></textarea>		
+                        </li> 
+                    </ul>
+                         	
+            </div>
+            <div style="clear:both;"></div>
+                    <div class="newButton">
+                       <br />
+                       <INPUT TYPE="SUBMIT" VALUE="Submit" wicket:id="save" class="button">
+                    </div>  
+        </form>
+    </div>
+</wicket:extend>

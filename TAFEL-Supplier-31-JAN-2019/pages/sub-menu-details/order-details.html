@@ -1,0 +1,145 @@
+<ion-header>
+      <ion-navbar>
+         <div class="displayFlex" >
+            <div style="padding-left:0px;">
+               <span class="order__Id">{{fullorder.fullOrder5DigitId}}
+               </span>
+               <span *ngIf ="(fullorder.packagingCharge > 0)" class="deliveryStyles" style="background: repeating-linear-gradient(
+                  45deg,
+                  #5fc45a,
+                  #5fc45a 10px,
+                  #3ad832  10px,
+                  #3ad832  20px
+                  );">
+               Delivery
+               <span class="deliveryStylesArrow" style="border-color:#5fc45a transparent;">
+               </span>
+               </span>
+               <span *ngIf ="(fullorder.packagingCharge == 0)" class="pickupStyles"  style="background: repeating-linear-gradient(
+                  45deg,
+                  #ff9f1c,
+                  #ff9f1c 10px,
+                  #ffbe0b 10px,
+                  #ffbe0b 20px
+                  );">
+               Pickup
+               <span class="pickupStylesArrow" style="border-color:#ff9f1c transparent;">
+               </span>
+               </span>
+               <div class="smallTitle displayFlex" style="padding:5px 0px;">
+                  <span>{{vehicleNumber}}</span>
+               </div>
+            </div>
+            <!-- <div class="module">
+               <h2 class="stripe-6">Vertical</h2>
+               </div> -->
+            <div class="module displayFlex">
+               <span class="stripe-6">{{fullOrderstatus}}</span>
+            </div>
+         </div>
+         <div style="display: flex; flex-direction: row-reverse;">
+            <div *ngIf="(fullorder.status != 'COMPLETED')" style="display:inline-block;" (click)="rejectFullOrder(fullorder)">
+            <button class="declaneStyle" icon-start ion-button outline small color="secondary">
+               <ion-icon name="close"></ion-icon>
+               Decline
+            </button>
+         </div>
+         <div *ngIf ="(fullorder.status === 'RECEIVED')" style="display:inline-block;">
+            <button class="aceptStyle" icon-start ion-button outline small color="secondary" (click) ="acceptFullOrder(fullorder)">
+               <ion-icon name="checkmark"></ion-icon>
+               Accept
+            </button>
+         </div>
+         <div *ngIf ="(fullorder.status === 'INPROGRESS') || (fullorder.status === 'PROCESSING')" style="display:inline-block;" (click) ="handOverFullOrder(fullorder)">
+         <button class="aceptStyle" icon-start ion-button outline small color="secondary">
+            <ion-icon name="logo-xbox"></ion-icon>
+            Handedover
+         </button>
+         </div>
+         </div>
+      </ion-navbar>
+   </ion-header>
+   
+   <ion-content >
+         <div *ngIf ="(fullorder.status === 'INPROGRESS') || (fullorder.status === 'PROCESSING') || (fullorder.status === 'RECEIVED')" style="margin-bottom:20px;"></div>
+      <div>
+         <div *ngFor="let fullOrderObject of fullOrderObjects" style="border-bottom: 5px solid #c2c0c0; ">
+            <div>
+               <ion-item style="background:#f8f8f8;">
+                  <!-- <ion-avatar item-start> <img src="{{imageEndPoint}}/{{fullOrderObject.outlet.image}}"> </ion-avatar> -->
+                  <div class="order__Details"> {{fullOrderObject.outlet.name}} </div>
+               </ion-item>
+            </div>
+            <div *ngFor="let order of fullOrderObject.orders">
+               <ion-item >
+                  <ion-avatar item-start> <img src="{{imageEndPoint}}/{{order.item.img}}"> </ion-avatar>
+                  <div class="item__Details">{{order.item.name}}   </div>
+                  <div *ngIf ="(order.status === 'RECEIVED')">
+                     <span class="smallTitle">Qty:<b>{{order.receivedCount}}</b></span>
+                  </div>
+                  <div *ngIf ="(order.status === 'INPROGRESS' )">
+                     <div class="smallTitle" *ngIf ="order.inprogressCount>0" >Qty:<b>{{order.inprogressCount}} </b></div>
+                     <div class="smallTitle" *ngIf ="order.receivedCount>0" >Qty:<b>{{order.receivedCount}} </b></div>
+                     <div class="smallTitle" style="color:#e78161">Rejected Qty:<b>{{order.rejectedCount}}</b>
+                     </div>
+                  </div>
+                  <div *ngIf ="(order.status === 'COMPLETED')">
+                     <div class="smallTitle displayFlex">
+                        <span style="color:#e78161">Rejected Qty:<b>{{order.rejectedCount}}</b></span>
+                     </div>
+                     <div class="smallTitle displayFlex">
+                        <span style="color:#5cd0b4;">HandedOver Qty:<b>{{order.handedoverCount}}</b></span>
+                        <span *ngIf ="(order.status === 'COMPLETED')" >
+                        <span style="color:#11BA91" class="itemStatus__Completed">Completed</span>
+                        </span>
+                     </div>
+                  </div>
+               </ion-item>
+               <ion-item *ngIf ="(order.status != 'COMPLETED')">
+                  <div style="display: flex; flex-direction: row-reverse;">
+                     <div style="display:inline-block;" (click)="goRejectOrder(order)">
+                        <button class="declaneStyle" icon-start ion-button outline small color="secondary">
+                           <ion-icon name="close"></ion-icon>
+                           Decline
+                        </button>
+                     </div>
+                     <div *ngIf ="(order.status === 'RECEIVED')" style="display:inline-block;">
+                        <button class="aceptStyle" icon-start ion-button outline small color="secondary" (click) =acceptOrder(order)>
+                           <ion-icon name="checkmark"></ion-icon>
+                           Accept
+                        </button>
+                     </div>
+                     <div *ngIf ="(order.status === 'INPROGRESS')" style="display:inline-block;">
+                        <button class="aceptStyle" icon-start ion-button outline small color="secondary" (click) =handedOvertheOrder(order)>
+                           <ion-icon name="logo-xbox"></ion-icon>
+                           HandedOver
+                        </button>
+                     </div>
+                  </div>
+               </ion-item>
+            </div>
+         </div>
+      </div>
+   </ion-content>
+   <div  *ngIf ="!(fullorder.status === 'COMPLETED')">
+   <ion-footer>
+      <div class="footer__styles displayFlex">
+         <div class="" >
+            <span class="print__callDiner">
+               <ion-icon name="print"></ion-icon>
+               Print
+            </span>
+         </div>
+       
+              
+            <div class="" (click)=callDiner(callDinerPhNum)>
+               <span class="print__callDiner">
+                  <ion-icon name="call"></ion-icon>
+                  Call Diner
+               </span>
+            </div>
+          
+      
+      </div>
+   </ion-footer>
+   </div>

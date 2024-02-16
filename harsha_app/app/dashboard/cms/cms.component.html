@@ -1,0 +1,137 @@
+<div class="row">
+  <div class="col-10 m-auto">
+    <div class="row" *ngIf="cmsData">
+      <div class="col-12" *ngFor="let item of masterData.cmsTabs;let i = index">
+        <div class="card mb-3 mx-1">
+          <div class="card-body">
+            <div class="card-title d-flex justify-content-between">
+              <h4 class="text-capitalize">{{item}} </h4>
+              <a class="theme_button text-dark"
+                (click)="item == masterData.cmsTabs[0] ? open(countries,'countries') : item == masterData.cmsTabs[1] ? open(roles,'roles'):item == masterData.cmsTabs[2] ? open(stores,'stores'):false">
+                <small><span class="oi oi-plus"></span></small> {{item}}
+              </a>
+            </div>
+            <!-- countries-->
+            <ul class="list-group list-group-flush" *ngIf="item==masterData.cmsTabs[0]">
+              <li class="list-group-item" *ngFor="let item of cmsData.countriesInfo;let i = index">
+                {{item.country_name}} - {{item.country_code}}
+              </li>
+            </ul>
+            <!-- roles-->
+            <ul class="list-group list-group-flush" *ngIf="item==masterData.cmsTabs[1]">
+              <li class="list-group-item" *ngFor="let item of cmsData.rolesInfo;let i = index">
+                {{item.role_name}} - {{item.role_status}}
+              </li>
+            </ul>
+            <!-- stores-->
+            <ul class="list-group list-group-flush" *ngIf="item==masterData.cmsTabs[2]">
+              <li class="list-group-item" *ngFor="let item of cmsData.companiesInfo;let i = index">
+                {{item.company_name}} - {{item.company_status}}
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- countries modal -->
+<ng-template #countries let-d="dismiss">
+  <div class="modal-header">
+    <h4 class="modal-title text-gold">Add new country</h4>
+    <button type="button" class="close text-gold" aria-label="Close" (click)="d('Save click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form [formGroup]="cmsForm" (ngSubmit)="cmsFormSubmit(cmsForm.value,'country')">
+      <div class="form-group col-12">
+        <label for="Store" class="text-gray"> Country</label>
+        <input type="text" class="form-control cst_form_control" id="country" aria-describedby="emailHelp"
+          name="country" formControlName="country_name" placeholder="country">
+      </div>
+      <div class="form-group col-12">
+        <label for="country_code" class="text-gray"> Country code</label>
+        <input type="text" class="form-control cst_form_control" id="country_code" aria-describedby="emailHelp"
+          name="country_code" formControlName="country_code" placeholder="Country code">
+      </div>
+      <div class="col-12">
+        <button type="submit" class="btn  theme_button">Create</button>
+      </div>
+    </form>
+  </div>
+</ng-template>
+<!-- countries modal -->
+<ng-template #roles let-e="dismiss">
+  <div class="modal-header">
+    <h4 class="modal-title text-gold">Add new role</h4>
+    <button type="button" class="close text-gold" aria-label="Close" (click)="e('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form [formGroup]="cmsForm" (ngSubmit)="cmsFormSubmit(cmsForm.value,'role')">
+      <div class="form-group">
+        <label for="dateOfBirth">Role</label>
+        <div class="form-group col-12">
+          <label for="Store" class="text-gray"> Role</label>
+          <input type="text" class="form-control cst_form_control" id="Role" aria-describedby="emailHelp" name="Role"
+            formControlName="role_name" placeholder="Role">
+        </div>
+        <div class="col-12">
+          <button type="submit" class="btn  theme_button">Create</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</ng-template>
+<!-- countries modal -->
+<ng-template #stores let-f="dismiss" lef-size="lg">
+  <div class="modal-header">
+    <h4 class="modal-title text-gold">Add new store</h4>
+    <button type="button" class="close text-gold" aria-label="Close" (click)="f('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form [formGroup]="cmsForm" (ngSubmit)="cmsFormSubmit(cmsForm.value,'store')" class="row">
+      <div class="col-12">
+        <div class="row">
+          <div class="col-8">
+            <div class="form-group">
+              <label for="Request_company" class="text-gray"> Country</label>
+              <select class="custom-select custom-select-lg cst_form_control" formControlName="company_country_id">
+                <option [selected]="true"> Country</option>
+                <option *ngFor="let item of cmsData.countriesInfo; let i=index" [value]="item.country_id">
+                  {{item.country_name}}</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="Store" class="text-gray"> Store</label>
+              <input type="text" class="form-control cst_form_control" id="Store" aria-describedby="emailHelp"
+                name="Store" formControlName="company_name" placeholder="Store">
+            </div>
+            <div class="form-group">
+              <label for="address" class="text-gray"> Address</label>
+              <textarea name="address" id="address " cols="5" rows="5" class="form-control cst_form_control w-100"
+                formControlName="company_address" placeholder="Address"></textarea>
+            </div>
+          </div>
+          <div class="col-4 d-flex justify-content-center">
+            <label for="companyPic" class="cursor_pointer store_picture text-center">
+              <img src="assets/images/plusmax-tracker_icons_plus-max-logo.png" alt="" class="img-responsive w-100" id=""
+                *ngIf="!image">
+              <img [src]="image" alt="" class="img-responsive w-100" id="" *ngIf="image">
+              <input type="file" name="companyPic" id="companyPic" accept="image/*" (change)="changeListener($event)"
+                class="d-none">
+              <span class="text-gold"> {{masterData.infoMessages.CompanyImageUpload}}</span>
+            </label>
+          </div>
+          <div class="col-12">
+            <button type="submit" class="btn  theme_button">Create</button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</ng-template>

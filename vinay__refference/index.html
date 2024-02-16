@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
+<title>Nalashaa : HRM</title>
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/styles.css" rel="stylesheet">
+<link href="css/plugins/morris.css" rel="stylesheet">
+<link href="font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <!-- Brand and toggle get grouped for better mobile display -->
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+    <a class="navbar-brand" href="index.html"><img src="images/nalashaa.png" class="img-responsive"></a> </div>
+  <div class="collapse navbar-collapse navbar-ex1-collapse navbar-left">
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Employee Details</a></li>
+      <li><a href="#">About</a></li>
+      <li class="dropdown"> <a data-toggle="dropdown" class="dropdown-toggle" href="#">Dropdown <span class="caret"></span></a>
+        <ul role="menu" class="dropdown-menu">
+          <li><a href="#">Menu 1</a></li>
+          <li><a href="#">Menu 2</a></li>
+          <li><a href="#">Menu 3</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  <!-- Top Menu Items -->
+  <ul class="nav navbar-right top-nav">
+    <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-envelope"></i></a> </li>
+    <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell"></i></a> </li>
+    <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> User Name <b class="caret"></b></a>
+      <ul class="dropdown-menu">
+        <li> <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a> </li>
+        <li> <a href="#"><i class="fa fa-fw fa-gear"></i> Settings</a> </li>
+        <li class="divider"></li>
+        <li> <a href="#"><i class="fa fa-fw fa-power-off"></i> Log Out</a> </li>
+      </ul>
+    </li>
+  </ul>
+  <!-- /.navbar-collapse -->
+</nav>
+<div class="container-fluid">
+  <form>
+    <div class="skin-chooser-wrap"> <a href="javascript:void(0)" id="arrow_left_navigation"> <span class="skin-chooser-toggle"><i class="fa fa-angle-right"></i></span> </a> </div>
+    <div class="row">
+      <aside id="sidebar">
+        <div class="user-media well-small">
+          <ul class="nav navbar-nav side-nav" id="first_navigation_left" style="display:none;">
+            <li class="text-center user-info"> <a href="#"><img src="images/find_user.png" class="user-image img-responsive"/>
+              <div class="user-name">Vinay Kumar</div>
+              <div class="profession">Software Engineer</div>
+              </a></li>
+            <li>
+              <div class="progress_bar"> <strong>Total Experience</strong>
+                <div class="progress">
+                  <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;"> <span class="sr-only">60% Complete</span> </div>
+                </div>
+                5 years </div>
+            </li>
+            <li>
+              <div class="progress_bar"><strong> In this Organization</strong>
+                <div class="progress">
+                  <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;"> <span class="sr-only">60% Complete</span> </div>
+                </div>
+                3 yers </div>
+            </li>
+            <li> <a class="active-menu"  href="#">
+              <p>22</p>
+              Leave Available</a> </li>
+            <li> <a class="active-menu"  href="#">
+              <p>22</p>
+              Approaching Holidays</a> </li>
+          </ul>
+          <ul class="nav navbar-nav side-nav">
+            <li class="text-center user-info"> <a href="#"><img src="images/find_user.png" class="user-image img-responsive"/>
+              <div class="user-name">Vinay Kumar</div>
+              </a></li>
+            <li> <a class="active-menu"  href="#"><i class="fa fa-user fa-2x"></i>Personal Detail</a> </li>
+            <li> <a class="active-menu"  href="#"><i class="fa fa-briefcase fa-2x"></i>Employment History</a> </li>
+            <li> <a class="active-menu"  href="#"><i class="fa fa-book fa-2x"></i>Education Details</a> </li>
+            <li> <a class="active-menu"  href="#"><i class="fa fa-puzzle-piece fa-2x"></i>Skill Sets</a> </li>
+            <li> <a class="active-menu"  href="#"><i class="fa fa-plane fa-2x"></i>Travel</a> </li>
+            <li> <a class="active-menu"  href="#"><i class="fa fa-umbrella fa-2x"></i>Dependants</a> </li>
+          </ul>
+        </div>
+      </aside>
+      <section id="content" class="old_content">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+              <div class="dashboard-box gray gutter2">
+                <div class="row">
+                  <div class="col-lg-4 col-md-4 col-sm-4">
+                    <div class="form-group">
+                      <label for="exampleInputEmail2">First Name</label>
+                      <input type="text" placeholder="First Name" id="" class="form-control">
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-md-4 col-sm-4">
+                    <div class="form-group">
+                      <label for="exampleInputEmail2">Second Name</label>
+                      <input type="text" placeholder="Second Name" id="" class="form-control">
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-md-4 col-sm-4">
+                    <div class="form-group">
+                      <label for="exampleInputEmail2">Last Name</label>
+                      <input type="text" placeholder="Last Name" id="" class="form-control">
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-md-4 col-sm-4">
+                    <div class="form-group">
+                      <label for="exampleInputEmail2">Date of Birth</label>
+                      <input type="text" placeholder="Date of Birth" id="" class="form-control">
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-md-4 col-sm-4">
+                    <div class="form-group">
+                      <label for="exampleInputEmail2">Select Group</label>
+                      <input type="text" placeholder="Select Group" id="" class="form-control">
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-md-4 col-sm-4">
+                    <div class="form-group">
+                      <label for="exampleInputEmail2">Personal Email ID</label>
+                      <input type="text" placeholder="Personal Email ID" id="" class="form-control">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+              <div class="dashboard-box gray-border">
+                <div class="row">
+                  <div class="col-lg-4 col-md-4 col-sm-4">
+                    <div class="form-group">
+                      <label for="exampleInputEmail2">Emergency Contact</label>
+                      <input type="text" placeholder="Emergency Contact" id="" class="form-control">
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-md-4 col-sm-4">
+                    <div class="form-group">
+                      <label for="exampleInputEmail2">Name of the Person</label>
+                      <input type="text" placeholder="Name of the Person" id="" class="form-control">
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-md-4 col-sm-4">
+                    <div class="form-group">
+                      <label for="exampleInputEmail2">Relationship</label>
+                      <input type="text" placeholder="Relationship" id="" class="form-control">
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-md-4 col-sm-4">
+                    <div class="form-group">
+                      <label for="exampleInputEmail2">Email ID</label>
+                      <input type="text" placeholder="Email ID" id="" class="form-control">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+              <div class="dashboard-box gray-border">
+                <div class="row">
+                  <div class="col-lg-2 col-md-2 col-sm-2">
+                    <div class="form-group">
+                      <label for="exampleInputEmail2">Gender</label>
+                      <div class="radio">
+                        <label>
+                        <input type="radio">
+                        <span class="text">Male</span> </label>
+                        <label>
+                        <input type="radio">
+                        <span class="text">Female</span> </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-md-4 col-sm-4">
+                    <div class="form-group">
+                      <label for="exampleInputEmail2">Nationality</label>
+                      <input type="text" placeholder="Nationality" id="" class="form-control">
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-md-4 col-sm-4">
+                    <div class="form-group">
+                      <label for="exampleInputEmail2">Religion</label>
+                      <input type="text" placeholder="Religion" id="" class="form-control">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+              <div class="dashboard-box gray-border">
+                <div class="row">
+                  <div class="col-lg-6 col-md-6 col-sm-6">
+                    <div class="form-group">
+                      <label for="exampleInputEmail2">Permanent Address</label>
+                      <textarea class="form-control"></textarea>
+                    </div>
+                    <div class="row">
+                      <div class="col-lg-6 col-md-6 col-sm-6">
+                        <label for="exampleInputEmail2">Country Code</label>
+                        <input type="text" placeholder="" id="" class="form-control">
+                      </div>
+                      <div class="col-lg-6 col-md-6 col-sm-6">
+                        <label for="exampleInputEmail2">Phone Number</label>
+                        <input type="text" placeholder="" id="" class="form-control">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-6 col-md-6 col-sm-6">
+                    <div class="form-group">
+                      <label for="exampleInputEmail2">Present Address</label>
+                      <textarea class="form-control"></textarea>
+                    </div>
+                    <div class="form-group">
+                      <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                          <label for="exampleInputEmail2">Country Code</label>
+                          <input type="text" placeholder="" id="" class="form-control">
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                          <label for="exampleInputEmail2">Phone Number</label>
+                          <input type="text" placeholder="" id="" class="form-control">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+              <button class="btn btn-primary" type="submit"><i class="fa fa-user"></i> Save &amp; Proceed</button>
+              <button class="btn btn-default" type="submit"><i class="fa fa-refresh"></i> Reset</button>
+            </div>
+          </div>
+          <div class="gutter"></div>
+        </div>
+      </section>
+    </div>
+  </form>
+</div>
+<footer>hrms@nalashaa.com</footer>
+<script src="js/jquery-1.11.0.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script>
+	$( document ).ready(function() {
+		$( "#arrow_left_navigation" ).click(function() {
+			
+			if(document.getElementById('first_navigation_left').style.display == 'none') {
+					$("#first_navigation_left").show();
+					$("#content").attr('class', 'new_content');
+			}
+			else {
+					$("#first_navigation_left").hide();
+					$("#content").attr('class', 'old_content');
+			}
+		});	
+	});
+</script>
+</body>
+</html>

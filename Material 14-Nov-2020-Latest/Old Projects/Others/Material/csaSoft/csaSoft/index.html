@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html ng-app="csaSoft">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link href="css/animate.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/angular.js"></script>
+    <script type="text/javascript" src="js/angular-route.js"></script>
+    <title>CSA Soft Home</title>
+</head>
+<body>
+    <div class="container pageBg">
+        <div ng-include='"template/header.html"'></div>
+        <div class="clearfix"></div>
+        <section ng-view>        
+        </section>
+        <div class="clearfix"></div>
+        <div ng-include='"template/footer.html"'></div>
+    </div>
+    <script src="js/csaSoftModule.js" type="text/javascript"></script>
+    <script src="js/csaSoftController.js" type="text/javascript"></script>
+</body>
+</html>

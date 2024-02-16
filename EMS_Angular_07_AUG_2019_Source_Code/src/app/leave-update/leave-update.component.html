@@ -1,0 +1,67 @@
+<div class="card">
+  <div class="card-body">
+     <h5 class="card-title">Employee Update</h5>
+     <form [formGroup]="emsLeaveRequestUpdate">
+        <div class="row">
+           <div class="form-group col-sm-3">
+              <label>User Name</label>
+              <input type="text" class="form-control" placeholder="Enter Username" formControlName="userName"
+              [(ngModel)]="userName" [ngClass]="{ 'is-invalid': submitted && f?.userName?.errors }">
+              <div *ngIf="submitted && f?.userName?.errors" class="invalid-feedback">
+                 <div *ngIf="f?.userName?.errors?.required">User Name is required</div>
+              </div>
+           </div>
+           <div class="form-group col-sm-3">
+              <label>Password</label>
+              <input type="text" class="form-control" placeholder="leaveType" formControlName="leaveType"
+              [(ngModel)]="leaveType" [ngClass]="{ 'is-invalid': submitted && f?.leaveType?.errors }">
+              <div *ngIf="submitted && f?.leaveType?.errors" class="invalid-feedback">
+                 <div *ngIf="f?.leaveType?.errors?.required">Password is required</div>
+              </div>
+           </div>
+           <div class="form-group col-sm-3">
+              <label for="leaveReason">Retype Password</label>
+              <input type="text" class="form-control" formControlName="leaveReason" [(ngModel)]="leaveReason"
+              placeholder="Retype Password">
+           </div>
+           <div class="form-group col-sm-3">
+              <label for="noOfDays">Full Name</label>
+              <input type="text" class="form-control" formControlName="noOfDays" [(ngModel)]="noOfDays"
+              placeholder="Full Name" [ngClass]="{ 'is-invalid': submitted && f?.fullName?.errors }">
+              <div *ngIf="submitted && f?.noOfDays?.errors" class="invalid-feedback">
+                 <div *ngIf="f?.noOfDays?.errors?.required">Full Name is required</div>
+              </div>
+           </div>
+           <div class="form-group col-sm-3">
+            <label for="leaveStatus">Leave Status</label>
+            <input type="text" class="form-control" formControlName="leaveStatus" [(ngModel)]="leaveStatus"
+            placeholder="Full Name" [ngClass]="{ 'is-invalid': submitted && f?.leaveStatus?.errors }">
+            <div *ngIf="submitted && f?.leaveStatus?.errors" class="invalid-feedback">
+               <div *ngIf="f?.leaveStatus?.errors?.required">leaveStatus is required</div>
+            </div>
+         </div>
+           <div class="form-group col-sm-3">
+              <label for="fromDate">DOB</label>
+              <input type="text" class="form-control" formControlName="fromDate" [(ngModel)]="fromDate" placeholder="Date of Birth"
+              [ngClass]="{ 'is-invalid': submitted && f?.fromDate?.errors }">
+              <div *ngIf="submitted && f?.fromDate?.errors" class="invalid-feedback">
+                 <div *ngIf="f?.fromDate?.errors?.required">DOB is required</div>
+              </div>
+           </div>
+           <div class="form-group col-sm-3">
+              <label for="toDate">DOB</label>
+              <input type="text" class="form-control" formControlName="toDate" [(ngModel)]="toDate" placeholder="Date of Birth"
+              [ngClass]="{ 'is-invalid': submitted && f?.toDate?.errors }">
+              <div *ngIf="submitted && f?.toDate?.errors" class="invalid-feedback">
+                 <div *ngIf="f?.toDate?.errors?.required">DOB is required</div>
+              </div>
+           </div>
+           <div class="row">
+              <div class="col-sm-1">
+                 <button type="submit" (click)="goEmsLeaveUpdate()" class="btn btn-primary" value="Sign up">Submit</button>
+              </div>
+           </div>
+          </div>
+     </form>
+     </div>
+  </div>

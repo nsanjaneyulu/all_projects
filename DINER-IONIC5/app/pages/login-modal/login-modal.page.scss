@@ -1,0 +1,158 @@
+.signUpClass {
+    text-align: center;
+    margin: 2%;
+    font-size: 1.2rem;
+}
+
+.tafel-desc {
+    margin-top: 40%;
+    margin-left: 10%;
+    .tafel-title {
+        color: #333333;
+        //font-family: Lato;
+        font-size: 36px;
+        font-weight: bold;
+        letter-spacing: 5px;
+        line-height: 44px;
+    }
+    .tafel-sub-title {
+        color: #333333;
+        font-size: 13px;
+        font-weight: 600;
+        line-height: 18px;
+        letter-spacing: 0.5px;
+    }
+}
+
+.selectlabelCss {
+    background-color: transparent !important;
+    border-style: hidden;
+}
+
+.tafelButtonColor {
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    // letter-spacing: 2.5px;
+    text-align: center;
+    color: #FFFFFF !important;
+    width: 100%;
+    margin-top: 1.5rem;
+    background-color: #5c0632;
+    font-size: 0.9rem;
+    border-radius: 0.3rem;
+    padding: 0.5rem;
+}
+
+.resendOtpCss {
+    padding-top: 3% !important;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #5c0931 !important;
+    font-size: 14px;
+}
+
+
+/*.OTPEnter{
+    display:inline-block;
+    width:25px;
+    height:25px;
+    margin-left:10px;
+    border-radius: 50%;
+    --background:#e1e1e1;
+    --padding-start:1%;
+    }*/
+
+button:disabled,
+button[disabled] {
+    border: 1px solid #999999;
+    background-color: #5c0632;
+    opacity: 0.5;
+}
+
+.enterOTPMargin {
+    margin-top: 3%;
+}
+
+.OTPEnter {
+    display: inline-block;
+    width: 1.2rem;
+    height: 1.5rem;
+    margin-left: 0.2rem;
+    font-size: 0.9rem;
+    /* border-radius: 1%; */
+    /* --background: #e1e1e1; */
+    border-bottom: 0.1rem solid #b7b7b7;
+    --padding-start: 1%;
+}
+
+#form_login {
+    left: 10%;
+    right: 10%;
+    top: 50%;
+    position: absolute;
+    -webkit-transform: translate3d(-0%, -50%, 0);
+    -moz-transform: translate3d(-0%, -50%, 0);
+    transform: translate3d(-0%, -50%, 0);
+    background: #fff;
+    padding: 3rem 1rem;
+    box-shadow: -37px 0px 206px 0 rgba(0, 0, 0, 0.15);
+}
+
+.inputField_styles {
+    font-size: 14px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 0.23px;
+    text-align: left;
+    color: #231f20;
+}
+
+.tafel_logo_bottom {
+    position: absolute;
+    left: 50%;
+    -webkit-transform: translate3d(-50%, -50%, 0);
+    -moz-transform: translate3d(-50%, -50%, 0);
+    transform: translate3d(-50%, -50%, 0);
+    position: absolute;
+    bottom: 20px;
+}
+
+.tafel_explorer {
+    position: absolute;
+    right: 10%;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #FFFFFF;
+    top: 30px;
+}
+
+.enter_otp_styles {
+    font-size: 12px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.33;
+    letter-spacing: normal;
+    text-align: center;
+    color: #505050;
+}
+
+.inputStyles {
+    width: 100%;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    border-bottom: 1px solid black;
+    padding: 5px 15px;
+}

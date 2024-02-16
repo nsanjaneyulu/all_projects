@@ -1,0 +1,24 @@
+<ion-header>
+    <ion-navbar>
+      <ion-title>Avatar List</ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content class="list-avatar-page">
+    <ion-list>
+  
+      <ion-list-header>Today</ion-list-header>
+  
+      <ion-item *ngFor="let user of users">
+        <ion-avatar item-start>
+          <img src="{{user?.thumbnailUrl}}">
+        </ion-avatar>
+        <h2>{{user?.id}}</h2>
+        <p>{{user?.title}}</p>
+        <ion-note item-end>3:43 pm</ion-note>
+      </ion-item>
+  
+     
+    </ion-list>
+  
+  </ion-content>

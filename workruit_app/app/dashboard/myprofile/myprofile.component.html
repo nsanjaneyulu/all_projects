@@ -1,0 +1,124 @@
+<form [formGroup]="myProfileForm" (ngSubmit)="onSubmit('myProfile')">
+    <!-- First Name -->
+    <div class="form-group form_spacing" ng-class="{ 'is-invalid': submitted && formGet['firstName'].errors }">
+        <label>First Name</label>
+        <input type="text" [(ngModel)]="myProfileData.firstName" formControlName="firstName" placeholder="{{authDataInfo.placeHolders.signUpFirstName}}"
+            [ngClass]="{ 'is-invalid': submitted && formGet['firstName'].errors }"
+            class="form-control form_control_height transition with-icon icon-company" (change)="showPassword()">
+        <div *ngIf="submitted && formGet['firstName'].errors" class="invalid-feedback">
+            <div *ngIf="formGet['firstName'].errors['required']">{{authDataInfo.errorMessages.signUpFirstNameError}}
+            </div>
+        </div>
+    </div>
+    <!-- Last Name -->
+    <div class="form-group" ng-class="{ 'is-invalid': submitted && formGet['lastName'].errors }">
+        <label>Last Name</label>
+        <input type="text" [(ngModel)]="myProfileData.lastName" formControlName="lastName"
+            class="form-control form_control_height  myprofile transition with-icon icon-user"
+            placeholder="{{authDataInfo.placeHolders.signUpLastName}}" (change)="showPassword()">
+        <div *ngIf="submitted && formGet['lastName'].errors" class="invalid-feedback">
+            <div *ngIf="formGet['lastName'].errors['required']">{{authDataInfo.errorMessages.signUpLastNameError}}
+            </div>
+        </div>
+    </div>
+    <!-- Email -->
+    <div class="form-group" ng-class="{ 'is-invalid': submitted && formGet['email'].errors }">
+        <label>Email</label>
+        <input type="email" [(ngModel)]="myProfileData.email" formControlName="email"
+            class="form-control form_control_height myprofile transition with-icon icon-mail"
+            placeholder="{{authDataInfo.placeHolders.signUpWorkEmail}}" (change)="showPassword()">
+        <div *ngIf="submitted && formGet['email'].errors" class="invalid-feedback">
+            <div *ngIf="formGet['email'].errors['required']">{{authDataInfo.errorMessages.signUpWorkEmailError}}
+            </div>
+        </div>
+    </div>
+    <!-- Phone Number -->
+    <div class="form-group" ng-class="{ 'is-invalid': submitted && formGet['email'].errors }">
+        <label>Phone Number</label>
+        <input type="text" [(ngModel)]="myProfileData.telephone" formControlName="telephone"
+            class="form-control form_control_height myprofile transition with-icon icon-phone"
+            placeholder="{{authDataInfo.placeHolders.signUpPhoneNumber}}" (change)="showPassword()">
+        <div *ngIf="submitted && formGet['telephone'].errors" class="invalid-feedback">
+            <div *ngIf="formGet['telephone'].errors['required']">{{authDataInfo.errorMessages.signUpPhoneNumberError}}
+            </div>
+        </div>
+    </div>
+    <!-- Role -->
+    <div class="form-group" ng-class="{ 'is-invalid': submitted && formGet['email'].errors }">
+        <label>Role</label>
+        <select [(ngModel)]="myProfileData.jobRoleId" formControlName="jobRoleId" placeholder="Title"
+            [ngClass]="{ 'is-invalid': submitted && formGet['jobRoleId'].errors }"
+            class="form-control form_control_height transition" (change)="showPassword()">
+            <option *ngFor="let item of jobRoles; index as i" value="{{item.jobRoleId}}">{{item.jobRoleName}}</option>
+        </select>
+    </div>
+    <!-- Company Name -->
+    <div class="form-group">
+        <label>Company Name</label>
+        <input type="text" placeholder="{{authDataInfo.placeHolders.companyName}}" (change)="showPassword()"
+            [(ngModel)]="myProfileData.recruiterCompanyName" formControlName="recruiterCompanyName"
+            class="form-control form_control_height myprofile with-icon icon-company"
+            placeholder="{{authDataInfo.placeHolders.loginUserName}}">
+        <div *ngIf="submitted && formGet['recruiterCompanyName'].errors" class="invalid-feedback">
+            <div *ngIf="formGet['recruiterCompanyName'].errors['required']">
+                {{authDataInfo.errorMessages.companyNameError}}
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <button type="submit" *ngIf="saveChanges" class="btn btn-primary btn-lg btn-save postJob_btn"
+            id="save_changes">Save changes</button>
+    </div>
+</form>
+    <!-- Change Password -->
+    <div>
+        <form [formGroup]="changePwdForm" (ngSubmit)="onSubmit('changePwd')">
+            <div class="form-group" id="change-password" *ngIf="isShow">
+                <label>Password</label>
+                <div class="form-group">
+                    <input type="password" maxlength="20" formControlName="oldPassword"
+                        class="form-control form_control_height transition with-icon icon-password password-changer"
+                        placeholder="{{authDataInfo.placeHolders.oldPassword}}">
+                    <div *ngIf="submitted && formGetPwd['oldPassword'].errors" class="invalid-feedback">
+                        <div *ngIf="formGetPwd['oldPassword'].errors['required']">
+                            {{authDataInfo.errorMessages.oldPasswordError}}
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="password" maxlength="20" formControlName="newPassword"
+                        class="form-control transition with-icon icon-password password-changer form_control_height"
+                        placeholder="{{authDataInfo.placeHolders.newPassword}}">
+                    <div *ngIf="submitted && formGetPwd['newPassword'].errors" class="invalid-feedback">
+                        <div *ngIf="formGetPwd['newPassword'].errors['required']">
+                            {{authDataInfo.errorMessages.newPasswordError}}
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="password" maxlength="20" formControlName="reenterNewPassword"
+                        class="form_control_height form-control transition with-icon icon-password password-changer"
+                        placeholder="{{authDataInfo.placeHolders.reEnterNewPassword}}">
+                    <div *ngIf="submitted && formGetPwd['reenterNewPassword'].errors" class="invalid-feedback">
+                        <div *ngIf="formGetPwd['reenterNewPassword'].errors['required']">
+                            {{authDataInfo.errorMessages.reEnterNewPasswordError}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <button type="button" (click)="changepwdFun()" *ngIf="changepwd" id="change_pwd"
+                    class="btn btn-default btn-lg btn-change-password btn_change_password">Change
+                    password</button>
+            </div>
+            <div class="form-group control-buttons2" *ngIf="savePwd">
+                <button type="submit" class="btn btn-primary btn-lg btn-save postJob_btn" id="save_pwd">Save
+                    password</button>
+                <button type="button" class="btn btn-default btn-close btn-lg btn_change_password ml_5px"
+                    id="cancel_pwd">Cancel</button>
+            </div>
+        </form>
+       
+    </div>
+
+    

@@ -1,0 +1,507 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+	<title>Welcome to Company Name</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+	<link href="style.css" rel="stylesheet" type="text/css" />
+	<script language="javascript" type="text/javascript" src="datetimepicker.js">
+
+
+	</script>
+        <script type="text/javascript">
+// From: http://www.webdeveloper.com/forum/showthread.php?t=218226
+
+function ToggleList(IDS) {
+  var CState = document.getElementById(IDS);
+  if (CState.style.display != "block") { CState.style.display = "block"; }
+                                  else { CState.style.display = "none"; }
+}
+function HideRange(sect,elTag,IDS) {
+  var ContentObj = document.getElementById(sect);
+  var AllContentDivs = ContentObj.getElementsByTagName(elTag);
+  for (i=0; i<AllContentDivs.length; i++) {
+    if (IDS != AllContentDivs[i].id) { AllContentDivs[i].style.display="none"; }
+  }
+}
+
+</script>
+<style type="text/css">
+  .divInfo { display:none; }
+.style19 {font-family: Verdana, Arial, Helvetica, sans-serif; font-size: medium; font-style: italic; }
+.style20 {color: #FF0099; font-size: large;}
+.style21 {
+	font-size: small;
+	font-weight: bold;
+}
+.style23 {color: #FF0099; font-size: small; font-weight: bold; }
+</style>
+	<SCRIPT language="javascript">
+	function addRow(tableID) {
+		var table = document.getElementById(tableID);
+
+		var rowCount = table.rows.length-1;
+		var row = table.insertRow(rowCount);
+
+		var cell1 = row.insertCell(0);
+		var element1 = document.createElement("input");
+		element1.type = "checkbox";
+		element1.setAttribute("size","10");
+		cell1.appendChild(element1);
+
+		var cell2 = row.insertCell(1);
+		var selector = document.createElement('select');
+		selector.id = 'selBidReceivedIsPM';
+		selector.name = 'selBidReceivedIsPM';
+		cell2.appendChild(selector);
+
+		var option = document.createElement('option');
+		option.value = '0';
+		option.appendChild(document.createTextNode('Select'));
+		selector.appendChild(option);
+
+		var option = document.createElement('option');
+		option.value = '1';
+		option.appendChild(document.createTextNode('IBR'));
+		selector.appendChild(option);
+
+		option = document.createElement('option');
+		option.value = '2';
+		option.appendChild(document.createTextNode('Leptospirosis'));
+		selector.appendChild(option);
+
+		option = document.createElement('option');
+		option.value = '3';
+		option.appendChild(document.createTextNode('Pasteurella'));
+		selector.appendChild(option);
+
+		option = document.createElement('option');
+		option.value = '4';
+		option.appendChild(document.createTextNode('Hemophilus'));
+		selector.appendChild(option);
+
+		selector.type-"select";
+
+
+		var cell3 = row.insertCell(2);
+		var element3 = document.createElement("input");
+		element3.type = "text";
+		element3.setAttribute("size","10")
+		element3.setAttribute("id","demo2");
+		cell3.appendChild(element3);
+
+		myA=document.createElement("A");
+		url = "javascript:NewCal('demo2','ddmmyyyy');";
+		myA.setAttribute("href",url);
+		//create the image node
+		url = "images/cal.gif";
+		myImg=document.createElement("IMG");
+		myImg.setAttribute("src",url);
+		myImg.setAttribute("width","16");
+		myImg.setAttribute("height","16");
+		myImg.setAttribute("border","0");
+		myImg.setAttribute("alt","Say Hi");
+		// Appends the image node to the anchor
+		myA.appendChild(myImg);
+
+		cell3.appendChild(myA);
+
+
+
+
+
+		var cell4 = row.insertCell(3);
+		var element4 = document.createElement("input");
+		element4.type = "text";
+		element4.setAttribute("size","10")
+		element4.setAttribute("id","demo2");
+		cell4.appendChild(element4);
+
+		myA=document.createElement("A");
+		url = "javascript:NewCal('demo2','ddmmyyyy');";
+		myA.setAttribute("href",url);
+		//create the image node
+		url = "images/cal.gif";
+		myImg=document.createElement("IMG");
+		myImg.setAttribute("src",url);
+		myImg.setAttribute("width","16");
+		myImg.setAttribute("height","16");
+		myImg.setAttribute("border","0");
+		myImg.setAttribute("alt","Say Hi");
+		// Appends the image node to the anchor
+		myA.appendChild(myImg);
+
+		cell4.appendChild(myA);
+
+
+		var cell5 = row.insertCell(4);
+		var element5 = document.createElement("input");
+		element5.type = "text";
+		element5.setAttribute("size","10")
+		
+		cell5.appendChild(element5);
+
+		myA=document.createElement("A");
+		url = "javascript:NewCal('demo2','ddmmyyyy');";
+		myA.setAttribute("href",url);
+		//create the image node
+		url = "images/cal.gif";
+		myImg=document.createElement("IMG");
+		myImg.setAttribute("src",url);
+		myImg.setAttribute("width","16");
+		myImg.setAttribute("height","16");
+		myImg.setAttribute("border","0");
+		myImg.setAttribute("alt","Say Hi");
+		// Appends the image node to the anchor
+		myA.appendChild(myImg);
+
+		cell5.appendChild(myA);
+
+		var cell6 = row.insertCell(5);
+		var element6 = document.createElement("input");
+		element6.type = "text";
+		element6.setAttribute("size","10")
+		cell6.appendChild(element6);
+
+		var cell7 = row.insertCell(6);
+		var element7 = document.createElement("input");
+		element7.type = "text";
+		element7.setAttribute("size","10")
+		
+		cell7.appendChild(element7);
+
+		myA=document.createElement("A");
+		url = "javascript:NewCal('demo2','ddmmyyyy');";
+		myA.setAttribute("href",url);
+		//create the image node
+		url = "images/cal.gif";
+		myImg=document.createElement("IMG");
+		myImg.setAttribute("src",url);
+		myImg.setAttribute("width","16");
+		myImg.setAttribute("height","16");
+		myImg.setAttribute("border","0");
+		myImg.setAttribute("alt","Say Hi");
+		// Appends the image node to the anchor
+		myA.appendChild(myImg);
+
+		cell7.appendChild(myA);
+
+		var cell8 = row.insertCell(7);
+		var element8 = document.createElement("input");
+		element8.type = "text";
+		element8.setAttribute("size","10")
+		
+		cell8.appendChild(element8);
+
+		myA=document.createElement("A");
+		url = "javascript:NewCal('demo2','ddmmyyyy');";
+		myA.setAttribute("href",url);
+		//create the image node
+		url = "images/cal.gif";
+		myImg=document.createElement("IMG");
+		myImg.setAttribute("src",url);
+		myImg.setAttribute("width","16");
+		myImg.setAttribute("height","16");
+		myImg.setAttribute("border","0");
+		myImg.setAttribute("alt","Say Hi");
+		// Appends the image node to the anchor
+		myA.appendChild(myImg);
+
+		cell8.appendChild(myA);
+
+	}
+
+	function addRows(tableID) {
+		var table = document.getElementById(tableID);
+
+		var rowCount = table.rows.length-1;
+		var row = table.insertRow(rowCount);
+
+		var cell1 = row.insertCell(0);
+		var element1 = document.createElement("input");
+		element1.type = "checkbox";
+		element1.setAttribute("size","10");
+		cell1.appendChild(element1);
+
+		var cell2 = row.insertCell(1);
+
+
+		var selector = document.createElement('select');
+		selector.id = 'selBidReceivedIsPM';
+		selector.name = 'selBidReceivedIsPM';
+		cell2.appendChild(selector);
+
+		var option = document.createElement('option');
+		option.value = '0';
+		option.appendChild(document.createTextNode('Select'));
+		selector.appendChild(option);
+
+		var option = document.createElement('option');
+		option.value = '1';
+		option.appendChild(document.createTextNode('Dystocia'));
+		selector.appendChild(option);
+
+		option = document.createElement('option');
+		option.value = '2';
+		option.appendChild(document.createTextNode('Paralysis'));
+		selector.appendChild(option);
+
+		option = document.createElement('option');
+		option.value = '3';
+		option.appendChild(document.createTextNode('Retained Placenta Uterus'));
+		selector.appendChild(option);
+
+		option = document.createElement('option');
+		option.value = '4';
+		option.appendChild(document.createTextNode('Metritis'));
+		selector.appendChild(option);
+
+		selector.type-"select";
+
+
+		var cell3 = row.insertCell(2);
+		var element3 = document.createElement("input");
+		element3.type = "text";
+		element3.setAttribute("size","10")
+		element3.setAttribute("id","demo2");
+		cell3.appendChild(element3);
+
+		myA=document.createElement("A");
+		url = "javascript:NewCal('demo2','ddmmyyyy');";
+		myA.setAttribute("href",url);
+		//create the image node
+		url = "images/cal.gif";
+		myImg=document.createElement("IMG");
+		myImg.setAttribute("src",url);
+		myImg.setAttribute("width","16");
+		myImg.setAttribute("height","16");
+		myImg.setAttribute("border","0");
+		myImg.setAttribute("alt","Say Hi");
+		// Appends the image node to the anchor
+		myA.appendChild(myImg);
+
+		cell3.appendChild(myA);
+
+
+
+
+
+		var cell4 = row.insertCell(3);
+		var element4 = document.createElement("input");
+		element4.type = "textarea";
+		element4.setAttribute("size","10")
+		element4.setAttribute("id","demo2");
+		cell4.appendChild(element4);
+
+		myA=document.createElement("A");
+		url = "javascript:NewCal('demo2','ddmmyyyy');";
+		myA.setAttribute("href",url);
+		//create the image node
+		url = "images/cal.gif";
+		myImg=document.createElement("IMG");
+		myImg.setAttribute("src",url);
+		myImg.setAttribute("width","16");
+		myImg.setAttribute("height","16");
+		myImg.setAttribute("border","0");
+		myImg.setAttribute("alt","Say Hi");
+		// Appends the image node to the anchor
+		myA.appendChild(myImg);
+
+		cell4.appendChild(myA);
+
+
+		var cell5 = row.insertCell(4);
+		var element5 = document.createElement("textarea");
+		element5.type = "text";		
+		cell5.appendChild(element5);
+
+	
+
+		var cell6 = row.insertCell(5);
+		var element6 = document.createElement("input");
+		element6.type = "text";
+		element6.setAttribute("size","15")
+		cell6.appendChild(element6);
+
+		var cell7 = row.insertCell(6);
+		var element7 = document.createElement("textarea");
+		element7.type = "text";
+		cell7.appendChild(element7);
+
+	}
+
+
+	function deleteRow(tableID) {
+		try {
+		var table = document.getElementById(tableID);
+		var rowCount = table.rows.length;
+
+		for(var i=0; i<rowCount; i++) {
+		var row = table.rows[i];
+		var chkbox = row.cells[0].childNodes[0];
+		if(null != chkbox && true == chkbox.checked) {
+		table.deleteRow(i);
+		rowCount--;
+		i--;
+		}
+
+		}
+		}catch(e) {
+		alert(e);
+		}
+	}
+	</SCRIPT>
+	<style type="text/css">
+	</style>
+	</head>
+	<body>
+<div id="container">
+  <div id="top">
+    <h1><font color="#330066">Welcome to Company Name</font></h1>
+    <div class="search">
+      <!-- for search -->
+    </div>
+  </div>
+  <div id="navcontainer">
+    <ul id="navlist">
+      <li id="active"><a href="HomePage.html" id="current">Home</a></li>
+      <li><a href="ContactUs.html">Contact us</a></li>
+    </ul>
+  </div>
+ <div id="leftnav">
+    <h2>Menu</h2>
+   <ul id="leftnavmenu">
+        <li><a href="#" onClick="ToggleList('a')">Live Stock Management</a></li>
+   <div id="a" class="divInfo">
+        <li style="padding-left:10%;"><a href="LiveStockNew.html">Add Live Stock</a></li>
+		<li style="padding-left:10%;"><a href="EditUpdateSearch.html">Edit / Update Live Stock</a></li>
+        <li style="padding-left:10%;"><a href="PromotedSearch.html">Promoted LiveStock Hostory</a></li>
+   </div>
+       <li><a href="#" onClick="ToggleList('b')">Milk Yeild Management</a></li>
+   <div id="b" class="divInfo">
+        <li style="padding-left:10%;"><a href="AddDailyMilkProduction.html">Add Daily Milk Production</a></li>
+        <li style="padding-left:10%;"><a href="MilkProductionEdit.html">Add / Edit Daily Milk Production</a></li>
+    </div>
+         <li><a href="#" onClick="ToggleList('c')">Feeding Management</a></li>
+    <div id="c" class="divInfo">
+        <li style="padding-left:10%;"><a href="AddDailyFeeding.html">Add Daily Feeding</a></li>
+        <li style="padding-left:10%;"><a href="AddNewFeeding.html">Add Feeding Type</a></li>
+        <li style="padding-left:10%;"><a href="Feeding.html">Edit / Update Feeding Type</a></li>
+        <li style="padding-left:10%;"><a href="SuggestedFeeding.html">Suggested Feeding</a></li>
+    </div>
+       <li><a href="#" onClick="ToggleList('d')">Search Management</a></li>
+     <div id="d" class="divInfo">
+		<li style="padding-left:10%;"><a href="SearchCriteria.html">Search Criteria</a></li>
+     </div>
+        <li><a href="#" onClick="ToggleList('e')">Provisions Management</a></li>
+     <div id="e" class="divInfo">
+		<li style="padding-left:10%;"><a href="MonthlyProvisionNew.html">Add Monthly Provisions</a></li> 
+        <li style="padding-left:10%;"><a href="MonthlyProvisionEdit.html">Edit / Update Monthly Provisions</a></li> 
+         <li style="padding-left:10%;"><a href="SuggestedProvisions.html">Suggested Provisions</a></li>
+     </div>
+         <li><a href="#" onClick="ToggleList('f')">Stock Management</a></li>
+      <div id="f" class="divInfo">
+		<li style="padding-left:10%;"><a href="StockAddNew.html">Add New Stock</a></li> 
+        <li style="padding-left:10%;"><a href="Stocks.html">Edit / Update Stock</a></li> 
+      </div>
+         <li><a href="#" onClick="ToggleList('g')">Financial Management</a></li>
+      <div id="g" class="divInfo">
+		 <li style="padding-left:10%;"><a href="Revenue.html">Revenue / Sales</a></li> 
+         <li style="padding-left:10%;"><a href="Expenses.html">Expenses</a></li> 
+         <li style="padding-left:10%;"><a href="ProfitLoss.html">Profit / Loss</a></li> 
+      </div>
+         <li><a href="#" onClick="ToggleList('h')">Employee Management</a></li>
+      <div id="h" class="divInfo">
+		  <li style="padding-left:10%;"><a href="AddEmpNew.html">Add New Employee</a></li> 
+          <li style="padding-left:10%;"><a href="AddEditEmp.html">Edit / Update Employee</a></li> 
+      </div>
+          <li><a href="#" onClick="ToggleList('i')">Assets Management</a></li>
+      <div id="i" class="divInfo">
+		   <li style="padding-left:10%;"><a href="AssetsNew.html">Add New Assets</a></li> 
+           <li style="padding-left:10%;"><a href="Assets.html">Edit / Update Assets</a></li>
+      </div>
+           <li><a href="#" onClick="ToggleList('j')">Vendor Management</a></li>
+      <div id="j" class="divInfo">
+		    <li style="padding-left:10%;"><a href="VendorNew.html">Add New Vendor</a></li> 
+            <li style="padding-left:10%;"><a href="Vendor.html">Edit / Update Vendor</a></li>
+      </div>
+            <li><a href="#" onClick="ToggleList('k')">Admin</a></li>
+       <div id="k" class="divInfo">
+           <li style="padding-left:10%;"><a href="ParameterSetup.html">Parameter Setup</a></li>
+		   <li style="padding-left:10%;"><a href="ConfigureDropdown.html">Configure Dropdown</a></li> 
+      </div>
+	</ul>
+</div>
+  <div id="content">
+			<h2>Live Stock Deworming Details</h2>
+			<table>
+				<tr>
+					<td>Deworming Details:</td>
+				</tr>
+				<tr>
+					<td>
+						<table id="dataTable">
+							<tr>
+								<th ></th>
+								<th>Live Stock Code</th>
+							  <th>RFID</th>
+							  <th>Breed</th>
+							  <th>Date of Born</th>
+                              <th>Remorks</th>
+							</tr>
+							<tr>
+								<td><input type="checkbox" name="check" id="check" /></td>
+							  <td><a href="HealthNew.html">JYKEA01</a></td>
+						  <td>RFA001</td>
+				  <td>Jersey</td>
+				  <td>01-Jun-2012</td>
+							  <td>xxx</td>					
+						  </tr>
+						<tr>
+								<td><input type="checkbox" name="check" id="check" /></td>
+							  <td><a href="HealthNew.html">HYKEA01</a></td>
+						      <td>RFA002</td>
+				              <td>Jersey</td>
+				  <td>03-Jun-2012</td>
+							  <td>xxx</td>					
+						  </tr>
+                          <tr>
+								<td><input type="checkbox" name="check" id="check" /></td>
+							  <td><a href="HealthNew.html">AYKEA01</a></td>
+						      <td>RFA003</td>
+				              <td>Jersey</td>
+				  <td>05-Jun-2012</td>
+							  <td>xxx</td>					
+						  </tr>
+                          <tr>
+								<td><input type="checkbox" name="check" id="check" /></td>
+							  <td><a href="HealthNew.html">RYKEA01</a></td>
+						      <td>RFA004</td>
+				              <td>Jersey</td>
+				  <td>07-Jun-2012</td>
+							  <td>xxx</td>					
+						  </tr>
+                          <tr>
+								<td><input type="checkbox" name="check" id="check" /></td>
+							  <td><a href="HealthNew.html">JYKEA01</a></td>
+						  <td>RFA005</td>
+				          <td>Jersey</td>
+				  <td>09-Jun-2012</td>
+							  <td>xxx</td>					
+						  </tr>	
+						</table>
+					</td>
+				</tr>  				
+			</table>
+			<table>
+					<tr>
+						<form method="post" action="HealthSeacrhEdit.html">
+							<td colspan="2" ><input type="submit" name="subnit" value="Edit/UpdateDeWorming" class="button"/></td>
+						</form>
+							
+					</tr>
+				</table>
+									<br><br><br><br><br><br><br><br><br><br></br>	  </br>	  </br>	  </br>	  </br>	  </br>	  </br>	  </br></br>	  </br>	  </br>	  </br>	  </br>	  </br>	  </br>	  </br></br>	  </br>  </br>	  </br>	  </br>	  </br>	  </br>	  </br>	  </br></br>	  </br>
+		</div>
+        </div>
+	</body>
+</html>

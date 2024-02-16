@@ -1,0 +1,60 @@
+<wicket:extend>
+        <div id="content">
+          <h1>Re-Production Information</h1>
+          <h1 style="width:100%; color:#660000; clear:both; margin:10px 0 15px 0px; font-size:14px; font-weight:bold;">Live Stock Code : <span wicket:id="code"/></h1>
+           
+                        <form wicket:id="reproductionForm">
+                          <div wicket:id="feedback"></div>
+                            <div wicket:id="rowPanel">
+                            <div class="containterL">
+                                <table id="dataTable">
+                                    <tr>
+                                        <th></th>
+                                        <th>Lactation Number<font color="#FF0000">*</font></th>
+                                        <th>Semen Number<font color="#FF0000">*</font></th>
+                                        <th>AI Date<font color="#FF0000">*</font></th>
+                                        <th>Pregnancy Test Date</th>
+                                        <th>Test Result</th>
+                                        <th>Calving Date</th>
+                                        <th>No Of Calfs</th>					  
+                                        <th>Calf(s)Sex </th>
+                                        <th>Remarks</th>
+                                    </tr>
+                                    <span wicket:id="rows">
+                                    <tr>
+                                        <td><input type="checkbox" name="check" id="check" wicket:id="reprod_check" /></td>
+                                        <td align="center"><span wicket:id="lactationNumber" ></span>  </td>
+                                        <td nowrap="nowrap"><input name="semenNumber" type="text"  wicket:id="semenNumber" 
+                                        class="reProduction_effect" maxlength="30" style="text-align:right;"/></td>
+                                        <td nowrap="nowrap"><input name="semenGivenDate" type="text"  wicket:id="semenGivenDate" 
+                                        class="date_effect"/></td>
+                                        <td nowrap="nowrap"><input name="pregnencyTestDate" type="text"  wicket:id="pregnencyTestDate"                                        class="date_effect"/></td>
+                                        <td ><select wicket:id="pregnencyResult" class="reProduction_effect"></select></td>
+                                        <td nowrap="nowrap"><input name="deliveryDate" type="text"  wicket:id="deliveryDate" 
+                                        class="date_effect"/></td>
+                                        <td><input name="numberOfCalfs" type="text"  wicket:id="numberOfCalfs" 
+                                        class="reProduction_effect"maxlength="10" style="text-align:right;"/>                                        </td>
+                                        <td><select wicket:id="calfsSex" class="reProduction_effect"></select></td>
+                                        <td><textarea name="remarks" wicket:id="remarks" class="smalltextarea_effect"
+                                        maxlength="150"></textarea></td>
+                                    </tr>
+                                    </span>
+                                
+                                </table>
+                                </div>
+                                    
+                                        <INPUT type="button"
+                                        value="Add Row" class="button" wicket:id="add_row"/>
+                                        <INPUT type="button" value="Delete Row"
+                                        class="button" wicket:id="del_row"/>
+                                   <div>
+                                       <input type="button" name="back"
+                                        value="Back" class="button" wicket:id="back"/>						
+                                       <input type="submit" name="subnit"
+                                        value="Submit" class="button" wicket:id="save"/>
+                                    </div>
+                            </div>
+                        </form>
+              
+        </div>
+</wicket:extend>

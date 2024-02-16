@@ -1,0 +1,756 @@
+html, body {
+margin : 0;
+padding : 0;
+height:100%;
+}
+body {
+color : #333;
+background : #fff;
+width : 100%;
+font : 73% "lucida sans", "Trebuchet MS", Arial, Helvetica, Tahoma, sans-serif;
+}
+     /*Top Banner*/
+#top {
+padding : 0.5em;
+height:100px;
+background:url(../images/top.jpg) repeat-x !important;
+background-size:auto auto !important;
+color : #484452;
+}
+#top h1 {
+  color: #FFFFFF;
+  font-family: trebuchet ms;
+  font-size: 40px;
+  font-weight: normal;
+  padding: 0;
+  position: absolute;
+  top: 45px;
+}
+     /*WRAP*/
+#container {
+width : 100%;
+margin : 0 auto;
+line-height: 2em;
+background:url(../images/bg1.jpg);
+color : #333;
+height: auto;
+}
+#container table {
+width:100%;
+}
+     /*Top Navigation*/ 
+#topNav ul { 
+text-align: right;
+float:right;
+padding-bottom: 0px;
+padding-top: 10px;
+padding-left: 0;
+margin-top: 50px;
+margin-right:20px;
+     /* cancels gap caused by top padding in Opera 7.54 */
+margin-left: 0;
+background:none;
+color:#333333;
+font-size:12px;
+width: 40%;
+font-family:"Times New Roman", Times, serif;
+line-height : 18px;
+font-weight:bold;
+} 
+#topNav ul li { 
+display: inline;
+padding-left: 0;
+padding-right: 0;
+padding-bottom: 0px;
+     /* matches link padding except for left and right */
+padding-top: 10px;
+font-weight:bold;
+} 
+#topNav ul li a { 
+font:bold 16px Tahoma;
+padding-left: 10px;
+padding-right: 10px;
+padding-bottom: 10px;
+padding-top: 10px;
+color:#FFFFFF;
+text-decoration: none;
+border-right: 0px solid #fff;
+} 
+#topNav ul li a:hover { 
+font-weight:bold;
+background: #C7AFBD;
+color: #333;
+} 
+#topNav #active {
+font-weight:bold; 
+border-left: 0px solid #fff;
+}  
+     /*Left Navigation*/ 
+#leftNav { 
+float : left;
+width :18%;
+margin : 1px;
+padding :1px 0 0 10px;
+background:#fff;
+height:auto;
+} 
+#leftNav p { 
+margin : 0 0 1em 0;
+} 
+#leftNavmenu { 
+list-style : none;
+float : left;
+width : 240px;
+margin : 10px 0 20px 0;
+padding : 0;
+font-size : 0.9em;
+} 
+#leftNavmenu div.divInfo li a {
+font:bold 12px Tahoma;
+}
+#leftNavmenu ul { 
+list-style:none
+width : 250px;
+margin : 0 0 100px 0;
+padding : 0;
+font-size:10px;
+} 
+#leftNavmenu li { 
+margin-bottom : 2px;
+} 
+#leftNavmenu li a { 
+font: bold 14px tahoma;
+line-height:2em;
+background:url(../images/pfeil9.gif) no-repeat left center;
+height : 24px;
+text-decoration : none;
+color:Purple;
+padding : 2px 0 0 20px;
+border-left : 0 solid #8fb8cc;
+} 
+#leftNavmenu li a:active
+{
+background:url(../images/pfeil9.gif) no-repeat left center;
+}
+#leftNavmenu li a:hover { 
+color:Teal;border-left : 0 solid Teal;background:url(../images/pfeil8.gif) no-repeat left center;
+} 
+     /*Anchor Tag For Left Navigation*/
+a {
+text-decoration:none;color:#CC3300; outline:none; font-weight:bold;
+}
+a:hover {
+text-decoration:underline;
+}
+     /*Content*/
+#content {
+width:78%;
+margin:0;
+float:left;
+background:#fff;
+border-left: 1px solid #A662AA;
+line-height: 2em;
+padding :0;
+background:e2e2e2;
+background-size:100%;
+padding:10px;
+min-height:600px;
+height:auto !important; 
+}
+#content p { 
+padding : 0 2em 0 2em;
+color:#CC3333;
+} 
+#content h1{
+font:normal 20px Tahoma;
+}
+#content-1 {
+margin-left :85%;
+margin:0 auto;
+border-left : 5px solid #A662AA;
+padding :0;
+height:100%;
+background:url(../images/bodybg.jpg);
+background-size:100% 100%;
+overflow:hidden;
+}
+     /*Content  Background Color*/
+.contentbgcolor {
+background:url(../images/border.jpg) repeat-y 275px 0px;
+}
+     /*Login Form */
+#loginform{
+background:#e2f0f9;
+width: 400px;
+margin:0 auto;
+position: relative;
+top: 30%;
+border: 1px solid #1D9BC4;
+}
+#loginform legend {
+color:#1d9bc4;text-align: center;font: bold 50px/85px Arial;padding:10px; width:91%;
+background:url(../images/lock.png) no-repeat 15px 0;
+}
+#loginform table td {
+background:none;text-align:left;line-height: 35px; font-weight:bold; color:#0000CC; font-size:16px;padding-right: 15px;
+}
+#loginform form {
+float: left;margin: 0 auto;text-align: center;
+}
+input.login {
+	width: 75px;
+	border: none; 
+	background: url(images/logininput.gif); 
+	padding: 4px; 
+}
+#loginform table td.loginsubmit {
+float: left;padding: 0;text-align: center;width: 100%;
+}
+#loginform table td.loginsubmit .button {
+margin:0px;background:#1D9BC4;
+}
+     /* SEARCH BOX */
+form { 
+width:100%;
+margin:0;
+}
+legend {
+border-bottom:1px solid #333; padding:7px; width:95%; margin:5px 0 10px;
+}
+     /*Page Headings*/
+h2 {
+margin : 0 0 .5em 0;
+font-size : 130%;
+color:Teal;
+background : transparent;
+}
+h4 {
+margin : 0 0 .5em 0;
+font-size : 16px;
+color:#663300;
+font-weight:bold;
+text-align:left;
+font-family: Tahoma;
+}
+     /*Image Actions*/
+.post { 
+background-color : #eee;
+padding : 3px;
+margin : 20px 10px 0 5px;
+border : 0 dashed #8a795d;
+font-size : 80%;
+} 
+.post .date { 
+background : url(images/clock.gif) no-repeat left center;
+padding-left : 15px;
+margin : 0 15px 0 5px;
+} 
+.post .comments { 
+background : url(images/comment.gif) no-repeat left center;
+padding-left : 15px;
+margin : 0 15px 0 5px;
+} 
+.post .readmore { 
+background : url(images/document.gif) no-repeat left center;
+padding-left : 15px;
+margin : 0 15px 0 5px;
+} 	
+     /*Images Displaying*/
+img {
+border : none;
+}
+     /*Buttons*/
+.button
+{
+font-family:sans-serif; 
+font-size:large;
+background:#5E516F;
+border-redius:10px;
+box-shadow:1px; 
+color:#fff; padding:3px 8px; cursor:pointer; margin:10px 20px 0 0px;
+width:4em;
+}
+.newButton {
+margin: 20px auto 0;text-align: center;
+}
+.submit
+{
+font-family:sans-serif; 
+font-size:large;
+font-style:italic; 
+background:#CCCCCC none; 
+color:#000000; 
+width:4em;
+}
+          /*Summary Page Start*/
+     /*Summary Page By Live Stock Wise--Live Stock By State,Live Stock By Sex,Live Stock By Breed*/
+.summaryPage { 
+width:100%;
+}
+.summaryLiveStocks {
+width:30%; float:left; margin:5px; border-radius:0px;background:#f5f5f5; height:270px; overflow:hidden;border: 1px solid #000000;
+}
+.summaryLiveStocks h1 {
+font-size:120%;padding:0 0 0 10px; margin:0px; color:#333333; font-weight:bold;text-transform: uppercase;
+}
+#content .summaryLiveStocks .liveStocks-Header {
+padding:0; margin:0 0 10px 0; background:#0099FF !important; color:#fff !important; overflow:hidden; text-align:left;
+}
+#content .summaryLiveStocks .liveStocks-Header p {
+width:100%; background:none; padding:0;  color:#fff;  margin:0;
+}
+#content .summaryLiveStocks .liveStocks-Header .liveStocks-Data {
+width:130px; float:left; color:#fff; line-height:1.8em; font:bold 12px/26px Tahoma; padding:0 0 0 12px;height:26px;
+}
+#content .summaryLiveStocks .liveStocks-Header .liveStocks-Count {
+width:50px; float:right; color:#fff; line-height:1.8em;padding:0 30px 0 0;height: 26px;line-height: 26px;text-align: right;
+}
+.summaryLiveStocks .liveStocks-Rows p {
+width:100%; background:none; padding:0;  color:#000;  margin:0;border-top: 2px solid #FFFFFF !important;
+}
+#content .summaryLiveStocks .liveStocks-Rows .liveStocksRows-Data {
+width:42%; padding:0; margin-left:1px; float:left; line-height:1.8em; color:#000; font-size:12px; font-weight:bold;
+border-top: 2px solid #FFFFFF !important;
+}
+#content .summaryLiveStocks .liveStocks-Rows .liveStocksRows-Count {width:50px; float:right; color:#330000; line-height:1.8em; margin:0px; padding:0 30px 0 0;text-align: right; font:bold 12px/26px Tahoma;border-top: 2px solid #FFFFFF !important;
+}
+     /*Summary Page By Net Profit/Loss Wise--Expenses Report,Revenue Report,Net Profit or Loss*/
+.netResult {
+width:30%; float:left; margin:5px; border-radius:0px;background:#f5f5f5; height:415px; overflow:hidden;border: 1px solid #000000;
+}
+.netResult h1 {
+font-size:120%;padding:0 0 0 10px; margin:0px; color:#333333; font-weight:bold;text-transform: uppercase;
+}
+#content .netResult .netResult-Header {
+padding:0; margin:0 0 10px 0; background:#0099FF !important; color:#fff !important; overflow:hidden; text-align:left;
+}
+#content .netResult .netResult-Header p {
+width:100%; background:none; padding:0;  color:#fff;  margin:0;
+}
+#content .netResult .netResult-Header .netResult-Data {
+width:130px; float:left; color:#fff; line-height:1.8em; font:bold 12px/26px Tahoma; padding:0 0 0 12px;height:26px;
+}
+#content .netResult .netResult-Header .netResult-Count {
+width:50px; float:right; color:#fff; line-height:1.8em;padding:0 30px 0 0;height: 26px;line-height: 26px;text-align: right;
+}
+#content .netResult .netResult-Header p.netResult-Data {
+padding: 0;text-align: center;
+}
+#content .netResult .netResult-Rows p.netResult-Data {
+padding: 0;text-align: center;
+}
+.netResult .netResult-Rows p {
+width:100%; background:none; padding:0;  color:#000;  margin:0;border-top: 2px solid #FFFFFF !important;
+}
+#content .netResult .netResult-Rows .netResultRows-Data {
+width:32%; padding:0; margin-left:1px; float:left; line-height:1.8em; color:#000; font-size:12px; font-weight:bold;
+border-top: 2px solid #FFFFFF !important;
+}
+#content .netResult .netResult-Rows .netResultRows-Count {
+width:32%; padding:0 30px 0 0; margin-left:1px; float:right; line-height:1.8em; color:#330000; font-size:12px; font:bold 12px/26px Tahoma; text-align:right;border-top: 2px solid #FFFFFF !important;
+}
+     /*Summary Health--Vaccination,De-Worming,Drying Off Herds,Calf Stop Feeding,Employee History*/
+.summaryHealth {
+width:30%; float:left; margin:5px; border-radius:0px;background:#f5f5f5; height:330px; overflow:hidden;border: 1px solid #000000;
+}
+.summaryHealth h1 {
+font-size:120%;padding:0 0 0 10px; margin:0px; color:#333333; font-weight:bold;text-transform: uppercase;
+}
+#content .summaryHealth .health-Header {
+padding:0; margin:0 0 10px 0; background:#0099FF !important; color:#fff !important; overflow:hidden; text-align:left;
+}
+#content .summaryHealth .health-Header h2 {
+width:38%;
+}
+#content .summaryHealth .health-Header h2 {
+width:24%; padding:0 10px 0 12px; margin:0px; float:left; line-height:1.8em; color:#fff; font:bold 12px Tahoma;
+}
+#content .summaryHealth .health-Header h2 a {
+color:#fff; text-decoration:none;
+}
+#content .summaryHealth .health-Header p {
+width:100%; background:none; padding:0;  color:#fff;  margin:0;
+}
+#content .summaryHealth .health-Header .health-Navigation {
+width:130px; float:left; color:#fff; line-height:1.8em; font:bold 12px/26px Tahoma; padding:0 0 0 12px;height:26px;
+}
+#content .summaryHealth .health-Rows p.health-Navigation {
+padding: 0;text-align: center;
+}
+.summaryHealth .health-Rows h3 {
+width:32%; padding:0; margin-left:1px; float:left; line-height:1.8em; color:#000; font-size:12px; font-weight:bold;
+border-top: 2px solid #FFFFFF !important;
+}
+.summaryHealth .health-Rows h3 a {
+color:#FF0000; text-decoration:underline; padding-left:8px;
+}
+.summaryHealth .health-Rows p {
+width:100%; background:none; padding:0;  color:#000;  margin:0;
+}
+#content .summaryHealth .health-Header .health-Data {
+width:130px; float:left; color:#fff; line-height:1.8em; font:bold 12px/26px Tahoma; padding:0 0 0 12px;height:26px;
+}
+#content .summaryHealth .health-Header .health-Count {
+width:50px; float:right; color:#fff; line-height:1.8em;padding:0 30px 0 0;height: 26px;line-height: 26px;text-align: right;
+}
+#content .summaryHealth .health-Rows .healthRows-Data {
+width:130px; float:left; color:#000; line-height:1.8em; font:bold 12px/26px Tahoma; padding:0 0 0 12px;margin:0px;height:26px;
+}
+#content .summaryHealth .health-Rows .healthRows-Count {
+width:50px; float:right; color:#000; line-height:1.8em; margin:0px; padding:0 30px 0 0;text-align: right; font:bold 12px/26px Tahoma;
+}
+ /*Summary Health--Vaccination,De-Worming,Drying Off Herds,Calf Stop Feeding,Employee History*/
+.summaryMilkyield {
+width:30%; float:left; margin:5px; border-radius:0px;background:#f5f5f5; height:330px; overflow:hidden;border: 1px solid #000000;
+}
+.summaryMilkyield h1 {
+font-size:120%;padding:0 0 0 10px; margin:0px; color:#333333; font-weight:bold;text-transform: uppercase;
+}
+#content .summaryMilkyield .milkYeild-Header {
+padding:0; margin:0 0 10px 0; background:#0099FF !important; color:#fff !important; overflow:hidden; text-align:left;
+}
+#content .summaryMilkyield .milkYeild-HeaderData {
+padding:0; margin:0 0 10px 0; background:#0099FF !important; color:#fff !important; overflow:hidden; text-align:left;
+}
+#content .summaryMilkyield .milkYeild-Header h2 {
+width:38%;
+}
+#content .summaryMilkyield .milkYeild-Header h2 {
+width:24%; padding:0 10px 0 12px; margin:0px; float:left; line-height:1.8em; color:#fff; font:bold 12px Tahoma;
+}
+#content .summaryMilkyield .milkYeild-HeaderData h2 {
+width:auto; padding:0 10px 0 17px; margin:0px; float:left; line-height:1.8em; color:#fff; font:bold 12px Tahoma;
+}
+#content .summaryMilkyield .milkYeild-Header h2 a {
+color:#fff; text-decoration:none;
+}
+#content .summaryMilkyield .milkYeild-Header p {
+width:100%; background:none; padding:0;  color:#fff;  margin:0;
+}
+#content .summaryMilkyield .milkYeild-Header .milkYeild-Navigation {
+width:130px; float:left; color:#fff; line-height:1.8em; font:bold 12px/26px Tahoma; padding:0 0 0 12px;height:26px;
+}
+#content .summaryMilkyield .milkYeild-Rows p.milkYeild-Navigation {
+padding: 0;text-align: center;
+}
+.summaryMilkyield .milkYeild-Rows h3 {
+width:22%; margin-left:1px; float:left; line-height:1.8em; color:#000; font-size:12px; font-weight:bold;
+border-top: 2px solid #FFFFFF !important;
+}
+.summaryMilkyield .milkYeild-Rows h3 a {
+color:#FF0000; text-decoration:underline; padding-left:8px;
+}
+.summaryMilkyield .milkYeild-Rows p {
+width:100%; background:none; padding:0;  color:#000;  margin:0;
+}
+#content .summaryMilkyield .milkYeild-Header .milkYeild-Data {
+width:130px; float:left; color:#fff; line-height:1.8em; font:bold 12px/26px Tahoma; padding:0 0 0 12px;height:26px;
+}
+#content .summaryMilkyield .milkYeild-Header .milkYeild-Count {
+width:50px; float:right; color:#fff; line-height:1.8em;padding:0 30px 0 0;height: 26px;line-height: 26px;text-align: right;
+}
+#content .summaryMilkyield .milkYeild-Rows .milkYeildRows-Data {
+width:130px; float:left; color:#000; line-height:1.8em; font:bold 12px/26px Tahoma; padding:0 0 0 12px;margin:0px;height:26px;
+}
+#content .summaryMilkyield .milkYeild-Rows .milkYeildRows-Count {
+width:50px; float:right; color:#000; line-height:1.8em; margin:0px; padding:0 30px 0 0;text-align: right; font:bold 12px/26px Tahoma;
+}
+ /*Feeding Summary*/
+.summaryFeed {
+width:61.2%; float:left; margin:5px; border-radius:0px;background:#f5f5f5; height:330px; overflow:hidden;border: 1px solid #000000;
+}
+.summaryFeed h1 {
+font-size:120%;padding:0 0 0 10px; margin:0px; color:#333333; font-weight:bold;text-transform: uppercase;
+}
+#content .summaryFeed .feed-HeaderData {
+padding:0; margin:0 0 10px 0; background:#0099FF !important; color:#fff !important; overflow:hidden; text-align:left;
+}
+#content .summaryFeed .feed-HeaderFeedData {
+padding:0; margin:0 0 2px 0; background:#0099FF !important; color:#fff !important; overflow:hidden; text-align:left;
+}
+#content .summaryFeed .feed-HeaderData h2 {
+width:auto; padding:0 155px 0 1px; margin:2px; float:left; line-height:1.8em; color:#fff; font:bold 12px Tahoma;
+}
+#content .summaryFeed .feed-HeaderFeedData h2 {
+width:11.5%;  padding:0 5px 0 5px; margin:2px; float:left; line-height:1.8em; color:#fff; font:bold 12px Tahoma;
+}
+#content .summaryFeed .feed-Header h2 a {
+color:#fff; text-decoration:none;
+}
+#content .summaryFeed .feed-Header p {
+width:auto; background:none; padding:0;  color:#fff;  margin:0;
+}
+.summaryFeed .feed-Rows h3 {
+width:11.5%;  padding:0 5px 0 5px; margin:2px; float:left; line-height:1.8em; color:#000; font:bold 12px Tahoma;
+border-top: 2px solid #FFFFFF !important;
+}
+.summaryFeed .feed-Rows h3 a {
+color:#FF0000; text-decoration:underline; padding-left:8px;
+}
+.summaryFeed .feed-Rows p {
+width:100%; background:none; padding:0;  color:#000;  margin:0;
+}
+             /*Summary Page Close*/
+     /*Input Type's Displaying*/
+textarea, select, input[type="text"]{ 
+color:#003300;
+ font:normal 14px Tahoma !important;
+}
+     /*Feedback's Displaying*/
+.feedbackPanel {
+font: 14px/24px Arial; padding-left: 25px; color:#000000;
+}
+.feedbackPanel span.feedbackPanelERROR {
+font: 14px/24px Arial; color:#000000;
+}
+     /* List Pages--Edit/Update Search,Feeding History,Add Daily Milk Production,Daily Milk Production,List Assets,List Revenues,
+     List Employees,List Expenses,List LiveStocks,List MilkProduction,List Monthly MilkProduction,List Stocks,List StocksTypes,
+     List Vendors,Promotion History List */
+.list {
+width:auto; float:left; border-radius:0px;background:#f5f5f5; height:auto; overflow:hidden; border:2px solid #5E516F;clear:left;
+}
+.list-Header h2 {
+width:90px; height:30px; overflow:hidden; font:bold 13px Tahoma; margin:0;border-right: 2px solid #FFFFFF; padding:3px; text-align:center; float:left; background:#0099FF; color:#fff;
+}
+.list-Header h3 {
+width:96px; height:30px; overflow:hidden; font:bold 12px Tahoma; text-align:center; margin:0; padding:0; float:left; color:#330000;border-right: 2px solid #FFFFFF; border-top: 2px solid #FFFFFF; margin-top:2px;
+}
+
+.list-LivestockHeader h2 {
+width:75px; height:30px; overflow:hidden; font:bold 13px Tahoma; margin:0;border-right: 2px solid #FFFFFF; padding:3px; text-align:center; float:left; background:#0099FF; color:#fff;
+}
+.list-LivestockHeader h3 {
+width:81px; height:30px; overflow:hidden; font:bold 12px Tahoma; text-align:center; margin:0; padding:0; float:left; color:#330000;border-right: 2px solid #FFFFFF; border-top: 2px solid #FFFFFF; margin-top:2px;
+}
+
+.list-Header .list-Rows {
+float: left;
+}
+.list .last {
+border-right:none;
+}
+.list-Header .button {
+padding:2px; margin:10px 0; width:100px; float:center;
+}
+.list-MilkProduction h2 {
+width:60px; height:30px; overflow:hidden; font:bold 11px Tahoma; margin:0 2px; padding:3px; text-align:center; float:left; background:#0099FF; color:#fff;
+}
+.list-MilkProduction h3 {
+width:60px; height:auto; overflow:hidden; font:bold 11px Tahoma; text-align:center; margin:0 2px; padding:3px; float:left; background:#f5f5f5; color:#000; border-top: 2px solid #FFFFFF !important; margin-top:2px;
+}
+     /*Ingredient Formula Cost*/
+.ingredientFormulaCost {
+width:48%; float:left; border-radius:0px;background:#f5f5f5; height:auto; overflow:hidden; border:2px solid #5E516F;clear:left
+}
+.ingredientFormulaCost-List h2 {
+width:234px; height:30px; overflow:hidden; font:bold 13px Tahoma; margin:0;border-right: 2px solid #FFFFFF; padding:3px; text-align:center; float:left; background:#0099FF; color:#fff;
+}
+.ingredientFormulaCost-List h3 {
+width:240px; height:30px; overflow:hidden; font:bold 12px Tahoma; text-align:center; margin:0; padding:0; float:left; 
+color:#330000;border-right: 2px solid #FFFFFF; border-top: 2px solid #FFFFFF; margin-top:2px;
+}
+.ingredientFormulaCost .ifcLast {
+border-right:none;
+}
+     /*Interval Configuration*/
+.intervalConfiguration {
+width:48.79%; float:left; border-radius:0px;background:#f5f5f5; height:auto; overflow:hidden; border:2px solid #5E516F;clear:left;
+}
+.intervalConfiguration-List h2 {
+width:234px; height:30px; overflow:hidden; font:bold 13px Tahoma; margin:0;border-right: 2px solid #FFFFFF; padding:3px; text-align:center; float:left; background:#0099FF; color:#fff;
+}
+.intervalConfiguration-List h3 {
+width:240px; height:30px; overflow:hidden; font:bold 12px Tahoma; text-align:center; margin:0; padding:0; float:left; color:#330000;border-right: 2px solid #FFFFFF; border-top: 2px solid #FFFFFF; margin-top:2px;
+}
+.intervalConfiguration .icLast {
+border-right:none;
+}
+     /*Adding or Search Pages--Edit/Update Search,Feeding History,Add Assets,Add Employee,Add Expenses,Add Revenue,Add Stock Type,
+	 Add Vendor,Live Stock New,List Stock,PC Stock*/
+.addData {
+width:60%; overflow:hidden; margin:0px 0 20px 0px; background:#fff; padding:0px 0 20px 0; border-radius:0px; border:1px solid #333; border-color:#330066; border-width:2px;background:#f5f5f5 !important;
+}
+.addData h1 {
+margin-left:50px;
+}
+.addData ul {
+margin:0 0 0 15px; padding:0px;
+}
+.addData ul li {
+width:50%;margin:10px 0; height:40px; padding:0; float:left; list-style:none; color:#000; font:bold 12px Tahoma;
+}
+.addData ul li label {
+width:100%; clear:both; font-size:14px; font-weight:bold; color:#5E516F;
+}
+.addData ul li input, .addData ul li textarea, .addData ul li select {
+width:60%; padding:2px 5px; border-radius:0px;font:normal 14px Tahoma;margin-top:5px;
+}
+.addData .button {
+margin:0px; padding:2px; border-radius:0px; width:140px; text-align:center;background:#5E516F;  border: 1px solid #000000;
+}
+#content .addData ul li select{ width: 63%;}
+     /*Add Row or Delete Row Functionality Pages*/
+     /*Health Details*/
+.healthDetails {
+width:100%;
+}
+.healthDetails th {
+background:#0099FF !important; color:#fff !important; padding:0 2px !important;
+}
+.healthDetails td {
+background:#f5f5f5 !important; color:#000 !important; padding:5px 2px !important;
+}
+.healthDetails td .button {
+padding:2px; margin:0; width:100px; float:center;
+}
+.healthDetails .buttonBg {
+background:none !important;
+}
+#container table.healthDetails {
+border:1px solid #000;
+}
+     /*Configure Dropdown*/
+.configureDropdown {
+width:50% !important; border:1px solid #333 !important; border-color:#330066 !important; border-width:2px !important;
+}
+.configureDropdown th {
+background:#0099FF !important; color:#fff !important; padding:0 2px !important;
+}
+.configureDropdown td {
+background:#f5f5f5 !important;color:#000 !important; padding:5px 2px !important; border-top: 2px solid #FFFFFF !important; 
+margin-top:2px;
+}
+.configureDropdown td .button {
+padding:2px; margin:0; width:100px; float:center;
+}
+     /*Suggested Feed*/
+.suggestedFeed {
+width:75% !important; border:1px solid #000 !important;
+}
+.suggestedFeed th {
+background:#0099FF !important; color:#fff !important; padding:0 2px !important;
+}
+.suggestedFeed td {
+background:#f5f5f5 !important; color:#000 !important; padding:5px 2px !important;
+}
+.suggestedFeed td .button {
+padding:2px; margin:0; width:100px; float:center;
+}
+.suggestedFeed .buttonBg {
+background:none !important;
+}
+.suggestedFeed .feed-last {
+border-right:none;
+}
+.configdropdown .healthDetails td {
+padding: 5px 10px !important; text-align: center; font-size:14px;
+}
+     /*Input Fields*/
+.textfield_effect {
+border-width: 1px;
+border-style: solid;
+border-color: Purple;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 15px;
+width: 90%;
+height: 20px;
+}
+.smalltextfield_effect {
+border-width: 1px;
+border-style: solid;
+border-color: Purple;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 15px;
+width: 100%;
+height: 20px;
+}
+.smalltextarea_effect {
+border-width: 1px;
+border-style: solid;
+border-color: Purple;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 15px;
+width: 110px;
+height: 55px;
+}
+.bigtextarea_effect {
+border-width: 1px;
+border-style: solid;
+border-color: Purple;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 15px;
+width: 180px;
+height: 50px;
+}
+.dropdown_effect {
+border-width: 1px;
+border-style: solid;
+border-color: Purple;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 15px;
+width: 120px;
+height: 25px;
+}
+.number_effect {
+border-width: 1px;
+border-style: solid;
+border-color: Purple;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 15px;
+width: 140px;
+height: 20px;
+}
+.date_effect {
+border-width: 1px;
+border-style: solid;
+border-color: Purple;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 15px;
+width: 80px;
+height: 20px;
+}
+     /*Reproduction New Page Fields*/
+.reProduction_effect {  
+border-width: 1px;
+border-style: solid;
+border-color: Purple;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 15px;
+width: 80px;
+height: 20px;
+}
+     /*Ingredient List page Fields*/
+.ingredienttype_effect {  
+border-width: 1px;
+border-style: solid;
+border-color: Purple;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 15px;
+width: 100px;
+height: 25px;
+}
+/* List Pages--Suggested View Report */
+.vierReportlist {
+width:auto; float:left; border-radius:0px;background:#f5f5f5; height:auto; overflow:hidden; border:2px solid #5E516F;clear:left;
+}
+.vierReportlist-Header h2 {
+width:60px; height:30px; overflow:hidden; font:bold 13px Tahoma; margin:0;border-right: 2px solid #FFFFFF; padding:3px; text-align:center; float:left; background:#0099FF; color:#fff;
+}
+.vierReportlist-Header h3 {
+width:66px; height:30px; overflow:hidden; font:bold 12px Tahoma; text-align:center; margin:0; padding:0; float:left; color:#330000;border-right: 2px solid #FFFFFF; border-top: 2px solid #FFFFFF; margin-top:2px;
+}
+.vierReportlist-Header .list-Rows {
+float: left;
+}
+.vierReportlist .last {
+border-right:none;
+}
+.vierReportlist-Header .button {
+padding:2px; margin:10px 0; width:100px; float:center;
+}
+.list-MilkProduction h2 {
+width:60px; height:30px; overflow:hidden; font:bold 11px Tahoma; margin:0 2px; padding:3px; text-align:center; float:left; background:#0099FF; color:#fff;
+}
+.list-MilkProduction h3 {
+width:60px; height:auto; overflow:hidden; font:bold 11px Tahoma; text-align:center; margin:0 2px; padding:3px; float:left; background:#f5f5f5; color:#000; border-top: 2px solid #FFFFFF !important; margin-top:2px;
+}

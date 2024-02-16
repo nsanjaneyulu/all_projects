@@ -1,0 +1,712 @@
+@import "../../styles/abstracts/breakpoints";
+@import "../../styles/abstracts/mixins";
+
+main {
+  padding: 0em 0em;
+}
+.mainPage {
+  padding: 0;
+}
+.foodOrder_Text {
+  color: black;
+  text-align: center;
+  padding: 2em 0em;
+  font-family: "NSMFoodie";
+  font-size: 2.5em;
+  @include sm {
+    padding: 1em 0em;
+  }
+  @include md {
+    padding: 1em 0em;
+  }
+  @include lg {
+    padding: 2em 0em;
+  }
+  @include xl {
+    padding: 2em 0em;
+  }
+}
+.foodOrder_SubText {
+  color: #cdda00;
+}
+.heading_Information {
+  display: -webkit-flex;
+  display: -webkit-box;
+  display: -moz-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #adbd2b;
+  padding: 1em 4em;
+  align-self: center;
+  align-items: center;
+  @include sm {
+    padding: 1em 2em;
+  }
+  @include md {
+    padding: 1em 4em;
+  }
+  @include lg {
+    padding: 1em 4em;
+  }
+  @include xl {
+    padding: 1em 4em;
+  }
+  img {
+    width: 4em;
+  }
+  .heading--text {
+    margin-left: 1em;
+    color: white;
+    text-align: center;
+    font-family: "NSMFoodie";
+    font-size: 2em;
+    margin-bottom: 0;
+  }
+}
+.your_Information--form,
+.select_Box--content,
+.pickup_Location--Content {
+  @include sm {
+    padding: 2em;
+  }
+  @include md {
+    padding: 2em;
+  }
+  @include lg {
+    padding: 4em;
+  }
+  @include xl {
+    padding: 4em;
+  }
+}
+.main_Block {
+  padding: 0em 4em 0em 0em;
+}
+.your_Information--lable {
+  color: black;
+  font-family: "Brandon Grotesque Regular";
+  @include sm {
+    font-size: 1.3em;
+  }
+  @include md {
+    font-size: 1.3em;
+  }
+  @include lg {
+    font-size: 1.5em;
+  }
+  @include xl {
+    font-size: 1.5em;
+  }
+}
+.your_Information--Input {
+  height: 3.5em;
+  border-radius: 0.5em;
+  padding: 0em 2em;
+  font-size: 1.2em;
+  font-family: "Brandon Grotesque Regular";
+}
+.box_Heading {
+  color: black;
+  font-size: 2em;
+  margin: 0;
+  font-family: "Brandon Grotesque Regular";
+}
+.box_SubHeading {
+  color: #42b029;
+  font-size: 1.5em;
+  font-family: "Brandon Grotesque Regular";
+  font-weight: bold;
+}
+.box_ItemNames {
+  display: -webkit-flex;
+  display: -webkit-box;
+  display: -moz-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: white;
+  margin: 2em 0;
+}
+.box_Bottom--content {
+  color: #cdda00;
+  display: -webkit-flex;
+  display: -webkit-box;
+  display: -moz-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 1.5em;
+  padding: 2em 0em 0em 0em;
+  p {
+    margin-right: 1em;
+  }
+}
+
+.radioButtons_Block {
+  padding: 1em 0em 1em 0em;
+}
+input[type="checkbox"] {
+  box-sizing: border-box;
+  padding: 0;
+  width: 25px;
+  height: 22px;
+  margin-right: 0.7em;
+  margin-top: unset;
+}
+.form-check-inline {
+  font-size: 1.3em;
+  margin-right: 8em;
+}
+.form-check {
+  padding-left: 0;
+}
+.box_ItemNames--Content {
+  padding: 2em 7em 2em 3em;
+  border: 1px solid black;
+  margin-right: 3em;
+  border-radius: 1em;
+  p {
+    font-size: 1.3em;
+    color: black;
+    font-weight: 500;
+    margin: 0;
+  }
+}
+input[type="radio"] {
+  box-sizing: border-box;
+  padding: 0;
+  height: 2em;
+  width: 1.5em;
+  display: none;
+}
+.Payment_Box--Button {
+  text-align: right;
+  padding: 0 4em;
+  @include sm {
+    text-align: center;
+    padding: 0 2em;
+  }
+  @include md {
+    text-align: center;
+    padding: 0 2em;
+  }
+  @include lg {
+    text-align: right;
+    padding: 0 4em;
+  }
+  @include xl {
+    text-align: right;
+    padding: 0 4em;
+  }
+}
+.Proceedtopay--DetailButton {
+  background-color: #cdda00;
+  color: black;
+  padding: 0.5em 3em;
+  border: 0;
+  font-size: 1.5em;
+  margin: 0em 0em 5em 0em;
+  font-weight: 500;
+  border-radius: 2em;
+  font-family: "NSMFoodie";
+}
+.Proceedtopay--DetailButton:focus {
+  outline: none;
+}
+.mainPage_Content {
+  background-color: #ecf1a9;
+  .mainPage_Data {
+    display: -webkit-flex;
+    display: -webkit-box;
+    display: -moz-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 3em 0;
+    @include sm {
+      flex-wrap: wrap;
+    }
+    @include md {
+      flex-wrap: wrap;
+    }
+    @include lg {
+      flex-wrap: wrap;
+    }
+    @include xl {
+      flex-wrap: wrap;
+    }
+    .mainPage_Data--ImageBlock {
+      -webkit-flex: 1;
+      -webkit-box-flex: 1;
+      -moz-flex: 1;
+      -moz-box-flex: 1;
+      -ms-flex: 1;
+      flex: 1;
+      justify-content: left;
+      @include sm {
+        padding: 3em 0em 6em 0em;
+      }
+      @include md {
+        padding: 3em 0em 6em 0em;
+      }
+      @include lg {
+        padding: 12em 0em;
+      }
+      @include xl {
+        padding: 12em 0em;
+      }
+      img {
+        width: 26em;
+        @include sm {
+          width: 18em;
+        }
+        @include md {
+          width: 18em;
+        }
+        @include lg {
+          width: 26em;
+        }
+        @include xl {
+          width: 26em;
+        }
+      }
+    }
+    .mainPage_Data--TextBlock {
+      font-family: "Brandon Grotesque Regular";
+      -webkit-flex: 2;
+      -webkit-box-flex: 2;
+      -moz-flex: 2;
+      -moz-box-flex: 2;
+      -ms-flex: 2;
+      flex: 2;
+      @include sm {
+        padding: 1em;
+      }
+      @include md {
+        padding: 1em;
+      }
+      @include lg {
+        padding: 0;
+      }
+      @include xl {
+        padding: 0;
+      }
+      .nsmFoodOrder_Image {
+        margin-bottom: 2.5em;
+        @include sm {
+          width: 24em;
+        }
+        @include md {
+          width: 45em;
+        }
+        @include lg {
+          width: 45em;
+        }
+        @include xl {
+          width: 45em;
+        }
+      }
+      .howToOrder_Image {
+        width: 20em;
+        margin-bottom: 2.5em;
+        @include sm {
+          width: 13em;
+        }
+        @include md {
+          width: 20em;
+        }
+        @include lg {
+          width: 20em;
+        }
+        @include xl {
+          width: 20em;
+        }
+      }
+      .nsmFoodOrder_Text {
+        font-size: 1.61em;
+        margin-bottom: 1.35em;
+        .boldText {
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
+
+.nsmFoodOrder_SamllText {
+  font-weight: bold;
+  font-family: "Brandon Grotesque Regular";
+  color: black;
+  font-size: 1.61em;
+  margin: 0;
+}
+.radio-custom,
+.radio-custom-label {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.radio-custom-label {
+  position: relative;
+  font-family: "Brandon Grotesque Regular";
+  font-weight: 500;
+  font-size: 1.5em;
+  display: -webkit-flex;
+  display: -webkit-box;
+  display: -moz-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  align-self: center;
+  align-items: center;
+}
+
+.radio-custom + .radio-custom-label:before {
+  content: "";
+  background: #fff;
+  border: 2px solid #adbd2b;
+  display: inline-block;
+  vertical-align: middle;
+  width: 23px;
+  height: 23px;
+  padding: 0px;
+  margin-right: 10px;
+  text-align: center;
+}
+
+.radio-custom + .radio-custom-label:before {
+  border-radius: 50%;
+}
+
+.radio-custom:checked + .radio-custom-label:before {
+  background: #292929;
+  box-shadow: inset 0px 0px 0px 6px #fff;
+}
+
+.sampleckeckbox {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-family: "Brandon Grotesque Regular";
+  font-weight: 500;
+  font-size: 1.2em;
+}
+
+/* Hide the browser's default checkbox */
+.sampleckeckbox input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  border-color: #adbd2b;
+  border: 1px solid #adbd2b;
+  border-radius: 0.3em;
+}
+
+/* On mouse-over, add a grey background color */
+.sampleckeckbox:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.sampleckeckbox input:checked ~ .checkmark {
+  background-color: transparent;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.sampleckeckbox input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.sampleckeckbox .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+//card styles
+
+.cardbody_ItemNames {
+  display: -webkit-flex;
+  display: -webkit-box;
+  display: -moz-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: black;
+}
+.selectBox_CardBody {
+  padding: 0;
+  margin: 0;
+}
+.cardbody_ItemNames--Content {
+  border-radius: 1em;
+  font-size: 1.3em;
+  display: -webkit-flex;
+  display: -webkit-box;
+  display: -moz-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+  span {
+    font-family: "Brandon Grotesque Regular";
+    max-height: 13em;
+    min-height: 13em;
+    overflow: auto;
+    padding: 1em;
+    word-break: break-word;
+  }
+}
+.selectBox_card {
+  display: -webkit-flex;
+  display: -webkit-box;
+  display: -moz-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+}
+.card_BlockData {
+  margin: 0 0.8em 0em 0em;
+  @include sm {
+    margin: unset;
+    width: 100%;
+    margin-bottom: 2em;
+  }
+  @include md {
+    margin: unset;
+    width: 48%;
+    margin-bottom: 2em;
+    margin-right: 1em;
+  }
+  @include lg {
+    margin: 0 0.8em 0em 0em;
+    width: 30%;
+    margin-bottom: 0em;
+  }
+  @include xl {
+    margin: 0 0.8em 0em 0em;
+    margin-bottom: 0em;
+    width: 24%;
+  }
+}
+.card_BlockData:last-child {
+  margin: 0;
+}
+.card_HeadingBlock {
+  color: #adbd2b;
+  padding: 1.5em 0em 1em 2em;
+}
+.card_Heading {
+  font-family: "NSMFoodie";
+  margin: 0;
+}
+.card_SubHeading {
+  font-size: 1.3em;
+  font-family: "Brandon Grotesque Regular";
+}
+.card-footerBlock {
+  display: -webkit-flex;
+  display: -webkit-box;
+  display: -moz-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: flex-end;
+  .card-footerQuantity {
+    margin: 0 1em 0em 0em;
+    font-family: "Brandon Grotesque Regular";
+    font-size: 1.5em;
+    color: #adbd2b;
+  }
+}
+.card-ItemNamesButtons {
+  display: -webkit-flex;
+  display: -webkit-box;
+  display: -moz-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+}
+.card-ItemNamesValue {
+  margin: 0 2em;
+}
+.totalCost_Block {
+  display: -webkit-flex;
+  display: -webkit-box;
+  display: -moz-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin: 2em 0em;
+}
+.totalCost_BlockHeading {
+  font-family: "Brandon Grotesque Regular";
+  margin: 0;
+  font-size: 1.5em;
+  color: #adbd2b;
+}
+.totalCost_Value {
+  margin: 0;
+}
+.form-control:focus {
+  border-color: unset !important;
+  box-shadow: none;
+}
+.pickup_Location_Text,
+.Proceedtopay-Text {
+  font-family: "Brandon Grotesque Regular";
+  font-size: 1.61em;
+  margin-bottom: 1.35em;
+}
+.boldText {
+  font-weight: bold;
+}
+.Proceedtopay-Text {
+  .boldText {
+    font-weight: bold;
+    color: #adbd2b;
+  }
+}
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px #adbd2b;
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb {
+  background: #adbd2b;
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #adbd2b;
+}
+.minus_Button,
+.plus_Button {
+  cursor: pointer;
+  font-size: 1.5em;
+  font-weight: 700;
+}
+.pickupLocation_Heading {
+  font-family: "Brandon Grotesque Regular";
+  color: black;
+}
+.pickupLocation_Text {
+  font-family: "Brandon Grotesque Regular";
+  color: black;
+  font-size: 1.61em;
+  margin-bottom: 1.35em;
+}
+.message-Products--content {
+  color: #cdda00;
+  font-size: 2.3em;
+  @include sm {
+    padding: 1em;
+  }
+  @include md {
+    padding: 2em;
+  }
+  @include lg {
+    padding: 4em;
+  }
+  @include xl {
+    padding: 4em;
+  }
+}
+
+.outOfStockProductWarning {
+  font-family: "Brandon Grotesque Regular";
+  color: #adbd2b;
+  font-size: 1.3em;
+  margin-bottom: 1em;
+}
+.outOfStockProduct {
+  font-family: "Brandon Grotesque Regular";
+  color: red;
+  font-size: 1.3em;
+  margin-bottom: 1em;
+}
+.minus_Buttondisabled,
+.plus_Buttondisabled {
+  color: #8c8c8c;
+  font-size: 1.5em;
+  font-weight: 700;
+  cursor: unset;
+  border: none;
+  -webkit-appearance: none;
+}
+.card-disabledButtons {
+  color: #8c8c8c;
+  word-wrap: none !important;
+}
+.errorQty {
+  color: #f00 !important;
+}
+@keyframes blink {
+  50% {
+    color: transparent;
+  }
+}
+.loader__dot {
+  font-weight: bold;
+  animation: 2s blink infinite;
+}
+.loader__dot:nth-child(2) {
+  animation-delay: 250ms;
+  padding: 0em 0.1em;
+}
+.loader__dot:nth-child(3) {
+  animation-delay: 500ms;
+}
+.mainPage_Data--ImageBlock {
+  @include sm {
+    display: none;
+  }
+  @include md {
+    display: none;
+  }
+  @include lg {
+    display: block;
+  }
+  @include xl {
+    display: block;
+  }
+}

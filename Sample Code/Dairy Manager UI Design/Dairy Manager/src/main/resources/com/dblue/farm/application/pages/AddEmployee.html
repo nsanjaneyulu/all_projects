@@ -1,0 +1,178 @@
+<wicket:extend>
+            <div id="content">
+            <div class="bread-crumb">
+            	<h1>Employee Management / Adding Employee Information</h1>
+            </div>
+                <form method="post" wicket:id="addnewemployee">
+                    <div wicket:id="feedback"></div>
+                        <div class="addData">
+                            <ul>
+                                <li>
+                                    <label>Emp No:</label><font color="#FF0000">*</font><br />
+                                    <input name="employeeNumber" type="text" wicket:id="employeeNumber" class="number_effect"
+                                    maxlength="30"/>
+                                </li>
+                                <li>
+                                    <label>Emp Name:</label><font color="#FF0000">*</font><br />
+                                    <input name="name" type="text"wicket:id="name" class="textfield_effect" maxlength="140"/>
+                                </li>
+                                <li>
+                                    <label>DeptNo:</label><br />
+                                    <input name="deptNumber" type="text" wicket:id="deptNumber" class="number_effect"
+                                    maxlength="30"/>
+                                </li>
+                                <li>
+                                    <label>Dept Name:</label><font color="#FF0000">*</font><br />
+                                    <input name="deptName" type="text" wicket:id="deptName" class="textfield_effect"
+                                    maxlength="30"/>
+                                </li>
+                                <li>
+                                    <label>Sal:</label><font color="#FF0000">*</font><br />
+                                    <input name="salary" type="text" wicket:id="salary" class="number_effect" maxlength="8"
+                                    style="text-align:right;"/>
+                                </li>
+                                <li>
+                                    <label>Hike Details:</label><br />
+                                    <input name="hikeDetails" type="text" wicket:id="hikeDetails" class="number_effect"
+                                    maxlength="220"/>
+                                </li>
+                                <li>
+                                    <label>Hire Date:</label><font color="#FF0000">*</font><br />
+                                    <input type="text" id="hireDate"  wicket:id="hireDate" class="date_effect">
+                                </li>
+                                <li>
+                                    <label>Releave Date:</label><br />
+                                    <input type="text" id="releiveDate"  wicket:id="releiveDate" class="date_effect">
+                                </li>
+                                <li>
+                                    <label>Accademic Qualification</label><br />
+                                    <input name="academicQual" type="text" wicket:id="academicQual" class="textfield_effect"                                     maxlength="30"/>
+                                </li>
+                                <li>
+                                    <label>Year Of Passing:</label><br />
+                                    <input name="yearPassing" type="text" wicket:id="yearPassing" class="number_effect"
+                                    maxlength="4" style="text-align:right;"/>
+                                </li>
+                                <li>
+                                    <label>Sex</label><font color="#FF0000">*</font><br />
+                                    <select wicket:id="sex" class="dropdown_effect" maxlength="1"></select>
+                                </li>
+                                <li>
+                                    <label>Job Type</label><font color="#FF0000">*</font><br />
+                                    <input name="jobType" type="text" wicket:id="jobType" class="textfield_effect" maxlength="30"/>
+                                </li>
+                                <li>
+                                    <label>DOB:</label><font color="#FF0000">*</font><br />
+                                    <input type="text" id="dateOfBirth"  wicket:id="dateOfBirth" class="date_effect">
+                                </li>
+                                <li>
+                                <label>Martial Status:</label><font color="#FF0000">*</font><br />
+                                <select wicket:id="maritalStatus" class="dropdown_effect" maxlength="1"></select>
+                                </li>
+                                <li>
+                                    <label>Contact Person Name</label><font color="#FF0000">*</font><br />
+                                    <input name="contactPName" type="text" wicket:id="contactPName" class="textfield_effect"                                    maxlength="150"/>
+                                </li>
+                                <li>
+                                    <label>Emp Blood Group:</label><font color="#FF0000">*</font><br />
+                                    <input name="bloodGroup" type="text" wicket:id="bloodGroup" class="textfield_effect"
+                                    maxlength="3"/>
+                                </li>
+                                <li>
+                                    <label>Emp Contact No:</label><font color="#FF0000">*</font><br />
+                                    <input name="contactNumber" type="text" wicket:id="contactNumber" class="number_effect"                                    maxlength="30"/>
+                                </li>
+                                <li>
+                                    <label>Alternative Contact No:</label><br />
+                                    <input name="alternativeContactNumber" type="text" wicket:id="alternativeContactNumber"
+                                    class="number_effect" maxlength="30"/>
+                                </li>
+                                <li>
+                                    <label>Email Id:</label><br />
+                                    <input name="emailId" type="text" wicket:id="emailId" class="textfield_effect" maxlength="120"/>
+                                </li>
+                                <li>
+                                    <label>Emp Spouce Name(if he/she married) :</label><br />
+                                    <input name="spouseName" type="text" wicket:id="spouseName" class="textfield_effect"
+                                     maxlength="130"/> <br />
+                                </li>
+                            </ul>
+<br />
+                                <h1 class="empadd">Employee Current Address</h1>
+                            <ul>
+                                <li>
+                                    <label>Address Line1</label><font color="#FF0000">*</font><br />
+                                    <input type="text" name="currentAddressLine1"  wicket:id="currentAddressLine1"
+                                    class="textfield_effect" maxlength="50">
+                                </li>
+                                <li>
+                                    <label>Address Line2</label><br />
+                                    <input type="text" name="currentAddressLine2"  wicket:id="currentAddressLine2"
+                                    class="textfield_effect" maxlength="50">
+                                </li>
+                                <li>
+                                    <label>Address Line3</label><br />
+                                    <input type="text" name="currentAddressLine3"  wicket:id="currentAddressLine3"
+                                    class="textfield_effect" maxlength="50">
+                                </li>
+                                <li>
+                                    <label>City</label><font color="#FF0000">*</font><br />
+                                    <input type="text" name="currentCity"  wicket:id="currentCity" class="textfield_effect"                                     maxlength="50">
+                                </li>
+                                <li>
+                                    <label>State</label><font color="#FF0000">*</font><br />
+                                    <input type="text" name="currnetState"  wicket:id="currnetState" class="textfield_effect"                                     maxlength="50">
+                                </li>
+                                <li>
+                                    <label>Country</label><font color="#FF0000">*</font><br />
+                                    <input type="text" name="currentCountry"  wicket:id="currentCountry" class="textfield_effect"                                    maxlength="15">
+                                </li>
+                                <li>
+                                    <label>Zip Code</label><font color="#FF0000">*</font><br />
+                                    <input type="text" name="currnetZipCode"  wicket:id="currnetZipCode" class="number_effect"                                    maxlength="10" style="text-align:right;"/><br />
+                                </li>
+                            </ul><br />
+                                <h1 class="empadd">Employee Perminent Address</h1>
+                            <ul>
+                                <li>
+                                    <label>Address Line1</label><font color="#FF0000">*</font><br />
+                                    <input type="text" name="permanentAddressLine1"  wicket:id="permanentAddressLine1"
+                                    class="textfield_effect" maxlength="50">
+                                </li>
+                                <li>
+                                    <label>Address Line2</label><br />
+                                    <input type="text" name="permanentAddressLine2"  wicket:id="permanentAddressLine2"
+                                    class="textfield_effect" maxlength="50">
+                                </li>
+                                <li>
+                                    <label>Address Line3</label><br />
+                                    <input type="text" name="permanentAddressLine3"  wicket:id="permanentAddressLine3"
+                                    class="textfield_effect" maxlength="50">
+                                </li>
+                                <li>
+                                    <label>City</label><font color="#FF0000">*</font><br />
+                                    <input type="text" name="permanentCity"  wicket:id="permanentCity" class="textfield_effect"                                    maxlength="50">
+                                </li>
+                                <li>
+                                    <label>State</label><font color="#FF0000">*</font><br />
+                                    <input type="text" name="permanentState"  wicket:id="permanentState" class="textfield_effect"                                    maxlength="50">
+                                </li>
+                                <li>
+                                    <label>Country</label><font color="#FF0000">*</font><br />
+                                    <input type="text" name="permanentCountry"  wicket:id="permanentCountry"
+                                    class="textfield_effect" maxlength="15">
+                                </li>
+                                <li>
+                                    <label>Zip Code</label><font color="#FF0000">*</font><br />
+                                    <input type="text" name="permanentZipCode"  wicket:id="permanentZipCode" class="number_effect"                                     maxlength="10" style="text-align:right;"/>
+                                </li>
+                            </ul>
+                        
+                        </div>
+                        <div style="clear:both;"></div>
+                            <div class="newButton">
+                                <input type="submit" name="save" wicket:id="save" value="Submit" class="button"/>
+                            </div>
+                </form>
+            </div>
+</wicket:extend>

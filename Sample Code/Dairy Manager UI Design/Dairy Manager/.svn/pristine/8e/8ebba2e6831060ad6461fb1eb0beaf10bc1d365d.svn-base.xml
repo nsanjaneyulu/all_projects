@@ -1,0 +1,463 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<beans default-autowire="no"
+	xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+           http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+           http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+           http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
+           http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.0.xsd">
+
+
+	<!-- Object factory implementation -->
+
+	<bean id="objectLoader" class="com.dblue.orm.ObjectLoaderImpl">
+		<property name="objectFactories">
+			<util:map>
+				<entry key="com.dblue.farm.Address">
+					<ref bean="addressObjectFactory" />
+				</entry>
+				<entry key="com.dblue.farm.Asset">
+					<ref bean="assetObjectFactory" />
+				</entry>
+				<entry key="com.dblue.farm.AssetType">
+					<ref bean="assetTypeObjectFactory" />
+				</entry>
+				<entry key="com.dblue.farm.BreedType">
+					<ref bean="breedTypeObjectFactory" />
+				</entry>
+				<entry key="com.dblue.farm.Contact">
+					<ref bean="ContactObjectFactory" />
+				</entry>
+				<entry key="com.dblue.farm.Decease">
+					<ref bean="DeceaseObjectFactory" />
+				</entry>
+				<entry key="com.dblue.farm.DeceaseType">
+					<ref bean="DeceaseTypeObjectFactory" />
+				</entry>
+				<entry key="com.dblue.farm.Devermitization">
+					<ref bean="DevermitizationObjectFactory" />
+				</entry>
+				<entry key="com.dblue.farm.DeVermitizationType">
+					<ref bean="DevermitizationTypeObjectFactory" />
+				</entry>
+				
+				<entry key="com.dblue.farm.Expenses">
+					<ref bean="expensesObjectFactory" />
+				</entry>
+				<entry key="com.dblue.farm.ExpenseType">
+					<ref bean="expenseTypeObjectFactory" />
+				</entry>
+				<entry key="com.dblue.farm.Farm">
+					<ref bean="farmObjectFactory" />
+				</entry>
+				<entry key="com.dblue.farm.FeedingConfig">
+					<ref bean="feedingConfigObjectFactory" />
+				</entry>
+				<entry key="com.dblue.farm.FeedingHistory">
+					<ref bean="feedingHistoryObjectFactory" />
+				</entry>
+				<entry key="com.dblue.farm.FeedType">
+					<ref bean="feedTypeObjectFactory" />
+				</entry>
+				<entry key="com.dblue.farm.Health">
+					<ref bean="healthObjectFactory" />
+				</entry>
+				<entry key="com.dblue.farm.Images">
+					<ref bean="imagesObjectFactory" />
+				</entry>
+				<entry key="com.dblue.farm.Inventory">
+					<ref bean="inventoryObjectFactory" />
+				</entry>
+				<entry key="com.dblue.farm.Livestock">
+					<ref bean="livestockObjectFactory" />
+				</entry>
+				<entry key="com.dblue.farm.MilkingStatus">
+					<ref bean="milkingStatusObjectFactory" />
+				</entry>
+				<entry key="com.dblue.farm.OriginType">
+					<ref bean="originTypeObjectFactory" />
+				</entry>
+				<entry key="com.dblue.farm.Person">
+					<ref bean="personObjectFactory" />
+				</entry>
+				<entry key="com.dblue.farm.Production">
+					<ref bean="productionObjectFactory" />
+				</entry>
+				<entry key="com.dblue.farm.ProductionFarm">
+					<ref bean="productionFarmObjectFactory" />
+				</entry>
+				<entry key="com.dblue.farm.ProductionConfig">
+					<ref bean="productionConfigObjectFactory" />
+				</entry>
+				<entry key="com.dblue.farm.PromotionHistory">
+					<ref bean="promotionHistoryObjectFactory" />
+				</entry>
+				<entry key="com.dblue.farm.ProvisionInventory">
+					<ref bean="provisionInventoryObjectFactory" />
+				</entry>
+				<entry key="com.dblue.farm.Provisions">
+					<ref bean="provisionsObjectFactory" />
+				</entry>
+				<entry key="com.dblue.farm.Purchases">
+					<ref bean="purchasesObjectFactory" />
+				</entry>
+				<entry key="com.dblue.farm.ReceiptType">
+					<ref bean="receiptTypeObjectFactory" />
+				</entry>
+				<entry key="com.dblue.farm.Statistics">
+					<ref bean="statisticsObjectFactory" />
+				</entry>
+<!-- 				<entry key="com.dblue.farm.StockType">
+					<ref bean="stockTypeObjectFactory" />
+				</entry>
+ -->				<entry key="com.dblue.farm.Vaccination">
+					<ref bean="vaccinationObjectFactory" />
+				</entry>
+				<entry key="com.dblue.farm.VaccineType">
+					<ref bean="vaccineTypeObjectFactory" />
+				</entry>
+				<entry key="com.dblue.farm.Vendor">
+					<ref bean="vendorObjectFactory" />
+				</entry>
+				<entry key="com.dblue.farm.VendorType">
+					<ref bean="vendorTypeObjectFactory" />
+				</entry>				
+				<entry key="com.dblue.farm.StateType">
+					<ref bean="stateTypeObjectFactory" />
+				</entry>
+				<!--  <entry key="com.dblue.farm.Stock">
+					<ref bean="stockObjectFactory" />
+				</entry> -->
+				<entry key="com.dblue.farm.StockCategory">
+					<ref bean="stockCategoryObjectFactory" />
+				</entry>				
+				<entry key="com.dblue.farm.StockType">
+					<ref bean="stockTypeObjectFactory" />
+				</entry>
+				<entry key="com.dblue.farm.StockAudit">
+					<ref bean="stockAuditObjectFactory" />
+				</entry>
+				<entry key="com.dblue.farm.Ingredient">
+					<ref bean="ingredientObjectFactory" />
+				</entry>
+				<entry key="com.dblue.farm.IngredientType">
+					<ref bean="ingredientTypeObjectFactory" />
+				</entry>
+				<entry key="com.dblue.farm.IngredientOptions">
+					<ref bean="ingredientOptionsObjectFactory" />
+				</entry>
+				<entry key="com.dblue.farm.Reproduction">
+					<ref bean="reproductionObjectFactory" />
+				</entry>
+				<entry key="com.dblue.farm.SuggestedFeeding">
+					<ref bean="suggestedFeedingObjectFactory" />
+				</entry>
+				<entry key="com.dblue.farm.FarmConfiguration">
+					<ref bean="farmConfigurationObjectFactory" />
+				</entry>	
+				<entry key="com.dblue.farm.Lactation">
+					<ref bean="lactationObjectFactory" />
+				</entry>					
+			</util:map>
+		</property>
+	</bean>
+
+	<bean id="addressObjectFactory" class="com.dblue.orm.ObjectFactoryImpl">
+		<constructor-arg>
+			<value type="java.lang.Class">com.dblue.farm.Address</value>
+		</constructor-arg>
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="assetObjectFactory" class="com.dblue.orm.ObjectFactoryImpl">
+		<constructor-arg>
+			<value type="java.lang.Class">com.dblue.farm.Asset</value>
+		</constructor-arg>
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="assetTypeObjectFactory" class="com.dblue.orm.ObjectFactoryImpl">
+		<constructor-arg>
+			<value type="java.lang.Class">com.dblue.farm.AssetType</value>
+		</constructor-arg>
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="breedTypeObjectFactory" class="com.dblue.orm.ObjectFactoryImpl">
+		<constructor-arg>
+			<value type="java.lang.Class">com.dblue.farm.BreedType</value>
+		</constructor-arg>
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="ContactObjectFactory" class="com.dblue.orm.ObjectFactoryImpl">
+		<constructor-arg>
+			<value type="java.lang.Class">com.dblue.farm.Contact</value>
+		</constructor-arg>
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="DeceaseObjectFactory" class="com.dblue.orm.ObjectFactoryImpl">
+		<constructor-arg>
+			<value type="java.lang.Class">com.dblue.farm.Decease</value>
+		</constructor-arg>
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="DeceaseTypeObjectFactory" class="com.dblue.orm.ObjectFactoryImpl">
+		<constructor-arg>
+			<value type="java.lang.Class">com.dblue.farm.DeceaseType</value>
+		</constructor-arg>
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="DevermitizationObjectFactory" class="com.dblue.orm.ObjectFactoryImpl">
+		<constructor-arg>
+			<value type="java.lang.Class">com.dblue.farm.Devermitization</value>
+		</constructor-arg>
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="expensesObjectFactory" class="com.dblue.orm.ObjectFactoryImpl">
+		<constructor-arg>
+			<value type="java.lang.Class">com.dblue.farm.Expenses</value>
+		</constructor-arg>
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="expenseTypeObjectFactory" class="com.dblue.orm.ObjectFactoryImpl">
+		<constructor-arg>
+			<value type="java.lang.Class">com.dblue.farm.ExpenseType</value>
+		</constructor-arg>
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="DevermitizationTypeObjectFactory" class="com.dblue.orm.ObjectFactoryImpl">
+		<constructor-arg>
+			<value type="java.lang.Class">com.dblue.farm.DeVermitizationType</value>
+		</constructor-arg>
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="farmObjectFactory" class="com.dblue.orm.ObjectFactoryImpl">
+		<constructor-arg>
+			<value type="java.lang.Class">com.dblue.farm.Farm</value>
+		</constructor-arg>
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="feedingConfigObjectFactory" class="com.dblue.orm.ObjectFactoryImpl">
+		<constructor-arg>
+			<value type="java.lang.Class">com.dblue.farm.FeedingConfig</value>
+		</constructor-arg>
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="feedingHistoryObjectFactory" class="com.dblue.orm.ObjectFactoryImpl">
+		<constructor-arg>
+			<value type="java.lang.Class">com.dblue.farm.FeedingHistory</value>
+		</constructor-arg>
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="feedTypeObjectFactory" class="com.dblue.orm.ObjectFactoryImpl">
+		<constructor-arg>
+			<value type="java.lang.Class">com.dblue.farm.FeedType</value>
+		</constructor-arg>
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="healthObjectFactory" class="com.dblue.orm.ObjectFactoryImpl">
+		<constructor-arg>
+			<value type="java.lang.Class">com.dblue.farm.Health</value>
+		</constructor-arg>
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="imagesObjectFactory" class="com.dblue.orm.ObjectFactoryImpl">
+		<constructor-arg>
+			<value type="java.lang.Class">com.dblue.farm.Images</value>
+		</constructor-arg>
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="inventoryObjectFactory" class="com.dblue.orm.ObjectFactoryImpl">
+		<constructor-arg>
+			<value type="java.lang.Class">com.dblue.farm.Inventory</value>
+		</constructor-arg>
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="livestockObjectFactory" class="com.dblue.orm.ObjectFactoryImpl">
+		<constructor-arg>
+			<value type="java.lang.Class">com.dblue.farm.Livestock</value>
+		</constructor-arg>
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="milkingStatusObjectFactory" class="com.dblue.orm.ObjectFactoryImpl">
+		<constructor-arg>
+			<value type="java.lang.Class">com.dblue.farm.MilkingStatus</value>
+		</constructor-arg>
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="originTypeObjectFactory" class="com.dblue.orm.ObjectFactoryImpl">
+		<constructor-arg>
+			<value type="java.lang.Class">com.dblue.farm.OriginType</value>
+		</constructor-arg>
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="personObjectFactory" class="com.dblue.orm.ObjectFactoryImpl">
+		<constructor-arg>
+			<value type="java.lang.Class">com.dblue.farm.Person</value>
+		</constructor-arg>
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="productionObjectFactory" class="com.dblue.orm.ObjectFactoryImpl">
+		<constructor-arg>
+			<value type="java.lang.Class">com.dblue.farm.Production</value>
+		</constructor-arg>
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="productionFarmObjectFactory" class="com.dblue.orm.ObjectFactoryImpl">
+		<constructor-arg>
+			<value type="java.lang.Class">com.dblue.farm.ProductionFarm</value>
+		</constructor-arg>
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="productionConfigObjectFactory" class="com.dblue.orm.ObjectFactoryImpl">
+		<constructor-arg>
+			<value type="java.lang.Class">com.dblue.farm.ProductionConfig</value>
+		</constructor-arg>
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="promotionHistoryObjectFactory" class="com.dblue.orm.ObjectFactoryImpl">
+		<constructor-arg>
+			<value type="java.lang.Class">com.dblue.farm.PromotionHistory</value>
+		</constructor-arg>
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="provisionInventoryObjectFactory" class="com.dblue.orm.ObjectFactoryImpl">
+		<constructor-arg>
+			<value type="java.lang.Class">com.dblue.farm.ProvisionInventory</value>
+		</constructor-arg>
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="provisionsObjectFactory" class="com.dblue.orm.ObjectFactoryImpl">
+		<constructor-arg>
+			<value type="java.lang.Class">com.dblue.farm.Provisions</value>
+		</constructor-arg>
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="purchasesObjectFactory" class="com.dblue.orm.ObjectFactoryImpl">
+		<constructor-arg>
+			<value type="java.lang.Class">com.dblue.farm.Purchases</value>
+		</constructor-arg>
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="receiptTypeObjectFactory" class="com.dblue.orm.ObjectFactoryImpl">
+		<constructor-arg>
+			<value type="java.lang.Class">com.dblue.farm.ReceiptType</value>
+		</constructor-arg>
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="statisticsObjectFactory" class="com.dblue.orm.ObjectFactoryImpl">
+		<constructor-arg>
+			<value type="java.lang.Class">com.dblue.farm.Statistics</value>
+		</constructor-arg>
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+<!-- 	<bean id="stockTypeObjectFactory" class="com.dblue.orm.ObjectFactoryImpl">
+		<constructor-arg>
+			<value type="java.lang.Class">com.dblue.farm.StockType</value>
+		</constructor-arg>
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+ -->	<bean id="stateTypeObjectFactory" class="com.dblue.orm.ObjectFactoryImpl">
+		<constructor-arg>
+			<value type="java.lang.Class">com.dblue.farm.StateType</value>
+		</constructor-arg>
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	<bean id="vaccinationObjectFactory" class="com.dblue.orm.ObjectFactoryImpl">
+		<constructor-arg>
+			<value type="java.lang.Class">com.dblue.farm.Vaccination</value>
+		</constructor-arg>
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="vaccineTypeObjectFactory" class="com.dblue.orm.ObjectFactoryImpl">
+		<constructor-arg>
+			<value type="java.lang.Class">com.dblue.farm.VaccineType</value>
+		</constructor-arg>
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="vendorObjectFactory" class="com.dblue.orm.ObjectFactoryImpl">
+		<constructor-arg>
+			<value type="java.lang.Class">com.dblue.farm.Vendor</value>
+		</constructor-arg>
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="vendorTypeObjectFactory" class="com.dblue.orm.ObjectFactoryImpl">
+		<constructor-arg>
+			<value type="java.lang.Class">com.dblue.farm.VendorType</value>
+		</constructor-arg>
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	<!--  <bean id="stockObjectFactory" class="com.dblue.orm.ObjectFactoryImpl">
+			<constructor-arg>
+				<value type="java.lang.Class">com.dblue.farm.Stock</value>
+			</constructor-arg>
+			<property name="sessionFactory" ref="sessionFactory" />
+	</bean>-->
+	<bean id="stockCategoryObjectFactory" class="com.dblue.orm.ObjectFactoryImpl">
+			<constructor-arg>
+				<value type="java.lang.Class">com.dblue.farm.StockCategory</value>
+			</constructor-arg>
+			<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="stockTypeObjectFactory" class="com.dblue.orm.ObjectFactoryImpl">
+			<constructor-arg>
+				<value type="java.lang.Class">com.dblue.farm.StockType</value>
+			</constructor-arg>
+			<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="stockAuditObjectFactory" class="com.dblue.orm.ObjectFactoryImpl">
+			<constructor-arg>
+				<value type="java.lang.Class">com.dblue.farm.StockAudit</value>
+			</constructor-arg>
+			<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="ingredientObjectFactory" class="com.dblue.orm.ObjectFactoryImpl">
+			<constructor-arg>
+				<value type="java.lang.Class">com.dblue.farm.Ingredient</value>
+			</constructor-arg>
+			<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="ingredientTypeObjectFactory" class="com.dblue.orm.ObjectFactoryImpl">
+			<constructor-arg>
+				<value type="java.lang.Class">com.dblue.farm.IngredientType</value>
+			</constructor-arg>
+			<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="ingredientOptionsObjectFactory" class="com.dblue.orm.ObjectFactoryImpl">
+			<constructor-arg>
+				<value type="java.lang.Class">com.dblue.farm.IngredientOptions</value>
+			</constructor-arg>
+			<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="reproductionObjectFactory" class="com.dblue.orm.ObjectFactoryImpl">
+		<constructor-arg>
+			<value type="java.lang.Class">com.dblue.farm.Reproduction</value>
+		</constructor-arg>
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="farmConfigurationObjectFactory" class="com.dblue.orm.ObjectFactoryImpl">
+		<constructor-arg>
+			<value type="java.lang.Class">com.dblue.farm.FarmConfiguration</value>
+		</constructor-arg>
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="lactationObjectFactory" class="com.dblue.orm.ObjectFactoryImpl">
+		<constructor-arg>
+			<value type="java.lang.Class">com.dblue.farm.Lactation</value>
+		</constructor-arg>
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="suggestedFeedingObjectFactory" class="com.dblue.orm.ObjectFactoryImpl">
+		<constructor-arg>
+			<value type="java.lang.Class">com.dblue.farm.SuggestedFeeding</value>
+		</constructor-arg>
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="queryHelper" class="com.dblue.orm.QueryHelper">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+</beans>

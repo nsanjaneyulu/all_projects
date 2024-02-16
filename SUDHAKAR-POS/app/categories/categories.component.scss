@@ -1,0 +1,31 @@
+.category {
+    list-style-type: none;
+    padding: 0;
+
+    li {
+        cursor: pointer;
+        position: relative;
+        left: 0;
+        padding: .3em .5em;
+        &:hover, &.selected {
+            color: #607D8B;
+            background-color: #DDD;
+        }
+    }
+}
+
+.status-message {
+    color: #ffffff;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.8s linear;
+}
+
+.show-message {
+    visibility: visible;
+    opacity: 1;
+}
+
+.page-top-margin {
+    margin-top: 115px; 
+}

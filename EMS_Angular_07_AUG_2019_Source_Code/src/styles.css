@@ -1,0 +1,146 @@
+/* You can add global styles to this file, and also import other style files */
+.app {
+  display: flex;
+  height: 100vh;
+}
+.bow_menu_bar {
+  width: 48px;
+  height: 100vh;
+  position: relative;
+  z-index: 1;
+}
+.bow_menu_bar.active {
+  width: 180px;
+}
+.bow_menu_bar.active .bow_main_icon {
+  display: none;
+}
+.bow_menu_bar.active .bow_main_logo {
+  display: block;
+}
+.bow_menu_bar .bow_main_icon {
+  display: block;
+}
+.bow_menu_bar .bow_main_logo {
+  display: none;
+}
+.bow_menu_bar li > .bow_dropdown_list .bow_text_menu {
+  display: none;
+}
+.bow_menu_bar.active .bow_sub_menu {
+  display: block;
+}
+.bow_menu_bar .bow_sub_menu {
+  display: none;
+}
+.bow_menu_bar.active li .bow_text_menu {
+  display: block;
+  margin-right: auto;
+  margin-left: 12px;
+}
+
+
+.bow_menu_bar .bow_dropdown_list_items {
+  display: none;
+}
+.bow_menu_bar.active .bow_dropdown_list_items {
+  display: block;
+}
+.bow_menu_bar_styles > li ul {
+  width: 100%;
+  margin: 0;
+  padding-left: 30px;
+  list-style: none;
+}
+
+.bow_section {
+  background: #f0f0f7;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.bow_menu_bar:before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #000000;
+  z-index: -1;
+  top: 0;
+  left: 0;
+}
+.bow_menu_bar:after {
+  background: #084f8b;
+}
+.bow_right_header_bg_styles {
+  background: rgba(33, 46, 78);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.bow_header {
+  height: 48px;
+  /* background: #fff; */
+}
+.bow_menu_bar_styles {
+  padding-top: 24px;
+}
+.bow_menu_bar_styles > li.test_link > .bow_dropdown_list {
+  background: #323232;
+  box-shadow: inset 6px 0 0 #fff;
+  cursor: pointer;
+}
+.bow_menu_bar_styles > li > .bow_dropdown_list {
+  padding: 12px;
+  font-size: 15px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.27;
+  letter-spacing: normal;
+  text-align: left;
+  color: #ffffff;
+  overflow: hidden;
+  flex-wrap: wrap;
+}
+.bow_menu_bar li > .bow_dropdown_list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.bow_menu_bar.active li .bow_text_menu {
+  display: block;
+  margin-right: auto;
+  margin-left: 12px;
+}
+.bottom__Styles {
+  position: absolute;
+  bottom: 0;
+  background: rgb(33, 46, 78);
+  opacity: 0.9;
+  height: 40px;
+  width: 100%;
+}
+.bow_left_header_bg_Styles {
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.05);
+}
+.bow_menu_bar_styles > li > .bow_dropdown_list {
+  padding: 12px;
+  font-size: 15px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.27;
+  letter-spacing: normal;
+  text-align: left;
+  color: #ffffff;
+  overflow: hidden;
+  flex-wrap: wrap;
+}
+.btn_bg {
+  background-color:rgba(33, 46, 78);
+  border-color: rgba(33, 46, 78);
+}

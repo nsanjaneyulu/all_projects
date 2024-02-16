@@ -1,0 +1,35 @@
+<div class="row">
+  <div class="col-10" *ngFor="let item of permissionsData; let i=index">
+    <h4>{{item.role_name}}</h4>
+    <table class="table text-gold table-gold" *ngIf="item.pages.length">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col" colspan="2">Page</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let pitem of item.pages; index as k">
+          <td scope="row">{{i+1}}</td>
+          <td scope="row">{{pitem.permission_page_title}}</td>
+          <td scope="row">
+            <form [formGroup]="permissionsForm">
+              <div class="d-flex justify-content-between">
+                <div class="form-check" *ngFor="let pkey of item.permissionKeysSet; let p=index">
+                  <label class="form-check-label" [for]="pkey.key+p+k">
+                    <input class="form-check-input sat" [checked]='pkey.permission'
+                      (change)="permissionsUpdateForm(item.role_id,pkey.key,pkey.permission,pitem.permission_page_title,i,k,p)"
+                      type="checkbox" value="" [id]="pkey.key+p+k">
+                    {{pkey.key}}
+                  </label>
+                </div>
+              </div>
+            </form>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="text-gold" *ngIf="!item.pages.length">No Pages Available</p>
+  </div>
+
+</div>

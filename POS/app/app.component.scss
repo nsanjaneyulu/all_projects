@@ -1,0 +1,16 @@
+.offline {
+    height: 4px;
+    background-color: #ff0000;
+    position: fixed;
+    z-index: 100;
+    top:0;
+    left: 0;
+    z-index: 1031;
+    width: 100%; 
+}
+:host{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
+}

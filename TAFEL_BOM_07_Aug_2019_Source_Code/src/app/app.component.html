@@ -1,0 +1,12 @@
+<div class="app" [ngClass]="{'bow_login_container' : isLogin }">
+
+  <app-menu-bar [ngClass]="{'active': showSidebar}" class="bow_menu_bar "></app-menu-bar>
+
+  <div class="bow_section">
+    <app-header (toggleMenu)="toggleMenu()" class="bow_header"></app-header>
+    <section class="bow_section_page  page page__dashboard bow_margin_Styles_section" style="overflow-y: auto;">
+      <router-outlet></router-outlet>
+      <!-- <app-footer class="bow_footer"></app-footer> -->
+    </section>
+  </div>
+</div>

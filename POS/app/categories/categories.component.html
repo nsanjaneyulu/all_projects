@@ -1,0 +1,66 @@
+<div class="container-fluid bg-styles">
+  
+   <!-- <div class="mt-2 int-connect-disconnect-bg">
+         <div class="row">
+            <div class="col-12 p-2 ml-3" [ngClass]="message === 'Internet connected'?'txtColorGreen':'textColorRed'">
+               <span [ngClass]="message === 'Internet connected'?'topTitle':'topTitle1'"><span class="pl-2"><img class="int-connect-disconnect" *ngIf="message === 'Internet connected'" src="../../assets//images/wifi.svg"><img class="int-connect-disconnect" *ngIf="message === 'Internet Connected | Data Sinking'" src="../../assets//images/wifi.svg"><img class="int-connect-disconnect" *ngIf="message === 'No internet connected'" src="../../assets//images/noInternet.svg"></span><span class="pl-1">{{ message }}</span></span>
+            </div>
+         </div>
+      </div> -->
+      <!-- <div class="progress" *ngIf="message === 'Internet connected'">
+            <div class="progress-bar progress-bar-striped bg-success progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 110%; height: 0.5rem;"></div>
+          </div>
+          <div class="progress" *ngIf="message != 'Internet connected'">
+               <div class="progress-bar progress-bar-striped bg-danger progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 110%; height: 0.5rem;"></div>
+             </div> -->
+      <div  style="display: flex;font-size: 20px; " class="int-connect-disconnect-bg">
+         <div style="width: 25%;"  >
+          <span><b>Name:</b></span> &nbsp;  <span> {{mallName}}</span>  
+         </div>
+         <div >
+               <span><b>Outlet Name:</b></span>&nbsp; 
+               <span *ngIf="outletDetails.length>1" >
+                     <select [(ngModel)]="outeltId" (change)="selectoutLet(outeltId)" >
+      
+                           <option *ngFor="let outlet Of outletDetails;" [value]="outlet.id">{{outlet.name}}</option>
+                         </select>
+               </span>
+               <span *ngIf="outletDetails.length==1">
+                  {{outletDetails[0].name}}
+                     <!-- <select [(ngModel)]="outeltId" (change)="selectoutLet(outeltId)">
+      
+                           <option *ngFor="let outlet Of outletDetails;" [value]="outlet.id">{{outlet.name}}</option>
+                         </select> -->
+               </span>
+         </div>
+         
+      </div>
+    
+
+   <div class="row mx-0 mr-0">
+      <div class=" col-sm-2 col-xs-2 col-md-2 col-lg-2 col-xl-2  no-gutter-right no-gutter-left mt-2 search__container">
+         <div class="bg-white">
+            <div class="search-styles">
+               <input class="form-control" placeholder="Search Category" [(ngModel)]="searchCategory" /><span class="text-white search_container_icon"><i class="fa fa-search" aria-hidden="true"></i></span>
+            </div>
+            <div>
+               <ul class="category p-1" *ngIf="categories.length" >
+                  <li *ngFor="let category of categories | menuFilter: searchCategory"
+                     (click)="onSelectCategory(category)" [class.selected]="category.id === selectedCategory.id"><span
+                        class="pr-1 cateogoryName"><img src="../../assets/images/category.svg" /></span >{{ category.name }}</li>
+               </ul>
+            </div>
+         </div>
+      </div>
+      <div class="col-sm-10 col-xs-10 col-md-10 col-lg-10 col-xl-10 pr-0 mt-2 pb-3 detailsContainer">
+         <div class="border">
+            <tafelposapp-category-items [category]="selectedCategory"></tafelposapp-category-items>
+         </div>
+      </div>
+      <!-- <div class="col-sm-6 col-md-6 col-lg-5 col-xl-5 pr-0 mt-2">
+         <div class="bg-white">
+            <tafelposapp-order-item [orderItem]=""></tafelposapp-order-item>
+         </div>
+      </div> -->
+   </div>
+</div>

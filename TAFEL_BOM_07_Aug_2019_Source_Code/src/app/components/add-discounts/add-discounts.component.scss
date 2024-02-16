@@ -1,0 +1,60 @@
+input:focus{
+    outline:none !important;
+}
+.inputCss{
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    width: 90%;
+    font-size: 12px;
+    border-width: 1px;
+    border-color: rgb(169, 169, 169);
+
+}
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -6px;
+    margin-bottom: 30px;
+}
+.bow_page_title1 {
+    background: #5c0632;
+    padding: 12px;
+    border-radius: 5px;
+}
+.mat-dialog-title {
+    margin: 0 0 20px;
+    display: block;
+    margin-top: -2.1%;
+    padding: -6px;
+    margin-left: -2%;
+    margin-right: -2%;
+}
+.mat-dialog-actions {
+    margin: 0 0 0px;
+    display: block;
+    margin-left: -2%;
+    margin-right: -2%;
+    margin-bottom:-2%
+}
+.textsize{
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+}
+.mat-dialog-content {
+    display: block;
+    margin: 0 -24px;
+    padding: 0 24px;
+    max-height: 65vh;
+    overflow: auto;
+    font-size: 14px;
+    -webkit-overflow-scrolling: touch;
+}
+.cdk-overlay-pane {
+    box-sizing: border-box;
+    z-index: 1000;
+    display: flex;
+    max-height: 100%;margin-left: 11% !important;
+}

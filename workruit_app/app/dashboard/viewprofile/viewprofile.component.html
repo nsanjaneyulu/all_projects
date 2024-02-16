@@ -1,0 +1,36 @@
+<div>
+    <app-header></app-header>
+    <div class="content">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-6">
+                    <app-tabs [tabsName]="activityTabs" (tabChange)="tabClick($event)"></app-tabs>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="w-100 d-flex justify-content-center" *ngIf="myProfileGet">
+                    <div class="col-md-6">
+                        <div class="card w-100">
+                            <div class="card-body">
+                                <div>
+                                    <app-myprofile></app-myprofile>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-100 d-flex justify-content-center" *ngIf="companyProfileGet">
+                    <div class="col-md-9">
+                        <div class="card w-100">
+                            <div class="card-body">
+                                <div >
+                                    <app-companyprofile></app-companyprofile>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

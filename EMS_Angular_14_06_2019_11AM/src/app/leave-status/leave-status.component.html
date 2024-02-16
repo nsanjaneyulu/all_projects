@@ -1,0 +1,40 @@
+
+<ul class="breadcrumb animated bounceInLeft delay-1s mt-2">
+  <li><a href="#" title="Home">Home</a></li>
+  <li><a href="#" title="Sales">Leave</a></li>
+  <li><a href="#" title="Orders">Leave Status</a></li>
+</ul>
+<div class="card">
+<div class="card-body">
+ <h5 class="card-title">Leave Status</h5>
+ <div class="table-responsive">
+    <table *ngIf="getEmsStatusObj && !!getEmsStatusObj?.length" datatable [dtOptions]="dtOptions" class="row-border hover table table-striped table-bordered" cellspacing="0" width="100%" >
+        <thead>
+           <tr>
+              <th>Name</th>
+              <th>Leave Type</th>
+              <th>From date</th>
+              <th>To Date</th>
+              <th>Applying Date</th>
+              <th>No Of Days</th>
+              <th>Leave Purpose</th>
+              <th>Status</th>
+           </tr>
+        </thead>            
+        <tbody>
+           <tr *ngFor="let emsStatus of getEmsStatusObj; let i=index">
+             <td>{{emsStatus.userName}}</td> 
+             <td>{{emsStatus.leaveType}}</td> 
+             <td>{{emsStatus.fromDate}}</td>
+             <td>{{emsStatus.toDate}}</td>  
+             <td *ngFor="let format of formatsDateTest">{{dateNow | date: format}}</td>  
+             <td>{{emsStatus.noOfDays}}</td> 
+             <td>{{emsStatus.leaveReason}}</td>  
+             <td>Approved</td>                
+           </tr>
+           
+        </tbody>
+     </table>
+ </div>
+</div>
+</div>

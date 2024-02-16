@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Parameswara Timber Hub Pvt. Ltd</title>
+      <link href="css/bootstrap.min.css" rel="stylesheet">
+      
+      <link href="css/myStyles.css" rel="stylesheet">
+      <script src="js/jquery-2.2.4.js"></script>
+      <script src="js/popper.min.js"></script>
+      <script src="js/bootstrap.min.js"></script>
+      <script src="js/jquery.validate.js"></script>
+      <script src="js/additional-methods.js"></script>
+      <script src="https://raw.githubusercontent.com/igorescobar/jQuery-Mask-Plugin/master/src/jquery.mask.js"></script>
+      <script src="js/myScripts.js"></script>
+      <script src="js/formValidation.js"></script>
+   </head>
+   <body class="bgAlign">
+      <div class="container">
+         <div class="mmsTitle mx-auto text-center">
+            <h4>Parameswara Timber Hub Pvt. Ltd</h4>
+            <h5 >Material Management System</h5>
+         </div>
+         <div class="card card-register mx-auto mt-5">
+            <div class="card-header">Register an Account</div>
+            <div class="card-body">
+               <form id="registerPTH" novalidate="novalidate">
+                  
+                  <div class="form-group">
+                     <div class="form-row">
+                        <div class="col-md-6">
+                           <label for="">First name <span class="fieldRequired"> *</span></label>
+                           <input class="form-control" type="text" aria-describedby="nameHelp" placeholder="Enter first name" name="firstName">
+                        </div>
+                        <div class="col-md-6">
+                           <label for="">Last name</label>
+                           <input class="form-control" type="text" aria-describedby="nameHelp" placeholder="Enter last name" name="lastName">
+                        </div>
+                     </div>
+                  </div>
+                  <div class="form-group">
+                     <div class="form-row">
+                        <div class="col-md-6">
+                           <label for="">Contact Number <span class="fieldRequired"> *</span></label>
+                           <input class="form-control contactNumber" type="text" aria-describedby="emailHelp" placeholder="Contact Number" name="contactNumber">
+                        </div>
+                        <div class="col-md-6">
+                           <label for="exampleInputEmail1">Email address <span class="fieldRequired"> *</span></label>
+                           <input class="form-control" type="email" aria-describedby="emailHelp" placeholder="Enter email" name="email">
+                        </div>
+                     </div>
+                  </div>
+                  <div class="form-group">
+                     <div class="form-row">
+                        <div class="col-md-6">
+                           <label for="">Password <span class="fieldRequired"> *</span></label>
+                           <input class="form-control" type="password" placeholder="Password" name="password">
+                        </div>
+                        <div class="col-md-6">
+                           <label for="exampleConfirmPassword">Confirm password <span class="fieldRequired"> *</span></label>
+                           <input class="form-control" type="password" placeholder="Confirm password" name="confirmPassword">
+                        </div>
+                     </div>
+                  </div>
+                  <button class="btn btn-warning btn-block" type="submit"><a href="successfullyRegestered.html">Register</a></button>
+               </form>
+               <div class="text-center">
+                  <a class="d-block small mt-3" href="login.html">Login Page</a>
+                  <a class="d-block small" href="forgotPassword.html">Forgot Password?</a>
+               </div>
+               <div class="">
+                  <a class="d-block small" href="login.html" style="color: #f00;"><i>* Mandatory Fields</i></a>
+                 
+               </div>
+            </div>
+         </div>
+      </div>
+      <script type="">
+         $(document).ready(function() {
+  
+   $(".contactNumber").mask("(99) 9999-9999"); 
+   
+});
+      </script>
+   </body>
+</html>

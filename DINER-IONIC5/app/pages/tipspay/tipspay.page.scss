@@ -1,0 +1,129 @@
+.toolbar-background-md {
+    border-color: #b2b2b2;
+    background: #5c0632 !important;
+}
+
+.headerFontCss {
+    font-weight: 500;
+    font-style: normal;
+    font-size: 16px;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: white;
+}
+
+.Points-Earned {
+    font-family: AvenirNext;
+    font-size: 17px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #5c0632;
+}
+
+.grid {
+    padding: 0px !important;
+}
+
+.onActive {
+    border-bottom-style: groove;
+    border-color: #5c0632;
+}
+
+.apply {
+    background-color: #5c0632;
+    color: white
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 38vw;
+    border-style: solid;
+    border-width: 1px;
+    border-color: darkgray;
+    text-align: center;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -450%;
+    background-color: #F4F6F6;
+    font-size: 10px;
+    /* Fade in tooltip - takes 1 second to go from 0% to 100% opac: */
+    opacity: 0;
+    // transition: opacity 1s;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+.tooltip .tooltiptext1 {
+    visibility: hidden;
+    width: 55vw;
+    border-style: solid;
+    border-width: 1px;
+    border-color: darkgray;
+    text-align: center;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -600%;
+    background-color: #F4F6F6;
+    font-size: 10px;
+    /* Fade in tooltip - takes 1 second to go from 0% to 100% opac: */
+    opacity: 0;
+    // transition: opacity 1s;
+}
+
+.tooltip .tooltiptext::after {
+    content: " ";
+    position: absolute;
+    top: 100%;
+    /* At the bottom of the tooltip */
+    left: 50%;
+    margin-left: -15px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: gray transparent transparent transparent;
+}
+
+.tooltip .tooltiptext1::after {
+    content: " ";
+    position: absolute;
+    top: 100%;
+    /* At the bottom of the tooltip */
+    left: 50%;
+    margin-left: -15px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: gray transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext1 {
+    visibility: visible;
+    opacity: 1;
+}
+
+.tabImage {
+    width: 35% !important;
+}
+
+.badgeNumber {
+    margin-left: -12%;
+    margin-top: -8%;
+    font-size: 0.7rem;
+    background-color: #5c0632;
+}

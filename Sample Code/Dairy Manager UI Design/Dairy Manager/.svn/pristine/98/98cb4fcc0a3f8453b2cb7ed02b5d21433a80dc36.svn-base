@@ -1,0 +1,42 @@
+<wicket:extend>
+	<div id="content">
+    <div class="bread-crumb">
+            	<h1>Live Stock Management / Live Stock Discarded List</h1>
+            </div>
+	<div wicket:id="yearselection">
+			<span wicket:id="yearrepeater"><a wicket:id="year"><span
+					wicket:id="yerlabel" />
+			</a>
+			</span>
+		</div>
+	<h2><div wicket:id="feedback"></div></h2> 
+	<div wicket:id="reportpanel">
+    	<div class="containerDiv">
+           <div class="rowDivHeader">
+           			<div>RFID</div>
+					<div>Live Stock Code</div>
+					<div>Mother Live Stock Code</div>					
+					<div>Live Stock State</div>
+					<div>Breed</div>
+					<div>Sex</div>
+					<div>Origin</div>
+					<div>Discarded Date</div>	
+					<div>Remarks</div>
+           </div>
+        
+           <div class="rowDiv" wicket:id="rows">
+           			<div><span wicket:id="rfid" /></div>
+					<div><span wicket:id="code" /></div>
+					<div><span wicket:id="mothercode" /></div>
+					<div><span wicket:id="lsStateType" /></div>
+					<div><span wicket:id="lsBreedType" /></div>
+					<div><span wicket:id="sex" /></div>
+					<div><span wicket:id="originType" /></div>	
+					<div><span wicket:id="discardedDate" /></div>				
+					<div><span wicket:id="remarks" /></div>
+           </div>
+		</div>
+		
+		</div>
+	</div>
+</wicket:extend>

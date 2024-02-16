@@ -1,0 +1,46 @@
+<wicket:extend>
+    <div id="content">
+    <div class="bread-crumb">
+            	<h1>Milk Yield Management / Daily Milk Production by Farm Wise: </h1>
+            </div>
+        <form method="post" wicket:id="dailyproductionfarm">
+            <p>Select Date: <input type="text" wicket:id="effectiveDate" class="selectdate"/></p> 
+            <h2><div wicket:id="feedback"></div></h2>
+            <table>
+                    <thead>
+                    <tr>
+                        <th>Yield Slot Name</th>
+                                        <th>Yield</th>
+                                        <th>Fat Percentile</th>
+                                        <th>SNF</th>
+                                        <th>CLR</th>
+                                        <th>Rejection</th>
+                                        <th>Deduction</th> 
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr wicket:id="rows">
+                    <td><span wicket:id="yeildSlotName" /></td>
+                    <span wicket:id="prods">
+                        <td><input type="text" wicket:id="yield" class="textfield_effect" maxlength="8"
+                                                style="text-align:right;"/></td>
+                                                <td><input type="text" wicket:id="fatPercentile" 
+                                                class="textfield_effect" maxlength="8" style="text-align:right;"/></td>
+                                                <td><input type="text" wicket:id="snf" class="textfield_effect" maxlength="8"
+                                                style="text-align:right;"/></td>
+                                                <td><input type="text" wicket:id="clr" class="textfield_effect" maxlength="8"
+                                                style="text-align:right;"/></td>
+                                                <td><input type="text" wicket:id="rejection" 
+                                                class="textfield_effect" maxlength="8" style="text-align:right;"/></td>
+                                                <td><input type="text" wicket:id="deduction" 
+                                                class="textfield_effect" maxlength="8" style="text-align:right;"/></td></span>
+                    </tr>
+                    
+                    </tbody>
+                </table>
+            
+             <input type="submit" value="Submit" class="button" style="margin:10px 0 0 50px;" wicket:id="save"/>
+            
+        </form>	
+    </div>
+</wicket:extend>

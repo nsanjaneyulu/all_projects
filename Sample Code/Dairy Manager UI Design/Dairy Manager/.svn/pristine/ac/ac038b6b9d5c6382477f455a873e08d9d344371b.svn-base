@@ -1,0 +1,61 @@
+<wicket:extend>
+	<div id="content">
+		<h1>Farm Configuration</h1>
+					<div wicket:id="feedback"></div>
+                    <form method="post" wicket:id="farmconfiguration">			         
+						<div class="addData">
+						  <ul>
+						    <li>
+                               <label>Number of items in a page</label><font color="#FF0000">*</font><br />
+							    <input type="text" wicket:id="pagination" class="number_effect" maxlength="3">	
+                             </li>
+                             <li>
+								<label>Number of items in a report</label><font color="#FF0000">*</font><br />
+								<input type="text" wicket:id="summaryPagination" class="number_effect" maxlength="3">									
+                             </li>
+                             <li>
+								<label>Number of items in daily milk production</label><font color="#FF0000">*</font><br />
+								<input type="text" wicket:id="milkProductionPagination" class="number_effect" maxlength="3">								
+                             </li>
+                             <li>								
+								<label>Equivalent state for Calf</label><font color="#FF0000">*</font><br />
+								<select wicket:id="calf" class="dropdown_effect"/>	
+                            </li>
+                             <li>								
+								<label>Equivalent state for Heifer</label><font color="#FF0000">*</font><br />
+								<select wicket:id="heafer" class="dropdown_effect"/>	
+                            </li>
+                             <li>								
+								<label>Equivalent state for Herd</label><font color="#FF0000">*</font><br />
+								<select wicket:id="herd" class="dropdown_effect"/>	
+                            </li>
+                             <li>
+								<label>Create animals with re production information</label><font color="#FF0000">*</font><br />
+								<select wicket:id="autoReProduce" class="dropdown_effect"/>	
+                             </li>
+                             <li>
+								<label>Non Milking Status</label><font color="#FF0000">*</font><br />
+								<select wicket:id="nonMlikingStatus" class="dropdown_effect" />	
+                             </li>
+                             <li>
+								<label>In House Origin Type</label><font color="#FF0000">*</font><br />
+								<select wicket:id="inhouseOriginType" class="dropdown_effect" />	
+                             </li>
+                             <li>								
+								<label>Live Stock Code Prefix</label><font color="#FF0000">*</font><br />
+								<input type="text" name="codePrefix"  wicket:id="codePrefix" class="dropdown_effect">	
+                           </li>
+                           <li>
+								<label>Daily Milk Production</label><font color="#FF0000">*</font><br />
+								<select wicket:id="milkProductionChoice" class="dropdown_effect"/>	
+                             </li>
+             			  </ul>
+                          <div style="clear:both;"></div> 
+                          	  <br />
+                              <div class="newButton">    	                                
+                              <INPUT type="submit" value="Submit" class="button" wicket:id="save"/>
+                              </div> 
+			          </div>
+                </form>
+	</div>
+</wicket:extend>

@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width">
+      <title>Parameswara Timber Hub Pvt Ltd.</title>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css">
+      <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+      <link rel="stylesheet" href="style.css">
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+      <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+     
+   </head>
+   <body style="padding-bottom: 3em;">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+         <a class="navbar-brand" href="#"><img src="http://pth1.heeditsolutions.com/Images/logo.png" style="width: 200px;" /></a>
+         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+         <span class="navbar-toggler-icon"></span>
+         </button>
+         <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav  ml-auto">
+               <li class="nav-item">
+                  <a class="nav-link" href="dashboard.html" title="Dashboard">Dashboard</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="#" title="Purchase">Purchase</a>
+               </li>
+               <li class="nav-item dropdown">
+                  <a class="nav-link navlinkColor dropdown-toggle active" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <span data-toggle="tooltip" data-placement="top" title="Sales">Sales</span>
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                     <li class="dropdown-submenu">
+                        <a class="dropdown-item dropdown-toggle" href="#" data-toggle="tooltip" data-placement="top" title="Master">Master</a>
+                        <ul class="dropdown-menu">
+                           <li class="dropdown-submenu">
+                              <a class="dropdown-item" id="ProductList" data-toggle="tooltip" data-placement="top" title="Product"  href="../Masters/Product.aspx">Product</a>
+                           </li>
+                           <li class="dropdown-submenu">
+                              <a class="dropdown-item" id="ProductCategory" data-toggle="tooltip" data-placement="top" title="Product Category" href="../Masters/ProductCategory.aspx">Product category</a>
+                              <!-- <ul class="dropdown-menu">
+                                 <li><a class="dropdown-item" href="#">Subsubmenu action</a></li>
+                                 <li><a class="dropdown-item" href="#">Another subsubmenu action</a></li>
+                                 </ul> -->
+                           </li>
+                           <li class="dropdown-submenu">
+                              <a class="dropdown-item" id="Item" data-toggle="tooltip" data-placement="top" title="Item" href="../Masters/Item.aspx">Item</a>
+                           </li>
+                           <li class="dropdown-submenu">
+                              <a class="dropdown-item" id="ItemDetails" data-toggle="tooltip" data-placement="top" title="Item Details" href="../Masters/ItemDetails.aspx">Item Details</a>
+                           </li>
+                           <li class="dropdown-submenu">
+                              <a class="dropdown-item" id="CustomerMaster" data-toggle="tooltip" data-placement="top" title="Customer Master" href="../Masters/CustomerMaster.aspx">Customer Master</a>
+                           </li>
+                           <li class="dropdown-submenu">
+                              <a class="dropdown-item" id="VendorMaster" data-toggle="tooltip" data-placement="top" title="Vendor Master" href="../Masters/VendorMaster.aspx">Vendor Master</a>
+                           </li>
+                           <li class="dropdown-submenu">
+                              <a class="dropdown-item" id="hsnCode" data-toggle="tooltip" data-placement="top" title="Vendor Master" href="../Configer/HSNMaster.aspx">HSN Master</a>
+                           </li>
+                        </ul>
+                     </li>
+                     <li class="dropdown-submenu">
+                        <a class="dropdown-item dropdown-toggle" href="#" data-toggle="tooltip" data-placement="top" title="Orders">Orders</a>
+                        <ul class="dropdown-menu">
+                           <li class="dropdown-submenu">
+                              <a class="dropdown-item" id="ViewOrder" data-toggle="tooltip" data-placement="top" title="View Order" href="../Sales/ViewOrder.aspx">View Order</a>
+                           </li>
+                           <li class="dropdown-submenu">
+                              <a class="dropdown-item" id="CreateOrder" data-toggle="tooltip" data-placement="top" title="Create Order" href="index.html">Create Order</a>
+                              <!-- <ul class="dropdown-menu">
+                                 <li><a class="dropdown-item" href="#">Subsubmenu action</a></li>
+                                 <li><a class="dropdown-item" href="#">Another subsubmenu action</a></li>
+                                 </ul> -->
+                           </li>
+                        </ul>
+                     </li>
+                     <li class="dropdown-submenu">
+                        <a class="dropdown-item" href="#" data-toggle="tooltip" data-placement="top" title="Invoice">Invoice</a>
+                     </li>
+                  </ul>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="#" title="Accounts">Accounts</a>
+               </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+               <li class="nav-item">
+                  <a class="nav-link" href="#">
+                  <i class="far fa-user-circle" title="Hello Admin"></i> Hello Admin</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="#">
+                  <i class="fas fa-cog" title="Settings"></i>
+                  </a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="#">
+                  <i class="fas fa-sign-out-alt" title="Log Out"></i>
+                  </a>
+               </li>
+            </ul>
+         </div>
+      </nav>
+      <div clas
+      <div class="container mt-4 text-dark order">
+         <ul class="breadcrumb">
+            <li><a href="#" title="Home">Home</a></li>
+            <li><a href="#" title="Sales">Sales</a></li>
+            <li><a href="#" title="Orders">Orders</a></li>
+            <li><a href="#" title="Create Order">Create Order</a></li>
+         </ul>
+          <div class="bg-dark py-3 px-4 text-light  d-flex align-items-center">
+            <div class="order__number">
+                <strong>Order No: </strong>
+                <span>OR345TIMBER</span>
+            </div>
+
+            <div class="order__time ml-auto d-flex align-items-center">
+                <div class="input-group order__date">
+                    <input type="date" class="form-control form-control-sm" placeholder="Select Order date">
+                </div>
+
+                <div class="order__branch ml-3">
+                    <strong class="dropdown-toggle" data-toggle="dropdown">Hyderabad</strong>
+
+                    <div class="dropdown-menu dropdown-menu-right">
+                        <button class="dropdown-item" type="button">Anathapur</button>
+                        <button class="dropdown-item" type="button">Vijayawada</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+         <div class="box-shadow bg-white p-4 mb-4 order__customer">
+
+            <h5 class="box-title">
+               <span>Customer Details</span>
+            </h5>
+            <div class="order__address text-secondary">
+               <div class="order__shipping">
+                  <div class="order__address__header d-flex align-items-center">
+                     <label>Billing To</label>
+                     <select name="" id="" class="form-control">
+                        <option value="">Bharavi</option>
+                        <option value="">Kumar</option>
+                        <option value="">Shiva</option>
+                     </select>
+                     <i class="fas fa-edit text-primary" title="Change Address" data-toggle="modal" data-target="#changeAddressBillTo"></i>
+                  </div>
+                  <ul class="order__address__details list-unstyled p-0">
+                     <li>
+                        <strong>GST No: </strong> 345768923298738234
+                     </li>
+                     <li>
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>4th Floor, HSR Layout, Sri Nagar Colony, Madhapur. Hyderabad - 500 081</span>
+                     </li>
+                     <li>
+                        <i class="fas fa-mobile-alt"></i>
+                        <span>+91 9876543210</span>
+                     </li>
+                     <li>
+                        <i class="fas fa-envelope-open"></i>
+                        <span>bharavi@email.com</span>
+                     </li>
+                  </ul>
+               </div>
+               <div class="order__billing">
+                  <div class="order__address__header d-flex align-items-center">
+                     <label>Shipping To</label>
+                     <select name="" id="" class="form-control">
+                        <option value="">Shiva</option>
+                        <option value="">Kumar</option>
+                        <option value="">Bharavi</option>
+                     </select>
+                     <i class="fas fa-edit text-primary" title="Change Address" data-toggle="modal" data-target="#changeAddressShipTo"></i>
+                  </div>
+                  <ul class="order__address__details list-unstyled p-0">
+                     <li>
+                        <strong>GST No: </strong> 345768923298738234
+                     </li>
+                     <li>
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>6th Floor, LNR Colony, Dammaiguda, ECIT. Vijayawada - 500 073</span>
+                     </li>
+                     <li>
+                        <i class="fas fa-mobile-alt"></i>
+                        <span>+91 9876543210</span>
+                     </li>
+                     <li>
+                        <i class="fas fa-envelope-open"></i>
+                        <span>Shiva@email.com</span>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+         <div class="d-none box-shadow bg-white p-4 mb-4 order__items">
+            <h5 class="box-title">
+               <span>Product Item Details</span>
+               <a href="" class="btn btn-link" data-toggle="modal" data-target="#itemDetailsAdd" title="Add Item">Add Item</a>
+            </h5>
+            <div class="table-responsive">
+               <table class="table table-sm table-bordered">
+                  <thead>
+                     <tr>
+                        <th>Category</th>
+                        <th>Product</th>
+                        <th>Name</th>
+                        <th>Desc</th>
+                        <th>Dimensions</th>
+                        <th>No.of Pcs</th>
+                        <th>Quantity</th>
+                        <th>UOM</th>
+                        <th>Rate</th>
+                        <th>GST(%)</th>
+                        <th>Total</th>
+                        <th></th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     <tr>
+                        <td>Home</td>
+                        <td>Doors, Frames</td>
+                        <td>Vegi Item</td>
+                        <td>-</td>
+                        <td>2x2x2</td>
+                        <td>2</td>
+                        <td>0.11</td>
+                        <td>INH</td>
+                        <td>2</td>
+                        <td>18</td>
+                        <td>0.6</td>
+                        <td class="text-center">
+                           <i class="fas fa-edit text-primary" data-toggle="modal" data-target="#itemDetailsAdd" title="Edit Item"></i>
+                           <i class="fas fa-minus-circle text-danger itemDeleted" title="Delete Item"></i>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td>Building</td>
+                        <td>Window</td>
+                        <td>Sally Item</td>
+                        <td>-</td>
+                        <td>4x5</td>
+                        <td>5</td>
+                        <td>2.4</td>
+                        <td>INH</td>
+                        <td>4</td>
+                        <td>18</td>
+                        <td>1200</td>
+                        <td class="text-center">
+                           <i class="fas fa-edit text-primary" title="Edit Item"></i>
+                           <i class="fas fa-minus-circle text-danger itemDeleted" title="Delete Item"></i>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </div>
+         </div>
+         <div class="d-none box-shadow bg-white p-4 mb-4 order__payment">
+            <h5 class="box-title">
+               <span>Payment Details</span>
+               <a href="" class="btn btn-link" data-toggle="modal" data-target="#paymentDetails" title="Add More Payments">Add More Payments</a>
+            </h5>
+            <form>
+               <div class="row">
+                  <div class="col-md-3 form-group">
+                     <label for=""><strong>Total Invoice Amount: </strong><span>1,600</span></label>
+                  </div>
+                  <div class="col-md-3 form-group ml-auto">
+                     <label for=""><strong>Balance Due: </strong><span>600</span></label>
+                  </div>
+               </div>
+               <div class="table-responsive">
+                  <table class="table table-sm table-bordered">
+                     <thead>
+                        <tr>
+                           <th>Payment Mode</th>
+                           <th>Payment Date</th>
+                           <th>Cheque / DD / cash</th>
+                           <th>Paid</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr>
+                           <td>DD</td>
+                           <td>05-April-2018</td>
+                           <td>GFT999997777</td>
+                           <td>500</td>
+                        </tr>
+                        <tr>
+                           <td>Cheque</td>
+                           <td>06-April-2018</td>
+                           <td>GFT996797777</td>
+                           <td>500</td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+            </form>
+         </div>
+         <div class="d-none box-shadow bounceAnimate bg-white p-4 mb-4 order__dispatch">
+            <h5 class="box-title">
+               <span>Dispatch Details</span>
+            </h5>
+            <form>
+               <div class="row">
+                  <div class="col-md-3 form-group">
+                     <label for="">Transit Permit Number <span class="requiredField">*</span></label>
+                     <input type="text" class="form-control form-control-sm" placeholder="Transit Permit Number">
+                  </div>
+                  <div class="col-md-3 form-group ml-auto">
+                     <label for="">Dispatch Date <span class="requiredField">*</span></label>
+                     <input type="date" class="form-control form-control-sm" placeholder="Dispatch Date">
+                  </div>
+               </div>
+               <div class="row">
+                  <div class="col-md-2 form-group">
+                     <label for="">Transport Type <span class="requiredField">*</span></label>
+                     <input type="text" class="form-control form-control-sm" placeholder="Transport Type">
+                  </div>
+                  <div class="col-md-2 form-group">
+                     <label for="">LR/Way Bill Number <span class="requiredField">*</span></label>
+                     <input type="text" class="form-control form-control-sm" placeholder="LR/Way Bill Number">
+                  </div>
+                  <div class="col-md-2 form-group">
+                     <label for="">Vehicle No <span class="requiredField">*</span></label>
+                     <input type="text" class="form-control form-control-sm" placeholder="Vehicle No">
+                  </div>
+                  <div class="col-md-2 form-group">
+                     <label for="">Driver Name <span class="requiredField">*</span></label>
+                     <input type="text" class="form-control form-control-sm" placeholder="Driver Name">
+                  </div>
+                  <div class="col-md-2 form-group">
+                     <label for="">Driver Contact No. <span class="requiredField">*</span></label>
+                     <input type="text" class="form-control form-control-sm" placeholder="Driver Contact No.">
+                  </div>
+                  <div class="col-md-2 form-group">
+                     <label for="">Comments</label>
+                     <textarea name="" id="" cols="30" rows="3" class="form-control form-control-sm" placeholder="Comments"></textarea>
+                  </div>
+               </div>
+            </form>
+         </div>
+         <div class="actions text-right">
+            <button class="btn btn-danger btn-next px-4 mb-2">Next (Add Items)</button>
+         </div>
+      </div>
+      <footer class="bg-dark">
+         <div class="container-fluid">
+            <div class="row" style="padding: 20px;">
+               <div class="col-sm-6">
+                  <div class="">
+                     <small style="color: #fff;">Copyright © Parameswara Timber Hub Pvt.Ltd 2018</small>
+                  </div>
+               </div>
+               <div class="col-sm-6">
+                  <div class="text-right">
+                     <small style="color: #fff;">Application Designed and Built By <a href="http://heeditsolutions.com" target="_blank">Heed IT Solutions Pvt Ltd.</a></small>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </footer>
+      <!-- Add item Details popup -->
+      <div class="modal fade" id="itemDetailsAdd" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+         <div class="modal-dialog" role="document">
+            <div class="modal-content">
+               <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLongTitle">Add Items</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                  </button>
+               </div>
+               <div class="modal-body">
+                  <div class="form-row">
+                     <label class="font-italic requiredField" style="font-size:11px; margin-bottom:0px;"><span class="">*</span> <span>Indicates Mandatory Field</span></label>
+                  </div>
+                  <div class="form-row">
+                     <div class="form-group col-md-3 col-sm-6 col-xs-12">
+                        <label>Category <span class="requiredField">*</span></label>
+                        <select class="form-control form-control-sm formfieldValidate productCategoryPopup" id="ProductCatSelect">
+                           <option value="4">Cat</option>
+                           <option value="8">Honne</option>
+                           <option value="1">mathi</option>
+                           <option value="2">mathi</option>
+                           <option value="6">Saalu</option>
+                           <option value="3">vegi</option>
+                        </select>
+                        <input data-val="true" data-val-number="The field ProductCatId must be a number." id="ProductCatId" name="Item.ProductCatId" type="hidden" value="">
+                     </div>
+                     <div class="form-group col-md-3 col-sm-6 col-xs-12">
+                        <label>Product <span class="requiredField">*</span></label>
+                        <select class="form-control form-control-sm formfieldValidate productPopup" id="ProductSelect">
+                           <option value="4">Doors Frames</option>
+                           <option value="5">Timber pieces</option>
+                           <option value="11">Window</option>
+                           <option value="6">Window Frames</option>
+                           <option value="9">windows</option>
+                        </select>
+                        <input data-val="true" data-val-number="The field ProductId must be a number." id="ProductId" name="Item.ProductId" type="hidden" value="">
+                        <input id="GUID" name="Item.GUID" type="hidden" value="">
+                     </div>
+                     <div class="form-group col-md-3 col-sm-6 col-xs-12">
+                        <label>Item Name <span class="requiredField">*</span></label>
+                        <select class="form-control form-control-sm formfieldValidate itemNamePopup" id="ItemSelect">
+                           <option value="2">Saalu Item</option>
+                           <option value="7">Vegi Item</option>
+                           <option value="8">doors</option>
+                           <option value="9">Window Frames mathi</option>
+                           <option value="10">Honne windows</option>
+                           <option value="11">windowmathi</option>
+                        </select>
+                        <input data-val="true" data-val-number="The field ItemId must be a number." id="ItemId" name="Item.ItemId" type="hidden" value="">
+                     </div>
+                     <div class="form-group col-md-3 col-sm-6 col-xs-12">
+                        <label>
+                        Comments
+                        </label>
+                        <textarea class="form-control form-control-sm form-control form-control-sm-sm" cols="20" id="Description" maxlength="50" minlength="1" name="Item.Description" placeholder="Comments" rows="2"></textarea>
+                     </div>
+                  </div>
+                  <div class="form-row">
+                     <div class="form-group col-md-3 col-sm-6 col-xs-12">
+                        <label>Length(ft) <span class="requiredField">*</span></label>
+                        <input class="allowNumberOnly lengthPopup formfieldValidate form-control form-control-sm length form-control form-control-sm-sm formfieldValidate" data-val="true" data-val-number="The field FldIntLength must be a number." id="FldIntLength" maxlength="2" minlength="1" name="Item.FldIntLength" placeholder="Length(ft)" type="text" value="">
+                     </div>
+                     <div class="form-group col-md-3 col-sm-6 col-xs-12">
+                        <label>Width(in) <span class="requiredField">*</span></label>
+                        <input class="widthPopup formfieldValidate form-control form-control-sm form-control form-control-sm-sm" data-val="true" data-val-number="The field FldIntWidth must be a number." id="FldIntWidth" maxlength="2" minlength="1" name="Item.FldIntWidth" placeholder="Width(in)" type="text" value="">
+                     </div>
+                     <div class="form-group col-md-3 col-sm-6 col-xs-12">
+                        <label>Thickness(in) <span class="requiredField">*</span></label>
+                        <input class="thicknessPopup formfieldValidate form-control form-control-sm form-control form-control-sm-sm" data-val="true" data-val-number="The field FldIntThickness must be a number." id="FldIntThickness" maxlength="2" minlength="1" name="Item.FldIntThickness" placeholder="Thickness(in)" type="text" value="">
+                     </div>
+                     <div class="form-group col-md-3 col-sm-6 col-xs-12">
+                        <label>No. Of Pcs <span class="requiredField">*</span></label>
+                        <input class="noOfPcsPopup formfieldValidate form-control form-control-sm" data-val="true" data-val-number="The field C91FldIntNoofPcs must be a number." id="C91FldIntNoofPcs" maxlength="3" minlength="1" name="Item.C91FldIntNoofPcs" placeholder="No. Of Pcs" type="text" value="">
+                     </div>
+                  </div>
+                  <div class="form-row">
+                     <div class="form-group col-md-3 col-sm-6 col-xs-12">
+                        <label>Qty (CFT) <span class="requiredField">*</span></label>
+                        <input class="form-control form-control-sm form-control form-control-sm" data-val="true" data-val-number="The field FldIntQty must be a number." disabled="disabled" id="FldIntQty" name="Item.FldIntQty" placeholder="Qty (CFT)" type="text" value="">
+                     </div>
+                     <div class="form-group col-md-3 col-sm-6 col-xs-12">
+                        <label>UOM <span class="requiredField">*</span></label>
+                        <input class="uomPopup formfieldValidate form-control form-control-sm" id="UOM" maxlength="4" minlength="1" name="Item.UOM" placeholder="UOM" type="text" value="">
+                     </div>
+                     <div class="form-group col-md-3 col-sm-6 col-xs-12">
+                        <label>Rate <span class="requiredField">*</span></label>
+                        <input class="ratePopup formfieldValidate form-control form-control-sm" data-val="true" data-val-number="The field FldIntRate must be a number." id="FldIntRate" maxlength="4" name="Item.FldIntRate" placeholder="Rate" type="text" value="">
+                     </div>
+                     <div class="form-group col-md-3 col-sm-6 col-xs-12">
+                        <label>GST % <span class="requiredField">*</span></label>
+                        <input class="form-control form-control-sm" data-val="true" data-val-number="The field FldIntGst37 must be a number." disabled="disabled" id="FldIntGst37" name="Item.FldIntGst37" type="text" value="18%">
+                     </div>
+                     <div class="form-group col-md-3 col-sm-6 col-xs-12">
+                        <label>GST Amount <span class="requiredField">*</span></label>
+                        <input class="form-control form-control-sm" data-val="true" data-val-number="The field TotalGST must be a number." disabled="disabled" id="TotalGST" name="Item.TotalGST" type="text" value="">
+                     </div>
+                     <div class="form-group col-md-3 col-sm-6 col-xs-12">
+                        <label>Item Total <span class="requiredField">*</span></label>
+                        <input class="form-control form-control-sm" data-val="true" data-val-number="The field FldIntItemTotal must be a number." disabled="disabled" id="FldIntItemTotal" name="Item.FldIntItemTotal" type="text" value="">
+                     </div>
+                  </div>
+               </div>
+               <div class="modal-footer actions">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal" title="Clear Fields">Clear</button>
+                  <button type="button" class="btn btn-danger px-4" title="Add Item">Add Item</button>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- Bill to Party -->
+      <div class="modal fade" id="changeAddressBillTo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+         <div class="modal-dialog" role="document">
+            <div class="modal-content">
+               <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLongTitle">Choose Billing Address</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                  </button>
+               </div>
+               <div class="modal-body">
+                  <div class="table-responsive">
+                     <table class="table table-sm table-bordered">
+                        <thead>
+                           <tr>
+                              <th></th>
+                              <th>Address</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                           <tr>
+                              <td><input class="" type="radio" name="exampleRadios" id="exampleRadios2" value="option2"></td>
+                              <td>6th Floor, LNR Colony, Dammaiguda, ECIT. Vijayawada - 500 073.</td>
+                           </tr>
+                           <tr>
+                              <td><input class="" type="radio" name="exampleRadios" id="exampleRadios2" value="option2"></td>
+                              <td>4th Floor, HSR Layout, Sri Nagar Colony, Madhapur. Hyderabad - 500 081.</td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+               </div>
+               <div class="modal-footer actions">
+                  <button type="button" class="btn btn-danger">Select Address</button>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- Ship to Party -->
+      <div class="modal fade" id="changeAddressShipTo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+         <div class="modal-dialog" role="document">
+            <div class="modal-content">
+               <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLongTitle">Choose Shipping Address</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                  </button>
+               </div>
+               <div class="modal-body">
+                  <div class="table-responsive">
+                     <table class="table table-sm table-bordered">
+                        <thead>
+                           <tr>
+                              <th></th>
+                              <th>Address</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                           <tr>
+                              <td><input class="" type="radio" name="exampleRadios" id="exampleRadios2" value="option2"></td>
+                              <td>6th Floor, LNR Colony, Dammaiguda, ECIT. Vijayawada - 500 073.</td>
+                           </tr>
+                           <tr>
+                              <td><input class="" type="radio" name="exampleRadios" id="exampleRadios2" value="option2"></td>
+                              <td>4th Floor, HSR Layout, Sri Nagar Colony, Madhapur. Hyderabad - 500 081.</td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+               </div>
+               <div class="modal-footer actions">
+                  <button type="button" class="btn btn-danger">Select Address</button>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- Payment Details -->
+      <div class="modal fade" id="paymentDetails" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+         <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+               <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLongTitle">Provide Payment Details</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                  </button>
+               </div>
+               <div class="modal-body">
+                  <div class="row">
+                     <div class="col-md-3 form-group">
+                        <label for="">Payment Date</label>
+                        <input type="date" class="form-control form-control-sm">
+                     </div>
+                     <div class="col-md-3 form-group">
+                        <label for="">Mode of Payment</label>
+                        <select class="form-control form-control-sm formfieldValidate productCategoryPopup" id="ProductCatSelect">
+                           <option value="4">Cash</option>
+                           <option value="8">Cheque</option>
+                           <option value="1">DD</option>
+                        </select>
+                     </div>
+                     <div class="col-md-3 form-group">
+                        <label for="">Cheque / DD / Cash</label>
+                        <input type="text" class="form-control form-control-sm" placeholder="Cheque / DD / Cash">
+                     </div>
+                     <div class="col-md-3 form-group">
+                        <label for="">Paid Amount</label>
+                        <input type="text" class="form-control form-control-sm" placeholder="Paid Amount">
+                     </div>
+                  </div>
+               </div>
+               <div class="modal-footer actions">
+                  <button type="button" class="btn btn-danger">Proceed To Payment</button>
+               </div>
+            </div>
+         </div>
+      </div>
+      <script type="">
+         $(document).ready(function () {
+            /* Success Messages */
+            $("body").on('click', '.itemDeleted', function (e) {
+               swal({
+                     title: "Your Item Has Been Successfully Deleted",
+                     icon: "success",
+                     button: "Ok",
+               });
+            });
+           (function ($) {
+    var isOrderCustomerActive = true,
+        isOrderItemsActive = false,
+        isOrderPaymentActive = false,
+        isOrderDispatchActive = false;
+
+    var orderContainerClasses = {
+        customer: '.order__customer',
+        items: '.order__items',
+        payment: '.order__payment',
+        dispatch: '.order__dispatch',
+    }
+
+    $('.btn-next').on('click', function (e) {
+        e.preventDefault();
+        var $this = $(this);
+
+        Object.keys(orderContainerClasses).forEach(key => {
+            $(orderContainerClasses[key]).addClass('d-none');
+        })
+
+        if (isOrderPaymentActive) {
+            $(`${orderContainerClasses.dispatch}, ${orderContainerClasses.payment},${orderContainerClasses.items}, ${orderContainerClasses.customer}`).removeClass("d-none")
+            $this.text('Print Invoice');
+
+            isOrderCustomerActive = isOrderItemsActive = isOrderDispatchActive = isOrderPaymentActive = true;
+            
+        } else if (isOrderItemsActive) {
+            $(`${orderContainerClasses.payment},${orderContainerClasses.items}, ${orderContainerClasses.customer}`).removeClass("d-none")
+            $this.text('(Proceed To Dispatch)');
+            isOrderCustomerActive = isOrderItemsActive = isOrderPaymentActive = true;
+            $("#paymentDetails").modal('show');
+        } else if (isOrderCustomerActive) {
+            $(`${orderContainerClasses.items}, ${orderContainerClasses.customer}`).removeClass("d-none")
+            $this.text('(Proceed To Payment)');
+            isOrderCustomerActive = isOrderItemsActive = true;
+            $("#itemDetailsAdd").modal('show');
+        }
+    })
+})(jQuery)
+         })
+      </script>
+   </body>
+</html>

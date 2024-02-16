@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="21.93" height="30.287" viewBox="0 0 21.93 30.287">
+  <g id="Group_771" data-name="Group 771" transform="translate(-1244 -203)">
+    <g id="printer" transform="translate(1245 203)">
+      <path id="Path_742" data-name="Path 742" d="M20.041,152H16.976v2.419h.6a.6.6,0,1,1,0,1.21H3.065a.6.6,0,1,1,0-1.21h.6V152H.6a.605.605,0,0,0-.6.6v10.887a.605.605,0,0,0,.6.6H3.669v-3.024a.6.6,0,0,1-1.21,0v-1.21a.605.605,0,0,1,.6-.6H17.581a.605.605,0,0,1,.6.6v1.21a.6.6,0,0,1-1.21,0V164.1h3.065a.605.605,0,0,0,.6-.6V152.6A.605.605,0,0,0,20.041,152ZM3.065,158.049a.6.6,0,1,1,.6-.6A.605.605,0,0,1,3.065,158.049Zm2.419,0a.6.6,0,1,1,.6-.6A.605.605,0,0,1,5.484,158.049Z" transform="translate(0 -145.871)" fill="#fff"/>
+      <path id="Path_743" data-name="Path 743" d="M131.887,362v5.444a.605.605,0,0,1-.6.6H121.6a.605.605,0,0,1-.6-.6V362Z" transform="translate(-116.121 -347.403)" fill="#fff"/>
+      <path id="Path_744" data-name="Path 744" d="M304.279,12.232H301V8.88Z" transform="translate(-288.863 -8.522)" fill="#fff"/>
+      <path id="Path_745" data-name="Path 745" d="M131.887,4.92V8.549H121V.6a.605.605,0,0,1,.6-.6h5.444V4.315a.605.605,0,0,0,.6.6Z" transform="translate(-116.121)" fill="#fff"/>
+      <path id="Path_746" data-name="Path 746" d="M62.21,92v1.21H61v-.6a.605.605,0,0,1,.6-.6Z" transform="translate(-58.54 -88.29)" fill="#fff"/>
+      <path id="Path_747" data-name="Path 747" d="M422.21,92.6v.6H421V92h.6A.605.605,0,0,1,422.21,92.6Z" transform="translate(-404.024 -88.29)" fill="#fff"/>
+    </g>
+    <g id="Group_770" data-name="Group 770" transform="translate(1243.775 224.573)">
+      <path id="Rectangle_1534" data-name="Rectangle 1534" d="M0,0H21.93a0,0,0,0,1,0,0V7.287a1,1,0,0,1-1,1H1a1,1,0,0,1-1-1V0A0,0,0,0,1,0,0Z" transform="translate(0.225 0.427)" fill="#fff"/>
+      <g id="Group_754" data-name="Group 754" transform="translate(1.488 0)">
+        <text id="PRINT" transform="translate(0.737 6.427)" fill="#40485c" font-size="6" font-family="AvenirNext-Medium, Avenir Next" font-weight="500"><tspan x="0" y="0">PRINT</tspan></text>
+      </g>
+    </g>
+  </g>
+</svg>

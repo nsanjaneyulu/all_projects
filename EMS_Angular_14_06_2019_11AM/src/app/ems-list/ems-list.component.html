@@ -1,0 +1,35 @@
+
+<ul class="breadcrumb animated bounceInLeft delay-1s mt-2">
+      <li><a href="#" title="Home">Home</a></li>
+      <li><a href="#" title="Sales">User List</a></li>
+      <li><a href="#" title="Orders">Employee List</a></li>
+</ul>
+<div class="card">
+  <div class="card-body">
+     <h5 class="card-title">Employee List</h5>
+     <div class="table-responsive">
+        <table *ngIf="getEmsListObj && !!getEmsListObj?.length" datatable [dtOptions]="dtOptions" class="row-border hover table table-striped table-bordered" cellspacing="0" width="100%" >
+            <thead>
+               <tr>
+                  <th>Name</th>
+                  <th>Contact Number</th>
+                  <th>Email</th>
+                  <th>Designation</th>
+                  <th>Blood Group</th>
+                  <th>Actions</th>
+               </tr>
+            </thead>            
+            <tbody>
+               <tr *ngFor="let emsList of getEmsListObj; let i=index">
+                 <td >{{emsList.fullName}}</td>                
+                 <td>{{emsList.contactNumber}}</td>                 
+                 <td>{{emsList.personalEmail}}</td>
+                 <td>{{emsList.designation}}</td>                 
+                 <td>{{emsList.bloodGroup}}</td>
+                 <td><i class="fa fa-trash-o" aria-hidden="true"></i>&nbsp;<i (click)="goEmsListDetails(emsList,i)" style="margin-left:10px;" class="fa fa-pencil-square-o" aria-hidden="true"></i></td>
+               </tr>
+            </tbody>
+         </table>
+     </div>
+  </div>
+</div>

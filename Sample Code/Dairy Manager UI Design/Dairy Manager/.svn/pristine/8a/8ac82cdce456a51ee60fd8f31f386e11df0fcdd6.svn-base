@@ -1,0 +1,40 @@
+<wicket:extend>
+	<div id="content">
+	<div wicket:id="yearselection">
+			<span wicket:id="yearrepeater"><a wicket:id="year"><span
+					wicket:id="yerlabel" />
+			</a>
+			</span>
+		</div>
+	<h2><div wicket:id="feedback"></div></h2> 
+		<h1>Live Stock Discarded List</h1>
+	<div wicket:id="reportpanel">
+		<div class="list list-Header">
+				<div>
+					<h2>RFID</h2>
+					<h2>Live Stock Code</h2>
+					<h2>Mother Live Stock Code</h2>					
+					<h2>Live Stock State</h2>
+					<h2>Breed</h2>
+					<h2>Sex</h2>
+					<h2>Origin</h2>
+					<h2>Discarded Date</h2>	
+					<h2 class="last">Remarks</h2>													
+				</div>
+				<div wicket:id="rows" style="clear:both;">
+				<div class="list-Rows">
+					<h3><span wicket:id="rfid" /></h3>
+					<h3><span wicket:id="code" /></h3>
+					<h3><span wicket:id="mothercode" /></h3>
+					<h3><span wicket:id="lsStateType" /></h3>
+					<h3><span wicket:id="lsBreedType" /></h3>
+					<h3><span wicket:id="sex" /></h3>
+					<h3><span wicket:id="originType" /></h3>	
+					<h3><span wicket:id="discardedDate" /></h3>				
+					<h3 class="last"><span wicket:id="remarks" /></h3>
+				</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</wicket:extend>

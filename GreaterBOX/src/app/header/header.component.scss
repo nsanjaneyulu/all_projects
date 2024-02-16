@@ -1,0 +1,221 @@
+@import "../../styles/abstracts/breakpoints";
+@import "../../styles/abstracts/mixins";
+
+.NSM_Header {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0;
+  display: -webkit-flex;
+  display: -webkit-box;
+  display: -moz-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.NSM_Header--Content {
+  padding: 0;
+  @include sm {
+    padding: 1em;
+    justify-content: center;
+  }
+  @include md {
+    padding: 0em;
+    justify-content: center;
+  }
+  @include lg {
+    padding: 0em;
+    justify-content: space-between;
+  }
+  @include xl {
+    padding: 0em;
+    justify-content: space-between;
+  }
+}
+.navbar_Logo {
+  @include sm {
+    width: 100%;
+    text-align: center;
+  }
+  @include md {
+    width: 100%;
+    text-align: center;
+  }
+  @include lg {
+    width: unset;
+    text-align: unset;
+  }
+  @include xl {
+    width: 14em;
+    text-align: unset;
+  }
+}
+.navbar_FoodOrdering {
+  text-align: center;
+  padding: 4em 0em 3em 0em;
+  cursor: pointer;
+  .header_Heading {
+    color: #41742c;
+    font-family: "NSMFoodie";
+    font-size: 4em;
+    line-height: 0.8;
+    margin: 0;
+    padding: 0;
+    @include sm {
+      font-size: 2em;
+    }
+    @include md {
+      font-size: 3em;
+    }
+    @include lg {
+      font-size: 3.8em;
+    }
+    @include xl {
+      font-size: 4em;
+    }
+  }
+  .header_SubHeading {
+    color: #41742c;
+    font-family: "NSMFoodie";
+    font-size: 2em;
+    margin: 0;
+    padding: 0;
+    @include sm {
+      font-size: 1.5em;
+    }
+    @include md {
+      font-size: 1.5em;
+    }
+    @include lg {
+      font-size: 2em;
+    }
+    @include xl {
+      font-size: 2em;
+    }
+  }
+  .HowItWorks {
+    .HowItWorks_Button {
+      color: black;
+      background: #cdda00;
+      border: 0;
+      padding: 0.5em 2em;
+      font-size: 1.2em;
+      border-radius: 0.35em;
+      font-weight: 600;
+    }
+  }
+}
+.navbar_FoodOrdering:focus {
+  outline: none;
+}
+.navbar_FoodOrdering:hover {
+  text-decoration: none;
+}
+.queries_Block {
+  color: black;
+  text-align: right;
+  font-family: "Brandon Grotesque Regular";
+  word-break: break-word;
+  @include sm {
+    text-align: center;
+  }
+  @include md {
+    text-align: center;
+  }
+  @include lg {
+    text-align: right;
+  }
+  @include xl {
+    text-align: right;
+  }
+
+  h2 {
+    margin: 0;
+    font-weight: 500;
+  }
+  h3 {
+    color: black !important;
+    margin: 0;
+    font-weight: 500;
+    @include sm {
+      font-size: 1.35em;
+    }
+    @include md {
+      font-size: 1.35em;
+    }
+    @include lg {
+      font-size: 1.5em;
+    }
+    @include xl {
+      font-size: 1.5em;
+    }
+    a {
+      margin: 0;
+      color: black;
+    }
+  }
+}
+.newseasons_Link {
+  cursor: pointer;
+  font-family: "Brandon Grotesque Regular";
+  color: black;
+}
+.newseasons_Link:hover,
+.queries_Block--Email:hover {
+  text-decoration: none;
+  color: black;
+}
+.header--ImageBlock {
+  @include sm {
+    display: block;
+    img {
+      width: 5em;
+      margin-top: -2em;
+      margin-right: 0.5em;
+    }
+  }
+  @include md {
+    display: block;
+    img {
+      width: 5em;
+      margin-top: -2em;
+      margin-right: 0.5em;
+    }
+  }
+  @include lg {
+    display: none;
+  }
+  @include xl {
+    display: none;
+  }
+}
+.navbar_FoodOrdering {
+  @include sm {
+    display: -webkit-flex;
+    display: -webkit-box;
+    display: -moz-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  }
+  @include md {
+    display: -webkit-flex;
+    display: -webkit-box;
+    display: -moz-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  }
+  @include lg {
+    width: unset;
+    justify-content: unset;
+  }
+  @include xl {
+    width: unset;
+    justify-content: center;
+    flex: 1;
+  }
+}

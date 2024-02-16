@@ -1,0 +1,53 @@
+<div>
+    <app-header></app-header>
+    <div class="content col-12">
+        <div class="row justify-content-center">
+            <div class="col-md-5">
+        <app-tabs [tabsName]="activityTabs" (tabChange)="tabClick($event)"></app-tabs>
+        </div>
+        <div class="container">
+            <div class="mt-5" *ngIf="activeTab.name ==='Intrested' && tableData.length>0">
+                <app-list-view [tableColumns]="tableColumns" [tableData]="tableData" [activeTab]="activeTab">
+                </app-list-view>
+            </div>
+            <div class="mt-5" *ngIf="activeTab.name ==='Intrested' && tableData.length==0">
+                <div class="row h-100 justify-content-center align-items-center">
+                    <div class="col-md-4 empty text-center">
+                        <h1>{{authDataInfo.messages.intrested_title}}</h1>
+                        <h2>{{authDataInfo.messages.intrested_subTitle}}</h2>
+                        <a href="#postjob"
+                            class="btn btn-primary postJob_btn btn-lg px-5 mt-3">{{authDataInfo.messages.post_btnTitle}}</a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-5" *ngIf="activeTab.name ==='Matched' && matchedDataGet.length>0">
+                <app-list-view [tableColumns]="matchedColumns" [tableData]="matchedDataGet" [activeTab]="activeTab">
+                </app-list-view>
+            </div>
+            <div class="mt-5" *ngIf="activeTab.name ==='Matched' && matchedDataGet.length==0">
+                <div class="row h-100 justify-content-center align-items-center">
+                    <div class="col-md-4 empty text-center">
+                        <h1>{{authDataInfo.messages.matched_title}}</h1>
+                        <h2>{{authDataInfo.messages.matched_subTitle}}</h2>
+                        <a href="#postjob"
+                            class="btn btn-primary btn-lg px-5 postJob_btn mt-3">{{authDataInfo.messages.post_btnTitle}}</a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-5" *ngIf="activeTab.name ==='Saved' && savedDataGet.length>0">
+                <app-list-view [tableColumns]="savedColumns" [tableData]="savedDataGet" [activeTab]="activeTab">
+                </app-list-view>
+            </div>
+            <div class="mt-5" *ngIf="activeTab.name ==='Saved' && savedDataGet.length==0">
+                <div class="row h-100 justify-content-center align-items-center">
+                    <div class="col-md-4 empty text-center">
+                        <h1>{{authDataInfo.messages.saved_title}}</h1>
+                        <h2>{{authDataInfo.messages.saved_subTitle}}</h2>
+                        <a href="#postjob"
+                            class="btn btn-primary btn-lg postJob_btn px-5 mt-3">{{authDataInfo.messages.post_btnTitle}}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

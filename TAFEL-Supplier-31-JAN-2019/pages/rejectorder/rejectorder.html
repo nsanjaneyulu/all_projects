@@ -1,0 +1,57 @@
+<ion-content padding>
+      <form *ngIf="!showLoader">
+         <div>
+            <ion-list radio-group>
+               <div>
+                 
+                     <ion-item>
+                        <ion-label class="reasons__title"><h2>Do you want to  Reject order:</h2></ion-label>
+                     </ion-item>
+                     <ion-item *ngIf ="type=='JMOrder'">
+                        <div class="add-button">
+                           <span class="quantity-decrement">
+                              <ion-icon item-left name="md-remove" class="quantity-icon" (click)="quantityDecrement()"></ion-icon>
+                           </span>
+                           <span class="quantity-value">{{quantity}}</span>
+                           <span class="quantity-increment">
+                              <ion-icon item-right name="md-add" class="quantity-icon" (click)="quantityIncreament()"></ion-icon>
+                           </span>
+                        </div>
+                     </ion-item>
+                 
+               </div>
+               <ion-item>
+                  <ion-label class="reasons__title">Rejected Reasons:</ion-label>
+               </ion-item>
+               <ion-item>
+                  <ion-label>Out Of Stock</ion-label>
+                  <ion-radio (click)=radioButtonClicked(0)></ion-radio>
+               </ion-item>
+               <ion-item>
+                  <ion-label>Unable to Find the Customer</ion-label>
+                  <ion-radio (click)=radioButtonClicked(1)></ion-radio>
+               </ion-item>
+               <ion-item>
+                  <ion-label>Outlet Closed</ion-label>
+                  <ion-radio (click)=radioButtonClicked(2)></ion-radio>
+               </ion-item>
+               <ion-item>
+                  <ion-label>Customer Request to Cancel</ion-label>
+                  <ion-radio checked=true (click)=radioButtonClicked(3)></ion-radio>
+               </ion-item>
+               <ion-item>
+                  <ion-label>Other</ion-label>
+                  <ion-radio (click)=radioButtonClicked(4)></ion-radio>
+               </ion-item>
+               
+            </ion-list>
+         </div>
+      </form>
+      <page-globalloader *ngIf="showLoader"></page-globalloader>
+   </ion-content>
+   <ion-footer>
+      <ion-toolbar>
+         <button ion-button outline (click)=BackButtonClick()>Cancel</button>
+         <button style="float:right" ion-button color="secondary" (click)=SubmitButtonClick() outline>Submit</button>
+      </ion-toolbar>
+   </ion-footer>

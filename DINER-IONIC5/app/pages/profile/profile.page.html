@@ -1,0 +1,115 @@
+<ion-header class="header_styles_items_page" style="background: #fff;">
+
+    <ion-row *ngIf="showProfile && noSignIn" (click)="editProfile()">
+
+        <!-- <ion-icon class="" style="margin-top: 2%" (click)="goToBack()" ios="ios-arrow-round-back" md="md-arrow-round-back"></ion-icon> -->
+
+        <ion-col size="2">
+            <span class=""><img src="../../../assets/icon/userProfile.png" width="67%"/></span>
+        </ion-col>
+        <ion-col size="10" class="marginProfile">
+            <div>
+                {{this.userDetailData.firstName}}
+            </div>
+            <div class="viewAccount">
+                View account
+            </div>
+        </ion-col>
+    </ion-row>
+    <ion-row *ngIf="showProfile && !noSignIn" (click)="openLoginProfile()">
+
+        <!-- <ion-icon class="" style="margin-top: 2%" (click)="goToBack()" ios="ios-arrow-round-back" md="md-arrow-round-back"></ion-icon> -->
+
+        <ion-col size="2">
+            <span class=""><img src="../../../assets/icon/userProfile.png" width="67%"/></span>
+        </ion-col>
+        <ion-col size="10" class="marginProfile">
+            <div>
+                {{this.userDetailData.firstName}}
+            </div>
+            <div class="viewAccount">
+                View account
+            </div>
+        </ion-col>
+    </ion-row>
+
+</ion-header>
+
+<ion-content>
+    <div class="bgContent" *ngIf="showProfile">
+        <div class="profileMargin">
+            <div class="contentDiv" *ngIf="noSignIn" (click)="myOrderFunction()">
+                <img src="../../../assets/icon/tafelicon/coffee-bag.svg" width="5%" /><span class="spanConent">My Orders</span>
+            </div>
+            <div class="contentDiv" (click)="offersFunctions()">
+                <img src="../../../assets/icon/tafelicon/tag.svg" width="5%" /><span class="spanConent">Offers</span>
+            </div>
+            <div class="contentDiv" (click)="changeLocation()">
+                <img src="../../../assets/icon/tafelicon/placeholder copy.svg" width="5%" /><span class="spanConent">Location:{{selectedServiceStation.name}}</span>
+            </div>
+            <div class="contentDiv" (click)="termsConditions()">
+                <img src="../../../assets/icon/tafelicon/decline.svg" width="5%" /><span class="spanConent">Terms & Condition</span>
+            </div>
+            <div class="contentDiv" (click)="privacyProlicy()">
+                <img src="../../../assets/icon/tafelicon/privacy-policy.svg" width="5%" /><span class="spanConent">Privacy Policy</span>
+            </div>
+            <div class="contentDiv" *ngIf="noSignIn" (click)="presentAlertConfirm()">
+                <img src="../../../assets/icon/tafelicon/power-button.svg" width="5%" /><span class="spanConent">Logout</span>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="!showProfile">
+        <div style="position: absolute; top: 50%; left: calc(50% - 40px);">
+            <svg class="lds-typing" width="80px" height="80px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" style="background: none;">
+             <circle cx="24.5" cy="48.4263" r="6" fill="#e15b64">
+                <animate attributeName="cy" calcMode="spline" keySplines="0 0.5 0.5 1;0.5 0 1 0.5;0.5 0.5 0.5 0.5"
+                   repeatCount="indefinite" values="62.5;37.5;62.5;62.5" keyTimes="0;0.25;0.5;1" dur="1s" begin="-0.5s"></animate>
+             </circle>
+             <circle cx="41.5" cy="62.5" r="6" fill="#f47e60">
+                <animate attributeName="cy" calcMode="spline" keySplines="0 0.5 0.5 1;0.5 0 1 0.5;0.5 0.5 0.5 0.5"
+                   repeatCount="indefinite" values="62.5;37.5;62.5;62.5" keyTimes="0;0.25;0.5;1" dur="1s" begin="-0.375s"></animate>
+             </circle>
+             <circle cx="58.5" cy="62.5" r="6" fill="#f8b26a">
+                <animate attributeName="cy" calcMode="spline" keySplines="0 0.5 0.5 1;0.5 0 1 0.5;0.5 0.5 0.5 0.5"
+                   repeatCount="indefinite" values="62.5;37.5;62.5;62.5" keyTimes="0;0.25;0.5;1" dur="1s" begin="-0.25s"></animate>
+             </circle>
+             <circle cx="75.5" cy="62.5" r="6" fill="#abbd81">
+                <animate attributeName="cy" calcMode="spline" keySplines="0 0.5 0.5 1;0.5 0 1 0.5;0.5 0.5 0.5 0.5"
+                   repeatCount="indefinite" values="62.5;37.5;62.5;62.5" keyTimes="0;0.25;0.5;1" dur="1s" begin="-0.125s"></animate>
+             </circle>
+          </svg>
+        </div>
+    </div>
+</ion-content>
+
+<ion-footer>
+    <ion-toolbar style="height: 3rem !important">
+        <ion-tabs>
+            <ion-tab-bar slot="bottom">
+                <ion-tab-button class="ionButtonNon" (click)="routerChange('dashboard')">
+                    <!-- <ion-icon ios="ios-home" md="md-home"></ion-icon> -->
+                    <img class="tabImage" src="../../../assets/icon/tafelicon/home.svg" />
+                    <ion-label class="labelFont">Home</ion-label>
+                    <!-- <ion-badge class="badgeNumber">6</ion-badge> -->
+                </ion-tab-button>
+                <!-- (click)="goToCartPage()" -->
+                <ion-tab-button class="ionButtonNon" (click)="routerChange('cart')">
+                    <!-- <ion-icon ios="ios-cart" md="md-cart"></ion-icon> -->
+                    <img class="tabImage" src="../../../assets/icon/tafelicon/shopping-bag.svg" />
+                    <ion-label class="labelFont">Cart</ion-label>
+                    <ion-badge class="badgeNumber" *ngIf="itemsCountDetails>0">{{itemsCountDetails}}</ion-badge>
+                </ion-tab-button>
+                <ion-tab-button class="ionButtonNon" (click)="routerChange('tipspay')">
+                    <!-- <ion-icon name="map"></ion-icon> -->
+                    <img class="tabImage" src="../../../assets/icon/tafelicon/wallet.svg" />
+                    <ion-label class="labelFont">Tips Pay</ion-label>
+                </ion-tab-button>
+                <ion-tab-button class="ionButton">
+                    <!-- <ion-icon name="information-circle"></ion-icon> -->
+                    <img class="tabImage" src="../../../assets/icon/tafelicon/user.svg" />
+                    <ion-label class="labelFont">Profile</ion-label>
+                </ion-tab-button>
+            </ion-tab-bar>
+        </ion-tabs>
+    </ion-toolbar>
+</ion-footer>

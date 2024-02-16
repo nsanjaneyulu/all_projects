@@ -1,0 +1,48 @@
+<wicket:extend>
+	<div id="content">
+	<h2><div wicket:id="feedback"></div></h2> 
+		<h1 style="float: left;width: 42%;">Live Stock List</h1>
+		<span wicket:id="navigator" style="line-height: 51px;">[dataview navigator]</span>
+		<div class="list list-LivestockHeader">
+				<div>
+					<h2>RFID</h2>
+					<h2 wicket:id="orderbycode">Live Stock Code</h2>
+					<h2>Date of Birth</h2>
+					<!-- <h2>Sex</h2> -->
+					<h2>Mother Code</h2>
+					<h2>Live Stock State</h2>	
+					<h2>Breed</h2>
+					<h2>Origin</h2>				
+					<h2>Milking</h2>
+					<h2>Lactation No</h2>
+					<h2>Lactation Start Date</h2>
+					<h2>Lactation End Date</h2>
+					<h2>Milk Yield</h2>					
+					<!-- <h2>No of Yielding Days</h2>
+					<h2>No of Dry Days</h2>
+					<h2 class="last">Total Lactation Period</h2> -->	
+												
+				</div>
+				<div wicket:id="rows" style="clear:both;">
+				<div class="list-Rows">
+					<h3><span wicket:id="lsRfid" /></h3>
+					<h3><a href="#" wicket:id="livestock_edit"><span wicket:id="lsLiveStockCode" /></a></h3>
+					<h3><span wicket:id="birthDate" /></h3>
+					<!-- <h3><span wicket:id="sex" /></h3> -->	
+					<h3><a href="#" wicket:id="motherlscode"><span wicket:id="lsmotherlbl" /></a></h3>
+					<h3><span wicket:id="lsStateType" /></h3>	
+					<h3><span wicket:id="lsBreedType" /></h3>	
+					<h3><span wicket:id="originType" /></h3>			
+					<h3><span wicket:id="milkingStatus" /></h3>
+					<h3><span wicket:id="lactationNumber" /></h3>
+					<h3><span wicket:id="lactationDays" /></h3>
+					<h3><span wicket:id="dryoffDate" /></h3>
+					<h3><span wicket:id="milkYield" /></h3>
+					<!-- <h3><span wicket:id="yieldingDays" /></h3>	
+					<h3><span wicket:id="dryDays" /></h3>	
+					<h3 class="last"><span wicket:id="lactationPeriod" /></h3> -->						
+				</div>
+				</div>
+			</div>
+	</div>
+</wicket:extend>

@@ -1,0 +1,8 @@
+{
+  "name": "tafel_outlet_new",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular",
+  "app_id": ""
+}

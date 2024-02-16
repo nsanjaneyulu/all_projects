@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title>Search Users</title>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+   </head>
+   <body class="col-md-12">
+   <div class="col-md-3" style="margin-top: 20px;">
+      <input class="form-control" id="tableSearch"/></div>
+   <div class="clearfix"></div>
+      <div class="table-responsive">
+         <table class="table">
+            <thead>
+               <tr>
+                  <th>Id</th>
+                  <th>Name</th>
+                  <th>First Name</th>
+               </tr>
+            </thead>
+            <tbody id="display-resources">
+            </tbody>
+         </table>
+      </div>
+      <a href="#" class="btn btn-primary" id="retrieve-resources">Retrieve List</a>
+      <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+      <script>
+         $(document).ready(function() {
+         
+             var users = [];
+         
+             $('body').on("keyup", '#tableSearch', function(e) {
+         
+                 var inputValue = $.trim($(this).val());
+                 console.log(inputValue);
+         
+                 if (!inputValue || inputValue == "") {
+                     renderUsers(users)
+                     return true;
+                 }
+         
+                 var searchUsers = [];
+                 for (var i in users) {
+                     var user = users[i]; //0 //1
+         
+                     if (user.name.toLowerCase().indexOf(inputValue.toLowerCase()) != -1) {
+                         searchUsers.push(user);
+                     } else if (user.username.toLowerCase().indexOf(inputValue.toLowerCase()) != -1) {
+                         searchUsers.push(user);
+                     }
+                 }
+         
+                 renderUsers(searchUsers)
+         
+         
+         
+             });
+         
+             $('#retrieve-resources').click(function() {
+                 console.log("Ajax Start")
+                 $.ajax({
+                     type: "GET",
+                     url: "https://jsonplaceholder.typicode.com/users",
+                     success: function(result) {
+                         users = result;
+                         renderUsers(result)
+                         console.log("Ajax Response Completed", users)
+                     }
+                 });
+         
+                 console.log("Ajax Completed");
+         
+         
+             });
+         
+             function renderUsers(result) {
+                 var displayResources = $('#display-resources');
+                 displayResources.empty();
+                 for (var i in result) {
+                     var output = "<tr><td>" + result[i].id + "</td><td>" + result[i].username + "</td><td>" + result[i].name + "</td></tr>";
+                     $(output).appendTo(displayResources);
+                 }
+             }
+             $('#retrieve-resources').trigger('click');
+         });
+      </script>
+   </body>
+</html>

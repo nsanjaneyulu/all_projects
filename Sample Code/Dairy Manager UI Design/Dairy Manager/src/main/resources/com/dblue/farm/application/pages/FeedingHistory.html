@@ -1,0 +1,50 @@
+<wicket:extend>
+	<div id="content">
+    <div class="bread-crumb">
+            	<h1>Feeding Management / Feeding History</h1>
+            </div>
+					<form wicket:id="feedquery">
+						<div wicket:id="feedback"></div> 
+                             <div class="addData">
+                             <ul>
+                               <li>
+								<label>Start Date</label>
+								<input type="text" id="startDate"  wicket:id="startDate" class="date_effect">
+							   </li>
+                               <li>
+								<label>End Date</label>
+								<input type="text" id="endDate"  wicket:id="endDate" class="date_effect">
+								</li>
+							</ul>
+							
+						      </div>
+                               <div style="clear:both;"></div>
+                             <div class="newButton">
+								<input type="submit" wicket:id="search" value="Search" class="button"/>
+                                </div>
+							</form>
+                            
+                            <div class="containterL">
+                                    <div class="containerDiv" wicket:id="reportContainer"> 
+                                        <div class="rowDivHeader">
+                                            <div wicket:id="headerlist"> 
+                                                <span wicket:id="header"></span>
+                                            </div>
+                                        </div>    
+                                            <div class="rowDiv" wicket:id="rows" style="clear:both;">
+                                                <div>
+                                                    <span wicket:id="rowhead"></span>
+                                                   
+                                                </div>
+                                                <div wicket:id="row_id">
+                                                    
+                                                   <span wicket:id="count"></span>
+                                                </div>
+                                            </div>  
+                                    </div>
+                            </div>
+
+                            
+
+	</div>
+</wicket:extend>

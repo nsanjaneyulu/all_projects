@@ -1,0 +1,11 @@
+$(document).ready(function() 
+{
+	$('#hide').click(function()
+	{
+		$('.one').hide(4000);
+	});
+	$('#show').click(function()
+	{
+		$('.one').show(4000);
+	});
+});

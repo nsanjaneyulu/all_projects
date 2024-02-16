@@ -1,0 +1,254 @@
+<div class="col-12">
+      <div  style="display: flex;font-size: 20px; " class="int-connect-disconnect-bg" *ngIf="allpermited=='No'">
+            <div style="width: 25%;"  >
+             <span><b>Name:</b></span> &nbsp;  <span> {{mallName}}</span>  
+            </div>
+            <div >
+                  <span><b>Outlet Name:</b></span>&nbsp; 
+                  <span *ngIf="outletDetails.length>1" >
+                        <select [(ngModel)]="outeltId" (change)="selectoutLet(outeltId)" >
+         
+                              <option *ngFor="let outlet Of outletDetails;" [value]="outlet.id">{{outlet.name}}</option>
+                            </select>
+                  </span>
+                  <span *ngIf="outletDetails.length==1">
+                     {{outletDetails[0].name}}
+                        <!-- <select [(ngModel)]="outeltId" (change)="selectoutLet(outeltId)">
+         
+                              <option *ngFor="let outlet Of outletDetails;" [value]="outlet.id">{{outlet.name}}</option>
+                            </select> -->
+                  </span>
+            </div>
+            
+         </div>
+   <div class="border table-styles">
+      <p-table #dt [columns]="filterCols" [value]="data" dataKey="invoiceNo" [paginator]="true" [rows]="5"
+         [totalRecords]="data.length" expandableRows="true" rowExpandMode="single" sortMode="multiple">
+         <ng-template pTemplate="header" let-columns>
+            <tr>
+               <th *ngFor="let col of columns" [pSortableColumn]="col.field" class="text-center">
+                  {{col.header}} 
+                  <!-- <p-sortIcon [field]="col.field"></p-sortIcon> -->
+               </th>
+               <th class="text-center">Actions</th>
+            </tr>
+         </ng-template>
+         <ng-template pTemplate="body" let-rowData let-expanded="expanded" let-columns="columns" let-index="rowIndex">
+
+            <tr [ngClass]="rowData.orderType=='Delivery'?'applyCss':'noCss'">
+
+               <td *ngFor="let col of columns" (click)="refundurl(rowData)" [pRowToggler]="rowData">
+                  <span *ngIf="col.field !== 'dateNTime' ">{{rowData[col.field]}} 
+                     <!-- <span
+                              *ngIf="col.field === 'grandTotal'"><i class="fa fa-info-circle" aria-hidden="true"
+                                 (click)="openBillDialog(index)"></i></span> -->
+                  </span>
+                  <span *ngIf="col.field == 'dateNTime'">
+                     {{rowData[col.field] | date: "dd-MM-yyyy H:mm" }}
+                  </span>
+               </td>
+               <td>
+
+                  <div>
+
+                     <button *ngIf="rowData?.status == 'INPROGRESS'" type="button"
+                        class="btn btn-success btn-ready pos-orders-btn btn-sm mr-2"
+                        (click)="changeFullOrderStatus(rowData['id'], 'READY', index,rowData)"><span
+                           class="btnNone"></span><img src="../../../assets/images/accept.svg" /></button>
+
+                     <button *ngIf="rowData?.status == 'INPROGRESS' || rowData?.status == 'READY'" type="button"
+                        class="btn btn-secondary btn-sm pos-orders-btn btn-success" (click)="hoOrder(rowData)" style="height: 31px;
+                        width: 39px;"><span
+                           class="btnNone"></span><img src="../../../assets/images/handedover.svg" /></button>
+                     <button *ngIf="rowData?.status == 'INPROGRESS' || rowData?.status == 'READY'" type="button"
+                        class="btn btn-secondary btn-sm pos-orders-btn btn-success" 
+                        data-target="#myModal6" (click)="scanFullOrder(rowData)"  style="margin-left: 2%;
+                        height: 31px;
+                        width: 39px;"><span class="btnNone"></span><i
+                           class="fa fa-qrcode" aria-hidden="true"></i></button>
+                     <button *ngIf="rowData?.status == 'RECEIVED'" type="button"
+                        class="btn btn-success btn-accept pos-orders-btn btn-sm mr-2"
+                        (click)="changeFullOrderStatus(rowData['id'], 'INPROGRESS', index,rowData)"><span
+                           class="btnNone"></span><img src="../../../assets/images/accept.svg" /></button>
+                     <button *ngIf="rowData?.status == 'RECEIVED'" type="button"
+                        class="btn btn-danger btn-reject pos-orders-btn btn-sm mr-2" data-toggle="modal"
+                        data-target="#myModal1" (click)="openModel(rowData['id'], 'REJECTED', index, rowData)"><span
+                           class="btnNone"></span><img src="../../../assets/images/reject.svg" /></button>
+
+                  </div>
+               </td>
+            </tr >
+            <tr *ngIf="rowData.orderType=='Delivery'" style="border-style: hidden;">
+              <td colspan="6">
+                 <span style="font-weight: bold;">Name:</span>&nbsp; <span>{{rowData.name}}</span>
+              </td>
+              
+            </tr>
+            <tr *ngIf="rowData.orderType=='Delivery'" style="border-top-style:hidden; border-left-style:hidden; border-right-style:hidden">
+                  <td colspan="6" *ngIf="typeOfDining=='CINEMAS'">
+                        <span style="font-weight: bold;">Screen:</span>&nbsp;<span>{{rowData.a1Address}}</span> | <span style="font-weight: bold;">Row:</span>&nbsp;<span>{{rowData.a2Address}}</span> | <span style="font-weight: bold;">Seat:</span>&nbsp;<span>{{rowData.a3Address}}</span>
+                  </td>
+                  <td colspan="6" *ngIf="typeOfDining!='CINEMAS'">
+                        <span style="font-weight: bold;">Company:</span>&nbsp;<span>{{rowData.a1Address}}</span> | <span style="font-weight: bold;">Quadrant:</span>&nbsp;<span>{{rowData.a2Address}}</span> | <span style="font-weight: bold;">Floor:</span>&nbsp;<span>{{rowData.a3Address}}</span>
+                  </td>
+            </tr>
+         </ng-template>
+         <ng-template pTemplate="emptymessage" let-columns>
+            <tr>
+               <td [attr.colspan]="columns.length" class="noDataFound" style="text-align: center !important;">
+                  {{noDataFound}}
+               </td>
+            </tr>
+         </ng-template>
+         <ng-template pTemplate="rowexpansion" let-rowData let-columns="columns" let-index="rowIndex">
+            <tr>
+               <td [attr.colspan]="columns.length + 1">
+                  <div class="container-fluid">
+                     <div class="row">
+                        <div class="col-8 table-responsive table__orderDetails pr-0">
+                           <table class="table">
+                              <thead class="">
+                                 <tr *ngFor="let item of rowData.jmOrderLet; index as i; first as isFirst">
+                                    <th scope="col" *ngIf="isFirst">Item Name</th>
+                                    <th scope="col" *ngIf="isFirst">Quantity</th>
+                                    <th scope="col" *ngIf="isFirst">Amount</th>
+                                    <th scope="col" *ngIf="isFirst && rowData?.status == 'RECEIVED'">Actions</th>
+                                    <!-- <th scope="col"  *ngIf="isFirst ">Status</th> -->
+                                 </tr>
+                              </thead>
+                              <tbody>
+                                 <tr *ngFor="let item of rowData.jmOrderLet; let j = index">
+                                    <td>
+                                       <div style="display: flex;">
+                                          <div>
+                                             {{ item.itemName }}
+                                          </div>
+                                          <div *ngIf="item.itemCustomization!=null">
+                                             <span *ngFor="let cItems of item.itemCustomization[0].customization">
+                                                <span
+                                                   *ngIf="item.itemCustomization[0].type=='radio'">({{cItems.name}})</span>
+                                             </span>
+                                          </div>
+                                       </div>
+                                       <div style="font-size: 10px;    margin-top: 3%;">
+                                          <span style="color:green">HandedOver</span>: <span>{{item.handedOverQuantity}}
+                                             |</span> <span style="color: red;">Rejected</span>:
+                                          <span>{{item.rejectedQunatity}} </span>
+                                       </div>
+                                    </td>
+                                    <td *ngIf="item.status == 'RECEIVED'">
+                                       <span class="super_number menu from-menu">
+                                          <span class="ui left attached button dec" (click)="decCount(index, j)"> -
+                                          </span>
+                                          <input type="text" value="{{ item.quantity }}" readonly="">
+                                          <span disabled class="ui right attached button inc"
+                                             (click)="incCount(index, j)"> +
+                                          </span>
+                                       </span>
+                                    </td>
+                                    <td *ngIf="!(item.status === 'RECEIVED')">
+                                       {{ item.quantity }}
+                                    </td>
+                                    <td>{{ item.itemPrice * item.tempQuantity}}</td>
+                                    <td *ngIf="rowData?.status == 'RECEIVED'"><button type="button"
+                                          class="btn btn-sm btn-outline-danger" data-toggle="modal"
+                                          data-target="#myModal" (click)="open(item.orderId, index, item,rowData)"
+                                          *ngIf="item.status == 'RECEIVED'"
+                                          [disabled]="item.disableRejectButton"><b>X</b></button></td>
+                                    <!-- <td>{{ item.status }}</td> -->
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </div>
+                        <div class="col-4">
+                           <dl class="row">
+                              <div class="col-sm-12 billDetails pb-2"><span class="pt-1 pb-1">Bill Details</span></div>
+
+                              <dt class="col-sm-7">Total Amount:</dt>
+                              <dd class="col-sm-5" style="text-align: right;">{{rowData.itemTotal}}</dd>
+                              <dt class="col-sm-7">Supplier Discount:</dt>
+                              <dd class="col-sm-5" style="text-align: right;">{{rowData.suppplierDiscount}}</dd>
+                              <dt class="col-sm-7">Tax(CGST(2.5%)+SGST(2.5%)):</dt>
+                              <dd class="col-sm-5" style="text-align: right;">{{rowData.taxes}}</dd>
+                              <dt class="col-sm-7">Delivery Charges:</dt>
+                              <dd class="col-sm-5" style="text-align: right;">{{rowData.deliveryCharges}}</dd>
+                              <dt class="col-sm-7">Packaging Charges:</dt>
+                              <dd class="col-sm-5" style="text-align: right;">{{rowData.packagingCharge}}</dd>
+                              <dt class="col-sm-7">Tafel Discount:</dt>
+                              <dd class="col-sm-5" style="text-align: right;">{{rowData.tafelDiscount}}</dd>
+                              <dt class="col-sm-7">You Paid:</dt>
+                              <dd class="col-sm-5" style="text-align: right;">{{rowData.grandTotal}}</dd>
+                              <dt class="col-sm-7">Refund:</dt>
+                              <dd class="col-sm-5" style="text-align: right;">{{refundAmount}}</dd>
+                           </dl>
+                        </div>
+                     </div>
+                  </div>
+               </td>
+            </tr>
+         </ng-template>
+      </p-table>
+   </div>
+
+</div>
+
+<div class="container">
+   <div class="modal fade" id="myModal" role="dialog">
+      <div class="modal-dialog">
+
+         <div class="modal-content">
+            <div class="modal-header" style="font-size: 23px;">
+               <a style="float: left;margin-top: -7px;">Alert</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
+                  style="float:right;margin-top: -7px;font-size: 20px" data-dismiss="modal">&times;</a>
+            </div>
+            <div class="modal-body">
+               <p style="font-size: 18px;">{{message1}}</p>
+            </div>
+            <div class="modal-footer">
+               <div style="    width: 100%;">
+                  <a data-dismiss="modal" style="  cursor: pointer;color: red">Cancel</a>
+                  <a data-dismiss="modal" (click)="updateOrder()"
+                     style="      cursor: pointer;margin-left: 3%; color: green;     float: right;">OK</a>
+               </div>
+            </div>
+         </div>
+
+      </div>
+   </div>
+
+</div>
+<div class="container">
+   <div class="modal fade" id="myModal1" role="dialog">
+      <div class="modal-dialog">
+
+         <div class="modal-content">
+            <div class="modal-header" style="font-size: 23px;">
+               <a style="float: left;margin-top: -7px;">Alert</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
+                  style="float:right;margin-top: -7px;font-size: 20px" data-dismiss="modal">&times;</a>
+            </div>
+            <div class="modal-body">
+               <p style="font-size: 18px;">{{message1}}</p>
+            </div>
+            <div class="modal-footer">
+               <div style="    width: 100%;">
+                  <a data-dismiss="modal" style="  cursor: pointer;color: red">Cancel</a>
+                  <a data-dismiss="modal" (click)="rejectFullOrder()"
+                     style="      cursor: pointer;margin-left: 3%; color: green;     float: right;">OK</a>
+               </div>
+            </div>
+         </div>
+
+      </div>
+   </div>
+
+</div>
+   <div id="myModal6" class="modal1">
+         <div class="modal-content1">
+               <span class="close" (click)="closeModal()">&times;</span>
+               <p>
+                  <qr-scanner [debug]="false" [canvasWidth]="1080" [canvasHeight]="720" [stopAfterScan]="true"
+                     [updateTime]="1000">
+                  </qr-scanner>
+               </p>
+            </div>
+       </div>

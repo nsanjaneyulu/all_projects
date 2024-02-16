@@ -1,0 +1,108 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="styles.css" />
+<title>Email Details</title>
+<script type="text/javascript">
+
+function echeck(st)
+{
+	var x=st;
+	var atpos=x.indexOf("@");
+	var dotpos=x.lastIndexOf(".");
+	if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length)
+	  {
+		  return false;
+	  }
+	  else
+	  return true;
+}
+
+function valid_email()
+{
+	if(document.form1.email.value=="")
+	{
+		alert("email required");
+		document.form1.email.focus();
+		return false;
+	}
+	else if(echeck(document.form1.email.value)==false)
+	{	
+		alert("valid Email Id");
+		document.form1.email.focus();
+		return false;
+	}
+	else if(document.form1.pass.value=="")
+	{
+		alert("Password Required");
+		document.form1.pass.focus();
+		return false;
+	}
+	else
+	{
+		return true;
+	}
+	
+}
+</script>
+</head>
+<body>
+<div class="wrapper">
+
+<!--header-->
+<div class="header">
+<img src="img/icon.png" />
+<div class="logo">
+	Email Validation
+    <h6>Welcome to Email Details</h6>
+</div>
+</div>
+<!--header ends-->
+<!--menu icons-->
+<div class="menu-icons">
+<ul>
+	<li><a href="#"><img src="img/save.png" /><div>Save</div></a></li>
+    <li><a href="#"><img src="img/save.png" /><div>Delete</div></a></li>
+    <li><a href="#"><img src="img/save.png" /><div>List</div></a></li>
+    <li><a href="#"><img src="img/save.png" /><div>History</div></a></li>
+    <li><a href="#"><img src="img/save.png" /><div>Home</div></a></li>
+</ul>
+</div>
+<div class="clearfix"></div>
+<!--menu icons ends-->
+<!-- menu bar-->
+	<div class="menu">
+    	<ul>
+        	<li><a href="#">Employee Mang</a></li>
+            <li><a href="#">Tansporattion Mang</a></li>
+          <li><a href="#">Financial Mang</a></li>
+            <li><a href="#">Stocks Mang</a></li>
+            <li><a href="#">Admin Mang</a></li>
+        </ul>
+    </div>
+<!--menu bard ends-->
+<!--content-->
+<div class="content">
+	<div class="gridHeader">
+    	<h1>Email Validation</h1>
+    </div>
+    <div class="gridContent">
+    	<form name="form1" action="#" method="post" onsubmit="return valid_email();">
+        <ul>
+            <h5>Email Validation:</h5>
+        	<li><div>User Name:</div><input name="email" type="text" id="email" />
+        	</li>
+            <li><div>Password:</div><input name="pass" type="password" id="pass"/>
+            </li>
+        </ul>
+        <div><input type="submit" value="Submit"/></div>
+        </form>
+        
+    </div>
+   
+</div>
+<!--content ends-->
+</div>
+</body>
+</html>
